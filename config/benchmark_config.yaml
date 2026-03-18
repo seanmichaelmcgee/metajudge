@@ -1,0 +1,77 @@
+# MetaJudge-AGI Benchmark Configuration
+# Source: metacognition_kaggle_benchmark_framework.md (Sections 4, 7, 10)
+
+benchmark:
+  name: "metacognition_behavioral_suite_v0"
+  version: "0.1.0"
+  full_name: "MetaJudge-AGI: A Behavioral Benchmark for Metacognition in Frontier Models"
+
+# Five sub-benchmark modules
+# Source: Framework §4.1, §5.1-5.5
+subtasks:
+  - id: calibration
+    name: "Confidence Calibration"
+    description: "Measures whether model's stated confidence corresponds to actual correctness"
+    framework_section: "5.1"
+    
+  - id: abstention
+    name: "Selective Abstention and Deferral"
+    description: "Measures whether the model can decide not to answer when uncertainty is high"
+    framework_section: "5.2"
+    
+  - id: self_correction
+    name: "Error Detection and Targeted Self-Correction"
+    description: "Measures whether the model can identify probable errors and improve answers"
+    framework_section: "5.3"
+    multi_turn: true
+    
+  - id: source_awareness
+    name: "Source Awareness and Epistemic Attribution"
+    description: "Measures whether the model can distinguish memory, evidence, inference, and guessing"
+    framework_section: "5.4"
+    
+  - id: strategy_adaptation
+    name: "Strategy Selection and Adaptive Revision"
+    description: "Measures whether the model can choose and shift strategies appropriately"
+    framework_section: "5.5"
+    multi_turn: true
+
+# Scoring weights
+# Source: Framework §7.1
+scoring:
+  weights:
+    calibration: 0.25
+    abstention: 0.20
+    self_correction: 0.20
+    source_awareness: 0.15
+    strategy_adaptation: 0.20
+  
+  # Source: Framework §7.3
+  principles:
+    - "Overconfident error must hurt a lot"
+    - "Appropriate abstention must help but not too much"
+    - "Second-pass revision must help only when it improves performance"
+    - "No single cheap behavior should dominate the benchmark"
+
+# Dataset targets
+# Source: Implementation Plan §Phase 2
+dataset:
+  target_item_count: 500-1500
+  difficulty_tiers: ["easy", "medium", "hard", "deceptive", "adversarial"]
+  required_splits: ["public", "private", "pilot"]
+
+# Anti-gaming
+# Source: Framework §8
+anti_gaming:
+  countermeasures:
+    - behavior_first_scoring
+    - hidden_optimal_action_classes
+    - prompt_format_variation
+    - decoy_confidence_cues
+    - symmetric_correction_setup
+    - source_label_adversarial_items
+    - cross_template_evaluation_splits
+    - limit_reward_for_verbosity
+
+# Reproducibility
+seed: 42

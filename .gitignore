@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/*.log
+
+# Data (large files tracked separately)
+data/raw_tasks/*.csv
+data/raw_tasks/*.parquet
+data/processed_tasks/*.csv
+data/processed_tasks/*.parquet
+data/splits/*.csv
+data/splits/*.parquet
+
+# Keep data directory structure
+!data/raw_tasks/.gitkeep
+!data/processed_tasks/.gitkeep
+!data/splits/.gitkeep
+!data/prototypes/.gitkeep
