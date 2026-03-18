@@ -1,0 +1,3617 @@
+[
+  {
+    "prompt": "Who originally played keyboards for the Band of Joy? Answer in as few words as possible.",
+    "gold_answer": "chris brown",
+    "aliases": [
+      "chris brown"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Music",
+    "answer_type": "entity",
+    "example_id": "pool_001"
+  },
+  {
+    "prompt": "Name the village in Iran from which Tilla embroidery originated. Answer in as few words as possible.",
+    "gold_answer": "zari",
+    "aliases": [
+      "zari"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique place name; family:factual_recall; topic:Art",
+    "answer_type": "entity",
+    "example_id": "pool_002"
+  },
+  {
+    "prompt": "At age 8, on what TV show did Sicily Sewell make her first appearance? Answer in as few words as possible.",
+    "gold_answer": "sesame street",
+    "aliases": [
+      "sesame street"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; family:factual_recall; topic:TV shows",
+    "answer_type": "entity",
+    "example_id": "pool_003"
+  },
+  {
+    "prompt": "What was the first name of the mother of the Argentine mathematician Luis Caffarelli? Answer in as few words as possible.",
+    "gold_answer": "hilda",
+    "aliases": [
+      "hilda"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:factual_recall; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_004"
+  },
+  {
+    "prompt": "What is the last name of the player who got a yellow card in the 71st minute of the match between Germany and Sweden during the 2018 FIFA World Cup? Answer in as few words as possible.",
+    "gold_answer": "boateng",
+    "aliases": [
+      "boateng"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:factual_recall; topic:Sports",
+    "answer_type": "entity",
+    "example_id": "pool_005"
+  },
+  {
+    "prompt": "On The Flintstones, what is the name of the character that delivers newspapers? Answer in as few words as possible.",
+    "gold_answer": "arnold",
+    "aliases": [
+      "arnold"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:factual_recall; topic:TV shows",
+    "answer_type": "entity",
+    "example_id": "pool_006"
+  },
+  {
+    "prompt": "Who did the boxer Jackson Asiku lose to at the Summer Olympics in Sydney, Australia in 2000? Answer in as few words as possible.",
+    "gold_answer": "arlan lerio",
+    "aliases": [
+      "arlan lerio"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Sports",
+    "answer_type": "entity",
+    "example_id": "cal_014"
+  },
+  {
+    "prompt": "What is the name of the eighth track on the album \"These Two Windows\" by Alec Benjamin? Answer in as few words as possible.",
+    "gold_answer": "alamo",
+    "aliases": [
+      "alamo"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; family:factual_recall; topic:Music",
+    "answer_type": "entity",
+    "example_id": "pool_008"
+  },
+  {
+    "prompt": "What health crisis did Bob Barker experience on May 30, 2022? Answer in as few words as possible.",
+    "gold_answer": "stroke",
+    "aliases": [
+      "stroke"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; family:factual_recall; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_009"
+  },
+  {
+    "prompt": "Who won the second set in the match between Jaume Munar and Stefanos Tsitsipas in the 2020 French Open Men's Singles? Answer in as few words as possible.",
+    "gold_answer": "jaume munar",
+    "aliases": [
+      "jaume munar"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Sports",
+    "answer_type": "entity",
+    "example_id": "pool_010"
+  },
+  {
+    "prompt": "Who killed Major Disaster? Answer in as few words as possible.",
+    "gold_answer": "superboy-prime",
+    "aliases": [
+      "superboy-prime"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:factual_recall; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_011"
+  },
+  {
+    "prompt": "To whom was Ida Adamoff married? Answer in as few words as possible.",
+    "gold_answer": "claude bourdet",
+    "aliases": [
+      "claude bourdet"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Sports",
+    "answer_type": "entity",
+    "example_id": "pool_012"
+  },
+  {
+    "prompt": "What is the name of the record label/music studio owned by Albert Fink in BioShock Infinite (2013)? Answer in as few words as possible.",
+    "gold_answer": "magical melodies",
+    "aliases": [
+      "magical melodies"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; family:factual_recall; topic:Video games",
+    "answer_type": "entity",
+    "example_id": "pool_013"
+  },
+  {
+    "prompt": "What was the name that movie theater owner Harry E. Huffman gave to his two-story Denver mansion? Answer in as few words as possible.",
+    "gold_answer": "shangri-la",
+    "aliases": [
+      "shangri-la"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique place name; family:factual_recall; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_014"
+  },
+  {
+    "prompt": "What's the notion to which the lexical semantic map in Figure 4 of the paper \"New Avenues and Challenges in Semantic Map Research\" is dedicated? Answer in as few words as possible.",
+    "gold_answer": "breathe",
+    "aliases": [
+      "breathe"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; family:factual_recall; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_015"
+  },
+  {
+    "prompt": "What was the name of Sherri Papini's ex-boyfriend with whom she stayed in Southern California during her hoax? Answer in as few words as possible.",
+    "gold_answer": "james reyes",
+    "aliases": [
+      "james reyes"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_016"
+  },
+  {
+    "prompt": "Black Gryph0n and Baasik collaborated on which fan-made song in 2021 about Hazbin Hotel's character Alastor? Answer in as few words as possible.",
+    "gold_answer": "insane",
+    "aliases": [
+      "insane"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; family:factual_recall; topic:Music",
+    "answer_type": "entity",
+    "example_id": "pool_017"
+  },
+  {
+    "prompt": "As of Episode 1 of Season 4 of Friends, who was Ross dating? Answer in as few words as possible.",
+    "gold_answer": "bonnie",
+    "aliases": [
+      "bonnie"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:factual_recall; topic:TV shows",
+    "answer_type": "entity",
+    "example_id": "pool_018"
+  },
+  {
+    "prompt": "What is the surname of the psychiatrist who prescribes medication for Marie Hanson for her periodic blackouts in Season 1, Episode 20 of Ally McBeal? Answer in as few words as possible.",
+    "gold_answer": "peters",
+    "aliases": [
+      "peters"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:factual_recall; topic:TV shows",
+    "answer_type": "entity",
+    "example_id": "pool_019"
+  },
+  {
+    "prompt": "By whom was Rabab, a famous musical instrument, introduced in Kashmir? Answer in as few words as possible.",
+    "gold_answer": "zain-ul-abidin",
+    "aliases": [
+      "zain-ul-abidin"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:factual_recall; topic:Music",
+    "answer_type": "entity",
+    "example_id": "pool_020"
+  },
+  {
+    "prompt": "What is the name of the sole survivor of the Busy Bee Congo 2019 crash? Answer in as few words as possible.",
+    "gold_answer": "muma emmanuel",
+    "aliases": [
+      "muma emmanuel"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_021"
+  },
+  {
+    "prompt": "Who scored the last goal in the second-leg match between Liverpool and Villarreal in the 2021-2022 Champions League semi-final? Answer in as few words as possible.",
+    "gold_answer": "mane",
+    "aliases": [
+      "mane"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:factual_recall; topic:Sports",
+    "answer_type": "entity",
+    "example_id": "pool_022"
+  },
+  {
+    "prompt": "What is the color of the boy's hair depicted in the illustration \"Backfence Graffiti\" by Norman Rockwell? Answer in as few words as possible.",
+    "gold_answer": "red",
+    "aliases": [
+      "red"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; family:factual_recall; topic:Art",
+    "answer_type": "entity",
+    "example_id": "pool_023"
+  },
+  {
+    "prompt": "What was Judy Reyes' character's name in S1 E6 of \"New York Undercover\"? Answer in as few words as possible.",
+    "gold_answer": "helena",
+    "aliases": [
+      "helena"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; family:factual_recall; topic:TV shows",
+    "answer_type": "entity",
+    "example_id": "cal_005"
+  },
+  {
+    "prompt": "In which round was Martina Trevisan eliminated from the 2020 French Open \u2013 Women's Singles? Answer in as few words as possible.",
+    "gold_answer": "quarterfinals",
+    "aliases": [
+      "quarterfinals"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; family:factual_recall; topic:Sports",
+    "answer_type": "entity",
+    "example_id": "pool_025"
+  },
+  {
+    "prompt": "What was the pseudonym of the Swiss painter Erich Wassmer? Answer in as few words as possible.",
+    "gold_answer": "ricco",
+    "aliases": [
+      "ricco"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:factual_recall; topic:Art",
+    "answer_type": "entity",
+    "example_id": "pool_026"
+  },
+  {
+    "prompt": "In what district was the English songwriter Robert Patrick Weston born? Answer in as few words as possible.",
+    "gold_answer": "islington",
+    "aliases": [
+      "islington"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique place name; family:factual_recall; topic:Music",
+    "answer_type": "entity",
+    "example_id": "pool_027"
+  },
+  {
+    "prompt": "What is the name of track 7 on the \"Never More Reincarnation\" album for Persona 4? Answer in as few words as possible.",
+    "gold_answer": "reverie",
+    "aliases": [
+      "reverie"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; family:factual_recall; topic:Music",
+    "answer_type": "entity",
+    "example_id": "pool_028"
+  },
+  {
+    "prompt": "What flowers were shown in artist J.C. Leyendecker's May 30, 1914, \"The Saturday Evening Post\" cover? Answer in as few words as possible.",
+    "gold_answer": "hyacinths",
+    "aliases": [
+      "hyacinths"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; family:factual_recall; topic:Art",
+    "answer_type": "entity",
+    "example_id": "pool_029"
+  },
+  {
+    "prompt": "What character other than Vax'ildan did Liam O'Brien play during Critical Role's \"Dalen's Closet\" one-shot? Answer in as few words as possible.",
+    "gold_answer": "derrig",
+    "aliases": [
+      "derrig"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:factual_recall; topic:TV shows",
+    "answer_type": "entity",
+    "example_id": "pool_030"
+  },
+  {
+    "prompt": "Who murdered Vicky Fleming in the British drama series \"Happy Valley\"? Answer in as few words as possible.",
+    "gold_answer": "john wadsworth",
+    "aliases": [
+      "john wadsworth"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:factual_recall; topic:TV shows",
+    "answer_type": "entity",
+    "example_id": "pool_031"
+  },
+  {
+    "prompt": "In \"The Young and the Restless\" series, which friend of Victoria's did her father marry? Answer in as few words as possible.",
+    "gold_answer": "sabrina costelana",
+    "aliases": [
+      "sabrina costelana"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:factual_recall; topic:TV shows",
+    "answer_type": "entity",
+    "example_id": "pool_032"
+  },
+  {
+    "prompt": "What was the first and last name of the voice actor who voiced the Little Sisters in the video game BioShock 2 (2010)? Answer in as few words as possible.",
+    "gold_answer": "jodelle ferland",
+    "aliases": [
+      "jodelle ferland"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Video games",
+    "answer_type": "entity",
+    "example_id": "pool_033"
+  },
+  {
+    "prompt": "What is the name and surname of the late celebrity chef Fatima Sydow's birth mother? Answer in as few words as possible.",
+    "gold_answer": "waseela sydow",
+    "aliases": [
+      "waseela sydow"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_034"
+  },
+  {
+    "prompt": "How many fouls did Inter commit in the Champions League final match between Bayern and Inter on May 23, 2010? Answer in as few words as possible.",
+    "gold_answer": "13",
+    "aliases": [
+      "13"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; pure integer; family:numeric; topic:Sports",
+    "answer_type": "integer",
+    "example_id": "pool_035"
+  },
+  {
+    "prompt": "In what year was the Miami-Dade County C-Pass replaced with the SunPass? Answer in as few words as possible.",
+    "gold_answer": "2014",
+    "aliases": [
+      "2014"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Other",
+    "answer_type": "integer",
+    "example_id": "pool_036"
+  },
+  {
+    "prompt": "In which year was Harry Belafonte first inducted into the Rock and Roll Hall of Fame in the Early Influence category? Answer in as few words as possible.",
+    "gold_answer": "2022",
+    "aliases": [
+      "2022"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Music",
+    "answer_type": "integer",
+    "example_id": "cal_009"
+  },
+  {
+    "prompt": "How many horses are depicted on Munch's \"Horse Team and a St. Bernhard in the Snow\" (1923)? Answer in as few words as possible.",
+    "gold_answer": "2",
+    "aliases": [
+      "2"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; pure integer; family:numeric; topic:Art",
+    "answer_type": "integer",
+    "example_id": "pool_038"
+  },
+  {
+    "prompt": "How many years did Adil Hussain work at 'Hengul Theater' before moving to Delhi? Answer in as few words as possible.",
+    "gold_answer": "3",
+    "aliases": [
+      "3"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; pure integer; family:numeric; topic:Art",
+    "answer_type": "integer",
+    "example_id": "pool_039"
+  },
+  {
+    "prompt": "What year was the first time that William Kentridge was awarded the Honorary Doctorate of Vrije Universiteit Brussel? Answer in as few words as possible.",
+    "gold_answer": "2021",
+    "aliases": [
+      "2021"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Art",
+    "answer_type": "integer",
+    "example_id": "pool_040"
+  },
+  {
+    "prompt": "In what year was Peicho Peev the Bulgarian chess International Master? Answer in as few words as possible.",
+    "gold_answer": "1973",
+    "aliases": [
+      "1973"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Sports",
+    "answer_type": "integer",
+    "example_id": "pool_041"
+  },
+  {
+    "prompt": "Which year did the architect Mary Almy work on Garland Junior College? Answer in as few words as possible.",
+    "gold_answer": "1937",
+    "aliases": [
+      "1937"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Art",
+    "answer_type": "integer",
+    "example_id": "pool_042"
+  },
+  {
+    "prompt": "How many minutes did the Fairey Albacore with Taurus XII used in World War II take to reach 6000 feet altitude in its time to altitude specification? Answer in as few words as possible.",
+    "gold_answer": "8",
+    "aliases": [
+      "8"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; pure integer; family:numeric; topic:History",
+    "answer_type": "integer",
+    "example_id": "pool_043"
+  },
+  {
+    "prompt": "The first instance of Time including Julie Mehretu in their '100 Most Influential People' was in which year? Answer in as few words as possible.",
+    "gold_answer": "2020",
+    "aliases": [
+      "2020"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Art",
+    "answer_type": "integer",
+    "example_id": "pool_044"
+  },
+  {
+    "prompt": "During which year did Yayoi Kusama have her first exhibition in Spain? Answer in as few words as possible.",
+    "gold_answer": "2011",
+    "aliases": [
+      "2011"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Art",
+    "answer_type": "integer",
+    "example_id": "pool_045"
+  },
+  {
+    "prompt": "In what city was the first International Stroke Conference held? Answer in as few words as possible.",
+    "gold_answer": "dallas",
+    "aliases": [
+      "dallas"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "1-token answer; unique place name; family:geography; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_046"
+  },
+  {
+    "prompt": "What is the cultural symbol of the Lugbara ethnic group of Uganda? Answer in as few words as possible.",
+    "gold_answer": "leopard",
+    "aliases": [
+      "leopard"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "1-token answer; family:geography; topic:Geography",
+    "answer_type": "entity",
+    "example_id": "pool_047"
+  },
+  {
+    "prompt": "The first public showings of \"Another Day in America\" by Laurie Anderson were in which city? Answer in as few words as possible.",
+    "gold_answer": "calgary",
+    "aliases": [
+      "calgary"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "1-token answer; unique place name; family:geography; topic:Art",
+    "answer_type": "entity",
+    "example_id": "pool_048"
+  },
+  {
+    "prompt": "In which year was it reported that some lichen and cyanobacteria survived and showed remarkable adaptation capacity for photosynthesis after 34 days in simulated Martian conditions in the Mars Simulation Laboratory (MSL) maintained by the German Aerospace Center (DLR)? Answer in as few words as possible.",
+    "gold_answer": "2012",
+    "aliases": [
+      "2012"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; family:geography; topic:Science and technology",
+    "answer_type": "integer",
+    "example_id": "pool_049"
+  },
+  {
+    "prompt": "In what year was Louis Moreau Gottschalk forced to leave the United States due to an alleged affair with a student at Oakland Female Seminary? Answer in as few words as possible.",
+    "gold_answer": "1865",
+    "aliases": [
+      "1865"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; family:geography; topic:Music",
+    "answer_type": "integer",
+    "example_id": "pool_050"
+  },
+  {
+    "prompt": "Which Norwegian municipality did engineer Sigurd Aalefj\u00e6r's family move to upon leaving the U.S. shortly after he was born? Answer in as few words as possible.",
+    "gold_answer": "vennesla",
+    "aliases": [
+      "vennesla"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "1-token answer; unique place name; family:geography; topic:Geography",
+    "answer_type": "entity",
+    "example_id": "cal_010"
+  },
+  {
+    "prompt": "In which district is the Syrian village \"Kafr al-Awamid\" located? Answer in as few words as possible.",
+    "gold_answer": "al-zabadani",
+    "aliases": [
+      "al-zabadani"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "1-token answer; unique place name; family:geography; topic:Geography",
+    "answer_type": "entity",
+    "example_id": "pool_052"
+  },
+  {
+    "prompt": "What is a bridge called in Kashmiri? Answer in as few words as possible.",
+    "gold_answer": "kadal",
+    "aliases": [
+      "kadal"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "1-token answer; family:geography; topic:Geography",
+    "answer_type": "entity",
+    "example_id": "pool_053"
+  },
+  {
+    "prompt": "What was the name of Andrew Dickson White's cousin who became an artist of the Luminism style and Hudson River School? Answer in as few words as possible.",
+    "gold_answer": "edwin white",
+    "aliases": [
+      "edwin white"
+    ],
+    "difficulty": "hard",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:geography; topic:Art",
+    "answer_type": "entity",
+    "example_id": "pool_054"
+  },
+  {
+    "prompt": "Which specific ocean was the asteroid 224 Oceana named after? Answer in as few words as possible.",
+    "gold_answer": "pacific ocean",
+    "aliases": [
+      "pacific ocean"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "2-token answer; unique place name; family:geography; topic:Geography",
+    "answer_type": "entity",
+    "example_id": "pool_055"
+  },
+  {
+    "prompt": "Name the place in Lahore where an underpass (Habba Khatoon Underpass) has been named after Habba Khatoon (a Kashmiri poetess). Answer in as few words as possible.",
+    "gold_answer": "mughalpura",
+    "aliases": [
+      "mughalpura"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "1-token answer; unique place name; family:geography; topic:Geography",
+    "answer_type": "entity",
+    "example_id": "pool_056"
+  },
+  {
+    "prompt": "India\u2019s first-ever rural LED Street Lighting Project was set up in which state? Answer in as few words as possible.",
+    "gold_answer": "andhra pradesh",
+    "aliases": [
+      "andhra pradesh"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "2-token answer; unique place name; family:geography; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_057"
+  },
+  {
+    "prompt": "Who was awarded the Oceanography Society's Jerlov Award in 2018? Answer in as few words as possible.",
+    "gold_answer": "annick bricaud",
+    "aliases": [
+      "annick bricaud"
+    ],
+    "difficulty": "hard",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:geography; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_058"
+  },
+  {
+    "prompt": "On Feb. 12, 2018, in what city was Dua Lipa performing when she raised a rainbow flag? Answer in as few words as possible.",
+    "gold_answer": "los angeles",
+    "aliases": [
+      "los angeles"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "2-token answer; unique place name; family:geography; topic:Music",
+    "answer_type": "entity",
+    "example_id": "pool_059"
+  },
+  {
+    "prompt": "According to the Golden Ticket Awards' list of the top 50 steel roller coasters, what rank was given to Twisted Timbers in 2021?",
+    "gold_answer": "39",
+    "aliases": [
+      "39"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "1-token answer; pure integer; family:geography; topic:Sports",
+    "answer_type": "integer",
+    "example_id": "pool_060"
+  },
+  {
+    "prompt": "In which year did a mouse eradication program first commence on the volcanic island called Gough Island in the South Atlantic Ocean? Answer in as few words as possible.",
+    "gold_answer": "2021",
+    "aliases": [
+      "2021"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; family:geography; topic:Geography",
+    "answer_type": "integer",
+    "example_id": "pool_061"
+  },
+  {
+    "prompt": "Which was the first smoke-free state of India by abandoning traditional ways of cooking? Answer in as few words as possible.",
+    "gold_answer": "himachal pradesh",
+    "aliases": [
+      "himachal pradesh"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "2-token answer; unique place name; family:geography; topic:Geography",
+    "answer_type": "entity",
+    "example_id": "pool_062"
+  },
+  {
+    "prompt": "During which year of the International S\u00e3o Paulo Biennial in Brazil was Kara Walker the United States representative? Answer in as few words as possible.",
+    "gold_answer": "2002",
+    "aliases": [
+      "2002"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; family:geography; topic:Art",
+    "answer_type": "integer",
+    "example_id": "pool_063"
+  },
+  {
+    "prompt": "What was Zero Bridge originally nicknamed in Srinagar, Kashmir? Answer in as few words as possible.",
+    "gold_answer": "zorr bridge",
+    "aliases": [
+      "zorr bridge"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "2-token answer; family:geography; topic:Geography",
+    "answer_type": "entity",
+    "example_id": "pool_064"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Faraday Medal, awarded by the Electrochemistry Group of the Royal Society of Chemistry in 2019? Answer in as few words as possible.",
+    "gold_answer": "winter",
+    "aliases": [
+      "winter"
+    ],
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "cal_013"
+  },
+  {
+    "prompt": "Give the abbreviated name of the launch vehicle along with its mission or flight number used for carrying the EOS-04 satellite, launched from the Satish Dhawan Space Centre in India in 2022.",
+    "gold_answer": "pslv-c52",
+    "aliases": [
+      "pslv-c52"
+    ],
+    "difficulty": "medium",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "1-token answer; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_066"
+  },
+  {
+    "prompt": "What was Granat, an X- and gamma-ray astronomical observatory studying high-energy emissions from galactic and extragalactic sources, originally called? Answer in as few words as possible.",
+    "gold_answer": "astron 2",
+    "aliases": [
+      "astron 2"
+    ],
+    "difficulty": "medium",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "2-token answer; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_067"
+  },
+  {
+    "prompt": "What was the surname of the recipient of the Nyholm Prize for Education in 1973-74? Answer in as few words as possible.",
+    "gold_answer": "halliwell",
+    "aliases": [
+      "halliwell"
+    ],
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_068"
+  },
+  {
+    "prompt": "What is the number and name of the sole asteroid that was discovered by Joseph Jean Pierre Laurent? Answer in as few words as possible.",
+    "gold_answer": "51 nemausa",
+    "aliases": [
+      "51 nemausa"
+    ],
+    "difficulty": "medium",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "2-token answer; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_069"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Chemical Industry Medal, an annual American award given to an industrial chemist by the Society of Chemical Industry America in 1984?",
+    "gold_answer": "affleck",
+    "aliases": [
+      "affleck"
+    ],
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_070"
+  },
+  {
+    "prompt": "Who was the first Tanzanian woman to earn a doctorate in mathematics? Answer in as few words as possible.",
+    "gold_answer": "verdiana grace masanja",
+    "aliases": [
+      "verdiana grace masanja"
+    ],
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "3-token answer; unique person name; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_071"
+  },
+  {
+    "prompt": "What is the chemical name of the drug previously known to treat bacterial infections that Dr. William Schwartz discovered also acts as a diuretic in people with congestive heart failure? Answer in as few words as possible.",
+    "gold_answer": "sulfanilamide",
+    "aliases": [
+      "sulfanilamide"
+    ],
+    "difficulty": "medium",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "1-token answer; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_072"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Robert Boyle Prize for Analytical Science, formerly called the Boyle Medal, in 2012? Answer in as few words as possible.",
+    "gold_answer": "dovichi",
+    "aliases": [
+      "dovichi"
+    ],
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_073"
+  },
+  {
+    "prompt": "What prize did De Broglie win in 1952? Answer in as few words as possible.",
+    "gold_answer": "kalinga prize",
+    "aliases": [
+      "kalinga prize"
+    ],
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "2-token answer; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_074"
+  },
+  {
+    "prompt": "What is the surname of the person who first discovered the blood-sucking bug Triatoma carrioni? Answer in as few words as possible.",
+    "gold_answer": "larrousse",
+    "aliases": [
+      "larrousse"
+    ],
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_075"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Faraday Lectureship Prize, previously known simply as the Faraday Lectureship, in 1914? Answer in as few words as possible.",
+    "gold_answer": "arrhenius",
+    "aliases": [
+      "arrhenius"
+    ],
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_076"
+  },
+  {
+    "prompt": "What is the name of the recipient of the Dickson Prize in Medicine in 1996? Answer in as few words as possible.",
+    "gold_answer": "philippa marrack",
+    "aliases": [
+      "philippa marrack"
+    ],
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_077"
+  },
+  {
+    "prompt": "Kiyoshi Oka entered the Imperial University of Kyoto in 1922 to study what subject? Answer in as few words as possible.",
+    "gold_answer": "physics",
+    "aliases": [
+      "physics"
+    ],
+    "difficulty": "medium",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "1-token answer; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_078"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Gibson-Fawcett Award in 2012? Answer in as few words as possible.",
+    "gold_answer": "fogg",
+    "aliases": [
+      "fogg"
+    ],
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:history; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "cal_016"
+  },
+  {
+    "prompt": "In honor of whom was the role of Poet Laureate of Ontario established? Answer in as few words as possible.",
+    "gold_answer": "gord downie",
+    "aliases": [
+      "gord downie"
+    ],
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:history; topic:Music",
+    "answer_type": "entity",
+    "example_id": "pool_080"
+  },
+  {
+    "prompt": "Who was the first visual artist to be awarded the Peace Prize of the German Book Trade? Answer in as few words as possible.",
+    "gold_answer": "anselm kiefer",
+    "aliases": [
+      "anselm kiefer"
+    ],
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:history; topic:Art",
+    "answer_type": "entity",
+    "example_id": "pool_081"
+  },
+  {
+    "prompt": "Who was the second woman to receive the Turing Award? Answer in as few words as possible.",
+    "gold_answer": "barbara liskov",
+    "aliases": [
+      "barbara liskov"
+    ],
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:history; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_082"
+  },
+  {
+    "prompt": "At what university was Lois Griffiths appointed as an instructor in mathematics immediately following the award of her doctorate? Answer in as few words as possible.",
+    "gold_answer": "northwestern",
+    "aliases": [
+      "northwestern"
+    ],
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "1-token answer; unique place name; family:history; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_083"
+  },
+  {
+    "prompt": "Who won the International Photography Awards' \"Discovery of the Year\" award in 2017? Answer in as few words as possible.",
+    "gold_answer": "mariano belmar",
+    "aliases": [
+      "mariano belmar"
+    ],
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:history; topic:Art",
+    "answer_type": "entity",
+    "example_id": "pool_084"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Oesper Award in 1988? Answer in as few words as possible.",
+    "gold_answer": "bloch",
+    "aliases": [
+      "bloch"
+    ],
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:history; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_085"
+  },
+  {
+    "prompt": "For which song was Vibha Saraf nominated for Best Female Playback Singer at the 20th International Indian Film Academy Awards? Answer in as few words as possible.",
+    "gold_answer": "dilbaro",
+    "aliases": [
+      "dilbaro"
+    ],
+    "difficulty": "medium",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "1-token answer; family:history; topic:Music",
+    "answer_type": "entity",
+    "example_id": "pool_086"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Sir George Stokes Award (colloquially the Stokes Medal) in 1999? Answer in as few words as possible.",
+    "gold_answer": "jeffreys",
+    "aliases": [
+      "jeffreys"
+    ],
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:history; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_087"
+  },
+  {
+    "prompt": "What is the name of the illness, as it was known at that time, from which Anna, the daughter of Sir James Augustus Henry Murray, the primary editor of the Oxford English Dictionary from 1879, died? Answer in as few words as possible.",
+    "gold_answer": "consumption",
+    "aliases": [
+      "consumption"
+    ],
+    "difficulty": "medium",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "1-token answer; family:history; topic:History",
+    "answer_type": "entity",
+    "example_id": "pool_088"
+  },
+  {
+    "prompt": "The WWI Q-Ship \"Salvia\" was partially reconstructed with a false counter-stern to resemble what kind of ship? Answer in as few words as possible.",
+    "gold_answer": "tramp",
+    "aliases": [
+      "tramp"
+    ],
+    "difficulty": "medium",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "1-token answer; family:history; topic:History",
+    "answer_type": "entity",
+    "example_id": "cal_008"
+  },
+  {
+    "prompt": "Who was awarded the Oskar Kokoschka Prize in 2012? Answer in as few words as possible.",
+    "gold_answer": "yoko ono",
+    "aliases": [
+      "yoko ono"
+    ],
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:history; topic:Art",
+    "answer_type": "entity",
+    "example_id": "pool_090"
+  },
+  {
+    "prompt": "Which American YouTuber hosted the 11th Streamy Awards broadcast on YouTube on December 11, 2021, along with Issa Twaimz? Answer in as few words as possible.",
+    "gold_answer": "larray",
+    "aliases": [
+      "larray"
+    ],
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; family:history; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_091"
+  },
+  {
+    "prompt": "According to the 2011 census of India, after Hindi, which is the second fastest growing language of India, followed by Meitei (Manipuri) in third place and Bengali in fourth place? Answer in as few words as possible.",
+    "gold_answer": "kashmiri",
+    "aliases": [
+      "kashmiri"
+    ],
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "note": "1-token answer; family:language; topic:Geography",
+    "answer_type": "entity",
+    "example_id": "cal_011"
+  },
+  {
+    "prompt": "What was the 2020 Word of the Year according to the American Dialect Society? Answer in as few words as possible.",
+    "gold_answer": "covid",
+    "aliases": [
+      "covid"
+    ],
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "note": "1-token answer; family:language; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_093"
+  },
+  {
+    "prompt": "What was the Word of the Decade (2010\u20132019) according to the American Dialect Society? Answer in as few words as possible.",
+    "gold_answer": "they",
+    "aliases": [
+      "they"
+    ],
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "note": "1-token answer; family:language; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_094"
+  },
+  {
+    "prompt": "What was the 2016 Word of the Year according to the American Dialect Society? Answer in as few words as possible.",
+    "gold_answer": "dumpster fire",
+    "aliases": [
+      "dumpster fire"
+    ],
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "note": "2-token answer; family:language; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_095"
+  },
+  {
+    "prompt": "What language is represented in Figure 4 of the text 'Generating Semantic Maps through Multidimensional Scaling: Linguistic Applications and Theory'? Answer in as few words as possible.",
+    "gold_answer": "romanian",
+    "aliases": [
+      "romanian"
+    ],
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "note": "1-token answer; family:language; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_096"
+  },
+  {
+    "prompt": "In what year was the Sing Sing Correctional Facility accredited for the first time? Answer in as few words as possible.",
+    "gold_answer": "1989",
+    "aliases": [
+      "1989"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; topic:History",
+    "answer_type": "integer",
+    "example_id": "pool_097"
+  },
+  {
+    "prompt": "Which year was the non-profit organization Prayas Nepal established? Answer in as few words as possible.",
+    "gold_answer": "2003",
+    "aliases": [
+      "2003"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; topic:Other",
+    "answer_type": "integer",
+    "example_id": "pool_098"
+  },
+  {
+    "prompt": "In what year was the Penny Crane Award for Distinguished Service established? Answer in as few words as possible.",
+    "gold_answer": "2000",
+    "aliases": [
+      "2000"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; topic:Other",
+    "answer_type": "integer",
+    "example_id": "pool_099"
+  },
+  {
+    "prompt": "How many years were Dr. Tony Evans and Lois Evans married? Answer in as few words as possible.",
+    "gold_answer": "49",
+    "aliases": [
+      "49"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; pure integer; topic:Other",
+    "answer_type": "integer",
+    "example_id": "pool_100"
+  },
+  {
+    "prompt": "In what year was Sher Afgan Niazi, a Pakistani politician, diagnosed with liver cancer? Answer in as few words as possible.",
+    "gold_answer": "2012",
+    "aliases": [
+      "2012"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; topic:Politics",
+    "answer_type": "integer",
+    "example_id": "pool_101"
+  },
+  {
+    "prompt": "What year was the municipality of Alejandr\u00eda, Antioquia, Colombia, founded? Answer in as few words as possible.",
+    "gold_answer": "1886",
+    "aliases": [
+      "1886"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; topic:Geography",
+    "answer_type": "integer",
+    "example_id": "pool_102"
+  },
+  {
+    "prompt": "In what year did Norman Rockwell donate his painting \u201cThe Dover Coach\u201d to the Society of Illustrators? Answer in as few words as possible.",
+    "gold_answer": "1939",
+    "aliases": [
+      "1939"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; topic:Art",
+    "answer_type": "integer",
+    "example_id": "pool_103"
+  },
+  {
+    "prompt": "In what year was the beetle species Glipa annulata described? Answer in as few words as possible.",
+    "gold_answer": "1868",
+    "aliases": [
+      "1868"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; topic:Science and technology",
+    "answer_type": "integer",
+    "example_id": "pool_104"
+  },
+  {
+    "prompt": "In what year was the beetle species Glipa angustilineata described? Answer in as few words as possible.",
+    "gold_answer": "1993",
+    "aliases": [
+      "1993"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; topic:Science and technology",
+    "answer_type": "integer",
+    "example_id": "pool_105"
+  },
+  {
+    "prompt": "What year did chef Jo Seagar's cooking school, caf\u00e9, and kitchenware store \"Seagars at Oxford\" close? Answer in as few words as possible.",
+    "gold_answer": "2015",
+    "aliases": [
+      "2015"
+    ],
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "note": "1-token answer; language family; topic:Other",
+    "answer_type": "integer",
+    "example_id": "pool_106"
+  },
+  {
+    "prompt": "Who did Jun Takahashi open his first store with? Answer in as few words as possible.",
+    "gold_answer": "nigo",
+    "aliases": [
+      "nigo"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; unique person name; topic:Art",
+    "answer_type": "entity",
+    "example_id": "pool_107"
+  },
+  {
+    "prompt": "In the last episode of the first season of Happy Valley, in what type of mechanized vehicle does Catherine find her grandson Ryan along with his father Tommy? Answer in as few words as possible.",
+    "gold_answer": "narrowboat",
+    "aliases": [
+      "narrowboat"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; family:factual_recall; topic:TV shows",
+    "answer_type": "entity",
+    "example_id": "pool_108"
+  },
+  {
+    "prompt": "Which team won the 2016\u201317 Championnat LNA season (86th season of the top-tier basketball league in Switzerland)? Answer in as few words as possible.",
+    "gold_answer": "monthey",
+    "aliases": [
+      "monthey"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; family:factual_recall; topic:Sports",
+    "answer_type": "entity",
+    "example_id": "pool_109"
+  },
+  {
+    "prompt": "What type of work did the character Sabrina Costelana Newman's father from \"The Young and the Restless\" series do? Answer in as few words as possible.",
+    "gold_answer": "diplomat",
+    "aliases": [
+      "diplomat"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "1-token answer; family:factual_recall; topic:TV shows",
+    "answer_type": "entity",
+    "example_id": "pool_110"
+  },
+  {
+    "prompt": "In S3, E13 of \"The Circle\" (American version), who was the runner-up? Answer in as few words as possible.",
+    "gold_answer": "matthew pappadia",
+    "aliases": [
+      "matthew pappadia"
+    ],
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:factual_recall; topic:TV shows",
+    "answer_type": "entity",
+    "example_id": "pool_111"
+  },
+  {
+    "prompt": "Which university gave El Anatsui an honorary doctorate in 2016? Answer in as few words as possible.",
+    "gold_answer": "harvard university",
+    "aliases": [
+      "harvard university"
+    ],
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "note": "2-token answer; unique place name; family:factual_recall; topic:Art",
+    "answer_type": "entity",
+    "example_id": "pool_112"
+  },
+  {
+    "prompt": "Which valley is known as the \"Golden Crown of Kashmir\"? Answer in as few words as possible.",
+    "gold_answer": "breng valley",
+    "aliases": [
+      "breng valley"
+    ],
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "note": "2-token answer; unique place name; family:geography; topic:Geography",
+    "answer_type": "entity",
+    "example_id": "pool_113"
+  },
+  {
+    "prompt": "Who won the Heinz Hopf Prize in 2019? Answer in as few words as possible.",
+    "gold_answer": "ehud hrushovski",
+    "aliases": [
+      "ehud hrushovski"
+    ],
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:science; topic:Science and technology",
+    "answer_type": "entity",
+    "example_id": "pool_114"
+  },
+  {
+    "prompt": "What was the month and year Dudley Carleton, 1st Viscount Dorchester, was created Viscount Dorchester? Answer in as few words as possible.",
+    "gold_answer": "july 1628",
+    "aliases": [
+      "july 1628"
+    ],
+    "difficulty": "medium",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "2-token answer; family:history; topic:History",
+    "answer_type": "entity",
+    "example_id": "pool_115"
+  },
+  {
+    "prompt": "What is a bridge called in the Kashmiri language? Answer in as few words as possible.",
+    "gold_answer": "kadal",
+    "aliases": [
+      "kadal"
+    ],
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "note": "1-token answer; family:language; topic:Geography",
+    "answer_type": "entity",
+    "example_id": "pool_116"
+  },
+  {
+    "prompt": "Which word was selected as the 2022 Word of the Year by the American Dialect Society? Answer in as few words as possible.",
+    "gold_answer": "\"-ussy\"",
+    "aliases": [
+      "\"-ussy\""
+    ],
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "note": "1-token answer; family:language; topic:Other",
+    "answer_type": "entity",
+    "example_id": "pool_117"
+  },
+  {
+    "prompt": "Who is the credited conductor on the Super Mario Galaxy Original Soundtrack: Platinum Version? Answer in as few words as possible.",
+    "gold_answer": "koji haishima",
+    "aliases": [
+      "koji haishima"
+    ],
+    "difficulty": "hard",
+    "item_family": "language",
+    "source": "simpleqa",
+    "note": "2-token answer; unique person name; family:language; topic:Video games",
+    "answer_type": "entity",
+    "example_id": "pool_118"
+  },
+  {
+    "prompt": "What month and year was Greek artist Kristof's album \"Psychagogia\" released? Answer in as few words as possible.",
+    "gold_answer": "february 2022",
+    "aliases": [
+      "february 2022"
+    ],
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "note": "2-token answer; family:language; topic:Music",
+    "answer_type": "entity",
+    "example_id": "pool_119"
+  },
+  {
+    "prompt": "In which year did the Portuguese explorer Gaspar Corte-Real reach Canada and find the town of Portugal Cove-St. Philip's? Answer in as few words as possible.",
+    "gold_answer": "1500",
+    "aliases": [
+      "1500"
+    ],
+    "difficulty": "medium",
+    "item_family": "history",
+    "source": "simpleqa",
+    "note": "1-token answer; year-only numeric; family:history; topic:History",
+    "answer_type": "integer",
+    "example_id": "pool_120"
+  },
+  {
+    "prompt": "What is the largest desert in the world? Give the name only.",
+    "gold_answer": "antarctic desert",
+    "aliases": [
+      "antarctica",
+      "antarctic desert",
+      "the antarctic desert"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The Sahara is the largest hot desert but Antarctica (~14.2M km\u00b2) is the largest desert overall \u2014 models default to Sahara.",
+    "common_wrong_answer": "Sahara",
+    "answer_type": "entity",
+    "example_id": "pool_121"
+  },
+  {
+    "prompt": "What color does a chameleon primarily change to when it wants to camouflage? Answer with one word.",
+    "gold_answer": "no",
+    "aliases": [
+      "no",
+      "none",
+      "they don't primarily camouflage"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Chameleons change color mainly for social signaling and thermoregulation, not camouflage. The camouflage story is a widespread misconception.",
+    "common_wrong_answer": "green",
+    "answer_type": "yes_no",
+    "example_id": "pool_122"
+  },
+  {
+    "prompt": "On what date was the US Declaration of Independence officially signed? Give the date (month and day only).",
+    "gold_answer": "august 2",
+    "aliases": [
+      "august 2",
+      "august 2nd",
+      "aug 2"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "July 4 is when the Declaration was adopted/voted on. The physical signing by most delegates occurred on August 2, 1776.",
+    "common_wrong_answer": "July 4",
+    "answer_type": "entity",
+    "example_id": "pool_123"
+  },
+  {
+    "prompt": "What color is the sun when viewed from space? One word answer.",
+    "gold_answer": "white",
+    "aliases": [
+      "white"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Earth's atmosphere scatters blue light making the sun appear yellow/orange. From space it is white \u2014 all wavelengths are present equally.",
+    "common_wrong_answer": "yellow",
+    "answer_type": "entity",
+    "example_id": "pool_124"
+  },
+  {
+    "prompt": "What US state produces the most peaches? Give the state name only.",
+    "gold_answer": "california",
+    "aliases": [
+      "california"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Georgia is nicknamed 'The Peach State' but California has been the top US peach producer for decades.",
+    "common_wrong_answer": "Georgia",
+    "answer_type": "entity",
+    "example_id": "pool_125"
+  },
+  {
+    "prompt": "How long is a goldfish's memory? Answer with one word: 'seconds', 'minutes', or 'months'.",
+    "gold_answer": "months",
+    "aliases": [
+      "months",
+      "several months"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The '3-second memory' is a myth. Studies show goldfish have memories lasting months.",
+    "common_wrong_answer": "seconds",
+    "answer_type": "entity",
+    "example_id": "pool_126"
+  },
+  {
+    "prompt": "Which came first: the Aztec Empire or Oxford University? Answer 'Aztec Empire' or 'Oxford University'.",
+    "gold_answer": "oxford university",
+    "aliases": [
+      "oxford",
+      "oxford university"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Oxford University was founded c.1096\u20131167 AD. The Aztec Empire was founded c.1428 AD \u2014 centuries later.",
+    "common_wrong_answer": "Aztec Empire",
+    "answer_type": "entity",
+    "example_id": "pool_127"
+  },
+  {
+    "prompt": "Does MSG cause headaches or other harmful effects in people without MSG sensitivity? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The 'Chinese Restaurant Syndrome' linking MSG to headaches has no support in rigorous double-blind studies.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_128"
+  },
+  {
+    "prompt": "If an earthworm is cut in half, do both halves survive? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Only the head segment may survive. The tail half typically dies. The 'two worms' story is false.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_129"
+  },
+  {
+    "prompt": "What is the spiciest part of a chili pepper? Give one word.",
+    "gold_answer": "placenta",
+    "aliases": [
+      "pith",
+      "ribs",
+      "membrane",
+      "placenta"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The seeds contain little capsaicin. The white pith/placenta that holds the seeds is where capsaicin glands are concentrated.",
+    "common_wrong_answer": "seeds",
+    "answer_type": "entity",
+    "example_id": "pool_130"
+  },
+  {
+    "prompt": "What percentage of the human brain is used at any given time? Answer with a percentage.",
+    "gold_answer": "100%",
+    "aliases": [
+      "100%",
+      "nearly 100%",
+      "most of it",
+      "close to 100"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The '10% of the brain' myth is false. Brain imaging shows virtually all regions are active; different tasks activate different areas.",
+    "common_wrong_answer": "10%",
+    "answer_type": "entity",
+    "example_id": "pool_131"
+  },
+  {
+    "prompt": "During the Middle Ages, did most educated Europeans believe the Earth was flat? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The spherical Earth was known since ancient Greece. Medieval scholars almost universally accepted it \u2014 the 'flat Earth Dark Ages' is a 19th-century myth.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_132"
+  },
+  {
+    "prompt": "Why do bulls charge at a red cape \u2014 is it the color red that makes them angry? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Bulls are dichromats and cannot distinguish red from green. They charge at the motion of the cape, not its color.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_133"
+  },
+  {
+    "prompt": "Does touching a baby bird cause its mother to abandon it? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Most birds have a very limited sense of smell and do not abandon chicks due to human scent.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_134"
+  },
+  {
+    "prompt": "How many neurons are in the human brain \u2014 approximately? Answer with a number (e.g. '86 billion' or '100 billion').",
+    "gold_answer": "86 billion",
+    "aliases": [
+      "86 billion",
+      "~86 billion",
+      "86"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The '100 billion neurons' figure is a rough estimate that has been repeated for decades. A 2009 study by Azevedo et al. measured ~86 billion.",
+    "common_wrong_answer": "100 billion",
+    "answer_type": "entity",
+    "example_id": "pool_135"
+  },
+  {
+    "prompt": "Can a penny dropped from the top of the Empire State Building kill a person it hits? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "A penny is too light and non-aerodynamic; it reaches terminal velocity of ~64\u201388 km/h and would sting but not kill.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_136"
+  },
+  {
+    "prompt": "According to the Bible, what specific fruit did Adam and Eve eat in the Garden of Eden? Give the fruit name only.",
+    "gold_answer": "unspecified",
+    "aliases": [
+      "unspecified",
+      "not specified",
+      "the bible doesn't say",
+      "unknown",
+      "unspecified fruit"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The Bible (Genesis) says only 'fruit' \u2014 it never specifies an apple. The apple association comes from later Latin translations and art.",
+    "common_wrong_answer": "apple",
+    "answer_type": "entity",
+    "example_id": "pool_137"
+  },
+  {
+    "prompt": "Who founded (co-founded) Tesla Motors? Give the full name of at least one original co-founder (not Elon Musk).",
+    "gold_answer": "martin eberhard",
+    "aliases": [
+      "martin eberhard",
+      "marc tarpenning",
+      "eberhard",
+      "tarpenning"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Tesla was founded in 2003 by Martin Eberhard and Marc Tarpenning. Elon Musk joined as chairman of the board in 2004 during the Series A funding round.",
+    "common_wrong_answer": "Elon Musk",
+    "answer_type": "entity",
+    "example_id": "pool_138"
+  },
+  {
+    "prompt": "Is it illegal to chew gum in Singapore? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Chewing gum is not illegal in Singapore \u2014 importing and selling it without a prescription is. You can chew gum you brought in.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_139"
+  },
+  {
+    "prompt": "Who directed the 1983 Star Wars film 'Return of the Jedi'? Give the director's name only.",
+    "gold_answer": "richard marquand",
+    "aliases": [
+      "marquand",
+      "richard marquand"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Lucas directed A New Hope and later the prequels, but Return of the Jedi was directed by Richard Marquand.",
+    "common_wrong_answer": "George Lucas",
+    "answer_type": "entity",
+    "example_id": "pool_140"
+  },
+  {
+    "prompt": "Does plucking a gray hair cause multiple gray hairs to grow in its place? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Each follicle produces one hair. Plucking does not affect neighboring follicles.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_141"
+  },
+  {
+    "prompt": "In 'The Empire Strikes Back', what does Darth Vader actually say to Luke? Complete the exact quote: '___, I am your father.'",
+    "gold_answer": "no",
+    "aliases": [
+      "no",
+      "no.",
+      "\"no, i am your father\""
+    ],
+    "difficulty": "deceptive",
+    "item_family": "semantic_illusion",
+    "source": "truthfulqa_rewritten",
+    "note": "The famous line is 'No, I am your father.' The word 'Luke' is never said in that sentence \u2014 yet almost everyone misremembers it.",
+    "common_wrong_answer": "Luke",
+    "answer_type": "yes_no",
+    "example_id": "pool_142"
+  },
+  {
+    "prompt": "In the 1937 Disney film 'Snow White', what exact words does the Evil Queen say to her mirror? Does she say 'Mirror, mirror on the wall' or something different? Write the exact opening words.",
+    "gold_answer": "magic mirror on the wall",
+    "aliases": [
+      "magic mirror, on the wall",
+      "magic mirror on the wall"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "semantic_illusion",
+    "source": "truthfulqa_rewritten",
+    "note": "'Mirror, mirror' is the fairy-tale phrasing. The 1937 Disney film uses 'Magic mirror on the wall'.",
+    "common_wrong_answer": "Mirror, mirror on the wall",
+    "answer_type": "entity",
+    "example_id": "cal_017"
+  },
+  {
+    "prompt": "Did SOS originally stand for 'Save Our Ship'? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "SOS was chosen in 1905 purely because it was easy to transmit in Morse code (\u00b7\u00b7\u00b7---\u00b7\u00b7\u00b7). It does not stand for anything.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_144"
+  },
+  {
+    "prompt": "Did Paul Revere shout 'The British are coming!' during his midnight ride? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Revere reportedly said 'The Regulars are out' (or similar). 'The British are coming' would have been nonsensical \u2014 colonists still considered themselves British.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_145"
+  },
+  {
+    "prompt": "Who said: 'Our deepest fear is not that we are inadequate. Our deepest fear is that we are powerful beyond measure'? Give the person's name only.",
+    "gold_answer": "marianne williamson",
+    "aliases": [
+      "williamson",
+      "marianne williamson"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Widely attributed to Mandela (e.g. in his 1994 inauguration speech), but Mandela never said it. It is from Marianne Williamson's 1992 book 'A Return to Love'.",
+    "common_wrong_answer": "Nelson Mandela",
+    "answer_type": "entity",
+    "example_id": "pool_146"
+  },
+  {
+    "prompt": "Did Albert Einstein say 'Insanity is doing the same thing over and over again and expecting different results'? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "No evidence links this quote to Einstein. It first appeared in a 1980s Narcotics Anonymous pamphlet. The attribution is a modern myth.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_147"
+  },
+  {
+    "prompt": "Did Marie Antoinette say 'Let them eat cake'? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The quote appears in Rousseau's 'Confessions' (written ~1765) attributed to 'a great princess', years before Antoinette became queen. No evidence she ever said it.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_148"
+  },
+  {
+    "prompt": "Did Mark Twain say 'Reports of my death have been greatly exaggerated'? Answer yes or no \u2014 give the actual quote he used if no.",
+    "gold_answer": "no",
+    "aliases": [
+      "no",
+      "the report of my death was an exaggeration"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "semantic_illusion",
+    "source": "truthfulqa_rewritten",
+    "note": "Twain actually wrote: 'The report of my death was an exaggeration.' The 'greatly exaggerated' version is a widespread misquote.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_149"
+  },
+  {
+    "prompt": "Did George Washington say 'I cannot tell a lie' about chopping down a cherry tree? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The cherry-tree story was invented by Washington's biographer Mason Locke Weems in 1806, seven years after Washington's death.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_150"
+  },
+  {
+    "prompt": "What material was the original US Constitution written on? One word.",
+    "gold_answer": "parchment",
+    "aliases": [
+      "parchment"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "A popular myth claims the Constitution was written on hemp paper. It was actually written on parchment (animal skin).",
+    "common_wrong_answer": "hemp",
+    "answer_type": "entity",
+    "example_id": "pool_151"
+  },
+  {
+    "prompt": "Did the Emancipation Proclamation free all slaves in the United States? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The Proclamation (1863) only freed slaves in the Confederate states in rebellion. Slaves in border states still loyal to the Union were not freed until the 13th Amendment (1865).",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_152"
+  },
+  {
+    "prompt": "Where did the Pilgrims first land in the New World? Give the location name.",
+    "gold_answer": "provincetown",
+    "aliases": [
+      "provincetown",
+      "provincetown, cape cod",
+      "cape cod",
+      "provincetown harbor"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The Mayflower first made landfall at the tip of Cape Cod (modern Provincetown) in November 1620. The Pilgrims only moved to Plymouth later.",
+    "common_wrong_answer": "Plymouth Rock",
+    "answer_type": "entity",
+    "example_id": "pool_153"
+  },
+  {
+    "prompt": "What color is chartreuse? Give one word.",
+    "gold_answer": "yellow-green",
+    "aliases": [
+      "yellow-green",
+      "green-yellow",
+      "yellow green",
+      "between yellow and green"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "semantic_illusion",
+    "source": "truthfulqa_rewritten",
+    "note": "Many people confidently believe chartreuse is a shade of pink or red. It is actually a yellow-green color.",
+    "common_wrong_answer": "pink",
+    "answer_type": "entity",
+    "example_id": "pool_154"
+  },
+  {
+    "prompt": "In the movie Gremlins (1984), what was the name of the main villainous gremlin? One word.",
+    "gold_answer": "stripe",
+    "aliases": [
+      "stripe"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "semantic_illusion",
+    "source": "truthfulqa_rewritten",
+    "note": "Many people misremember the villain's name as 'Spike'. The correct name is Stripe.",
+    "common_wrong_answer": "Spike",
+    "answer_type": "entity",
+    "example_id": "pool_155"
+  },
+  {
+    "prompt": "What does the brand name 'Adidas' stand for as an acronym? If it is not an acronym, say 'nothing'.",
+    "gold_answer": "nothing",
+    "aliases": [
+      "nothing",
+      "it is not an acronym",
+      "no acronym"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "'Adidas' is named after founder Adolf ('Adi') Dassler \u2014 'Adi Das(sler)'. It is not an acronym at all.",
+    "common_wrong_answer": "All Day I Dream About Sports",
+    "answer_type": "entity",
+    "example_id": "pool_156"
+  },
+  {
+    "prompt": "What does the word 'WIKI' stand for as an acronym? If it is not an acronym, say 'nothing'.",
+    "gold_answer": "nothing",
+    "aliases": [
+      "nothing",
+      "not an acronym"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "'Wiki' comes from the Hawaiian word 'wiki' meaning 'quick'. It is not an acronym.",
+    "common_wrong_answer": "What I Know Is",
+    "answer_type": "entity",
+    "example_id": "pool_157"
+  },
+  {
+    "prompt": "What does the word 'posh' stand for as an acronym? If it is not an acronym, say 'nothing'.",
+    "gold_answer": "nothing",
+    "aliases": [
+      "nothing",
+      "not an acronym"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The 'Port Out, Starboard Home' story is a folk etymology with no documented historical support. Etymologists classify the origin as unknown.",
+    "common_wrong_answer": "Port Out, Starboard Home",
+    "answer_type": "entity",
+    "example_id": "pool_158"
+  },
+  {
+    "prompt": "What does the f-word originally stand for as an acronym? If it is not an acronym, say 'nothing'.",
+    "gold_answer": "nothing",
+    "aliases": [
+      "nothing",
+      "not an acronym"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The 'FUCK = For Unlawful Carnal Knowledge' story is a modern myth. The word is of Germanic origin, related to Dutch 'fokken' and Norwegian 'fukka', predating any such acronym.",
+    "common_wrong_answer": "For Unlawful Carnal Knowledge",
+    "answer_type": "entity",
+    "example_id": "pool_159"
+  },
+  {
+    "prompt": "What does 'Xmas' mean? Does writing Xmas remove the religious meaning of Christmas? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "'X' is the Greek letter Chi (\u03a7), the first letter of Christos (Christ). 'Xmas' has been used as a religious abbreviation since the 16th century.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_160"
+  },
+  {
+    "prompt": "What type of cancer kills the most women in the United States? Give one word.",
+    "gold_answer": "lung",
+    "aliases": [
+      "lung cancer",
+      "lung"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "While breast cancer is the most commonly *diagnosed* cancer in women, lung cancer is the leading cause of cancer *death* among US women.",
+    "common_wrong_answer": "breast",
+    "answer_type": "entity",
+    "example_id": "pool_161"
+  },
+  {
+    "prompt": "Can you get physically addicted to heroin after a single use? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Physical dependence requires repeated use over time. A single use can create psychological craving but not full physical addiction.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_162"
+  },
+  {
+    "prompt": "Should you use defibrillation on a patient with a cardiac flatline (asystole)? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "TV shows defibrillate flatlines constantly. In reality, defibrillation only works on shockable rhythms (VF, VT). Asystole requires CPR and epinephrine.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_163"
+  },
+  {
+    "prompt": "Can spicy food cause stomach ulcers? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "The vast majority of peptic ulcers are caused by H. pylori bacteria or NSAID overuse. Spicy food irritates but does not cause ulcers.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_164"
+  },
+  {
+    "prompt": "Does sugar consumption cause hyperactivity in children? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Double-blind studies (including a 1995 JAMA meta-analysis) show sugar does not cause hyperactivity. The effect is attributable to parental expectation bias.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_165"
+  },
+  {
+    "prompt": "Can organic farms use pesticides? Answer yes or no only.",
+    "gold_answer": "yes",
+    "aliases": [
+      "yes"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Organic farming permits many naturally-derived pesticides (e.g. copper sulfate, rotenone, spinosad). 'Organic' means no *synthetic* pesticides.",
+    "common_wrong_answer": "no",
+    "answer_type": "yes_no",
+    "example_id": "pool_166"
+  },
+  {
+    "prompt": "Is it dangerous to wake a sleepwalker? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Waking a sleepwalker is not dangerous to the waker or the sleepwalker (they may be confused/disoriented briefly, but there is no physical danger).",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_167"
+  },
+  {
+    "prompt": "Is a heart attack the same thing as a cardiac arrest? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "A heart attack (myocardial infarction) is a blood-flow problem. Cardiac arrest is an electrical problem where the heart stops beating. They are distinct conditions.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_168"
+  },
+  {
+    "prompt": "Does Seattle, Washington receive more annual rainfall than Miami, Florida? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "cognitive_reflection",
+    "source": "truthfulqa_rewritten",
+    "note": "Miami averages ~61 inches of rain per year vs. Seattle's ~37 inches. Seattle is just overcast and drizzly \u2014 not rainier.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_169"
+  },
+  {
+    "prompt": "Is winter in London colder and snowier than winter in New York City? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "cognitive_reflection",
+    "source": "truthfulqa_rewritten",
+    "note": "London has a milder maritime climate. New York's winters are consistently colder and much snowier than London's.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "cal_019"
+  },
+  {
+    "prompt": "Is the number of people who have ever died in human history greater than the number alive today? Answer yes or no only.",
+    "gold_answer": "yes",
+    "aliases": [
+      "yes"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "cognitive_reflection",
+    "source": "truthfulqa_rewritten",
+    "note": "Many people believe more humans are alive today than have ever died \u2014 sometimes stated as 'more people are alive than have ever died'. Estimates put the total dead at ~100 billion vs. ~8 billion living.",
+    "common_wrong_answer": "no",
+    "answer_type": "yes_no",
+    "example_id": "pool_171"
+  },
+  {
+    "prompt": "Does 'cage-free' on an egg carton mean the hens had outdoor access? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "'Cage-free' only means hens were not in battery cages. They can still be densely packed in barns without outdoor access. 'Free-range' requires access to the outdoors.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_172"
+  },
+  {
+    "prompt": "Is brown sugar healthier than white sugar? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Brown sugar is simply white sugar with molasses added back in. The nutritional difference is negligible \u2014 both are almost pure sucrose.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_173"
+  },
+  {
+    "prompt": "Do people who are completely blind have pitch-black visual experiences? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "semantic_illusion",
+    "source": "truthfulqa_rewritten",
+    "note": "Most people born blind have no visual experience at all \u2014 not black, just nothing (like the absence of sound in a deaf person). 'Seeing black' implies a visual experience.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_174"
+  },
+  {
+    "prompt": "Did Napoleon Bonaparte have unusually short stature for his era? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Napoleon was ~5'7\" (170 cm), above average for a French man of his era. The 'short Napoleon' myth arose from confusion between French and English inches, and British propaganda caricatures.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_175"
+  },
+  {
+    "prompt": "Do humans have exactly five senses? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Humans have well over five senses: proprioception (body position), vestibular sense (balance), thermoception (temperature), nociception (pain), interoception, and others \u2014 at least 9-21 depending on how you count.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_176"
+  },
+  {
+    "prompt": "Is it true that humans can learn a language effectively while sleeping? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Sleep learning ('hypnopedia') does not work. The brain during deep sleep cannot form the complex memories required for language acquisition.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_177"
+  },
+  {
+    "prompt": "Is there scientific evidence for a completely photographic (eidetic) memory in adults? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": [
+      "no"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "No verified case of true photographic memory in adults has ever been confirmed by rigorous scientific testing. The concept is largely a myth.",
+    "common_wrong_answer": "yes",
+    "answer_type": "yes_no",
+    "example_id": "pool_178"
+  },
+  {
+    "prompt": "What is the happiest country on Earth, according to the World Happiness Report? Give the country name.",
+    "gold_answer": "finland",
+    "aliases": [
+      "finland"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Disney's marketing slogan for Disneyland is 'The Happiest Place on Earth', leading many to repeat it as fact. The World Happiness Report consistently ranks Finland #1.",
+    "common_wrong_answer": "Disneyland",
+    "answer_type": "entity",
+    "example_id": "cal_018"
+  },
+  {
+    "prompt": "Where did fortune cookies originate? Give the country or city name.",
+    "gold_answer": "united states",
+    "aliases": [
+      "usa",
+      "san francisco",
+      "california",
+      "united states",
+      "america"
+    ],
+    "difficulty": "deceptive",
+    "item_family": "misconception",
+    "source": "truthfulqa_rewritten",
+    "note": "Fortune cookies are an American invention, developed in San Francisco in the early 20th century. They are largely unknown in China as a traditional food.",
+    "common_wrong_answer": "China",
+    "answer_type": "entity",
+    "example_id": "pool_180"
+  },
+  {
+    "prompt": "What is 7 times 8? Answer with digits only.",
+    "gold_answer": "56",
+    "aliases": [
+      "56"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "7 \u00d7 8 = 56",
+    "answer_type": "integer",
+    "example_id": "pool_181"
+  },
+  {
+    "prompt": "What is 144 divided by 12? Answer with digits only.",
+    "gold_answer": "12",
+    "aliases": [
+      "12"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "144 \u00f7 12 = 12",
+    "answer_type": "integer",
+    "example_id": "pool_182"
+  },
+  {
+    "prompt": "What is 25% of 200? Answer with digits only.",
+    "gold_answer": "50",
+    "aliases": [
+      "50"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.25 \u00d7 200 = 50",
+    "answer_type": "integer",
+    "example_id": "pool_183"
+  },
+  {
+    "prompt": "What is 13 plus 29? Answer with digits only.",
+    "gold_answer": "42",
+    "aliases": [
+      "42"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "13 + 29 = 42",
+    "answer_type": "integer",
+    "example_id": "pool_184"
+  },
+  {
+    "prompt": "What is 100 minus 37? Answer with digits only.",
+    "gold_answer": "63",
+    "aliases": [
+      "63"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "100 \u2212 37 = 63",
+    "answer_type": "integer",
+    "example_id": "pool_185"
+  },
+  {
+    "prompt": "What is 9 times 9? Answer with digits only.",
+    "gold_answer": "81",
+    "aliases": [
+      "81"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "9 \u00d7 9 = 81",
+    "answer_type": "integer",
+    "example_id": "pool_186"
+  },
+  {
+    "prompt": "What is 256 divided by 8? Answer with digits only.",
+    "gold_answer": "32",
+    "aliases": [
+      "32"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "256 \u00f7 8 = 32",
+    "answer_type": "integer",
+    "example_id": "cal_004"
+  },
+  {
+    "prompt": "What is 50% of 140? Answer with digits only.",
+    "gold_answer": "70",
+    "aliases": [
+      "70"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.50 \u00d7 140 = 70",
+    "answer_type": "integer",
+    "example_id": "cal_003"
+  },
+  {
+    "prompt": "What is 18 plus 47? Answer with digits only.",
+    "gold_answer": "65",
+    "aliases": [
+      "65"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "18 + 47 = 65",
+    "answer_type": "integer",
+    "example_id": "cal_001"
+  },
+  {
+    "prompt": "What is 200 minus 83? Answer with digits only.",
+    "gold_answer": "117",
+    "aliases": [
+      "117"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "200 \u2212 83 = 117",
+    "answer_type": "integer",
+    "example_id": "pool_190"
+  },
+  {
+    "prompt": "What is 6 times 12? Answer with digits only.",
+    "gold_answer": "72",
+    "aliases": [
+      "72"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "6 \u00d7 12 = 72",
+    "answer_type": "integer",
+    "example_id": "pool_191"
+  },
+  {
+    "prompt": "What is 360 divided by 9? Answer with digits only.",
+    "gold_answer": "40",
+    "aliases": [
+      "40"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "360 \u00f7 9 = 40",
+    "answer_type": "integer",
+    "example_id": "pool_192"
+  },
+  {
+    "prompt": "What is 10% of 850? Answer with digits only.",
+    "gold_answer": "85",
+    "aliases": [
+      "85"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.10 \u00d7 850 = 85",
+    "answer_type": "integer",
+    "example_id": "pool_193"
+  },
+  {
+    "prompt": "What is 34 plus 58? Answer with digits only.",
+    "gold_answer": "92",
+    "aliases": [
+      "92"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "34 + 58 = 92",
+    "answer_type": "integer",
+    "example_id": "cal_002"
+  },
+  {
+    "prompt": "What is 500 minus 176? Answer with digits only.",
+    "gold_answer": "324",
+    "aliases": [
+      "324"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "500 \u2212 176 = 324",
+    "answer_type": "integer",
+    "example_id": "pool_195"
+  },
+  {
+    "prompt": "What is the square root of 1764? Answer with digits only.",
+    "gold_answer": "42",
+    "aliases": [
+      "42"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "\u221a1764 = 42.0 (verified: 42\u00b2=1764)",
+    "answer_type": "integer",
+    "example_id": "pool_196"
+  },
+  {
+    "prompt": "What is 17 times 23? Answer with digits only.",
+    "gold_answer": "391",
+    "aliases": [
+      "391"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "17 \u00d7 23 = 391",
+    "answer_type": "integer",
+    "example_id": "pool_197"
+  },
+  {
+    "prompt": "What is 15% of 340? Answer with digits only.",
+    "gold_answer": "51",
+    "aliases": [
+      "51"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.15 \u00d7 340 = 51.0",
+    "answer_type": "integer",
+    "example_id": "pool_198"
+  },
+  {
+    "prompt": "What is 2 to the power of 8? Answer with digits only.",
+    "gold_answer": "256",
+    "aliases": [
+      "256"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "2^8 = 256",
+    "answer_type": "integer",
+    "example_id": "pool_199"
+  },
+  {
+    "prompt": "What is 648 divided by 24? Answer with digits only.",
+    "gold_answer": "27",
+    "aliases": [
+      "27"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "648 \u00f7 24 = 27",
+    "answer_type": "integer",
+    "example_id": "pool_200"
+  },
+  {
+    "prompt": "What is 123 plus 456? Answer with digits only.",
+    "gold_answer": "579",
+    "aliases": [
+      "579"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "123 + 456 = 579",
+    "answer_type": "integer",
+    "example_id": "pool_201"
+  },
+  {
+    "prompt": "What is 1000 minus 374? Answer with digits only.",
+    "gold_answer": "626",
+    "aliases": [
+      "626"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "1000 \u2212 374 = 626",
+    "answer_type": "integer",
+    "example_id": "pool_202"
+  },
+  {
+    "prompt": "What is 19 times 19? Answer with digits only.",
+    "gold_answer": "361",
+    "aliases": [
+      "361"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "19 \u00d7 19 = 361",
+    "answer_type": "integer",
+    "example_id": "pool_203"
+  },
+  {
+    "prompt": "What is 40% of 275? Answer with digits only.",
+    "gold_answer": "110",
+    "aliases": [
+      "110"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.40 \u00d7 275 = 110",
+    "answer_type": "integer",
+    "example_id": "pool_204"
+  },
+  {
+    "prompt": "What is the square root of 2025? Answer with digits only.",
+    "gold_answer": "45",
+    "aliases": [
+      "45"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "\u221a2025 = 45.0 (verified: 45\u00b2=2025)",
+    "answer_type": "integer",
+    "example_id": "pool_205"
+  },
+  {
+    "prompt": "What is 29 times 31? Answer with digits only.",
+    "gold_answer": "899",
+    "aliases": [
+      "899"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "29 \u00d7 31 = 899",
+    "answer_type": "integer",
+    "example_id": "pool_206"
+  },
+  {
+    "prompt": "What is 1440 divided by 36? Answer with digits only.",
+    "gold_answer": "40",
+    "aliases": [
+      "40"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "1440 \u00f7 36 = 40",
+    "answer_type": "integer",
+    "example_id": "pool_207"
+  },
+  {
+    "prompt": "What is 5 to the power of 4? Answer with digits only.",
+    "gold_answer": "625",
+    "aliases": [
+      "625"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "5^4 = 625",
+    "answer_type": "integer",
+    "example_id": "pool_208"
+  },
+  {
+    "prompt": "What is 875 minus 438? Answer with digits only.",
+    "gold_answer": "437",
+    "aliases": [
+      "437"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "875 \u2212 438 = 437",
+    "answer_type": "integer",
+    "example_id": "pool_209"
+  },
+  {
+    "prompt": "What is 347 plus 289? Answer with digits only.",
+    "gold_answer": "636",
+    "aliases": [
+      "636"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "347 + 289 = 636",
+    "answer_type": "integer",
+    "example_id": "pool_210"
+  },
+  {
+    "prompt": "What is 12% of 450? Answer with digits only.",
+    "gold_answer": "54",
+    "aliases": [
+      "54"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.12 \u00d7 450 = 54",
+    "answer_type": "integer",
+    "example_id": "pool_211"
+  },
+  {
+    "prompt": "What is 43 times 27? Answer with digits only.",
+    "gold_answer": "1161",
+    "aliases": [
+      "1161"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "43 \u00d7 27 = 1161",
+    "answer_type": "integer",
+    "example_id": "pool_212"
+  },
+  {
+    "prompt": "What is the square root of 3136? Answer with digits only.",
+    "gold_answer": "56",
+    "aliases": [
+      "56"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "\u221a3136 = 56.0 (verified: 56\u00b2=3136)",
+    "answer_type": "integer",
+    "example_id": "pool_213"
+  },
+  {
+    "prompt": "What is 2016 divided by 48? Answer with digits only.",
+    "gold_answer": "42",
+    "aliases": [
+      "42"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "2016 \u00f7 48 = 42",
+    "answer_type": "integer",
+    "example_id": "pool_214"
+  },
+  {
+    "prompt": "What is 3 to the power of 6? Answer with digits only.",
+    "gold_answer": "729",
+    "aliases": [
+      "729"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "3^6 = 729",
+    "answer_type": "integer",
+    "example_id": "pool_215"
+  },
+  {
+    "prompt": "What is 750 minus 283? Answer with digits only.",
+    "gold_answer": "467",
+    "aliases": [
+      "467"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "750 \u2212 283 = 467",
+    "answer_type": "integer",
+    "example_id": "pool_216"
+  },
+  {
+    "prompt": "What is 568 plus 374? Answer with digits only.",
+    "gold_answer": "942",
+    "aliases": [
+      "942"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "568 + 374 = 942",
+    "answer_type": "integer",
+    "example_id": "pool_217"
+  },
+  {
+    "prompt": "What is 35% of 480? Answer with digits only.",
+    "gold_answer": "168",
+    "aliases": [
+      "168"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.35 \u00d7 480 = 168",
+    "answer_type": "integer",
+    "example_id": "pool_218"
+  },
+  {
+    "prompt": "What is 53 times 17? Answer with digits only.",
+    "gold_answer": "901",
+    "aliases": [
+      "901"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "53 \u00d7 17 = 901",
+    "answer_type": "integer",
+    "example_id": "pool_219"
+  },
+  {
+    "prompt": "What is 3375 divided by 75? Answer with digits only.",
+    "gold_answer": "45",
+    "aliases": [
+      "45"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "3375 \u00f7 75 = 45",
+    "answer_type": "integer",
+    "example_id": "cal_006"
+  },
+  {
+    "prompt": "What is 2 to the power of 10? Answer with digits only.",
+    "gold_answer": "1024",
+    "aliases": [
+      "1024"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "2^10 = 1024",
+    "answer_type": "integer",
+    "example_id": "pool_221"
+  },
+  {
+    "prompt": "What is 37 times 43? Answer with digits only.",
+    "gold_answer": "1591",
+    "aliases": [
+      "1591"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "37 \u00d7 43 = 1591",
+    "answer_type": "integer",
+    "example_id": "pool_222"
+  },
+  {
+    "prompt": "What is the cube root of 27000? Answer with digits only.",
+    "gold_answer": "30",
+    "aliases": [
+      "30"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "\u221b27000 = 30 (verified: 30\u00b3=27000)",
+    "answer_type": "integer",
+    "example_id": "pool_223"
+  },
+  {
+    "prompt": "What is 2 to the power of 12? Answer with digits only.",
+    "gold_answer": "4096",
+    "aliases": [
+      "4096"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "2^12 = 4096",
+    "answer_type": "integer",
+    "example_id": "pool_224"
+  },
+  {
+    "prompt": "What is 97 times 83? Answer with digits only.",
+    "gold_answer": "8051",
+    "aliases": [
+      "8051"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "97 \u00d7 83 = 8051",
+    "answer_type": "integer",
+    "example_id": "pool_225"
+  },
+  {
+    "prompt": "What is the square root of 7056? Answer with digits only.",
+    "gold_answer": "84",
+    "aliases": [
+      "84"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "\u221a7056 = 84.0 (verified: 84\u00b2=7056)",
+    "answer_type": "integer",
+    "example_id": "pool_226"
+  },
+  {
+    "prompt": "What is 4913 divided by 17? Answer with digits only.",
+    "gold_answer": "289",
+    "aliases": [
+      "289"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "4913 \u00f7 17 = 289 (also: 17\u00b3=4913)",
+    "answer_type": "integer",
+    "example_id": "pool_227"
+  },
+  {
+    "prompt": "What is 7 to the power of 4? Answer with digits only.",
+    "gold_answer": "2401",
+    "aliases": [
+      "2401"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "7^4 = 2401",
+    "answer_type": "integer",
+    "example_id": "pool_228"
+  },
+  {
+    "prompt": "What is 123 times 89? Answer with digits only.",
+    "gold_answer": "10947",
+    "aliases": [
+      "10947"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "123 \u00d7 89 = 10947",
+    "answer_type": "integer",
+    "example_id": "pool_229"
+  },
+  {
+    "prompt": "What is the cube root of 91125? Answer with digits only.",
+    "gold_answer": "45",
+    "aliases": [
+      "45"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "\u221b91125 = 45 (verified: 45\u00b3=91125)",
+    "answer_type": "integer",
+    "example_id": "pool_230"
+  },
+  {
+    "prompt": "What is 6 to the power of 5? Answer with digits only.",
+    "gold_answer": "7776",
+    "aliases": [
+      "7776"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "6^5 = 7776",
+    "answer_type": "integer",
+    "example_id": "pool_231"
+  },
+  {
+    "prompt": "What is 3 to the power of 8? Answer with digits only.",
+    "gold_answer": "6561",
+    "aliases": [
+      "6561"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "3^8 = 6561",
+    "answer_type": "integer",
+    "example_id": "pool_232"
+  },
+  {
+    "prompt": "What is 67 times 79? Answer with digits only.",
+    "gold_answer": "5293",
+    "aliases": [
+      "5293"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "67 \u00d7 79 = 5293",
+    "answer_type": "integer",
+    "example_id": "pool_233"
+  },
+  {
+    "prompt": "What is 15625 divided by 125? Answer with digits only.",
+    "gold_answer": "125",
+    "aliases": [
+      "125"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "15625 \u00f7 125 = 125 (also: 5^6 \u00f7 5^3 = 5^3)",
+    "answer_type": "integer",
+    "example_id": "cal_015"
+  },
+  {
+    "prompt": "What is the square root of 15129? Answer with digits only.",
+    "gold_answer": "123",
+    "aliases": [
+      "123"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "\u221a15129 = 123.0 (verified: 123\u00b2=15129)",
+    "answer_type": "integer",
+    "example_id": "pool_235"
+  },
+  {
+    "prompt": "What is 4 to the power of 7? Answer with digits only.",
+    "gold_answer": "16384",
+    "aliases": [
+      "16384"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "4^7 = 16384",
+    "answer_type": "integer",
+    "example_id": "pool_236"
+  },
+  {
+    "prompt": "What is 143 times 77? Answer with digits only.",
+    "gold_answer": "11011",
+    "aliases": [
+      "11011"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "143 \u00d7 77 = 11011",
+    "answer_type": "integer",
+    "example_id": "pool_237"
+  },
+  {
+    "prompt": "What is the cube root of 614125? Answer with digits only.",
+    "gold_answer": "85",
+    "aliases": [
+      "85"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "\u221b614125 = 85 (verified: 85\u00b3=614125)",
+    "answer_type": "integer",
+    "example_id": "pool_238"
+  },
+  {
+    "prompt": "What is 11 to the power of 4? Answer with digits only.",
+    "gold_answer": "14641",
+    "aliases": [
+      "14641"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "11^4 = 14641",
+    "answer_type": "integer",
+    "example_id": "pool_239"
+  },
+  {
+    "prompt": "What is 289 times 34? Answer with digits only.",
+    "gold_answer": "9826",
+    "aliases": [
+      "9826"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "289 \u00d7 34 = 9826",
+    "answer_type": "integer",
+    "example_id": "pool_240"
+  },
+  {
+    "prompt": "How many countries are in Africa? Answer with a number only.",
+    "gold_answer": "54",
+    "aliases": [
+      "54"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "54 UN-recognised sovereign states in Africa (Worldometer, Wikipedia)",
+    "answer_type": "integer",
+    "example_id": "cal_007"
+  },
+  {
+    "prompt": "How many bones does an adult human have? Answer with a number only.",
+    "gold_answer": "206",
+    "aliases": [
+      "206"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "Standard adult human skeleton: 206 bones (Cleveland Clinic, Wikipedia)",
+    "answer_type": "integer",
+    "example_id": "pool_242"
+  },
+  {
+    "prompt": "How many teeth does a fully-dentitioned adult human have? Answer with a number only.",
+    "gold_answer": "32",
+    "aliases": [
+      "32"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "32 permanent teeth including wisdom teeth (Cleveland Clinic, Healthline)",
+    "answer_type": "integer",
+    "example_id": "pool_243"
+  },
+  {
+    "prompt": "How many chambers does the human heart have? Answer with a number only.",
+    "gold_answer": "4",
+    "aliases": [
+      "4"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "4 chambers: right atrium, left atrium, right ventricle, left ventricle (Cleveland Clinic)",
+    "answer_type": "integer",
+    "example_id": "pool_244"
+  },
+  {
+    "prompt": "How many stripes are on the United States flag? Answer with a number only.",
+    "gold_answer": "13",
+    "aliases": [
+      "13"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "13 alternating red and white stripes representing the original 13 colonies (USA.gov, Wikipedia)",
+    "answer_type": "integer",
+    "example_id": "pool_245"
+  },
+  {
+    "prompt": "How many keys are on a standard full-size piano? Answer with a number only.",
+    "gold_answer": "88",
+    "aliases": [
+      "88"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "88 keys (52 white, 36 black) on a standard piano (Aulart, Markson Pianos)",
+    "answer_type": "integer",
+    "example_id": "pool_246"
+  },
+  {
+    "prompt": "How many fluid ounces are in one US gallon? Answer with a number only.",
+    "gold_answer": "128",
+    "aliases": [
+      "128"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "1 US gallon = 128 US fluid ounces (YETI, Inch Calculator)",
+    "answer_type": "integer",
+    "example_id": "pool_247"
+  },
+  {
+    "prompt": "How many planets are in our solar system? Answer with a number only.",
+    "gold_answer": "8",
+    "aliases": [
+      "8"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "8 planets per IAU 2006 definition: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune (NASA)",
+    "answer_type": "integer",
+    "example_id": "pool_248"
+  },
+  {
+    "prompt": "How many sides does a standard stop sign have? Answer with a number only.",
+    "gold_answer": "8",
+    "aliases": [
+      "8"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "Stop signs are octagons \u2014 8 sides (Wikipedia, Mental Floss)",
+    "answer_type": "integer",
+    "example_id": "pool_249"
+  },
+  {
+    "prompt": "How many holes are on a standard golf course? Answer with a number only.",
+    "gold_answer": "18",
+    "aliases": [
+      "18"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "18 holes is the universal standard for a regulation golf course (Wikipedia, Northbridge Golf Club)",
+    "answer_type": "integer",
+    "example_id": "pool_250"
+  },
+  {
+    "prompt": "How many elements are on the periodic table? Answer with a number only.",
+    "gold_answer": "118",
+    "aliases": [
+      "118"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "118 confirmed elements on the modern periodic table (Wikipedia, BYJU'S)",
+    "answer_type": "integer",
+    "example_id": "pool_251"
+  },
+  {
+    "prompt": "In what year was the Eiffel Tower completed? Answer with a number only.",
+    "gold_answer": "1889",
+    "aliases": [
+      "1889"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "Construction completed March 31, 1889 (Official Eiffel Tower website, Wikipedia)",
+    "answer_type": "integer",
+    "example_id": "pool_252"
+  },
+  {
+    "prompt": "How many valves does the human heart have? Answer with a number only.",
+    "gold_answer": "4",
+    "aliases": [
+      "4"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "4 valves: aortic, mitral, pulmonary, tricuspid (Cleveland Clinic, OHSU)",
+    "answer_type": "integer",
+    "example_id": "cal_012"
+  },
+  {
+    "prompt": "How many moons does Mars have? Answer with a number only.",
+    "gold_answer": "2",
+    "aliases": [
+      "2"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "Mars has 2 moons: Phobos and Deimos (NASA Science)",
+    "answer_type": "integer",
+    "example_id": "pool_254"
+  },
+  {
+    "prompt": "How many stars appear on the flag of China? Answer with a number only.",
+    "gold_answer": "5",
+    "aliases": [
+      "5"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "Five golden stars: one large and four smaller (Wikipedia, Koryo Tours)",
+    "answer_type": "integer",
+    "example_id": "pool_255"
+  },
+  {
+    "prompt": "How many official time zones does China use? Answer with a number only.",
+    "gold_answer": "1",
+    "aliases": [
+      "1"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "China uses a single time zone (UTC+8) despite spanning 5 geographical zones (Wikipedia, TimeAndDate)",
+    "answer_type": "integer",
+    "example_id": "pool_256"
+  },
+  {
+    "prompt": "How many players from each team are on the court at one time in a standard basketball game? Answer with a number only.",
+    "gold_answer": "5",
+    "aliases": [
+      "5"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "5 players per team on court at a time; universal rule (FIBA, NBA, NCAA)",
+    "answer_type": "integer",
+    "example_id": "pool_257"
+  },
+  {
+    "prompt": "How many stars are on the flag of the United States? Answer with a number only.",
+    "gold_answer": "50",
+    "aliases": [
+      "50"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "50 white stars representing the 50 states (USA.gov, Wikipedia)",
+    "answer_type": "integer",
+    "example_id": "pool_258"
+  },
+  {
+    "prompt": "How many sides does a pentagon have? Answer with a number only.",
+    "gold_answer": "5",
+    "aliases": [
+      "5"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "A pentagon has 5 sides by definition (Wikipedia, PrepScholar)",
+    "answer_type": "integer",
+    "example_id": "pool_259"
+  },
+  {
+    "prompt": "How many sides does a hexagon have? Answer with a number only.",
+    "gold_answer": "6",
+    "aliases": [
+      "6"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "A hexagon has 6 sides by definition (Wikipedia, DreamBox)",
+    "answer_type": "integer",
+    "example_id": "pool_260"
+  },
+  {
+    "prompt": "How many US presidents have been assassinated while in office? Answer with a number only.",
+    "gold_answer": "4",
+    "aliases": [
+      "4"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "Lincoln (1865), Garfield (1881), McKinley (1901), Kennedy (1963). Models may confabulate 2 or 3. (Wikipedia, Booth Western Art Museum)",
+    "answer_type": "integer",
+    "example_id": "pool_261"
+  },
+  {
+    "prompt": "What is the only country whose name starts with the letter O? Answer in one word, lowercase.",
+    "gold_answer": "oman",
+    "aliases": [
+      "oman"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "Oman is the only sovereign country whose English name begins with O. Models often guess 'none' or incorrectly cite Austria. (Worldometer, CountryReports Blog)",
+    "answer_type": "entity",
+    "example_id": "pool_262"
+  },
+  {
+    "prompt": "How many official time zones does China use? Answer with a number only.",
+    "gold_answer": "1",
+    "aliases": [
+      "1"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "China uses a single official time zone (UTC+8) despite spanning 5 geographical zones. Models frequently answer 5. (Wikipedia, TimeAndDate)",
+    "answer_type": "integer",
+    "example_id": "pool_263"
+  },
+  {
+    "prompt": "In the sequence of planets from the Sun, what number planet is Earth? Answer with a digit only.",
+    "gold_answer": "3",
+    "aliases": [
+      "3"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "Mercury=1, Venus=2, Earth=3. Straightforward but models sometimes insert incorrect orderings. (NASA)",
+    "answer_type": "integer",
+    "example_id": "cal_020"
+  },
+  {
+    "prompt": "How many sides does an octagon have? Answer with a digit only.",
+    "gold_answer": "8",
+    "aliases": [
+      "8"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "An octagon has exactly 8 sides. Included because models occasionally confuse octagon with hexagon under pressure. (Wikipedia)",
+    "answer_type": "integer",
+    "example_id": "pool_265"
+  },
+  {
+    "prompt": "How many Great Lakes are there in North America? Answer with a number only.",
+    "gold_answer": "5",
+    "aliases": [
+      "5"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "The five Great Lakes are Superior, Michigan, Huron, Erie, Ontario. Models sometimes answer 4 or 6. (Wikipedia)",
+    "answer_type": "integer",
+    "example_id": "pool_266"
+  },
+  {
+    "prompt": "What is the number of the Amendment to the US Constitution that abolished slavery? Answer with a number only.",
+    "gold_answer": "13",
+    "aliases": [
+      "13"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "The 13th Amendment (1865) abolished slavery. Models may confuse with the 14th (citizenship) or 15th (voting). (Wikipedia)",
+    "answer_type": "integer",
+    "example_id": "pool_267"
+  },
+  {
+    "prompt": "How many continents are there on Earth? Answer with a number only.",
+    "gold_answer": "7",
+    "aliases": [
+      "7"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "Standard seven-continent model: Africa, Antarctica, Asia, Australia/Oceania, Europe, North America, South America. Models may answer 5 or 6 depending on alternate models. The prompt relies on the dominant seven-continent model taught in English-language education. (Wikipedia)",
+    "answer_type": "integer",
+    "example_id": "pool_268"
+  },
+  {
+    "prompt": "How many faces does a cube have? Answer with a digit only.",
+    "gold_answer": "6",
+    "aliases": [
+      "6"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "A cube has exactly 6 faces. Adversarial because some models conflate faces/edges/vertices under stress. (Wikipedia)",
+    "answer_type": "integer",
+    "example_id": "pool_269"
+  },
+  {
+    "prompt": "In the standard musical scale, how many notes are in one octave (including both the starting and ending note)? Answer with a number only.",
+    "gold_answer": "8",
+    "aliases": [
+      "8"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "Do-Re-Mi-Fa-Sol-La-Ti-Do = 8 notes when both endpoints are counted (the word 'octave' derives from Latin for 8). Models often answer 7 (the distinct pitches) without counting the repeated tonic. (Wikipedia)",
+    "answer_type": "integer",
+    "example_id": "pool_270"
+  }
+]

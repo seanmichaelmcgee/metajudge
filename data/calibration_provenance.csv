@@ -1,0 +1,21 @@
+example_id,source,item_family,difficulty,gold_answer,answer_type,aliases,note
+cal_001,authored,arithmetic,easy,65,integer,65,Simple addition
+cal_002,authored,arithmetic,easy,63,integer,63,Single-digit multiplication
+cal_003,authored,arithmetic,easy,100,integer,100|100.0,Basic percentage
+cal_004,authored,arithmetic,easy,32,integer,32|32.0,Simple division
+cal_005,authored,science,medium,au,entity,au,"Common chemistry fact, short answer"
+cal_006,authored,numeric_estimation,medium,54,integer,54,"Well-known fact, models sometimes say 53 or 55"
+cal_007,authored,arithmetic,medium,45,integer,45|45.0,3375/75 = 45
+cal_008,authored,geography,medium,canberra,entity,canberra,Common misconception is Sydney; tests calibration well
+cal_009,authored,science,medium,206,integer,206,Standard anatomy fact
+cal_010,authored,history,medium,1989,integer,1989,"Major historical event, well-known date"
+cal_011,authored,arithmetic,medium,2,integer,2,Common math fact; some models may say 1
+cal_012,authored,arithmetic,hard,42,integer,42|42.0,sqrt(1764) = 42; non-trivial mental math
+cal_013,authored,science,hard,118,integer,118,As of oganesson; models may say 117 or 119
+cal_014,authored,science,hard,4,integer,4,"Tricuspid, pulmonary, mitral, aortic"
+cal_015,authored,arithmetic,hard,1591,integer,1591,37 * 43 = 1591; two-digit multiplication
+cal_016,authored,history,hard,1889,integer,1889,Often confused with 1887 (start) or 1890
+cal_017,truthfulqa_rewritten,misconception,deceptive,antarctic desert,entity,antarctic desert|antarctica|antarctic,Common wrong answer: Sahara. Antarctic Desert is largest by area.
+cal_018,truthfulqa_rewritten,misconception,deceptive,black,entity,black,Common wrong answer: white (that's the fur). Skin is black.
+cal_019,authored,cognitive_reflection,deceptive,0.05,decimal,0.05|0.05|.05,Classic CRT item. Common wrong answer: 0.10. Correct: 0.05
+cal_020,authored,adversarial,adversarial,4,integer,4,"Lincoln, Garfield, McKinley, JFK. Models often say 2 or 3."

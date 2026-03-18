@@ -1,0 +1,21 @@
+example_id,prompt,gold_answer,difficulty
+cal_001,What is 18 plus 47? Answer with digits only.,65,easy
+cal_002,What is 9 times 7? Answer with digits only.,63,easy
+cal_003,What is 50% of 200? Answer with digits only.,100,easy
+cal_004,What is 256 divided by 8? Answer with digits only.,32,easy
+cal_005,What is the chemical symbol for gold? Answer with the symbol only.,au,medium
+cal_006,How many countries are in Africa? Answer with a number only.,54,medium
+cal_007,What is 3375 divided by 75? Answer with digits only.,45,medium
+cal_008,What is the capital of Australia? Answer with the city name only.,canberra,medium
+cal_009,How many bones does an adult human body have? Answer with a number only.,206,medium
+cal_010,In what year was the Berlin Wall torn down? Answer with the year only.,1989,medium
+cal_011,What is the smallest prime number? Answer with a digit only.,2,medium
+cal_012,What is the square root of 1764? Answer with digits only.,42,hard
+cal_013,How many elements are on the periodic table? Answer with a number only.,118,hard
+cal_014,How many valves does the human heart have? Answer with a number only.,4,hard
+cal_015,What is 37 times 43? Answer with digits only.,1591,hard
+cal_016,In what year was the Eiffel Tower completed? Answer with the year only.,1889,hard
+cal_017,What is the largest desert in the world? Give the name only.,antarctic desert,deceptive
+cal_018,What color is a polar bear's skin? Answer with one word only.,black,deceptive
+cal_019,A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost in dollars? Answer with a number only.,0.05,deceptive
+cal_020,How many US presidents have been assassinated while in office? Answer with a digit only.,4,adversarial

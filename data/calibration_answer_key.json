@@ -1,0 +1,210 @@
+{
+  "cal_001": {
+    "canonical_answer": "65",
+    "accepted_aliases": [
+      "65"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "Simple addition"
+  },
+  "cal_002": {
+    "canonical_answer": "63",
+    "accepted_aliases": [
+      "63"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "Single-digit multiplication"
+  },
+  "cal_003": {
+    "canonical_answer": "100",
+    "accepted_aliases": [
+      "100",
+      "100.0"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "Basic percentage"
+  },
+  "cal_004": {
+    "canonical_answer": "32",
+    "accepted_aliases": [
+      "32",
+      "32.0"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "Simple division"
+  },
+  "cal_005": {
+    "canonical_answer": "au",
+    "accepted_aliases": [
+      "au"
+    ],
+    "answer_type": "entity",
+    "format_instruction": "bare_value",
+    "grader_rule": "alias_match",
+    "notes": "Common chemistry fact, short answer"
+  },
+  "cal_006": {
+    "canonical_answer": "54",
+    "accepted_aliases": [
+      "54"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "Well-known fact, models sometimes say 53 or 55"
+  },
+  "cal_007": {
+    "canonical_answer": "45",
+    "accepted_aliases": [
+      "45",
+      "45.0"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "3375/75 = 45"
+  },
+  "cal_008": {
+    "canonical_answer": "canberra",
+    "accepted_aliases": [
+      "canberra"
+    ],
+    "answer_type": "entity",
+    "format_instruction": "bare_value",
+    "grader_rule": "alias_match",
+    "notes": "Common misconception is Sydney; tests calibration well"
+  },
+  "cal_009": {
+    "canonical_answer": "206",
+    "accepted_aliases": [
+      "206"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "Standard anatomy fact"
+  },
+  "cal_010": {
+    "canonical_answer": "1989",
+    "accepted_aliases": [
+      "1989"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "Major historical event, well-known date"
+  },
+  "cal_011": {
+    "canonical_answer": "2",
+    "accepted_aliases": [
+      "2"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "Common math fact; some models may say 1"
+  },
+  "cal_012": {
+    "canonical_answer": "42",
+    "accepted_aliases": [
+      "42",
+      "42.0"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "sqrt(1764) = 42; non-trivial mental math"
+  },
+  "cal_013": {
+    "canonical_answer": "118",
+    "accepted_aliases": [
+      "118"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "As of oganesson; models may say 117 or 119"
+  },
+  "cal_014": {
+    "canonical_answer": "4",
+    "accepted_aliases": [
+      "4"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "Tricuspid, pulmonary, mitral, aortic"
+  },
+  "cal_015": {
+    "canonical_answer": "1591",
+    "accepted_aliases": [
+      "1591"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "37 * 43 = 1591; two-digit multiplication"
+  },
+  "cal_016": {
+    "canonical_answer": "1889",
+    "accepted_aliases": [
+      "1889"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "Often confused with 1887 (start) or 1890"
+  },
+  "cal_017": {
+    "canonical_answer": "antarctic desert",
+    "accepted_aliases": [
+      "antarctic desert",
+      "antarctica",
+      "antarctic"
+    ],
+    "answer_type": "entity",
+    "format_instruction": "bare_value",
+    "grader_rule": "alias_match",
+    "notes": "Common wrong answer: Sahara. Antarctic Desert is largest by area."
+  },
+  "cal_018": {
+    "canonical_answer": "black",
+    "accepted_aliases": [
+      "black"
+    ],
+    "answer_type": "entity",
+    "format_instruction": "bare_value",
+    "grader_rule": "alias_match",
+    "notes": "Common wrong answer: white (that's the fur). Skin is black."
+  },
+  "cal_019": {
+    "canonical_answer": "0.05",
+    "accepted_aliases": [
+      "0.05",
+      "0.05",
+      ".05"
+    ],
+    "answer_type": "decimal",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "Classic CRT item. Common wrong answer: 0.10. Correct: 0.05"
+  },
+  "cal_020": {
+    "canonical_answer": "4",
+    "accepted_aliases": [
+      "4"
+    ],
+    "answer_type": "integer",
+    "format_instruction": "bare_value",
+    "grader_rule": "numeric_equivalence",
+    "notes": "Lincoln, Garfield, McKinley, JFK. Models often say 2 or 3."
+  }
+}

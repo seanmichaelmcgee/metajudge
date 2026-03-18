@@ -1,0 +1,1082 @@
+[
+  {
+    "prompt": "Who originally played keyboards for the Band of Joy?",
+    "gold_answer": "chris brown",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Music"
+  },
+  {
+    "prompt": "Name the village in Iran from which Tilla embroidery originated.",
+    "gold_answer": "zari",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique place name; family:factual_recall; topic:Art"
+  },
+  {
+    "prompt": "At age 8, on what TV show did Sicily Sewell make her first appearance?",
+    "gold_answer": "sesame street",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; family:factual_recall; topic:TV shows"
+  },
+  {
+    "prompt": "What was the first name of the mother of the Argentine mathematician Luis Caffarelli?",
+    "gold_answer": "hilda",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:factual_recall; topic:Other"
+  },
+  {
+    "prompt": "What is the last name of the player who got a yellow card in the 71st minute of the match between Germany and Sweden during the 2018 FIFA World Cup?",
+    "gold_answer": "boateng",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:factual_recall; topic:Sports"
+  },
+  {
+    "prompt": "On The Flintstones, what is the name of the character that delivers newspapers?",
+    "gold_answer": "arnold",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:factual_recall; topic:TV shows"
+  },
+  {
+    "prompt": "Who did the boxer Jackson Asiku lose to at the Summer Olympics in Sydney, Australia in 2000?",
+    "gold_answer": "arlan lerio",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Sports"
+  },
+  {
+    "prompt": "What is the name of the eighth track on the album \"These Two Windows\" by Alec Benjamin?",
+    "gold_answer": "alamo",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:factual_recall; topic:Music"
+  },
+  {
+    "prompt": "What health crisis did Bob Barker experience on May 30, 2022?",
+    "gold_answer": "stroke",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:factual_recall; topic:Other"
+  },
+  {
+    "prompt": "Who won the second set in the match between Jaume Munar and Stefanos Tsitsipas in the 2020 French Open Men's Singles?",
+    "gold_answer": "jaume munar",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Sports"
+  },
+  {
+    "prompt": "Who killed Major Disaster?",
+    "gold_answer": "superboy-prime",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:factual_recall; topic:Other"
+  },
+  {
+    "prompt": "To whom was Ida Adamoff married?",
+    "gold_answer": "claude bourdet",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Sports"
+  },
+  {
+    "prompt": "What is the name of the record label/music studio owned by Albert Fink in BioShock Infinite (2013)?",
+    "gold_answer": "magical melodies",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; family:factual_recall; topic:Video games"
+  },
+  {
+    "prompt": "What was the name that movie theater owner Harry E. Huffman gave to his two-story Denver mansion?",
+    "gold_answer": "shangri-la",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique place name; family:factual_recall; topic:Other"
+  },
+  {
+    "prompt": "What's the notion to which the lexical semantic map in Figure 4 of the paper \"New Avenues and Challenges in Semantic Map Research\" is dedicated?",
+    "gold_answer": "breathe",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:factual_recall; topic:Other"
+  },
+  {
+    "prompt": "What was the name of Sherri Papini's ex-boyfriend with whom she stayed in Southern California during her hoax?",
+    "gold_answer": "james reyes",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Other"
+  },
+  {
+    "prompt": "Black Gryph0n and Baasik collaborated on which fan-made song in 2021 about Hazbin Hotel's character Alastor?",
+    "gold_answer": "insane",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:factual_recall; topic:Music"
+  },
+  {
+    "prompt": "As of Episode 1 of Season 4 of Friends, who was Ross dating?",
+    "gold_answer": "bonnie",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:factual_recall; topic:TV shows"
+  },
+  {
+    "prompt": "What is the surname of the psychiatrist who prescribes medication for Marie Hanson for her periodic blackouts in Season 1, Episode 20 of Ally McBeal?",
+    "gold_answer": "peters",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:factual_recall; topic:TV shows"
+  },
+  {
+    "prompt": "By whom was Rabab, a famous musical instrument, introduced in Kashmir?",
+    "gold_answer": "zain-ul-abidin",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:factual_recall; topic:Music"
+  },
+  {
+    "prompt": "What is the name of the sole survivor of the Busy Bee Congo 2019 crash?",
+    "gold_answer": "muma emmanuel",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Other"
+  },
+  {
+    "prompt": "Who scored the last goal in the second-leg match between Liverpool and Villarreal in the 2021-2022 Champions League semi-final?",
+    "gold_answer": "mane",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:factual_recall; topic:Sports"
+  },
+  {
+    "prompt": "What is the color of the boy's hair depicted in the illustration \"Backfence Graffiti\" by Norman Rockwell?",
+    "gold_answer": "red",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:factual_recall; topic:Art"
+  },
+  {
+    "prompt": "What was Judy Reyes' character's name in S1 E6 of \"New York Undercover\"?",
+    "gold_answer": "helena",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:factual_recall; topic:TV shows"
+  },
+  {
+    "prompt": "In which round was Martina Trevisan eliminated from the 2020 French Open – Women's Singles?",
+    "gold_answer": "quarterfinals",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:factual_recall; topic:Sports"
+  },
+  {
+    "prompt": "What was the pseudonym of the Swiss painter Erich Wassmer?",
+    "gold_answer": "ricco",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:factual_recall; topic:Art"
+  },
+  {
+    "prompt": "In what district was the English songwriter Robert Patrick Weston born?",
+    "gold_answer": "islington",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique place name; family:factual_recall; topic:Music"
+  },
+  {
+    "prompt": "What is the name of track 7 on the \"Never More Reincarnation\" album for Persona 4?",
+    "gold_answer": "reverie",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:factual_recall; topic:Music"
+  },
+  {
+    "prompt": "What flowers were shown in artist J.C. Leyendecker's May 30, 1914, \"The Saturday Evening Post\" cover?",
+    "gold_answer": "hyacinths",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:factual_recall; topic:Art"
+  },
+  {
+    "prompt": "What character other than Vax'ildan did Liam O'Brien play during Critical Role's \"Dalen's Closet\" one-shot?",
+    "gold_answer": "derrig",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:factual_recall; topic:TV shows"
+  },
+  {
+    "prompt": "Who murdered Vicky Fleming in the British drama series \"Happy Valley\"?",
+    "gold_answer": "john wadsworth",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:factual_recall; topic:TV shows"
+  },
+  {
+    "prompt": "In \"The Young and the Restless\" series, which friend of Victoria's did her father marry?",
+    "gold_answer": "sabrina costelana",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:factual_recall; topic:TV shows"
+  },
+  {
+    "prompt": "What was the first and last name of the voice actor who voiced the Little Sisters in the video game BioShock 2 (2010)?",
+    "gold_answer": "jodelle ferland",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Video games"
+  },
+  {
+    "prompt": "What is the name and surname of the late celebrity chef Fatima Sydow's birth mother?",
+    "gold_answer": "waseela sydow",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:factual_recall; topic:Other"
+  },
+  {
+    "prompt": "How many fouls did Inter commit in the Champions League final match between Bayern and Inter on May 23, 2010?",
+    "gold_answer": "13",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; pure integer; family:numeric; topic:Sports"
+  },
+  {
+    "prompt": "In what year was the Miami-Dade County C-Pass replaced with the SunPass?",
+    "gold_answer": "2014",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Other"
+  },
+  {
+    "prompt": "In which year was Harry Belafonte first inducted into the Rock and Roll Hall of Fame in the Early Influence category?",
+    "gold_answer": "2022",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Music"
+  },
+  {
+    "prompt": "How many horses are depicted on Munch's \"Horse Team and a St. Bernhard in the Snow\" (1923)?",
+    "gold_answer": "2",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; pure integer; family:numeric; topic:Art"
+  },
+  {
+    "prompt": "How many years did Adil Hussain work at 'Hengul Theater' before moving to Delhi?",
+    "gold_answer": "3",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; pure integer; family:numeric; topic:Art"
+  },
+  {
+    "prompt": "What year was the first time that William Kentridge was awarded the Honorary Doctorate of Vrije Universiteit Brussel?",
+    "gold_answer": "2021",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Art"
+  },
+  {
+    "prompt": "In what year was Peicho Peev the Bulgarian chess International Master?",
+    "gold_answer": "1973",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Sports"
+  },
+  {
+    "prompt": "Which year did the architect Mary Almy work on Garland Junior College?",
+    "gold_answer": "1937",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Art"
+  },
+  {
+    "prompt": "How many minutes did the Fairey Albacore with Taurus XII used in World War II take to reach 6000 feet altitude in its time to altitude specification?",
+    "gold_answer": "8",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; pure integer; family:numeric; topic:History"
+  },
+  {
+    "prompt": "The first instance of Time including Julie Mehretu in their '100 Most Influential People' was in which year?",
+    "gold_answer": "2020",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Art"
+  },
+  {
+    "prompt": "During which year did Yayoi Kusama have her first exhibition in Spain?",
+    "gold_answer": "2011",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; family:numeric; topic:Art"
+  },
+  {
+    "prompt": "In what city was the first International Stroke Conference held?",
+    "gold_answer": "dallas",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique place name; family:geography; topic:Other"
+  },
+  {
+    "prompt": "What is the cultural symbol of the Lugbara ethnic group of Uganda?",
+    "gold_answer": "leopard",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:geography; topic:Geography"
+  },
+  {
+    "prompt": "The first public showings of \"Another Day in America\" by Laurie Anderson were in which city?",
+    "gold_answer": "calgary",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique place name; family:geography; topic:Art"
+  },
+  {
+    "prompt": "In which year was it reported that some lichen and cyanobacteria survived and showed remarkable adaptation capacity for photosynthesis after 34 days in simulated Martian conditions in the Mars Simulation Laboratory (MSL) maintained by the German Aerospace Center (DLR)?",
+    "gold_answer": "2012",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; family:geography; topic:Science and technology"
+  },
+  {
+    "prompt": "In what year was Louis Moreau Gottschalk forced to leave the United States due to an alleged affair with a student at Oakland Female Seminary?",
+    "gold_answer": "1865",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; family:geography; topic:Music"
+  },
+  {
+    "prompt": "Which Norwegian municipality did engineer Sigurd Aalefjær's family move to upon leaving the U.S. shortly after he was born?",
+    "gold_answer": "vennesla",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique place name; family:geography; topic:Geography"
+  },
+  {
+    "prompt": "In which district is the Syrian village \"Kafr al-Awamid\" located?",
+    "gold_answer": "al-zabadani",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique place name; family:geography; topic:Geography"
+  },
+  {
+    "prompt": "What is a bridge called in Kashmiri?",
+    "gold_answer": "kadal",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:geography; topic:Geography"
+  },
+  {
+    "prompt": "What was the name of Andrew Dickson White's cousin who became an artist of the Luminism style and Hudson River School?",
+    "gold_answer": "edwin white",
+    "difficulty": "hard",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:geography; topic:Art"
+  },
+  {
+    "prompt": "Which specific ocean was the asteroid 224 Oceana named after?",
+    "gold_answer": "pacific ocean",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique place name; family:geography; topic:Geography"
+  },
+  {
+    "prompt": "Name the place in Lahore where an underpass (Habba Khatoon Underpass) has been named after Habba Khatoon (a Kashmiri poetess).",
+    "gold_answer": "mughalpura",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique place name; family:geography; topic:Geography"
+  },
+  {
+    "prompt": "India’s first-ever rural LED Street Lighting Project was set up in which state?",
+    "gold_answer": "andhra pradesh",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique place name; family:geography; topic:Other"
+  },
+  {
+    "prompt": "Who was awarded the Oceanography Society's Jerlov Award in 2018?",
+    "gold_answer": "annick bricaud",
+    "difficulty": "hard",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:geography; topic:Science and technology"
+  },
+  {
+    "prompt": "On Feb. 12, 2018, in what city was Dua Lipa performing when she raised a rainbow flag?",
+    "gold_answer": "los angeles",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique place name; family:geography; topic:Music"
+  },
+  {
+    "prompt": "According to the Golden Ticket Awards' list of the top 50 steel roller coasters, what rank was given to Twisted Timbers in 2021?",
+    "gold_answer": "39",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; pure integer; family:geography; topic:Sports"
+  },
+  {
+    "prompt": "In which year did a mouse eradication program first commence on the volcanic island called Gough Island in the South Atlantic Ocean?",
+    "gold_answer": "2021",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; family:geography; topic:Geography"
+  },
+  {
+    "prompt": "Which was the first smoke-free state of India by abandoning traditional ways of cooking?",
+    "gold_answer": "himachal pradesh",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique place name; family:geography; topic:Geography"
+  },
+  {
+    "prompt": "During which year of the International São Paulo Biennial in Brazil was Kara Walker the United States representative?",
+    "gold_answer": "2002",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; family:geography; topic:Art"
+  },
+  {
+    "prompt": "What was Zero Bridge originally nicknamed in Srinagar, Kashmir?",
+    "gold_answer": "zorr bridge",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; family:geography; topic:Geography"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Faraday Medal, awarded by the Electrochemistry Group of the Royal Society of Chemistry in 2019?",
+    "gold_answer": "winter",
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "Give the abbreviated name of the launch vehicle along with its mission or flight number used for carrying the EOS-04 satellite, launched from the Satish Dhawan Space Centre in India in 2022.",
+    "gold_answer": "pslv-c52",
+    "difficulty": "medium",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "What was Granat, an X- and gamma-ray astronomical observatory studying high-energy emissions from galactic and extragalactic sources, originally called?",
+    "gold_answer": "astron 2",
+    "difficulty": "medium",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "What was the surname of the recipient of the Nyholm Prize for Education in 1973-74?",
+    "gold_answer": "halliwell",
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "What is the number and name of the sole asteroid that was discovered by Joseph Jean Pierre Laurent?",
+    "gold_answer": "51 nemausa",
+    "difficulty": "medium",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Chemical Industry Medal, an annual American award given to an industrial chemist by the Society of Chemical Industry America in 1984?",
+    "gold_answer": "affleck",
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "Who was the first Tanzanian woman to earn a doctorate in mathematics?",
+    "gold_answer": "verdiana grace masanja",
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "3-token answer; unique person name; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "What is the chemical name of the drug previously known to treat bacterial infections that Dr. William Schwartz discovered also acts as a diuretic in people with congestive heart failure?",
+    "gold_answer": "sulfanilamide",
+    "difficulty": "medium",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Robert Boyle Prize for Analytical Science, formerly called the Boyle Medal, in 2012?",
+    "gold_answer": "dovichi",
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "What prize did De Broglie win in 1952?",
+    "gold_answer": "kalinga prize",
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "What is the surname of the person who first discovered the blood-sucking bug Triatoma carrioni?",
+    "gold_answer": "larrousse",
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Faraday Lectureship Prize, previously known simply as the Faraday Lectureship, in 1914?",
+    "gold_answer": "arrhenius",
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "What is the name of the recipient of the Dickson Prize in Medicine in 1996?",
+    "gold_answer": "philippa marrack",
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "Kiyoshi Oka entered the Imperial University of Kyoto in 1922 to study what subject?",
+    "gold_answer": "physics",
+    "difficulty": "medium",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Gibson-Fawcett Award in 2012?",
+    "gold_answer": "fogg",
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:history; topic:Science and technology"
+  },
+  {
+    "prompt": "In honor of whom was the role of Poet Laureate of Ontario established?",
+    "gold_answer": "gord downie",
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:history; topic:Music"
+  },
+  {
+    "prompt": "Who was the first visual artist to be awarded the Peace Prize of the German Book Trade?",
+    "gold_answer": "anselm kiefer",
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:history; topic:Art"
+  },
+  {
+    "prompt": "Who was the second woman to receive the Turing Award?",
+    "gold_answer": "barbara liskov",
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:history; topic:Science and technology"
+  },
+  {
+    "prompt": "At what university was Lois Griffiths appointed as an instructor in mathematics immediately following the award of her doctorate?",
+    "gold_answer": "northwestern",
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique place name; family:history; topic:Other"
+  },
+  {
+    "prompt": "Who won the International Photography Awards' \"Discovery of the Year\" award in 2017?",
+    "gold_answer": "mariano belmar",
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:history; topic:Art"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Oesper Award in 1988?",
+    "gold_answer": "bloch",
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:history; topic:Science and technology"
+  },
+  {
+    "prompt": "For which song was Vibha Saraf nominated for Best Female Playback Singer at the 20th International Indian Film Academy Awards?",
+    "gold_answer": "dilbaro",
+    "difficulty": "medium",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:history; topic:Music"
+  },
+  {
+    "prompt": "What is the surname of the individual who won the Sir George Stokes Award (colloquially the Stokes Medal) in 1999?",
+    "gold_answer": "jeffreys",
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:history; topic:Science and technology"
+  },
+  {
+    "prompt": "What is the name of the illness, as it was known at that time, from which Anna, the daughter of Sir James Augustus Henry Murray, the primary editor of the Oxford English Dictionary from 1879, died?",
+    "gold_answer": "consumption",
+    "difficulty": "medium",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:history; topic:History"
+  },
+  {
+    "prompt": "The WWI Q-Ship \"Salvia\" was partially reconstructed with a false counter-stern to resemble what kind of ship?",
+    "gold_answer": "tramp",
+    "difficulty": "medium",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:history; topic:History"
+  },
+  {
+    "prompt": "Who was awarded the Oskar Kokoschka Prize in 2012?",
+    "gold_answer": "yoko ono",
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:history; topic:Art"
+  },
+  {
+    "prompt": "Which American YouTuber hosted the 11th Streamy Awards broadcast on YouTube on December 11, 2021, along with Issa Twaimz?",
+    "gold_answer": "larray",
+    "difficulty": "hard",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; family:history; topic:Other"
+  },
+  {
+    "prompt": "According to the 2011 census of India, after Hindi, which is the second fastest growing language of India, followed by Meitei (Manipuri) in third place and Bengali in fourth place?",
+    "gold_answer": "kashmiri",
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:language; topic:Geography"
+  },
+  {
+    "prompt": "What was the 2020 Word of the Year according to the American Dialect Society?",
+    "gold_answer": "covid",
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:language; topic:Other"
+  },
+  {
+    "prompt": "What was the Word of the Decade (2010–2019) according to the American Dialect Society?",
+    "gold_answer": "they",
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:language; topic:Other"
+  },
+  {
+    "prompt": "What was the 2016 Word of the Year according to the American Dialect Society?",
+    "gold_answer": "dumpster fire",
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; family:language; topic:Other"
+  },
+  {
+    "prompt": "What language is represented in Figure 4 of the text 'Generating Semantic Maps through Multidimensional Scaling: Linguistic Applications and Theory'?",
+    "gold_answer": "romanian",
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:language; topic:Science and technology"
+  },
+  {
+    "prompt": "In what year was the Sing Sing Correctional Facility accredited for the first time?",
+    "gold_answer": "1989",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; topic:History"
+  },
+  {
+    "prompt": "Which year was the non-profit organization Prayas Nepal established?",
+    "gold_answer": "2003",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; topic:Other"
+  },
+  {
+    "prompt": "In what year was the Penny Crane Award for Distinguished Service established?",
+    "gold_answer": "2000",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; topic:Other"
+  },
+  {
+    "prompt": "How many years were Dr. Tony Evans and Lois Evans married?",
+    "gold_answer": "49",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; pure integer; topic:Other"
+  },
+  {
+    "prompt": "In what year was Sher Afgan Niazi, a Pakistani politician, diagnosed with liver cancer?",
+    "gold_answer": "2012",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; topic:Politics"
+  },
+  {
+    "prompt": "What year was the municipality of Alejandría, Antioquia, Colombia, founded?",
+    "gold_answer": "1886",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; topic:Geography"
+  },
+  {
+    "prompt": "In what year did Norman Rockwell donate his painting “The Dover Coach” to the Society of Illustrators?",
+    "gold_answer": "1939",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; topic:Art"
+  },
+  {
+    "prompt": "In what year was the beetle species Glipa annulata described?",
+    "gold_answer": "1868",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; topic:Science and technology"
+  },
+  {
+    "prompt": "In what year was the beetle species Glipa angustilineata described?",
+    "gold_answer": "1993",
+    "difficulty": "medium",
+    "item_family": "numeric",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; topic:Science and technology"
+  },
+  {
+    "prompt": "What year did chef Jo Seagar's cooking school, café, and kitchenware store \"Seagars at Oxford\" close?",
+    "gold_answer": "2015",
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; language family; topic:Other"
+  },
+  {
+    "prompt": "Who did Jun Takahashi open his first store with?",
+    "gold_answer": "nigo",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; unique person name; topic:Art"
+  },
+  {
+    "prompt": "In the last episode of the first season of Happy Valley, in what type of mechanized vehicle does Catherine find her grandson Ryan along with his father Tommy?",
+    "gold_answer": "narrowboat",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:factual_recall; topic:TV shows"
+  },
+  {
+    "prompt": "Which team won the 2016–17 Championnat LNA season (86th season of the top-tier basketball league in Switzerland)?",
+    "gold_answer": "monthey",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:factual_recall; topic:Sports"
+  },
+  {
+    "prompt": "What type of work did the character Sabrina Costelana Newman's father from \"The Young and the Restless\" series do?",
+    "gold_answer": "diplomat",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:factual_recall; topic:TV shows"
+  },
+  {
+    "prompt": "In S3, E13 of \"The Circle\" (American version), who was the runner-up?",
+    "gold_answer": "matthew pappadia",
+    "difficulty": "hard",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:factual_recall; topic:TV shows"
+  },
+  {
+    "prompt": "Which university gave El Anatsui an honorary doctorate in 2016?",
+    "gold_answer": "harvard university",
+    "difficulty": "medium",
+    "item_family": "factual_recall",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique place name; family:factual_recall; topic:Art"
+  },
+  {
+    "prompt": "Which valley is known as the \"Golden Crown of Kashmir\"?",
+    "gold_answer": "breng valley",
+    "difficulty": "medium",
+    "item_family": "geography",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique place name; family:geography; topic:Geography"
+  },
+  {
+    "prompt": "Who won the Heinz Hopf Prize in 2019?",
+    "gold_answer": "ehud hrushovski",
+    "difficulty": "hard",
+    "item_family": "science",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:science; topic:Science and technology"
+  },
+  {
+    "prompt": "What was the month and year Dudley Carleton, 1st Viscount Dorchester, was created Viscount Dorchester?",
+    "gold_answer": "july 1628",
+    "difficulty": "medium",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; family:history; topic:History"
+  },
+  {
+    "prompt": "What is a bridge called in the Kashmiri language?",
+    "gold_answer": "kadal",
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:language; topic:Geography"
+  },
+  {
+    "prompt": "Which word was selected as the 2022 Word of the Year by the American Dialect Society?",
+    "gold_answer": "\"-ussy\"",
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; family:language; topic:Other"
+  },
+  {
+    "prompt": "Who is the credited conductor on the Super Mario Galaxy Original Soundtrack: Platinum Version?",
+    "gold_answer": "koji haishima",
+    "difficulty": "hard",
+    "item_family": "language",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; unique person name; family:language; topic:Video games"
+  },
+  {
+    "prompt": "What month and year was Greek artist Kristof's album \"Psychagogia\" released?",
+    "gold_answer": "february 2022",
+    "difficulty": "medium",
+    "item_family": "language",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "2-token answer; family:language; topic:Music"
+  },
+  {
+    "prompt": "In which year did the Portuguese explorer Gaspar Corte-Real reach Canada and find the town of Portugal Cove-St. Philip's?",
+    "gold_answer": "1500",
+    "difficulty": "medium",
+    "item_family": "history",
+    "source": "simpleqa",
+    "aliases": [],
+    "note": "1-token answer; year-only numeric; family:history; topic:History"
+  }
+]

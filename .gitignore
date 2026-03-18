@@ -41,6 +41,10 @@ data/processed_tasks/*.parquet
 data/splits/*.csv
 data/splits/*.parquet
 
+# Raw source datasets (large, downloaded from external sources)
+data/harvest/simple_qa_test_set.csv
+data/harvest/TruthfulQA_raw.csv
+
 # Keep data directory structure
 !data/raw_tasks/.gitkeep
 !data/processed_tasks/.gitkeep

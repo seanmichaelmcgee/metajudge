@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "auth_001",
+    "prompt": "What is 7 times 8? Answer with digits only.",
+    "gold_answer": "56",
+    "aliases": [
+      "56"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "7 × 8 = 56"
+  },
+  {
+    "id": "auth_002",
+    "prompt": "What is 144 divided by 12? Answer with digits only.",
+    "gold_answer": "12",
+    "aliases": [
+      "12"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "144 ÷ 12 = 12"
+  },
+  {
+    "id": "auth_003",
+    "prompt": "What is 25% of 200? Answer with digits only.",
+    "gold_answer": "50",
+    "aliases": [
+      "50"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.25 × 200 = 50"
+  },
+  {
+    "id": "auth_004",
+    "prompt": "What is 13 plus 29? Answer with digits only.",
+    "gold_answer": "42",
+    "aliases": [
+      "42"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "13 + 29 = 42"
+  },
+  {
+    "id": "auth_005",
+    "prompt": "What is 100 minus 37? Answer with digits only.",
+    "gold_answer": "63",
+    "aliases": [
+      "63"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "100 − 37 = 63"
+  },
+  {
+    "id": "auth_006",
+    "prompt": "What is 9 times 9? Answer with digits only.",
+    "gold_answer": "81",
+    "aliases": [
+      "81"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "9 × 9 = 81"
+  },
+  {
+    "id": "auth_007",
+    "prompt": "What is 256 divided by 8? Answer with digits only.",
+    "gold_answer": "32",
+    "aliases": [
+      "32"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "256 ÷ 8 = 32"
+  },
+  {
+    "id": "auth_008",
+    "prompt": "What is 50% of 140? Answer with digits only.",
+    "gold_answer": "70",
+    "aliases": [
+      "70"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.50 × 140 = 70"
+  },
+  {
+    "id": "auth_009",
+    "prompt": "What is 18 plus 47? Answer with digits only.",
+    "gold_answer": "65",
+    "aliases": [
+      "65"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "18 + 47 = 65"
+  },
+  {
+    "id": "auth_010",
+    "prompt": "What is 200 minus 83? Answer with digits only.",
+    "gold_answer": "117",
+    "aliases": [
+      "117"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "200 − 83 = 117"
+  },
+  {
+    "id": "auth_011",
+    "prompt": "What is 6 times 12? Answer with digits only.",
+    "gold_answer": "72",
+    "aliases": [
+      "72"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "6 × 12 = 72"
+  },
+  {
+    "id": "auth_012",
+    "prompt": "What is 360 divided by 9? Answer with digits only.",
+    "gold_answer": "40",
+    "aliases": [
+      "40"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "360 ÷ 9 = 40"
+  },
+  {
+    "id": "auth_013",
+    "prompt": "What is 10% of 850? Answer with digits only.",
+    "gold_answer": "85",
+    "aliases": [
+      "85"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.10 × 850 = 85"
+  },
+  {
+    "id": "auth_014",
+    "prompt": "What is 34 plus 58? Answer with digits only.",
+    "gold_answer": "92",
+    "aliases": [
+      "92"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "34 + 58 = 92"
+  },
+  {
+    "id": "auth_015",
+    "prompt": "What is 500 minus 176? Answer with digits only.",
+    "gold_answer": "324",
+    "aliases": [
+      "324"
+    ],
+    "difficulty": "easy",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "500 − 176 = 324"
+  },
+  {
+    "id": "auth_016",
+    "prompt": "What is the square root of 1764? Answer with digits only.",
+    "gold_answer": "42",
+    "aliases": [
+      "42"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "√1764 = 42.0 (verified: 42²=1764)"
+  },
+  {
+    "id": "auth_017",
+    "prompt": "What is 17 times 23? Answer with digits only.",
+    "gold_answer": "391",
+    "aliases": [
+      "391"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "17 × 23 = 391"
+  },
+  {
+    "id": "auth_018",
+    "prompt": "What is 15% of 340? Answer with digits only.",
+    "gold_answer": "51",
+    "aliases": [
+      "51"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.15 × 340 = 51.0"
+  },
+  {
+    "id": "auth_019",
+    "prompt": "What is 2 to the power of 8? Answer with digits only.",
+    "gold_answer": "256",
+    "aliases": [
+      "256"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "2^8 = 256"
+  },
+  {
+    "id": "auth_020",
+    "prompt": "What is 648 divided by 24? Answer with digits only.",
+    "gold_answer": "27",
+    "aliases": [
+      "27"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "648 ÷ 24 = 27"
+  },
+  {
+    "id": "auth_021",
+    "prompt": "What is 123 plus 456? Answer with digits only.",
+    "gold_answer": "579",
+    "aliases": [
+      "579"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "123 + 456 = 579"
+  },
+  {
+    "id": "auth_022",
+    "prompt": "What is 1000 minus 374? Answer with digits only.",
+    "gold_answer": "626",
+    "aliases": [
+      "626"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "1000 − 374 = 626"
+  },
+  {
+    "id": "auth_023",
+    "prompt": "What is 19 times 19? Answer with digits only.",
+    "gold_answer": "361",
+    "aliases": [
+      "361"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "19 × 19 = 361"
+  },
+  {
+    "id": "auth_024",
+    "prompt": "What is 40% of 275? Answer with digits only.",
+    "gold_answer": "110",
+    "aliases": [
+      "110"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.40 × 275 = 110"
+  },
+  {
+    "id": "auth_025",
+    "prompt": "What is the square root of 2025? Answer with digits only.",
+    "gold_answer": "45",
+    "aliases": [
+      "45"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "√2025 = 45.0 (verified: 45²=2025)"
+  },
+  {
+    "id": "auth_026",
+    "prompt": "What is 29 times 31? Answer with digits only.",
+    "gold_answer": "899",
+    "aliases": [
+      "899"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "29 × 31 = 899"
+  },
+  {
+    "id": "auth_027",
+    "prompt": "What is 1440 divided by 36? Answer with digits only.",
+    "gold_answer": "40",
+    "aliases": [
+      "40"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "1440 ÷ 36 = 40"
+  },
+  {
+    "id": "auth_028",
+    "prompt": "What is 5 to the power of 4? Answer with digits only.",
+    "gold_answer": "625",
+    "aliases": [
+      "625"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "5^4 = 625"
+  },
+  {
+    "id": "auth_029",
+    "prompt": "What is 875 minus 438? Answer with digits only.",
+    "gold_answer": "437",
+    "aliases": [
+      "437"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "875 − 438 = 437"
+  },
+  {
+    "id": "auth_030",
+    "prompt": "What is 347 plus 289? Answer with digits only.",
+    "gold_answer": "636",
+    "aliases": [
+      "636"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "347 + 289 = 636"
+  },
+  {
+    "id": "auth_031",
+    "prompt": "What is 12% of 450? Answer with digits only.",
+    "gold_answer": "54",
+    "aliases": [
+      "54"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.12 × 450 = 54"
+  },
+  {
+    "id": "auth_032",
+    "prompt": "What is 43 times 27? Answer with digits only.",
+    "gold_answer": "1161",
+    "aliases": [
+      "1161"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "43 × 27 = 1161"
+  },
+  {
+    "id": "auth_033",
+    "prompt": "What is the square root of 3136? Answer with digits only.",
+    "gold_answer": "56",
+    "aliases": [
+      "56"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "√3136 = 56.0 (verified: 56²=3136)"
+  },
+  {
+    "id": "auth_034",
+    "prompt": "What is 2016 divided by 48? Answer with digits only.",
+    "gold_answer": "42",
+    "aliases": [
+      "42"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "2016 ÷ 48 = 42"
+  },
+  {
+    "id": "auth_035",
+    "prompt": "What is 3 to the power of 6? Answer with digits only.",
+    "gold_answer": "729",
+    "aliases": [
+      "729"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "3^6 = 729"
+  },
+  {
+    "id": "auth_036",
+    "prompt": "What is 750 minus 283? Answer with digits only.",
+    "gold_answer": "467",
+    "aliases": [
+      "467"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "750 − 283 = 467"
+  },
+  {
+    "id": "auth_037",
+    "prompt": "What is 568 plus 374? Answer with digits only.",
+    "gold_answer": "942",
+    "aliases": [
+      "942"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "568 + 374 = 942"
+  },
+  {
+    "id": "auth_038",
+    "prompt": "What is 35% of 480? Answer with digits only.",
+    "gold_answer": "168",
+    "aliases": [
+      "168"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "0.35 × 480 = 168"
+  },
+  {
+    "id": "auth_039",
+    "prompt": "What is 53 times 17? Answer with digits only.",
+    "gold_answer": "901",
+    "aliases": [
+      "901"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "53 × 17 = 901"
+  },
+  {
+    "id": "auth_040",
+    "prompt": "What is 3375 divided by 75? Answer with digits only.",
+    "gold_answer": "45",
+    "aliases": [
+      "45"
+    ],
+    "difficulty": "medium",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "3375 ÷ 75 = 45"
+  },
+  {
+    "id": "auth_041",
+    "prompt": "What is 2 to the power of 10? Answer with digits only.",
+    "gold_answer": "1024",
+    "aliases": [
+      "1024"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "2^10 = 1024"
+  },
+  {
+    "id": "auth_042",
+    "prompt": "What is 37 times 43? Answer with digits only.",
+    "gold_answer": "1591",
+    "aliases": [
+      "1591"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "37 × 43 = 1591"
+  },
+  {
+    "id": "auth_043",
+    "prompt": "What is the cube root of 27000? Answer with digits only.",
+    "gold_answer": "30",
+    "aliases": [
+      "30"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "∛27000 = 30 (verified: 30³=27000)"
+  },
+  {
+    "id": "auth_044",
+    "prompt": "What is 2 to the power of 12? Answer with digits only.",
+    "gold_answer": "4096",
+    "aliases": [
+      "4096"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "2^12 = 4096"
+  },
+  {
+    "id": "auth_045",
+    "prompt": "What is 97 times 83? Answer with digits only.",
+    "gold_answer": "8051",
+    "aliases": [
+      "8051"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "97 × 83 = 8051"
+  },
+  {
+    "id": "auth_046",
+    "prompt": "What is the square root of 7056? Answer with digits only.",
+    "gold_answer": "84",
+    "aliases": [
+      "84"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "√7056 = 84.0 (verified: 84²=7056)"
+  },
+  {
+    "id": "auth_047",
+    "prompt": "What is 4913 divided by 17? Answer with digits only.",
+    "gold_answer": "289",
+    "aliases": [
+      "289"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "4913 ÷ 17 = 289 (also: 17³=4913)"
+  },
+  {
+    "id": "auth_048",
+    "prompt": "What is 7 to the power of 4? Answer with digits only.",
+    "gold_answer": "2401",
+    "aliases": [
+      "2401"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "7^4 = 2401"
+  },
+  {
+    "id": "auth_049",
+    "prompt": "What is 123 times 89? Answer with digits only.",
+    "gold_answer": "10947",
+    "aliases": [
+      "10947"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "123 × 89 = 10947"
+  },
+  {
+    "id": "auth_050",
+    "prompt": "What is the cube root of 91125? Answer with digits only.",
+    "gold_answer": "45",
+    "aliases": [
+      "45"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "∛91125 = 45 (verified: 45³=91125)"
+  },
+  {
+    "id": "auth_051",
+    "prompt": "What is 6 to the power of 5? Answer with digits only.",
+    "gold_answer": "7776",
+    "aliases": [
+      "7776"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "6^5 = 7776"
+  },
+  {
+    "id": "auth_052",
+    "prompt": "What is 3 to the power of 8? Answer with digits only.",
+    "gold_answer": "6561",
+    "aliases": [
+      "6561"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "3^8 = 6561"
+  },
+  {
+    "id": "auth_053",
+    "prompt": "What is 67 times 79? Answer with digits only.",
+    "gold_answer": "5293",
+    "aliases": [
+      "5293"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "67 × 79 = 5293"
+  },
+  {
+    "id": "auth_054",
+    "prompt": "What is 15625 divided by 125? Answer with digits only.",
+    "gold_answer": "125",
+    "aliases": [
+      "125"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "15625 ÷ 125 = 125 (also: 5^6 ÷ 5^3 = 5^3)"
+  },
+  {
+    "id": "auth_055",
+    "prompt": "What is the square root of 15129? Answer with digits only.",
+    "gold_answer": "123",
+    "aliases": [
+      "123"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "√15129 = 123.0 (verified: 123²=15129)"
+  },
+  {
+    "id": "auth_056",
+    "prompt": "What is 4 to the power of 7? Answer with digits only.",
+    "gold_answer": "16384",
+    "aliases": [
+      "16384"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "4^7 = 16384"
+  },
+  {
+    "id": "auth_057",
+    "prompt": "What is 143 times 77? Answer with digits only.",
+    "gold_answer": "11011",
+    "aliases": [
+      "11011"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "143 × 77 = 11011"
+  },
+  {
+    "id": "auth_058",
+    "prompt": "What is the cube root of 614125? Answer with digits only.",
+    "gold_answer": "85",
+    "aliases": [
+      "85"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "∛614125 = 85 (verified: 85³=614125)"
+  },
+  {
+    "id": "auth_059",
+    "prompt": "What is 11 to the power of 4? Answer with digits only.",
+    "gold_answer": "14641",
+    "aliases": [
+      "14641"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "11^4 = 14641"
+  },
+  {
+    "id": "auth_060",
+    "prompt": "What is 289 times 34? Answer with digits only.",
+    "gold_answer": "9826",
+    "aliases": [
+      "9826"
+    ],
+    "difficulty": "hard",
+    "item_family": "arithmetic",
+    "source": "authored",
+    "note": "289 × 34 = 9826"
+  },
+  {
+    "id": "auth_061",
+    "prompt": "How many countries are in Africa? Answer with a number only.",
+    "gold_answer": "54",
+    "aliases": [
+      "54"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "54 UN-recognised sovereign states in Africa (Worldometer, Wikipedia)"
+  },
+  {
+    "id": "auth_062",
+    "prompt": "How many bones does an adult human have? Answer with a number only.",
+    "gold_answer": "206",
+    "aliases": [
+      "206"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "Standard adult human skeleton: 206 bones (Cleveland Clinic, Wikipedia)"
+  },
+  {
+    "id": "auth_063",
+    "prompt": "How many teeth does a fully-dentitioned adult human have? Answer with a number only.",
+    "gold_answer": "32",
+    "aliases": [
+      "32"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "32 permanent teeth including wisdom teeth (Cleveland Clinic, Healthline)"
+  },
+  {
+    "id": "auth_064",
+    "prompt": "How many chambers does the human heart have? Answer with a number only.",
+    "gold_answer": "4",
+    "aliases": [
+      "4"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "4 chambers: right atrium, left atrium, right ventricle, left ventricle (Cleveland Clinic)"
+  },
+  {
+    "id": "auth_065",
+    "prompt": "How many stripes are on the United States flag? Answer with a number only.",
+    "gold_answer": "13",
+    "aliases": [
+      "13"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "13 alternating red and white stripes representing the original 13 colonies (USA.gov, Wikipedia)"
+  },
+  {
+    "id": "auth_066",
+    "prompt": "How many keys are on a standard full-size piano? Answer with a number only.",
+    "gold_answer": "88",
+    "aliases": [
+      "88"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "88 keys (52 white, 36 black) on a standard piano (Aulart, Markson Pianos)"
+  },
+  {
+    "id": "auth_067",
+    "prompt": "How many fluid ounces are in one US gallon? Answer with a number only.",
+    "gold_answer": "128",
+    "aliases": [
+      "128"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "1 US gallon = 128 US fluid ounces (YETI, Inch Calculator)"
+  },
+  {
+    "id": "auth_068",
+    "prompt": "How many planets are in our solar system? Answer with a number only.",
+    "gold_answer": "8",
+    "aliases": [
+      "8"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "8 planets per IAU 2006 definition: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune (NASA)"
+  },
+  {
+    "id": "auth_069",
+    "prompt": "How many sides does a standard stop sign have? Answer with a number only.",
+    "gold_answer": "8",
+    "aliases": [
+      "8"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "Stop signs are octagons — 8 sides (Wikipedia, Mental Floss)"
+  },
+  {
+    "id": "auth_070",
+    "prompt": "How many holes are on a standard golf course? Answer with a number only.",
+    "gold_answer": "18",
+    "aliases": [
+      "18"
+    ],
+    "difficulty": "medium",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "18 holes is the universal standard for a regulation golf course (Wikipedia, Northbridge Golf Club)"
+  },
+  {
+    "id": "auth_071",
+    "prompt": "How many elements are on the periodic table? Answer with a number only.",
+    "gold_answer": "118",
+    "aliases": [
+      "118"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "118 confirmed elements on the modern periodic table (Wikipedia, BYJU'S)"
+  },
+  {
+    "id": "auth_072",
+    "prompt": "In what year was the Eiffel Tower completed? Answer with a number only.",
+    "gold_answer": "1889",
+    "aliases": [
+      "1889"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "Construction completed March 31, 1889 (Official Eiffel Tower website, Wikipedia)"
+  },
+  {
+    "id": "auth_073",
+    "prompt": "How many valves does the human heart have? Answer with a number only.",
+    "gold_answer": "4",
+    "aliases": [
+      "4"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "4 valves: aortic, mitral, pulmonary, tricuspid (Cleveland Clinic, OHSU)"
+  },
+  {
+    "id": "auth_074",
+    "prompt": "How many moons does Mars have? Answer with a number only.",
+    "gold_answer": "2",
+    "aliases": [
+      "2"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "Mars has 2 moons: Phobos and Deimos (NASA Science)"
+  },
+  {
+    "id": "auth_075",
+    "prompt": "How many stars appear on the flag of China? Answer with a number only.",
+    "gold_answer": "5",
+    "aliases": [
+      "5"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "Five golden stars: one large and four smaller (Wikipedia, Koryo Tours)"
+  },
+  {
+    "id": "auth_076",
+    "prompt": "How many official time zones does China use? Answer with a number only.",
+    "gold_answer": "1",
+    "aliases": [
+      "1"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "China uses a single time zone (UTC+8) despite spanning 5 geographical zones (Wikipedia, TimeAndDate)"
+  },
+  {
+    "id": "auth_077",
+    "prompt": "How many players from each team are on the court at one time in a standard basketball game? Answer with a number only.",
+    "gold_answer": "5",
+    "aliases": [
+      "5"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "5 players per team on court at a time; universal rule (FIBA, NBA, NCAA)"
+  },
+  {
+    "id": "auth_078",
+    "prompt": "How many stars are on the flag of the United States? Answer with a number only.",
+    "gold_answer": "50",
+    "aliases": [
+      "50"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "50 white stars representing the 50 states (USA.gov, Wikipedia)"
+  },
+  {
+    "id": "auth_079",
+    "prompt": "How many sides does a pentagon have? Answer with a number only.",
+    "gold_answer": "5",
+    "aliases": [
+      "5"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "A pentagon has 5 sides by definition (Wikipedia, PrepScholar)"
+  },
+  {
+    "id": "auth_080",
+    "prompt": "How many sides does a hexagon have? Answer with a number only.",
+    "gold_answer": "6",
+    "aliases": [
+      "6"
+    ],
+    "difficulty": "hard",
+    "item_family": "numeric_estimation",
+    "source": "authored",
+    "note": "A hexagon has 6 sides by definition (Wikipedia, DreamBox)"
+  },
+  {
+    "id": "auth_081",
+    "prompt": "How many US presidents have been assassinated while in office? Answer with a number only.",
+    "gold_answer": "4",
+    "aliases": [
+      "4"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "Lincoln (1865), Garfield (1881), McKinley (1901), Kennedy (1963). Models may confabulate 2 or 3. (Wikipedia, Booth Western Art Museum)"
+  },
+  {
+    "id": "auth_082",
+    "prompt": "What is the only country whose name starts with the letter O? Answer in one word, lowercase.",
+    "gold_answer": "oman",
+    "aliases": [
+      "oman"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "Oman is the only sovereign country whose English name begins with O. Models often guess 'none' or incorrectly cite Austria. (Worldometer, CountryReports Blog)"
+  },
+  {
+    "id": "auth_083",
+    "prompt": "How many official time zones does China use? Answer with a number only.",
+    "gold_answer": "1",
+    "aliases": [
+      "1"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "China uses a single official time zone (UTC+8) despite spanning 5 geographical zones. Models frequently answer 5. (Wikipedia, TimeAndDate)"
+  },
+  {
+    "id": "auth_084",
+    "prompt": "In the sequence of planets from the Sun, what number planet is Earth? Answer with a digit only.",
+    "gold_answer": "3",
+    "aliases": [
+      "3"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "Mercury=1, Venus=2, Earth=3. Straightforward but models sometimes insert incorrect orderings. (NASA)"
+  },
+  {
+    "id": "auth_085",
+    "prompt": "How many sides does an octagon have? Answer with a digit only.",
+    "gold_answer": "8",
+    "aliases": [
+      "8"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "An octagon has exactly 8 sides. Included because models occasionally confuse octagon with hexagon under pressure. (Wikipedia)"
+  },
+  {
+    "id": "auth_086",
+    "prompt": "How many Great Lakes are there in North America? Answer with a number only.",
+    "gold_answer": "5",
+    "aliases": [
+      "5"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "The five Great Lakes are Superior, Michigan, Huron, Erie, Ontario. Models sometimes answer 4 or 6. (Wikipedia)"
+  },
+  {
+    "id": "auth_087",
+    "prompt": "What is the number of the Amendment to the US Constitution that abolished slavery? Answer with a number only.",
+    "gold_answer": "13",
+    "aliases": [
+      "13"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "The 13th Amendment (1865) abolished slavery. Models may confuse with the 14th (citizenship) or 15th (voting). (Wikipedia)"
+  },
+  {
+    "id": "auth_088",
+    "prompt": "How many continents are there on Earth? Answer with a number only.",
+    "gold_answer": "7",
+    "aliases": [
+      "7"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "Standard seven-continent model: Africa, Antarctica, Asia, Australia/Oceania, Europe, North America, South America. Models may answer 5 or 6 depending on alternate models. The prompt relies on the dominant seven-continent model taught in English-language education. (Wikipedia)"
+  },
+  {
+    "id": "auth_089",
+    "prompt": "How many faces does a cube have? Answer with a digit only.",
+    "gold_answer": "6",
+    "aliases": [
+      "6"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "A cube has exactly 6 faces. Adversarial because some models conflate faces/edges/vertices under stress. (Wikipedia)"
+  },
+  {
+    "id": "auth_090",
+    "prompt": "In the standard musical scale, how many notes are in one octave (including both the starting and ending note)? Answer with a number only.",
+    "gold_answer": "8",
+    "aliases": [
+      "8"
+    ],
+    "difficulty": "adversarial",
+    "item_family": "adversarial",
+    "source": "authored",
+    "note": "Do-Re-Mi-Fa-Sol-La-Ti-Do = 8 notes when both endpoints are counted (the word 'octave' derives from Latin for 8). Models often answer 7 (the distinct pitches) without counting the repeated tonic. (Wikipedia)"
+  }
+]
