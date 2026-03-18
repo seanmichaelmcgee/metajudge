@@ -1,10 +1,11 @@
 """
-MetaJudge-AGI: Task Family B - Selective Abstention and Deferral
-==================================================================
-Source: Framework §5.2
+MetaJudge-AGI: Task Family B - Selective Abstention / Verification / Clarification
+=====================================================================================
+Source: Recommendations memo §Family B
 
-Tests whether the model can decide not to answer, or request clarification,
-when uncertainty is sufficiently high.
+Tests whether the model makes correct decisions when uncertain: answer,
+ask for clarification, abstain, or flag verification needed. Scored as
+a decision policy with explicit cost penalties for over-abstention.
 """
 
 from __future__ import annotations

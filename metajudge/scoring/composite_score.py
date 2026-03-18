@@ -14,13 +14,15 @@ from typing import Dict, Optional
 import numpy as np
 
 
-# Default weights from Framework §7.1
+# Default weights — Recommendations memo §4.C
+# Monitoring-heavy (60/40) because monitoring families are more valid and less gameable
 DEFAULT_WEIGHTS: Dict[str, float] = {
-    "calibration": 0.25,
-    "abstention": 0.20,
-    "self_correction": 0.20,
-    "source_awareness": 0.15,
-    "strategy_adaptation": 0.20,
+    "calibration": 0.30,
+    "abstention_verification": 0.20,
+    "intrinsic_self_correction": 0.10,
+    "evidence_assisted_correction": 0.15,
+    "grounding_sensitivity": 0.10,
+    "control_policy_adaptation": 0.15,
 }
 
 
@@ -61,14 +63,17 @@ def compute_profile(
 ) -> Dict[str, float]:
     """Return the full subdimension profile.
     
-    Source: Framework §4 - "profile across subdimensions"
+    Source: Recommendations memo §4.A — two-axis reporting
     """
     return {
+        # Axis I: Epistemic Monitoring
         "calibration": subscores.get("calibration", float("nan")),
-        "abstention": subscores.get("abstention", float("nan")),
-        "self_correction": subscores.get("self_correction", float("nan")),
-        "source_awareness": subscores.get("source_awareness", float("nan")),
-        "strategy_adaptation": subscores.get("strategy_adaptation", float("nan")),
+        "abstention_verification": subscores.get("abstention_verification", float("nan")),
+        "grounding_sensitivity": subscores.get("grounding_sensitivity", float("nan")),
+        # Axis II: Cognitive Control
+        "intrinsic_self_correction": subscores.get("intrinsic_self_correction", float("nan")),
+        "evidence_assisted_correction": subscores.get("evidence_assisted_correction", float("nan")),
+        "control_policy_adaptation": subscores.get("control_policy_adaptation", float("nan")),
     }
 
 

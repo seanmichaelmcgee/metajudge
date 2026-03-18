@@ -1,67 +1,98 @@
 # MetaJudge-AGI Benchmark Configuration
-# Source: metacognition_kaggle_benchmark_framework.md (Sections 4, 7, 10)
+# Source: SOUL.md, Recommendations memo, V1 Architecture
 
 benchmark:
-  name: "metacognition_behavioral_suite_v0"
-  version: "0.1.0"
-  full_name: "MetaJudge-AGI: A Behavioral Benchmark for Metacognition in Frontier Models"
+  name: "metacognition_behavioral_suite_v1"
+  version: "1.0.0"
+  full_name: "MetaJudge-AGI: Epistemically Robust Metacognitive Assessment"
+  claim: "Measures behaviorally grounded metacognitive behavior in LLMs across epistemic monitoring and cognitive control."
 
-# Five sub-benchmark modules
-# Source: Framework §4.1, §5.1-5.5
-subtasks:
+# Two-axis structure (Nelson & Narens 1990)
+axes:
+  monitoring:
+    name: "Epistemic Monitoring"
+    description: "Does the model track the reliability of its own cognition?"
+    families: [calibration, abstention_verification, grounding_sensitivity]
+  control:
+    name: "Cognitive Control / Regulation"
+    description: "Does the model use monitoring information to change behavior?"
+    families: [intrinsic_self_correction, evidence_assisted_correction, control_policy_adaptation]
+
+# Family definitions
+families:
   - id: calibration
     name: "Confidence Calibration"
-    description: "Measures whether model's stated confidence corresponds to actual correctness"
-    framework_section: "5.1"
-    
-  - id: abstention
-    name: "Selective Abstention and Deferral"
-    description: "Measures whether the model can decide not to answer when uncertainty is high"
-    framework_section: "5.2"
-    
-  - id: self_correction
-    name: "Error Detection and Targeted Self-Correction"
-    description: "Measures whether the model can identify probable errors and improve answers"
-    framework_section: "5.3"
-    multi_turn: true
-    
-  - id: source_awareness
-    name: "Source Awareness and Epistemic Attribution"
-    description: "Measures whether the model can distinguish memory, evidence, inference, and guessing"
-    framework_section: "5.4"
-    
-  - id: strategy_adaptation
-    name: "Strategy Selection and Adaptive Revision"
-    description: "Measures whether the model can choose and shift strategies appropriately"
-    framework_section: "5.5"
-    multi_turn: true
+    axis: monitoring
+    turns: 1
+    description: "Confidence corresponds to correctness"
+    v1: true
 
-# Scoring weights
-# Source: Framework §7.1
+  - id: abstention_verification
+    name: "Selective Abstention / Verification"
+    axis: monitoring
+    turns: 1
+    description: "Correct decision when uncertain"
+    v1: false
+
+  - id: grounding_sensitivity
+    name: "Grounding Sensitivity"
+    axis: monitoring
+    turns: 1
+    description: "Responds to presence/absence of supporting evidence"
+    v1: false
+
+  - id: intrinsic_self_correction
+    name: "Intrinsic Self-Correction"
+    axis: control
+    turns: 2
+    description: "Detects and repairs errors with no new evidence"
+    v1: false
+
+  - id: evidence_assisted_correction
+    name: "Evidence-Assisted Correction"
+    axis: control
+    turns: 2
+    description: "Uses external cues appropriately without blind flipping"
+    v1: false
+
+  - id: control_policy_adaptation
+    name: "Control-Policy Adaptation"
+    axis: control
+    turns: 2
+    description: "Changes behavior under task perturbation"
+    v1: false
+
+# Scoring weights (Recommendations memo §4.C)
+# Monitoring-heavy: 60% monitoring, 40% control
 scoring:
   weights:
-    calibration: 0.25
-    abstention: 0.20
-    self_correction: 0.20
-    source_awareness: 0.15
-    strategy_adaptation: 0.20
-  
-  # Source: Framework §7.3
+    calibration: 0.30
+    abstention_verification: 0.20
+    intrinsic_self_correction: 0.10
+    evidence_assisted_correction: 0.15
+    grounding_sensitivity: 0.10
+    control_policy_adaptation: 0.15
+
+  # Design principles (Framework §7.3, preserved)
   principles:
     - "Overconfident error must hurt a lot"
     - "Appropriate abstention must help but not too much"
-    - "Second-pass revision must help only when it improves performance"
+    - "Revision must help only when it improves performance"
     - "No single cheap behavior should dominate the benchmark"
 
-# Dataset targets
-# Source: Implementation Plan §Phase 2
-dataset:
-  target_item_count: 500-1500
-  difficulty_tiers: ["easy", "medium", "hard", "deceptive", "adversarial"]
-  required_splits: ["public", "private", "pilot"]
+  # Scoring fields classification
+  field_policy:
+    scored: "answer, confidence, decision, revised_answer, revised_confidence, evidence_mode, control_action"
+    diagnostic_only: "reason_for_uncertainty, would_verify_if_possible, why_this_strategy, what_changed, suspected_error_type, abstention_reason"
 
-# Anti-gaming
-# Source: Framework §8
+# Dataset targets
+dataset:
+  v1_pilot_items: 20
+  v1_full_items: 100
+  full_benchmark_items: 380
+  difficulty_tiers: [easy, medium, hard, deceptive, adversarial]
+
+# Anti-gaming (preserved from original)
 anti_gaming:
   countermeasures:
     - behavior_first_scoring
@@ -73,5 +104,11 @@ anti_gaming:
     - cross_template_evaluation_splits
     - limit_reward_for_verbosity
 
-# Reproducibility
+# Key references
+references:
+  - "Nelson & Narens (1990) — Monitoring vs. control"
+  - "Kadavath et al. (2022) — LLMs know what they know"
+  - "Xiong et al. (ICLR 2024) — Verbalized confidence is overconfident"
+  - "Huang et al. (ICLR 2024) — Intrinsic self-correction often fails"
+
 seed: 42

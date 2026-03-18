@@ -145,10 +145,11 @@ class TestCompositeScore:
     def test_perfect_scores(self):
         subscores = {
             "calibration": 1.0,
-            "abstention": 1.0,
-            "self_correction": 1.0,
-            "source_awareness": 1.0,
-            "strategy_adaptation": 1.0,
+            "abstention_verification": 1.0,
+            "intrinsic_self_correction": 1.0,
+            "evidence_assisted_correction": 1.0,
+            "grounding_sensitivity": 1.0,
+            "control_policy_adaptation": 1.0,
         }
         composite = compute_composite_score(subscores)
         assert composite == pytest.approx(1.0)
@@ -156,20 +157,29 @@ class TestCompositeScore:
     def test_zero_scores(self):
         subscores = {
             "calibration": 0.0,
-            "abstention": 0.0,
-            "self_correction": 0.0,
-            "source_awareness": 0.0,
-            "strategy_adaptation": 0.0,
+            "abstention_verification": 0.0,
+            "intrinsic_self_correction": 0.0,
+            "evidence_assisted_correction": 0.0,
+            "grounding_sensitivity": 0.0,
+            "control_policy_adaptation": 0.0,
         }
         composite = compute_composite_score(subscores)
         assert composite == pytest.approx(0.0)
 
-    def test_partial_scores(self):
+    def test_partial_scores_calibration_only(self):
         subscores = {
             "calibration": 0.8,
-            "abstention": 0.6,
+        }
+        composite = compute_composite_score(subscores)
+        # Should normalize by actual weight used (only calibration weight)
+        assert composite == pytest.approx(0.8)
+
+    def test_partial_scores_monitoring_axis(self):
+        subscores = {
+            "calibration": 0.8,
+            "abstention_verification": 0.6,
         }
         composite = compute_composite_score(subscores)
         # Should normalize by actual weight used
-        expected = (0.25 * 0.8 + 0.20 * 0.6) / (0.25 + 0.20)
+        expected = (0.30 * 0.8 + 0.20 * 0.6) / (0.30 + 0.20)
         assert composite == pytest.approx(expected)

@@ -1,10 +1,11 @@
 """
-MetaJudge-AGI: Task Family D - Source Awareness and Epistemic Attribution
-===========================================================================
-Source: Framework §5.4
+MetaJudge-AGI: Task Family D - Grounding Sensitivity (Evidence Attribution)
+=============================================================================
+Source: Recommendations memo §Family D
 
-Tests whether the model can distinguish among remembered information,
-direct evidence in the prompt, inferred conclusions, and guesses.
+Tests whether the model responds appropriately to the presence or absence
+of supporting evidence in the prompt. Replaces the original source-awareness
+family which relied on post-hoc provenance narration.
 """
 
 from __future__ import annotations
@@ -12,7 +13,7 @@ from __future__ import annotations
 from typing import Any, Dict
 
 from metajudge.schemas.response_schemas import SourceAwarenessResponse
-from metajudge.scoring.source_awareness_metrics import (
+from metajudge.scoring.grounding_metrics import (
     source_awareness_composite,
     source_label_accuracy_single,
     supporting_span_alignment,

@@ -1,10 +1,11 @@
 """
-MetaJudge-AGI: Task Family E - Strategy Selection and Adaptive Revision
-==========================================================================
-Source: Framework §5.5
+MetaJudge-AGI: Task Family E - Control-Policy Adaptation
+==========================================================
+Source: Recommendations memo §Family E
 
-Tests whether the model can choose among alternative approaches and shift
-strategy when the first one proves unreliable. Uses multi-turn interaction.
+Tests whether the model changes its control policy when task structure
+changes in ways that should matter. Scored behaviorally by outcomes under
+perturbation, not by agreement with a hand-authored strategy label.
 """
 
 from __future__ import annotations
@@ -12,7 +13,7 @@ from __future__ import annotations
 from typing import Any, Dict
 
 from metajudge.schemas.response_schemas import StrategyAdaptationResponse
-from metajudge.scoring.strategy_metrics import strategy_adaptation_composite
+from metajudge.scoring.control_policy_metrics import strategy_adaptation_composite
 from metajudge.utils.text import normalize_text
 
 
