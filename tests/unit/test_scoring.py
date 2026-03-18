@@ -59,16 +59,34 @@ class TestCalibrationMetrics:
         assert overconfidence_penalty_single(0.8, False) == 0.8
 
     def test_calibration_aware_score_correct_high_conf(self):
+        # 1 - (1.0 - 1.0)^2 = 1.0
         score = calibration_aware_score(True, 1.0)
         assert score == 1.0
 
     def test_calibration_aware_score_wrong_high_conf(self):
+        # 1 - (1.0 - 0.0)^2 = 0.0
         score = calibration_aware_score(False, 1.0)
         assert score == 0.0
 
     def test_calibration_aware_score_wrong_low_conf(self):
+        # 1 - (0.0 - 0.0)^2 = 1.0 (correctly admits ignorance)
         score = calibration_aware_score(False, 0.0)
-        assert score == 0.5
+        assert score == 1.0
+
+    def test_calibration_aware_score_correct_low_conf(self):
+        # 1 - (0.0 - 1.0)^2 = 0.0 (correct but no confidence = worst)
+        score = calibration_aware_score(True, 0.0)
+        assert score == 0.0
+
+    def test_calibration_aware_score_correct_moderate_conf(self):
+        # 1 - (0.7 - 1.0)^2 = 0.91
+        score = calibration_aware_score(True, 0.7)
+        assert score == pytest.approx(0.91)
+
+    def test_calibration_aware_score_wrong_moderate_conf(self):
+        # 1 - (0.5 - 0.0)^2 = 0.75
+        score = calibration_aware_score(False, 0.5)
+        assert score == pytest.approx(0.75)
 
     def test_ece_perfect(self):
         ece = expected_calibration_error([1.0, 0.0], [True, False])
@@ -183,3 +201,86 @@ class TestCompositeScore:
         # Should normalize by actual weight used
         expected = (0.30 * 0.8 + 0.20 * 0.6) / (0.30 + 0.20)
         assert composite == pytest.approx(expected)
+
+
+class TestAdjudication:
+    """Tests for deterministic answer adjudication."""
+
+    def setup_method(self):
+        self.answer_key = {
+            "cal_001": {
+                "canonical_answer": "au",
+                "accepted_aliases": ["au", "gold"],
+                "answer_type": "entity",
+                "grader_rule": "alias_match",
+            },
+            "cal_002": {
+                "canonical_answer": "42",
+                "accepted_aliases": ["42", "42.0"],
+                "answer_type": "integer",
+                "grader_rule": "numeric_equivalence",
+            },
+            "cal_003": {
+                "canonical_answer": "no",
+                "accepted_aliases": ["no"],
+                "answer_type": "yes_no",
+                "grader_rule": "yes_no_normalization",
+            },
+            "cal_004": {
+                "canonical_answer": "0.05",
+                "accepted_aliases": ["0.05", "$0.05", "5 cents"],
+                "answer_type": "decimal",
+                "grader_rule": "alias_match",
+            },
+        }
+
+    def test_canonical_match(self):
+        from metajudge.scoring.adjudication import adjudicate_answer
+        assert adjudicate_answer("cal_001", "Au", self.answer_key) is True
+
+    def test_alias_match(self):
+        from metajudge.scoring.adjudication import adjudicate_answer
+        assert adjudicate_answer("cal_001", "gold", self.answer_key) is True
+
+    def test_wrong_answer(self):
+        from metajudge.scoring.adjudication import adjudicate_answer
+        assert adjudicate_answer("cal_001", "silver", self.answer_key) is False
+
+    def test_numeric_equivalence(self):
+        from metajudge.scoring.adjudication import adjudicate_answer
+        assert adjudicate_answer("cal_002", "42.0", self.answer_key) is True
+
+    def test_numeric_wrong(self):
+        from metajudge.scoring.adjudication import adjudicate_answer
+        assert adjudicate_answer("cal_002", "43", self.answer_key) is False
+
+    def test_yes_no_normalization(self):
+        from metajudge.scoring.adjudication import adjudicate_answer
+        assert adjudicate_answer("cal_003", "No", self.answer_key) is True
+        assert adjudicate_answer("cal_003", "n", self.answer_key) is True
+        assert adjudicate_answer("cal_003", "false", self.answer_key) is True
+
+    def test_yes_no_wrong(self):
+        from metajudge.scoring.adjudication import adjudicate_answer
+        assert adjudicate_answer("cal_003", "yes", self.answer_key) is False
+
+    def test_alias_with_symbol(self):
+        from metajudge.scoring.adjudication import adjudicate_answer
+        assert adjudicate_answer("cal_004", "$0.05", self.answer_key) is True
+        assert adjudicate_answer("cal_004", "5 cents", self.answer_key) is True
+
+    def test_fallback_without_key(self):
+        from metajudge.scoring.adjudication import adjudicate_with_fallback
+        # No answer key — falls back to exact match
+        assert adjudicate_with_fallback("unknown_id", "Paris", "Paris") is True
+        assert adjudicate_with_fallback("unknown_id", "paris", "Paris") is True
+        assert adjudicate_with_fallback("unknown_id", "London", "Paris") is False
+
+    def test_fallback_with_key(self):
+        from metajudge.scoring.adjudication import adjudicate_with_fallback
+        # Has answer key — uses adjudication
+        assert adjudicate_with_fallback("cal_001", "gold", "au", self.answer_key) is True
+
+    def test_missing_id_in_key(self):
+        from metajudge.scoring.adjudication import adjudicate_answer
+        assert adjudicate_answer("nonexistent", "anything", self.answer_key) is False

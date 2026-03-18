@@ -27,7 +27,9 @@ These are the project's source-of-truth documents, in priority order:
 | 2 | **Recommendations memo** | `docs/metacognition_assessor_recommendations.md` | Architectural revision guidance |
 | 3 | **Change prompt** | `docs/metacognition_assessor_change_prompt.md` | Implementation requirements checklist |
 | 4 | **V1 Architecture** | `planning/v1_architecture.md` | Current production plan |
-| 5 | **Original framework** | `docs/source_framework.md` | Conceptual foundation (read for context, do not treat as current spec) |
+| 5 | **Scoring plan** | `planning/scoring_plan.md` | Brier-derived scoring, adjudication, diagnostics |
+| 6 | **Dataset construction plan** | `planning/dataset_construction_plan.md` | Item sourcing, canonicalization, pilot gates |
+| 7 | **Original framework** | `docs/source_framework.md` | Conceptual foundation (read for context, do not treat as current spec) |
 
 When documents conflict, higher priority wins. The original framework and implementation plan are historical context — they informed the current design but have been superseded by the recommendations memo.
 

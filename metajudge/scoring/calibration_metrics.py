@@ -135,14 +135,16 @@ def accuracy_by_confidence_bucket(
 
 
 def calibration_aware_score(is_correct: bool, confidence: float) -> float:
-    """Combined score that rewards calibration and correctness.
-    
-    Design: correct high-confidence = high score, wrong high-confidence = strong penalty.
-    Source: Framework §5.1.5, §7.3
+    """Per-item calibration score based on the Brier scoring rule.
+
+    Returns 1 - (confidence - outcome)^2, an affine transform of the
+    per-item Brier loss that is higher-is-better and ranges [0, 1].
+
+    This is a strictly proper scoring rule: the expected score is
+    uniquely maximized when stated confidence equals the true probability
+    of correctness (Brier 1950; Gneiting & Raftery 2007).
+
+    Source: planning/scoring_plan.md §2
     """
-    if is_correct:
-        # Reward proportional to confidence (well-calibrated correct answers)
-        return 0.5 + 0.5 * confidence
-    else:
-        # Penalize proportional to confidence (overconfident wrong answers)
-        return 0.5 * (1.0 - confidence)
+    y = 1.0 if is_correct else 0.0
+    return float(1.0 - (confidence - y) ** 2)

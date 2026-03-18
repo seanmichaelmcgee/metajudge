@@ -42,7 +42,7 @@ V1 builds Family A (Calibration) end-to-end. This is the anchor family and the s
 
 ### V1 deliverables
 
-1. `@dataclass` schema: `CalibrationResponse`
+1. Pydantic schema: `CalibrationResponse` (verified working in Kaggle SDK)
 2. `@kbench.task`: `metacog_calibration` (per-item) + `metacognition_suite` (wrapper)
 3. Dataset: `data/calibration.csv` — 20-item pilot, expanding to 100
 4. Scoring: `calibration_aware_score` (per-item) + `aggregate_calibration` + diagnostics
@@ -289,7 +289,7 @@ metajudge-agi/
 | `metajudge/tasks/abstention.py` | Rename | `metajudge/tasks/abstention_verification.py` |
 | `metajudge/scoring/source_awareness_metrics.py` | Rename | `metajudge/scoring/grounding_metrics.py` |
 | `metajudge/scoring/strategy_metrics.py` | Rename | `metajudge/scoring/control_policy_metrics.py` |
-| `metajudge/schemas/response_schemas.py` | Revise | Pydantic → @dataclass; add GroundingResponse, ControlPolicyResponse |
+| `metajudge/schemas/response_schemas.py` | Keep Pydantic | Add GroundingResponse, ControlPolicyResponse (V2) |
 | `config/benchmark_config.yaml` | Revise | Update family names, weights, axis structure |
 
 ### Files to KEEP unchanged
@@ -334,7 +334,7 @@ Monitoring-heavy (60% monitoring, 40% control) because monitoring families are c
 ## 8. Implementation Phases
 
 ### Phase 1 — Calibration V1 (Current Sprint)
-1. Refactor `CalibrationResponse` to `@dataclass`
+1. ~~Refactor `CalibrationResponse` to `@dataclass`~~ — **RESOLVED**: Pydantic works in Kaggle SDK (verified 2026-03-18). Keep Pydantic.
 2. Build `aggregate_calibration()` and axis-level aggregation
 3. Author 20-item pilot CSV
 4. Activate `@kbench.task` in calibration module

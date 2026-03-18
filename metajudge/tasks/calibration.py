@@ -12,6 +12,7 @@ from __future__ import annotations
 from typing import Any, Dict, Optional
 
 from metajudge.schemas.response_schemas import CalibrationResponse, MetaResponse
+from metajudge.scoring.adjudication import adjudicate_with_fallback
 from metajudge.scoring.calibration_metrics import (
     brier_component_single,
     calibration_aware_score,
@@ -44,13 +45,23 @@ answer, confidence, reason_for_uncertainty, would_verify_if_possible""".strip()
 def score_calibration_item(
     parsed: CalibrationResponse,
     gold_answer: str,
+    example_id: Optional[str] = None,
+    answer_key: Optional[Dict] = None,
 ) -> Dict[str, Any]:
     """Score a single calibration task item.
-    
-    Source: Framework §5.1.5
+
+    Uses deterministic adjudication when an answer key is provided,
+    falling back to normalized exact match otherwise.
+
+    Source: planning/scoring_plan.md §3–4
     """
-    is_correct = normalize_text(parsed.answer) == normalize_text(gold_answer)
-    
+    if example_id and answer_key:
+        is_correct = adjudicate_with_fallback(
+            example_id, parsed.answer, gold_answer, answer_key
+        )
+    else:
+        is_correct = normalize_text(parsed.answer) == normalize_text(gold_answer)
+
     return {
         "is_correct": is_correct,
         "confidence": parsed.confidence,
