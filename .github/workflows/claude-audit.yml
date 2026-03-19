@@ -40,6 +40,9 @@ jobs:
             echo ""
             echo "--- TEST OUTPUT ---"
             pytest tests/ --tb=short -q 2>&1 || true
+            echo ""
+            echo "--- DATASET VALIDATION ---"
+            python -m metajudge.validation.run_checks 2>&1 || true
           } > /tmp/context.txt
           {
             echo "=== GIT DIFF vs main ==="
@@ -62,7 +65,8 @@ jobs:
             Your job is to audit those changes against the project's governing rules.
 
             First, read SOUL.md in the repo root — it contains non-negotiable project rules.
-            Then read audit-context.txt — it contains the git diff and ruff/mypy/pytest output.
+            Then read audit-context.txt — it contains the git diff, ruff/mypy/pytest output,
+            and dataset validation output (PASS/WARN/FAIL findings from run_checks.py).
 
             Audit against these four priorities, in order:
 
@@ -85,7 +89,14 @@ jobs:
             hardcoded magic numbers in scoring weights (should reference config/),
             or notebook logic that belongs in metajudge/ instead.
 
-            ## 4. Kaggle Quota / Budget
+            ## 4. Dataset Integrity
+            Review the DATASET VALIDATION section in audit-context.txt.
+            Flag any FAIL-level findings — these mean adjudication is broken on production data.
+            Note WARN-level findings (thin aliases, difficulty gaps, redundant aliases) as
+            data hygiene issues for the next sprint. If validation output is missing entirely,
+            flag that the validator could not run.
+
+            ## 5. Kaggle Quota / Budget
             Flag any code that could make unexpected API calls or spend quota:
             - Loops over model calls without caching checks
             - Missing budget guards
@@ -95,6 +106,7 @@ jobs:
             ### 🚨 SOUL.md Violations
             ### 🧪 Missing Test Coverage
             ### 🔧 Code Quality
+            ### 📊 Dataset Integrity
             ### 💸 Quota / Budget Risk
             ### ✅ Looks Good
 
