@@ -1,6 +1,8 @@
 """Unit tests for dataset validation checks.
 
 Tests use small synthetic data — not the real calibration dataset.
+FULL_SPEC uses the notebook schema (canonical/aliases/rule) as the source of truth.
+
 Source: dataset-validation-task.md
 """
 
@@ -8,6 +10,8 @@ import pandas as pd
 import pytest
 
 from metajudge.validation.dataset_checks import (
+    check_adjudication_regression,
+    check_adjudication_schema_drift,
     check_alias_adequacy,
     check_answer_key_schema_consistency,
     check_csv_answer_key_alignment,
@@ -27,14 +31,17 @@ def _df(*rows):
     return pd.DataFrame(rows)
 
 
-def _ak(**entries):
-    """Build a minimal answer key dict."""
-    return entries
-
-
+# Notebook schema — source of truth
 FULL_SPEC = {
+    "canonical": "paris",
+    "aliases": ["paris", "france capital"],
+    "rule": "alias",
+}
+
+# Old-schema spec (as currently in production data file) — used only in drift tests
+OLD_SPEC = {
     "gold_answer": "paris",
-    "aliases": ["paris", "Paris"],
+    "aliases": ["paris", "France capital"],
     "answer_type": "entity",
     "grader_rule": "alias_match",
     "format_instruction": "one_word",
@@ -102,7 +109,7 @@ class TestGoldAnswerFormat:
 
 class TestAliasAdequacy:
     def test_adequate_aliases_pass(self):
-        ak = {"cal_001": {**FULL_SPEC, "aliases": ["paris", "Paris", "PARIS"]}}
+        ak = {"cal_001": {**FULL_SPEC, "aliases": ["paris", "France capital", "city of light"]}}
         assert check_alias_adequacy(ak) == []
 
     def test_single_alias_flagged(self):
@@ -115,14 +122,19 @@ class TestAliasAdequacy:
         findings = check_alias_adequacy(ak)
         assert any("cal_001" in f and "0 alias" in f for f in findings)
 
-    def test_numeric_equivalence_valid_float(self):
-        ak = {"cal_001": {**FULL_SPEC, "gold_answer": "42", "grader_rule": "numeric_equivalence",
-                          "aliases": ["42", "42.0"]}}
+    def test_numeric_rule_valid_float(self):
+        ak = {"cal_001": {**FULL_SPEC, "canonical": "42", "rule": "numeric", "aliases": ["42", "42.0"]}}
         assert check_alias_adequacy(ak) == []
 
-    def test_numeric_equivalence_bad_canonical(self):
-        ak = {"cal_001": {**FULL_SPEC, "gold_answer": "forty-two",
-                          "grader_rule": "numeric_equivalence", "aliases": ["42", "42.0"]}}
+    def test_numeric_rule_bad_canonical(self):
+        ak = {"cal_001": {**FULL_SPEC, "canonical": "forty-two", "rule": "numeric", "aliases": ["42", "42.0"]}}
+        findings = check_alias_adequacy(ak)
+        assert any("not a float" in f for f in findings)
+
+    def test_old_schema_numeric_equivalence_still_caught(self):
+        # Tolerates grader_rule field name drift — still catches bad canonical
+        ak = {"cal_001": {**OLD_SPEC, "gold_answer": "not-a-number", "grader_rule": "numeric_equivalence",
+                          "aliases": ["42", "42.0"]}}
         findings = check_alias_adequacy(ak)
         assert any("not a float" in f for f in findings)
 
@@ -194,15 +206,19 @@ class TestIdFormatAndUniqueness:
 # ---------------------------------------------------------------------------
 
 class TestAnswerKeySchemaConsistency:
-    def test_consistent_schema_passes(self):
-        ak = {
-            "cal_001": FULL_SPEC.copy(),
-            "cal_002": FULL_SPEC.copy(),
-        }
+    def test_notebook_schema_passes(self):
+        ak = {"cal_001": FULL_SPEC.copy(), "cal_002": FULL_SPEC.copy()}
         assert check_answer_key_schema_consistency(ak) == []
 
+    def test_old_schema_flagged_as_missing_notebook_fields(self):
+        # OLD_SPEC has gold_answer/grader_rule instead of canonical/rule
+        ak = {"cal_001": OLD_SPEC.copy()}
+        findings = check_answer_key_schema_consistency(ak)
+        assert any("cal_001" in f and "missing" in f for f in findings)
+        assert any("canonical" in f for f in findings)
+
     def test_missing_field_flagged(self):
-        bad = {k: v for k, v in FULL_SPEC.items() if k != "grader_rule"}
+        bad = {k: v for k, v in FULL_SPEC.items() if k != "rule"}
         ak = {"cal_001": FULL_SPEC.copy(), "cal_002": bad}
         findings = check_answer_key_schema_consistency(ak)
         assert any("cal_002" in f and "missing" in f for f in findings)
@@ -219,22 +235,70 @@ class TestAnswerKeySchemaConsistency:
 # ---------------------------------------------------------------------------
 
 class TestNormalizeTextSafety:
-    def test_matching_gold_answers_pass(self):
+    def test_matching_canonical_passes(self):
         df = _df({"example_id": "cal_001", "gold_answer": "Paris", "difficulty": "easy"})
-        # Use semantically distinct aliases so no redundant-alias finding fires
-        ak = {"cal_001": {**FULL_SPEC, "gold_answer": "paris", "aliases": ["paris", "france capital"]}}
-        # CSV: "Paris" normalizes to "paris"; AK: "paris" normalizes to "paris" — match
+        ak = {"cal_001": {**FULL_SPEC, "canonical": "paris", "aliases": ["paris", "france capital"]}}
         assert check_normalize_text_safety(df, ak) == []
 
-    def test_mismatched_gold_answers_flagged(self):
+    def test_mismatched_flagged(self):
         df = _df({"example_id": "cal_001", "gold_answer": "london", "difficulty": "easy"})
-        ak = {"cal_001": {**FULL_SPEC, "gold_answer": "paris", "aliases": ["paris", "Paris"]}}
+        ak = {"cal_001": {**FULL_SPEC, "canonical": "paris", "aliases": ["paris", "france capital"]}}
         findings = check_normalize_text_safety(df, ak)
         assert any("cal_001" in f and "normalizes to" in f for f in findings)
 
     def test_redundant_alias_flagged(self):
         df = _df({"example_id": "cal_001", "gold_answer": "paris", "difficulty": "easy"})
-        ak = {"cal_001": {**FULL_SPEC, "gold_answer": "paris",
+        ak = {"cal_001": {**FULL_SPEC, "canonical": "paris",
                           "aliases": ["Paris", "PARIS"]}}  # both normalize to "paris"
         findings = check_normalize_text_safety(df, ak)
         assert any("redundant alias" in f for f in findings)
+
+    def test_old_schema_gold_answer_tolerated(self):
+        # Even with old field name, matching values should not flag mismatch
+        df = _df({"example_id": "cal_001", "gold_answer": "paris", "difficulty": "easy"})
+        ak = {"cal_001": {**OLD_SPEC, "gold_answer": "paris", "aliases": ["paris", "france capital"]}}
+        findings = check_normalize_text_safety(df, ak)
+        assert not any("normalizes to" in f for f in findings)
+
+
+# ---------------------------------------------------------------------------
+# Check 8: Adjudication Schema Drift
+# ---------------------------------------------------------------------------
+
+class TestAdjudicationSchemaDrift:
+    def test_current_code_flagged(self):
+        # adjudication.py currently uses old field names — this should fire
+        findings = check_adjudication_schema_drift()
+        assert len(findings) > 0, "Expected drift findings but got none"
+        assert any("canonical_answer" in f for f in findings)
+        assert any("accepted_aliases" in f for f in findings)
+
+
+# ---------------------------------------------------------------------------
+# Check 9: Adjudication Regression
+# ---------------------------------------------------------------------------
+
+class TestAdjudicationRegression:
+    def test_notebook_schema_succeeds(self):
+        # A well-formed notebook-schema key should work with adjudication
+        # (once adjudication.py is migrated — test documents expected end state)
+        # For now, verify the check correctly reports errors on old-schema data
+        df = _df({"example_id": "cal_001", "gold_answer": "3", "difficulty": "easy"})
+        ak_old = {"cal_001": OLD_SPEC.copy()}  # old schema — will raise KeyError
+        findings = check_adjudication_regression(df, ak_old)
+        assert len(findings) > 0
+        assert any("KeyError" in f for f in findings)
+
+    def test_no_errors_on_correct_schema(self):
+        # When answer key has canonical_answer/accepted_aliases (what adjudication.py expects),
+        # the regression check should pass
+        df = _df({"example_id": "cal_001", "gold_answer": "paris", "difficulty": "easy"})
+        adj_schema_key = {
+            "cal_001": {
+                "canonical_answer": "paris",
+                "accepted_aliases": ["paris", "france capital"],
+                "grader_rule": "alias_match",
+            }
+        }
+        findings = check_adjudication_regression(df, adj_schema_key)
+        assert findings == []

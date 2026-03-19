@@ -20,6 +20,8 @@ from pathlib import Path
 import pandas as pd
 
 from metajudge.validation.dataset_checks import (
+    check_adjudication_regression,
+    check_adjudication_schema_drift,
     check_alias_adequacy,
     check_answer_key_schema_consistency,
     check_csv_answer_key_alignment,
@@ -34,6 +36,8 @@ FAIL_CHECKS = {
     "CSV-Answer Key Alignment",
     "ID Format and Uniqueness",
     "Answer Key Schema Consistency",
+    "Adjudication Schema Drift",
+    "Adjudication Regression",
 }
 
 
@@ -84,6 +88,8 @@ def main() -> None:
         ("CSV-Answer Key Alignment",      check_csv_answer_key_alignment(df, answer_key)),
         ("ID Format and Uniqueness",       check_id_format_and_uniqueness(df)),
         ("Answer Key Schema Consistency",  check_answer_key_schema_consistency(answer_key)),
+        ("Adjudication Schema Drift",      check_adjudication_schema_drift()),
+        ("Adjudication Regression",        check_adjudication_regression(df, answer_key)),
         ("Gold Answer Format",             check_gold_answer_format(df)),
         ("Alias Adequacy",                 check_alias_adequacy(answer_key)),
         ("Difficulty Distribution",        check_difficulty_distribution(df)),
