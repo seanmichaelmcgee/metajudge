@@ -6,9 +6,7 @@
       "3.0",
       "three"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_002": {
     "gold_answer": "10",
@@ -17,9 +15,7 @@
       "10.0",
       "ten"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_003": {
     "gold_answer": "365",
@@ -27,9 +23,7 @@
       "365",
       "365.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_004": {
     "gold_answer": "8",
@@ -38,9 +32,7 @@
       "8.0",
       "eight"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_005": {
     "gold_answer": "7",
@@ -49,9 +41,7 @@
       "7.0",
       "seven"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_006": {
     "gold_answer": "h2o",
@@ -60,9 +50,7 @@
       "h\u2082o",
       "H2O"
     ],
-    "answer_type": "single_word",
-    "grader_rule": "alias_match",
-    "format_instruction": "one_word_only"
+    "rule": "alias"
   },
   "cal_007": {
     "gold_answer": "24",
@@ -71,18 +59,14 @@
       "24.0",
       "twenty-four"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_008": {
     "gold_answer": "paris",
     "aliases": [
       "paris"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "city_name_only"
+    "rule": "alias"
   },
   "cal_009": {
     "gold_answer": "5",
@@ -91,9 +75,7 @@
       "5.0",
       "five"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_010": {
     "gold_answer": "144",
@@ -101,9 +83,7 @@
       "144",
       "144.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_011": {
     "gold_answer": "19",
@@ -112,9 +92,7 @@
       "19.0",
       "nineteen"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_012": {
     "gold_answer": "1912",
@@ -122,18 +100,14 @@
       "1912",
       "1912.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_013": {
     "gold_answer": "jupiter",
     "aliases": [
       "jupiter"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "planet_name_only"
+    "rule": "alias"
   },
   "cal_014": {
     "gold_answer": "george orwell",
@@ -142,9 +116,7 @@
       "orwell",
       "eric arthur blair"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "full_name_only"
+    "rule": "alias"
   },
   "cal_015": {
     "gold_answer": "vatican city",
@@ -154,18 +126,14 @@
       "holy see",
       "vatican"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "country_name_only"
+    "rule": "alias"
   },
   "cal_016": {
     "gold_answer": "hydrogen",
     "aliases": [
       "hydrogen"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "element_name_only"
+    "rule": "alias"
   },
   "cal_017": {
     "gold_answer": "yen",
@@ -173,9 +141,7 @@
       "yen",
       "japanese yen"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "name_only"
+    "rule": "alias"
   },
   "cal_018": {
     "gold_answer": "7",
@@ -184,18 +150,14 @@
       "7.0",
       "seven"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_019": {
     "gold_answer": "china",
     "aliases": [
       "china"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "country_name_only"
+    "rule": "alias"
   },
   "cal_020": {
     "gold_answer": "300000",
@@ -203,9 +165,7 @@
       "300000",
       "300000.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_021": {
     "gold_answer": "carbon dioxide",
@@ -214,9 +174,7 @@
       "co2",
       "carbon-dioxide"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "gas_name_only"
+    "rule": "alias"
   },
   "cal_022": {
     "gold_answer": "11",
@@ -225,9 +183,7 @@
       "11.0",
       "eleven"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_023": {
     "gold_answer": "mandarin",
@@ -236,18 +192,14 @@
       "mandarin chinese",
       "chinese"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "full_name_only"
+    "rule": "alias"
   },
   "cal_024": {
     "gold_answer": "diamond",
     "aliases": [
       "diamond"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "name_only"
+    "rule": "alias"
   },
   "cal_025": {
     "gold_answer": "8",
@@ -256,9 +208,7 @@
       "8.0",
       "eight"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_026": {
     "gold_answer": "mount everest",
@@ -268,9 +218,7 @@
       "mt. everest",
       "mt everest"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "mountain_name_only"
+    "rule": "alias"
   },
   "cal_027": {
     "gold_answer": "27",
@@ -279,9 +227,7 @@
       "27.0",
       "twenty-seven"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_028": {
     "gold_answer": "immanuel kant",
@@ -289,9 +235,7 @@
       "immanuel kant",
       "kant"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "full_name_only"
+    "rule": "alias"
   },
   "cal_029": {
     "gold_answer": "na",
@@ -299,9 +243,7 @@
       "na",
       "Na"
     ],
-    "answer_type": "single_word",
-    "grader_rule": "alias_match",
-    "format_instruction": "symbol_only"
+    "rule": "alias"
   },
   "cal_030": {
     "gold_answer": "55",
@@ -309,9 +251,7 @@
       "55",
       "55.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_031": {
     "gold_answer": "88",
@@ -319,18 +259,14 @@
       "88",
       "88.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_032": {
     "gold_answer": "liver",
     "aliases": [
       "liver"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "name_only"
+    "rule": "alias"
   },
   "cal_033": {
     "gold_answer": "1991",
@@ -338,9 +274,7 @@
       "1991",
       "1991.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_034": {
     "gold_answer": "iron",
@@ -348,9 +282,7 @@
       "iron",
       "fe"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "element_name_only"
+    "rule": "alias"
   },
   "cal_035": {
     "gold_answer": "6",
@@ -359,18 +291,14 @@
       "6.0",
       "six"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_036": {
     "gold_answer": "equilateral",
     "aliases": [
       "equilateral"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "name_only"
+    "rule": "alias"
   },
   "cal_037": {
     "gold_answer": "chimborazo",
@@ -380,9 +308,7 @@
       "mt. chimborazo",
       "mt chimborazo"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "mountain_name_only"
+    "rule": "alias"
   },
   "cal_038": {
     "gold_answer": "27",
@@ -391,9 +317,7 @@
       "27.0",
       "twenty-seven"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_039": {
     "gold_answer": "10",
@@ -402,9 +326,7 @@
       "10.0",
       "ten"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_040": {
     "gold_answer": "9",
@@ -413,9 +335,7 @@
       "9.0",
       "nine"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_041": {
     "gold_answer": "16",
@@ -424,9 +344,7 @@
       "16.0",
       "sixteen"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_042": {
     "gold_answer": "52",
@@ -434,9 +352,7 @@
       "52",
       "52.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_043": {
     "gold_answer": "65536",
@@ -444,9 +360,7 @@
       "65536",
       "65536.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_044": {
     "gold_answer": "12",
@@ -455,9 +369,7 @@
       "12.0",
       "twelve"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_045": {
     "gold_answer": "720",
@@ -465,9 +377,7 @@
       "720",
       "720.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_046": {
     "gold_answer": "940000000",
@@ -475,9 +385,7 @@
       "940000000",
       "940000000.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_047": {
     "gold_answer": "1",
@@ -486,9 +394,7 @@
       "1.0",
       "one"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_048": {
     "gold_answer": "8",
@@ -497,9 +403,7 @@
       "8.0",
       "eight"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_049": {
     "gold_answer": "128",
@@ -507,9 +411,7 @@
       "128",
       "128.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_050": {
     "gold_answer": "8",
@@ -518,9 +420,7 @@
       "8.0",
       "eight"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_051": {
     "gold_answer": "5280",
@@ -528,9 +428,7 @@
       "5280",
       "5280.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_052": {
     "gold_answer": "7",
@@ -539,9 +437,7 @@
       "7.0",
       "seven"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_053": {
     "gold_answer": "10080",
@@ -549,9 +445,7 @@
       "10080",
       "10080.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_054": {
     "gold_answer": "880",
@@ -559,9 +453,7 @@
       "880",
       "880.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_055": {
     "gold_answer": "101",
@@ -569,9 +461,7 @@
       "101",
       "101.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_056": {
     "gold_answer": "2444",
@@ -579,9 +469,7 @@
       "2444",
       "2444.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_057": {
     "gold_answer": "540",
@@ -589,9 +477,7 @@
       "540",
       "540.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_058": {
     "gold_answer": "21",
@@ -600,9 +486,7 @@
       "21.0",
       "twenty-one"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_059": {
     "gold_answer": "8",
@@ -611,9 +495,7 @@
       "8.0",
       "eight"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_060": {
     "gold_answer": "10",
@@ -622,9 +504,7 @@
       "10.0",
       "ten"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_061": {
     "gold_answer": "15",
@@ -633,9 +513,7 @@
       "15.0",
       "fifteen"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_062": {
     "gold_answer": "72",
@@ -643,9 +521,7 @@
       "72",
       "72.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_063": {
     "gold_answer": "26",
@@ -654,9 +530,7 @@
       "26.0",
       "twenty-six"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_064": {
     "gold_answer": "6561",
@@ -664,9 +538,7 @@
       "6561",
       "6561.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_065": {
     "gold_answer": "8",
@@ -675,9 +547,7 @@
       "8.0",
       "eight"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_066": {
     "gold_answer": "144",
@@ -685,18 +555,14 @@
       "144",
       "144.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_067": {
     "gold_answer": "nintendo",
     "aliases": [
       "nintendo"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "name_only"
+    "rule": "alias"
   },
   "cal_068": {
     "gold_answer": "71",
@@ -704,9 +570,7 @@
       "71",
       "71.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_069": {
     "gold_answer": "nitrogen",
@@ -715,18 +579,14 @@
       "n",
       "n2"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "element_name_only"
+    "rule": "alias"
   },
   "cal_070": {
     "gold_answer": "wellington",
     "aliases": [
       "wellington"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "city_name_only"
+    "rule": "alias"
   },
   "cal_071": {
     "gold_answer": "no",
@@ -734,9 +594,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_072": {
     "gold_answer": "no",
@@ -744,18 +602,14 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_073": {
     "gold_answer": "fruit",
     "aliases": [
       "fruit"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "name_only"
+    "rule": "alias"
   },
   "cal_074": {
     "gold_answer": "atlantic",
@@ -764,18 +618,14 @@
       "atlantic ocean",
       "the atlantic"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "ocean_name_only"
+    "rule": "alias"
   },
   "cal_075": {
     "gold_answer": "lithium",
     "aliases": [
       "lithium"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "element_name_only"
+    "rule": "alias"
   },
   "cal_076": {
     "gold_answer": "mauna kea",
@@ -784,18 +634,14 @@
       "maunakea",
       "mauna-kea"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "mountain_name_only"
+    "rule": "alias"
   },
   "cal_077": {
     "gold_answer": "canada",
     "aliases": [
       "canada"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "country_name_only"
+    "rule": "alias"
   },
   "cal_078": {
     "gold_answer": "116",
@@ -803,9 +649,7 @@
       "116",
       "116.0"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_079": {
     "gold_answer": "hydrogen",
@@ -814,9 +658,7 @@
       "h",
       "h2"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "name_only"
+    "rule": "alias"
   },
   "cal_080": {
     "gold_answer": "no",
@@ -824,9 +666,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_081": {
     "gold_answer": "yes",
@@ -834,9 +674,7 @@
       "yes",
       "y"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_082": {
     "gold_answer": "no",
@@ -844,9 +682,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_083": {
     "gold_answer": "no",
@@ -854,9 +690,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_084": {
     "gold_answer": "no",
@@ -864,9 +698,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_085": {
     "gold_answer": "no",
@@ -874,9 +706,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_086": {
     "gold_answer": "no",
@@ -884,9 +714,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_087": {
     "gold_answer": "no",
@@ -894,18 +722,14 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_088": {
     "gold_answer": "japan",
     "aliases": [
       "japan"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "country_name_only"
+    "rule": "alias"
   },
   "cal_089": {
     "gold_answer": "no",
@@ -913,9 +737,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_090": {
     "gold_answer": "no",
@@ -923,9 +745,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_091": {
     "gold_answer": "yes",
@@ -933,9 +753,7 @@
       "yes",
       "y"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_092": {
     "gold_answer": "no",
@@ -943,9 +761,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_093": {
     "gold_answer": "no",
@@ -953,9 +769,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_094": {
     "gold_answer": "yes",
@@ -963,9 +777,7 @@
       "yes",
       "y"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_095": {
     "gold_answer": "yes",
@@ -973,9 +785,7 @@
       "yes",
       "y"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_096": {
     "gold_answer": "brazil",
@@ -983,9 +793,7 @@
       "brazil",
       "brasil"
     ],
-    "answer_type": "entity",
-    "grader_rule": "alias_match",
-    "format_instruction": "country_name_only"
+    "rule": "alias"
   },
   "cal_097": {
     "gold_answer": "0",
@@ -995,9 +803,7 @@
       "zero",
       "none"
     ],
-    "answer_type": "integer",
-    "grader_rule": "numeric_equivalence",
-    "format_instruction": "digits_only"
+    "rule": "numeric"
   },
   "cal_098": {
     "gold_answer": "no",
@@ -1005,9 +811,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_099": {
     "gold_answer": "no",
@@ -1015,9 +819,7 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   },
   "cal_100": {
     "gold_answer": "no",
@@ -1025,8 +827,6 @@
       "no",
       "n"
     ],
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no_match",
-    "format_instruction": "yes_no"
+    "rule": "yes_no"
   }
 }

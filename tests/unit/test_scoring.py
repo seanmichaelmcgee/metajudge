@@ -208,30 +208,27 @@ class TestAdjudication:
     """Tests for deterministic answer adjudication."""
 
     def setup_method(self):
+        # Schema: gold_answer / aliases / rule (per SOUL.md)
         self.answer_key = {
             "cal_001": {
-                "canonical_answer": "au",
-                "accepted_aliases": ["au", "gold"],
-                "answer_type": "entity",
-                "grader_rule": "alias_match",
+                "gold_answer": "au",
+                "aliases": ["au", "gold"],
+                "rule": "alias",
             },
             "cal_002": {
-                "canonical_answer": "42",
-                "accepted_aliases": ["42", "42.0"],
-                "answer_type": "integer",
-                "grader_rule": "numeric_equivalence",
+                "gold_answer": "42",
+                "aliases": ["42", "42.0"],
+                "rule": "numeric",
             },
             "cal_003": {
-                "canonical_answer": "no",
-                "accepted_aliases": ["no"],
-                "answer_type": "yes_no",
-                "grader_rule": "yes_no_normalization",
+                "gold_answer": "no",
+                "aliases": ["no"],
+                "rule": "yes_no",
             },
             "cal_004": {
-                "canonical_answer": "0.05",
-                "accepted_aliases": ["0.05", "$0.05", "5 cents"],
-                "answer_type": "decimal",
-                "grader_rule": "alias_match",
+                "gold_answer": "0.05",
+                "aliases": ["0.05", "$0.05", "5 cents"],
+                "rule": "alias",
             },
         }
 

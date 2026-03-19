@@ -96,6 +96,30 @@ Weights are provisional and will be tuned after pilot runs. The composite is for
 
 ---
 
+## Canonical schema: answer key
+
+All answer-key data (JSON files, notebook embedded ANSWER_KEY, adjudication.py) MUST use these field names:
+
+```json
+{
+  "cal_001": {
+    "gold_answer": "42",
+    "aliases": ["42", "42.0", "forty-two"],
+    "rule": "numeric"
+  }
+}
+```
+
+| Field | Type | Values | Required |
+|-------|------|--------|----------|
+| `gold_answer` | string | The single canonical correct answer | Yes |
+| `aliases` | array of strings | All accepted equivalent forms (includes gold_answer) | Yes |
+| `rule` | string | `alias`, `numeric`, or `yes_no` | Yes |
+
+The CSV (`calibration.csv`) column is also `gold_answer`. Do not use `canonical`, `canonical_answer`, `accepted_aliases`, or `grader_rule` — these are deprecated.
+
+---
+
 ## What agents must not do
 
 1. **Do not add families not listed above** without updating this document first.
@@ -103,6 +127,7 @@ Weights are provisional and will be tuned after pilot runs. The composite is for
 3. **Do not expand dataset scope** beyond what the current phase plan specifies.
 4. **Do not spend quota** on anything other than the current implementation slice.
 5. **Do not silently diverge** from this document. If you think something here is wrong, flag it explicitly.
+6. **Do not use deprecated field names** (`canonical`, `canonical_answer`, `accepted_aliases`, `grader_rule`) in any new code or data files.
 
 ---
 

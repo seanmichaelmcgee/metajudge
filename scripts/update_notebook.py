@@ -24,17 +24,12 @@ csv_string = csv_buf.getvalue().strip()
 # Build ANSWER_KEY dict string
 ak_lines = []
 for eid, spec in sorted(answer_key.items(), key=lambda x: int(x[0].split("_")[1])):
-    # Map grader_rule to short form
-    rule_map = {
-        "numeric_equivalence": "numeric",
-        "alias_match": "alias",
-        "yes_no_match": "yes_no",
-    }
-    rule = rule_map.get(spec["grader_rule"], spec["grader_rule"])
-    
+    # Schema: gold_answer / aliases / rule (per SOUL.md)
+    rule = spec["rule"]
     aliases_str = json.dumps(spec["aliases"])
-    canonical = spec["gold_answer"]
-    ak_lines.append(f'    "{eid}": {{"canonical": "{canonical}", "aliases": {aliases_str}, "rule": "{rule}"}},')
+    gold = spec["gold_answer"]
+    ak_lines.append(f'    "{eid}": {{"gold_answer": "{gold}", "aliases": {aliases_str}, "rule": "{rule}"}},')
+
 
 # Remove trailing comma from last line
 if ak_lines:

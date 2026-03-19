@@ -24,15 +24,13 @@ from metajudge.utils.text import normalize_text
 # Answer key types and loading
 # ---------------------------------------------------------------------------
 
-# Answer spec for a single item
+# Canonical answer-key schema (gold_answer / aliases / rule)
 # {
-#   "canonical_answer": "42",
-#   "accepted_aliases": ["42", "42.0"],
-#   "answer_type": "integer",       # integer | decimal | yes_no | entity | single_word
-#   "format_instruction": "digits_only",
-#   "grader_rule": "alias_match",   # alias_match | numeric_equivalence | yes_no_normalization
-#   "notes": "Square root of 1764"
+#   "gold_answer": "42",
+#   "aliases": ["42", "42.0"],
+#   "rule": "alias"               # alias | numeric | yes_no
 # }
+# Optional fields: answer_type, format_instruction, notes
 
 AnswerSpec = Dict[str, Any]
 AnswerKey = Dict[str, AnswerSpec]
@@ -53,10 +51,10 @@ def load_answer_key(path: str | Path) -> AnswerKey:
 # ---------------------------------------------------------------------------
 
 def _grade_alias_match(normalized: str, spec: AnswerSpec) -> bool:
-    """Check against canonical answer and accepted aliases."""
-    if normalized == normalize_text(spec["canonical_answer"]):
+    """Check against gold_answer and aliases."""
+    if normalized == normalize_text(spec["gold_answer"]):
         return True
-    for alias in spec.get("accepted_aliases", []):
+    for alias in spec.get("aliases", []):
         if normalized == normalize_text(alias):
             return True
     return False
@@ -65,7 +63,7 @@ def _grade_alias_match(normalized: str, spec: AnswerSpec) -> bool:
 def _grade_numeric_equivalence(normalized: str, spec: AnswerSpec) -> bool:
     """Check numeric equivalence (handles '42' == '42.0')."""
     try:
-        return float(normalized) == float(spec["canonical_answer"])
+        return float(normalized) == float(spec["gold_answer"])
     except (ValueError, TypeError):
         return False
 
@@ -75,7 +73,7 @@ def _grade_yes_no(normalized: str, spec: AnswerSpec) -> bool:
     yes_forms = {"yes", "y", "true", "correct"}
     no_forms = {"no", "n", "false", "incorrect"}
 
-    canonical = normalize_text(spec["canonical_answer"])
+    canonical = normalize_text(spec["gold_answer"])
     canonical_is_yes = canonical in yes_forms
     canonical_is_no = canonical in no_forms
 
@@ -91,9 +89,9 @@ def _grade_yes_no(normalized: str, spec: AnswerSpec) -> bool:
 
 # Grading rule dispatch
 GRADER_RULES = {
-    "alias_match": _grade_alias_match,
-    "numeric_equivalence": _grade_numeric_equivalence,
-    "yes_no_normalization": _grade_yes_no,
+    "alias": _grade_alias_match,
+    "numeric": _grade_numeric_equivalence,
+    "yes_no": _grade_yes_no,
 }
 
 
@@ -138,11 +136,11 @@ def adjudicate_answer(
         return True
 
     # Step 3: Type-specific grading rule
-    grader_rule = spec.get("grader_rule", "alias_match")
-    grader_fn = GRADER_RULES.get(grader_rule)
+    rule = spec.get("rule", "alias")
+    grader_fn = GRADER_RULES.get(rule)
 
     if grader_fn and grader_fn is not _grade_alias_match:
-        # Only call if it's a different rule than alias_match (already tried)
+        # Only call if it's a different rule than alias (already tried)
         if grader_fn(normalized, spec):
             return True
 
