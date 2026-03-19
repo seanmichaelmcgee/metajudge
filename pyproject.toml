@@ -1,6 +1,6 @@
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
-build-backend = "setuptools.backends._legacy:_Backend"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "metajudge-agi"
@@ -26,6 +26,9 @@ dev = [
     "mypy>=1.0.0",
 ]
 
+[tool.setuptools.packages.find]
+where = ["."]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
@@ -42,3 +45,6 @@ target-version = "py310"
 python_version = "3.10"
 warn_return_any = true
 warn_unused_configs = true
+
+[tool.ruff.lint]
+exclude = ["notebooks/", "data/"]

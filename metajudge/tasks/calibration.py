@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from typing import Any, Dict, Optional
 
-from metajudge.schemas.response_schemas import CalibrationResponse, MetaResponse
+from metajudge.schemas.response_schemas import CalibrationResponse
 from metajudge.scoring.adjudication import adjudicate_with_fallback
 from metajudge.scoring.calibration_metrics import (
     brier_component_single,

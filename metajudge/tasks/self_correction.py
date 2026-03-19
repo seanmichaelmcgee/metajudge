@@ -9,7 +9,7 @@ and improve the answer in a targeted way. Uses multi-turn interaction.
 
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict
 
 from metajudge.schemas.response_schemas import MetaResponse, SelfCorrectionResponse
 from metajudge.scoring.self_correction_metrics import (
