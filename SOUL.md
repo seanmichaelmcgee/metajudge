@@ -135,7 +135,7 @@ Every dataset change (item additions, difficulty revisions, alias updates) MUST 
 
 **Sweep configuration:**
 - Models: 5-model panel defined in Cell 7 of the submission notebook
-- Current panel: gemini-2.5-flash, gemini-2.5-pro, claude-sonnet-4, claude-3-5-haiku, deepseek-v3
+- Current panel: gemini-2.5-flash, gemini-2.5-pro, claude-sonnet-4@20250514, claude-haiku-4-5@20251001, deepseek-v3.1
 - Cost: 5 models × 100 items = 500 LLM calls per sweep
 
 **Required outputs (auditable artifacts):**
@@ -192,15 +192,17 @@ Approach A is Kaggle's recommended path for leaderboard generation. Approach B i
 - Discovery: `list(kbench.llms.keys())` — printed by Cell 1 on every run
 - The key strings are NOT documented in advance; always verify via Cell 1 output
 
-**Verified keys** (confirmed in SDK):
+**Verified keys** (all confirmed on Kaggle, March 19 2026):
 - `"google/gemini-2.5-flash"`
-- `"meta/llama-3.1-70b"`
-
-**Unverified keys** (guesses — MUST be confirmed by running Cell 1 on Kaggle):
 - `"google/gemini-2.5-pro"`
-- `"anthropic/claude-sonnet-4-20250514"`
-- `"anthropic/claude-3-5-haiku-20241022"`
-- `"deepseek/deepseek-v3"`
+- `"anthropic/claude-sonnet-4@20250514"`
+- `"anthropic/claude-haiku-4-5@20251001"`
+- `"deepseek-ai/deepseek-v3.1"`
+
+**Key format notes:**
+- Anthropic uses `@` version separator: `model@date`
+- DeepSeek provider is `deepseek-ai`, not `deepseek`
+- 27 total models available on platform (see Cell 1 output for full list)
 
 **If a key fails:** Cell 7 prints which keys are not found. Replace with the correct key from Cell 1's `kbench.llms.keys()` output. The notebook is designed to degrade gracefully — it runs with whatever models are available (minimum 2).
 
@@ -249,4 +251,5 @@ When replacing items after a failed sweep:
 - **V2 Expansion Sprint:** 100-item calibration set built via 4-agent pipeline (Harvester → Formatter → Strategist → Auditor). Distribution: 10/26/30/22/12. 12 audit fixes applied.
 - **Flash Sweep Results:** 97/100 correct (0.9756 headline). 3 real errors: cal_065 (France borders), cal_084 (Amazon river), cal_088 (fortune cookies). Adversarial: 100%, Deceptive: 90.9%. Scores too high on flash alone — need weaker models for spread.
 - **SDK Alignment:** Notebook rebuilt to use `evaluate()` API per Kaggle SDK recommendations. Cell map updated to v3 (11 cells). Model discovery added to Cell 1.
-- **Current:** Multi-model sweep pending — user must run Cell 1 on Kaggle to verify model key strings, then run Cell 7 for headline scores across the 5-model panel.
+- **5-Model Sweep (March 19):** All 5 models verified and run. Results: Pro 98/100, Flash 97/100, Haiku 97/100, Sonnet 95/100, DeepSeek 93/100. Success criteria: 1/5 met (C4 only). Brier spread 0.036 (need 0.05). 11 discriminating items. 16 overconfident errors. Verdict: NEEDS WORK — dataset not hard enough for frontier models.
+- **Current:** Calibration improvement sprint needed — targeted item replacement in deceptive/adversarial buckets.
