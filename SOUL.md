@@ -127,10 +127,71 @@ These four papers anchor the benchmark's theoretical framing:
 
 ---
 
+## Standardized workflows
+
+### Model sweep protocol
+
+Every dataset change (item additions, difficulty revisions, alias updates) MUST be validated with a multi-model sweep before the dataset is frozen. This is the quality gate between "dataset built" and "dataset submitted."
+
+**Sweep configuration:**
+- Models: 5-model panel defined in Cell 7 of the submission notebook
+- Current panel: gemini-2.5-flash, gemini-2.5-pro, claude-sonnet-4, claude-3-5-haiku, deepseek-v3
+- Cost: 5 models × 100 items = 500 LLM calls per sweep
+
+**Required outputs (auditable artifacts):**
+
+| Artifact | Format | Contents |
+|----------|--------|----------|
+| Per-item audit trail | `sweep_results` dict (Cell 7 output) | model_answer, confidence, is_correct, brier_score per item per model |
+| Cross-model leaderboard | Printed table (Cell 8) | Headline score, accuracy per model |
+| Per-bucket accuracy matrix | Printed table (Cell 8) | Accuracy by difficulty bucket × model |
+| Discrimination map | Printed list (Cell 8) | Items where models disagree (signal items) |
+| Overconfidence report | Printed list (Cell 8) | Wrong answers with conf > 0.80 per model |
+| Success criteria verdict | Printed checklist (Cell 8) | 5 criteria: pass/fail with measured values |
+| Audit CSV | Exportable DataFrame (Cell 8) | Flat table: model × item × all fields |
+
+**Success criteria (must meet ≥4/5 to freeze):**
+
+| # | Criterion | Threshold |
+|---|-----------|----------|
+| C1 | Brier score spread across models | ≥ 0.05 range |
+| C2 | Deceptive bucket accuracy | < 80% on ≥ 3 models |
+| C3 | Adversarial bucket accuracy | < 70% on ≥ 3 models |
+| C4 | Items with conf–acc gap > 0.20 | ≥ 10 distinct items (any model) |
+| C5 | ECE range across models | ≥ 0.03 |
+
+**Decision gates:**
+- ≥ 4/5 criteria met → dataset frozen, proceed to writeup
+- 3/5 criteria met → targeted item replacements from rejection log (no new authoring)
+- < 3/5 criteria met → return to Harvester/Strategist for harder items
+
+**Workflow sequence:**
+1. Update notebook cells (Cells 1–6 must be current)
+2. Run Cell 7 (sweep) — captures per-item detail for all models
+3. Run Cell 8 (diagnostics) — produces verdict + audit artifacts
+4. If verdict = freeze → commit sweep results, begin writeup
+5. If verdict = replace → swap items, re-run from step 1
+6. Export audit CSV for archival (`audit_df.to_csv('metajudge_sweep_audit.csv')`)
+
+### Iteration protocol
+
+When replacing items after a failed sweep:
+1. Identify failing items from the discrimination map and overconfidence report
+2. Pull replacements from `data/harvest/v2_rejection_log.json` (123 candidates)
+3. If the rejection log is exhausted, author new items following `expansion_sprint_v2.md` §2.2
+4. Run the Formatter on new items (aliases + format gates)
+5. Update production files (calibration.csv, answer_key.json, provenance.csv)
+6. Update the embedded dataset in Cell 3 of the notebook
+7. Re-run full sweep (step 1 above)
+8. Document changes in a commit message referencing the sweep that triggered them
+
+---
+
 ## Project history (abbreviated)
 
 - **Phase 0 (Day 0):** Bootstrap — repo, schemas, scoring, tests, planning docs
 - **SDK Verification:** All 26 SDK capabilities confirmed PASS
 - **Evidence Notebook:** Wrapper-task pattern verified in live Kaggle environment
 - **Architecture Revision:** Recommendations memo adopted; flat family list → two-axis model; source-awareness and strategy-adaptation redesigned
-- **Current:** V1 implementation sprint — Calibration family end-to-end
+- **V2 Expansion Sprint:** 100-item calibration set built via 4-agent pipeline (Harvester → Formatter → Strategist → Auditor). Distribution: 10/26/30/22/12. 12 audit fixes applied.
+- **Current:** V1 validation — 5-model sweep to confirm discriminatory power
