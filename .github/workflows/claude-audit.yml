@@ -1,17 +1,8 @@
-# Claude Code Auditor — MetaJudge-AGI
-#
-# IMPORTANT: This file MUST exist on the main branch with identical content
-# to the version on any PR branch. The claude-code-action OIDC token exchange
-# validates workflow identity against main. If you need to change this file,
-# merge the change to main first, then use it on feature branches.
-
 name: Claude Code Auditor
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
-  issue_comment:
-    types: [created]
+    types: [opened, synchronize]
 
 permissions:
   contents: read
@@ -60,9 +51,9 @@ jobs:
           echo "audit-context.txt is $(wc -c < audit-context.txt) bytes"
 
       - uses: anthropics/claude-code-action@v1
+        id: claude-audit
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          direct_prompt: true
           show_full_output: true
           prompt: |
             You are an independent auditor for the MetaJudge-AGI project — a Kaggle benchmark
@@ -108,3 +99,61 @@ jobs:
 
             Under each header, number your findings. If nothing to flag, write "None."
             Be specific: include file names and line numbers where possible.
+
+      - name: Post audit comment
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Extract Claude's result from the execution log
+          RESULT_FILE="/home/runner/work/_temp/claude-execution-output.json"
+          if [ -f "$RESULT_FILE" ]; then
+            # Extract the result text from the JSON
+            AUDIT_COMMENT=$(python3 -c "
+          import json
+          with open('$RESULT_FILE') as f:
+              data = json.load(f)
+          # Walk the messages to find the last assistant text
+          result = data.get('result', '')
+          if result:
+              print(result)
+          else:
+              for msg in reversed(data.get('messages', [])):
+                  if msg.get('role') == 'assistant':
+                      for block in msg.get('content', []):
+                          if block.get('type') == 'text':
+                              print(block['text'])
+                              exit()
+          ")
+            if [ -n "$AUDIT_COMMENT" ]; then
+              echo "Posting audit comment to PR..."
+              gh pr comment ${{ github.event.pull_request.number }} --body "$AUDIT_COMMENT"
+            else
+              echo "No audit result found in execution output"
+            fi
+          else
+            echo "Claude execution output file not found"
+          fi
+
+      - name: Save audit log
+        if: always()
+        run: |
+          mkdir -p audit-logs
+          RESULT_FILE="/home/runner/work/_temp/claude-execution-output.json"
+          if [ -f "$RESULT_FILE" ]; then
+            python3 -c "
+          import json, datetime
+          with open('$RESULT_FILE') as f:
+              data = json.load(f)
+          log_entry = {
+              'timestamp': datetime.datetime.utcnow().isoformat(),
+              'pr': ${{ github.event.pull_request.number }},
+              'branch': '${{ github.head_ref }}',
+              'cost_usd': data.get('total_cost_usd', 0),
+              'num_turns': data.get('num_turns', 0),
+              'result': data.get('result', '')[:500],
+              'success': data.get('subtype') == 'success'
+          }
+          print(json.dumps(log_entry, indent=2))
+          " | tee audit-logs/latest.json
+          fi
