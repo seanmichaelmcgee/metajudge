@@ -99,7 +99,7 @@ def main() -> None:
     n_pass = n_warn = n_fail = 0
     for name, findings in checks:
         is_fail = name in FAIL_CHECKS
-        result = _print_check(name, findings, is_fail)
+        _print_check(name, findings, is_fail)
         if not findings:
             n_pass += 1
         elif is_fail:

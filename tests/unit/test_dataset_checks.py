@@ -7,7 +7,6 @@ Source: dataset-validation-task.md
 """
 
 import pandas as pd
-import pytest
 
 from metajudge.validation.dataset_checks import (
     check_adjudication_regression,
@@ -266,12 +265,10 @@ class TestNormalizeTextSafety:
 # ---------------------------------------------------------------------------
 
 class TestAdjudicationSchemaDrift:
-    def test_current_code_flagged(self):
-        # adjudication.py currently uses old field names — this should fire
+    def test_no_drift_after_migration(self):
+        # adjudication.py has been migrated — old field names must not appear
         findings = check_adjudication_schema_drift()
-        assert len(findings) > 0, "Expected drift findings but got none"
-        assert any("canonical_answer" in f for f in findings)
-        assert any("accepted_aliases" in f for f in findings)
+        assert findings == [], f"adjudication.py uses old field names: {findings}"
 
 
 # ---------------------------------------------------------------------------
@@ -279,26 +276,24 @@ class TestAdjudicationSchemaDrift:
 # ---------------------------------------------------------------------------
 
 class TestAdjudicationRegression:
-    def test_notebook_schema_succeeds(self):
-        # A well-formed notebook-schema key should work with adjudication
-        # (once adjudication.py is migrated — test documents expected end state)
-        # For now, verify the check correctly reports errors on old-schema data
+    def test_old_schema_raises_key_error(self):
+        # Old-schema data (gold_answer instead of canonical) must fail —
+        # documents the error mode for unmigrated data
         df = _df({"example_id": "cal_001", "gold_answer": "3", "difficulty": "easy"})
-        ak_old = {"cal_001": OLD_SPEC.copy()}  # old schema — will raise KeyError
+        ak_old = {"cal_001": OLD_SPEC.copy()}  # gold_answer not canonical → KeyError
         findings = check_adjudication_regression(df, ak_old)
         assert len(findings) > 0
         assert any("KeyError" in f for f in findings)
 
-    def test_no_errors_on_correct_schema(self):
-        # When answer key has canonical_answer/accepted_aliases (what adjudication.py expects),
-        # the regression check should pass
+    def test_no_errors_on_notebook_schema(self):
+        # Notebook-schema key (canonical/aliases/rule) must score without errors
         df = _df({"example_id": "cal_001", "gold_answer": "paris", "difficulty": "easy"})
-        adj_schema_key = {
+        ak = {
             "cal_001": {
-                "canonical_answer": "paris",
-                "accepted_aliases": ["paris", "france capital"],
-                "grader_rule": "alias_match",
+                "canonical": "paris",
+                "aliases": ["paris", "france capital"],
+                "rule": "alias",
             }
         }
-        findings = check_adjudication_regression(df, adj_schema_key)
+        findings = check_adjudication_regression(df, ak)
         assert findings == []

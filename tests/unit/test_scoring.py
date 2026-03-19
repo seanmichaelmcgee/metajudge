@@ -210,28 +210,24 @@ class TestAdjudication:
     def setup_method(self):
         self.answer_key = {
             "cal_001": {
-                "canonical_answer": "au",
-                "accepted_aliases": ["au", "gold"],
-                "answer_type": "entity",
-                "grader_rule": "alias_match",
+                "canonical": "au",
+                "aliases": ["au", "gold"],
+                "rule": "alias",
             },
             "cal_002": {
-                "canonical_answer": "42",
-                "accepted_aliases": ["42", "42.0"],
-                "answer_type": "integer",
-                "grader_rule": "numeric_equivalence",
+                "canonical": "42",
+                "aliases": ["42", "42.0"],
+                "rule": "numeric",
             },
             "cal_003": {
-                "canonical_answer": "no",
-                "accepted_aliases": ["no"],
-                "answer_type": "yes_no",
-                "grader_rule": "yes_no_normalization",
+                "canonical": "no",
+                "aliases": ["no"],
+                "rule": "yes_no",
             },
             "cal_004": {
-                "canonical_answer": "0.05",
-                "accepted_aliases": ["0.05", "$0.05", "5 cents"],
-                "answer_type": "decimal",
-                "grader_rule": "alias_match",
+                "canonical": "0.05",
+                "aliases": ["0.05", "$0.05", "5 cents"],
+                "rule": "alias",
             },
         }
 
