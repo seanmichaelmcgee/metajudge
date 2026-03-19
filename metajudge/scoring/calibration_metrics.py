@@ -148,3 +148,17 @@ def calibration_aware_score(is_correct: bool, confidence: float) -> float:
     """
     y = 1.0 if is_correct else 0.0
     return float(1.0 - (confidence - y) ** 2)
+
+
+def coverage_conditioned_accuracy(confidences, correctness, threshold=0.5):
+    """Accuracy on items where confidence exceeds threshold.
+
+    Source: v1_architecture.md §4 diagnostics
+    """
+    import numpy as np
+    c = np.array(confidences, dtype=float)
+    y = np.array(correctness, dtype=float)
+    mask = c >= threshold
+    if mask.sum() == 0:
+        return float("nan")
+    return float(y[mask].mean())
