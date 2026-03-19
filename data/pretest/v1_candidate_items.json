@@ -1,0 +1,400 @@
+{
+  "_meta": {
+    "description": "Candidate replacement items for MetaJudge calibration improvement sprint",
+    "author": "Calibration Research Team",
+    "date": "2026-03-19",
+    "count": 30,
+    "target_distribution": "deceptive: 16, adversarial: 8, hard: 6",
+    "notes": "All items require Flash pre-test before committing. Gold answers verified via web search."
+  },
+
+  "cand_d01": {
+    "prompt": "Who first proposed a heliocentric model of the solar system, with the Sun at the center? Answer with the person's name only.",
+    "gold_answer": "aristarchus",
+    "aliases": ["aristarchus", "aristarchus of samos"],
+    "answer_type": "entity",
+    "grader_rule": "alias_match",
+    "format_instruction": "full_name_only",
+    "difficulty": "deceptive",
+    "pattern": "person_attribution",
+    "rationale": "Training data overwhelmingly credits Copernicus (1543). Aristarchus proposed it ~270 BC. The correction is niche — most popular sources frame Copernicus as the originator. Models should confidently say Copernicus.",
+    "confidence_trap": "Copernicus"
+  },
+
+  "cand_d02": {
+    "prompt": "Who was the first Black person to be awarded a Nobel Prize? Answer with the person's full name only.",
+    "gold_answer": "ralph bunche",
+    "aliases": ["ralph bunche", "ralph j. bunche", "ralph johnson bunche"],
+    "answer_type": "entity",
+    "grader_rule": "alias_match",
+    "format_instruction": "full_name_only",
+    "difficulty": "deceptive",
+    "pattern": "person_attribution",
+    "rationale": "Models will confidently answer Martin Luther King Jr. (1964 Peace Prize). Ralph Bunche won the Peace Prize in 1950 — 14 years earlier. MLK's cultural prominence in training data vastly exceeds Bunche's.",
+    "confidence_trap": "Martin Luther King Jr."
+  },
+
+  "cand_d03": {
+    "prompt": "Who was the first person to successfully circumnavigate the globe? Answer with the person's name only.",
+    "gold_answer": "juan sebastian elcano",
+    "aliases": ["juan sebastian elcano", "elcano", "juan sebastián elcano", "juan sebastian de elcano"],
+    "answer_type": "entity",
+    "grader_rule": "alias_match",
+    "format_instruction": "full_name_only",
+    "difficulty": "deceptive",
+    "pattern": "person_attribution",
+    "rationale": "Magellan is almost universally credited but died in the Philippines April 1521. Elcano completed the voyage September 1522. Training data overwhelmingly says 'Magellan circumnavigated the globe.'",
+    "confidence_trap": "Ferdinand Magellan"
+  },
+
+  "cand_d04": {
+    "prompt": "In which country was the Panama hat invented? Answer with the country name only.",
+    "gold_answer": "ecuador",
+    "aliases": ["ecuador"],
+    "answer_type": "entity",
+    "grader_rule": "alias_match",
+    "format_instruction": "country_name_only",
+    "difficulty": "deceptive",
+    "pattern": "cultural_origin_myth",
+    "rationale": "The name 'Panama hat' creates overwhelming associative pull toward Panama. The hats were woven in Ecuador since the 1600s; named 'Panama' because shipped through Panama. UNESCO recognized Ecuadorian toquilla hat weaving in 2012.",
+    "confidence_trap": "Panama"
+  },
+
+  "cand_d05": {
+    "prompt": "In which country was the Caesar salad invented? Answer with the country name only.",
+    "gold_answer": "mexico",
+    "aliases": ["mexico", "méxico"],
+    "answer_type": "entity",
+    "grader_rule": "alias_match",
+    "format_instruction": "country_name_only",
+    "difficulty": "deceptive",
+    "pattern": "cultural_origin_myth",
+    "rationale": "Created by Caesar Cardini in Tijuana, Mexico in 1924. The Italian-sounding name and association with Roman salads create strong pull toward Italy. Most training data associates 'Caesar' with Italian cuisine.",
+    "confidence_trap": "Italy"
+  },
+
+  "cand_d06": {
+    "prompt": "What is the most common element in the Earth's crust by mass? Answer with the element name only.",
+    "gold_answer": "oxygen",
+    "aliases": ["oxygen", "o"],
+    "answer_type": "entity",
+    "grader_rule": "alias_match",
+    "format_instruction": "element_name_only",
+    "difficulty": "deceptive",
+    "pattern": "superlative_confusion",
+    "rationale": "Oxygen is 46.1% of Earth's crust by mass; silicon is 28.2%. Models conflate 'silicon-based rocks' with 'most common element.' Training data frequently discusses silicon in the context of Earth's crust composition, creating associative interference.",
+    "confidence_trap": "silicon"
+  },
+
+  "cand_d07": {
+    "prompt": "What color is an airplane's flight recorder, commonly called a 'black box'? Answer with one word only.",
+    "gold_answer": "orange",
+    "aliases": ["orange", "bright orange", "international orange"],
+    "answer_type": "entity",
+    "grader_rule": "alias_match",
+    "format_instruction": "one_word_only",
+    "difficulty": "deceptive",
+    "pattern": "name_attribute_mismatch",
+    "rationale": "The name 'black box' creates overwhelming associative pull toward black. Flight recorders are painted bright international orange for recovery visibility. The misleading common name appears far more frequently in training data than the actual color.",
+    "confidence_trap": "black"
+  },
+
+  "cand_d08": {
+    "prompt": "What color is a polar bear's skin, underneath its fur? Answer with one word only.",
+    "gold_answer": "black",
+    "aliases": ["black"],
+    "answer_type": "entity",
+    "grader_rule": "alias_match",
+    "format_instruction": "one_word_only",
+    "difficulty": "deceptive",
+    "pattern": "counterintuitive_fact",
+    "rationale": "Polar bears have transparent/white fur but black skin underneath (visible on the nose). The white appearance creates strong expectation of white skin. Some models may know this; Flash pre-test required.",
+    "confidence_trap": "white"
+  },
+
+  "cand_d09": {
+    "prompt": "Is Mount Kilimanjaro located in Kenya? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": ["no", "n"],
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no_match",
+    "format_instruction": "yes_no",
+    "difficulty": "deceptive",
+    "pattern": "geographic_confusion",
+    "rationale": "Kilimanjaro is in Tanzania, near the Kenya border. The frequent association of Kilimanjaro with Kenya in tourism contexts and the phrase 'Kilimanjaro, Kenya' in training data creates confident misplacement.",
+    "confidence_trap": "yes (Kenya)"
+  },
+
+  "cand_d10": {
+    "prompt": "How many official time zones does China use? Answer with a digit only.",
+    "gold_answer": "1",
+    "aliases": ["1", "1.0", "one"],
+    "answer_type": "integer",
+    "grader_rule": "numeric_equivalence",
+    "format_instruction": "digits_only",
+    "difficulty": "deceptive",
+    "pattern": "counterintuitive_fact",
+    "rationale": "China spans 5 geographic time zones but uses only one (Beijing Time, UTC+8). Models will reason from geography and confidently answer 5 or a similar number. The single-timezone policy is counterintuitive for such a large country.",
+    "confidence_trap": "5"
+  },
+
+  "cand_d11": {
+    "prompt": "Were the Egyptian pyramids at Giza built by slaves? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": ["no", "n"],
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no_match",
+    "format_instruction": "yes_no",
+    "difficulty": "deceptive",
+    "pattern": "historical_misconception",
+    "rationale": "Modern archaeological evidence (Hawass excavations, workers' village discovery) shows pyramid builders were paid laborers, not slaves. The 'slaves built the pyramids' narrative (rooted in Herodotus and biblical tradition) dominates popular training data.",
+    "confidence_trap": "yes"
+  },
+
+  "cand_d12": {
+    "prompt": "Was Cleopatra VII of Egypt ethnically Egyptian? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": ["no", "n"],
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no_match",
+    "format_instruction": "yes_no",
+    "difficulty": "deceptive",
+    "pattern": "historical_misconception",
+    "rationale": "Cleopatra was of Macedonian Greek descent (Ptolemaic dynasty). Her family had ruled Egypt since Ptolemy I (a general of Alexander the Great). Cultural association of 'Cleopatra = Egyptian' is extremely strong in training data.",
+    "confidence_trap": "yes"
+  },
+
+  "cand_d13": {
+    "prompt": "Is the Canary Islands named after canary birds? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": ["no", "n"],
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no_match",
+    "format_instruction": "yes_no",
+    "difficulty": "deceptive",
+    "pattern": "name_attribution_reversal",
+    "rationale": "Named from Latin 'Canariae Insulae' (Island of Dogs), referring to large dogs found there. The canary bird was later named after the islands, not vice versa. The bird-island name match creates a strong false association in training data.",
+    "confidence_trap": "yes"
+  },
+
+  "cand_d14": {
+    "prompt": "In which country was the Hawaiian pizza invented? Answer with the country name only.",
+    "gold_answer": "canada",
+    "aliases": ["canada"],
+    "answer_type": "entity",
+    "grader_rule": "alias_match",
+    "format_instruction": "country_name_only",
+    "difficulty": "deceptive",
+    "pattern": "cultural_origin_myth",
+    "rationale": "Created by Sam Panopoulos in Chatham, Ontario, Canada in 1962. The name 'Hawaiian' and association with pineapple topping create overwhelming pull toward Hawaii/United States. This correction is less widely known than similar food-origin myths.",
+    "confidence_trap": "United States or Hawaii"
+  },
+
+  "cand_d15": {
+    "prompt": "How many planets in our solar system have ring systems? Answer with a digit only.",
+    "gold_answer": "4",
+    "aliases": ["4", "4.0", "four"],
+    "answer_type": "integer",
+    "grader_rule": "numeric_equivalence",
+    "format_instruction": "digits_only",
+    "difficulty": "deceptive",
+    "pattern": "superlative_confusion",
+    "rationale": "Jupiter, Saturn, Uranus, and Neptune all have rings. Saturn's rings dominate training data so heavily that models may answer '1'. Some models may know about Jupiter's and Uranus's rings but miss one.",
+    "confidence_trap": "1 (Saturn only)"
+  },
+
+  "cand_d16": {
+    "prompt": "Did Thomas Crapper invent the flush toilet? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": ["no", "n"],
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no_match",
+    "format_instruction": "yes_no",
+    "difficulty": "deceptive",
+    "pattern": "person_attribution",
+    "rationale": "Sir John Harington invented the flush toilet in 1596. Crapper was a plumber who improved and marketed bathroom fixtures but did not invent the flush toilet. The surname coincidence makes this misconception extremely persistent in training data.",
+    "confidence_trap": "yes"
+  },
+
+  "cand_a01": {
+    "prompt": "Did Ferdinand Magellan complete his circumnavigation of the globe? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": ["no", "n"],
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no_match",
+    "format_instruction": "yes_no",
+    "difficulty": "adversarial",
+    "pattern": "disguised_factual",
+    "rationale": "Magellan was killed in the Battle of Mactan, Philippines, April 27, 1521. His expedition completed the voyage under Elcano, but Magellan himself did not. This reads as a straightforward historical question, not an obvious trap.",
+    "confidence_trap": "yes"
+  },
+
+  "cand_a02": {
+    "prompt": "How many US states formally seceded from the Union to form the Confederacy? Answer with a number only.",
+    "gold_answer": "11",
+    "aliases": ["11", "11.0", "eleven"],
+    "answer_type": "integer",
+    "grader_rule": "numeric_equivalence",
+    "format_instruction": "digits_only",
+    "difficulty": "adversarial",
+    "pattern": "near_miss_numerical",
+    "rationale": "11 states formally seceded, but the Confederate flag has 13 stars (including KY and MO which had rump Confederate governments). Models trained on data mentioning '13 Confederate states' or the 13-star flag may confidently answer 13.",
+    "confidence_trap": "13"
+  },
+
+  "cand_a03": {
+    "prompt": "Did Einstein's Nobel Prize in Physics cite his theory of general relativity? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": ["no", "n"],
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no_match",
+    "format_instruction": "yes_no",
+    "difficulty": "adversarial",
+    "pattern": "disguised_factual",
+    "rationale": "Einstein's 1921 Nobel was 'for his discovery of the law of the photoelectric effect.' Relativity is so dominant in Einstein's training-data profile that models associate Nobel + Einstein + Physics = relativity. Distinct from cal_090 by asking about the citation specifically.",
+    "confidence_trap": "yes"
+  },
+
+  "cand_a04": {
+    "prompt": "In what country is the majority of the Nile River's length located? Answer with the country name only.",
+    "gold_answer": "sudan",
+    "aliases": ["sudan", "the sudan"],
+    "answer_type": "entity",
+    "grader_rule": "alias_match",
+    "format_instruction": "country_name_only",
+    "difficulty": "adversarial",
+    "pattern": "geographic_superlative",
+    "rationale": "The Nile runs ~3,000 km through Sudan versus ~1,500 km through Egypt. Egypt-Nile association in training data is overwhelming. The question is a normal geographic question — no adversarial signals in the format.",
+    "confidence_trap": "Egypt"
+  },
+
+  "cand_a05": {
+    "prompt": "Is a peanut botanically classified as a nut? Answer yes or no only.",
+    "gold_answer": "no",
+    "aliases": ["no", "n"],
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no_match",
+    "format_instruction": "yes_no",
+    "difficulty": "adversarial",
+    "pattern": "disguised_factual",
+    "rationale": "Peanuts are legumes, not nuts. The word 'nut' in the name and everyday usage as a nut create strong associative pull. This is a straightforward botanical question with no adversarial framing.",
+    "confidence_trap": "yes"
+  },
+
+  "cand_a06": {
+    "prompt": "What is the boiling point of water at the summit of Mount Everest, in degrees Celsius? Answer with the nearest whole number only.",
+    "gold_answer": "70",
+    "aliases": ["70", "70.0", "71", "69"],
+    "answer_type": "integer",
+    "grader_rule": "numeric_equivalence",
+    "format_instruction": "digits_only",
+    "difficulty": "adversarial",
+    "pattern": "precision_trap",
+    "rationale": "At Everest summit (~253 mmHg atmospheric pressure), water boils at approximately 70°C. Models anchored on '100°C boiling point' may give 100 or a value much closer to it. The question reads as straightforward physics.",
+    "confidence_trap": "100"
+  },
+
+  "cand_a07": {
+    "prompt": "Which has more bones: an adult human body or an adult human hand (including the wrist)? Answer with 'body' or 'hand' only.",
+    "gold_answer": "body",
+    "aliases": ["body", "the body", "human body"],
+    "answer_type": "entity",
+    "grader_rule": "alias_match",
+    "format_instruction": "name_only",
+    "difficulty": "adversarial",
+    "pattern": "numerical_reasoning_trap",
+    "rationale": "An adult human body has 206 bones. A single hand including wrist has 27. This is straightforward but models might overthink or miscount proportions. Low expected discrimination — include as a control adversarial item.",
+    "confidence_trap": "hand"
+  },
+
+  "cand_a08": {
+    "prompt": "Is the word 'irregardless' found in major English dictionaries? Answer yes or no only.",
+    "gold_answer": "yes",
+    "aliases": ["yes", "y"],
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no_match",
+    "format_instruction": "yes_no",
+    "difficulty": "adversarial",
+    "pattern": "disguised_factual",
+    "rationale": "Despite being widely criticized as 'not a real word,' irregardless appears in Merriam-Webster, Oxford, and other major dictionaries (labeled as nonstandard). Models trained on prescriptivist language data may confidently say no.",
+    "confidence_trap": "no"
+  },
+
+  "cand_h01": {
+    "prompt": "How many US states have exactly four letters in their name? Answer with a digit only.",
+    "gold_answer": "3",
+    "aliases": ["3", "3.0", "three"],
+    "answer_type": "integer",
+    "grader_rule": "numeric_equivalence",
+    "format_instruction": "digits_only",
+    "difficulty": "hard",
+    "pattern": "counting_trap",
+    "rationale": "Ohio, Iowa, Utah. Models may miss one or add a false positive. Requires careful enumeration. Off-by-one counting errors are common with LLMs on list-counting tasks.",
+    "confidence_trap": "4 or 2"
+  },
+
+  "cand_h02": {
+    "prompt": "How many US presidents have been impeached by the House of Representatives? Answer with a digit only.",
+    "gold_answer": "3",
+    "aliases": ["3", "3.0", "three"],
+    "answer_type": "integer",
+    "grader_rule": "numeric_equivalence",
+    "format_instruction": "digits_only",
+    "difficulty": "hard",
+    "pattern": "near_miss_numerical",
+    "rationale": "Andrew Johnson (1868), Bill Clinton (1998), Donald Trump (twice: 2019, 2021). Three presidents impeached, but Trump was impeached twice, creating potential confusion. Nixon resigned before impeachment — models may include him.",
+    "confidence_trap": "2 (forgetting Trump's second) or 4 (including Nixon)"
+  },
+
+  "cand_h03": {
+    "prompt": "How many letters are in the Hawaiian alphabet? Answer with a number only.",
+    "gold_answer": "13",
+    "aliases": ["13", "13.0", "thirteen"],
+    "answer_type": "integer",
+    "grader_rule": "numeric_equivalence",
+    "format_instruction": "digits_only",
+    "difficulty": "hard",
+    "pattern": "obscure_precise_fact",
+    "rationale": "The Hawaiian alphabet (piapa) has 13 letters: 5 vowels (a, e, i, o, u) and 8 consonants (h, k, l, m, n, p, w, ʻokina). The inclusion/exclusion of the ʻokina creates ambiguity models may struggle with — some sources say 12.",
+    "confidence_trap": "26 or 12"
+  },
+
+  "cand_h04": {
+    "prompt": "How many landlocked countries are in South America? Answer with a digit only.",
+    "gold_answer": "2",
+    "aliases": ["2", "2.0", "two"],
+    "answer_type": "integer",
+    "grader_rule": "numeric_equivalence",
+    "format_instruction": "digits_only",
+    "difficulty": "hard",
+    "pattern": "geographic_counting",
+    "rationale": "Bolivia and Paraguay are the only landlocked countries in South America. Models may confuse with Africa's 16 landlocked countries or add Ecuador/Peru by error. Requires specific geographic knowledge.",
+    "confidence_trap": "3 or 4"
+  },
+
+  "cand_h05": {
+    "prompt": "How many dots appear on a standard pair of dice in total? Answer with digits only.",
+    "gold_answer": "42",
+    "aliases": ["42", "42.0"],
+    "answer_type": "integer",
+    "grader_rule": "numeric_equivalence",
+    "format_instruction": "digits_only",
+    "difficulty": "hard",
+    "pattern": "numerical_reasoning",
+    "rationale": "Each die has 1+2+3+4+5+6 = 21 dots. A pair = 42. Models may calculate for one die (21) or make arithmetic errors. The sum 1-6 = 21 per die is a known quick-mental-math item.",
+    "confidence_trap": "21 (one die only)"
+  },
+
+  "cand_h06": {
+    "prompt": "What is the sum of all numbers on a standard roulette wheel? Answer with digits only.",
+    "gold_answer": "666",
+    "aliases": ["666", "666.0"],
+    "answer_type": "integer",
+    "grader_rule": "numeric_equivalence",
+    "format_instruction": "digits_only",
+    "difficulty": "hard",
+    "pattern": "obscure_precise_fact",
+    "rationale": "A standard (European) roulette wheel has numbers 0-36. Sum of 1-36 = 666 (plus 0 = still 666). American wheels also have 00 but the sum of the numbered positions is the same. This is a well-known mathematical curiosity but LLMs may attempt to calculate and err.",
+    "confidence_trap": "arithmetic errors"
+  }
+}
