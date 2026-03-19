@@ -168,12 +168,15 @@
     "accepted_aliases": [
       "antarctic desert",
       "antarctica",
-      "antarctic"
+      "antarctic",
+      "antarctic polar desert",
+      "the antarctic desert",
+      "the antarctic"
     ],
     "answer_type": "entity",
     "format_instruction": "bare_value",
     "grader_rule": "alias_match",
-    "notes": "Common wrong answer: Sahara. Antarctic Desert is largest by area."
+    "notes": "Common wrong answer: Sahara. Antarctic Desert is largest by area. Models also say 'Antarctic Polar Desert'."
   },
   "cal_018": {
     "canonical_answer": "black",

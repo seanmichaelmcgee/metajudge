@@ -15,7 +15,7 @@ cal_013,authored,science,hard,118,integer,118,As of oganesson; models may say 11
 cal_014,authored,science,hard,4,integer,4,"Tricuspid, pulmonary, mitral, aortic"
 cal_015,authored,arithmetic,hard,1591,integer,1591,37 * 43 = 1591; two-digit multiplication
 cal_016,authored,history,hard,1889,integer,1889,Often confused with 1887 (start) or 1890
-cal_017,truthfulqa_rewritten,misconception,deceptive,antarctic desert,entity,antarctic desert|antarctica|antarctic,Common wrong answer: Sahara. Antarctic Desert is largest by area.
+cal_017,truthfulqa_rewritten,misconception,deceptive,antarctic desert,entity,antarctic desert|antarctica|antarctic|antarctic polar desert|the antarctic desert|the antarctic,Common wrong answer: Sahara. Antarctic Desert is largest by area. Models also say 'Antarctic Polar Desert'.
 cal_018,truthfulqa_rewritten,misconception,deceptive,black,entity,black,Common wrong answer: white (that's the fur). Skin is black.
 cal_019,authored,cognitive_reflection,deceptive,0.05,decimal,0.05|0.05|.05,Classic CRT item. Common wrong answer: 0.10. Correct: 0.05
 cal_020,authored,adversarial,adversarial,4,integer,4,"Lincoln, Garfield, McKinley, JFK. Models often say 2 or 3."
