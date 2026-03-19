@@ -1,9 +1,13 @@
+# Claude Code Auditor — MetaJudge-AGI
+#
+# IMPORTANT: This file MUST exist on the main branch with identical content
+# to the version on any PR branch. The claude-code-action OIDC token exchange
+# validates workflow identity against main. If you need to change this file,
+# merge the change to main first, then use it on feature branches.
+
 name: Claude Code Auditor
 
 on:
-  push:
-    branches-ignore:
-      - main
   pull_request:
     types: [opened, synchronize]
 
@@ -29,28 +33,11 @@ jobs:
           python-version: "3.10"
 
       - name: Install dependencies
-        run: |
-          pip install -e ".[dev]"
-
-      - name: Run ruff
-        run: ruff check . --output-format=github
-        continue-on-error: true
-
-      - name: Run mypy
-        run: mypy metajudge/ --ignore-missing-imports
-        continue-on-error: true
-
-      - name: Run tests
-        run: pytest tests/ --tb=short -q
-        continue-on-error: true
+        run: pip install -e ".[dev]"
 
       - name: Collect audit context
-        id: context
         run: |
-          # Capture diff
           git diff origin/main...HEAD > /tmp/diff.txt
-
-          # Collect tool output
           {
             echo "--- RUFF OUTPUT ---"
             ruff check . 2>&1 || true
@@ -61,8 +48,6 @@ jobs:
             echo "--- TEST OUTPUT ---"
             pytest tests/ --tb=short -q 2>&1 || true
           } > /tmp/context.txt
-
-          # Write combined audit context to a file Claude can read
           {
             echo "=== GIT DIFF vs main ==="
             cat /tmp/diff.txt
@@ -70,6 +55,7 @@ jobs:
             echo "=== TOOL OUTPUT ==="
             cat /tmp/context.txt
           } > audit-context.txt
+          echo "audit-context.txt is $(wc -c < audit-context.txt) bytes"
 
       - uses: anthropics/claude-code-action@v1
         with:
