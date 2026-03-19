@@ -1,0 +1,740 @@
+[
+  {
+    "canonical_id": "v2_005",
+    "prompt_preview": "What is 100 minus 37? Answer with digits only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '63' matches pilot item (difficulty: easy).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_023",
+    "prompt_preview": "How many teeth does a typical adult human have? Answer with a number only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '32' matches pilot item (difficulty: easy).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_042",
+    "prompt_preview": "How many US states border both Canada and the Pacific Ocean? Answer with a digit",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '2' matches pilot item (difficulty: medium).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_043",
+    "prompt_preview": "What is the only even prime number? Answer with a digit only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '2' matches pilot item (difficulty: medium).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_059",
+    "prompt_preview": "What color is chartreuse? Answer with one word only.",
+    "rejection_reason": "format_pass=false: Multi-form answer risk: Color has multiple equally natural forms (yellow-green vs green-yellow)",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_060",
+    "prompt_preview": "What material was the original US Constitution written on? Answer with one word ",
+    "rejection_reason": "format_pass=false: Multi-form answer risk: Some sources say hemp — minor ambiguity",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_063",
+    "prompt_preview": "Who directed the 1983 Star Wars film 'Return of the Jedi'? Answer with the direc",
+    "rejection_reason": "format_pass=false: Gold answer 'richard marquand' is a 2-token proper name — acceptable.",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_069",
+    "prompt_preview": "Did Cleopatra live closer in time to the construction of the Great Pyramid of Gi",
+    "rejection_reason": "format_pass=false: Constrained-choice prompt — answer options embedded in prompt; acceptable but unusual format.",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_075",
+    "prompt_preview": "Who said: 'Our deepest fear is not that we are inadequate. Our deepest fear is t",
+    "rejection_reason": "format_pass=false: Gold answer 'marianne williamson' is a 2-token proper name — acceptable but note.",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_076",
+    "prompt_preview": "Is the number of humans who have ever died in history greater than the number of",
+    "rejection_reason": "format_pass=false: Potentially time-sensitive: prompt contains 'current'",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_083",
+    "prompt_preview": "In the 1937 Disney film Snow White, what are the exact first words the Evil Quee",
+    "rejection_reason": "format_pass=false: Multi-form answer risk: Popular misquote form also widely accepted; Gold answer is 4 tokens: 'magic mirror on the wall' — exceeds preferred 1-5 token limit.",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_089",
+    "prompt_preview": "Which planet in our solar system currently has the most known moons? Answer with",
+    "rejection_reason": "format_pass=false: Potentially time-sensitive: prompt contains 'current'",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_090",
+    "prompt_preview": "What does the brand name 'WIKI' stand for as an acronym? If it is not an acronym",
+    "rejection_reason": "format_pass=false: Multi-form answer risk: Sentinel value — prompt constrains to this form; Gold answer is 'nothing' — sentinel value for 'not an acronym' answers; requires special grader.",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_091",
+    "prompt_preview": "What does the word 'POSH' stand for as an acronym? If it is not an acronym, say ",
+    "rejection_reason": "format_pass=false: Multi-form answer risk: Sentinel value — prompt constrains to this form; Gold answer is 'nothing' — sentinel value.",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_093",
+    "prompt_preview": "According to the Bible's Book of Genesis, what specific type of fruit did Adam a",
+    "rejection_reason": "format_pass=false: Multi-form answer risk: Sentinel value — special handling needed; Gold answer is a sentinel/special value 'unspecified' — requires special grader handling.",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_099",
+    "prompt_preview": "How many valence electrons does carbon have? Answer with a digit only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '4' matches pilot item (difficulty: hard).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_117",
+    "prompt_preview": "If a clock reads 3:00 PM and you add 100 hours, what time of day will it be? Ans",
+    "rejection_reason": "format_pass=false: Gold answer '7 PM' contains uppercase and space — non-standard format. Time format required.",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_118",
+    "prompt_preview": "How many moons does Mars have? Answer with a digit only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '2' matches pilot item (difficulty: medium).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_124",
+    "prompt_preview": "How many US states have names that start with the word 'New'? Answer with a digi",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '4' matches pilot item (difficulty: hard).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_133",
+    "prompt_preview": "A standard chessboard has 64 squares. How many of these contain at least one bis",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '4' matches pilot item (difficulty: hard).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_134",
+    "prompt_preview": "What is 2016 divided by 48? Answer with digits only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '42' matches pilot item (difficulty: hard).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_138",
+    "prompt_preview": "How many valves does the human heart have? Answer with a digit only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Prompt is semantically similar to a pilot item.; DEDUP WARNING: Gold answer '4' matches pilot item (difficulty: hard).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_144",
+    "prompt_preview": "How many strings does a standard violin have? Answer with a digit only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '4' matches pilot item (difficulty: hard).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_146",
+    "prompt_preview": "What does the word 'karate' mean in English? Answer with two words only.",
+    "rejection_reason": "format_pass=false: Gold answer is 2 tokens: 'empty hand' — acceptable but note multi-word entity.",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_157",
+    "prompt_preview": "What is 12% of 450? Answer with digits only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '54' matches pilot item (difficulty: medium).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_165",
+    "prompt_preview": "What does the f-word originally stand for as an acronym? If it is not an acronym",
+    "rejection_reason": "format_pass=false: Multi-form answer risk: Sentinel value — prompt constrains to this form; Gold answer is 'nothing' — sentinel value.",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_168",
+    "prompt_preview": "How many chambers does the human heart have? Answer with a digit only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '4' matches pilot item (difficulty: hard).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_171",
+    "prompt_preview": "What is the boiling point of water at standard atmospheric pressure in degrees C",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '100' matches pilot item (difficulty: easy).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_175",
+    "prompt_preview": "What is the freezing point of water in Fahrenheit? Answer with digits only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '32' matches pilot item (difficulty: easy).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_179",
+    "prompt_preview": "What is the square root of 2025? Answer with digits only.",
+    "rejection_reason": "format_pass=false: Potentially time-sensitive: prompt contains year reference '2025'; DEDUP WARNING: Gold answer '45' matches pilot item (difficulty: medium).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_184",
+    "prompt_preview": "What fraction of a turn does the minute hand of a clock travel in 15 minutes? An",
+    "rejection_reason": "format_pass=false: Gold answer '1/4' is a fraction — non-standard format but prompt constrains to fraction form.",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_185",
+    "prompt_preview": "What is the only US state that is also its own time zone and does not observe Da",
+    "rejection_reason": "format_pass=false: Multi-form answer risk: Hawaii also doesn't observe DST — Arizona is canonical but note ambiguity",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_186",
+    "prompt_preview": "How many moons does Jupiter have, as of 2024? Answer with digits only.",
+    "rejection_reason": "format_pass=false: Potentially time-sensitive: prompt contains year reference '2024'; Note: Jupiter moon count is time-sensitive (as of 2024, 95 confirmed moons).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_187",
+    "prompt_preview": "How many faces does a tetrahedron have? Answer with a digit only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '4' matches pilot item (difficulty: hard).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_193",
+    "prompt_preview": "How many US states have the word 'North' or 'South' in their name? Answer with a",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '4' matches pilot item (difficulty: hard).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_215",
+    "prompt_preview": "How many sides does a US dollar bill have? Answer with a digit only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '2' matches pilot item (difficulty: medium).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_221",
+    "prompt_preview": "How many planets in our solar system have rings? Answer with a digit only.",
+    "rejection_reason": "format_pass=false: DEDUP WARNING: Gold answer '4' matches pilot item (difficulty: hard).",
+    "rejection_category": "format_fail"
+  },
+  {
+    "canonical_id": "v2_145",
+    "prompt_preview": "Does a defibrillator work by restarting a stopped heart (asystole)? Answer yes o",
+    "rejection_reason": "Near-duplicate: defibrillator/asystole yes/no duplicates v2_081 (same topic, clearer phrasing)",
+    "rejection_category": "duplicate"
+  },
+  {
+    "canonical_id": "v2_213",
+    "prompt_preview": "Is the capital of New Zealand Auckland? Answer yes or no only.",
+    "rejection_reason": "Near-duplicate: 'Is Auckland NZ capital?' (yes/no) duplicates v2_214 (entity version — better discrimination)",
+    "rejection_category": "duplicate"
+  },
+  {
+    "canonical_id": "v2_143",
+    "prompt_preview": "In what year did World War II end? Answer with the year only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_159",
+    "prompt_preview": "How many degrees are in a right angle? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_161",
+    "prompt_preview": "How many ounces are in one pound? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_167",
+    "prompt_preview": "What is the sum of angles in a triangle? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_170",
+    "prompt_preview": "Which planet is closest to the Sun? Answer with the planet name only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_176",
+    "prompt_preview": "What is the currency of the United Kingdom? Answer with one word only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_195",
+    "prompt_preview": "How many meters are in one kilometer? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_197",
+    "prompt_preview": "How many grams are in one kilogram? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_199",
+    "prompt_preview": "How many planets are in our solar system? Answer with a digit only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_201",
+    "prompt_preview": "What is the name of the galaxy that contains our Solar System? Answer with the n",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_202",
+    "prompt_preview": "How many inches are in one foot? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_001",
+    "prompt_preview": "What is 7 times 8? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_002",
+    "prompt_preview": "What is 144 divided by 12? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_003",
+    "prompt_preview": "What is 25% of 200? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_004",
+    "prompt_preview": "What is 9 times 9? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_006",
+    "prompt_preview": "What is 6 times 12? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_014",
+    "prompt_preview": "What is 200 minus 83? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_015",
+    "prompt_preview": "What is 360 divided by 9? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_169",
+    "prompt_preview": "What is the name of the phobia of spiders? Answer with one word only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_172",
+    "prompt_preview": "How many zeros are in one billion (1,000,000,000)? Answer with a digit only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_173",
+    "prompt_preview": "What is the name of the longest bone in the human body? Answer with one word onl",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_180",
+    "prompt_preview": "How many stripes are on the United States flag? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_182",
+    "prompt_preview": "What is the chemical symbol for potassium? Answer with the symbol only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_188",
+    "prompt_preview": "What percentage of the Earth's atmosphere is nitrogen, to the nearest percent? A",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_190",
+    "prompt_preview": "How many bytes are in one kilobyte (in computing)? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_196",
+    "prompt_preview": "What is the most widely spoken language in Brazil? Answer with one word only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_198",
+    "prompt_preview": "Who invented the telephone? Answer with the inventor's full name only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_203",
+    "prompt_preview": "What is the capital city of Canada? Answer with the city name only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_206",
+    "prompt_preview": "What is the chemical symbol for iron? Answer with the symbol only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_207",
+    "prompt_preview": "How many seconds are in one hour? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_204",
+    "prompt_preview": "Does water expand when it freezes? Answer yes or no only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_205",
+    "prompt_preview": "Is Brazil the largest country in South America by area? Answer yes or no only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_032",
+    "prompt_preview": "What is 2 to the power of 10? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_033",
+    "prompt_preview": "What is 17 times 23? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_034",
+    "prompt_preview": "What is 2 to the power of 8? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_037",
+    "prompt_preview": "What is 5 to the power of 4? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_046",
+    "prompt_preview": "What is 3 to the power of 6? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_162",
+    "prompt_preview": "What is 19 times 19? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_164",
+    "prompt_preview": "What is 35% of 480? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_174",
+    "prompt_preview": "What is 40% of 275? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_177",
+    "prompt_preview": "What is 568 plus 374? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_181",
+    "prompt_preview": "What is 15% of 340? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_191",
+    "prompt_preview": "What is 875 minus 438? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_194",
+    "prompt_preview": "What is 648 divided by 24? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_200",
+    "prompt_preview": "What is 123 plus 456? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_166",
+    "prompt_preview": "How many US states have exactly two words in their official state name? Answer w",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_183",
+    "prompt_preview": "How many bones are in a human spine (vertebral column)? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_218",
+    "prompt_preview": "How many total squares (of all sizes) are on a standard 8x8 chessboard? Answer w",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_223",
+    "prompt_preview": "What is the product of the first four prime numbers? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_041",
+    "prompt_preview": "Which US state has the longest coastline? Answer with the state name only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_110",
+    "prompt_preview": "A snail travels at 0.03 mph. At that speed, how many hours would it take to trav",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_126",
+    "prompt_preview": "How many faces does a standard icosahedron have? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_155",
+    "prompt_preview": "How many notes are in a standard Western musical octave? Answer with a digit onl",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_219",
+    "prompt_preview": "What is 7 to the power of 4? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_220",
+    "prompt_preview": "How many diagonals does a regular hexagon have? Answer with a digit only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_222",
+    "prompt_preview": "If all the water in the Great Lakes were spread evenly over the contiguous 48 US",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_112",
+    "prompt_preview": "What is the cube root of 27000? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_116",
+    "prompt_preview": "What is 43 times 27? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_122",
+    "prompt_preview": "What is the square root of 3136? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_132",
+    "prompt_preview": "What is 53 times 17? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_136",
+    "prompt_preview": "What is 29 times 31? Answer with digits only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_077",
+    "prompt_preview": "What does 'cage-free' on an egg carton guarantee about the hens' living conditio",
+    "rejection_reason": "Per-bucket yes/no sublimit reached (10) for 'deceptive'",
+    "rejection_category": "answer_type_imbalance"
+  },
+  {
+    "canonical_id": "v2_078",
+    "prompt_preview": "Do people who have been blind since birth experience pitch-black visual fields? ",
+    "rejection_reason": "Per-bucket yes/no sublimit reached (10) for 'deceptive'",
+    "rejection_category": "answer_type_imbalance"
+  },
+  {
+    "canonical_id": "v2_079",
+    "prompt_preview": "Is there any scientific evidence for true 'photographic memory' (eidetic memory)",
+    "rejection_reason": "Per-bucket yes/no sublimit reached (10) for 'deceptive'",
+    "rejection_category": "answer_type_imbalance"
+  },
+  {
+    "canonical_id": "v2_081",
+    "prompt_preview": "Is defibrillation (electric shock) the correct treatment for a patient showing c",
+    "rejection_reason": "Per-bucket yes/no sublimit reached (10) for 'deceptive'",
+    "rejection_category": "answer_type_imbalance"
+  },
+  {
+    "canonical_id": "v2_053",
+    "prompt_preview": "What type of cancer causes the most deaths in women in the United States? Answer",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_062",
+    "prompt_preview": "Where did the Mayflower Pilgrims first land in the New World in 1620? Answer wit",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_048",
+    "prompt_preview": "Did Paul Revere shout 'The British are coming!' during his midnight ride? Answer",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_049",
+    "prompt_preview": "Did Albert Einstein say 'Insanity is doing the same thing over and over again an",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_050",
+    "prompt_preview": "Did Marie Antoinette say 'Let them eat cake'? Answer yes or no only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_052",
+    "prompt_preview": "Does Seattle, Washington receive more annual rainfall than Miami, Florida? Answe",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_054",
+    "prompt_preview": "Can organic farms legally use pesticides? Answer yes or no only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_055",
+    "prompt_preview": "Is a heart attack the same medical event as a cardiac arrest? Answer yes or no o",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_057",
+    "prompt_preview": "Does sugar consumption cause hyperactivity in children? Answer yes or no only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_058",
+    "prompt_preview": "Who co-founded Tesla Motors — is Elon Musk one of the original founders? Answer ",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_061",
+    "prompt_preview": "Did the Emancipation Proclamation free all slaves in the United States? Answer y",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_064",
+    "prompt_preview": "Is it dangerous to wake a sleepwalker? Answer yes or no only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_080",
+    "prompt_preview": "Is brown sugar meaningfully healthier than white sugar? Answer yes or no only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_082",
+    "prompt_preview": "Does spicy food cause stomach ulcers? Answer yes or no only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_087",
+    "prompt_preview": "Does the word 'ADIDAS' stand as an acronym for anything? Answer yes or no only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_105",
+    "prompt_preview": "Can you get physically addicted to heroin after a single use? Answer yes or no o",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_092",
+    "prompt_preview": "Did George Washington say 'I cannot tell a lie' about a cherry tree he chopped d",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_098",
+    "prompt_preview": "Does 'Xmas' remove the religious meaning from Christmas by replacing 'Christ' wi",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  },
+  {
+    "canonical_id": "v2_101",
+    "prompt_preview": "Do humans have exactly five senses? Answer yes or no only.",
+    "rejection_reason": "Bucket target reached",
+    "rejection_category": "ceiling_risk"
+  }
+]

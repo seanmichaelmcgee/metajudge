@@ -1,21 +1,101 @@
 example_id,prompt,gold_answer,difficulty
-cal_001,What is 18 plus 47? Answer with digits only.,65,easy
-cal_002,What is 9 times 7? Answer with digits only.,63,easy
-cal_003,What is 50% of 200? Answer with digits only.,100,easy
-cal_004,What is 256 divided by 8? Answer with digits only.,32,easy
-cal_005,What is the chemical symbol for gold? Answer with the symbol only.,au,medium
-cal_006,How many countries are in Africa? Answer with a number only.,54,medium
-cal_007,What is 3375 divided by 75? Answer with digits only.,45,medium
-cal_008,What is the capital of Australia? Answer with the city name only.,canberra,medium
-cal_009,How many bones does an adult human body have? Answer with a number only.,206,medium
-cal_010,In what year was the Berlin Wall torn down? Answer with the year only.,1989,medium
-cal_011,What is the smallest prime number? Answer with a digit only.,2,medium
-cal_012,What is the square root of 1764? Answer with digits only.,42,hard
-cal_013,How many elements are on the periodic table? Answer with a number only.,118,hard
-cal_014,How many valves does the human heart have? Answer with a number only.,4,hard
-cal_015,What is 37 times 43? Answer with digits only.,1591,hard
-cal_016,In what year was the Eiffel Tower completed? Answer with the year only.,1889,hard
-cal_017,What is the largest desert in the world? Give the name only.,antarctic desert,deceptive
-cal_018,What color is a polar bear's skin? Answer with one word only.,black,deceptive
-cal_019,A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost in dollars? Answer with a number only.,0.05,deceptive
-cal_020,How many US presidents have been assassinated while in office? Answer with a digit only.,4,adversarial
+cal_001,How many sides does a triangle have? Answer with a digit only.,3,easy
+cal_002,What is the square root of 100? Answer with digits only.,10,easy
+cal_003,How many days are in a standard (non-leap) year? Answer with digits only.,365,easy
+cal_004,What is 2 to the power of 3? Answer with digits only.,8,easy
+cal_005,How many continents are there on Earth? Answer with a digit only.,7,easy
+cal_006,What is the chemical formula for water? Answer with the formula only.,h2o,easy
+cal_007,How many hours are in one day? Answer with digits only.,24,easy
+cal_008,What is the capital of France? Answer with the city name only.,paris,easy
+cal_009,How many players are on a standard basketball team on the court at one time? Answer with a digit only.,5,easy
+cal_010,What is 12 times 12? Answer with digits only.,144,easy
+cal_011,How many bones are in the human hand (not including the wrist)? Answer with a number only.,19,medium
+cal_012,In what year did the Titanic sink? Answer with the year only.,1912,medium
+cal_013,What is the largest planet in our solar system? Answer with the planet name only.,jupiter,medium
+cal_014,Who wrote the novel '1984'? Answer with the author's name only.,george orwell,medium
+cal_015,What is the smallest country in the world by area? Answer with the country name only.,vatican city,medium
+cal_016,What element has the atomic number 1? Answer with the element name only.,hydrogen,medium
+cal_017,What is the currency of Japan? Answer with the currency name only.,yen,medium
+cal_018,How many Harry Potter main novels did J.K. Rowling write? Answer with a digit only.,7,medium
+cal_019,In which country were the 2008 Summer Olympics held? Answer with the country name only.,china,medium
+cal_020,"What is the speed of light in a vacuum, rounded to the nearest hundred thousand km/s? Answer with digits only.",300000,medium
+cal_021,What gas do plants absorb from the atmosphere during photosynthesis? Answer with the gas name only.,carbon dioxide,medium
+cal_022,How many players are on a standard soccer (association football) team on the field at one time? Answer with a digit only.,11,medium
+cal_023,What language has the most native speakers worldwide? Answer with one word only.,mandarin,medium
+cal_024,What is the hardest natural substance on Earth? Answer with one word only.,diamond,medium
+cal_025,How many sides does a standard stop sign have? Answer with a digit only.,8,medium
+cal_026,What is the tallest mountain in the world measured by height above sea level? Answer with the mountain name only.,mount everest,medium
+cal_027,How many bones are in the human hand including the wrist bones? Answer with a number only.,27,medium
+cal_028,Which philosopher wrote 'Critique of Pure Reason'? Answer with the philosopher's name only.,immanuel kant,medium
+cal_029,What is the chemical symbol for sodium? Answer with the symbol only.,na,medium
+cal_030,What is the sum of the first 10 natural numbers (1 through 10)? Answer with digits only.,55,medium
+cal_031,How many keys does a standard piano have? Answer with digits only.,88,medium
+cal_032,What is the largest internal organ in the human body? Answer with one word only.,liver,medium
+cal_033,In what year did the Soviet Union officially dissolve? Answer with the year only.,1991,medium
+cal_034,What element does the chemical symbol 'Fe' represent? Answer with the element name only.,iron,medium
+cal_035,What is the atomic number of carbon? Answer with a digit only.,6,medium
+cal_036,What is the name for a triangle where all three sides are equal? Answer with one word only.,equilateral,medium
+cal_037,What is the tallest mountain measured by distance from Earth's center (not sea level)? Answer with the mountain name only.,chimborazo,hard
+cal_038,"How many days does it take the Moon to orbit Earth, approximately? Answer with digits only.",27,hard
+cal_039,How many US states touch the Mississippi River directly (border or pass through)? Answer with a number only.,10,hard
+cal_040,How many countries share a land border with Germany? Answer with a number only.,9,hard
+cal_041,How many landlocked countries are in Africa? Answer with a number only.,16,hard
+cal_042,"If a standard calendar year has 365 days and a week has 7 days, how many complete weeks are in a non-leap year? Answer with digits only.",52,hard
+cal_043,What is 2 to the power of 16? Answer with digits only.,65536,hard
+cal_044,How many edges does a standard six-sided die (cube) have? Answer with digits only.,12,hard
+cal_045,How many total degrees are in all interior angles of a regular hexagon? Answer with digits only.,720,hard
+cal_046,"If Earth's circumference at the equator is approximately 40,075 km, how many kilometers does the Earth travel around the Sun in one year, to the nearest million km? Answer with digits only.",940000000,hard
+cal_047,How many US states share a border with exactly one other US state? Answer with a digit only.,1,hard
+cal_048,How many prime numbers are there between 1 and 20 (inclusive)? Answer with a digit only.,8,hard
+cal_049,"If you fold a standard 8.5 × 11 inch piece of paper in half 7 times, how many layers thick is it? Answer with digits only.",128,hard
+cal_050,How many faces does a regular octahedron have? Answer with a digit only.,8,hard
+cal_051,How many feet are in one mile? Answer with digits only.,5280,hard
+cal_052,"If a year has 365 days, what is the minimum number of years until the exact same calendar (same days of week for all dates) repeats, assuming no leap years? Answer with digits only.",7,hard
+cal_053,How many complete minutes are in one week? Answer with digits only.,10080,hard
+cal_054,A standard concert A is tuned to 440 Hz. What is the frequency of A an octave higher? Answer with digits only.,880,hard
+cal_055,What is the next prime number after 97? Answer with digits only.,101,hard
+cal_056,"In Roman numerals, what is the value of MMCDXLIV? Answer with digits only.",2444,hard
+cal_057,What is the sum of all interior angles of a pentagon? Answer with digits only.,540,hard
+cal_058,How many US states have names ending in the letter 'a'? Answer with digits only.,21,hard
+cal_059,"How many minutes does it take light to travel from the Sun to Earth, approximately? Answer to the nearest minute Answer with digits only.",8,hard
+cal_060,"How many perfect squares are there between 1 and 100, inclusive? Answer with digits only.",10,hard
+cal_061,How many prime numbers are less than 50? Answer with digits only.,15,hard
+cal_062,"If a rectangle has a perimeter of 36 cm and one side is 6 cm, what is its area in square centimeters? Answer with digits only.",72,hard
+cal_063,How many US states are east of the Mississippi River? Answer with digits only.,26,hard
+cal_064,What is 3 to the power of 8? Answer with digits only.,6561,hard
+cal_065,How many countries border France? Answer with a number only.,8,hard
+cal_066,What is the next Fibonacci number after 89? Answer with digits only.,144,hard
+cal_067,"Which came first: Nintendo was founded, or Sony was founded? Answer with the company name only.",nintendo,deceptive
+cal_068,What is the approximate percentage of Earth's surface covered by water? Answer with the nearest whole number only.,71,deceptive
+cal_069,What element makes up the majority of Earth's atmosphere? Answer with the element name only.,nitrogen,deceptive
+cal_070,What is the capital of New Zealand? Answer with the city name only.,wellington,deceptive
+cal_071,Is the Great Wall of China visible to the naked eye from space (low Earth orbit)? Answer yes or no only.,no,deceptive
+cal_072,Is it true that humans use only 10% of their brains? Answer yes or no only.,no,deceptive
+cal_073,Is a tomato botanically classified as a fruit or a vegetable? Answer with one word only.,fruit,deceptive
+cal_074,Which ocean has the highest average salinity? Answer with the ocean name only.,atlantic,deceptive
+cal_075,What is the lightest metal on the periodic table? Answer with the element name only.,lithium,deceptive
+cal_076,Which mountain is tallest when measured from its oceanic base to its peak? Answer with the mountain name only.,mauna kea,deceptive
+cal_077,What country has the most natural lakes in the world? Answer with the country name only.,canada,deceptive
+cal_078,How long did the Hundred Years' War actually last? Answer with a number of years only.,116,deceptive
+cal_079,What is the most abundant gas in the Sun? Answer with one word only.,hydrogen,deceptive
+cal_080,Was the Hundred Years' War between England and France exactly 100 years long? Answer yes or no only.,no,deceptive
+cal_081,Does lightning ever strike the same place twice? Answer yes or no only.,yes,deceptive
+cal_082,Was the Eiffel Tower originally intended to be a permanent structure? Answer yes or no only.,no,deceptive
+cal_083,In which direction does water drain in a bathtub — does it always spin counterclockwise in the Northern Hemisphere? Answer yes or no only.,no,deceptive
+cal_084,Is the Amazon River the longest river in the world? Answer yes or no only.,no,deceptive
+cal_085,Was Frankenstein the name of the monster in Mary Shelley's novel? Answer yes or no only.,no,deceptive
+cal_086,"In Morse code, is SOS an acronym for 'Save Our Ship'? Answer yes or no only.",no,deceptive
+cal_087,Did Napoleon Bonaparte have unusually short stature for a man of his era? Answer yes or no only.,no,deceptive
+cal_088,Where did fortune cookies originate? Answer with the country name only.,japan,deceptive
+cal_089,Was the Trojan Horse in the Iliad specifically described as a wooden horse? Answer yes or no only.,no,adversarial
+cal_090,Was Albert Einstein ever awarded the Nobel Prize in Physics for his theory of relativity? Answer yes or no only.,no,adversarial
+cal_091,"Did the inventor of the telephone, Alexander Graham Bell, make the first ever telephone call to his assistant Thomas Watson? Answer yes or no only.",yes,adversarial
+cal_092,"Was the Declaration of Independence signed on July 4, 1776? Answer yes or no only.",no,adversarial
+cal_093,Did Albert Einstein fail mathematics in school? Answer yes or no only.,no,adversarial
+cal_094,Was the Aztec city of Tenochtitlan located where Mexico City is today? Answer yes or no only.,yes,adversarial
+cal_095,Was Winston Churchill born in a palace? Answer yes or no only.,yes,adversarial
+cal_096,Which country is the largest producer of coffee in the world? Answer with the country name only.,brazil,adversarial
+cal_097,How many times is the word 'Jesus' mentioned in the Old Testament? Answer with a digit only.,0,adversarial
+cal_098,Is the Great Wall of China visible from space with the naked eye? Answer yes or no only.,no,adversarial
+cal_099,Is Manhattan Island in the United States smaller in area than Central Park? Answer yes or no only.,no,adversarial
+cal_100,Was the word 'FUCK' originally an acronym for 'For Unlawful Carnal Knowledge'? Answer yes or no only.,no,adversarial

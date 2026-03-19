@@ -1,0 +1,2919 @@
+{
+  "v2_001": {
+    "canonical_answer": "56",
+    "accepted_aliases": [
+      "56",
+      "56.0"
+    ],
+    "rejected_near_misses": [
+      "fifty-six",
+      "56 km",
+      "56 m",
+      "56 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '56.0' (integer expressed as decimal). Rejected word form 'fifty-six' \u2014 prompt requests digits only. Rejected forms with units (e.g., '56 km') \u2014 digits only required."
+  },
+  "v2_002": {
+    "canonical_answer": "12",
+    "accepted_aliases": [
+      "12",
+      "12.0",
+      "twelve"
+    ],
+    "rejected_near_misses": [
+      "12 km",
+      "12 m",
+      "12 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '12.0' (integer expressed as decimal). Accepted word form 'twelve' for small number 12. Rejected forms with units (e.g., '12 km') \u2014 digits only required."
+  },
+  "v2_003": {
+    "canonical_answer": "50",
+    "accepted_aliases": [
+      "50",
+      "50.0"
+    ],
+    "rejected_near_misses": [
+      "fifty",
+      "50 km",
+      "50 m",
+      "50 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '50.0' (integer expressed as decimal). Rejected word form 'fifty' \u2014 prompt requests digits only. Rejected forms with units (e.g., '50 km') \u2014 digits only required."
+  },
+  "v2_004": {
+    "canonical_answer": "81",
+    "accepted_aliases": [
+      "81",
+      "81.0"
+    ],
+    "rejected_near_misses": [
+      "eighty-one",
+      "81 km",
+      "81 m",
+      "81 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '81.0' (integer expressed as decimal). Rejected word form 'eighty-one' \u2014 prompt requests digits only. Rejected forms with units (e.g., '81 km') \u2014 digits only required."
+  },
+  "v2_005": {
+    "canonical_answer": "63",
+    "accepted_aliases": [
+      "63",
+      "63.0"
+    ],
+    "rejected_near_misses": [
+      "sixty-three",
+      "63 km",
+      "63 m",
+      "63 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '63.0' (integer expressed as decimal). Rejected word form 'sixty-three' \u2014 prompt requests digits only. Rejected forms with units (e.g., '63 km') \u2014 digits only required."
+  },
+  "v2_006": {
+    "canonical_answer": "72",
+    "accepted_aliases": [
+      "72",
+      "72.0"
+    ],
+    "rejected_near_misses": [
+      "seventy-two",
+      "72 km",
+      "72 m",
+      "72 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '72.0' (integer expressed as decimal). Rejected word form 'seventy-two' \u2014 prompt requests digits only. Rejected forms with units (e.g., '72 km') \u2014 digits only required."
+  },
+  "v2_007": {
+    "canonical_answer": "3",
+    "accepted_aliases": [
+      "3",
+      "3.0",
+      "three"
+    ],
+    "rejected_near_misses": [
+      "3 km",
+      "3 m",
+      "3 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '3.0' (integer expressed as decimal). Accepted word form 'three' for small number 3. Rejected forms with units (e.g., '3 km') \u2014 digits only required."
+  },
+  "v2_008": {
+    "canonical_answer": "10",
+    "accepted_aliases": [
+      "10",
+      "10.0",
+      "ten"
+    ],
+    "rejected_near_misses": [
+      "10 km",
+      "10 m",
+      "10 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '10.0' (integer expressed as decimal). Accepted word form 'ten' for small number 10. Rejected forms with units (e.g., '10 km') \u2014 digits only required."
+  },
+  "v2_009": {
+    "canonical_answer": "365",
+    "accepted_aliases": [
+      "365",
+      "365.0"
+    ],
+    "rejected_near_misses": [
+      "365 km",
+      "365 m",
+      "365 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '365.0' (integer expressed as decimal). Rejected forms with units (e.g., '365 km') \u2014 digits only required."
+  },
+  "v2_010": {
+    "canonical_answer": "8",
+    "accepted_aliases": [
+      "8",
+      "8.0",
+      "eight"
+    ],
+    "rejected_near_misses": [
+      "8 km",
+      "8 m",
+      "8 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '8.0' (integer expressed as decimal). Accepted word form 'eight' for small number 8. Rejected forms with units (e.g., '8 km') \u2014 digits only required."
+  },
+  "v2_011": {
+    "canonical_answer": "7",
+    "accepted_aliases": [
+      "7",
+      "7.0",
+      "seven"
+    ],
+    "rejected_near_misses": [
+      "7 km",
+      "7 m",
+      "7 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '7.0' (integer expressed as decimal). Accepted word form 'seven' for small number 7. Rejected forms with units (e.g., '7 km') \u2014 digits only required."
+  },
+  "v2_012": {
+    "canonical_answer": "h2o",
+    "accepted_aliases": [
+      "h2o",
+      "h\u2082o",
+      "H2O"
+    ],
+    "rejected_near_misses": [
+      "water"
+    ],
+    "alias_rationale": "Single-word or symbol answer. Accepted Unicode subscript form. Rejected 'water' (word form) \u2014 formula requested. Accepted uppercase 'H2O' \u2014 chemical formula canonically uppercase."
+  },
+  "v2_013": {
+    "canonical_answer": "24",
+    "accepted_aliases": [
+      "24",
+      "24.0",
+      "twenty-four"
+    ],
+    "rejected_near_misses": [
+      "24 km",
+      "24 m",
+      "24 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '24.0' (integer expressed as decimal). Accepted word form 'twenty-four' for small number 24. Rejected forms with units (e.g., '24 km') \u2014 digits only required."
+  },
+  "v2_014": {
+    "canonical_answer": "117",
+    "accepted_aliases": [
+      "117",
+      "117.0"
+    ],
+    "rejected_near_misses": [
+      "117 km",
+      "117 m",
+      "117 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '117.0' (integer expressed as decimal). Rejected forms with units (e.g., '117 km') \u2014 digits only required."
+  },
+  "v2_015": {
+    "canonical_answer": "40",
+    "accepted_aliases": [
+      "40",
+      "40.0"
+    ],
+    "rejected_near_misses": [
+      "forty",
+      "40 km",
+      "40 m",
+      "40 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '40.0' (integer expressed as decimal). Rejected word form 'forty' \u2014 prompt requests digits only. Rejected forms with units (e.g., '40 km') \u2014 digits only required."
+  },
+  "v2_016": {
+    "canonical_answer": "paris",
+    "accepted_aliases": [
+      "paris"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants."
+  },
+  "v2_017": {
+    "canonical_answer": "1912",
+    "accepted_aliases": [
+      "1912",
+      "1912.0"
+    ],
+    "rejected_near_misses": [
+      "1,912",
+      "1912 km",
+      "1912 m",
+      "1912 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '1,912' (comma-formatted number \u2014 digits only required). Accepted '1912.0' (integer expressed as decimal). Rejected forms with units (e.g., '1912 km') \u2014 digits only required."
+  },
+  "v2_018": {
+    "canonical_answer": "19",
+    "accepted_aliases": [
+      "19",
+      "19.0",
+      "nineteen"
+    ],
+    "rejected_near_misses": [
+      "19 km",
+      "19 m",
+      "19 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '19.0' (integer expressed as decimal). Accepted word form 'nineteen' for small number 19. Rejected forms with units (e.g., '19 km') \u2014 digits only required."
+  },
+  "v2_019": {
+    "canonical_answer": "jupiter",
+    "accepted_aliases": [
+      "jupiter"
+    ],
+    "rejected_near_misses": [
+      "saturn",
+      "neptune"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'saturn'/'neptune' \u2014 common wrong answers."
+  },
+  "v2_020": {
+    "canonical_answer": "george orwell",
+    "accepted_aliases": [
+      "george orwell",
+      "orwell",
+      "eric arthur blair"
+    ],
+    "rejected_near_misses": [
+      "george-orwell",
+      "george orwel"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected hyphenated form 'george-orwell' \u2014 space form is canonical. Accepted 'orwell' (last name only) and birth name. Rejected common misspelling."
+  },
+  "v2_021": {
+    "canonical_answer": "vatican city",
+    "accepted_aliases": [
+      "vatican city",
+      "the vatican",
+      "holy see",
+      "vatican"
+    ],
+    "rejected_near_misses": [
+      "vatican-city"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected hyphenated form 'vatican-city' \u2014 space form is canonical. Accepted 'the vatican', 'holy see', 'vatican' as common aliases."
+  },
+  "v2_022": {
+    "canonical_answer": "hydrogen",
+    "accepted_aliases": [
+      "hydrogen"
+    ],
+    "rejected_near_misses": [
+      "helium"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'helium' \u2014 common wrong answer for most abundant element in sun."
+  },
+  "v2_023": {
+    "canonical_answer": "32",
+    "accepted_aliases": [
+      "32",
+      "32.0"
+    ],
+    "rejected_near_misses": [
+      "thirty-two",
+      "32 km",
+      "32 m",
+      "32 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '32.0' (integer expressed as decimal). Rejected word form 'thirty-two' \u2014 prompt requests digits only. Rejected forms with units (e.g., '32 km') \u2014 digits only required."
+  },
+  "v2_024": {
+    "canonical_answer": "yen",
+    "accepted_aliases": [
+      "yen",
+      "japanese yen"
+    ],
+    "rejected_near_misses": [
+      "yuan"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Accepted 'japanese yen'. Rejected 'yuan' \u2014 China's currency."
+  },
+  "v2_025": {
+    "canonical_answer": "7",
+    "accepted_aliases": [
+      "7",
+      "7.0",
+      "seven"
+    ],
+    "rejected_near_misses": [
+      "7 km",
+      "7 m",
+      "7 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '7.0' (integer expressed as decimal). Accepted word form 'seven' for small number 7. Rejected forms with units (e.g., '7 km') \u2014 digits only required."
+  },
+  "v2_026": {
+    "canonical_answer": "china",
+    "accepted_aliases": [
+      "china"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants."
+  },
+  "v2_027": {
+    "canonical_answer": "300000",
+    "accepted_aliases": [
+      "300000",
+      "300000.0"
+    ],
+    "rejected_near_misses": [
+      "300,000",
+      "300000 km",
+      "300000 m",
+      "300000 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '300,000' (comma-formatted number \u2014 digits only required). Accepted '300000.0' (integer expressed as decimal). Rejected forms with units (e.g., '300000 km') \u2014 digits only required."
+  },
+  "v2_028": {
+    "canonical_answer": "carbon dioxide",
+    "accepted_aliases": [
+      "carbon dioxide",
+      "co2",
+      "carbon-dioxide"
+    ],
+    "rejected_near_misses": [
+      "oxygen",
+      "carbon",
+      "dioxide",
+      "co",
+      "carbon monoxide"
+    ],
+    "alias_rationale": "Plants absorb CO2. Accept full name, formula, and hyphenated form. Reject partial words and wrong gases."
+  },
+  "v2_029": {
+    "canonical_answer": "11",
+    "accepted_aliases": [
+      "11",
+      "11.0",
+      "eleven"
+    ],
+    "rejected_near_misses": [
+      "11 km",
+      "11 m",
+      "11 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '11.0' (integer expressed as decimal). Accepted word form 'eleven' for small number 11. Rejected forms with units (e.g., '11 km') \u2014 digits only required."
+  },
+  "v2_030": {
+    "canonical_answer": "mandarin",
+    "accepted_aliases": [
+      "mandarin",
+      "mandarin chinese",
+      "chinese"
+    ],
+    "rejected_near_misses": [
+      "english",
+      "spanish",
+      "hindi",
+      "cantonese"
+    ],
+    "alias_rationale": "Accept mandarin, mandarin chinese, and chinese (since Mandarin is the primary Chinese language)."
+  },
+  "v2_031": {
+    "canonical_answer": "diamond",
+    "accepted_aliases": [
+      "diamond"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants."
+  },
+  "v2_032": {
+    "canonical_answer": "1024",
+    "accepted_aliases": [
+      "1024",
+      "1024.0"
+    ],
+    "rejected_near_misses": [
+      "1,024",
+      "1024 km",
+      "1024 m",
+      "1024 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '1,024' (comma-formatted number \u2014 digits only required). Accepted '1024.0' (integer expressed as decimal). Rejected forms with units (e.g., '1024 km') \u2014 digits only required."
+  },
+  "v2_033": {
+    "canonical_answer": "391",
+    "accepted_aliases": [
+      "391",
+      "391.0"
+    ],
+    "rejected_near_misses": [
+      "391 km",
+      "391 m",
+      "391 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '391.0' (integer expressed as decimal). Rejected forms with units (e.g., '391 km') \u2014 digits only required."
+  },
+  "v2_034": {
+    "canonical_answer": "256",
+    "accepted_aliases": [
+      "256",
+      "256.0"
+    ],
+    "rejected_near_misses": [
+      "256 km",
+      "256 m",
+      "256 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '256.0' (integer expressed as decimal). Rejected forms with units (e.g., '256 km') \u2014 digits only required."
+  },
+  "v2_035": {
+    "canonical_answer": "8",
+    "accepted_aliases": [
+      "8",
+      "8.0",
+      "eight"
+    ],
+    "rejected_near_misses": [
+      "8 km",
+      "8 m",
+      "8 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '8.0' (integer expressed as decimal). Accepted word form 'eight' for small number 8. Rejected forms with units (e.g., '8 km') \u2014 digits only required."
+  },
+  "v2_036": {
+    "canonical_answer": "mount everest",
+    "accepted_aliases": [
+      "mount everest",
+      "everest",
+      "mt. everest",
+      "mt everest"
+    ],
+    "rejected_near_misses": [
+      "k2",
+      "kangchenjunga",
+      "denali"
+    ],
+    "alias_rationale": "All common forms of Everest name. Short form 'everest' is very common model output."
+  },
+  "v2_037": {
+    "canonical_answer": "625",
+    "accepted_aliases": [
+      "625",
+      "625.0"
+    ],
+    "rejected_near_misses": [
+      "625 km",
+      "625 m",
+      "625 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '625.0' (integer expressed as decimal). Rejected forms with units (e.g., '625 km') \u2014 digits only required."
+  },
+  "v2_038": {
+    "canonical_answer": "10",
+    "accepted_aliases": [
+      "10",
+      "10.0",
+      "ten"
+    ],
+    "rejected_near_misses": [
+      "10 km",
+      "10 m",
+      "10 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '10.0' (integer expressed as decimal). Accepted word form 'ten' for small number 10. Rejected forms with units (e.g., '10 km') \u2014 digits only required."
+  },
+  "v2_039": {
+    "canonical_answer": "9",
+    "accepted_aliases": [
+      "9",
+      "9.0",
+      "nine"
+    ],
+    "rejected_near_misses": [
+      "9 km",
+      "9 m",
+      "9 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '9.0' (integer expressed as decimal). Accepted word form 'nine' for small number 9. Rejected forms with units (e.g., '9 km') \u2014 digits only required."
+  },
+  "v2_040": {
+    "canonical_answer": "16",
+    "accepted_aliases": [
+      "16",
+      "16.0",
+      "sixteen"
+    ],
+    "rejected_near_misses": [
+      "16 km",
+      "16 m",
+      "16 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '16.0' (integer expressed as decimal). Accepted word form 'sixteen' for small number 16. Rejected forms with units (e.g., '16 km') \u2014 digits only required."
+  },
+  "v2_041": {
+    "canonical_answer": "alaska",
+    "accepted_aliases": [
+      "alaska"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants."
+  },
+  "v2_042": {
+    "canonical_answer": "2",
+    "accepted_aliases": [
+      "2",
+      "2.0",
+      "two"
+    ],
+    "rejected_near_misses": [
+      "2 km",
+      "2 m",
+      "2 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '2.0' (integer expressed as decimal). Accepted word form 'two' for small number 2. Rejected forms with units (e.g., '2 km') \u2014 digits only required."
+  },
+  "v2_043": {
+    "canonical_answer": "2",
+    "accepted_aliases": [
+      "2",
+      "2.0",
+      "two"
+    ],
+    "rejected_near_misses": [
+      "2 km",
+      "2 m",
+      "2 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '2.0' (integer expressed as decimal). Accepted word form 'two' for small number 2. Rejected forms with units (e.g., '2 km') \u2014 digits only required."
+  },
+  "v2_044": {
+    "canonical_answer": "52",
+    "accepted_aliases": [
+      "52",
+      "52.0"
+    ],
+    "rejected_near_misses": [
+      "52 km",
+      "52 m",
+      "52 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '52.0' (integer expressed as decimal). Rejected forms with units (e.g., '52 km') \u2014 digits only required."
+  },
+  "v2_045": {
+    "canonical_answer": "27",
+    "accepted_aliases": [
+      "27",
+      "27.0",
+      "twenty-seven"
+    ],
+    "rejected_near_misses": [
+      "27 km",
+      "27 m",
+      "27 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '27.0' (integer expressed as decimal). Accepted word form 'twenty-seven' for small number 27. Rejected forms with units (e.g., '27 km') \u2014 digits only required."
+  },
+  "v2_046": {
+    "canonical_answer": "729",
+    "accepted_aliases": [
+      "729",
+      "729.0"
+    ],
+    "rejected_near_misses": [
+      "729 km",
+      "729 m",
+      "729 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '729.0' (integer expressed as decimal). Rejected forms with units (e.g., '729 km') \u2014 digits only required."
+  },
+  "v2_047": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_048": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_049": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_050": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_051": {
+    "canonical_answer": "japan",
+    "accepted_aliases": [
+      "japan"
+    ],
+    "rejected_near_misses": [
+      "china",
+      "united states",
+      "usa",
+      "america"
+    ],
+    "alias_rationale": "Fortune cookies originated in Japan. China and US are common wrong answers."
+  },
+  "v2_052": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_053": {
+    "canonical_answer": "lung",
+    "accepted_aliases": [
+      "lung",
+      "lungs"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Accepted plural 'lungs' as alias for 'lung'."
+  },
+  "v2_054": {
+    "canonical_answer": "yes",
+    "accepted_aliases": [
+      "yes",
+      "y"
+    ],
+    "rejected_near_misses": [
+      "true",
+      "correct",
+      "affirmative",
+      "1"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'y' as abbreviation for 'yes'. Rejected 'true'/'correct'/'1' \u2014 prompt specifies yes or no only."
+  },
+  "v2_055": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_056": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_057": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_058": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_059": {
+    "canonical_answer": "yellow-green",
+    "accepted_aliases": [
+      "yellow-green",
+      "yellow green",
+      "yellowish green",
+      "green-yellow"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Accepted hyphen-free form 'yellow green'. Accepted hyphen-free and directionally swapped forms."
+  },
+  "v2_060": {
+    "canonical_answer": "parchment",
+    "accepted_aliases": [
+      "parchment",
+      "hemp"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Accepted 'hemp' \u2014 some sources note hemp parchment; parchment is canonical."
+  },
+  "v2_061": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_062": {
+    "canonical_answer": "provincetown",
+    "accepted_aliases": [
+      "provincetown"
+    ],
+    "rejected_near_misses": [
+      "plymouth"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'plymouth' \u2014 Pilgrims first landed at Provincetown, not Plymouth (common misconception)."
+  },
+  "v2_063": {
+    "canonical_answer": "richard marquand",
+    "accepted_aliases": [
+      "richard marquand",
+      "marquand"
+    ],
+    "rejected_near_misses": [
+      "richard-marquand"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected hyphenated form 'richard-marquand' \u2014 space form is canonical. Accepted surname only."
+  },
+  "v2_064": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_065": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_066": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_067": {
+    "canonical_answer": "nintendo",
+    "accepted_aliases": [
+      "nintendo"
+    ],
+    "rejected_near_misses": [
+      "atari",
+      "sony"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'atari'/'sony' \u2014 common wrong answers."
+  },
+  "v2_068": {
+    "canonical_answer": "fruit",
+    "accepted_aliases": [
+      "fruit"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants."
+  },
+  "v2_069": {
+    "canonical_answer": "moon landing",
+    "accepted_aliases": [
+      "moon landing"
+    ],
+    "rejected_near_misses": [
+      "moon-landing"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected hyphenated form 'moon-landing' \u2014 space form is canonical. Fixed-form answer from constrained prompt."
+  },
+  "v2_070": {
+    "canonical_answer": "atlantic",
+    "accepted_aliases": [
+      "atlantic",
+      "atlantic ocean",
+      "the atlantic"
+    ],
+    "rejected_near_misses": [
+      "pacific",
+      "indian",
+      "arctic"
+    ],
+    "alias_rationale": "Accept with and without 'ocean' suffix and article."
+  },
+  "v2_071": {
+    "canonical_answer": "lithium",
+    "accepted_aliases": [
+      "lithium"
+    ],
+    "rejected_near_misses": [
+      "hydrogen"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'hydrogen' \u2014 common wrong answer (hydrogen is first, lithium is first metal/third element)."
+  },
+  "v2_072": {
+    "canonical_answer": "mauna kea",
+    "accepted_aliases": [
+      "mauna kea",
+      "maunakea",
+      "mauna-kea"
+    ],
+    "rejected_near_misses": [
+      "mauna-kea",
+      "mount everest"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected hyphenated form 'mauna-kea' \u2014 space form is canonical. Accepted spelling variant 'maunakea'. Rejected 'mount everest' \u2014 common wrong answer."
+  },
+  "v2_073": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_074": {
+    "canonical_answer": "yes",
+    "accepted_aliases": [
+      "yes",
+      "y"
+    ],
+    "rejected_near_misses": [
+      "true",
+      "correct",
+      "affirmative",
+      "1"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'y' as abbreviation for 'yes'. Rejected 'true'/'correct'/'1' \u2014 prompt specifies yes or no only."
+  },
+  "v2_075": {
+    "canonical_answer": "marianne williamson",
+    "accepted_aliases": [
+      "marianne williamson",
+      "williamson"
+    ],
+    "rejected_near_misses": [
+      "marianne-williamson"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected hyphenated form 'marianne-williamson' \u2014 space form is canonical. Accepted surname only."
+  },
+  "v2_076": {
+    "canonical_answer": "yes",
+    "accepted_aliases": [
+      "yes",
+      "y"
+    ],
+    "rejected_near_misses": [
+      "true",
+      "correct",
+      "affirmative",
+      "1"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'y' as abbreviation for 'yes'. Rejected 'true'/'correct'/'1' \u2014 prompt specifies yes or no only."
+  },
+  "v2_077": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_078": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_079": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_080": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_081": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_082": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_083": {
+    "canonical_answer": "magic mirror on the wall",
+    "accepted_aliases": [
+      "magic mirror on the wall",
+      "mirror mirror on the wall"
+    ],
+    "rejected_near_misses": [
+      "who is the fairest of them all"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Accepted 'mirror mirror on the wall' (popular misquote that's also widely considered correct). Rejected the continuation of the phrase."
+  },
+  "v2_084": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_085": {
+    "canonical_answer": "canada",
+    "accepted_aliases": [
+      "canada"
+    ],
+    "rejected_near_misses": [
+      "russia",
+      "united states"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'russia'/'united states' \u2014 Canada has most freshwater lakes by count."
+  },
+  "v2_086": {
+    "canonical_answer": "116",
+    "accepted_aliases": [
+      "116",
+      "116.0"
+    ],
+    "rejected_near_misses": [
+      "116 km",
+      "116 m",
+      "116 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '116.0' (integer expressed as decimal). Rejected forms with units (e.g., '116 km') \u2014 digits only required."
+  },
+  "v2_087": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_088": {
+    "canonical_answer": "71",
+    "accepted_aliases": [
+      "71",
+      "71.0"
+    ],
+    "rejected_near_misses": [
+      "71 km",
+      "71 m",
+      "71 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '71.0' (integer expressed as decimal). Rejected forms with units (e.g., '71 km') \u2014 digits only required."
+  },
+  "v2_089": {
+    "canonical_answer": "saturn",
+    "accepted_aliases": [
+      "saturn"
+    ],
+    "rejected_near_misses": [
+      "jupiter"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'jupiter' \u2014 common wrong answer (most prominent rings, but Saturn has most known moons as of 2024)."
+  },
+  "v2_090": {
+    "canonical_answer": "nothing",
+    "accepted_aliases": [
+      "nothing"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Special sentinel value 'nothing' \u2014 no aliases."
+  },
+  "v2_091": {
+    "canonical_answer": "nothing",
+    "accepted_aliases": [
+      "nothing"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Special sentinel value 'nothing' \u2014 no aliases."
+  },
+  "v2_092": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_093": {
+    "canonical_answer": "unspecified",
+    "accepted_aliases": [
+      "unspecified"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Special sentinel value 'unspecified' \u2014 no aliases."
+  },
+  "v2_094": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_095": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_096": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_097": {
+    "canonical_answer": "yes",
+    "accepted_aliases": [
+      "yes",
+      "y"
+    ],
+    "rejected_near_misses": [
+      "true",
+      "correct",
+      "affirmative",
+      "1"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'y' as abbreviation for 'yes'. Rejected 'true'/'correct'/'1' \u2014 prompt specifies yes or no only."
+  },
+  "v2_098": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_099": {
+    "canonical_answer": "4",
+    "accepted_aliases": [
+      "4",
+      "4.0",
+      "four"
+    ],
+    "rejected_near_misses": [
+      "4 km",
+      "4 m",
+      "4 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '4.0' (integer expressed as decimal). Accepted word form 'four' for small number 4. Rejected forms with units (e.g., '4 km') \u2014 digits only required."
+  },
+  "v2_100": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_101": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_102": {
+    "canonical_answer": "brazil",
+    "accepted_aliases": [
+      "brazil",
+      "brasil"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Accepted 'brasil' \u2014 Portuguese/alternative spelling."
+  },
+  "v2_103": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "yes",
+      "y",
+      "partially",
+      "sometimes"
+    ],
+    "alias_rationale": "Binary yes/no. The Great Wall is NOT visible from space with naked eye per NASA/astronaut testimony."
+  },
+  "v2_104": {
+    "canonical_answer": "0",
+    "accepted_aliases": [
+      "0",
+      "0.0",
+      "zero",
+      "none"
+    ],
+    "rejected_near_misses": [
+      "0 km",
+      "0 m",
+      "0 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '0.0' (integer expressed as decimal). Accepted word form 'zero' for small number 0. Rejected forms with units (e.g., '0 km') \u2014 digits only required."
+  },
+  "v2_105": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_106": {
+    "canonical_answer": "65536",
+    "accepted_aliases": [
+      "65536",
+      "65536.0"
+    ],
+    "rejected_near_misses": [
+      "65,536",
+      "65536 km",
+      "65536 m",
+      "65536 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '65,536' (comma-formatted number \u2014 digits only required). Accepted '65536.0' (integer expressed as decimal). Rejected forms with units (e.g., '65536 km') \u2014 digits only required."
+  },
+  "v2_107": {
+    "canonical_answer": "12",
+    "accepted_aliases": [
+      "12",
+      "12.0",
+      "twelve"
+    ],
+    "rejected_near_misses": [
+      "12 km",
+      "12 m",
+      "12 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '12.0' (integer expressed as decimal). Accepted word form 'twelve' for small number 12. Rejected forms with units (e.g., '12 km') \u2014 digits only required."
+  },
+  "v2_108": {
+    "canonical_answer": "720",
+    "accepted_aliases": [
+      "720",
+      "720.0"
+    ],
+    "rejected_near_misses": [
+      "720 km",
+      "720 m",
+      "720 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '720.0' (integer expressed as decimal). Rejected forms with units (e.g., '720 km') \u2014 digits only required."
+  },
+  "v2_109": {
+    "canonical_answer": "940000000",
+    "accepted_aliases": [
+      "940000000",
+      "940000000.0"
+    ],
+    "rejected_near_misses": [
+      "940,000,000",
+      "940000000 km",
+      "940000000 m",
+      "940000000 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '940,000,000' (comma-formatted number \u2014 digits only required). Accepted '940000000.0' (integer expressed as decimal). Rejected forms with units (e.g., '940000000 km') \u2014 digits only required."
+  },
+  "v2_110": {
+    "canonical_answer": "33",
+    "accepted_aliases": [
+      "33",
+      "33.0"
+    ],
+    "rejected_near_misses": [
+      "thirty-three",
+      "33 km",
+      "33 m",
+      "33 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '33.0' (integer expressed as decimal). Rejected word form 'thirty-three' \u2014 prompt requests digits only. Rejected forms with units (e.g., '33 km') \u2014 digits only required."
+  },
+  "v2_111": {
+    "canonical_answer": "1",
+    "accepted_aliases": [
+      "1",
+      "1.0",
+      "one"
+    ],
+    "rejected_near_misses": [
+      "1 km",
+      "1 m",
+      "1 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '1.0' (integer expressed as decimal). Accepted word form 'one' for small number 1. Rejected forms with units (e.g., '1 km') \u2014 digits only required."
+  },
+  "v2_112": {
+    "canonical_answer": "30",
+    "accepted_aliases": [
+      "30",
+      "30.0",
+      "thirty"
+    ],
+    "rejected_near_misses": [
+      "30 km",
+      "30 m",
+      "30 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '30.0' (integer expressed as decimal). Accepted word form 'thirty' for small number 30. Rejected forms with units (e.g., '30 km') \u2014 digits only required."
+  },
+  "v2_113": {
+    "canonical_answer": "8",
+    "accepted_aliases": [
+      "8",
+      "8.0",
+      "eight"
+    ],
+    "rejected_near_misses": [
+      "8 km",
+      "8 m",
+      "8 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '8.0' (integer expressed as decimal). Accepted word form 'eight' for small number 8. Rejected forms with units (e.g., '8 km') \u2014 digits only required."
+  },
+  "v2_114": {
+    "canonical_answer": "128",
+    "accepted_aliases": [
+      "128",
+      "128.0"
+    ],
+    "rejected_near_misses": [
+      "128 km",
+      "128 m",
+      "128 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '128.0' (integer expressed as decimal). Rejected forms with units (e.g., '128 km') \u2014 digits only required."
+  },
+  "v2_115": {
+    "canonical_answer": "8",
+    "accepted_aliases": [
+      "8",
+      "8.0",
+      "eight"
+    ],
+    "rejected_near_misses": [
+      "8 km",
+      "8 m",
+      "8 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '8.0' (integer expressed as decimal). Accepted word form 'eight' for small number 8. Rejected forms with units (e.g., '8 km') \u2014 digits only required."
+  },
+  "v2_116": {
+    "canonical_answer": "1161",
+    "accepted_aliases": [
+      "1161",
+      "1161.0"
+    ],
+    "rejected_near_misses": [
+      "1,161",
+      "1161 km",
+      "1161 m",
+      "1161 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '1,161' (comma-formatted number \u2014 digits only required). Accepted '1161.0' (integer expressed as decimal). Rejected forms with units (e.g., '1161 km') \u2014 digits only required."
+  },
+  "v2_117": {
+    "canonical_answer": "7 pm",
+    "accepted_aliases": [
+      "7 pm"
+    ],
+    "rejected_near_misses": [
+      "7-pm"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected hyphenated form '7-pm' \u2014 space form is canonical."
+  },
+  "v2_118": {
+    "canonical_answer": "2",
+    "accepted_aliases": [
+      "2",
+      "2.0",
+      "two"
+    ],
+    "rejected_near_misses": [
+      "2 km",
+      "2 m",
+      "2 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '2.0' (integer expressed as decimal). Accepted word form 'two' for small number 2. Rejected forms with units (e.g., '2 km') \u2014 digits only required."
+  },
+  "v2_119": {
+    "canonical_answer": "5280",
+    "accepted_aliases": [
+      "5280",
+      "5280.0"
+    ],
+    "rejected_near_misses": [
+      "5,280",
+      "5280 km",
+      "5280 m",
+      "5280 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '5,280' (comma-formatted number \u2014 digits only required). Accepted '5280.0' (integer expressed as decimal). Rejected forms with units (e.g., '5280 km') \u2014 digits only required."
+  },
+  "v2_120": {
+    "canonical_answer": "7",
+    "accepted_aliases": [
+      "7",
+      "7.0",
+      "seven"
+    ],
+    "rejected_near_misses": [
+      "7 km",
+      "7 m",
+      "7 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '7.0' (integer expressed as decimal). Accepted word form 'seven' for small number 7. Rejected forms with units (e.g., '7 km') \u2014 digits only required."
+  },
+  "v2_121": {
+    "canonical_answer": "10080",
+    "accepted_aliases": [
+      "10080",
+      "10080.0"
+    ],
+    "rejected_near_misses": [
+      "10,080",
+      "10080 km",
+      "10080 m",
+      "10080 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '10,080' (comma-formatted number \u2014 digits only required). Accepted '10080.0' (integer expressed as decimal). Rejected forms with units (e.g., '10080 km') \u2014 digits only required."
+  },
+  "v2_122": {
+    "canonical_answer": "56",
+    "accepted_aliases": [
+      "56",
+      "56.0"
+    ],
+    "rejected_near_misses": [
+      "fifty-six",
+      "56 km",
+      "56 m",
+      "56 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '56.0' (integer expressed as decimal). Rejected word form 'fifty-six' \u2014 prompt requests digits only. Rejected forms with units (e.g., '56 km') \u2014 digits only required."
+  },
+  "v2_123": {
+    "canonical_answer": "880",
+    "accepted_aliases": [
+      "880",
+      "880.0"
+    ],
+    "rejected_near_misses": [
+      "880 km",
+      "880 m",
+      "880 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '880.0' (integer expressed as decimal). Rejected forms with units (e.g., '880 km') \u2014 digits only required."
+  },
+  "v2_124": {
+    "canonical_answer": "4",
+    "accepted_aliases": [
+      "4",
+      "4.0",
+      "four"
+    ],
+    "rejected_near_misses": [
+      "4 km",
+      "4 m",
+      "4 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '4.0' (integer expressed as decimal). Accepted word form 'four' for small number 4. Rejected forms with units (e.g., '4 km') \u2014 digits only required."
+  },
+  "v2_125": {
+    "canonical_answer": "101",
+    "accepted_aliases": [
+      "101",
+      "101.0"
+    ],
+    "rejected_near_misses": [
+      "one hundred and one",
+      "101 km",
+      "101 m",
+      "101 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '101.0' (integer expressed as decimal). Rejected word form 'one hundred and one' \u2014 prompt requests digits only. Rejected forms with units (e.g., '101 km') \u2014 digits only required."
+  },
+  "v2_126": {
+    "canonical_answer": "20",
+    "accepted_aliases": [
+      "20",
+      "20.0",
+      "twenty"
+    ],
+    "rejected_near_misses": [
+      "20 km",
+      "20 m",
+      "20 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '20.0' (integer expressed as decimal). Accepted word form 'twenty' for small number 20. Rejected forms with units (e.g., '20 km') \u2014 digits only required."
+  },
+  "v2_127": {
+    "canonical_answer": "2444",
+    "accepted_aliases": [
+      "2444",
+      "2444.0"
+    ],
+    "rejected_near_misses": [
+      "2,444",
+      "2444 km",
+      "2444 m",
+      "2444 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '2,444' (comma-formatted number \u2014 digits only required). Accepted '2444.0' (integer expressed as decimal). Rejected forms with units (e.g., '2444 km') \u2014 digits only required."
+  },
+  "v2_128": {
+    "canonical_answer": "540",
+    "accepted_aliases": [
+      "540",
+      "540.0"
+    ],
+    "rejected_near_misses": [
+      "540 km",
+      "540 m",
+      "540 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '540.0' (integer expressed as decimal). Rejected forms with units (e.g., '540 km') \u2014 digits only required."
+  },
+  "v2_129": {
+    "canonical_answer": "21",
+    "accepted_aliases": [
+      "21",
+      "21.0",
+      "twenty-one"
+    ],
+    "rejected_near_misses": [
+      "21 km",
+      "21 m",
+      "21 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '21.0' (integer expressed as decimal). Accepted word form 'twenty-one' for small number 21. Rejected forms with units (e.g., '21 km') \u2014 digits only required."
+  },
+  "v2_130": {
+    "canonical_answer": "8",
+    "accepted_aliases": [
+      "8",
+      "8.0",
+      "eight"
+    ],
+    "rejected_near_misses": [
+      "8 km",
+      "8 m",
+      "8 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '8.0' (integer expressed as decimal). Accepted word form 'eight' for small number 8. Rejected forms with units (e.g., '8 km') \u2014 digits only required."
+  },
+  "v2_131": {
+    "canonical_answer": "10",
+    "accepted_aliases": [
+      "10",
+      "10.0",
+      "ten"
+    ],
+    "rejected_near_misses": [
+      "10 km",
+      "10 m",
+      "10 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '10.0' (integer expressed as decimal). Accepted word form 'ten' for small number 10. Rejected forms with units (e.g., '10 km') \u2014 digits only required."
+  },
+  "v2_132": {
+    "canonical_answer": "901",
+    "accepted_aliases": [
+      "901",
+      "901.0"
+    ],
+    "rejected_near_misses": [
+      "901 km",
+      "901 m",
+      "901 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '901.0' (integer expressed as decimal). Rejected forms with units (e.g., '901 km') \u2014 digits only required."
+  },
+  "v2_133": {
+    "canonical_answer": "4",
+    "accepted_aliases": [
+      "4",
+      "4.0",
+      "four"
+    ],
+    "rejected_near_misses": [
+      "4 km",
+      "4 m",
+      "4 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '4.0' (integer expressed as decimal). Accepted word form 'four' for small number 4. Rejected forms with units (e.g., '4 km') \u2014 digits only required."
+  },
+  "v2_134": {
+    "canonical_answer": "42",
+    "accepted_aliases": [
+      "42",
+      "42.0"
+    ],
+    "rejected_near_misses": [
+      "forty-two",
+      "42 km",
+      "42 m",
+      "42 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '42.0' (integer expressed as decimal). Rejected word form 'forty-two' \u2014 prompt requests digits only. Rejected forms with units (e.g., '42 km') \u2014 digits only required."
+  },
+  "v2_135": {
+    "canonical_answer": "15",
+    "accepted_aliases": [
+      "15",
+      "15.0",
+      "fifteen"
+    ],
+    "rejected_near_misses": [
+      "15 km",
+      "15 m",
+      "15 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '15.0' (integer expressed as decimal). Accepted word form 'fifteen' for small number 15. Rejected forms with units (e.g., '15 km') \u2014 digits only required."
+  },
+  "v2_136": {
+    "canonical_answer": "899",
+    "accepted_aliases": [
+      "899",
+      "899.0"
+    ],
+    "rejected_near_misses": [
+      "899 km",
+      "899 m",
+      "899 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '899.0' (integer expressed as decimal). Rejected forms with units (e.g., '899 km') \u2014 digits only required."
+  },
+  "v2_137": {
+    "canonical_answer": "72",
+    "accepted_aliases": [
+      "72",
+      "72.0"
+    ],
+    "rejected_near_misses": [
+      "seventy-two",
+      "72 km",
+      "72 m",
+      "72 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '72.0' (integer expressed as decimal). Rejected word form 'seventy-two' \u2014 prompt requests digits only. Rejected forms with units (e.g., '72 km') \u2014 digits only required."
+  },
+  "v2_138": {
+    "canonical_answer": "4",
+    "accepted_aliases": [
+      "4",
+      "4.0",
+      "four"
+    ],
+    "rejected_near_misses": [
+      "4 km",
+      "4 m",
+      "4 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '4.0' (integer expressed as decimal). Accepted word form 'four' for small number 4. Rejected forms with units (e.g., '4 km') \u2014 digits only required."
+  },
+  "v2_139": {
+    "canonical_answer": "immanuel kant",
+    "accepted_aliases": [
+      "immanuel kant",
+      "kant"
+    ],
+    "rejected_near_misses": [
+      "immanuel-kant",
+      "emmanuel kant"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected hyphenated form 'immanuel-kant' \u2014 space form is canonical. Accepted 'kant' (surname only). Rejected alternate first-name spelling."
+  },
+  "v2_140": {
+    "canonical_answer": "5",
+    "accepted_aliases": [
+      "5",
+      "5.0",
+      "five"
+    ],
+    "rejected_near_misses": [
+      "5 km",
+      "5 m",
+      "5 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '5.0' (integer expressed as decimal). Accepted word form 'five' for small number 5. Rejected forms with units (e.g., '5 km') \u2014 digits only required."
+  },
+  "v2_141": {
+    "canonical_answer": "144",
+    "accepted_aliases": [
+      "144",
+      "144.0"
+    ],
+    "rejected_near_misses": [
+      "144 km",
+      "144 m",
+      "144 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '144.0' (integer expressed as decimal). Rejected forms with units (e.g., '144 km') \u2014 digits only required."
+  },
+  "v2_142": {
+    "canonical_answer": "na",
+    "accepted_aliases": [
+      "na",
+      "Na"
+    ],
+    "rejected_near_misses": [
+      "sodium",
+      "natrium"
+    ],
+    "alias_rationale": "Single-word or symbol answer. Accepted 'Na' (capitalized symbol). Rejected full element name \u2014 symbol requested."
+  },
+  "v2_143": {
+    "canonical_answer": "1945",
+    "accepted_aliases": [
+      "1945",
+      "1945.0"
+    ],
+    "rejected_near_misses": [
+      "1,945",
+      "1945 km",
+      "1945 m",
+      "1945 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '1,945' (comma-formatted number \u2014 digits only required). Accepted '1945.0' (integer expressed as decimal). Rejected forms with units (e.g., '1945 km') \u2014 digits only required."
+  },
+  "v2_144": {
+    "canonical_answer": "4",
+    "accepted_aliases": [
+      "4",
+      "4.0",
+      "four"
+    ],
+    "rejected_near_misses": [
+      "4 km",
+      "4 m",
+      "4 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '4.0' (integer expressed as decimal). Accepted word form 'four' for small number 4. Rejected forms with units (e.g., '4 km') \u2014 digits only required."
+  },
+  "v2_145": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_146": {
+    "canonical_answer": "empty hand",
+    "accepted_aliases": [
+      "empty hand",
+      "empty-hand"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected hyphenated form 'empty-hand' \u2014 space form is canonical. Accepted hyphenated form."
+  },
+  "v2_147": {
+    "canonical_answer": "26",
+    "accepted_aliases": [
+      "26",
+      "26.0",
+      "twenty-six"
+    ],
+    "rejected_near_misses": [
+      "26 km",
+      "26 m",
+      "26 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '26.0' (integer expressed as decimal). Accepted word form 'twenty-six' for small number 26. Rejected forms with units (e.g., '26 km') \u2014 digits only required."
+  },
+  "v2_148": {
+    "canonical_answer": "6561",
+    "accepted_aliases": [
+      "6561",
+      "6561.0"
+    ],
+    "rejected_near_misses": [
+      "6,561",
+      "6561 km",
+      "6561 m",
+      "6561 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '6,561' (comma-formatted number \u2014 digits only required). Accepted '6561.0' (integer expressed as decimal). Rejected forms with units (e.g., '6561 km') \u2014 digits only required."
+  },
+  "v2_149": {
+    "canonical_answer": "8",
+    "accepted_aliases": [
+      "8",
+      "8.0",
+      "eight"
+    ],
+    "rejected_near_misses": [
+      "8 km",
+      "8 m",
+      "8 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '8.0' (integer expressed as decimal). Accepted word form 'eight' for small number 8. Rejected forms with units (e.g., '8 km') \u2014 digits only required."
+  },
+  "v2_150": {
+    "canonical_answer": "55",
+    "accepted_aliases": [
+      "55",
+      "55.0"
+    ],
+    "rejected_near_misses": [
+      "55 km",
+      "55 m",
+      "55 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '55.0' (integer expressed as decimal). Rejected forms with units (e.g., '55 km') \u2014 digits only required."
+  },
+  "v2_151": {
+    "canonical_answer": "88",
+    "accepted_aliases": [
+      "88",
+      "88.0"
+    ],
+    "rejected_near_misses": [
+      "eighty-eight",
+      "88 km",
+      "88 m",
+      "88 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '88.0' (integer expressed as decimal). Rejected word form 'eighty-eight' \u2014 prompt requests digits only. Rejected forms with units (e.g., '88 km') \u2014 digits only required."
+  },
+  "v2_152": {
+    "canonical_answer": "liver",
+    "accepted_aliases": [
+      "liver"
+    ],
+    "rejected_near_misses": [
+      "heart",
+      "skin"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'heart'/'skin' \u2014 common wrong answers (liver is largest internal organ; skin is largest overall but often excluded)."
+  },
+  "v2_153": {
+    "canonical_answer": "1991",
+    "accepted_aliases": [
+      "1991",
+      "1991.0"
+    ],
+    "rejected_near_misses": [
+      "1,991",
+      "1991 km",
+      "1991 m",
+      "1991 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '1,991' (comma-formatted number \u2014 digits only required). Accepted '1991.0' (integer expressed as decimal). Rejected forms with units (e.g., '1991 km') \u2014 digits only required."
+  },
+  "v2_154": {
+    "canonical_answer": "iron",
+    "accepted_aliases": [
+      "iron",
+      "fe"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Accepted 'fe' \u2014 chemical symbol is acceptable alternate."
+  },
+  "v2_155": {
+    "canonical_answer": "12",
+    "accepted_aliases": [
+      "12",
+      "12.0",
+      "twelve"
+    ],
+    "rejected_near_misses": [
+      "12 km",
+      "12 m",
+      "12 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '12.0' (integer expressed as decimal). Accepted word form 'twelve' for small number 12. Rejected forms with units (e.g., '12 km') \u2014 digits only required."
+  },
+  "v2_156": {
+    "canonical_answer": "144",
+    "accepted_aliases": [
+      "144",
+      "144.0"
+    ],
+    "rejected_near_misses": [
+      "144 km",
+      "144 m",
+      "144 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '144.0' (integer expressed as decimal). Rejected forms with units (e.g., '144 km') \u2014 digits only required."
+  },
+  "v2_157": {
+    "canonical_answer": "54",
+    "accepted_aliases": [
+      "54",
+      "54.0"
+    ],
+    "rejected_near_misses": [
+      "fifty-four",
+      "54 km",
+      "54 m",
+      "54 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '54.0' (integer expressed as decimal). Rejected word form 'fifty-four' \u2014 prompt requests digits only. Rejected forms with units (e.g., '54 km') \u2014 digits only required."
+  },
+  "v2_158": {
+    "canonical_answer": "6",
+    "accepted_aliases": [
+      "6",
+      "6.0",
+      "six"
+    ],
+    "rejected_near_misses": [
+      "6 km",
+      "6 m",
+      "6 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '6.0' (integer expressed as decimal). Accepted word form 'six' for small number 6. Rejected forms with units (e.g., '6 km') \u2014 digits only required."
+  },
+  "v2_159": {
+    "canonical_answer": "90",
+    "accepted_aliases": [
+      "90",
+      "90.0"
+    ],
+    "rejected_near_misses": [
+      "ninety",
+      "90 km",
+      "90 m",
+      "90 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '90.0' (integer expressed as decimal). Rejected word form 'ninety' \u2014 prompt requests digits only. Rejected forms with units (e.g., '90 km') \u2014 digits only required."
+  },
+  "v2_160": {
+    "canonical_answer": "equilateral",
+    "accepted_aliases": [
+      "equilateral"
+    ],
+    "rejected_near_misses": [
+      "isoceles"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'isoceles' \u2014 has only two equal sides."
+  },
+  "v2_161": {
+    "canonical_answer": "16",
+    "accepted_aliases": [
+      "16",
+      "16.0",
+      "sixteen"
+    ],
+    "rejected_near_misses": [
+      "16 km",
+      "16 m",
+      "16 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '16.0' (integer expressed as decimal). Accepted word form 'sixteen' for small number 16. Rejected forms with units (e.g., '16 km') \u2014 digits only required."
+  },
+  "v2_162": {
+    "canonical_answer": "361",
+    "accepted_aliases": [
+      "361",
+      "361.0"
+    ],
+    "rejected_near_misses": [
+      "361 km",
+      "361 m",
+      "361 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '361.0' (integer expressed as decimal). Rejected forms with units (e.g., '361 km') \u2014 digits only required."
+  },
+  "v2_163": {
+    "canonical_answer": "chimborazo",
+    "accepted_aliases": [
+      "chimborazo",
+      "mount chimborazo",
+      "mt. chimborazo",
+      "mt chimborazo"
+    ],
+    "rejected_near_misses": [
+      "everest",
+      "mauna kea",
+      "denali"
+    ],
+    "alias_rationale": "Accept with and without mount/mt prefix."
+  },
+  "v2_164": {
+    "canonical_answer": "168",
+    "accepted_aliases": [
+      "168",
+      "168.0"
+    ],
+    "rejected_near_misses": [
+      "168 km",
+      "168 m",
+      "168 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '168.0' (integer expressed as decimal). Rejected forms with units (e.g., '168 km') \u2014 digits only required."
+  },
+  "v2_165": {
+    "canonical_answer": "nothing",
+    "accepted_aliases": [
+      "nothing"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Special sentinel value 'nothing' \u2014 no aliases."
+  },
+  "v2_166": {
+    "canonical_answer": "10",
+    "accepted_aliases": [
+      "10",
+      "10.0",
+      "ten"
+    ],
+    "rejected_near_misses": [
+      "10 km",
+      "10 m",
+      "10 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '10.0' (integer expressed as decimal). Accepted word form 'ten' for small number 10. Rejected forms with units (e.g., '10 km') \u2014 digits only required."
+  },
+  "v2_167": {
+    "canonical_answer": "180",
+    "accepted_aliases": [
+      "180",
+      "180.0"
+    ],
+    "rejected_near_misses": [
+      "180 km",
+      "180 m",
+      "180 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '180.0' (integer expressed as decimal). Rejected forms with units (e.g., '180 km') \u2014 digits only required."
+  },
+  "v2_168": {
+    "canonical_answer": "4",
+    "accepted_aliases": [
+      "4",
+      "4.0",
+      "four"
+    ],
+    "rejected_near_misses": [
+      "4 km",
+      "4 m",
+      "4 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '4.0' (integer expressed as decimal). Accepted word form 'four' for small number 4. Rejected forms with units (e.g., '4 km') \u2014 digits only required."
+  },
+  "v2_169": {
+    "canonical_answer": "arachnophobia",
+    "accepted_aliases": [
+      "arachnophobia"
+    ],
+    "rejected_near_misses": [
+      "arachnophbia"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected common misspelling 'arachnophbia'."
+  },
+  "v2_170": {
+    "canonical_answer": "mercury",
+    "accepted_aliases": [
+      "mercury"
+    ],
+    "rejected_near_misses": [
+      "venus"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'venus' \u2014 common wrong answer."
+  },
+  "v2_171": {
+    "canonical_answer": "100",
+    "accepted_aliases": [
+      "100",
+      "100.0"
+    ],
+    "rejected_near_misses": [
+      "one hundred",
+      "100 km",
+      "100 m",
+      "100 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '100.0' (integer expressed as decimal). Rejected word form 'one hundred' \u2014 prompt requests digits only. Rejected forms with units (e.g., '100 km') \u2014 digits only required."
+  },
+  "v2_172": {
+    "canonical_answer": "9",
+    "accepted_aliases": [
+      "9",
+      "9.0",
+      "nine"
+    ],
+    "rejected_near_misses": [
+      "9 km",
+      "9 m",
+      "9 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '9.0' (integer expressed as decimal). Accepted word form 'nine' for small number 9. Rejected forms with units (e.g., '9 km') \u2014 digits only required."
+  },
+  "v2_173": {
+    "canonical_answer": "femur",
+    "accepted_aliases": [
+      "femur"
+    ],
+    "rejected_near_misses": [
+      "tibia"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'tibia' \u2014 common wrong answer."
+  },
+  "v2_174": {
+    "canonical_answer": "110",
+    "accepted_aliases": [
+      "110",
+      "110.0"
+    ],
+    "rejected_near_misses": [
+      "110 km",
+      "110 m",
+      "110 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '110.0' (integer expressed as decimal). Rejected forms with units (e.g., '110 km') \u2014 digits only required."
+  },
+  "v2_175": {
+    "canonical_answer": "32",
+    "accepted_aliases": [
+      "32",
+      "32.0"
+    ],
+    "rejected_near_misses": [
+      "thirty-two",
+      "32 km",
+      "32 m",
+      "32 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '32.0' (integer expressed as decimal). Rejected word form 'thirty-two' \u2014 prompt requests digits only. Rejected forms with units (e.g., '32 km') \u2014 digits only required."
+  },
+  "v2_176": {
+    "canonical_answer": "pound",
+    "accepted_aliases": [
+      "pound",
+      "pound sterling",
+      "gbp"
+    ],
+    "rejected_near_misses": [
+      "euro"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Accepted 'pound sterling' and 'gbp'. Rejected 'euro' \u2014 UK uses pound."
+  },
+  "v2_177": {
+    "canonical_answer": "942",
+    "accepted_aliases": [
+      "942",
+      "942.0"
+    ],
+    "rejected_near_misses": [
+      "942 km",
+      "942 m",
+      "942 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '942.0' (integer expressed as decimal). Rejected forms with units (e.g., '942 km') \u2014 digits only required."
+  },
+  "v2_178": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_179": {
+    "canonical_answer": "45",
+    "accepted_aliases": [
+      "45",
+      "45.0"
+    ],
+    "rejected_near_misses": [
+      "forty-five",
+      "45 km",
+      "45 m",
+      "45 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '45.0' (integer expressed as decimal). Rejected word form 'forty-five' \u2014 prompt requests digits only. Rejected forms with units (e.g., '45 km') \u2014 digits only required."
+  },
+  "v2_180": {
+    "canonical_answer": "13",
+    "accepted_aliases": [
+      "13",
+      "13.0",
+      "thirteen"
+    ],
+    "rejected_near_misses": [
+      "13 km",
+      "13 m",
+      "13 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '13.0' (integer expressed as decimal). Accepted word form 'thirteen' for small number 13. Rejected forms with units (e.g., '13 km') \u2014 digits only required."
+  },
+  "v2_181": {
+    "canonical_answer": "51",
+    "accepted_aliases": [
+      "51",
+      "51.0"
+    ],
+    "rejected_near_misses": [
+      "51 km",
+      "51 m",
+      "51 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '51.0' (integer expressed as decimal). Rejected forms with units (e.g., '51 km') \u2014 digits only required."
+  },
+  "v2_182": {
+    "canonical_answer": "k",
+    "accepted_aliases": [
+      "k",
+      "K"
+    ],
+    "rejected_near_misses": [
+      "potassium",
+      "kalium"
+    ],
+    "alias_rationale": "Single-word or symbol answer. Accepted 'K' (capitalized symbol). Rejected full element name \u2014 symbol requested."
+  },
+  "v2_183": {
+    "canonical_answer": "33",
+    "accepted_aliases": [
+      "33",
+      "33.0"
+    ],
+    "rejected_near_misses": [
+      "thirty-three",
+      "33 km",
+      "33 m",
+      "33 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '33.0' (integer expressed as decimal). Rejected word form 'thirty-three' \u2014 prompt requests digits only. Rejected forms with units (e.g., '33 km') \u2014 digits only required."
+  },
+  "v2_184": {
+    "canonical_answer": "1/4",
+    "accepted_aliases": [
+      "1/4",
+      "one quarter",
+      "one-quarter",
+      "0.25",
+      "25%"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Accepted various forms: word, decimal, percentage."
+  },
+  "v2_185": {
+    "canonical_answer": "arizona",
+    "accepted_aliases": [
+      "arizona",
+      "arizona and hawaii"
+    ],
+    "rejected_near_misses": [
+      "hawaii"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Note: Hawaii also doesn't observe DST but prompt likely asks for most-known answer. Arizona is canonical. Rejected Hawaii-only as incomplete."
+  },
+  "v2_186": {
+    "canonical_answer": "95",
+    "accepted_aliases": [
+      "95",
+      "95.0"
+    ],
+    "rejected_near_misses": [
+      "95 km",
+      "95 m",
+      "95 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '95.0' (integer expressed as decimal). Rejected forms with units (e.g., '95 km') \u2014 digits only required."
+  },
+  "v2_187": {
+    "canonical_answer": "4",
+    "accepted_aliases": [
+      "4",
+      "4.0",
+      "four"
+    ],
+    "rejected_near_misses": [
+      "4 km",
+      "4 m",
+      "4 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '4.0' (integer expressed as decimal). Accepted word form 'four' for small number 4. Rejected forms with units (e.g., '4 km') \u2014 digits only required."
+  },
+  "v2_188": {
+    "canonical_answer": "78",
+    "accepted_aliases": [
+      "78",
+      "78.0"
+    ],
+    "rejected_near_misses": [
+      "78 km",
+      "78 m",
+      "78 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '78.0' (integer expressed as decimal). Rejected forms with units (e.g., '78 km') \u2014 digits only required."
+  },
+  "v2_189": {
+    "canonical_answer": "nitrogen",
+    "accepted_aliases": [
+      "nitrogen",
+      "n",
+      "n2"
+    ],
+    "rejected_near_misses": [
+      "oxygen",
+      "o2",
+      "argon",
+      "carbon dioxide"
+    ],
+    "alias_rationale": "Accept element name and chemical symbol/formula."
+  },
+  "v2_190": {
+    "canonical_answer": "1024",
+    "accepted_aliases": [
+      "1024",
+      "1024.0"
+    ],
+    "rejected_near_misses": [
+      "1,024",
+      "1024 km",
+      "1024 m",
+      "1024 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '1,024' (comma-formatted number \u2014 digits only required). Accepted '1024.0' (integer expressed as decimal). Rejected forms with units (e.g., '1024 km') \u2014 digits only required."
+  },
+  "v2_191": {
+    "canonical_answer": "437",
+    "accepted_aliases": [
+      "437",
+      "437.0"
+    ],
+    "rejected_near_misses": [
+      "437 km",
+      "437 m",
+      "437 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '437.0' (integer expressed as decimal). Rejected forms with units (e.g., '437 km') \u2014 digits only required."
+  },
+  "v2_192": {
+    "canonical_answer": "27",
+    "accepted_aliases": [
+      "27",
+      "27.0",
+      "twenty-seven"
+    ],
+    "rejected_near_misses": [
+      "27 km",
+      "27 m",
+      "27 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '27.0' (integer expressed as decimal). Accepted word form 'twenty-seven' for small number 27. Rejected forms with units (e.g., '27 km') \u2014 digits only required."
+  },
+  "v2_193": {
+    "canonical_answer": "4",
+    "accepted_aliases": [
+      "4",
+      "4.0",
+      "four"
+    ],
+    "rejected_near_misses": [
+      "4 km",
+      "4 m",
+      "4 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '4.0' (integer expressed as decimal). Accepted word form 'four' for small number 4. Rejected forms with units (e.g., '4 km') \u2014 digits only required."
+  },
+  "v2_194": {
+    "canonical_answer": "27",
+    "accepted_aliases": [
+      "27",
+      "27.0",
+      "twenty-seven"
+    ],
+    "rejected_near_misses": [
+      "27 km",
+      "27 m",
+      "27 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '27.0' (integer expressed as decimal). Accepted word form 'twenty-seven' for small number 27. Rejected forms with units (e.g., '27 km') \u2014 digits only required."
+  },
+  "v2_195": {
+    "canonical_answer": "1000",
+    "accepted_aliases": [
+      "1000",
+      "1000.0"
+    ],
+    "rejected_near_misses": [
+      "1,000",
+      "1000 km",
+      "1000 m",
+      "1000 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '1,000' (comma-formatted number \u2014 digits only required). Accepted '1000.0' (integer expressed as decimal). Rejected forms with units (e.g., '1000 km') \u2014 digits only required."
+  },
+  "v2_196": {
+    "canonical_answer": "portuguese",
+    "accepted_aliases": [
+      "portuguese",
+      "portuguese language"
+    ],
+    "rejected_near_misses": [
+      "spanish"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Accepted 'portuguese language'. Rejected 'spanish' \u2014 common wrong answer."
+  },
+  "v2_197": {
+    "canonical_answer": "1000",
+    "accepted_aliases": [
+      "1000",
+      "1000.0"
+    ],
+    "rejected_near_misses": [
+      "1,000",
+      "1000 km",
+      "1000 m",
+      "1000 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '1,000' (comma-formatted number \u2014 digits only required). Accepted '1000.0' (integer expressed as decimal). Rejected forms with units (e.g., '1000 km') \u2014 digits only required."
+  },
+  "v2_198": {
+    "canonical_answer": "alexander graham bell",
+    "accepted_aliases": [
+      "alexander graham bell",
+      "bell",
+      "graham bell"
+    ],
+    "rejected_near_misses": [],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Accepted surname and partial name forms."
+  },
+  "v2_199": {
+    "canonical_answer": "8",
+    "accepted_aliases": [
+      "8",
+      "8.0",
+      "eight"
+    ],
+    "rejected_near_misses": [
+      "8 km",
+      "8 m",
+      "8 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '8.0' (integer expressed as decimal). Accepted word form 'eight' for small number 8. Rejected forms with units (e.g., '8 km') \u2014 digits only required."
+  },
+  "v2_200": {
+    "canonical_answer": "579",
+    "accepted_aliases": [
+      "579",
+      "579.0"
+    ],
+    "rejected_near_misses": [
+      "579 km",
+      "579 m",
+      "579 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '579.0' (integer expressed as decimal). Rejected forms with units (e.g., '579 km') \u2014 digits only required."
+  },
+  "v2_201": {
+    "canonical_answer": "milky way",
+    "accepted_aliases": [
+      "milky way",
+      "the milky way",
+      "milky way galaxy"
+    ],
+    "rejected_near_misses": [
+      "milky-way"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected hyphenated form 'milky-way' \u2014 space form is canonical. Accepted 'the milky way' and 'milky way galaxy'."
+  },
+  "v2_202": {
+    "canonical_answer": "12",
+    "accepted_aliases": [
+      "12",
+      "12.0",
+      "twelve"
+    ],
+    "rejected_near_misses": [
+      "12 km",
+      "12 m",
+      "12 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '12.0' (integer expressed as decimal). Accepted word form 'twelve' for small number 12. Rejected forms with units (e.g., '12 km') \u2014 digits only required."
+  },
+  "v2_203": {
+    "canonical_answer": "ottawa",
+    "accepted_aliases": [
+      "ottawa"
+    ],
+    "rejected_near_misses": [
+      "toronto",
+      "montreal"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'toronto'/'montreal' \u2014 common wrong answers."
+  },
+  "v2_204": {
+    "canonical_answer": "yes",
+    "accepted_aliases": [
+      "yes",
+      "y"
+    ],
+    "rejected_near_misses": [
+      "true",
+      "correct",
+      "affirmative",
+      "1"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'y' as abbreviation for 'yes'. Rejected 'true'/'correct'/'1' \u2014 prompt specifies yes or no only."
+  },
+  "v2_205": {
+    "canonical_answer": "yes",
+    "accepted_aliases": [
+      "yes",
+      "y"
+    ],
+    "rejected_near_misses": [
+      "true",
+      "correct",
+      "affirmative",
+      "1"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'y' as abbreviation for 'yes'. Rejected 'true'/'correct'/'1' \u2014 prompt specifies yes or no only."
+  },
+  "v2_206": {
+    "canonical_answer": "fe",
+    "accepted_aliases": [
+      "fe",
+      "Fe"
+    ],
+    "rejected_near_misses": [
+      "iron",
+      "ferrum"
+    ],
+    "alias_rationale": "Single-word or symbol answer. Accepted 'Fe' (standard capitalization). Rejected full element name."
+  },
+  "v2_207": {
+    "canonical_answer": "3600",
+    "accepted_aliases": [
+      "3600",
+      "3600.0"
+    ],
+    "rejected_near_misses": [
+      "3,600",
+      "3600 km",
+      "3600 m",
+      "3600 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '3,600' (comma-formatted number \u2014 digits only required). Accepted '3600.0' (integer expressed as decimal). Rejected forms with units (e.g., '3600 km') \u2014 digits only required."
+  },
+  "v2_208": {
+    "canonical_answer": "yes",
+    "accepted_aliases": [
+      "yes",
+      "y"
+    ],
+    "rejected_near_misses": [
+      "true",
+      "correct",
+      "affirmative",
+      "1"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'y' as abbreviation for 'yes'. Rejected 'true'/'correct'/'1' \u2014 prompt specifies yes or no only."
+  },
+  "v2_209": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_210": {
+    "canonical_answer": "yes",
+    "accepted_aliases": [
+      "yes",
+      "y"
+    ],
+    "rejected_near_misses": [
+      "true",
+      "correct",
+      "affirmative",
+      "1"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'y' as abbreviation for 'yes'. Rejected 'true'/'correct'/'1' \u2014 prompt specifies yes or no only."
+  },
+  "v2_211": {
+    "canonical_answer": "hydrogen",
+    "accepted_aliases": [
+      "hydrogen",
+      "h",
+      "h2"
+    ],
+    "rejected_near_misses": [
+      "helium",
+      "he",
+      "oxygen",
+      "o"
+    ],
+    "alias_rationale": "Accept element name and chemical symbol/formula."
+  },
+  "v2_212": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_213": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_214": {
+    "canonical_answer": "wellington",
+    "accepted_aliases": [
+      "wellington"
+    ],
+    "rejected_near_misses": [
+      "auckland"
+    ],
+    "alias_rationale": "Named entity answer \u2014 accepted aliases include common variants. Rejected 'auckland' \u2014 common wrong answer (largest city, not capital)."
+  },
+  "v2_215": {
+    "canonical_answer": "2",
+    "accepted_aliases": [
+      "2",
+      "2.0",
+      "two"
+    ],
+    "rejected_near_misses": [
+      "2 km",
+      "2 m",
+      "2 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '2.0' (integer expressed as decimal). Accepted word form 'two' for small number 2. Rejected forms with units (e.g., '2 km') \u2014 digits only required."
+  },
+  "v2_216": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_217": {
+    "canonical_answer": "no",
+    "accepted_aliases": [
+      "no",
+      "n"
+    ],
+    "rejected_near_misses": [
+      "false",
+      "incorrect",
+      "0",
+      "nope"
+    ],
+    "alias_rationale": "Binary yes/no answer. Accepted 'n' as abbreviation for 'no'. Rejected 'false'/'incorrect'/'0' \u2014 prompt specifies yes or no only."
+  },
+  "v2_218": {
+    "canonical_answer": "204",
+    "accepted_aliases": [
+      "204",
+      "204.0"
+    ],
+    "rejected_near_misses": [
+      "204 km",
+      "204 m",
+      "204 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '204.0' (integer expressed as decimal). Rejected forms with units (e.g., '204 km') \u2014 digits only required."
+  },
+  "v2_219": {
+    "canonical_answer": "2401",
+    "accepted_aliases": [
+      "2401",
+      "2401.0"
+    ],
+    "rejected_near_misses": [
+      "2,401",
+      "2401 km",
+      "2401 m",
+      "2401 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Rejected '2,401' (comma-formatted number \u2014 digits only required). Accepted '2401.0' (integer expressed as decimal). Rejected forms with units (e.g., '2401 km') \u2014 digits only required."
+  },
+  "v2_220": {
+    "canonical_answer": "9",
+    "accepted_aliases": [
+      "9",
+      "9.0",
+      "nine"
+    ],
+    "rejected_near_misses": [
+      "9 km",
+      "9 m",
+      "9 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '9.0' (integer expressed as decimal). Accepted word form 'nine' for small number 9. Rejected forms with units (e.g., '9 km') \u2014 digits only required."
+  },
+  "v2_221": {
+    "canonical_answer": "4",
+    "accepted_aliases": [
+      "4",
+      "4.0",
+      "four"
+    ],
+    "rejected_near_misses": [
+      "4 km",
+      "4 m",
+      "4 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '4.0' (integer expressed as decimal). Accepted word form 'four' for small number 4. Rejected forms with units (e.g., '4 km') \u2014 digits only required."
+  },
+  "v2_222": {
+    "canonical_answer": "9",
+    "accepted_aliases": [
+      "9",
+      "9.0",
+      "nine"
+    ],
+    "rejected_near_misses": [
+      "9 km",
+      "9 m",
+      "9 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '9.0' (integer expressed as decimal). Accepted word form 'nine' for small number 9. Rejected forms with units (e.g., '9 km') \u2014 digits only required."
+  },
+  "v2_223": {
+    "canonical_answer": "210",
+    "accepted_aliases": [
+      "210",
+      "210.0"
+    ],
+    "rejected_near_misses": [
+      "210 km",
+      "210 m",
+      "210 cm"
+    ],
+    "alias_rationale": "Numeric answer \u2014 accepted aliases include common decimal/integer equivalents. Accepted '210.0' (integer expressed as decimal). Rejected forms with units (e.g., '210 km') \u2014 digits only required."
+  }
+}

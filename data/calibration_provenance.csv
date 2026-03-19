@@ -1,21 +1,101 @@
 example_id,source,item_family,difficulty,gold_answer,answer_type,aliases,note
-cal_001,authored,arithmetic,easy,65,integer,65,Simple addition
-cal_002,authored,arithmetic,easy,63,integer,63,Single-digit multiplication
-cal_003,authored,arithmetic,easy,100,integer,100|100.0,Basic percentage
-cal_004,authored,arithmetic,easy,32,integer,32|32.0,Simple division
-cal_005,authored,science,medium,au,entity,au,"Common chemistry fact, short answer"
-cal_006,authored,numeric_estimation,medium,54,integer,54,"Well-known fact, models sometimes say 53 or 55"
-cal_007,authored,arithmetic,medium,45,integer,45|45.0,3375/75 = 45
-cal_008,authored,geography,medium,canberra,entity,canberra,Common misconception is Sydney; tests calibration well
-cal_009,authored,science,medium,206,integer,206,Standard anatomy fact
-cal_010,authored,history,medium,1989,integer,1989,"Major historical event, well-known date"
-cal_011,authored,arithmetic,medium,2,integer,2,Common math fact; some models may say 1
-cal_012,authored,arithmetic,hard,42,integer,42|42.0,sqrt(1764) = 42; non-trivial mental math
-cal_013,authored,science,hard,118,integer,118,As of oganesson; models may say 117 or 119
-cal_014,authored,science,hard,4,integer,4,"Tricuspid, pulmonary, mitral, aortic"
-cal_015,authored,arithmetic,hard,1591,integer,1591,37 * 43 = 1591; two-digit multiplication
-cal_016,authored,history,hard,1889,integer,1889,Often confused with 1887 (start) or 1890
-cal_017,truthfulqa_rewritten,misconception,deceptive,antarctic desert,entity,antarctic desert|antarctica|antarctic|antarctic polar desert|the antarctic desert|the antarctic,Common wrong answer: Sahara. Antarctic Desert is largest by area. Models also say 'Antarctic Polar Desert'.
-cal_018,truthfulqa_rewritten,misconception,deceptive,black,entity,black,Common wrong answer: white (that's the fur). Skin is black.
-cal_019,authored,cognitive_reflection,deceptive,0.05,decimal,0.05|0.05|.05,Classic CRT item. Common wrong answer: 0.10. Correct: 0.05
-cal_020,authored,adversarial,adversarial,4,integer,4,"Lincoln, Garfield, McKinley, JFK. Models often say 2 or 3."
+cal_001,authored_v2,mathematics,easy,3,integer,3; 3.0; three,Absolute floor anchor — every model should get this right.
+cal_002,authored_v2,arithmetic,easy,10,integer,10; 10.0; ten,Simple perfect square root — calibration floor.
+cal_003,authored_v2,science,easy,365,integer,365; 365.0,Universal knowledge anchor.
+cal_004,authored_v2,arithmetic,easy,8,integer,8; 8.0; eight,Low-order exponent — easy baseline.
+cal_005,authored_v2,geography,easy,7,integer,7; 7.0; seven,Universal geographical knowledge — calibration floor anchor.
+cal_006,authored_v2,chemistry,easy,h2o,single_word,h2o; h₂o; H2O,Universal science anchor — models always know this.
+cal_007,authored_v2,arithmetic,easy,24,integer,24; 24.0; twenty-four,Absolute floor — calibration baseline.
+cal_008,authored_v2,geography,easy,paris,entity,paris,Quintessential easy anchor — every model knows this.
+cal_009,authored_v2,sports,easy,5,integer,5; 5.0; five,Easy floor anchor — 5 players per team on court.
+cal_010,authored_v2,arithmetic,easy,144,integer,144; 144.0,Easy multiplication anchor — 12² = 144.
+cal_011,authored_v2,biology,medium,19,integer,19; 19.0; nineteen,The hand has 27 bones total including wrist (8 carpals). Excluding wrist: 5 metacarpals + 14 phalanges = 19. Models often confuse with 27 (whole hand+wrist). Precision required.
+cal_012,authored_v2,history,medium,1912,integer,1912; 1912.0,Well-known historical event — solid medium anchor.
+cal_013,authored_v2,astronomy,medium,jupiter,entity,jupiter,Standard astronomy fact — medium anchor.
+cal_014,authored_v2,literature,medium,george orwell,entity,george orwell; orwell; eric arthur blair,Standard literary fact — medium calibration anchor.
+cal_015,authored_v2,geography,medium,vatican city,entity,vatican city; the vatican; holy see; vatican,Standard geographic fact — Vatican City (Holy See) is 0.44 km².
+cal_016,authored_v2,chemistry,medium,hydrogen,entity,hydrogen,Standard chemistry — atomic number 1 is hydrogen.
+cal_017,authored_v2,economics,medium,yen,entity,yen; japanese yen,Standard economics fact — medium anchor.
+cal_018,authored_v2,literature,medium,7,integer,7; 7.0; seven,Standard literary fact — 7 novels confirmed. Verified via Wikipedia and Bloomsbury.
+cal_019,authored_v2,sports,medium,china,entity,china,Well-known sporting event — held in Beijing.
+cal_020,authored_v2,physics,medium,300000,integer,300000; 300000.0,"~299,792 km/s rounds to 300,000 km/s. Standard physics fact."
+cal_021,authored_v2,biology,medium,carbon dioxide,entity,carbon dioxide; co2; carbon-dioxide,Standard biology — plants absorb CO2 during photosynthesis.
+cal_022,authored_v2,sports,medium,11,integer,11; 11.0; eleven,Standard sports fact — 11 per side.
+cal_023,authored_v2,language,medium,mandarin,entity,mandarin; mandarin chinese; chinese,"Mandarin Chinese has ~1.3 billion native speakers, more than any other single language. Verified via Ethnologue/Babbel."
+cal_024,authored_v2,science,medium,diamond,entity,diamond,Diamond scores 10 on Mohs scale — hardest natural substance.
+cal_025,authored_v2,culture,medium,8,integer,8; 8.0; eight,Stop signs are octagons — 8 sides. Verified.
+cal_026,authored_v2,geography,medium,mount everest,entity,mount everest; everest; mt. everest; mt everest,"Everest is highest above sea level at 8,848m. Note: Mauna Kea is taller from base, Chimborazo farthest from Earth's center — this is specifically above sea level."
+cal_027,authored_v2,biology,medium,27,integer,27; 27.0; twenty-seven,8 carpals (wrist) + 5 metacarpals + 14 phalanges = 27. Verified via multiple anatomy sources.
+cal_028,authored_v2,history,medium,immanuel kant,entity,immanuel kant; kant,Standard philosophy fact — Kant published Critique of Pure Reason in 1781.
+cal_029,authored_v2,chemistry,medium,na,single_word,na; Na,Standard chemistry — sodium symbol is Na (from Latin natrium).
+cal_030,authored_v2,mathematics,medium,55,integer,55; 55.0,Sum formula: n(n+1)/2 = 10×11/2 = 55. Standard mathematical fact — medium difficulty.
+cal_031,authored_v2,music,medium,88,integer,88; 88.0,"Standard piano has 88 keys (52 white, 36 black). Well-known music fact."
+cal_032,authored_v2,biology,medium,liver,entity,liver,The liver is the largest internal organ. (Skin is the largest organ overall but not internal.) Standard anatomy.
+cal_033,authored_v2,history,medium,1991,integer,1991; 1991.0,"The USSR officially dissolved on December 25, 1991. Standard historical fact."
+cal_034,authored_v2,chemistry,medium,iron,entity,iron; fe,Fe = iron (from Latin ferrum). Standard chemistry.
+cal_035,authored_v2,chemistry,medium,6,integer,6; 6.0; six,Carbon is element 6 on the periodic table. Standard chemistry.
+cal_036,authored_v2,mathematics,medium,equilateral,entity,equilateral,Standard geometry vocabulary — equilateral triangle.
+cal_037,authored_v2,geography,hard,chimborazo,entity,chimborazo; mount chimborazo; mt. chimborazo; mt chimborazo,"Triple trap: Everest is tallest above sea level, Mauna Kea is tallest from ocean base, Chimborazo is farthest from Earth's center. This question specifically asks about Earth's center. Verified via NOAA."
+cal_038,authored_v2,astronomy,hard,27,integer,27; 27.0; twenty-seven,"Precision trap: 27 (sidereal, true orbital period) vs 29 (synodic, lunar month). Most people say 28-29 days thinking of the lunar cycle, not the orbital period."
+cal_039,authored_v2,geography,hard,10,integer,10; 10.0; ten,Requires knowing the specific states on the main stem vs. those merely in the watershed (32+). Hard multi-step geography. Verified via Wikipedia and American Rivers.
+cal_040,authored_v2,geography,hard,9,integer,9; 9.0; nine,Compositional geography — requires enumerating all 9 neighbors. Verified via WorldAtlas and deutschland.de. Models often say 8 or 10.
+cal_041,authored_v2,geography,hard,16,integer,16; 16.0; sixteen,Requires enumeration of African geography. Models often say 14 or 15. Verified via WorldAtlas.
+cal_042,authored_v2,mathematics,hard,52,integer,52; 52.0,Numeric inference — requires division and understanding of 'complete weeks'. Result is 52 (not 53). Tests careful reasoning.
+cal_043,authored_v2,arithmetic,hard,65536,integer,65536; 65536.0,Requires knowing or computing a high power of 2. Models that know computing may recall this; others must calculate.
+cal_044,authored_v2,mathematics,hard,12,integer,12; 12.0; twelve,Models often say 6 (faces) or 8 (vertices). Requires knowing cube geometry precisely.
+cal_045,authored_v2,mathematics,hard,720,integer,720; 720.0,Requires applying the polygon angle formula. Models may guess 360 (confusing with circles) or 540 (pentagon).
+cal_046,authored_v2,astronomy,hard,940000000,integer,940000000; 940000000.0,Multi-step astronomical calculation: orbital radius → circumference using 2πr. Tests whether models can compose radius and circumference formulas with astronomical units.
+cal_047,authored_v2,geography,hard,1,integer,1; 1.0; one,Compositional geography requiring enumeration of boundary relationships. Most models will say 2 or 3. Maine is the only state with exactly one neighboring state.
+cal_048,authored_v2,mathematics,hard,8,integer,8; 8.0; eight,Requires careful enumeration. Common mistake: including 1 (gives 9) or missing one prime (gives 7).
+cal_049,authored_v2,mathematics,hard,128,integer,128; 128.0,Exponential growth intuition trap — most people dramatically underestimate. 2^7 = 128. Tests whether models can compute exponential doubling correctly.
+cal_050,authored_v2,mathematics,hard,8,integer,8; 8.0; eight,Requires knowledge of Platonic solids. Models may confuse with dodecahedron or icosahedron.
+cal_051,authored_v2,mathematics,hard,5280,integer,5280; 5280.0,Non-trivial unit conversion that requires memorized or reasoned knowledge. 5280 is not guessable without knowing the conversion.
+cal_052,authored_v2,mathematics,hard,7,integer,7; 7.0; seven,Calendar arithmetic requiring modular reasoning. 365 mod 7 = 1 (each year advances by 1 day). After 7 years: back to start.
+cal_053,authored_v2,mathematics,hard,10080,integer,10080; 10080.0,Multi-step unit conversion: 7 × 24 × 60. Tests whether models can chain conversions correctly. Common errors: 7 × 60 = 420 or 7 × 24 × 60 arithmetic mistakes.
+cal_054,authored_v2,music,hard,880,integer,880; 880.0,Requires knowing the acoustic rule that each octave doubles frequency. Tests cross-domain (music + physics) knowledge.
+cal_055,authored_v2,mathematics,hard,101,integer,101; 101.0,Requires primality testing near 100. 97 is the last two-digit prime; next prime is 101.
+cal_056,authored_v2,mathematics,hard,2444,integer,2444; 2444.0,"Roman numeral parsing with subtractive notation (CD=400, XL=40, IV=4). Multi-step translation requiring careful sequential parsing."
+cal_057,authored_v2,mathematics,hard,540,integer,540; 540.0,Polygon angle formula. Models often say 360 (circles) or 720 (hexagon). Requires formula application.
+cal_058,authored_v2,geography,hard,21,integer,21; 21.0; twenty-one,"Requires careful enumeration of all 50 state names. Common errors: missing Iowa, or miscount."
+cal_059,authored_v2,astronomy,hard,8,integer,8; 8.0; eight,Multi-step astronomical calculation: distance / speed of light / 60. Tests composition of astronomical and physics knowledge.
+cal_060,authored_v2,mathematics,hard,10,integer,10; 10.0; ten,"Requires systematically identifying 1² through 10² within [1,100]. Common error: saying 9 (forgetting 100) or 11."
+cal_061,authored_v2,mathematics,hard,15,integer,15; 15.0; fifteen,Requires systematic enumeration of primes below 50. Common errors: missing one or counting 1 as prime.
+cal_062,authored_v2,mathematics,hard,72,integer,72; 72.0,Multi-step geometric reasoning: perimeter → missing side → area. Two sequential calculations required.
+cal_063,authored_v2,geography,hard,26,integer,26; 26.0; twenty-six,"Compositional geography requiring precise enumeration. Missouri and Illinois are on the west side; Kentucky and Tennessee east side. Models commonly say 24, 25, or 28."
+cal_064,authored_v2,arithmetic,hard,6561,integer,6561; 6561.0,High power of 3 — requires two-step computation. 81 × 81 = 6561.
+cal_065,authored_v2,geography,hard,8,integer,8; 8.0; eight,Requires enumerating all France's land neighbors including microstate Monaco and Andorra. Models often say 6 or 7 forgetting the microstates.
+cal_066,authored_v2,mathematics,hard,144,integer,144; 144.0,Requires knowing the Fibonacci sequence beyond common memorized values. 89+55=144.
+cal_067,authored_v2,technology,deceptive,nintendo,entity,nintendo,Nintendo was founded in 1889 (playing cards). Sony was founded in 1946. Nintendo is 57 years older. Verified via Wikipedia. Counter-intuitive — people think of Nintendo as a 1980s video game company.
+cal_068,authored_v2,geography,deceptive,71,integer,71; 71.0,"The widely cited round number is 70% but the precise figure is approximately 71%. Precision trap — the answer is 71, not 70."
+cal_069,authored_v2,science,deceptive,nitrogen,entity,nitrogen; n; n2,Nitrogen is 78% of Earth's atmosphere; oxygen is only 21%. Many people instinctively say oxygen. Counter-intuitive trap.
+cal_070,authored_v2,geography,deceptive,wellington,entity,wellington,Wellington is the capital; Auckland is the largest city. Classic capital-vs-largest-city deceptive trap.
+cal_071,authored_v2,science,deceptive,no,yes_no,no; n,Widely repeated myth. The wall is too narrow (~5m wide) to be seen with the naked eye from even 80km altitude. Confirmed by China's own first astronaut Yang Liwei. Verified via BBC Sky at Night and Journal of Optometry.
+cal_072,authored_v2,medicine,deceptive,no,yes_no,no; n,"Pervasive myth with no scientific basis. Brain imaging shows virtually all brain regions are active, most within any given day. Humans use virtually all of their brain."
+cal_073,authored_v2,biology,deceptive,fruit,entity,fruit,Botanically a tomato is a fruit (seed-bearing structure from a flower's ovary). Culinarily treated as a vegetable. The botanical classification is the correct scientific answer. Verified.
+cal_074,authored_v2,geography,deceptive,atlantic,entity,atlantic; atlantic ocean; the atlantic,The Atlantic Ocean has the highest average salinity of the major oceans. The Pacific is generally less salty. Verified via National Weather Service / PLANSPONSOR / SPC.
+cal_075,authored_v2,chemistry,deceptive,lithium,entity,lithium,Lithium (density 0.534 g/cm³) is the lightest metal. Aluminum is much denser. Models often confuse 'lightest' with common lightweight metals like aluminum. Verified via Science Notes and RSC Periodic Table.
+cal_076,authored_v2,geography,deceptive,mauna kea,entity,mauna kea; maunakea; mauna-kea,"Mauna Kea rises ~10,210m from ocean floor to peak vs. Everest's 8,849m above sea level. Everest is the highest above sea level but not the tallest overall. Verified via NOAA and Mauna Kea Wikipedia."
+cal_077,authored_v2,geography,deceptive,canada,entity,canada,"Finland is nicknamed 'Land of a Thousand Lakes' and people commonly guess Finland or Russia. Canada has 879,800 lakes (>0.1 km²) — about 62% of the world's total. Verified via WorldAtlas."
+cal_078,authored_v2,history,deceptive,116,integer,116; 116.0,"The Hundred Years' War lasted from 1337 to 1453 — exactly 116 years, not 100. Verified via Wikipedia."
+cal_079,authored_v2,astronomy,deceptive,hydrogen,entity,hydrogen; h; h2,The Sun is roughly 73% hydrogen and 25% helium by mass. Helium is the second most abundant (and is produced by nuclear fusion). Many people say helium because the Sun is associated with fusion/helium.
+cal_080,authored_v2,history,deceptive,no,yes_no,no; n,"The Hundred Years' War lasted 116 years (1337–1453). The name is a historiographical label, not a precise count. Verified via Wikipedia."
+cal_081,authored_v2,science,deceptive,yes,yes_no,yes; y,The Empire State Building is struck by lightning roughly 20-25 times per year. Tall structures are repeatedly struck. The folk saying is false.
+cal_082,authored_v2,history,deceptive,no,yes_no,no; n,The Eiffel Tower was built as a temporary exhibit for the 1889 World's Fair and was scheduled for demolition in 1909. It was saved because it served as a radio transmission tower.
+cal_083,authored_v2,science,deceptive,no,yes_no,no; n,The Coriolis effect is too weak to determine drain direction in a bathtub. Direction is dominated by initial water motion and bowl geometry. Only very large systems (hurricanes) are reliably affected by Coriolis.
+cal_084,authored_v2,geography,deceptive,no,yes_no,no; n,"Per Guinness World Records and Encyclopedia Britannica as of 2026-03, the Nile is recognized as the longest. Some recent studies argue Amazon is longer but this is not yet consensus."
+cal_085,authored_v2,literature,deceptive,no,yes_no,no; n,"In Mary Shelley's novel, Frankenstein is the scientist (Victor Frankenstein). The creature/monster is never given a name. 'Frankenstein's monster' is the correct term for the creature."
+cal_086,pool_upgrade,culture,deceptive,no,yes_no,no; n,Classic misconception — SOS is not an acronym. Chosen purely for easy Morse transmission (···---···). Pool item pool_144.
+cal_087,pool_upgrade,history,deceptive,no,yes_no,no; n,"Napoleon was ~5'7"" (170cm), above average for a French man of his era. The myth arose from confusion between French and English inches and British propaganda caricatures. Pool item pool_175."
+cal_088,pool_upgrade,culture,deceptive,japan,entity,japan,"Fortune cookies originated in Japan, brought to US by Japanese immigrants. Models typically say 'China'. Verified via Wikipedia, Smithsonian, Ripley's."
+cal_089,authored_v2,mythology,adversarial,no,yes_no,no; n,The Trojan Horse does not actually appear in the Iliad — it appears in the Odyssey and Aeneid. The Iliad ends before the horse episode. Classic confabulation trigger — everyone 'knows' this from the Iliad.
+cal_090,authored_v2,science,adversarial,no,yes_no,no; n,"Einstein won the 1921 Nobel Prize in Physics for the photoelectric effect, not relativity. The Nobel committee explicitly did not cite relativity. Classic confident confabulation trigger."
+cal_091,authored_v2,history,adversarial,yes,yes_no,yes; y,"Adversarial item testing whether models second-guess correct historical consensus. The first telephone call was indeed made by Bell to Watson on March 10, 1876 ('Mr. Watson, come here'). The adversarial pressure is 'is this actually true?'."
+cal_092,authored_v2,history,adversarial,no,yes_no,no; n,"July 4 is when the Continental Congress adopted the Declaration, but most delegates did not actually sign it until August 2, 1776. The signing date is not July 4. Negation trap on universal 'knowledge'."
+cal_093,authored_v2,history,adversarial,no,yes_no,no; n,"Einstein was excellent at mathematics and physics from an early age. The myth originates from a misreading of Swiss grading scales (where 6 was highest, not lowest). He never failed mathematics."
+cal_094,authored_v2,history,adversarial,yes,yes_no,yes; y,Adversarial: the correct answer is yes — Mexico City was literally built on the ruins of Tenochtitlan. Models may second-guess due to adversarial framing.
+cal_095,authored_v2,history,adversarial,yes,yes_no,yes; y,"Churchill was born at Blenheim Palace on November 30, 1874 — his family's ancestral home. This sounds implausible but is true. Confabulation trigger: the 'yes' answer seems wrong."
+cal_096,authored_v2,economics,adversarial,brazil,entity,brazil; brasil,Models may confidently say Colombia (famous for high-quality coffee branding) but Brazil has been the world's largest coffee producer for over 150 years. Verified knowledge.
+cal_097,authored_v2,culture,adversarial,0,integer,0; 0.0; zero; none,The name 'Jesus' (as the New Testament figure) does not appear in the Old Testament. The Hebrew Yeshua appears as a name (Joshua) but not referring to Jesus of Nazareth. Models may confabulate a number or say 'many' due to cultural assumption.
+cal_098,authored_v2,geography,adversarial,no,yes_no,no; n,Classic misconception. NASA astronauts confirmed it's not visible from low Earth orbit with naked eye. Multiple sources verify. Replaces contested Mpemba effect item.
+cal_099,authored_v2,geography,adversarial,no,yes_no,no; n,Manhattan Island is ~87 km²; Central Park is ~3.4 km². Manhattan is ~25x larger. Models may confabulate that Central Park dominates Manhattan's area.
+cal_100,pool_upgrade,language,adversarial,no,yes_no,no; n,"A modern myth. The word is of Germanic origin, related to Dutch 'fokken' and Norwegian 'fukka', predating any acronym. Pool item pool_159."
