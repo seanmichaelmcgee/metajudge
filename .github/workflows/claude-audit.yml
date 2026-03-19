@@ -54,6 +54,7 @@ jobs:
         id: claude-audit
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          use_sticky_comment: true
           show_full_output: true
           prompt: |
             You are an independent auditor for the MetaJudge-AGI project — a Kaggle benchmark
