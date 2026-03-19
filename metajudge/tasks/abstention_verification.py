@@ -10,7 +10,7 @@ a decision policy with explicit cost penalties for over-abstention.
 
 from __future__ import annotations
 
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 
 from metajudge.schemas.response_schemas import AbstentionResponse
 from metajudge.scoring.abstention_metrics import (

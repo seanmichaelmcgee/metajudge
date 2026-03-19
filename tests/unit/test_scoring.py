@@ -2,8 +2,6 @@
 
 Source: Framework §7.2
 """
-import math
-
 import pytest
 
 from metajudge.scoring.calibration_metrics import (

@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional, cast
 
 from metajudge.utils.text import normalize_text
 
@@ -45,7 +45,7 @@ def load_answer_key(path: str | Path) -> AnswerKey:
     is an AnswerSpec dict.
     """
     with open(path) as f:
-        return json.load(f)
+        return cast(AnswerKey, json.load(f))
 
 
 # ---------------------------------------------------------------------------

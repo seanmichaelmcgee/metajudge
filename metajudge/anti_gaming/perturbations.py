@@ -9,7 +9,6 @@ Covers all eight countermeasures from Framework §8.2.
 
 from __future__ import annotations
 
-import random
 from typing import Any, Dict, List, Optional
 
 import pandas as pd
