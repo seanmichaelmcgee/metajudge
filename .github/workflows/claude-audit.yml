@@ -113,15 +113,18 @@ jobs:
           import json
           with open('$RESULT_FILE') as f:
               data = json.load(f)
-          # Walk the messages to find the last assistant text
+          # Top level may be a list or a dict
+          if isinstance(data, list):
+              data = data[-1] if data else {}
+          # Try result field first
           result = data.get('result', '')
           if result:
               print(result)
           else:
               for msg in reversed(data.get('messages', [])):
-                  if msg.get('role') == 'assistant':
+                  if isinstance(msg, dict) and msg.get('role') == 'assistant':
                       for block in msg.get('content', []):
-                          if block.get('type') == 'text':
+                          if isinstance(block, dict) and block.get('type') == 'text':
                               print(block['text'])
                               exit()
           ")
@@ -145,6 +148,8 @@ jobs:
           import json, datetime
           with open('$RESULT_FILE') as f:
               data = json.load(f)
+          if isinstance(data, list):
+              data = data[-1] if data else {}
           log_entry = {
               'timestamp': datetime.datetime.utcnow().isoformat(),
               'pr': ${{ github.event.pull_request.number }},
