@@ -142,13 +142,13 @@ Every dataset change (item additions, difficulty revisions, alias updates) MUST 
 
 | Artifact | Format | Contents |
 |----------|--------|----------|
-| Per-item audit trail | `sweep_results` dict (Cell 7 output) | model_answer, confidence, is_correct, brier_score per item per model |
+| Per-item audit trail | `sweep_results` dict (Cell 8 output) | model_answer, confidence, is_correct, brier_score per item per model |
 | Cross-model leaderboard | Printed table (Cell 8) | Headline score, accuracy per model |
-| Per-bucket accuracy matrix | Printed table (Cell 8) | Accuracy by difficulty bucket × model |
-| Discrimination map | Printed list (Cell 8) | Items where models disagree (signal items) |
-| Overconfidence report | Printed list (Cell 8) | Wrong answers with conf > 0.80 per model |
-| Success criteria verdict | Printed checklist (Cell 8) | 5 criteria: pass/fail with measured values |
-| Audit CSV | Exportable DataFrame (Cell 8) | Flat table: model × item × all fields |
+| Per-bucket accuracy matrix | Printed table (Cell 9) | Accuracy by difficulty bucket × model |
+| Discrimination map | Printed list (Cell 9) | Items where models disagree (signal items) |
+| Overconfidence report | Printed list (Cell 9) | Wrong answers with conf > 0.80 per model |
+| Success criteria verdict | Printed checklist (Cell 9) | 5 criteria: pass/fail with measured values |
+| Audit CSV | Exportable DataFrame (Cell 9) | Flat table: model × item × all fields |
 
 **Success criteria (must meet ≥4/5 to freeze):**
 
@@ -167,11 +167,64 @@ Every dataset change (item additions, difficulty revisions, alias updates) MUST 
 
 **Workflow sequence:**
 1. Update notebook cells (Cells 1–6 must be current)
-2. Run Cell 7 (sweep) — captures per-item detail for all models
-3. Run Cell 8 (diagnostics) — produces verdict + audit artifacts
-4. If verdict = freeze → commit sweep results, begin writeup
-5. If verdict = replace → swap items, re-run from step 1
-6. Export audit CSV for archival (`audit_df.to_csv('metajudge_sweep_audit.csv')`)
+2. Run Cell 7 (quick headline scores via `evaluate()`) to verify models work
+3. Run Cell 8 (audit sweep, `RUN_AUDIT=True`) — captures per-item detail for all models
+4. Run Cell 9 (diagnostics) — produces verdict + audit artifacts
+5. If verdict = freeze → commit sweep results, begin writeup
+6. If verdict = replace → swap items, re-run from step 1
+7. Export audit CSV for archival (`audit_df.to_csv('metajudge_sweep_audit.csv')`)
+
+### Kaggle model workflow (verified)
+
+This section codifies the verified approach for running models on the Kaggle Benchmarks SDK, based on the competition page, SDK cookbook, and getting-started notebook.
+
+**Two approaches (use BOTH):**
+
+| Approach | When to use | Notebook cells |
+|----------|-------------|----------------|
+| **A: UI "Evaluate More Models"** | Official leaderboard entries | Cell 6 (batch) → Cell 10 (`%choose`) → Task Detail page → "Evaluate More Models" button |
+| **B: In-notebook `evaluate()`** | Development, validation, per-item audit | Cell 7 (headline sweep) or Cell 8 (full audit) |
+
+Approach A is Kaggle's recommended path for leaderboard generation. Approach B is our development loop for iterating on the dataset before submission.
+
+**Model key format:**
+- Pattern: `"provider/model-name"` (e.g., `"google/gemini-2.5-flash"`)
+- Discovery: `list(kbench.llms.keys())` — printed by Cell 1 on every run
+- The key strings are NOT documented in advance; always verify via Cell 1 output
+
+**Verified keys** (confirmed in SDK):
+- `"google/gemini-2.5-flash"`
+- `"meta/llama-3.1-70b"`
+
+**Unverified keys** (guesses — MUST be confirmed by running Cell 1 on Kaggle):
+- `"google/gemini-2.5-pro"`
+- `"anthropic/claude-sonnet-4-20250514"`
+- `"anthropic/claude-3-5-haiku-20241022"`
+- `"deepseek/deepseek-v3"`
+
+**If a key fails:** Cell 7 prints which keys are not found. Replace with the correct key from Cell 1's `kbench.llms.keys()` output. The notebook is designed to degrade gracefully — it runs with whatever models are available (minimum 2).
+
+**Quota management:**
+- $50/day, $500 total across the competition
+- Cell 7 (evaluate-based sweep): ~500 calls for 5 models × 100 items
+- Cell 8 (audit sweep): same cost, gated by `RUN_AUDIT = False` to prevent accidental burns
+- Always run Cell 7 first for headline scores; only run Cell 8 when per-item diagnostics are needed
+
+**Notebook cell map (v3 — post-SDK-alignment):**
+
+| Cell | Purpose | Dependencies |
+|------|---------|--------------|
+| 0 | Markdown header | — |
+| 1 | Imports + model discovery (`kbench.llms.keys()`) | — |
+| 2 | Response schema (CalibrationResponse dataclass) | Cell 1 |
+| 3 | Embedded dataset + answer key (100 V2 items) | Cell 1 |
+| 4 | Scoring & adjudication functions | Cell 3 |
+| 5 | Single-item `@kbench.task` definition | Cells 2-4 |
+| 6 | Batch evaluation (`@kbench.task` with DataFrame) | Cell 5 |
+| 7 | Multi-model sweep via `evaluate()` — headline scores | Cells 5-6 |
+| 8 | Audit sweep — per-item detail (gated: `RUN_AUDIT`) | Cells 1-6 |
+| 9 | Cross-model diagnostics + success criteria verdict | Cell 8 output |
+| 10 | `%choose metacog_calibration_v1_batch` — submit to Kaggle | Cell 6 |
 
 ### Iteration protocol
 
@@ -194,4 +247,6 @@ When replacing items after a failed sweep:
 - **Evidence Notebook:** Wrapper-task pattern verified in live Kaggle environment
 - **Architecture Revision:** Recommendations memo adopted; flat family list → two-axis model; source-awareness and strategy-adaptation redesigned
 - **V2 Expansion Sprint:** 100-item calibration set built via 4-agent pipeline (Harvester → Formatter → Strategist → Auditor). Distribution: 10/26/30/22/12. 12 audit fixes applied.
-- **Current:** V1 validation — 5-model sweep to confirm discriminatory power
+- **Flash Sweep Results:** 97/100 correct (0.9756 headline). 3 real errors: cal_065 (France borders), cal_084 (Amazon river), cal_088 (fortune cookies). Adversarial: 100%, Deceptive: 90.9%. Scores too high on flash alone — need weaker models for spread.
+- **SDK Alignment:** Notebook rebuilt to use `evaluate()` API per Kaggle SDK recommendations. Cell map updated to v3 (11 cells). Model discovery added to Cell 1.
+- **Current:** Multi-model sweep pending — user must run Cell 1 on Kaggle to verify model key strings, then run Cell 7 for headline scores across the 5-model panel.
