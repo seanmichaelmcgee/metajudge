@@ -1,0 +1,120 @@
+name: Claude Code Auditor
+
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+  id-token: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install -e ".[dev]"
+
+      - name: Run ruff
+        run: ruff check . --output-format=github
+        continue-on-error: true
+
+      - name: Run mypy
+        run: mypy metajudge/ --ignore-missing-imports
+        continue-on-error: true
+
+      - name: Run tests
+        run: pytest tests/ --tb=short -q
+        continue-on-error: true
+
+      - name: Collect audit context
+        id: context
+        run: |
+          # Capture diff
+          git diff origin/main...HEAD > /tmp/diff.txt
+
+          # Collect tool output
+          {
+            echo "--- RUFF OUTPUT ---"
+            ruff check . 2>&1 || true
+            echo ""
+            echo "--- MYPY OUTPUT ---"
+            mypy metajudge/ --ignore-missing-imports 2>&1 || true
+            echo ""
+            echo "--- TEST OUTPUT ---"
+            pytest tests/ --tb=short -q 2>&1 || true
+          } > /tmp/context.txt
+
+          # Write combined audit context to a file Claude can read
+          {
+            echo "=== GIT DIFF vs main ==="
+            cat /tmp/diff.txt
+            echo ""
+            echo "=== TOOL OUTPUT ==="
+            cat /tmp/context.txt
+          } > audit-context.txt
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are an independent auditor for the MetaJudge-AGI project — a Kaggle benchmark
+            for measuring metacognitive behavior in LLMs. Changes were made by an agentic team.
+            Your job is to audit those changes against the project's governing rules.
+
+            First, read SOUL.md in the repo root — it contains non-negotiable project rules.
+            Then read audit-context.txt — it contains the git diff and ruff/mypy/pytest output.
+
+            Audit against these four priorities, in order:
+
+            ## 1. SOUL.md Constraint Violations
+            Check the "What agents must not do" section in SOUL.md. Flag any violation:
+            - New families added that aren't A-E
+            - Narrative fields (reason_for_uncertainty, why_this_strategy, what_changed) being scored
+            - Dataset scope expanded beyond current phase
+            - Quota-spending code added without clear justification
+            - Silent divergence from SOUL.md without explicit flagging
+
+            ## 2. Test Coverage
+            New scoring logic in metajudge/ must have corresponding tests in tests/.
+            Flag any new scoring functions, Brier calculations, or adjudication logic
+            that has no test coverage.
+
+            ## 3. Code Quality
+            Report any ruff or mypy errors from the tool output in audit-context.txt.
+            Flag: missing type hints on public functions, silent exception handling,
+            hardcoded magic numbers in scoring weights (should reference config/),
+            or notebook logic that belongs in metajudge/ instead.
+
+            ## 4. Kaggle Quota / Budget
+            Flag any code that could make unexpected API calls or spend quota:
+            - Loops over model calls without caching checks
+            - Missing budget guards
+            - Anything that could exceed $50/day or $500 total
+
+            Format your response as a GitHub PR comment with exactly these headers:
+            ### 🚨 SOUL.md Violations
+            ### 🧪 Missing Test Coverage
+            ### 🔧 Code Quality
+            ### 💸 Quota / Budget Risk
+            ### ✅ Looks Good
+
+            Under each header, number your findings. If nothing to flag, write "None."
+            Be specific: include file names and line numbers where possible.

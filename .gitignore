@@ -30,6 +30,9 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# CI artifacts
+audit-context.txt
+
 # Logs
 logs/*.log
 
