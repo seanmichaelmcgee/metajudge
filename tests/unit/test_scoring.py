@@ -2,6 +2,8 @@
 
 Source: Framework §7.2
 """
+import math
+
 import pytest
 
 from metajudge.scoring.calibration_metrics import (
@@ -26,6 +28,7 @@ from metajudge.scoring.self_correction_metrics import (
 from metajudge.scoring.composite_score import (
     compute_composite_score,
 )
+from metajudge.scoring.calibration_metrics import coverage_conditioned_accuracy
 
 
 class TestCalibrationMetrics:
@@ -282,3 +285,21 @@ class TestAdjudication:
     def test_missing_id_in_key(self):
         from metajudge.scoring.adjudication import adjudicate_answer
         assert adjudicate_answer("nonexistent", "anything", self.answer_key) is False
+
+
+class TestCoverageConditionedAccuracy:
+    def test_normal_case(self):
+        # 0.9 and 0.8 exceed threshold; 0.3 does not. Above-threshold: [True, False] → 0.5
+        assert coverage_conditioned_accuracy([0.9, 0.8, 0.3], [True, False, True], 0.5) == 0.5
+
+    def test_all_below_threshold(self):
+        assert math.isnan(coverage_conditioned_accuracy([0.1, 0.2], [True, True], 0.5))
+
+    def test_threshold_boundary(self):
+        assert coverage_conditioned_accuracy([0.5, 0.5], [True, False], 0.5) == 0.5
+
+    def test_empty_input(self):
+        assert math.isnan(coverage_conditioned_accuracy([], [], 0.5))
+
+    def test_all_correct_above(self):
+        assert coverage_conditioned_accuracy([0.9, 0.8], [True, True], 0.5) == 1.0
