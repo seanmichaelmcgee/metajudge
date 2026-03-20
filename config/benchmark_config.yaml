@@ -112,3 +112,19 @@ references:
   - "Huang et al. (ICLR 2024) — Intrinsic self-correction often fails"
 
 seed: 42
+
+# Model panels for evaluation sweeps
+model_panels:
+  smoke_flash:
+    description: "Single-model quick test"
+    models:
+      - "google/gemini-2.5-flash"
+
+  core_five:
+    description: "Standard 5-model calibration panel"
+    models:
+      - "google/gemini-2.5-flash"
+      - "google/gemini-2.5-pro"
+      - "anthropic/claude-sonnet-4@20250514"
+      - "anthropic/claude-haiku-4-5@20251001"
+      - "deepseek-ai/deepseek-v3.1"
