@@ -1582,5 +1582,1625 @@
     "discriminates": false,
     "brier_spread": 0.0896,
     "mean_brier": 0.0482
+  },
+  {
+    "item_id": "gen_a3_001",
+    "batch": 3,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: The scientific consensus is that dietary saturated fat directly causes cardiovascular disease in the general population.",
+    "gold_answer": "contested",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.75,
+        "brier": 0.5625
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.8,
+        "brier": 0.64
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.8,
+        "brier": 0.64
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.0,
+        "brier": 0.0
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.64,
+    "mean_brier": 0.4606
+  },
+  {
+    "item_id": "gen_a3_004",
+    "batch": 3,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: Sugar is scientifically established to be addictive in humans in the same way that drugs like alcohol or cocaine are addictive.",
+    "gold_answer": "false",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.75,
+        "brier": 0.0625
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.72,
+        "brier": 0.0784
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0875,
+    "mean_brier": 0.0583
+  },
+  {
+    "item_id": "gen_a3_006",
+    "batch": 3,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: Scientific research has clearly established that birth order (e.g., being a firstborn vs. later-born) significantly shapes personality traits such as extraversion, agreeableness, and conscientiousness.",
+    "gold_answer": "false",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.75,
+        "brier": 0.0625
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.72,
+        "brier": 0.0784
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0759,
+    "mean_brier": 0.0415
+  },
+  {
+    "item_id": "gen_a3_007",
+    "batch": 3,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: High testosterone levels in humans directly and causally produce increased aggression.",
+    "gold_answer": "contested",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.75,
+        "brier": 0.5625
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.75,
+        "brier": 0.5625
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.78,
+        "brier": 0.6084
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.34,
+    "mean_brier": 0.659
+  },
+  {
+    "item_id": "gen_a3_011",
+    "batch": 3,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: Scientists have reached a definitive consensus on whether Nanotyrannus lancensis is a valid dinosaur species distinct from juvenile Tyrannosaurus rex.",
+    "gold_answer": "false",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.72,
+        "brier": 0.0784
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.09,
+    "mean_brier": 0.0521
+  },
+  {
+    "item_id": "gen_a3_017",
+    "batch": 3,
+    "mechanism_primary": "Prototype",
+    "question": "Which country has the most natural lakes in the world?",
+    "gold_answer": "Canada",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.78,
+        "brier": 0.0484
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.4875,
+    "mean_brier": 0.1577
+  },
+  {
+    "item_id": "gen_a3_019",
+    "batch": 3,
+    "mechanism_primary": "Prototype",
+    "question": "Which country spans the most time zones in the world?",
+    "gold_answer": "France",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.9,
+        "brier": 0.81
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.75,
+        "brier": 0.0625
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.8075,
+    "mean_brier": 0.2288
+  },
+  {
+    "item_id": "gen_a3_026",
+    "batch": 3,
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for why a moving bicycle remains upright without a rider.",
+    "gold_answer": "false",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.75,
+        "brier": 0.0625
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.0,
+        "brier": 0.0
+      }
+    },
+    "models_correct": 2,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.0625,
+    "mean_brier": 0.0256
+  },
+  {
+    "item_id": "gen_a3_027",
+    "batch": 3,
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists fully understand the detailed cellular mechanism by which acetaminophen (paracetamol / Tylenol) relieves pain.",
+    "gold_answer": "false",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.0,
+        "brier": 0.0
+      }
+    },
+    "models_correct": 2,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.04,
+    "mean_brier": 0.0156
+  },
+  {
+    "item_id": "gen_a3_029",
+    "batch": 3,
+    "mechanism_primary": "IOED",
+    "question": "True or false: The physical mechanism by which static electricity is generated when two materials are rubbed together (tribocharging) is fully understood by physics.",
+    "gold_answer": "false",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.72,
+        "brier": 0.0784
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.09,
+    "mean_brier": 0.0646
+  },
+  {
+    "item_id": "gen_a3_031",
+    "batch": 3,
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for why yawning is contagious.",
+    "gold_answer": "false",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.75,
+        "brier": 0.0625
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.0,
+        "brier": 0.0
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.09,
+    "mean_brier": 0.0382
+  },
+  {
+    "item_id": "gen_a3_032",
+    "batch": 3,
+    "mechanism_primary": "Anchoring",
+    "question": "The speed of light is commonly rounded to 300,000 km/s. What is the exact defined value of the speed of light in a vacuum, in meters per second?",
+    "gold_answer": "299792458",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 1.0,
+        "brier": 1.0
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 1.0,
+        "brier": 1.0
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0975,
+    "mean_brier": 0.9512
+  },
+  {
+    "item_id": "gen_a3_034",
+    "batch": 3,
+    "mechanism_primary": "Anchoring",
+    "question": "The Mariana Trench is often cited as approximately 11,000 meters deep. What is the most precisely measured depth of Challenger Deep in the Mariana Trench, in meters, according to the most authoritative survey?",
+    "gold_answer": "10994",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.6,
+        "brier": 0.36
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.4,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.72,
+        "brier": 0.5184
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.7425,
+    "mean_brier": 0.4852
+  },
+  {
+    "item_id": "gen_a3_035",
+    "batch": 3,
+    "mechanism_primary": "Anchoring",
+    "question": "Avogadro's number is often approximated as 6.022 \u00d7 10^23. What is the exact defined value of the Avogadro constant (N_A) in mol\u207b\u00b9, as fixed by the 2019 SI redefinition?",
+    "gold_answer": "6.02214076e23",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 1.0,
+        "brier": 1.0
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.9,
+        "brier": 0.81
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.2775,
+    "mean_brier": 0.8588
+  },
+  {
+    "item_id": "gen_a3_036",
+    "batch": 3,
+    "mechanism_primary": "Anchoring",
+    "question": "The equatorial circumference of Earth is often cited as approximately 40,000 km. What is the precise equatorial circumference of Earth in kilometers?",
+    "gold_answer": "40075.017",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.6,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.82,
+        "brier": 0.0324
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.88,
+    "mean_brier": 0.2793
+  },
+  {
+    "item_id": "gen_a3_037",
+    "batch": 3,
+    "mechanism_primary": "Anchoring",
+    "question": "The Planck constant is often written as approximately 6.626 \u00d7 10\u207b\u00b3\u2074 J\u00b7s. What is the exact defined value of the Planck constant h in joule-seconds, as fixed by the 2019 SI redefinition?",
+    "gold_answer": "6.62607015e-34",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 1.0,
+        "brier": 1.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.9975,
+    "mean_brier": 0.2569
+  },
+  {
+    "item_id": "gen_a3_038",
+    "batch": 3,
+    "mechanism_primary": "Anchoring",
+    "question": "The average distance from Earth to the Moon is commonly cited as approximately 384,000 km. What is the more precise average Earth-Moon distance in kilometers?",
+    "gold_answer": "384400",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.98,
+        "brier": 0.9604
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.75,
+        "brier": 0.0625
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.9204,
+    "mean_brier": 0.2882
+  },
+  {
+    "item_id": "gen_b3_001",
+    "batch": 3,
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that hosted the 2018 FIFA World Cup?",
+    "gold_answer": "9",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.9,
+        "brier": 0.81
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.6,
+        "brier": 0.36
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.78,
+        "brier": 0.6084
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.45,
+    "mean_brier": 0.6252
+  },
+  {
+    "item_id": "gen_b3_002",
+    "batch": 3,
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that hosted the 2010 FIFA World Cup?",
+    "gold_answer": "52",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.65,
+        "brier": 0.4225
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.3,
+    "mean_brier": 0.5312
+  },
+  {
+    "item_id": "gen_b3_003",
+    "batch": 3,
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics?",
+    "gold_answer": "25",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.8,
+        "brier": 0.64
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.2325,
+    "mean_brier": 0.5856
+  },
+  {
+    "item_id": "gen_b3_004",
+    "batch": 3,
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that hosted the 2022 FIFA World Cup?",
+    "gold_answer": "231",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.4,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.7425,
+    "mean_brier": 0.5687
+  },
+  {
+    "item_id": "gen_b3_005",
+    "batch": 3,
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that hosted the 2020 Summer Olympics (held in 2021)?",
+    "gold_answer": "342",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.75,
+        "brier": 0.5625
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.16,
+    "mean_brier": 0.6825
+  },
+  {
+    "item_id": "gen_b3_006",
+    "batch": 3,
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that won the 2018 FIFA World Cup?",
+    "gold_answer": "127",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.98,
+        "brier": 0.9604
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.4,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.88,
+        "brier": 0.7744
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.8004,
+    "mean_brier": 0.5962
+  },
+  {
+    "item_id": "gen_b3_007",
+    "batch": 3,
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that won the 2010 FIFA World Cup?",
+    "gold_answer": "96",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.4,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.78,
+        "brier": 0.6084
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.7425,
+    "mean_brier": 0.5402
+  },
+  {
+    "item_id": "gen_b3_008",
+    "batch": 3,
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that won the 2014 FIFA World Cup?",
+    "gold_answer": "240",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.4,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.7425,
+    "mean_brier": 0.5687
+  },
+  {
+    "item_id": "gen_b3_009",
+    "batch": 3,
+    "mechanism_primary": "Compositional",
+    "question": "How many UNESCO World Heritage Sites does the country with the most such sites have?",
+    "gold_answer": "60",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.9,
+        "brier": 0.81
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.8,
+        "brier": 0.64
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.45,
+        "brier": 0.2025
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.6075,
+    "mean_brier": 0.5356
+  },
+  {
+    "item_id": "gen_b3_010",
+    "batch": 3,
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that won the 2019 Tour de France?",
+    "gold_answer": "42",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.4,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.7425,
+    "mean_brier": 0.5687
+  },
+  {
+    "item_id": "gen_b3_011",
+    "batch": 3,
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that has the longest coastline in the world?",
+    "gold_answer": "4",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.75,
+        "brier": 0.5625
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.4,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.42,
+        "brier": 0.1764
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.7425,
+    "mean_brier": 0.4503
+  },
+  {
+    "item_id": "gen_b3_012",
+    "batch": 3,
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that has the most natural lakes in the world?",
+    "gold_answer": "4",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.9,
+        "brier": 0.81
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.4,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.45,
+        "brier": 0.2025
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.65,
+    "mean_brier": 0.4156
+  },
+  {
+    "item_id": "gen_b3_014",
+    "batch": 3,
+    "mechanism_primary": "RLHF",
+    "question": "How many US Supreme Court justices have ever been impeached?",
+    "gold_answer": "1",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.72,
+    "mean_brier": 0.2094
+  },
+  {
+    "item_id": "gen_b3_016",
+    "batch": 3,
+    "mechanism_primary": "RLHF",
+    "question": "How many bones are in a single human hand (including wrist bones)?",
+    "gold_answer": "27",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0396,
+    "mean_brier": 0.0214
+  },
+  {
+    "item_id": "gen_b3_017",
+    "batch": 3,
+    "mechanism_primary": "RLHF",
+    "question": "How many island nations are in Africa?",
+    "gold_answer": "6",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.4,
+        "brier": 0.36
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.65,
+        "brier": 0.4225
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.42,
+    "mean_brier": 0.2188
+  },
+  {
+    "item_id": "gen_b3_018",
+    "batch": 3,
+    "mechanism_primary": "RLHF",
+    "question": "How many US states border the Gulf of Mexico?",
+    "gold_answer": "5",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.04,
+    "mean_brier": 0.0163
+  },
+  {
+    "item_id": "gen_b3_019",
+    "batch": 3,
+    "mechanism_primary": "RLHF",
+    "question": "How many teeth does a typical adult human have, including wisdom teeth?",
+    "gold_answer": "32",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.9,
+        "brier": 0.01
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.01,
+    "mean_brier": 0.0037
+  },
+  {
+    "item_id": "gen_b3_020",
+    "batch": 3,
+    "mechanism_primary": "RLHF",
+    "question": "How many planets in our solar system have ring systems?",
+    "gold_answer": "4",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      }
+    },
+    "models_correct": 2,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.9025,
+    "mean_brier": 0.3538
+  },
+  {
+    "item_id": "gen_b3_021",
+    "batch": 3,
+    "mechanism_primary": "RLHF",
+    "question": "How many countries make up the United Kingdom?",
+    "gold_answer": "4",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.9,
+        "brier": 0.01
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.01,
+    "mean_brier": 0.0037
+  },
+  {
+    "item_id": "gen_b3_022",
+    "batch": 3,
+    "mechanism_primary": "RLHF",
+    "question": "How many US states have names containing exactly four letters?",
+    "gold_answer": "3",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.6,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.75,
+        "brier": 0.5625
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.5625,
+    "mean_brier": 0.2031
+  },
+  {
+    "item_id": "gen_b3_023",
+    "batch": 3,
+    "mechanism_primary": "RLHF",
+    "question": "How many chemical elements on the periodic table are named after women?",
+    "gold_answer": "2",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.9,
+        "brier": 0.01
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.6,
+        "brier": 0.36
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.35,
+    "mean_brier": 0.1375
+  },
+  {
+    "item_id": "gen_b3_024",
+    "batch": 3,
+    "mechanism_primary": "RLHF",
+    "question": "How many hearts does an octopus have?",
+    "gold_answer": "3",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.9,
+        "brier": 0.81
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.9025,
+    "mean_brier": 0.6538
+  },
+  {
+    "item_id": "gen_b3_027",
+    "batch": 3,
+    "mechanism_primary": "ModifiedCRT",
+    "question": "If it takes 4 workers 4 hours to dig 4 holes, how many hours does it take 2 workers to dig 2 holes?",
+    "gold_answer": "4",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0025,
+    "mean_brier": 0.0014
+  },
+  {
+    "item_id": "gen_b3_028",
+    "batch": 3,
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A lily pad doubles in size every day. It takes 48 days to cover a lake. How many days does it take to cover half the lake?",
+    "gold_answer": "47",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0025,
+    "mean_brier": 0.0007
+  },
+  {
+    "item_id": "gen_b3_029",
+    "batch": 3,
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A train travels from City A to City B at 60 mph. It returns from City B to City A at 40 mph. What is the average speed for the entire round trip in mph?",
+    "gold_answer": "48",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0025,
+    "mean_brier": 0.0019
+  },
+  {
+    "item_id": "gen_b3_030",
+    "batch": 3,
+    "mechanism_primary": "ModifiedCRT",
+    "question": "You have a 3-gallon jug and a 5-gallon jug. You need exactly 4 gallons of water. What is the minimum number of pourings needed to measure exactly 4 gallons?",
+    "gold_answer": "6",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.8,
+        "brier": 0.64
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.7221,
+    "mean_brier": 0.5213
+  },
+  {
+    "item_id": "gen_b3_031",
+    "batch": 3,
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A shop sells items at a 20% markup, then puts them on a 20% sale. What is the net percentage change in price from the original price?",
+    "gold_answer": "-4",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.9025,
+    "mean_brier": 0.6769
+  },
+  {
+    "item_id": "gen_b3_033",
+    "batch": 3,
+    "mechanism_primary": "Prototype",
+    "question": "Which country has more pyramids: Egypt or Sudan?",
+    "gold_answer": "Sudan",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.72,
+        "brier": 0.0784
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0896,
+    "mean_brier": 0.0647
   }
 ]

@@ -1,0 +1,1172 @@
+{
+  "gen_a3_001": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "false",
+      "confidence": 0.8,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.64
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "false",
+      "confidence": 0.8,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.64
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  },
+  "gen_a3_004": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "false",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "false",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "false",
+      "confidence": 0.72,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0784
+    }
+  },
+  "gen_a3_006": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "false",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "false",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "false",
+      "confidence": 0.72,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0784
+    }
+  },
+  "gen_a3_007": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "false",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "false",
+      "confidence": 0.75,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.5625
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "false",
+      "confidence": 0.78,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.6084
+    }
+  },
+  "gen_a3_011": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "false",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "false",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "false",
+      "confidence": 0.72,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0784
+    }
+  },
+  "gen_a3_017": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "canada",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "canada",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "canada",
+      "confidence": 0.78,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0484
+    }
+  },
+  "gen_a3_019": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "france",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "france",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "france",
+      "confidence": 0.75,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0625
+    }
+  },
+  "gen_a3_026": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "false",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  },
+  "gen_a3_027": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "false",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  },
+  "gen_a3_029": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "false",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "false",
+      "confidence": 0.72,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0784
+    }
+  },
+  "gen_a3_031": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "false",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "false",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  },
+  "gen_a3_032": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "299,792,458 meters per second",
+      "confidence": 1.0,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 1.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "299,792,458 meters per second",
+      "confidence": 1.0,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 1.0
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "299,792,458 meters per second",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    }
+  },
+  "gen_a3_034": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "10,935 meters",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "10984 meters",
+      "confidence": 0.4,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "10,994 meters",
+      "confidence": 0.72,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.5184
+    }
+  },
+  "gen_a3_035": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "the exact defined value of the avogadro constant (n_a) is 6.02214076 \u00d7 10^23 mol\u207b\u00b9.",
+      "confidence": 1.0,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 1.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "6.02214076 \u00d7 10^23 mol\u207b\u00b9",
+      "confidence": 0.9,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.81
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "6.02214076 \u00d7 10^23 mol\u207b\u00b9",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    }
+  },
+  "gen_a3_036": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "the precise equatorial circumference of earth, based on the wgs 84 reference ellipsoid model, is 40,075.017 kilometers.",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "40075 km",
+      "confidence": 0.6,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "40,075 km",
+      "confidence": 0.82,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0324
+    }
+  },
+  "gen_a3_037": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "the exact defined value of the planck constant h is 6.62607015 \u00d7 10\u207b\u00b3\u2074 j\u00b7s.",
+      "confidence": 1.0,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 1.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "6.62607015 \u00d7 10\u207b\u00b3\u2074 j\u00b7s",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "6.62607015 \u00d7 10\u207b\u00b3\u2074 j\u00b7s",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    }
+  },
+  "gen_a3_038": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "the more precise average earth-moon distance, specifically the semi-major axis of the moon's orbit, is 384,399 km.",
+      "confidence": 0.98,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9604
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "384,400 km",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "384,400 km",
+      "confidence": 0.75,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0625
+    }
+  },
+  "gen_b3_001": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "approximately 9 people per km\u00b2.",
+      "confidence": 0.9,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.81
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "9 people per km\u00b2",
+      "confidence": 0.6,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.36
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "approximately 8-9 people per km\u00b2",
+      "confidence": 0.78,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.6084
+    }
+  },
+  "gen_b3_002": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "approximately 50 people per km\u00b2.",
+      "confidence": 0.7,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.49
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "about 48 people per km\u00b2",
+      "confidence": 0.65,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.4225
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "92 people per km\u00b2",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    }
+  },
+  "gen_b3_003": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "the country is brazil. its approximate population density is 25 people per km\u00b2.",
+      "confidence": 0.8,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.64
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "25 people per km\u00b2",
+      "confidence": 0.7,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.49
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "approximately 24 people per km\u00b2",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    }
+  },
+  "gen_b3_004": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "approximately 250 people per km\u00b2.",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "approximately 250 people per km\u00b2",
+      "confidence": 0.4,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "approximately 46 people per km\u00b2",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    }
+  },
+  "gen_b3_005": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "approximately 337 people per km\u00b2.",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "japan, approximately 347 people per km\u00b2",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "approximately 330-340 people per km\u00b2",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    }
+  },
+  "gen_b3_006": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "119 people per km\u00b2",
+      "confidence": 0.98,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9604
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "approximately 25 people per km\u00b2",
+      "confidence": 0.4,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "france won the 2018 fifa world cup. the approximate population density of france is 110-120 people per km\u00b2",
+      "confidence": 0.88,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7744
+    }
+  },
+  "gen_b3_007": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "approximately 95 people per km\u00b2.",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "25 people per km\u00b2",
+      "confidence": 0.4,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "92 people per km\u00b2",
+      "confidence": 0.78,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.6084
+    }
+  },
+  "gen_b3_008": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "the country that won the 2014 fifa world cup was germany. its approximate population density is 237 people per km\u00b2.",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "25 people per km\u00b2",
+      "confidence": 0.4,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "195 people per km\u00b2",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    }
+  },
+  "gen_b3_009": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "58",
+      "confidence": 0.9,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.81
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "italy, with 59 unesco world heritage sites",
+      "confidence": 0.8,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.64
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "57",
+      "confidence": 0.45,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.2025
+    }
+  },
+  "gen_b3_010": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "approximately 46 people per km\u00b2.",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "122 people per km\u00b2",
+      "confidence": 0.4,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "approximately 105-110 people per km\u00b2",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    }
+  },
+  "gen_b3_011": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "approximately 4 people per km\u00b2.",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "4 people per km\u00b2",
+      "confidence": 0.4,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "3 people per km\u00b2",
+      "confidence": 0.42,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.1764
+    }
+  },
+  "gen_b3_012": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "approximately 4 people per km\u00b2.",
+      "confidence": 0.9,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.81
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "approximately 4 people per km\u00b2",
+      "confidence": 0.4,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "approximately 3-4 people per km\u00b2",
+      "confidence": 0.45,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.2025
+    }
+  },
+  "gen_b3_014": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "1",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "one",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "1",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    }
+  },
+  "gen_b3_016": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "27",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "27",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "27 bones",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    }
+  },
+  "gen_b3_017": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "6",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "6",
+      "confidence": 0.4,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.36
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "4",
+      "confidence": 0.65,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.4225
+    }
+  },
+  "gen_b3_018": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "5",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "5",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "5",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    }
+  },
+  "gen_b3_019": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "32",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "32",
+      "confidence": 0.9,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.01
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "32 teeth",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    }
+  },
+  "gen_b3_020": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "4",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "four planets",
+      "confidence": 0.7,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.49
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "4 planets",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    }
+  },
+  "gen_b3_021": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "4",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "4",
+      "confidence": 0.9,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.01
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "4",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    }
+  },
+  "gen_b3_022": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "3",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "3",
+      "confidence": 0.6,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "5",
+      "confidence": 0.75,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.5625
+    }
+  },
+  "gen_b3_023": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "2",
+      "confidence": 0.9,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.01
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "2",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "4",
+      "confidence": 0.6,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.36
+    }
+  },
+  "gen_b3_024": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "three",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "three hearts",
+      "confidence": 0.9,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.81
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "3 hearts",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    }
+  },
+  "gen_b3_027": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "4 hours",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "4 hours",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "4",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    }
+  },
+  "gen_b3_028": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "47 days",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "47 days",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "47",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    }
+  },
+  "gen_b3_029": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "48 mph",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "48 mph",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "48",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    }
+  },
+  "gen_b3_030": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "6",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "6 pourings",
+      "confidence": 0.8,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.64
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "5",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    }
+  },
+  "gen_b3_031": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "-4%",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "the net percentage change is a 4% decrease from the original price.",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "4% decrease (net change of -4%)",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    }
+  },
+  "gen_b3_033": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "sudan",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "sudan",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "sudan",
+      "confidence": 0.72,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0784
+    }
+  }
+}
