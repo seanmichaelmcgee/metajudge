@@ -1,0 +1,340 @@
+{
+  "gen_a4_001": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": "false",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "false",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  },
+  "gen_a4_002": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "false",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  },
+  "gen_a4_003": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "false",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  },
+  "gen_a4_004": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "false",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  },
+  "gen_a4_006": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "false",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  },
+  "gen_a4_007": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "false",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  },
+  "gen_a4_009": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "false",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  },
+  "gen_a4_010": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "false",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  },
+  "gen_a4_012": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": "tomatoes. while used as a vegetable in cooking, botanically a tomato is a fruit. based on global production data by weight (tonnage), tomatoes are the most produced fruit in the world.",
+      "confidence": 0.9,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.81
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "tomatoes",
+      "confidence": 0.6,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.36
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": "banana",
+      "confidence": 0.75,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0625
+    }
+  },
+  "gen_a4_021": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "false",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": "false",
+      "confidence": 0.75,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0625
+    }
+  },
+  "gen_a4_022": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "false",
+      "confidence": 0.7,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.49
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": "false",
+      "confidence": 0.78,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.6084
+    }
+  },
+  "gen_a4_024": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": "false",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "false",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": "false",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    }
+  },
+  "gen_a4_025": {
+    "gemini_pro": {
+      "model": "Gemini Pro",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek",
+      "answer": "false",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    },
+    "haiku": {
+      "model": "Haiku",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": true,
+      "brier_score": 0.0
+    }
+  }
+}

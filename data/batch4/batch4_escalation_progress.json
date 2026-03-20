@@ -1,0 +1,86 @@
+{
+  "gen_a4_005": {
+    "item_id": "gen_a4_005",
+    "flash_answer": "false",
+    "flash_confidence": 0.95,
+    "flash_correct": true,
+    "escalation_decision": "REJECT"
+  },
+  "gen_a4_008": {
+    "item_id": "gen_a4_008",
+    "flash_answer": "false",
+    "flash_confidence": 0.95,
+    "flash_correct": true,
+    "escalation_decision": "REJECT"
+  },
+  "gen_a4_011": {
+    "item_id": "gen_a4_011",
+    "flash_answer": "italy",
+    "flash_confidence": 0.95,
+    "flash_correct": true,
+    "escalation_decision": "REJECT"
+  },
+  "gen_a4_013": {
+    "item_id": "gen_a4_013",
+    "flash_answer": "volga river",
+    "flash_confidence": 0.99,
+    "flash_correct": true,
+    "escalation_decision": "REJECT"
+  },
+  "gen_a4_014": {
+    "item_id": "gen_a4_014",
+    "flash_answer": "giraffe",
+    "flash_confidence": 0.98,
+    "flash_correct": true,
+    "escalation_decision": "REJECT"
+  },
+  "gen_a4_015": {
+    "item_id": "gen_a4_015",
+    "flash_answer": "portuguese",
+    "flash_confidence": 0.9,
+    "flash_correct": true,
+    "escalation_decision": "REJECT"
+  },
+  "gen_a4_016": {
+    "item_id": "gen_a4_016",
+    "flash_answer": "france",
+    "flash_confidence": 0.95,
+    "flash_correct": true,
+    "escalation_decision": "REJECT"
+  },
+  "gen_a4_017": {
+    "item_id": "gen_a4_017",
+    "flash_answer": "nitrogen",
+    "flash_confidence": 1.0,
+    "flash_correct": true,
+    "escalation_decision": "REJECT"
+  },
+  "gen_a4_018": {
+    "item_id": "gen_a4_018",
+    "flash_answer": "diamond",
+    "flash_confidence": 1.0,
+    "flash_correct": true,
+    "escalation_decision": "REJECT"
+  },
+  "gen_a4_019": {
+    "item_id": "gen_a4_019",
+    "flash_answer": "brazil",
+    "flash_confidence": 0.98,
+    "flash_correct": true,
+    "escalation_decision": "REJECT"
+  },
+  "gen_a4_020": {
+    "item_id": "gen_a4_020",
+    "flash_answer": "the smallest bone in the human body is the stapes (also known as the stirrup bone), located in the middle ear.",
+    "flash_confidence": 1.0,
+    "flash_correct": true,
+    "escalation_decision": "REJECT"
+  },
+  "gen_a4_023": {
+    "item_id": "gen_a4_023",
+    "flash_answer": "false",
+    "flash_confidence": 0.98,
+    "flash_correct": true,
+    "escalation_decision": "REJECT"
+  }
+}

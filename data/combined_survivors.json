@@ -1256,5 +1256,187 @@
     "batch": 3,
     "final_tier": 5,
     "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a4_001",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for how cats purr (the exact neuromuscular mechanism).",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "batch": 4,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a4_002",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for why ice is slippery.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "batch": 4,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a4_003",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for how smell (olfaction) works at the molecular level \u2014 specifically how odorant molecules produce distinct perceived scents.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "batch": 4,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a4_004",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for why we yawn.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "batch": 4,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a4_006",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for what causes the placebo effect at the neurobiological level.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "batch": 4,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a4_007",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for how lightning is initiated inside a thundercloud.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "batch": 4,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a4_009",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for how the monarch butterfly navigates thousands of miles during migration.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "batch": 4,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a4_010",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for what causes the Earth's magnetic field to periodically reverse polarity.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "batch": 4,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a4_012",
+    "mechanism_primary": "Prototype",
+    "question": "What is the most widely eaten fruit in the world by production volume?",
+    "gold_answer": "banana",
+    "aliases": [
+      "bananas",
+      "Banana"
+    ],
+    "rule": "alias",
+    "batch": 4,
+    "final_tier": 2,
+    "final_classification": "ACCEPT"
+  },
+  {
+    "item_id": "gen_a4_021",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: There is scientific consensus that moderate alcohol consumption provides net health benefits.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "batch": 4,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a4_022",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: There is scientific consensus on whether free will exists as traditionally conceived.",
+    "gold_answer": "contested",
+    "aliases": [
+      "Contested",
+      "debated"
+    ],
+    "rule": "yes_no",
+    "batch": 4,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "gen_a4_024",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: There is scientific consensus on whether intelligence is primarily determined by genetics or environment.",
+    "gold_answer": "contested",
+    "aliases": [
+      "Contested",
+      "debated"
+    ],
+    "rule": "yes_no",
+    "batch": 4,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "gen_a4_025",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: There is scientific consensus that the Younger Dryas climate event was caused by a comet or asteroid impact.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "batch": 4,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
   }
 ]

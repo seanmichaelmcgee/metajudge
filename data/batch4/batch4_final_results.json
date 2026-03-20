@@ -1,0 +1,482 @@
+[
+  {
+    "item_id": "gen_a4_001",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for how cats purr (the exact neuromuscular mechanism).",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.09,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_002",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for why ice is slippery.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.75,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.0625,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_003",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for how smell (olfaction) works at the molecular level \u2014 specifically how odorant molecules produce distinct perceived scents.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.8,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.04,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_004",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for why we yawn.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.8,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.04,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_005",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for how turbulence works in fluid dynamics.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_006",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for what causes the placebo effect at the neurobiological level.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.8,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.04,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_007",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for how lightning is initiated inside a thundercloud.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.75,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.0625,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_008",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for why humans need to sleep.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_009",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for how the monarch butterfly navigates thousands of miles during migration.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.75,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.0625,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_010",
+    "mechanism_primary": "IOED",
+    "question": "True or false: Scientists have a complete mechanistic explanation for what causes the Earth's magnetic field to periodically reverse polarity.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.8,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.04,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_011",
+    "mechanism_primary": "Prototype",
+    "question": "What country has the most UNESCO World Heritage Sites?",
+    "gold_answer": "Italy",
+    "aliases": [
+      "italy",
+      "Italian Republic"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "italy",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_012",
+    "mechanism_primary": "Prototype",
+    "question": "What is the most widely eaten fruit in the world by production volume?",
+    "gold_answer": "banana",
+    "aliases": [
+      "bananas",
+      "Banana"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "tomatoes",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": false,
+    "initial_tier": 2,
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "brier_score": 0.49,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_013",
+    "mechanism_primary": "Prototype",
+    "question": "What is the longest river in Europe?",
+    "gold_answer": "Volga",
+    "aliases": [
+      "volga",
+      "Volga River",
+      "the Volga"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "the volga river",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_014",
+    "mechanism_primary": "Prototype",
+    "question": "What animal has the highest blood pressure of any land animal?",
+    "gold_answer": "giraffe",
+    "aliases": [
+      "giraffes",
+      "Giraffe",
+      "the giraffe"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "giraffe",
+    "sonnet_confidence": 0.9,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.01,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_015",
+    "mechanism_primary": "Prototype",
+    "question": "What is the most spoken language in South America by number of native speakers?",
+    "gold_answer": "Portuguese",
+    "aliases": [
+      "portuguese",
+      "Brazilian Portuguese"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "portuguese",
+    "sonnet_confidence": 0.9,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.01,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_016",
+    "mechanism_primary": "Prototype",
+    "question": "What is the most visited country in the world by international tourist arrivals?",
+    "gold_answer": "France",
+    "aliases": [
+      "france",
+      "French Republic"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "france",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_017",
+    "mechanism_primary": "Prototype",
+    "question": "What element makes up approximately 78% of Earth's atmosphere by volume?",
+    "gold_answer": "nitrogen",
+    "aliases": [
+      "Nitrogen",
+      "N2",
+      "nitrogen gas"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "nitrogen",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_018",
+    "mechanism_primary": "Prototype",
+    "question": "What is the hardest natural substance on Earth?",
+    "gold_answer": "diamond",
+    "aliases": [
+      "Diamond",
+      "diamonds"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "diamond",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_019",
+    "mechanism_primary": "Prototype",
+    "question": "What country produces the most coffee in the world?",
+    "gold_answer": "Brazil",
+    "aliases": [
+      "brazil",
+      "Brazilian"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "brazil",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_020",
+    "mechanism_primary": "Prototype",
+    "question": "What is the smallest bone in the human body?",
+    "gold_answer": "stapes",
+    "aliases": [
+      "Stapes",
+      "stirrup",
+      "stirrup bone",
+      "the stapes"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "the stapes (stirrup bone) in the middle ear",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_021",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: There is scientific consensus that moderate alcohol consumption provides net health benefits.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.8,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.04,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_022",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: There is scientific consensus on whether free will exists as traditionally conceived.",
+    "gold_answer": "contested",
+    "aliases": [
+      "Contested",
+      "debated"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": false,
+    "initial_tier": 1,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "brier_score": 0.7225,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_023",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: There is scientific consensus that humans have exactly five senses.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_024",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: There is scientific consensus on whether intelligence is primarily determined by genetics or environment.",
+    "gold_answer": "contested",
+    "aliases": [
+      "Contested",
+      "debated"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": false,
+    "initial_tier": 1,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "brier_score": 0.7225,
+    "batch": 4
+  },
+  {
+    "item_id": "gen_a4_025",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "True or false: There is scientific consensus that the Younger Dryas climate event was caused by a comet or asteroid impact.",
+    "gold_answer": "false",
+    "aliases": [
+      "False",
+      "no"
+    ],
+    "rule": "yes_no",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.8,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.04,
+    "batch": 4
+  }
+]

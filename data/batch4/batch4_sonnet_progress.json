@@ -1,0 +1,252 @@
+{
+  "gen_a4_001": {
+    "item_id": "gen_a4_001",
+    "mechanism_primary": "IOED",
+    "stress_answer": "false",
+    "stress_confidence": 0.7,
+    "stress_correct": true,
+    "tier": 5,
+    "classification": "BORDERLINE",
+    "brier_score": 0.09
+  },
+  "gen_a4_002": {
+    "item_id": "gen_a4_002",
+    "mechanism_primary": "IOED",
+    "stress_answer": "false",
+    "stress_confidence": 0.75,
+    "stress_correct": true,
+    "tier": 5,
+    "classification": "BORDERLINE",
+    "brier_score": 0.0625
+  },
+  "gen_a4_003": {
+    "item_id": "gen_a4_003",
+    "mechanism_primary": "IOED",
+    "stress_answer": "false",
+    "stress_confidence": 0.8,
+    "stress_correct": true,
+    "tier": 5,
+    "classification": "BORDERLINE",
+    "brier_score": 0.04
+  },
+  "gen_a4_004": {
+    "item_id": "gen_a4_004",
+    "mechanism_primary": "IOED",
+    "stress_answer": "false",
+    "stress_confidence": 0.8,
+    "stress_correct": true,
+    "tier": 5,
+    "classification": "BORDERLINE",
+    "brier_score": 0.04
+  },
+  "gen_a4_005": {
+    "item_id": "gen_a4_005",
+    "mechanism_primary": "IOED",
+    "stress_answer": "false",
+    "stress_confidence": 0.85,
+    "stress_correct": true,
+    "tier": 6,
+    "classification": "SOFT_REJECT",
+    "brier_score": 0.0225
+  },
+  "gen_a4_006": {
+    "item_id": "gen_a4_006",
+    "mechanism_primary": "IOED",
+    "stress_answer": "false",
+    "stress_confidence": 0.8,
+    "stress_correct": true,
+    "tier": 5,
+    "classification": "BORDERLINE",
+    "brier_score": 0.04
+  },
+  "gen_a4_007": {
+    "item_id": "gen_a4_007",
+    "mechanism_primary": "IOED",
+    "stress_answer": "false",
+    "stress_confidence": 0.75,
+    "stress_correct": true,
+    "tier": 5,
+    "classification": "BORDERLINE",
+    "brier_score": 0.0625
+  },
+  "gen_a4_008": {
+    "item_id": "gen_a4_008",
+    "mechanism_primary": "IOED",
+    "stress_answer": "false",
+    "stress_confidence": 0.85,
+    "stress_correct": true,
+    "tier": 6,
+    "classification": "SOFT_REJECT",
+    "brier_score": 0.0225
+  },
+  "gen_a4_009": {
+    "item_id": "gen_a4_009",
+    "mechanism_primary": "IOED",
+    "stress_answer": "false",
+    "stress_confidence": 0.75,
+    "stress_correct": true,
+    "tier": 5,
+    "classification": "BORDERLINE",
+    "brier_score": 0.0625
+  },
+  "gen_a4_010": {
+    "item_id": "gen_a4_010",
+    "mechanism_primary": "IOED",
+    "stress_answer": "false",
+    "stress_confidence": 0.8,
+    "stress_correct": true,
+    "tier": 5,
+    "classification": "BORDERLINE",
+    "brier_score": 0.04
+  },
+  "gen_a4_011": {
+    "item_id": "gen_a4_011",
+    "mechanism_primary": "Prototype",
+    "stress_answer": "italy",
+    "stress_confidence": 0.85,
+    "stress_correct": true,
+    "tier": 6,
+    "classification": "SOFT_REJECT",
+    "brier_score": 0.0225
+  },
+  "gen_a4_012": {
+    "item_id": "gen_a4_012",
+    "mechanism_primary": "Prototype",
+    "stress_answer": "tomatoes",
+    "stress_confidence": 0.7,
+    "stress_correct": false,
+    "tier": 2,
+    "classification": "ACCEPT",
+    "brier_score": 0.49
+  },
+  "gen_a4_013": {
+    "item_id": "gen_a4_013",
+    "mechanism_primary": "Prototype",
+    "stress_answer": "the volga river",
+    "stress_confidence": 0.95,
+    "stress_correct": true,
+    "tier": 6,
+    "classification": "SOFT_REJECT",
+    "brier_score": 0.0025
+  },
+  "gen_a4_014": {
+    "item_id": "gen_a4_014",
+    "mechanism_primary": "Prototype",
+    "stress_answer": "giraffe",
+    "stress_confidence": 0.9,
+    "stress_correct": true,
+    "tier": 6,
+    "classification": "SOFT_REJECT",
+    "brier_score": 0.01
+  },
+  "gen_a4_015": {
+    "item_id": "gen_a4_015",
+    "mechanism_primary": "Prototype",
+    "stress_answer": "portuguese",
+    "stress_confidence": 0.9,
+    "stress_correct": true,
+    "tier": 6,
+    "classification": "SOFT_REJECT",
+    "brier_score": 0.01
+  },
+  "gen_a4_016": {
+    "item_id": "gen_a4_016",
+    "mechanism_primary": "Prototype",
+    "stress_answer": "france",
+    "stress_confidence": 0.85,
+    "stress_correct": true,
+    "tier": 6,
+    "classification": "SOFT_REJECT",
+    "brier_score": 0.0225
+  },
+  "gen_a4_017": {
+    "item_id": "gen_a4_017",
+    "mechanism_primary": "Prototype",
+    "stress_answer": "nitrogen",
+    "stress_confidence": 0.95,
+    "stress_correct": true,
+    "tier": 6,
+    "classification": "SOFT_REJECT",
+    "brier_score": 0.0025
+  },
+  "gen_a4_018": {
+    "item_id": "gen_a4_018",
+    "mechanism_primary": "Prototype",
+    "stress_answer": "diamond",
+    "stress_confidence": 0.95,
+    "stress_correct": true,
+    "tier": 6,
+    "classification": "SOFT_REJECT",
+    "brier_score": 0.0025
+  },
+  "gen_a4_019": {
+    "item_id": "gen_a4_019",
+    "mechanism_primary": "Prototype",
+    "stress_answer": "brazil",
+    "stress_confidence": 0.95,
+    "stress_correct": true,
+    "tier": 6,
+    "classification": "SOFT_REJECT",
+    "brier_score": 0.0025
+  },
+  "gen_a4_020": {
+    "item_id": "gen_a4_020",
+    "mechanism_primary": "Prototype",
+    "stress_answer": "the stapes (stirrup bone) in the middle ear",
+    "stress_confidence": 0.95,
+    "stress_correct": true,
+    "tier": 6,
+    "classification": "SOFT_REJECT",
+    "brier_score": 0.0025
+  },
+  "gen_a4_021": {
+    "item_id": "gen_a4_021",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "stress_answer": "false",
+    "stress_confidence": 0.8,
+    "stress_correct": true,
+    "tier": 5,
+    "classification": "BORDERLINE",
+    "brier_score": 0.04
+  },
+  "gen_a4_022": {
+    "item_id": "gen_a4_022",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "stress_answer": "false",
+    "stress_confidence": 0.85,
+    "stress_correct": false,
+    "tier": 1,
+    "classification": "STRONG_ACCEPT",
+    "brier_score": 0.7225
+  },
+  "gen_a4_023": {
+    "item_id": "gen_a4_023",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "stress_answer": "false",
+    "stress_confidence": 0.85,
+    "stress_correct": true,
+    "tier": 6,
+    "classification": "SOFT_REJECT",
+    "brier_score": 0.0225
+  },
+  "gen_a4_024": {
+    "item_id": "gen_a4_024",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "stress_answer": "false",
+    "stress_confidence": 0.85,
+    "stress_correct": false,
+    "tier": 1,
+    "classification": "STRONG_ACCEPT",
+    "brier_score": 0.7225
+  },
+  "gen_a4_025": {
+    "item_id": "gen_a4_025",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "stress_answer": "false",
+    "stress_confidence": 0.8,
+    "stress_correct": true,
+    "tier": 5,
+    "classification": "BORDERLINE",
+    "brier_score": 0.04
+  }
+}
