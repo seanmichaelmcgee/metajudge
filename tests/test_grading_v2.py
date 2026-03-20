@@ -483,7 +483,8 @@ class TestGradeItem:
         assert result["method"] == "approx_numeric_small"
 
     def test_gen_a_030_too_far(self, registry):
-        result = grade_item("gen_a_030", "72", registry)
+        """abs_tol=2.0 after v4.1 triage update, so 73 is now out of range."""
+        result = grade_item("gen_a_030", "73", registry)
         assert result["correct"] is False
 
     def test_gen_a3_001_contested(self, registry):
@@ -504,10 +505,10 @@ class TestGradeItem:
         assert result["method"] == "approx_numeric_dynamic"
 
     def test_gen_b_004_decimal(self, registry):
-        """gold='4/5', answer='0.8' → PASS via fraction_or_decimal."""
+        """gold='4/5', answer='0.8' → PASS via alias_plus_normalization (v4.1 triage)."""
         result = grade_item("gen_b_004", "0.8", registry)
         assert result["correct"] is True
-        assert result["method"] == "fraction_or_decimal"
+        assert result["method"] == "alias_plus_normalization"
 
     def test_gen_b_004_fraction(self, registry):
         result = grade_item("gen_b_004", "4/5", registry)
@@ -537,7 +538,7 @@ class TestGradeItem:
 
 class TestLoadRegistry:
     def test_loads_all_items(self, registry):
-        assert len(registry) == 102
+        assert len(registry) == 65  # 102 - 37 replaced items after v4.1 triage
 
     def test_keyed_by_item_id(self, registry):
         assert "gen_a_030" in registry
