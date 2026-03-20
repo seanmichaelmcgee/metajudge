@@ -5,8 +5,8 @@
   "deadline": "2026-04-16",
   "budget_total": 500,
   "budget_daily": 50,
-  "current_phase": "awaiting_5model_sweep_on_v4",
-  "last_updated": "2026-03-20T07:10:00-04:00",
+  "current_phase": "awaiting_v4_sweep_results_for_architectural_refactor",
+  "last_updated": "2026-03-20T13:30:00-04:00",
   "milestone_history": [
     {
       "date": "2026-03-18",
@@ -52,6 +52,11 @@
       "date": "2026-03-20",
       "milestone": "CRITICAL FIX: adjudicate() gold_answer check + yes_no handler + V4 CI validation (26.5% of items affected)",
       "commit": "aeca6da"
+    },
+    {
+      "date": "2026-03-20",
+      "milestone": "Notebook Cell 3/6/7 Kaggle runtime fixes committed to fix/notebook-kaggle-patches branch",
+      "commit": "8267146"
     }
   ],
   "datasets": {
@@ -83,8 +88,9 @@
     "cell_count": 11,
     "embedded_dataset": "v4_canonical (102 items, gen_* IDs)",
     "choose_target": "metacog_calibration_v1_batch",
-    "status": "PATCHED \u2014 V4 data embedded, adjudicate() fixed, ready for Kaggle sweep",
-    "patches_needed": []
+    "status": "PATCHED \u2014 V4 data embedded, adjudicate() fixed, Cell 3/6/7 Kaggle runtime fixes on fix/notebook-kaggle-patches",
+    "patches_needed": [],
+    "pending_merge": "fix/notebook-kaggle-patches (8267146) — Cell 3 JSON, Cell 6/7 SDK kwargs filter"
   },
   "success_criteria": {
     "C1": {
@@ -151,14 +157,12 @@
     }
   ],
   "next_actions": [
-    "1. User: Upload patched notebook to Kaggle (https://www.kaggle.com/benchmarks/tasks/new)",
-    "2. User: Run smoke test (Cell 5) to verify SDK connectivity",
-    "3. User: Run full 102-item evaluation (Cell 6)",
-    "4. User: Run 5-model sweep (Cell 7) for headline scores",
-    "5. User: Run audit sweep (Cell 8, RUN_AUDIT=True) for per-item diagnostics",
-    "6. User: Run success criteria verdict (Cell 9)",
-    "7. If >= 4/5 met: freeze dataset, begin writeup",
-    "8. If < 4/5: iterate on items (orchestrator handles next cycle)"
+    "1. WAITING: User running V4 5-model sweep on Kaggle (Cell 7)",
+    "2. When sweep results arrive: analyze against C1-C5 success criteria",
+    "3. Execute 5-workstream architectural refactor (Lane A lean notebook, Lane B eval pipeline, WS3 scoring package, WS4 tests, WS5 modularity)",
+    "4. Merge fix/notebook-kaggle-patches to main (batch with refactor branch or standalone)",
+    "5. If sweep >= 4/5 criteria met: freeze dataset, begin writeup",
+    "6. If sweep < 4/5: iterate items before refactor"
   ],
   "kaggle_workflow": {
     "task_name": "metacog_calibration_v1_batch",
