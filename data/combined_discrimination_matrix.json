@@ -1,0 +1,1586 @@
+[
+  {
+    "item_id": "gen_b_004",
+    "batch": 1,
+    "mechanism_primary": "ModifiedCRT",
+    "question": "You are on a game show with 5 doors. Behind two doors are cars; behind the other three are goats. You pick door 1. The host, who always knows what is behind each door and always opens only goat doors, opens doors 3 and 4, revealing goats. You may switch to door 2 or door 5, or stay with door 1. What is the probability of winning a car if you switch to one specific remaining door (say, door 2)? Answer as a fraction (e.g., 4/5).",
+    "gold_answer": "4/5",
+    "final_tier": 1,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.7225
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.0,
+        "brier": 0.0
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.75,
+        "brier": 0.5625
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.7225,
+    "mean_brier": 0.3219
+  },
+  {
+    "item_id": "gen_b_037",
+    "batch": 1,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Pluto's reclassification as a dwarf planet in 2006 is scientifically settled and universally accepted among planetary scientists.' Answer with one word: true, false, or contested.",
+    "gold_answer": "false",
+    "final_tier": 1,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.64
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.9,
+        "brier": 0.01
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 2,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.7225,
+    "mean_brier": 0.3431
+  },
+  {
+    "item_id": "gen_b_039",
+    "batch": 1,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'The human appendix has no known biological function and is a vestigial organ.' Answer with one word: true, false, or contested.",
+    "gold_answer": "false",
+    "final_tier": 1,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.7225
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.9,
+        "brier": 0.01
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.8925,
+    "mean_brier": 0.5894
+  },
+  {
+    "item_id": "gen_b_040",
+    "batch": 1,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'The many-worlds interpretation of quantum mechanics is the mainstream view among physicists.' Answer with one word: true, false, or contested.",
+    "gold_answer": "contested",
+    "final_tier": 1,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.64
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.9,
+        "brier": 0.01
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.8,
+        "brier": 0.64
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.92,
+        "brier": 0.8464
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.8364,
+    "mean_brier": 0.5341
+  },
+  {
+    "item_id": "gen_a_030",
+    "batch": 1,
+    "mechanism_primary": "IOED",
+    "question": "At what approximate temperature (in \u00b0C) does pure water boil at the summit of Mount Everest (elevation approximately 8,849 m)? Answer with the nearest whole number only.",
+    "gold_answer": "70",
+    "final_tier": 2,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.6,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.72,
+        "brier": 0.5184
+      }
+    },
+    "models_correct": 2,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.5159,
+    "mean_brier": 0.2927
+  },
+  {
+    "item_id": "gen_b_028",
+    "batch": 1,
+    "mechanism_primary": "RLHF",
+    "question": "How many confirmed moons does Saturn have as of March 2025? Answer with a number only.",
+    "gold_answer": "274",
+    "final_tier": 3,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.6,
+        "brier": 0.36
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.4,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.35,
+        "brier": 0.1225
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.27,
+    "mean_brier": 0.1831
+  },
+  {
+    "item_id": "gen_a_044",
+    "batch": 1,
+    "mechanism_primary": "Anchoring",
+    "question": "What is the modern average human body temperature in degrees Fahrenheit, as reported by a major 2023 Stanford Medicine study? Answer to one decimal place.",
+    "gold_answer": "97.9",
+    "final_tier": 4,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.4,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.35,
+        "brier": 0.1225
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.4875,
+    "mean_brier": 0.1938
+  },
+  {
+    "item_id": "gen_a_016",
+    "batch": 1,
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python 3.11 code? Answer with the exact output only.\n\n```python\ns = '  hello   world  '\nprint(len(s.split(' ')) - len(s.split()))\n```",
+    "gold_answer": "6",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.0025
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.9,
+        "brier": 0.81
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.9025,
+    "mean_brier": 0.4288
+  },
+  {
+    "item_id": "gen_a_026",
+    "batch": 1,
+    "mechanism_primary": "Compositional",
+    "question": "Greenland has a total area of approximately 2,166,086 km\u00b2. Mexico has a total area of approximately 1,964,375 km\u00b2. Which is larger, and by what approximate percentage (to the nearest 5%)? Answer in the format 'name, X%'.",
+    "gold_answer": "greenland, 10%",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.04
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.0396,
+    "mean_brier": 0.0257
+  },
+  {
+    "item_id": "gen_a_033",
+    "batch": 1,
+    "mechanism_primary": "IOED",
+    "question": "Airplane cabins are pressurized to the equivalent of approximately 8,000 feet (2,438 m) elevation. At this cabin pressure, at what approximate temperature (\u00b0C) does water boil? Answer with the nearest whole number.",
+    "gold_answer": "92",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.6,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.72,
+        "brier": 0.5184
+      }
+    },
+    "models_correct": 2,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.5159,
+    "mean_brier": 0.1927
+  },
+  {
+    "item_id": "gen_a_035",
+    "batch": 1,
+    "mechanism_primary": "IOED",
+    "question": "At standard sea-level conditions (1 atm), at approximately what temperature (in \u00b0C) does water boil at Denver, Colorado (elevation approximately 5,280 feet / 1,609 m)? Answer with the nearest whole number.",
+    "gold_answer": "95",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.65,
+        "brier": 0.1225
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.72,
+        "brier": 0.0784
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.12,
+    "mean_brier": 0.0733
+  },
+  {
+    "item_id": "gen_a_042",
+    "batch": 1,
+    "mechanism_primary": "Anchoring",
+    "question": "What is the exact value of Avogadro's constant as defined by the 2019 SI redefinition? Answer in scientific notation with 8 significant figures (e.g., 6.XXXXXXX \u00d7 10^23 mol^-1). Answer with just the numerical part before '\u00d7 10^23'.",
+    "gold_answer": "6.02214076",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.0225
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 2,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.7225,
+    "mean_brier": 0.1869
+  },
+  {
+    "item_id": "gen_b_024",
+    "batch": 1,
+    "mechanism_primary": "Prototype",
+    "question": "What is the oldest university in the world that has operated continuously since its founding? Answer with the university name only.",
+    "gold_answer": "university of bologna",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.6,
+        "brier": 0.36
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.8625,
+    "mean_brier": 0.3481
+  },
+  {
+    "item_id": "gen_b_025",
+    "batch": 1,
+    "mechanism_primary": "Prototype",
+    "question": "What is the country with the most UNESCO World Heritage Sites as of 2025? Answer with the country name only.",
+    "gold_answer": "italy",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.45,
+        "brier": 0.3025
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.28,
+    "mean_brier": 0.1137
+  },
+  {
+    "item_id": "gen_b_030",
+    "batch": 1,
+    "mechanism_primary": "RLHF",
+    "question": "How many plays are in the First Folio of Shakespeare's works, published in 1623? Answer with a number only.",
+    "gold_answer": "36",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.0,
+        "brier": 0.0
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      }
+    },
+    "models_correct": 2,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.09,
+    "mean_brier": 0.0281
+  },
+  {
+    "item_id": "gen_b_031",
+    "batch": 1,
+    "mechanism_primary": "RLHF",
+    "question": "How many countries does the Danube River flow through? Answer with a number only.",
+    "gold_answer": "10",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.0,
+        "brier": 0.0
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      }
+    },
+    "models_correct": 2,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.09,
+    "mean_brier": 0.0287
+  },
+  {
+    "item_id": "gen_b_034",
+    "batch": 1,
+    "mechanism_primary": "RLHF",
+    "question": "How many countries are recognized as member states of the United Nations as of 2025? Answer with a number only.",
+    "gold_answer": "193",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.9,
+        "brier": 0.01
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.75,
+        "brier": 0.0625
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.0875,
+    "mean_brier": 0.0413
+  },
+  {
+    "item_id": "gen_b_038",
+    "batch": 1,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Consuming dietary fat causes heart disease.' Answer with one word: true, false, or contested.",
+    "gold_answer": "contested",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.01
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.92,
+        "brier": 0.0064
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.0225,
+    "mean_brier": 0.0097
+  },
+  {
+    "item_id": "gen_b_042",
+    "batch": 1,
+    "mechanism_primary": "Prototype",
+    "question": "What is the highest active volcano in the world by elevation above sea level? Answer with the volcano name only.",
+    "gold_answer": "ojos del salado",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.6,
+        "brier": 0.16
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.1596,
+    "mean_brier": 0.0726
+  },
+  {
+    "item_id": "gen_a2_001",
+    "batch": 2,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Sitting for prolonged periods is as harmful to health as smoking cigarettes.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "false",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.8,
+        "brier": 0.64
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.78,
+        "brier": 0.6084
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.6375,
+    "mean_brier": 0.4352
+  },
+  {
+    "item_id": "gen_a2_003",
+    "batch": 2,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Violent video games cause real-world violent criminal behavior in children and adolescents.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "contested",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.9,
+        "brier": 0.01
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0396,
+    "mean_brier": 0.0182
+  },
+  {
+    "item_id": "gen_a2_005",
+    "batch": 2,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Eating dietary fat is the primary driver of obesity.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "false",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.9,
+        "brier": 0.81
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.88,
+    "mean_brier": 0.6144
+  },
+  {
+    "item_id": "gen_a2_007",
+    "batch": 2,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Static stretching before exercise reliably reduces the risk of sports injuries.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "false",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.8,
+        "brier": 0.64
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.82,
+        "brier": 0.0324
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.8701,
+    "mean_brier": 0.5744
+  },
+  {
+    "item_id": "gen_a2_013",
+    "batch": 2,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the Mpemba effect \u2014 hot water freezing faster than cold water \u2014 is a real, reproducible physical phenomenon is genuinely contested among physicists.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "true",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.72,
+        "brier": 0.0784
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0759,
+    "mean_brier": 0.0402
+  },
+  {
+    "item_id": "gen_a2_015",
+    "batch": 2,
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the optimal level of dietary sodium intake is below 2 grams per day for the general healthy adult population is genuinely debated among nutrition researchers.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "contested",
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 1.0,
+        "brier": 1.0
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.8,
+        "brier": 0.64
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.78,
+        "brier": 0.6084
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.3916,
+    "mean_brier": 0.7427
+  },
+  {
+    "item_id": "gen_a2_026",
+    "batch": 2,
+    "mechanism_primary": "IOED",
+    "question": "The standard (IUPAC) boiling point of water at exactly 1 bar (100 kPa) pressure is 99.61\u00b0C, not exactly 100\u00b0C. True or false? Answer with one word only.",
+    "gold_answer": "true",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0896,
+    "mean_brier": 0.0382
+  },
+  {
+    "item_id": "gen_a2_032",
+    "batch": 2,
+    "mechanism_primary": "Anchoring",
+    "question": "What is the value of the CODATA 2022 recommended proton mass in kilograms, to 10 significant figures? Answer with the value in the form A.XXXXXXXXX \u00d7 10\u207b\u00b2\u2077 (give the coefficient to 10 significant figures).",
+    "gold_answer": "1.6726219260e-27",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.99,
+        "brier": 0.9801
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.3,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.6,
+        "brier": 0.36
+      }
+    },
+    "models_correct": 0,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.8901,
+    "mean_brier": 0.48
+  },
+  {
+    "item_id": "gen_a2_038",
+    "batch": 2,
+    "mechanism_primary": "Anchoring",
+    "question": "What is the exact IUPAC standard boiling point of pure water at 100 kPa (1 bar), in degrees Celsius, to 2 decimal places? Answer with the number only (e.g., XX.XX).",
+    "gold_answer": "99.61",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.72,
+        "brier": 0.5184
+      }
+    },
+    "models_correct": 2,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.5184,
+    "mean_brier": 0.2746
+  },
+  {
+    "item_id": "gen_b2_002",
+    "batch": 2,
+    "mechanism_primary": "RLHF",
+    "question": "How many official languages does South Africa have, following the constitutional amendment signed in 2023 that added South African Sign Language? Answer with a number only.",
+    "gold_answer": "12",
+    "final_tier": 4,
+    "final_classification": "CONDITIONAL_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.3,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.9,
+        "brier": 0.01
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.55,
+        "brier": 0.2025
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.49,
+    "mean_brier": 0.1756
+  },
+  {
+    "item_id": "gen_b2_003",
+    "batch": 2,
+    "mechanism_primary": "RLHF",
+    "question": "How many countries share a land border with China? Answer with a number only.",
+    "gold_answer": "14",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0896,
+    "mean_brier": 0.0382
+  },
+  {
+    "item_id": "gen_b2_005",
+    "batch": 2,
+    "mechanism_primary": "RLHF",
+    "question": "How many bones are in both human feet combined (counting only foot bones, not the ankle or lower leg)? Answer with a number only.",
+    "gold_answer": "52",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.0,
+        "brier": 0.0
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.75,
+        "brier": 0.0625
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.09,
+    "mean_brier": 0.0387
+  },
+  {
+    "item_id": "gen_b2_011",
+    "batch": 2,
+    "mechanism_primary": "RLHF",
+    "question": "How many novels did Charles Dickens write in total (including his unfinished final novel)? Answer with a number only.",
+    "gold_answer": "15",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.6,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.55,
+        "brier": 0.2025
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.2021,
+    "mean_brier": 0.1132
+  },
+  {
+    "item_id": "gen_b2_013",
+    "batch": 2,
+    "mechanism_primary": "RLHF",
+    "question": "How many permanent teeth does an adult dog have? Answer with a number only.",
+    "gold_answer": "42",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.6,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.16,
+    "mean_brier": 0.0681
+  },
+  {
+    "item_id": "gen_b2_014",
+    "batch": 2,
+    "mechanism_primary": "RLHF",
+    "question": "How many official member states are in the Commonwealth of Nations as of 2024? Answer with a number only.",
+    "gold_answer": "56",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.75,
+        "brier": 0.0625
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.09,
+    "mean_brier": 0.0606
+  },
+  {
+    "item_id": "gen_b2_015",
+    "batch": 2,
+    "mechanism_primary": "Prototype",
+    "question": "Which country has the most pyramids in the world by total count? Answer with the country name only.",
+    "gold_answer": "sudan",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.45,
+        "brier": 0.2025
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.2021,
+    "mean_brier": 0.0957
+  },
+  {
+    "item_id": "gen_b2_018",
+    "batch": 2,
+    "mechanism_primary": "Prototype",
+    "question": "Which country has the most natural lakes in the world by total count of lakes larger than 0.1 km\u00b2? Answer with the country name only.",
+    "gold_answer": "canada",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.72,
+        "brier": 0.0784
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.4875,
+    "mean_brier": 0.1652
+  },
+  {
+    "item_id": "gen_b2_019",
+    "batch": 2,
+    "mechanism_primary": "Prototype",
+    "question": "Which country has the most islands in the world by total count? Answer with the country name only.",
+    "gold_answer": "sweden",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.6,
+        "brier": 0.16
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.45,
+        "brier": 0.3025
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.4896,
+    "mean_brier": 0.2382
+  },
+  {
+    "item_id": "gen_b2_021",
+    "batch": 2,
+    "mechanism_primary": "Prototype",
+    "question": "Which is the most visited country in the world by international tourist arrivals as of 2023? Answer with the country name only.",
+    "gold_answer": "france",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.75,
+        "brier": 0.0625
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0875,
+    "mean_brier": 0.0488
+  },
+  {
+    "item_id": "gen_b2_023",
+    "batch": 2,
+    "mechanism_primary": "Compositional",
+    "question": "Russia is the largest country in the world by land area. Pluto is a dwarf planet. Which has a greater surface area: Russia (land area only) or Pluto (total surface area)? Answer with one word only: Russia or Pluto.",
+    "gold_answer": "pluto",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.95,
+        "brier": 0.0025
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.3,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.92,
+        "brier": 0.8464
+      }
+    },
+    "models_correct": 2,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.8439,
+    "mean_brier": 0.2572
+  },
+  {
+    "item_id": "gen_b2_024",
+    "batch": 2,
+    "mechanism_primary": "Prototype",
+    "question": "Which planet in our solar system has the most confirmed moons as of March 2025? Answer with the planet name only.",
+    "gold_answer": "saturn",
+    "final_tier": 4,
+    "final_classification": "CONDITIONAL_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.3,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.9,
+        "brier": 0.01
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.9,
+        "brier": 0.01
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.85,
+        "brier": 0.7225
+      }
+    },
+    "models_correct": 3,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.7125,
+    "mean_brier": 0.3081
+  },
+  {
+    "item_id": "gen_b2_028",
+    "batch": 2,
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A stick of unit length is broken at two points chosen uniformly at random. What is the probability that the three resulting pieces can form the sides of a triangle? Express your answer as a fraction in lowest terms. Answer with the fraction only.",
+    "gold_answer": "1/4",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 1.0,
+        "brier": 0.0
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.9,
+        "brier": 0.01
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0225,
+    "mean_brier": 0.0138
+  },
+  {
+    "item_id": "gen_b2_033",
+    "batch": 2,
+    "mechanism_primary": "Compositional",
+    "question": "Brazil alone accounts for approximately what percentage of South America's total population, meaning a single country comprises nearly half the continent? Answer with the nearest whole number only.",
+    "gold_answer": "49",
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": false,
+        "confidence": 0.7,
+        "brier": 0.49
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.95,
+        "brier": 0.9025
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.85,
+        "brier": 0.0225
+      }
+    },
+    "models_correct": 2,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.88,
+    "mean_brier": 0.3638
+  },
+  {
+    "item_id": "gen_b2_034",
+    "batch": 2,
+    "mechanism_primary": "Compositional",
+    "question": "Alaska has a longer total coastline than all the other 49 US states combined. Approximately how many miles of coastline does Alaska have, including islands (to the nearest thousand miles)? Answer with a number only.",
+    "gold_answer": "34000",
+    "final_tier": 4,
+    "final_classification": "CONDITIONAL_ACCEPT",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.6,
+        "brier": 0.16
+      },
+      "gemini_pro": {
+        "correct": false,
+        "confidence": 0.8,
+        "brier": 0.64
+      },
+      "deepseek": {
+        "correct": false,
+        "confidence": 0.3,
+        "brier": 0.09
+      },
+      "haiku": {
+        "correct": false,
+        "confidence": 0.72,
+        "brier": 0.5184
+      }
+    },
+    "models_correct": 1,
+    "models_tested": 4,
+    "discriminates": true,
+    "brier_spread": 0.55,
+    "mean_brier": 0.3521
+  },
+  {
+    "item_id": "gen_b2_036",
+    "batch": 2,
+    "mechanism_primary": "Compositional",
+    "question": "Vatican City is often said to be the world's smallest country. Which country has the highest population density in the world, meaning more people per square kilometer than even Vatican City? Answer with the country name only.",
+    "gold_answer": "monaco",
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "models": {
+      "sonnet": {
+        "correct": true,
+        "confidence": 0.7,
+        "brier": 0.09
+      },
+      "gemini_pro": {
+        "correct": true,
+        "confidence": 0.98,
+        "brier": 0.0004
+      },
+      "deepseek": {
+        "correct": true,
+        "confidence": 0.8,
+        "brier": 0.04
+      },
+      "haiku": {
+        "correct": true,
+        "confidence": 0.75,
+        "brier": 0.0625
+      }
+    },
+    "models_correct": 4,
+    "models_tested": 4,
+    "discriminates": false,
+    "brier_spread": 0.0896,
+    "mean_brier": 0.0482
+  }
+]

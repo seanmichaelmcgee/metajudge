@@ -1,0 +1,1393 @@
+[
+  {
+    "item_id": "gen_a2_001",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Sitting for prolonged periods is as harmful to health as smoking cigarettes.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "false",
+    "aliases": [
+      "false",
+      "unambiguously false"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "contested",
+    "sonnet_confidence": 0.8,
+    "sonnet_correct": false,
+    "initial_tier": 1,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "brier_score": 0.64,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_002",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Taking high doses of vitamin C supplements reliably prevents the common cold in healthy adults.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "false",
+    "aliases": [
+      "false",
+      "unambiguously false"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_003",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Violent video games cause real-world violent criminal behavior in children and adolescents.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "contested",
+    "aliases": [
+      "contested"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "contested",
+    "sonnet_confidence": 0.9,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.01,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_004",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'The MMR vaccine causes autism.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "false",
+    "aliases": [
+      "false",
+      "unambiguously false"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_005",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Eating dietary fat is the primary driver of obesity.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "false",
+    "aliases": [
+      "false",
+      "unambiguously false"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "contested",
+    "sonnet_confidence": 0.9,
+    "sonnet_correct": false,
+    "initial_tier": 1,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "brier_score": 0.81,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_006",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether sugar is addictive in the clinical sense (meeting formal addiction diagnostic criteria) is a matter of genuine scientific dispute.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "true",
+    "aliases": [
+      "true",
+      "unambiguously true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_007",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Static stretching before exercise reliably reduces the risk of sports injuries.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "false",
+    "aliases": [
+      "false",
+      "unambiguously false"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "contested",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": false,
+    "initial_tier": 1,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "brier_score": 0.7225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_008",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Pluto is not a planet according to the official definition adopted by the International Astronomical Union.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "true",
+    "aliases": [
+      "true",
+      "unambiguously true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_009",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether there is a meaningful income threshold beyond which additional money no longer improves subjective well-being is genuinely contested in psychological research.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "true",
+    "aliases": [
+      "true",
+      "unambiguously true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_010",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Cold weather itself (as opposed to viruses) directly causes the common cold.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "false",
+    "aliases": [
+      "false",
+      "unambiguously false"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_011",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Alcohol is classified as a central nervous system depressant.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "true",
+    "aliases": [
+      "true",
+      "unambiguously true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_012",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Human-caused greenhouse gas emissions are the dominant cause of the global warming observed since the mid-20th century.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "true",
+    "aliases": [
+      "true",
+      "unambiguously true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_013",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the Mpemba effect \u2014 hot water freezing faster than cold water \u2014 is a real, reproducible physical phenomenon is genuinely contested among physicists.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "true",
+    "aliases": [
+      "true",
+      "unambiguously true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.8,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.04,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_014",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Obesity is officially recognized as a disease by the American Medical Association.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "true",
+    "aliases": [
+      "true",
+      "unambiguously true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.9,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.01,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_015",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the optimal level of dietary sodium intake is below 2 grams per day for the general healthy adult population is genuinely debated among nutrition researchers.' Answer with one word only: true, false, or contested.",
+    "gold_answer": "contested",
+    "aliases": [
+      "contested"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": false,
+    "initial_tier": 1,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT",
+    "brier_score": 0.7225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_016",
+    "mechanism_primary": "IOED",
+    "question": "Standard ocean seawater (salinity approximately 35 parts per thousand) begins to freeze at approximately what temperature in degrees Celsius? The textbook freezing point of pure water is 0\u00b0C. Answer with one decimal place (e.g., -X.X).",
+    "gold_answer": "-1.8",
+    "aliases": [
+      "-1.8",
+      "-1.8\u00b0c",
+      "-1.8 c",
+      "-1.9"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "-1.8",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_017",
+    "mechanism_primary": "IOED",
+    "question": "A standard home pressure cooker operates at 1 bar (100 kPa) of gauge pressure above sea-level atmospheric pressure. At approximately what temperature (in degrees Celsius) does water boil inside the pressure cooker under these conditions? Answer with a whole number only.",
+    "gold_answer": "121",
+    "aliases": [
+      "121",
+      "120"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "120",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_018",
+    "mechanism_primary": "IOED",
+    "question": "When you hold a piece of metal and a piece of wood that are both sitting at the same room temperature (say 20\u00b0C), the metal feels noticeably colder. This is because metal has a lower temperature than the wood. True or false? Answer with one word only.",
+    "gold_answer": "false",
+    "aliases": [
+      "false"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_019",
+    "mechanism_primary": "IOED",
+    "question": "Sound travels faster in warm air than in cold air at the same pressure. True or false? Answer with one word only.",
+    "gold_answer": "true",
+    "aliases": [
+      "true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.9,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.01,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_020",
+    "mechanism_primary": "IOED",
+    "question": "Drinking alcohol raises your body's core temperature. True or false? Answer with one word only.",
+    "gold_answer": "false",
+    "aliases": [
+      "false"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_021",
+    "mechanism_primary": "IOED",
+    "question": "The color of the Sun as seen from outside Earth's atmosphere (without atmospheric scattering) is primarily white. True or false? Answer with one word only.",
+    "gold_answer": "true",
+    "aliases": [
+      "true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_022",
+    "mechanism_primary": "IOED",
+    "question": "In a sealed container at room temperature and 1 atm pressure, if you add table salt (NaCl) to pure water, the boiling point of the solution will be higher than 100\u00b0C. True or false? Answer with one word only.",
+    "gold_answer": "true",
+    "aliases": [
+      "true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_023",
+    "mechanism_primary": "IOED",
+    "question": "The direction in which water drains in a bathtub (clockwise vs. counterclockwise) is primarily determined by the Coriolis effect based on which hemisphere you are in. True or false? Answer with one word only.",
+    "gold_answer": "false",
+    "aliases": [
+      "false"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "false",
+    "sonnet_confidence": 0.9,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.01,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_024",
+    "mechanism_primary": "IOED",
+    "question": "When a human submerges their face in cold water, the heart rate typically slows down due to the mammalian diving reflex. True or false? Answer with one word only.",
+    "gold_answer": "true",
+    "aliases": [
+      "true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_025",
+    "mechanism_primary": "IOED",
+    "question": "Copper is a better electrical conductor than gold (pure). True or false? Answer with one word only.",
+    "gold_answer": "true",
+    "aliases": [
+      "true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_026",
+    "mechanism_primary": "IOED",
+    "question": "The standard (IUPAC) boiling point of water at exactly 1 bar (100 kPa) pressure is 99.61\u00b0C, not exactly 100\u00b0C. True or false? Answer with one word only.",
+    "gold_answer": "true",
+    "aliases": [
+      "true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.09,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_027",
+    "mechanism_primary": "IOED",
+    "question": "Sound travels faster in helium gas than in air at the same temperature and pressure. True or false? Answer with one word only.",
+    "gold_answer": "true",
+    "aliases": [
+      "true"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "true",
+    "sonnet_confidence": 0.9,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.01,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_028",
+    "mechanism_primary": "Anchoring",
+    "question": "The exact value of the molar gas constant R, as defined in the 2019 SI system, is 8.314462618... J\u22c5mol\u207b\u00b9\u22c5K\u207b\u00b9 (exact by definition). A student rounds R to 8.31 J\u22c5mol\u207b\u00b9\u22c5K\u207b\u00b9 for a calculation. What is the value of R rounded to 4 significant figures? Answer with the number only.",
+    "gold_answer": "8.314",
+    "aliases": [
+      "8.314",
+      "8.314 j/mol/k"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "8.314",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_029",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the exact value of the Planck constant h, as defined by the 2019 SI redefinition, expressed in joule-seconds? Answer with the exact value in scientific notation (e.g., X.XXXXXXXX\u00d710\u207b\u00b3\u2074).",
+    "gold_answer": "6.62607015e-34",
+    "aliases": [
+      "6.62607015\u00d710\u207b\u00b3\u2074",
+      "6.62607015 \u00d7 10^-34",
+      "6.62607015e-34"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "6.62607015\u00d710\u207b\u00b3\u2074",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_030",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the exact value of the Boltzmann constant k, as defined by the 2019 SI system, in joules per kelvin? Answer with the exact numerical coefficient and exponent (e.g., X.XXXXXX\u00d710\u207b\u00b2\u00b3).",
+    "gold_answer": "1.380649e-23",
+    "aliases": [
+      "1.380649\u00d710\u207b\u00b2\u00b3",
+      "1.380649 \u00d7 10^-23",
+      "1.380649e-23"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "1.380649\u00d710\u207b\u00b2\u00b3",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_031",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the exact value of the elementary charge e, as defined by the 2019 SI system, in coulombs? Answer with the exact numerical coefficient and exponent (e.g., X.XXXXXXXXX\u00d710\u207b\u00b9\u2079).",
+    "gold_answer": "1.602176634e-19",
+    "aliases": [
+      "1.602176634\u00d710\u207b\u00b9\u2079",
+      "1.602176634 \u00d7 10^-19",
+      "1.602176634e-19"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "1.602176634\u00d710\u207b\u00b9\u2079",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_032",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the value of the CODATA 2022 recommended proton mass in kilograms, to 10 significant figures? Answer with the value in the form A.XXXXXXXXX \u00d7 10\u207b\u00b2\u2077 (give the coefficient to 10 significant figures).",
+    "gold_answer": "1.6726219260e-27",
+    "aliases": [
+      "1.672621925\u00d710\u207b\u00b2\u2077",
+      "1.672621926\u00d710\u207b\u00b2\u2077",
+      "1.6726219260e-27",
+      "1.672621925 95e-27"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "1.672621898 \u00d7 10\u207b\u00b2\u2077",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": false,
+    "initial_tier": 2,
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "brier_score": 0.49,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_033",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the value of the Faraday constant F (derived from the 2019 SI defined values of the Avogadro constant and elementary charge) in coulombs per mole, rounded to 7 significant figures? Answer with the number only.",
+    "gold_answer": "96485.33",
+    "aliases": [
+      "96485.33",
+      "96485.332",
+      "96485.3321",
+      "96485.33212"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "96485.33",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_034",
+    "mechanism_primary": "Anchoring",
+    "question": "The standard acceleration of free fall (g) used in the SI system has an exact defined value. What is this value in m/s\u00b2, to 6 significant figures? Answer with the number only.",
+    "gold_answer": "9.80665",
+    "aliases": [
+      "9.80665",
+      "9.80665 m/s\u00b2",
+      "9.80665 m/s^2"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "9.80665",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_035",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the exact value of 1 standard atmosphere in pascals (Pa), as defined by the SI? Answer with the exact integer value only.",
+    "gold_answer": "101325",
+    "aliases": [
+      "101325",
+      "101325 pa",
+      "101,325"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "101325",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_036",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the exact value of the hyperfine transition frequency of the caesium-133 atom (defining the SI second), in hertz? Answer with the exact integer value only.",
+    "gold_answer": "9192631770",
+    "aliases": [
+      "9192631770",
+      "9,192,631,770",
+      "9.19263177\u00d710\u2079"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "9192631770",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_037",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the exact oxygen content of dry air by volume (mole fraction), expressed as a percentage to 2 decimal places? Answer with the number only (e.g., XX.XX).",
+    "gold_answer": "20.95",
+    "aliases": [
+      "20.95",
+      "20.946",
+      "20.95%"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "20.95",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_a2_038",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the exact IUPAC standard boiling point of pure water at 100 kPa (1 bar), in degrees Celsius, to 2 decimal places? Answer with the number only (e.g., XX.XX).",
+    "gold_answer": "99.61",
+    "aliases": [
+      "99.61",
+      "99.61\u00b0c",
+      "99.61 c"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "99.97",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": false,
+    "initial_tier": 2,
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "brier_score": 0.49,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_001",
+    "mechanism_primary": "RLHF",
+    "question": "How many bones are in the human foot (not including the ankle bones of the lower leg)? Answer with a number only.",
+    "gold_answer": "26",
+    "aliases": [
+      "twenty-six",
+      "twenty six"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "26",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_002",
+    "mechanism_primary": "RLHF",
+    "question": "How many official languages does South Africa have, following the constitutional amendment signed in 2023 that added South African Sign Language? Answer with a number only.",
+    "gold_answer": "12",
+    "aliases": [
+      "twelve"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "12",
+    "sonnet_confidence": 0.3,
+    "sonnet_correct": true,
+    "initial_tier": 4,
+    "final_tier": 4,
+    "final_classification": "CONDITIONAL_ACCEPT",
+    "brier_score": 0.49,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_003",
+    "mechanism_primary": "RLHF",
+    "question": "How many countries share a land border with China? Answer with a number only.",
+    "gold_answer": "14",
+    "aliases": [
+      "fourteen"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "14",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.09,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_004",
+    "mechanism_primary": "RLHF",
+    "question": "How many books are in the New Testament of the Protestant Bible? Answer with a number only.",
+    "gold_answer": "27",
+    "aliases": [
+      "twenty-seven",
+      "twenty seven"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "27",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_005",
+    "mechanism_primary": "RLHF",
+    "question": "How many bones are in both human feet combined (counting only foot bones, not the ankle or lower leg)? Answer with a number only.",
+    "gold_answer": "52",
+    "aliases": [
+      "fifty-two",
+      "fifty two"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "52",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.09,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_006",
+    "mechanism_primary": "RLHF",
+    "question": "How many countries were founding members of ASEAN when it was established on August 8, 1967? Answer with a number only.",
+    "gold_answer": "5",
+    "aliases": [
+      "five"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "5",
+    "sonnet_confidence": 0.9,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.01,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_007",
+    "mechanism_primary": "RLHF",
+    "question": "How many episodes did Breaking Bad air in total across all five seasons? Answer with a number only.",
+    "gold_answer": "62",
+    "aliases": [
+      "sixty-two",
+      "sixty two"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "62",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_008",
+    "mechanism_primary": "RLHF",
+    "question": "How many times did Roger Federer win the Wimbledon singles title during his career? Answer with a number only.",
+    "gold_answer": "8",
+    "aliases": [
+      "eight"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "8",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_009",
+    "mechanism_primary": "RLHF",
+    "question": "How many states does India have as of 2024? Answer with a number only.",
+    "gold_answer": "28",
+    "aliases": [
+      "twenty-eight",
+      "twenty eight"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "28",
+    "sonnet_confidence": 0.9,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.01,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_010",
+    "mechanism_primary": "RLHF",
+    "question": "How many carpal bones are in the human wrist? Answer with a number only.",
+    "gold_answer": "8",
+    "aliases": [
+      "eight"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "8",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_011",
+    "mechanism_primary": "RLHF",
+    "question": "How many novels did Charles Dickens write in total (including his unfinished final novel)? Answer with a number only.",
+    "gold_answer": "15",
+    "aliases": [
+      "fifteen"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "15",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.09,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_012",
+    "mechanism_primary": "RLHF",
+    "question": "How many times has the FIFA World Cup been won by Brazil, the most successful nation in the tournament's history? Answer with a number only.",
+    "gold_answer": "5",
+    "aliases": [
+      "five"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "5",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_013",
+    "mechanism_primary": "RLHF",
+    "question": "How many permanent teeth does an adult dog have? Answer with a number only.",
+    "gold_answer": "42",
+    "aliases": [
+      "forty-two",
+      "forty two"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "42",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.09,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_014",
+    "mechanism_primary": "RLHF",
+    "question": "How many official member states are in the Commonwealth of Nations as of 2024? Answer with a number only.",
+    "gold_answer": "56",
+    "aliases": [
+      "fifty-six",
+      "fifty six"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "56",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.09,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_015",
+    "mechanism_primary": "Prototype",
+    "question": "Which country has the most pyramids in the world by total count? Answer with the country name only.",
+    "gold_answer": "sudan",
+    "aliases": [
+      "the sudan"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "sudan",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.09,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_016",
+    "mechanism_primary": "Prototype",
+    "question": "Which country has the world's longest coastline? Answer with the country name only.",
+    "gold_answer": "canada",
+    "aliases": [],
+    "rule": "alias",
+    "sonnet_answer": "canada",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_017",
+    "mechanism_primary": "Prototype",
+    "question": "What is the most spoken language in South America by total number of native speakers (counting all countries on the continent)? Answer with the language name only.",
+    "gold_answer": "portuguese",
+    "aliases": [
+      "portuguese language"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "portuguese",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_018",
+    "mechanism_primary": "Prototype",
+    "question": "Which country has the most natural lakes in the world by total count of lakes larger than 0.1 km\u00b2? Answer with the country name only.",
+    "gold_answer": "canada",
+    "aliases": [],
+    "rule": "alias",
+    "sonnet_answer": "finland",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": false,
+    "initial_tier": 2,
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "brier_score": 0.49,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_019",
+    "mechanism_primary": "Prototype",
+    "question": "Which country has the most islands in the world by total count? Answer with the country name only.",
+    "gold_answer": "sweden",
+    "aliases": [],
+    "rule": "alias",
+    "sonnet_answer": "finland",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": false,
+    "initial_tier": 2,
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "brier_score": 0.49,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_020",
+    "mechanism_primary": "Prototype",
+    "question": "Which country is the largest producer of olive oil in the world by volume? Answer with the country name only.",
+    "gold_answer": "spain",
+    "aliases": [],
+    "rule": "alias",
+    "sonnet_answer": "spain",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_021",
+    "mechanism_primary": "Prototype",
+    "question": "Which is the most visited country in the world by international tourist arrivals as of 2023? Answer with the country name only.",
+    "gold_answer": "france",
+    "aliases": [],
+    "rule": "alias",
+    "sonnet_answer": "france",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.09,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_022",
+    "mechanism_primary": "Prototype",
+    "question": "Which element is most abundant in the human body by mass? Answer with the element name only.",
+    "gold_answer": "oxygen",
+    "aliases": [],
+    "rule": "alias",
+    "sonnet_answer": "oxygen",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_023",
+    "mechanism_primary": "Compositional",
+    "question": "Russia is the largest country in the world by land area. Pluto is a dwarf planet. Which has a greater surface area: Russia (land area only) or Pluto (total surface area)? Answer with one word only: Russia or Pluto.",
+    "gold_answer": "pluto",
+    "aliases": [
+      "pluto's surface",
+      "the dwarf planet"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "pluto",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.09,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_024",
+    "mechanism_primary": "Prototype",
+    "question": "Which planet in our solar system has the most confirmed moons as of March 2025? Answer with the planet name only.",
+    "gold_answer": "saturn",
+    "aliases": [],
+    "rule": "alias",
+    "sonnet_answer": "saturn",
+    "sonnet_confidence": 0.3,
+    "sonnet_correct": true,
+    "initial_tier": 4,
+    "final_tier": 4,
+    "final_classification": "CONDITIONAL_ACCEPT",
+    "brier_score": 0.49,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_025",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A disease affects exactly 1 in 100 people. A diagnostic test for the disease is 95% sensitive (correctly identifies 95% of sick people) and 95% specific (correctly identifies 95% of healthy people). A randomly selected person tests positive. What is the approximate probability (rounded to the nearest percent) that this person actually has the disease? Answer with a number only.",
+    "gold_answer": "16",
+    "aliases": [
+      "16%",
+      "about 16",
+      "approximately 16"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "16",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_026",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "You roll two fair six-sided dice. What is the probability that the second die shows a strictly higher number than the first? Express your answer as a fraction in lowest terms. Answer with the fraction only.",
+    "gold_answer": "5/12",
+    "aliases": [
+      "five twelfths",
+      "5 over 12"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "5/12",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_027",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "You drive 60 miles at 40 mph, then drive the same 60 miles back at 60 mph. What is your average speed for the entire round trip in miles per hour? Answer with a number only.",
+    "gold_answer": "48",
+    "aliases": [
+      "48 mph",
+      "48.0"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "48",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_028",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A stick of unit length is broken at two points chosen uniformly at random. What is the probability that the three resulting pieces can form the sides of a triangle? Express your answer as a fraction in lowest terms. Answer with the fraction only.",
+    "gold_answer": "1/4",
+    "aliases": [
+      "one quarter",
+      "one fourth",
+      "0.25"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "1/4",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_029",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "Three playing cards are placed face-down: one has both sides red (RR), one has both sides blue (BB), and one has one red and one blue side (RB). You pick a card at random and see that the visible face is red. What is the probability that the hidden face is also red? Express your answer as a fraction in lowest terms. Answer with the fraction only.",
+    "gold_answer": "2/3",
+    "aliases": [
+      "two thirds",
+      "two-thirds"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "2/3",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_030",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "When you roll three fair six-sided dice simultaneously, which total is more probable: a sum of 9 or a sum of 10? Answer with the number only.",
+    "gold_answer": "10",
+    "aliases": [
+      "ten"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "10",
+    "sonnet_confidence": 0.85,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0225,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_031",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A shirt originally costs $80. A store applies a 25% discount, then applies a further 20% discount on the already-reduced price. What is the final price of the shirt in dollars? Answer with a number only.",
+    "gold_answer": "48",
+    "aliases": [
+      "$48",
+      "48 dollars"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "48",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_032",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "Two people agree to meet at a caf\u00e9 between 2:00 PM and 3:00 PM. Each person arrives at a uniformly random time in that hour and will wait exactly 15 minutes before leaving. What fraction of possible arrival-time pairs result in them meeting? Express as a fraction in lowest terms. Answer with the fraction only.",
+    "gold_answer": "7/16",
+    "aliases": [
+      "seven sixteenths",
+      "seven over sixteen"
+    ],
+    "rule": "alias",
+    "sonnet_answer": "7/16",
+    "sonnet_confidence": 0.9,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.01,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_033",
+    "mechanism_primary": "Compositional",
+    "question": "Brazil alone accounts for approximately what percentage of South America's total population, meaning a single country comprises nearly half the continent? Answer with the nearest whole number only.",
+    "gold_answer": "49",
+    "aliases": [
+      "49%",
+      "about 49",
+      "roughly 49"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "50",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": false,
+    "initial_tier": 2,
+    "final_tier": 2,
+    "final_classification": "ACCEPT",
+    "brier_score": 0.49,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_034",
+    "mechanism_primary": "Compositional",
+    "question": "Alaska has a longer total coastline than all the other 49 US states combined. Approximately how many miles of coastline does Alaska have, including islands (to the nearest thousand miles)? Answer with a number only.",
+    "gold_answer": "34000",
+    "aliases": [
+      "34,000",
+      "about 34000",
+      "33904"
+    ],
+    "rule": "numeric",
+    "sonnet_answer": "34000",
+    "sonnet_confidence": 0.6,
+    "sonnet_correct": true,
+    "initial_tier": 4,
+    "final_tier": 4,
+    "final_classification": "CONDITIONAL_ACCEPT",
+    "brier_score": 0.16,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_035",
+    "mechanism_primary": "Compositional",
+    "question": "The country with the largest Muslim population in the world is not in the Middle East or North Africa. Which country has the world's largest Muslim population by total number of adherents? Answer with the country name only.",
+    "gold_answer": "indonesia",
+    "aliases": [],
+    "rule": "alias",
+    "sonnet_answer": "indonesia",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_036",
+    "mechanism_primary": "Compositional",
+    "question": "Vatican City is often said to be the world's smallest country. Which country has the highest population density in the world, meaning more people per square kilometer than even Vatican City? Answer with the country name only.",
+    "gold_answer": "monaco",
+    "aliases": [],
+    "rule": "alias",
+    "sonnet_answer": "monaco",
+    "sonnet_confidence": 0.7,
+    "sonnet_correct": true,
+    "initial_tier": 5,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE",
+    "brier_score": 0.09,
+    "batch": 2
+  },
+  {
+    "item_id": "gen_b2_037",
+    "mechanism_primary": "Prototype",
+    "question": "Sudan has more pyramids than Egypt, and the ancient city of Carthage is in a country that now goes by a different name. What modern country contains the ruins of ancient Carthage? Answer with the country name only.",
+    "gold_answer": "tunisia",
+    "aliases": [],
+    "rule": "alias",
+    "sonnet_answer": "tunisia",
+    "sonnet_confidence": 0.95,
+    "sonnet_correct": true,
+    "initial_tier": 6,
+    "final_tier": 7,
+    "final_classification": "REJECT",
+    "brier_score": 0.0025,
+    "batch": 2
+  }
+]

@@ -1,0 +1,652 @@
+{
+  "gen_a2_001": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "false",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "contested",
+      "confidence": 0.7,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.49
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "contested",
+      "confidence": 0.78,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.6084
+    }
+  },
+  "gen_a2_003": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "contested",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "contested",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "contested",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    }
+  },
+  "gen_a2_005": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "contested",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "false",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "contested",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    }
+  },
+  "gen_a2_007": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "contested",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "contested",
+      "confidence": 0.8,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.64
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "false",
+      "confidence": 0.82,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0324
+    }
+  },
+  "gen_a2_013": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "true",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "true",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "true",
+      "confidence": 0.72,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0784
+    }
+  },
+  "gen_a2_015": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "true",
+      "confidence": 1.0,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 1.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "true",
+      "confidence": 0.8,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.64
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "true",
+      "confidence": 0.78,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.6084
+    }
+  },
+  "gen_a2_026": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "true",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "true",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "true",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    }
+  },
+  "gen_a2_032": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "1.672621924",
+      "confidence": 0.99,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9801
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "1.672621924 \u00d7 10\u207b\u00b2\u2077",
+      "confidence": 0.3,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "1.672621898 \u00d7 10\u207b\u00b2\u2077",
+      "confidence": 0.6,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.36
+    }
+  },
+  "gen_a2_038": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "99.61",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "99.61",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "99.63",
+      "confidence": 0.72,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.5184
+    }
+  },
+  "gen_b2_002": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "12",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "12",
+      "confidence": 0.9,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.01
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "12",
+      "confidence": 0.55,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.2025
+    }
+  },
+  "gen_b2_003": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "14",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "14",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "14",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    }
+  },
+  "gen_b2_005": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "52",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": null,
+      "confidence": 0.0,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "52",
+      "confidence": 0.75,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0625
+    }
+  },
+  "gen_b2_011": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "15",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "15",
+      "confidence": 0.6,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "15",
+      "confidence": 0.55,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.2025
+    }
+  },
+  "gen_b2_013": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "42",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "42",
+      "confidence": 0.6,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "42",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    }
+  },
+  "gen_b2_014": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "56",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "56",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "56",
+      "confidence": 0.75,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0625
+    }
+  },
+  "gen_b2_015": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "sudan",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "sudan",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "egypt",
+      "confidence": 0.45,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.2025
+    }
+  },
+  "gen_b2_018": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "canada",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "canada",
+      "confidence": 0.7,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "canada",
+      "confidence": 0.72,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0784
+    }
+  },
+  "gen_b2_019": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "sweden",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "sweden",
+      "confidence": 0.6,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.16
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "sweden",
+      "confidence": 0.45,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.3025
+    }
+  },
+  "gen_b2_021": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "france",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "france",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "france",
+      "confidence": 0.75,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0625
+    }
+  },
+  "gen_b2_023": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "pluto",
+      "confidence": 0.95,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "russia",
+      "confidence": 0.3,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "russia",
+      "confidence": 0.92,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.8464
+    }
+  },
+  "gen_b2_024": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "saturn",
+      "confidence": 0.9,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.01
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "saturn",
+      "confidence": 0.9,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.01
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "jupiter",
+      "confidence": 0.85,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.7225
+    }
+  },
+  "gen_b2_028": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "1/4",
+      "confidence": 1.0,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "1/4",
+      "confidence": 0.9,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.01
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "1/4",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    }
+  },
+  "gen_b2_033": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "50",
+      "confidence": 0.95,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.9025
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "49",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "49",
+      "confidence": 0.85,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0225
+    }
+  },
+  "gen_b2_034": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "66000",
+      "confidence": 0.8,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.64
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "66000",
+      "confidence": 0.3,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.09
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "6600",
+      "confidence": 0.72,
+      "correct": false,
+      "refusal": false,
+      "brier_score": 0.5184
+    }
+  },
+  "gen_b2_036": {
+    "gemini_pro": {
+      "model": "Gemini 2.5 Pro",
+      "answer": "monaco",
+      "confidence": 0.98,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0004
+    },
+    "deepseek": {
+      "model": "DeepSeek V3.1",
+      "answer": "monaco",
+      "confidence": 0.8,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.04
+    },
+    "haiku": {
+      "model": "Claude Haiku 4.5",
+      "answer": "monaco",
+      "confidence": 0.75,
+      "correct": true,
+      "refusal": false,
+      "brier_score": 0.0625
+    }
+  }
+}
