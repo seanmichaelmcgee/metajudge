@@ -1,0 +1,1958 @@
+[
+  {
+    "item_id": "gen_b_004",
+    "answer_type": "fraction",
+    "grader_rule": "fraction_or_decimal",
+    "gold_answer": "4/5",
+    "accepted_forms": [
+      "4/5"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b_037",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b_039",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b_040",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "contested",
+    "accepted_forms": [
+      "contested"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a_030",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "70",
+    "accepted_forms": [
+      "70"
+    ],
+    "tolerance_class": "abs_1",
+    "tolerance_params": {
+      "abs_tol": 1.0
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b_028",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "274",
+    "accepted_forms": [
+      "274"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a_044",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "97.9",
+    "accepted_forms": [
+      "97.9"
+    ],
+    "tolerance_class": "abs_1",
+    "tolerance_params": {
+      "abs_tol": 1.0
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a_016",
+    "answer_type": "code_output",
+    "grader_rule": "code_output",
+    "gold_answer": "6",
+    "accepted_forms": [
+      "6"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a_026",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "greenland, 10%",
+    "accepted_forms": [
+      "greenland, 10%"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a_033",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "92",
+    "accepted_forms": [
+      "92"
+    ],
+    "tolerance_class": "abs_1",
+    "tolerance_params": {
+      "abs_tol": 1.0
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a_035",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "95",
+    "accepted_forms": [
+      "95"
+    ],
+    "tolerance_class": "abs_1",
+    "tolerance_params": {
+      "abs_tol": 1.0
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a_042",
+    "answer_type": "exact_constant",
+    "grader_rule": "exact_constant",
+    "gold_answer": "6.02214076",
+    "accepted_forms": [
+      "6.02214076"
+    ],
+    "tolerance_class": "rel_1e6",
+    "tolerance_params": {
+      "rel_tol": 1e-06
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b_024",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "university of bologna",
+    "accepted_forms": [
+      "university of bologna"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b_025",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "italy",
+    "accepted_forms": [
+      "italy"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b_030",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "36",
+    "accepted_forms": [
+      "36"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b_031",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "10",
+    "accepted_forms": [
+      "10"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b_034",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "193",
+    "accepted_forms": [
+      "193"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b_038",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "contested",
+    "accepted_forms": [
+      "contested"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b_042",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "ojos del salado",
+    "accepted_forms": [
+      "ojos del salado"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a2_001",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "unambiguously false"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a2_003",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "contested",
+    "accepted_forms": [
+      "contested"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a2_005",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "unambiguously false"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a2_007",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "unambiguously false"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a2_013",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "true",
+    "accepted_forms": [
+      "true",
+      "unambiguously true"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a2_015",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "contested",
+    "accepted_forms": [
+      "contested"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a2_026",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "true",
+    "accepted_forms": [
+      "true"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a2_032",
+    "answer_type": "exact_constant",
+    "grader_rule": "exact_constant",
+    "gold_answer": "1.6726219260e-27",
+    "accepted_forms": [
+      "1.6726219260e-27",
+      "1.672621925×10⁻²⁷",
+      "1.672621926×10⁻²⁷",
+      "1.672621925 95e-27"
+    ],
+    "tolerance_class": "rel_1e6",
+    "tolerance_params": {
+      "rel_tol": 1e-06
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a2_038",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "99.61",
+    "accepted_forms": [
+      "99.61",
+      "99.61°c",
+      "99.61 c"
+    ],
+    "tolerance_class": "abs_1",
+    "tolerance_params": {
+      "abs_tol": 1.0
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_002",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "12",
+    "accepted_forms": [
+      "12",
+      "twelve"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_003",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "14",
+    "accepted_forms": [
+      "14",
+      "fourteen"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_005",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "52",
+    "accepted_forms": [
+      "52",
+      "fifty-two",
+      "fifty two"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_011",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "15",
+    "accepted_forms": [
+      "15",
+      "fifteen"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_013",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "42",
+    "accepted_forms": [
+      "42",
+      "forty-two",
+      "forty two"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_014",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "56",
+    "accepted_forms": [
+      "56",
+      "fifty-six",
+      "fifty six"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_015",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "sudan",
+    "accepted_forms": [
+      "sudan",
+      "the sudan"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_018",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "canada",
+    "accepted_forms": [
+      "canada"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_019",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "sweden",
+    "accepted_forms": [
+      "sweden"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_021",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "france",
+    "accepted_forms": [
+      "france"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_023",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "pluto",
+    "accepted_forms": [
+      "pluto",
+      "pluto's surface",
+      "the dwarf planet"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_024",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "saturn",
+    "accepted_forms": [
+      "saturn"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_028",
+    "answer_type": "fraction",
+    "grader_rule": "fraction_or_decimal",
+    "gold_answer": "1/4",
+    "accepted_forms": [
+      "1/4",
+      "one quarter",
+      "one fourth",
+      "0.25"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_033",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "49",
+    "accepted_forms": [
+      "49",
+      "49%",
+      "about 49",
+      "roughly 49"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024",
+    "source_anchor": "World Bank/UN population data; Brazil share of South America population",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_034",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "34000",
+    "accepted_forms": [
+      "34000",
+      "34,000",
+      "about 34000",
+      "33904"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "NOAA/US Coast Guard estimate",
+    "source_anchor": "NOAA coastline data; Alaska total coastline including islands",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b2_036",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "monaco",
+    "accepted_forms": [
+      "monaco"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_001",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "contested",
+    "accepted_forms": [
+      "contested",
+      "it is contested",
+      "disputed",
+      "debated",
+      "the evidence is contested"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_004",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "no",
+      "incorrect",
+      "not established"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_006",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "no",
+      "incorrect",
+      "not established"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_007",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "contested",
+    "accepted_forms": [
+      "contested",
+      "it is contested",
+      "disputed",
+      "debated",
+      "not established"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_011",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "no",
+      "not settled",
+      "still debated"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_017",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "Canada",
+    "accepted_forms": [
+      "Canada"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_019",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "France",
+    "accepted_forms": [
+      "France",
+      "the French Republic",
+      "République française"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_026",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "no",
+      "incorrect",
+      "not fully understood"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_027",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "no",
+      "incorrect",
+      "not fully understood"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_029",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "no",
+      "incorrect",
+      "not fully understood"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_031",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "no",
+      "incorrect",
+      "not fully understood"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_032",
+    "answer_type": "exact_constant",
+    "grader_rule": "exact_constant",
+    "gold_answer": "299792458",
+    "accepted_forms": [
+      "299792458",
+      "299,792,458",
+      "299792458 m/s",
+      "299,792,458 m/s",
+      "2.99792458 × 10^8 m/s"
+    ],
+    "tolerance_class": "rel_1e6",
+    "tolerance_params": {
+      "rel_tol": 1e-06
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_034",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "10994",
+    "accepted_forms": [
+      "10994",
+      "10,994",
+      "10994 m",
+      "10,994 m",
+      "10994 meters",
+      "~10,994",
+      "10984"
+    ],
+    "tolerance_class": "rel_1pct",
+    "tolerance_params": {
+      "rel_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_035",
+    "answer_type": "exact_constant",
+    "grader_rule": "exact_constant",
+    "gold_answer": "6.02214076e23",
+    "accepted_forms": [
+      "6.02214076e23",
+      "6.02214076×10^23",
+      "6.02214076 × 10^23 mol^-1",
+      "6.02214076×10²³",
+      "6.02214076 × 10²³ mol⁻¹"
+    ],
+    "tolerance_class": "rel_1e6",
+    "tolerance_params": {
+      "rel_tol": 1e-06
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_036",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "40075.017",
+    "accepted_forms": [
+      "40075.017",
+      "40,075.017",
+      "40,075 km",
+      "40075 km",
+      "40,075.017 km",
+      "40,075"
+    ],
+    "tolerance_class": "rel_1pct",
+    "tolerance_params": {
+      "rel_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_037",
+    "answer_type": "exact_constant",
+    "grader_rule": "exact_constant",
+    "gold_answer": "6.62607015e-34",
+    "accepted_forms": [
+      "6.62607015e-34",
+      "6.62607015×10⁻³⁴",
+      "6.62607015 × 10⁻³⁴ J·s",
+      "6.62607015×10^-34 J·s",
+      "6.626 070 15 × 10⁻³⁴"
+    ],
+    "tolerance_class": "rel_1e6",
+    "tolerance_params": {
+      "rel_tol": 1e-06
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a3_038",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "384400",
+    "accepted_forms": [
+      "384400",
+      "384,400",
+      "384400 km",
+      "384,400 km",
+      "384,400 kilometres"
+    ],
+    "tolerance_class": "rel_1pct",
+    "tolerance_params": {
+      "rel_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_001",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "9",
+    "accepted_forms": [
+      "9",
+      "8",
+      "8.5",
+      "9/km2",
+      "9 per km2",
+      "about 9",
+      "approximately 9",
+      "~9"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024-2025",
+    "source_anchor": "Russia 2018 World Cup host; World Bank/UN 2024 population data",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_002",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "52",
+    "accepted_forms": [
+      "52",
+      "51",
+      "50",
+      "52/km2",
+      "52 per km2",
+      "about 52",
+      "~52"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024-2025",
+    "source_anchor": "South Africa 2010 World Cup host; World Bank/UN 2024 population data",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_003",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "25",
+    "accepted_forms": [
+      "25",
+      "24",
+      "25/km2",
+      "25 per km2",
+      "about 25",
+      "~25",
+      "24-25"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024-2025",
+    "source_anchor": "Brazil 2014 World Cup & 2016 Olympics host; World Bank/UN 2024 population data",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_004",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "231",
+    "accepted_forms": [
+      "231",
+      "230",
+      "232",
+      "231/km2",
+      "231 per km2",
+      "about 231",
+      "~231"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024-2025",
+    "source_anchor": "Qatar 2022 World Cup host; World Bank/UN 2024 population data",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_005",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "342",
+    "accepted_forms": [
+      "342",
+      "340",
+      "341",
+      "342/km2",
+      "342 per km2",
+      "about 342",
+      "~342"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024-2025",
+    "source_anchor": "Japan 2020/2021 Olympics host; World Bank/UN 2024 population data",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_006",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "127",
+    "accepted_forms": [
+      "127",
+      "124",
+      "125",
+      "126",
+      "127/km2",
+      "127 per km2",
+      "about 127",
+      "~127"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024-2025",
+    "source_anchor": "France 2018 World Cup winner; World Bank/UN 2024 population data",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_007",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "96",
+    "accepted_forms": [
+      "96",
+      "95",
+      "97",
+      "96/km2",
+      "96 per km2",
+      "about 96",
+      "~96"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024-2025",
+    "source_anchor": "Spain 2010 World Cup winner; World Bank/UN 2024 population data",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_008",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "240",
+    "accepted_forms": [
+      "240",
+      "238",
+      "239",
+      "240/km2",
+      "240 per km2",
+      "about 240",
+      "~240"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024-2025",
+    "source_anchor": "Germany 2014 World Cup winner; World Bank/UN 2024 population data",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_009",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "60",
+    "accepted_forms": [
+      "60",
+      "60 sites",
+      "sixty",
+      "60 UNESCO sites"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024-2025",
+    "source_anchor": "Italy UNESCO World Heritage Sites count 2025; UNESCO official list",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_010",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "42",
+    "accepted_forms": [
+      "42",
+      "41",
+      "43",
+      "42/km2",
+      "42 per km2",
+      "about 42",
+      "~42"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024-2025",
+    "source_anchor": "Colombia 2019 Tour de France winner (Egan Bernal); World Bank/UN 2024 population data",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_011",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "4",
+    "accepted_forms": [
+      "4",
+      "4/km2",
+      "4 per km2",
+      "about 4",
+      "~4",
+      "3",
+      "5",
+      "3.5"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024-2025",
+    "source_anchor": "Canada longest coastline; World Bank/UN 2024 population data",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_012",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "4",
+    "accepted_forms": [
+      "4",
+      "4/km2",
+      "4 per km2",
+      "about 4",
+      "~4",
+      "3",
+      "5"
+    ],
+    "tolerance_class": "rel_10pct",
+    "tolerance_params": {
+      "rel_tol": 0.1
+    },
+    "time_anchor": "2024-2025",
+    "source_anchor": "Canada most natural lakes; World Bank/UN 2024 population data",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_014",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "1",
+    "accepted_forms": [
+      "1",
+      "one"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_016",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "27",
+    "accepted_forms": [
+      "27",
+      "twenty-seven",
+      "27 bones"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_017",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "6",
+    "accepted_forms": [
+      "6",
+      "six"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_018",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "5",
+    "accepted_forms": [
+      "5",
+      "five"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_019",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "32",
+    "accepted_forms": [
+      "32",
+      "thirty-two",
+      "32 teeth"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_020",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "4",
+    "accepted_forms": [
+      "4",
+      "four"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_021",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "4",
+    "accepted_forms": [
+      "4",
+      "four"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_022",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "3",
+    "accepted_forms": [
+      "3",
+      "three"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_023",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "2",
+    "accepted_forms": [
+      "2",
+      "two"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_024",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "3",
+    "accepted_forms": [
+      "3",
+      "three"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_027",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "4",
+    "accepted_forms": [
+      "4",
+      "four hours",
+      "4 hours"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_028",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "47",
+    "accepted_forms": [
+      "47",
+      "forty-seven",
+      "47 days"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_029",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "48",
+    "accepted_forms": [
+      "48",
+      "48 mph",
+      "48 miles per hour"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_030",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "6",
+    "accepted_forms": [
+      "6",
+      "six",
+      "6 steps",
+      "six pourings"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_031",
+    "answer_type": "numeric",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "-4",
+    "accepted_forms": [
+      "-4",
+      "-4%",
+      "4% decrease",
+      "a decrease of 4%",
+      "net decrease of 4 percent"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_b3_033",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "Sudan",
+    "accepted_forms": [
+      "Sudan",
+      "sudan",
+      "the sudan",
+      "Sudan has more pyramids"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_001",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "False",
+      "no"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_002",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "False",
+      "no"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_003",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "False",
+      "no"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_004",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "False",
+      "no"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_006",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "False",
+      "no"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_007",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "False",
+      "no"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_009",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "False",
+      "no"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_010",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "False",
+      "no"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_012",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "banana",
+    "accepted_forms": [
+      "banana",
+      "bananas",
+      "Banana"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_021",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "False",
+      "no"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_022",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "contested",
+    "accepted_forms": [
+      "contested",
+      "Contested",
+      "debated"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_024",
+    "answer_type": "tri_label",
+    "grader_rule": "tri_label",
+    "gold_answer": "contested",
+    "accepted_forms": [
+      "contested",
+      "Contested",
+      "debated"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": [
+      "true",
+      "false",
+      "contested"
+    ],
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "gen_a4_025",
+    "answer_type": "yes_no",
+    "grader_rule": "yes_no",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false",
+      "False",
+      "no"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  }
+]
