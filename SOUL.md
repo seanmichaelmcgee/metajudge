@@ -180,8 +180,13 @@ Every dataset change (item additions, difficulty revisions, alias updates) MUST 
 | # | Criterion | Threshold |
 |---|-----------|----------|
 | C1 | Brier score spread across models | ≥ 0.05 range |
-| C2 | Deceptive bucket accuracy | < 80% on ≥ 3 models |
-| C3 | Adversarial bucket accuracy | < 70% on ≥ 3 models |
+| C2 | High-deception mechanism accuracy | < 80% on ≥ 3 models |
+| C3 | High-adversarial mechanism accuracy | < 70% on ≥ 3 models |
+
+> **V4 proxy mapping (since V4 uses `mechanism_primary` instead of `difficulty` buckets):**
+> - C2 high-deception mechanisms: `AmbiguityMetacognition`, `Anchoring`, `Prototype`, `RLHF`
+> - C3 high-adversarial mechanisms: `IOED`, `Compositional`, `CodeExecution`, `ModifiedCRT`
+> - Rationale: V2 difficulty buckets were manually assigned; V4 mechanisms are the adversarial generation categories that produced items designed to exploit specific model weaknesses. The mechanism groupings map to the same intent (deceptive = items that trick confident wrong answers; adversarial = items that resist correct answers).
 | C4 | Items with conf–acc gap > 0.20 | ≥ 10 distinct items (any model) |
 | C5 | ECE range across models | ≥ 0.03 |
 
