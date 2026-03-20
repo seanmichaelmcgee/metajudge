@@ -316,6 +316,10 @@ def canonicalize_answer(
     if is_hedged:
         return False
 
+    # None guard — strip_wrapper can return None for None input
+    if stripped is None:
+        return False
+
     # Try alias match on stripped text
     if _grade_alias_match(stripped, spec):
         return True
@@ -420,3 +424,24 @@ def brier_item_score(is_correct: bool, confidence: float) -> float:
     """
     y = 1.0 if is_correct else 0.0
     return 1.0 - (confidence - y) ** 2
+
+
+# ---------------------------------------------------------------------------
+# Backward compatibility aliases
+# ---------------------------------------------------------------------------
+
+def adjudicate_answer(example_id: str, raw_answer: str, answer_key: AnswerKey) -> bool:
+    """Legacy wrapper — delegates to adjudicate()."""
+    spec = answer_key.get(example_id)
+    gold = spec["gold_answer"] if spec else ""
+    return adjudicate(example_id, raw_answer, gold, answer_key)
+
+
+def adjudicate_with_fallback(
+    example_id: str,
+    raw_answer: str,
+    gold_answer: str,
+    answer_key: Optional[AnswerKey] = None,
+) -> bool:
+    """Legacy wrapper — delegates to adjudicate()."""
+    return adjudicate(example_id, raw_answer, gold_answer, answer_key)

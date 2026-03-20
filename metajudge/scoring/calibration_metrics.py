@@ -150,8 +150,8 @@ def calibration_aware_score(is_correct: bool, confidence: float) -> float:
     return float(1.0 - (confidence - y) ** 2)
 
 
-# Alias used by the notebook and adjudication module
-brier_item_score = calibration_aware_score
+# Canonical definition lives in adjudication.py; re-export here for compat
+from metajudge.scoring.adjudication import brier_item_score  # noqa: F401
 
 
 def coverage_conditioned_accuracy(
