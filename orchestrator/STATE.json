@@ -1,14 +1,12 @@
 {
   "project": "MetaJudge-AGI",
-  "competition": "Kaggle Measuring Progress Toward AGI — Cognitive Abilities",
+  "competition": "Kaggle Measuring Progress Toward AGI \u2014 Cognitive Abilities",
   "track": "Metacognition",
   "deadline": "2026-04-16",
   "budget_total": 500,
   "budget_daily": 50,
-
-  "current_phase": "dataset_reconstruction_and_notebook_patch",
-  "last_updated": "2026-03-20T06:20:00-04:00",
-
+  "current_phase": "awaiting_5model_sweep_on_v4",
+  "last_updated": "2026-03-20T06:35:00-04:00",
   "milestone_history": [
     {
       "date": "2026-03-18",
@@ -44,90 +42,111 @@
       "date": "2026-03-20",
       "milestone": "V4 adversarial pipeline: 4 batches, 266 items, 102 survivors",
       "commit": "0c24d1d"
+    },
+    {
+      "date": "2026-03-20",
+      "milestone": "V4 dataset reconstructed (metajudge_benchmark_v1.json), notebook patched for 102-item V4 data",
+      "commit": "orchestrator/vps-bootstrap branch"
     }
   ],
-
   "datasets": {
     "v2_calibration": {
       "file": "data/calibration.csv",
       "answer_key": "data/calibration_answer_key.json",
       "count": 100,
       "id_format": "cal_001 through cal_100",
-      "status": "SUPERSEDED — too easy (1/5 success criteria met)",
+      "status": "SUPERSEDED \u2014 too easy (1/5 success criteria met)",
       "in_notebook": true
     },
     "v4_survivors": {
       "file": "data/combined_survivors.json",
       "count": 102,
       "id_format": "gen_a_*, gen_b_*, gen_a2_*, gen_b2_*, gen_a3_*, gen_b3_*, gen_a4_*, gen_b4_*",
-      "status": "TRUNCATION BUG — 13/19 batch 1 items truncated at 120 chars",
+      "status": "TRUNCATION BUG \u2014 13/19 batch 1 items truncated at 120 chars",
       "truncation_fix_source": "data/combined_discrimination_matrix.json",
       "in_notebook": false
     },
     "canonical_frozen": {
       "file": "data/metajudge_benchmark_v1.json",
-      "count": null,
-      "status": "NOT YET CREATED — must be reconstructed from survivors + CDM fix",
+      "count": 102,
+      "status": "CREATED \u2014 verified 102 items, zero truncation, all checks pass",
       "in_notebook": false
     }
   },
-
   "notebook": {
     "file": "notebooks/metajudge_submission.ipynb",
     "cell_count": 11,
     "embedded_dataset": "v2_calibration (100 items, cal_* IDs)",
     "choose_target": "metacog_calibration_v1_batch",
-    "status": "STALE — embeds V2 data, needs V4 patch",
+    "status": "STALE \u2014 embeds V2 data, needs V4 patch",
     "patches_needed": [
-      "Cell 0: Update markdown header (100→102, V2→V4)",
+      "Cell 0: Update markdown header (100\u2192102, V2\u2192V4)",
       "Cell 3: Replace embedded V2 data with V4 102-item JSON",
-      "Cell 5: Update task function signature (example_id/prompt → item_id/question)",
+      "Cell 5: Update task function signature (example_id/prompt \u2192 item_id/question)",
       "Cell 8: Add enable_cache(), add SWEEP_MODELS fallback",
       "Cell 9: Adapt success criteria for V4 schema (no difficulty buckets)"
     ]
   },
-
   "success_criteria": {
-    "C1": {"name": "Brier spread", "threshold": ">= 0.05", "v2_result": "0.036 FAIL"},
-    "C2": {"name": "Deceptive bucket < 80%", "threshold": ">= 3 models", "v2_result": "FAIL"},
-    "C3": {"name": "Adversarial bucket < 70%", "threshold": ">= 3 models", "v2_result": "FAIL"},
-    "C4": {"name": "Conf-acc gap items", "threshold": ">= 10", "v2_result": "PASS"},
-    "C5": {"name": "ECE range", "threshold": ">= 0.03", "v2_result": "FAIL"}
+    "C1": {
+      "name": "Brier spread",
+      "threshold": ">= 0.05",
+      "v2_result": "0.036 FAIL"
+    },
+    "C2": {
+      "name": "Deceptive bucket < 80%",
+      "threshold": ">= 3 models",
+      "v2_result": "FAIL"
+    },
+    "C3": {
+      "name": "Adversarial bucket < 70%",
+      "threshold": ">= 3 models",
+      "v2_result": "FAIL"
+    },
+    "C4": {
+      "name": "Conf-acc gap items",
+      "threshold": ">= 10",
+      "v2_result": "PASS"
+    },
+    "C5": {
+      "name": "ECE range",
+      "threshold": ">= 0.03",
+      "v2_result": "FAIL"
+    }
   },
-
   "blocking_issues": [
     {
       "id": "BLOCK-001",
       "severity": "CRITICAL",
       "description": "Batch 1 truncation: 13/19 items in combined_survivors.json truncated at 120 chars",
-      "resolution": "Rebuild from CDM full text → metajudge_benchmark_v1.json",
-      "status": "OPEN"
+      "resolution": "Rebuild from CDM full text \u2192 metajudge_benchmark_v1.json",
+      "status": "RESOLVED \u2014 metajudge_benchmark_v1.json built, 13 batch 1 questions repaired from CDM"
     },
     {
       "id": "BLOCK-002",
       "severity": "HIGH",
       "description": "Notebook Cell 3 embeds stale V2 data (100 cal_* items), not V4 (102 gen_* items)",
       "resolution": "Patch Cell 3 with canonical frozen V4 data",
-      "status": "OPEN"
+      "status": "RESOLVED \u2014 notebook Cell 3 patched with V4 102-item data"
     },
     {
       "id": "BLOCK-003",
       "severity": "HIGH",
       "description": "Success criteria C2/C3 reference difficulty buckets absent from V4 schema",
       "resolution": "Map mechanism_primary categories to evaluation groupings OR reclassify",
-      "status": "OPEN"
+      "status": "RESOLVED \u2014 Cell 9 uses mechanism_primary groupings instead of difficulty buckets"
     }
   ],
-
   "next_actions": [
-    "1. Build metajudge_benchmark_v1.json (fix truncation, validate 102 items)",
-    "2. Patch notebook cells 0, 3, 5, 8, 9 for V4 data",
-    "3. Run 5-model sweep on V4 data in Kaggle",
-    "4. Evaluate against success criteria",
-    "5. If >= 4/5 met: freeze dataset, begin writeup",
-    "6. If < 4/5: iterate on items"
+    "1. User: Upload patched notebook to Kaggle (https://www.kaggle.com/benchmarks/tasks/new)",
+    "2. User: Run smoke test (Cell 5) to verify SDK connectivity",
+    "3. User: Run full 102-item evaluation (Cell 6)",
+    "4. User: Run 5-model sweep (Cell 7) for headline scores",
+    "5. User: Run audit sweep (Cell 8, RUN_AUDIT=True) for per-item diagnostics",
+    "6. User: Run success criteria verdict (Cell 9)",
+    "7. If >= 4/5 met: freeze dataset, begin writeup",
+    "8. If < 4/5: iterate on items (orchestrator handles next cycle)"
   ],
-
   "kaggle_workflow": {
     "task_name": "metacog_calibration_v1_batch",
     "choose_target": "metacog_calibration_v1_batch",
