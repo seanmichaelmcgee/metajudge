@@ -2,7 +2,7 @@ name: Claude Code Auditor
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize, labeled]
 
 permissions:
   contents: read
@@ -12,6 +12,15 @@ permissions:
 
 jobs:
   audit:
+    # Skip audit when 'skip-audit' label is present.
+    # Workflow: develop with skip-audit label on → push freely.
+    # When ready for review: remove skip-audit, add 'run-audit' label → single run.
+    # On 'opened': always run (first push). On 'synchronize': skip if skip-audit.
+    # On 'labeled' with 'run-audit': always run (manual trigger).
+    if: |
+      (github.event.action == 'opened') ||
+      (github.event.action == 'labeled' && github.event.label.name == 'run-audit') ||
+      (github.event.action == 'synchronize' && !contains(github.event.pull_request.labels.*.name, 'skip-audit'))
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
