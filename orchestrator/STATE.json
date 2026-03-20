@@ -6,7 +6,7 @@
   "budget_total": 500,
   "budget_daily": 50,
   "current_phase": "awaiting_5model_sweep_on_v4",
-  "last_updated": "2026-03-20T06:35:00-04:00",
+  "last_updated": "2026-03-20T07:10:00-04:00",
   "milestone_history": [
     {
       "date": "2026-03-18",
@@ -47,6 +47,11 @@
       "date": "2026-03-20",
       "milestone": "V4 dataset reconstructed (metajudge_benchmark_v1.json), notebook patched for 102-item V4 data",
       "commit": "orchestrator/vps-bootstrap branch"
+    },
+    {
+      "date": "2026-03-20",
+      "milestone": "CRITICAL FIX: adjudicate() gold_answer check + yes_no handler + V4 CI validation (26.5% of items affected)",
+      "commit": "aeca6da"
     }
   ],
   "datasets": {
@@ -76,16 +81,10 @@
   "notebook": {
     "file": "notebooks/metajudge_submission.ipynb",
     "cell_count": 11,
-    "embedded_dataset": "v2_calibration (100 items, cal_* IDs)",
+    "embedded_dataset": "v4_canonical (102 items, gen_* IDs)",
     "choose_target": "metacog_calibration_v1_batch",
-    "status": "STALE \u2014 embeds V2 data, needs V4 patch",
-    "patches_needed": [
-      "Cell 0: Update markdown header (100\u2192102, V2\u2192V4)",
-      "Cell 3: Replace embedded V2 data with V4 102-item JSON",
-      "Cell 5: Update task function signature (example_id/prompt \u2192 item_id/question)",
-      "Cell 8: Add enable_cache(), add SWEEP_MODELS fallback",
-      "Cell 9: Adapt success criteria for V4 schema (no difficulty buckets)"
-    ]
+    "status": "PATCHED \u2014 V4 data embedded, adjudicate() fixed, ready for Kaggle sweep",
+    "patches_needed": []
   },
   "success_criteria": {
     "C1": {
@@ -135,6 +134,20 @@
       "description": "Success criteria C2/C3 reference difficulty buckets absent from V4 schema",
       "resolution": "Map mechanism_primary categories to evaluation groupings OR reclassify",
       "status": "RESOLVED \u2014 Cell 9 uses mechanism_primary groupings instead of difficulty buckets"
+    },
+    {
+      "id": "BLOCK-004",
+      "severity": "CRITICAL",
+      "description": "adjudicate() in Cell 4 never checked gold_answer directly \u2014 only iterated aliases. 24/102 items have empty aliases[], 21 items use yes_no rule with no handler. 26.5% of items always scored False.",
+      "resolution": "Added _grade_alias_match() (gold_answer first), _grade_yes_no(), refactored grading hierarchy to match library adjudication.py",
+      "status": "RESOLVED \u2014 commit aeca6da, verified 102/102 self-adjudication, 240/240 alias tests pass"
+    },
+    {
+      "id": "BLOCK-005",
+      "severity": "HIGH",
+      "description": "run_checks.py only validated V2 dataset (100 CSV items). V4 benchmark (102 JSON items) never validated in CI.",
+      "resolution": "Added V4 validation section to run_checks.py: 6 FAIL-level + 2 WARN-level checks",
+      "status": "RESOLVED \u2014 commit aeca6da, V4 validation passes 6/6 FAIL checks"
     }
   ],
   "next_actions": [
