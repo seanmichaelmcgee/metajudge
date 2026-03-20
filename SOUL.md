@@ -244,7 +244,7 @@ Approach A is Kaggle's recommended path for leaderboard generation. Approach B i
 | 0 | Markdown header | — |
 | 1 | Imports + model discovery (`kbench.llms.keys()`) | — |
 | 2 | Response schema (CalibrationResponse dataclass) | Cell 1 |
-| 3 | Embedded dataset + answer key (100 V2 items) | Cell 1 |
+| 3 | Embedded dataset + answer key (102 V4 items) | Cell 1 |
 | 4 | Scoring & adjudication functions | Cell 3 |
 | 5 | Single-item `@kbench.task` definition | Cells 2-4 |
 | 6 | Batch evaluation (`@kbench.task` with DataFrame) | Cell 5 |
@@ -277,4 +277,5 @@ When replacing items after a failed sweep:
 - **Flash Sweep Results:** 97/100 correct (0.9756 headline). 3 real errors: cal_065 (France borders), cal_084 (Amazon river), cal_088 (fortune cookies). Adversarial: 100%, Deceptive: 90.9%. Scores too high on flash alone — need weaker models for spread.
 - **SDK Alignment:** Notebook rebuilt to use `evaluate()` API per Kaggle SDK recommendations. Cell map updated to v3 (11 cells). Model discovery added to Cell 1.
 - **5-Model Sweep (March 19):** All 5 models verified and run. Results: Pro 98/100, Flash 97/100, Haiku 97/100, Sonnet 95/100, DeepSeek 93/100. Success criteria: 1/5 met (C4 only). Brier spread 0.036 (need 0.05). 11 discriminating items. 16 overconfident errors. Verdict: NEEDS WORK — dataset not hard enough for frontier models.
-- **Current:** Calibration improvement sprint needed — targeted item replacement in deceptive/adversarial buckets.
+- **V4 Adversarial Pipeline (March 20):** 4-batch 2-agent adversarial generation pipeline produced 266 candidates → 102 survivors (38.3% yield). 58/102 (56.9%) discriminate across 4-model panel. Best mechanisms: IOED (94% disc), Prototype (83%), Anchoring (60%).
+- **Current:** V4 102-item dataset reconstructed as `data/metajudge_benchmark_v1.json`. Notebook patched for V4 data. Awaiting 5-model sweep on V4 items to verify success criteria.
