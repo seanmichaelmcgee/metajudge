@@ -8,6 +8,25 @@ from typing import Optional
 import pandas as pd
 
 
+def _json_safe(obj):
+    """JSON serializer fallback for numpy/pandas types."""
+    try:
+        import numpy as np
+        if isinstance(obj, (np.bool_,)):
+            return bool(obj)
+        if isinstance(obj, (np.integer,)):
+            return int(obj)
+        if isinstance(obj, (np.floating,)):
+            return float(obj)
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+    except ImportError:
+        pass
+    if isinstance(obj, pd.Timestamp):
+        return obj.isoformat()
+    return str(obj)
+
+
 def compute_model_summary(audit_df: pd.DataFrame) -> pd.DataFrame:
     """Compute per-model summary statistics from audit sweep results.
 
@@ -209,7 +228,7 @@ def export_artifacts(
     verdict = compute_success_criteria(audit_df)
     verdict_path = output_dir / f"verdict_{ts}.json"
     with open(verdict_path, "w") as f:
-        json.dump(verdict, f, indent=2)
+        json.dump(verdict, f, indent=2, default=_json_safe)
     paths["verdict"] = str(verdict_path)
 
     return paths
