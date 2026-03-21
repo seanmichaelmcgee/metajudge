@@ -97,7 +97,8 @@
       "file": "data/combined_survivors.json",
       "count": 102,
       "id_format": "gen_a_*, gen_b_*, gen_a2_*, gen_b2_*, gen_a3_*, gen_b3_*, gen_a4_*, gen_b4_*",
-      "status": "SUPERSEDED — replaced by V4.2",
+      "status": "SUPERSEDED — replaced by V4.2 (truncation bug fixed, IOED items replaced)",
+      "truncation_fix_source": "data/combined_discrimination_matrix.json",
       "in_notebook": false
     },
     "v4_2_canonical": {
@@ -112,7 +113,7 @@
       "file": "data/family_b_pilot.json",
       "count": 48,
       "id_format": "fb_*",
-      "status": "ACTIVE — 48-item pilot, UWAA/F1/AUARC scoring",
+      "status": "ACTIVE — 48-item pilot, UWAA/F1/AUARC scoring, 246 tests passing",
       "scoring": "UWAA (uncertainty-weighted), macro-F1, AUARC",
       "in_notebook": true
     }
@@ -164,43 +165,49 @@
       "id": "BLOCK-001",
       "severity": "CRITICAL",
       "description": "Batch 1 truncation: 13/19 items in combined_survivors.json truncated at 120 chars",
+      "resolution": "Rebuild from CDM full text → metajudge_benchmark_v1.json",
       "status": "RESOLVED — metajudge_benchmark_v1.json built, 13 batch 1 questions repaired from CDM"
     },
     {
       "id": "BLOCK-002",
       "severity": "HIGH",
       "description": "Notebook Cell 3 embeds stale V2 data (100 cal_* items), not V4 (102 gen_* items)",
+      "resolution": "Patch Cell 3 with canonical frozen V4 data",
       "status": "RESOLVED — notebook Cell 3 patched with V4 102-item data"
     },
     {
       "id": "BLOCK-003",
       "severity": "HIGH",
       "description": "Success criteria C2/C3 reference difficulty buckets absent from V4 schema",
+      "resolution": "Map mechanism_primary categories to evaluation groupings",
       "status": "RESOLVED — Cell 9 uses mechanism_primary groupings instead of difficulty buckets"
     },
     {
       "id": "BLOCK-004",
       "severity": "CRITICAL",
       "description": "adjudicate() in Cell 4 never checked gold_answer directly — 26.5% of items affected",
+      "resolution": "grading_v2 parity: _grade_alias_match(), _grade_yes_no(), 8-rule registry",
       "status": "RESOLVED — grading_v2 8-rule registry, 102/102 self-adjudication, 240/240 alias tests"
     },
     {
       "id": "BLOCK-005",
       "severity": "HIGH",
       "description": "run_checks.py only validated V2 dataset. V4 benchmark never validated in CI.",
+      "resolution": "V4 validation added to run_checks.py (6 FAIL-level + 2 WARN-level checks)",
       "status": "RESOLVED — V4 validation passes 6/6 FAIL checks"
     },
     {
       "id": "BLOCK-006",
       "severity": "GATE",
       "description": "V4.2 5-model sweep not yet run on Kaggle — C1-C5 success criteria unverified",
+      "resolution": "Run lean notebook Cell 7 on Kaggle with 5-model sweep",
       "status": "PENDING — run lean notebook Cell 7 on Kaggle to verify C1-C5"
     }
   ],
   "next_actions": [
     "1. Run V4.2 5-model sweep on Kaggle (lean notebook Cell 7) — ~500 LLM calls, $10-15 quota",
     "2. Analyze sweep results against C1-C5 success criteria",
-    "3. If >= 4/5: FREEZE calibration, prepare writeup",
+    "3. If >= 4/5 criteria met: FREEZE calibration, prepare writeup",
     "4. Upload Kaggle Dataset (metajudge-benchmark) with V4.2 data + grading registry + metajudge package",
     "5. Begin writeup (1500 words)"
   ],

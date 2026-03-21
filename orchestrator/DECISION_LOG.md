@@ -137,6 +137,9 @@ Also: add V4 validation to `run_checks.py` (6 FAIL-level + 2 WARN-level checks) 
 - Merging now avoids a later integration risk and keeps the branch as the single source of truth
 - The calibration freeze decision is independent of Family B — it gates only on Family A (C1–C5)
 
+**Alternatives considered:**
+- Merge after freeze — rejected (adds unnecessary merge step, no isolation benefit since Family B cells are independent)
+
 **Date:** 2026-03-21
 
 ---
@@ -154,6 +157,10 @@ Also: add V4 validation to `run_checks.py` (6 FAIL-level + 2 WARN-level checks) 
 - The lean notebook is ready for submission (GO_LEAN verdict)
 - The one remaining gate is a 5-model sweep on Kaggle to verify C1–C5
 - Decision tree: ≥ 4/5 → FREEZE; 3/5 → one patch cycle; < 3/5 → return to item authoring (unlikely)
+
+**Alternatives considered:**
+- FREEZE now without sweep — rejected (empirical validation is cheap and necessary)
+- Require additional engineering work — rejected (no known engineering gaps)
 
 **Full verdict document:** `docs/vps_calibration_freeze_verdict.md`
 
