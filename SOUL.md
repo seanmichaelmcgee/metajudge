@@ -134,6 +134,20 @@ The CSV (`calibration.csv`) column is also `gold_answer`. Do not use `canonical`
 
 ---
 
+## Audit export requirements
+
+Every serious Kaggle run MUST produce per-item audit CSVs written to `/kaggle/working/`:
+
+| File | Required columns | When |
+|------|-----------------|------|
+| `calibration_item_audit.csv` | item_id, gold_answer, grader_rule, model_answer, confidence, is_correct, brier_score | Every run |
+| `family_b_item_audit.csv` | item_id, gold_answer, gold_action, model_decision, model_answer, is_correct, utility | When Family B runs |
+| `run_summary.json` | timestamp, accuracy, mean_score, per-family stats | Every run |
+
+These are the backbone of auditability. No run is considered valid without them.
+
+---
+
 ## What agents should do
 
 1. **Read this file first** before starting work.
