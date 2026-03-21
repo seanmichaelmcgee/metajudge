@@ -1,0 +1,54 @@
+{
+  "benchmark_version": "V4.2",
+  "timestamp": "2026-03-21T23:38:12.481451+00:00",
+  "grading_engine": "grading_v2",
+  "families": {
+    "calibration": {
+      "items": 611,
+      "accuracy": 0.7643207855973814,
+      "mean_brier_score": 0.8037509001636686,
+      "mean_confidence": 0.9114238952536808,
+      "per_model": {
+        "anthropic/claude-haiku-4-5@20251001": {
+          "correct": 84,
+          "total": 117,
+          "mean_brier_score": 0.7807341880341877
+        },
+        "anthropic/claude-sonnet-4@20250514": {
+          "correct": 91,
+          "total": 117,
+          "mean_brier_score": 0.8154905982905987
+        },
+        "deepseek-ai/deepseek-v3.1": {
+          "correct": 88,
+          "total": 117,
+          "mean_brier_score": 0.8317923076923077
+        },
+        "google/gemini-2.5-flash": {
+          "correct": 102,
+          "total": 117,
+          "mean_brier_score": 0.8824256410256411
+        },
+        "google/gemini-2.5-pro": {
+          "correct": 102,
+          "total": 117,
+          "mean_brier_score": 0.8852991452991454
+        }
+      }
+    },
+    "abstention": {
+      "items": 88,
+      "mean_utility": 0.4704545454545452,
+      "uwaa": 0.7436781609195401
+    }
+  },
+  "registry_rules": [
+    "approx_numeric_small",
+    "tri_label",
+    "alias_plus_normalization",
+    "fraction_or_decimal",
+    "approx_numeric_dynamic",
+    "exact_constant",
+    "code_output"
+  ]
+}
