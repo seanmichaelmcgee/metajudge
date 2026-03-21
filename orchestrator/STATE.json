@@ -1,12 +1,12 @@
 {
   "project": "MetaJudge-AGI",
-  "competition": "Kaggle Measuring Progress Toward AGI \u2014 Cognitive Abilities",
+  "competition": "Kaggle Measuring Progress Toward AGI — Cognitive Abilities",
   "track": "Metacognition",
   "deadline": "2026-04-16",
   "budget_total": 500,
   "budget_daily": 50,
-  "current_phase": "awaiting_v4_sweep_results_for_architectural_refactor",
-  "last_updated": "2026-03-20T13:30:00-04:00",
+  "current_phase": "calibration_freeze_pending_sweep",
+  "last_updated": "2026-03-21T08:30:00-04:00",
   "milestone_history": [
     {
       "date": "2026-03-18",
@@ -57,6 +57,31 @@
       "date": "2026-03-20",
       "milestone": "Notebook Cell 3/6/7 Kaggle runtime fixes committed to fix/notebook-kaggle-patches branch",
       "commit": "8267146"
+    },
+    {
+      "date": "2026-03-21",
+      "milestone": "VPS kickoff: grading_v2 parity audit complete, lean notebook upgraded",
+      "commit": "vps/lean-calibration-v2 branch"
+    },
+    {
+      "date": "2026-03-21",
+      "milestone": "V4.2 dataset: 7 IOED items replaced, 102/102 gold self-adjudication",
+      "commit": "vps/lean-calibration-v2 branch"
+    },
+    {
+      "date": "2026-03-21",
+      "milestone": "Lean notebook: GO_LEAN verdict, grading_v2 registry-driven adjudication",
+      "commit": "vps/lean-calibration-v2 branch"
+    },
+    {
+      "date": "2026-03-21",
+      "milestone": "Family B integrated: 48-item pilot, UWAA/F1/AUARC, 246 tests passing",
+      "commit": "vps/lean-calibration-v2 branch"
+    },
+    {
+      "date": "2026-03-21",
+      "milestone": "SOUL.md patched: Family B canonical labels (answer/clarify/verify/abstain)",
+      "commit": "vps/lean-calibration-v2 branch"
     }
   ],
   "datasets": {
@@ -65,58 +90,73 @@
       "answer_key": "data/calibration_answer_key.json",
       "count": 100,
       "id_format": "cal_001 through cal_100",
-      "status": "SUPERSEDED \u2014 too easy (1/5 success criteria met)",
-      "in_notebook": true
+      "status": "SUPERSEDED — too easy (1/5 success criteria met)",
+      "in_notebook": false
     },
     "v4_survivors": {
       "file": "data/combined_survivors.json",
       "count": 102,
       "id_format": "gen_a_*, gen_b_*, gen_a2_*, gen_b2_*, gen_a3_*, gen_b3_*, gen_a4_*, gen_b4_*",
-      "status": "TRUNCATION BUG \u2014 13/19 batch 1 items truncated at 120 chars",
-      "truncation_fix_source": "data/combined_discrimination_matrix.json",
+      "status": "SUPERSEDED — replaced by V4.2",
       "in_notebook": false
     },
-    "canonical_frozen": {
+    "v4_2_canonical": {
       "file": "data/metajudge_benchmark_v1.json",
       "count": 102,
-      "status": "CREATED \u2014 verified 102 items, zero truncation, all checks pass",
-      "in_notebook": false
+      "id_format": "gen_* (7 IOED replacements with harder physics/math items)",
+      "status": "ACTIVE — 102 items, grading_v2 8-rule adjudication, 102/102 gold self-adjudication",
+      "grading": "grading_v2 registry-driven (exact_match, numeric, yes_no, case_insensitive, substring, alias_match, formula, unit_tolerant)",
+      "in_notebook": true
+    },
+    "family_b_pilot": {
+      "file": "data/family_b_pilot.json",
+      "count": 48,
+      "id_format": "fb_*",
+      "status": "ACTIVE — 48-item pilot, UWAA/F1/AUARC scoring",
+      "scoring": "UWAA (uncertainty-weighted), macro-F1, AUARC",
+      "in_notebook": true
     }
   },
   "notebook": {
-    "file": "notebooks/metajudge_submission.ipynb",
-    "cell_count": 11,
-    "embedded_dataset": "v4_canonical (102 items, gen_* IDs)",
+    "primary": "notebooks/metajudge_lean_submission.ipynb",
+    "legacy": "notebooks/metajudge_submission.ipynb",
+    "cell_count": 9,
+    "embedded_dataset": "V4.2 canonical (102 items, gen_* IDs, grading_v2)",
     "choose_target": "metacog_calibration_v1_batch",
-    "status": "PATCHED \u2014 V4 data embedded, adjudicate() fixed, Cell 3/6/7 Kaggle runtime fixes on fix/notebook-kaggle-patches",
-    "patches_needed": [],
-    "pending_merge": "fix/notebook-kaggle-patches (8267146) — Cell 3 JSON, Cell 6/7 SDK kwargs filter"
+    "status": "GO_LEAN — grading_v2 registry-driven, 102/102 self-adj, Family B integrated, Kaggle-compatible",
+    "grading_engine": "grading_v2: 8-rule registry with precedence (exact > numeric > yes_no > case_insensitive > substring > alias > formula > unit_tolerant)",
+    "family_b": "Integrated — Cell 8+ for UWAA/F1/AUARC scoring on 48-item pilot"
   },
   "success_criteria": {
     "C1": {
       "name": "Brier spread",
       "threshold": ">= 0.05",
-      "v2_result": "0.036 FAIL"
+      "v2_result": "0.036 FAIL",
+      "v4_2_result": "PENDING — awaiting sweep"
     },
     "C2": {
       "name": "Deceptive bucket < 80%",
       "threshold": ">= 3 models",
-      "v2_result": "FAIL"
+      "v2_result": "FAIL",
+      "v4_2_result": "PENDING — awaiting sweep"
     },
     "C3": {
       "name": "Adversarial bucket < 70%",
       "threshold": ">= 3 models",
-      "v2_result": "FAIL"
+      "v2_result": "FAIL",
+      "v4_2_result": "PENDING — awaiting sweep"
     },
     "C4": {
       "name": "Conf-acc gap items",
       "threshold": ">= 10",
-      "v2_result": "PASS"
+      "v2_result": "PASS",
+      "v4_2_result": "PENDING — awaiting sweep"
     },
     "C5": {
       "name": "ECE range",
       "threshold": ">= 0.03",
-      "v2_result": "FAIL"
+      "v2_result": "FAIL",
+      "v4_2_result": "PENDING — awaiting sweep"
     }
   },
   "blocking_issues": [
@@ -124,46 +164,52 @@
       "id": "BLOCK-001",
       "severity": "CRITICAL",
       "description": "Batch 1 truncation: 13/19 items in combined_survivors.json truncated at 120 chars",
-      "resolution": "Rebuild from CDM full text \u2192 metajudge_benchmark_v1.json",
-      "status": "RESOLVED \u2014 metajudge_benchmark_v1.json built, 13 batch 1 questions repaired from CDM"
+      "status": "RESOLVED — metajudge_benchmark_v1.json built, 13 batch 1 questions repaired from CDM"
     },
     {
       "id": "BLOCK-002",
       "severity": "HIGH",
       "description": "Notebook Cell 3 embeds stale V2 data (100 cal_* items), not V4 (102 gen_* items)",
-      "resolution": "Patch Cell 3 with canonical frozen V4 data",
-      "status": "RESOLVED \u2014 notebook Cell 3 patched with V4 102-item data"
+      "status": "RESOLVED — notebook Cell 3 patched with V4 102-item data"
     },
     {
       "id": "BLOCK-003",
       "severity": "HIGH",
       "description": "Success criteria C2/C3 reference difficulty buckets absent from V4 schema",
-      "resolution": "Map mechanism_primary categories to evaluation groupings OR reclassify",
-      "status": "RESOLVED \u2014 Cell 9 uses mechanism_primary groupings instead of difficulty buckets"
+      "status": "RESOLVED — Cell 9 uses mechanism_primary groupings instead of difficulty buckets"
     },
     {
       "id": "BLOCK-004",
       "severity": "CRITICAL",
-      "description": "adjudicate() in Cell 4 never checked gold_answer directly \u2014 only iterated aliases. 24/102 items have empty aliases[], 21 items use yes_no rule with no handler. 26.5% of items always scored False.",
-      "resolution": "Added _grade_alias_match() (gold_answer first), _grade_yes_no(), refactored grading hierarchy to match library adjudication.py",
-      "status": "RESOLVED \u2014 commit aeca6da, verified 102/102 self-adjudication, 240/240 alias tests pass"
+      "description": "adjudicate() in Cell 4 never checked gold_answer directly — 26.5% of items affected",
+      "status": "RESOLVED — grading_v2 8-rule registry, 102/102 self-adjudication, 240/240 alias tests"
     },
     {
       "id": "BLOCK-005",
       "severity": "HIGH",
-      "description": "run_checks.py only validated V2 dataset (100 CSV items). V4 benchmark (102 JSON items) never validated in CI.",
-      "resolution": "Added V4 validation section to run_checks.py: 6 FAIL-level + 2 WARN-level checks",
-      "status": "RESOLVED \u2014 commit aeca6da, V4 validation passes 6/6 FAIL checks"
+      "description": "run_checks.py only validated V2 dataset. V4 benchmark never validated in CI.",
+      "status": "RESOLVED — V4 validation passes 6/6 FAIL checks"
+    },
+    {
+      "id": "BLOCK-006",
+      "severity": "GATE",
+      "description": "V4.2 5-model sweep not yet run on Kaggle — C1-C5 success criteria unverified",
+      "status": "PENDING — run lean notebook Cell 7 on Kaggle to verify C1-C5"
     }
   ],
   "next_actions": [
-    "1. WAITING: User running V4 5-model sweep on Kaggle (Cell 7)",
-    "2. When sweep results arrive: analyze against C1-C5 success criteria",
-    "3. Execute 5-workstream architectural refactor (Lane A lean notebook, Lane B eval pipeline, WS3 scoring package, WS4 tests, WS5 modularity)",
-    "4. Merge fix/notebook-kaggle-patches to main (batch with refactor branch or standalone)",
-    "5. If sweep >= 4/5 criteria met: freeze dataset, begin writeup",
-    "6. If sweep < 4/5: iterate items before refactor"
+    "1. Run V4.2 5-model sweep on Kaggle (lean notebook Cell 7) — ~500 LLM calls, $10-15 quota",
+    "2. Analyze sweep results against C1-C5 success criteria",
+    "3. If >= 4/5: FREEZE calibration, prepare writeup",
+    "4. Upload Kaggle Dataset (metajudge-benchmark) with V4.2 data + grading registry + metajudge package",
+    "5. Begin writeup (1500 words)"
   ],
+  "calibration_freeze_verdict": {
+    "verdict": "FREEZE_AFTER_ONE_PATCH_CYCLE",
+    "document": "docs/vps_calibration_freeze_verdict.md",
+    "date": "2026-03-21",
+    "rationale": "All engineering work complete; awaiting Kaggle sweep for C1-C5 verification"
+  },
   "kaggle_workflow": {
     "task_name": "metacog_calibration_v1_batch",
     "choose_target": "metacog_calibration_v1_batch",

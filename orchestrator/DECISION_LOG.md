@@ -88,3 +88,73 @@ Also: add V4 validation to `run_checks.py` (6 FAIL-level + 2 WARN-level checks) 
 
 **Commit:** aeca6da
 **Alternative rejected:** Populating empty aliases arrays — would require manual review of 24 items and wouldn't fix the yes_no handler gap.
+
+---
+
+## 2026-03-21 — Session 2: VPS Lean Calibration V2
+
+### DEC-006: Lean notebook is the official submission lineage
+
+**Context:** Two notebook paths exist: the original `metajudge_submission.ipynb` (patched incrementally across sessions) and the lean notebook created during the VPS lean-calibration-v2 session. A parity audit (`docs/vps_cell4_parity_audit.md`) confirmed the lean notebook matches the library grading hierarchy exactly.
+
+**Decision:** GO_LEAN — the lean notebook is the official submission lineage.
+
+**Rationale:**
+- Parity verified: grading_v2 registry-driven adjudication matches library `metajudge/scoring/adjudication.py`
+- 102/102 gold self-adjudication PASS
+- All tests pass
+- Cleaner codebase: single-file notebook with no accumulated patch debt
+- Family B integration is additive (new cells, no changes to calibration cells)
+
+**Date:** 2026-03-21
+
+---
+
+### DEC-007: SOUL.md Family B labels aligned to branch canonical
+
+**Context:** SOUL.md used legacy Family B action labels (`ask_clarifying_question`, `verify_needed`) while the branch scoring spec (`docs/family_b_scoring_spec.md`) uses canonical labels (`answer`, `clarify`, `verify`, `abstain`). The branch spec explicitly marks old labels as legacy.
+
+**Decision:** Use `answer`/`clarify`/`verify`/`abstain` as the canonical Family B action labels in SOUL.md and all downstream code.
+
+**Rationale:**
+- Branch scoring spec explicitly marks old labels as legacy
+- New labels are shorter, clearer, and consistent with the scoring functions (UWAA, F1, AUARC)
+- Avoids label mismatch bugs between SOUL.md documentation and actual scoring code
+
+**Date:** 2026-03-21
+
+---
+
+### DEC-008: Family B integrated into lean notebook branch
+
+**Context:** Family B (metacognitive action selection — 48-item pilot) was developed in parallel. The question was whether to merge it into `vps/lean-calibration-v2` before or after calibration freeze.
+
+**Decision:** Merge Family B into `vps/lean-calibration-v2` before calibration freeze.
+
+**Rationale:**
+- Family B does not touch calibration cells — integration is purely additive (new cells after Cell 7)
+- Family B scoring (UWAA/F1/AUARC) is independently tested (246 tests passing)
+- Merging now avoids a later integration risk and keeps the branch as the single source of truth
+- The calibration freeze decision is independent of Family B — it gates only on Family A (C1–C5)
+
+**Date:** 2026-03-21
+
+---
+
+### DEC-009: Calibration freeze pending V4.2 sweep
+
+**Context:** All engineering work for calibration is complete: grading_v2 engine verified, V4.2 dataset hardened (7 IOED replacements), lean notebook ready, Family B integrated. The only remaining gate is empirical verification of C1–C5 success criteria via a 5-model sweep on Kaggle.
+
+**Decision:** `FREEZE_AFTER_ONE_PATCH_CYCLE` — freeze calibration after one sweep cycle verifies C1–C5.
+
+**Rationale:**
+- All 5 original blocking issues (BLOCK-001 through BLOCK-005) are resolved
+- The grading engine is correct (102/102 self-adjudication)
+- The dataset has been hardened (V4.2 replaces 7 trivial IOED items)
+- The lean notebook is ready for submission (GO_LEAN verdict)
+- The one remaining gate is a 5-model sweep on Kaggle to verify C1–C5
+- Decision tree: ≥ 4/5 → FREEZE; 3/5 → one patch cycle; < 3/5 → return to item authoring (unlikely)
+
+**Full verdict document:** `docs/vps_calibration_freeze_verdict.md`
+
+**Date:** 2026-03-21
