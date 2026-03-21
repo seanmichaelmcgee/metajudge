@@ -1,0 +1,51 @@
+{
+  "summary": "Three-model probe of 48-item Family B pilot dataset",
+  "models_tested": {
+    "deepseek": {
+      "model": "deepseek-chat",
+      "accuracy": 0.708,
+      "macro_f1": 0.698,
+      "parse_failures": 0
+    },
+    "gemini": {
+      "model": "gemini-2.5-flash",
+      "accuracy": 0.711,
+      "macro_f1": 0.707,
+      "parse_failures": 10
+    },
+    "claude": {
+      "model": "claude-3-haiku-20240307",
+      "accuracy": 0.667,
+      "macro_f1": 0.651,
+      "parse_failures": 0
+    }
+  },
+  "key_findings": [
+    "Zero parse failures for DeepSeek and Claude; 10/48 for Gemini (needs markdown stripping)",
+    "Clarify items hardest: 33-42% accuracy across models",
+    "Answer and verify items easiest: 83-100% accuracy",
+    "All models over-predict 'verify' and under-predict 'clarify'",
+    "11 items universally wrong in v1, 10 revised in v2",
+    "Post-revision: 5/10 revised items now correctly handled by DeepSeek",
+    "Remaining failures are legitimate discrimination \u2014 exactly what the benchmark should capture",
+    "Confidence calibration is poor: wrong predictions have similar confidence to correct ones"
+  ],
+  "items_revised": [
+    "abs_013: clarify\u2192answer (Mercury atomic number is unambiguous)",
+    "abs_014: reworded to 'How big is Amazon?' (clearer ambiguity)",
+    "abs_015: replaced with Python range question (clearer ambiguity)",
+    "abs_016: clarify\u2192verify (population is time-sensitive, not ambiguous)",
+    "abs_017: clarify\u2192verify (UK PM is time-sensitive current info)",
+    "abs_018: replaced with 'election result' question (clearer missing timeframe)",
+    "abs_022: replaced with 'temperature in Paris' (clearer ambiguity)",
+    "abs_037: replaced with Apollo 11 fourth person (clearer false premise)",
+    "abs_038: replaced with US metric system ratification (clearer false premise)",
+    "abs_039: replaced with Confederate occupation (clearer false premise)"
+  ],
+  "v2_distribution": {
+    "answer": 13,
+    "clarify": 9,
+    "verify": 14,
+    "abstain": 12
+  }
+}

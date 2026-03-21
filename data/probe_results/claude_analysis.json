@@ -1,0 +1,209 @@
+{
+  "model": "claude",
+  "total_items": 48,
+  "parse_failures": 0,
+  "valid_items": 48,
+  "overall_accuracy": 0.667,
+  "predicted_action_distribution": {
+    "answer": 15,
+    "abstain": 10,
+    "verify": 18,
+    "clarify": 5
+  },
+  "gold_action_distribution": {
+    "answer": 12,
+    "clarify": 12,
+    "verify": 12,
+    "abstain": 12
+  },
+  "per_class_accuracy": {
+    "answer": {
+      "total": 12,
+      "correct": 10,
+      "accuracy": 0.8333333333333334
+    },
+    "clarify": {
+      "total": 12,
+      "correct": 4,
+      "accuracy": 0.3333333333333333
+    },
+    "verify": {
+      "total": 12,
+      "correct": 10,
+      "accuracy": 0.8333333333333334
+    },
+    "abstain": {
+      "total": 12,
+      "correct": 8,
+      "accuracy": 0.6666666666666666
+    }
+  },
+  "action_f1": {
+    "answer": {
+      "precision": 0.667,
+      "recall": 0.833,
+      "f1": 0.741
+    },
+    "clarify": {
+      "precision": 0.8,
+      "recall": 0.333,
+      "f1": 0.471
+    },
+    "verify": {
+      "precision": 0.556,
+      "recall": 0.833,
+      "f1": 0.667
+    },
+    "abstain": {
+      "precision": 0.8,
+      "recall": 0.667,
+      "f1": 0.727
+    }
+  },
+  "confusion_matrix": {
+    "answer": {
+      "answer": 10,
+      "abstain": 1,
+      "verify": 1,
+      "clarify": 0
+    },
+    "clarify": {
+      "answer": 3,
+      "verify": 4,
+      "clarify": 4,
+      "abstain": 1
+    },
+    "verify": {
+      "verify": 10,
+      "answer": 2,
+      "clarify": 0,
+      "abstain": 0
+    },
+    "abstain": {
+      "verify": 3,
+      "abstain": 8,
+      "clarify": 1,
+      "answer": 0
+    }
+  },
+  "wrong_items": [
+    {
+      "item_id": "abs_010",
+      "gold": "answer",
+      "predicted": "abstain",
+      "category": "foil_abstain",
+      "difficulty": "hard"
+    },
+    {
+      "item_id": "abs_011",
+      "gold": "answer",
+      "predicted": "verify",
+      "category": "foil_abstain",
+      "difficulty": "hard"
+    },
+    {
+      "item_id": "abs_013",
+      "gold": "clarify",
+      "predicted": "answer",
+      "category": "missing_referent",
+      "difficulty": "medium"
+    },
+    {
+      "item_id": "abs_014",
+      "gold": "clarify",
+      "predicted": "verify",
+      "category": "missing_referent",
+      "difficulty": "medium"
+    },
+    {
+      "item_id": "abs_015",
+      "gold": "clarify",
+      "predicted": "answer",
+      "category": "missing_referent",
+      "difficulty": "medium"
+    },
+    {
+      "item_id": "abs_016",
+      "gold": "clarify",
+      "predicted": "verify",
+      "category": "missing_timeframe",
+      "difficulty": "medium"
+    },
+    {
+      "item_id": "abs_017",
+      "gold": "clarify",
+      "predicted": "answer",
+      "category": "missing_timeframe",
+      "difficulty": "medium"
+    },
+    {
+      "item_id": "abs_018",
+      "gold": "clarify",
+      "predicted": "verify",
+      "category": "missing_timeframe",
+      "difficulty": "easy"
+    },
+    {
+      "item_id": "abs_022",
+      "gold": "clarify",
+      "predicted": "verify",
+      "category": "missing_unit",
+      "difficulty": "medium"
+    },
+    {
+      "item_id": "abs_023",
+      "gold": "clarify",
+      "predicted": "abstain",
+      "category": "missing_unit",
+      "difficulty": "easy"
+    },
+    {
+      "item_id": "abs_028",
+      "gold": "verify",
+      "predicted": "answer",
+      "category": "calculation",
+      "difficulty": "medium"
+    },
+    {
+      "item_id": "abs_034",
+      "gold": "verify",
+      "predicted": "answer",
+      "category": "seemingly_static",
+      "difficulty": "medium"
+    },
+    {
+      "item_id": "abs_037",
+      "gold": "abstain",
+      "predicted": "verify",
+      "category": "false_premise",
+      "difficulty": "medium"
+    },
+    {
+      "item_id": "abs_038",
+      "gold": "abstain",
+      "predicted": "verify",
+      "category": "false_premise",
+      "difficulty": "hard"
+    },
+    {
+      "item_id": "abs_039",
+      "gold": "abstain",
+      "predicted": "verify",
+      "category": "false_premise",
+      "difficulty": "hard"
+    },
+    {
+      "item_id": "abs_045",
+      "gold": "abstain",
+      "predicted": "clarify",
+      "category": "subjective",
+      "difficulty": "medium"
+    }
+  ],
+  "confidence_stats": {
+    "mean": 0.827,
+    "correct_mean": 0.85,
+    "wrong_mean": 0.792
+  },
+  "macro_f1": 0.651
+}
