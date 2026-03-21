@@ -1,3 +1,5 @@
+> **Updated 2026-03-21:** The lean notebook now uses `grading_v2.grade_item()` instead of `adjudicate()`. See `docs/kaggle_import_guide.md` for the full import availability guide. The Kaggle Dataset must include the `metajudge/` package directory.
+
 # Kaggle Upload Runbook — MetaJudge Calibration Benchmark
 
 **Competition:** [Measuring Progress Toward AGI — Cognitive Abilities](https://www.kaggle.com/competitions/kaggle-measuring-agi)  

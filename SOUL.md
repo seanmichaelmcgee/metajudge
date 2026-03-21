@@ -25,13 +25,15 @@ These are the project's source-of-truth documents, in priority order:
 |----------|----------|----------|-------|------|
 | 1 | **This file (SOUL.md)** | repo root | All families | Principles, constraints, non-negotiables |
 | 2 | **Recommendations memo** | `docs/metacognition_assessor_recommendations.md` | All families | Two-axis framework, family specs, architectural guidance |
-| 3 | **Change prompt** | `docs/metacognition_assessor_change_prompt.md` | Family A | Implementation checklist (calibration-specific) |
-| 4 | **V1 Architecture** | `planning/v1_architecture.md` | Family A | Production plan for calibration pipeline |
-| 5 | **Scoring plan** | `planning/scoring_plan.md` | Family A | Brier-derived scoring, adjudication, diagnostics |
-| 6 | **Dataset construction plan** | `planning/dataset_construction_plan.md` | Family A | Item sourcing, canonicalization, pilot gates |
-| 7 | **Original framework** | `docs/source_framework.md` | Archived | Conceptual foundation (historical context only) |
+| 3 | **Family B scoring spec** | `docs/family_b_scoring_spec.md` | Family B | UWAA scoring, utility matrix, action F1, AUARC |
+| 4 | **Family B notebook integration** | `docs/family_b_notebook_integration.md` | Family B | Cells 9-15, embedding strategy, composite |
+| 5 | **Change prompt** | `docs/metacognition_assessor_change_prompt.md` | Family A | Implementation checklist (calibration-specific) |
+| 6 | **V1 Architecture** | `planning/v1_architecture.md` | Family A | Production plan for calibration pipeline |
+| 7 | **Scoring plan** | `planning/scoring_plan.md` | Family A | Brier-derived scoring, adjudication, diagnostics |
+| 8 | **Dataset construction plan** | `planning/dataset_construction_plan.md` | Family A | Item sourcing, canonicalization, pilot gates |
+| 9 | **Original framework** | `docs/source_framework.md` | Archived | Conceptual foundation (historical context only) |
 
-When documents conflict, higher priority wins. Documents scoped to "Family A" are authoritative for calibration work but do not govern Family B or later families. The Recommendations memo (priority 2) is the cross-family source of truth for family specs, schemas, and scoring approaches. Family B design documents will be inserted at priority 3–4 as they are created, shifting Family A documents down.
+When documents conflict, higher priority wins. Documents scoped to "Family A" are authoritative for calibration work but do not govern Family B or later families. The Recommendations memo (priority 2) is the cross-family source of truth for family specs, schemas, and scoring approaches.
 
 ---
 
@@ -65,8 +67,8 @@ Self-correction is two separate subfamilies. Never blend them into a single scor
 ### 7. No "expected strategy" scoring unless objectively necessary
 Control-policy adaptation is scored by behavioral outcomes under perturbation, not by agreement with a hand-authored strategy label.
 
-### 8. Family B is the next implementation target after calibration freeze
-Once the V4.1 calibration dataset passes the sweep success criteria (≥4/5) and is frozen, the project transitions to **Family B — Selective Abstention / Verification / Clarification**. This is the second family on Axis I (Epistemic Monitoring) and the best monitoring-to-action bridge in the design. The action ontology (`answer`, `ask_clarifying_question`, `abstain`, `verify_needed`), schema (`AbstentionResponse`), and scoring approach are specified in the Recommendations memo §Family B (lines 209–242). Family B design documents will be added to the governing docs table as they are created.
+### 8. Family B is integrated
+Family B — Selective Abstention / Verification / Clarification — is now integrated into the lean notebook as a 48-item pilot. This is the second family on Axis I (Epistemic Monitoring) and the best monitoring-to-action bridge in the design. The canonical action labels are `answer`, `clarify`, `verify`, `abstain`. Schema: `AbstentionResponse`. Primary metric: UWAA (Utility-Weighted Action Accuracy) as specified in `docs/family_b_scoring_spec.md`.
 
 ---
 
@@ -74,8 +76,8 @@ Once the V4.1 calibration dataset passes the sweep success criteria (≥4/5) and
 
 | ID | Family | Axis | Turns | Status |
 |----|--------|------|-------|--------|
-| A | Confidence Calibration | Monitoring | 1 | V1 implementation target |
-| B | Selective Abstention / Verification | Monitoring | 1 | **Next: post V4.1 freeze** |
+| A | Confidence Calibration | Monitoring | 1 | **V4.2 dataset, grading_v2, lean notebook live** |
+| B | Selective Abstention / Verification | Monitoring | 1 | **48-item pilot integrated, UWAA scoring** |
 | C | Self-Correction (intrinsic + evidence-assisted) | Control | 2 | V2 |
 | D | Grounding Sensitivity | Monitoring | 1 | V2 |
 | E | Control-Policy Adaptation | Control | 2 | V2 |
@@ -99,27 +101,40 @@ Weights are provisional and will be tuned after pilot runs. The composite is for
 
 ---
 
-## Canonical schema: answer key
+## Canonical schemas
 
-All answer-key data (JSON files, notebook embedded ANSWER_KEY, adjudication.py) MUST use these field names:
+### Answer key (benchmark dataset)
+
+All items in `data/metajudge_benchmark_v1.json` use these fields:
 
 ```json
 {
-  "cal_001": {
-    "gold_answer": "42",
-    "aliases": ["42", "42.0", "forty-two"],
-    "rule": "numeric"
-  }
+  "item_id": "gen_b3_022",
+  "question": "How many hearts does an octopus have?",
+  "gold_answer": "3",
+  "aliases": ["3", "three"],
+  "rule": "numeric",
+  "mechanism_primary": "ModifiedCRT",
+  "batch": "batch_3"
 }
 ```
 
-| Field | Type | Values | Required |
-|-------|------|--------|----------|
-| `gold_answer` | string | The single canonical correct answer | Yes |
-| `aliases` | array of strings | All accepted equivalent forms (includes gold_answer) | Yes |
-| `rule` | string | `alias`, `numeric`, or `yes_no` | Yes |
+### Adjudication registry (grading_v2)
 
-The CSV (`calibration.csv`) column is also `gold_answer`. Do not use `canonical`, `canonical_answer`, `accepted_aliases`, or `grader_rule` — these are deprecated.
+The adjudication registry (`data/adjudication_registry.json`) drives the grading_v2 engine with 8 grader rules:
+
+| Grader Rule | Items | Description |
+|-------------|-------|-------------|
+| `alias_plus_normalization` | 23 | Enhanced alias matching + sci-notation normalization |
+| `approx_numeric_small` | 24 | Fixed tolerance (abs_tol / rel_tol) |
+| `approx_numeric_dynamic` | 17 | Time-sensitive numerics with tolerance |
+| `code_output` | 16 | Exact match after strip/lower |
+| `tri_label` | 14 | Three-valued {true, false, contested} |
+| `exact_constant` | 6 | SI constants with rel_tol=1e-6 |
+| `fraction_or_decimal` | 2 | Accepts both fraction and decimal forms |
+| `yes_no` | 0 | Binary true/false (supported, no V4.2 items) |
+
+The lean notebook uses `grading_v2.grade_item()` exclusively. The old 3-rule `adjudication.py` system (alias/numeric/yes_no) is retained for backward compatibility but is NOT used for scoring.
 
 ---
 
@@ -131,6 +146,20 @@ The CSV (`calibration.csv`) column is also `gold_answer`. Do not use `canonical`
 4. **Do not spend quota** on anything other than the current implementation slice.
 5. **Do not silently diverge** from this document. If you think something here is wrong, flag it explicitly.
 6. **Do not use deprecated field names** (`canonical`, `canonical_answer`, `accepted_aliases`, `grader_rule`) in any new code or data files.
+
+---
+
+## Audit export requirements
+
+Every serious Kaggle run MUST produce per-item audit CSVs written to `/kaggle/working/`:
+
+| File | Required columns | When |
+|------|-----------------|------|
+| `calibration_item_audit.csv` | item_id, gold_answer, grader_rule, model_answer, confidence, is_correct, brier_score | Every run |
+| `family_b_item_audit.csv` | item_id, gold_answer, gold_action, model_decision, model_answer, is_correct, utility | When Family B runs |
+| `run_summary.json` | timestamp, accuracy, mean_score, per-family stats | Every run |
+
+These are the backbone of auditability. No run is considered valid without them.
 
 ---
 
@@ -170,13 +199,13 @@ Every dataset change (item additions, difficulty revisions, alias updates) MUST 
 
 | Artifact | Format | Contents |
 |----------|--------|----------|
-| Per-item audit trail | `sweep_results` dict (Cell 8 output) | model_answer, confidence, is_correct, brier_score per item per model |
-| Cross-model leaderboard | Printed table (Cell 8) | Headline score, accuracy per model |
-| Per-bucket accuracy matrix | Printed table (Cell 9) | Accuracy by difficulty bucket × model |
-| Discrimination map | Printed list (Cell 9) | Items where models disagree (signal items) |
-| Overconfidence report | Printed list (Cell 9) | Wrong answers with conf > 0.80 per model |
-| Success criteria verdict | Printed checklist (Cell 9) | 5 criteria: pass/fail with measured values |
-| Audit CSV | Exportable DataFrame (Cell 9) | Flat table: model × item × all fields |
+| Per-item audit trail | `sweep_results` dict (Cell 7 output) | model_answer, confidence, is_correct, brier_score per item per model |
+| Cross-model leaderboard | Printed table (Cell 7) | Headline score, accuracy per model |
+| Per-bucket accuracy matrix | Printed table (Cell 7) | Accuracy by difficulty bucket × model |
+| Discrimination map | Printed list (Cell 7) | Items where models disagree (signal items) |
+| Overconfidence report | Printed list (Cell 7) | Wrong answers with conf > 0.80 per model |
+| Success criteria verdict | Printed checklist (Cell 7) | 5 criteria: pass/fail with measured values |
+| Audit CSV | Audit export cell (Cell 16) | Flat table: model × item × all fields |
 
 **Success criteria (must meet ≥4/5 to freeze):**
 
@@ -245,21 +274,32 @@ Approach A is Kaggle's recommended path for leaderboard generation. Approach B i
 - Cell 8 (audit sweep): same cost, gated by `RUN_AUDIT = False` to prevent accidental burns
 - Always run Cell 7 first for headline scores; only run Cell 8 when per-item diagnostics are needed
 
-**Notebook cell map (v3 — post-SDK-alignment):**
+**Notebook cell map (lean notebook — current submission lineage):**
 
-| Cell | Purpose | Dependencies |
-|------|---------|--------------|
+The official submission notebook is `notebooks/metajudge_submission_lean.ipynb`.
+
+| Cell | Purpose | Key outputs |
+|------|---------|-------------|
 | 0 | Markdown header | — |
-| 1 | Imports + model discovery (`kbench.llms.keys()`) | — |
-| 2 | Response schema (CalibrationResponse dataclass) | Cell 1 |
-| 3 | Embedded dataset + answer key (102 V4 items) | Cell 1 |
-| 4 | Scoring & adjudication functions | Cell 3 |
-| 5 | Single-item `@kbench.task` definition | Cells 2-4 |
-| 6 | Batch evaluation (`@kbench.task` with DataFrame) | Cell 5 |
-| 7 | Multi-model sweep via `evaluate()` — headline scores | Cells 5-6 |
-| 8 | Audit sweep — per-item detail (gated: `RUN_AUDIT`) | Cells 1-6 |
-| 9 | Cross-model diagnostics + success criteria verdict | Cell 8 output |
-| 10 | `%choose metacog_calibration_v1_batch` — submit to Kaggle | Cell 6 |
+| 1 | Imports + sys.path + SDK setup | `grade_item`, `load_registry`, `brier_item_score` |
+| 2 | CalibrationResponse schema | dataclass |
+| 3 | Load dataset + registry from Kaggle Dataset | `dataset` (102 items), `ANSWER_KEY`, `REGISTRY` |
+| 4 | Scoring self-tests (17 assertions + 102/102 gold self-adj) | pass/fail |
+| 5 | Single-item `@kbench.task` + smoke test | `metacog_calibration_v1` |
+| 6 | Batch `@kbench.task` (102-item calibration) | `metacog_calibration_v1_batch` |
+| 7 | Multi-model sweep (5 models) | per-model scores |
+| 8 | I/O contract: `run_summary.json` | structured output |
+| 9 | Family B separator (markdown) | — |
+| 10 | Family B setup: imports + dataset (48 items) | `family_b_items` |
+| 11 | AbstentionResponse schema | dataclass (4-action) |
+| 12 | Family B self-tests | pass/fail |
+| 13 | Family B single-item `@kbench.task` + smoke test | `metacog_abstention_v1` |
+| 14 | Family B batch (48-item pilot) | UWAA, action F1 |
+| 15 | Composite score (calibration + abstention) | weighted blend |
+| 16 | Audit export: CSV + enhanced run_summary.json | `calibration_item_audit.csv`, `family_b_item_audit.csv` |
+| 17 | `%choose metacog_calibration_v1_batch` | Kaggle submission |
+
+**Kaggle Dataset:** `seanmcgee2025/metajudge-benchmark` — mounted at `/kaggle/input/datasets/seanmcgee2025/metajudge-benchmark/` in Benchmarks notebooks.
 
 ### Iteration protocol
 
@@ -268,10 +308,9 @@ When replacing items after a failed sweep:
 2. Pull replacements from `data/harvest/v2_rejection_log.json` (123 candidates)
 3. If the rejection log is exhausted, author new items following `expansion_sprint_v2.md` §2.2
 4. Run the Formatter on new items (aliases + format gates)
-5. Update production files (calibration.csv, answer_key.json, provenance.csv)
-6. Update the embedded dataset in Cell 3 of the notebook
-7. Re-run full sweep (step 1 above)
-8. Document changes in a commit message referencing the sweep that triggered them
+5. Update production files (`data/metajudge_benchmark_v1.json`, `data/adjudication_registry.json`)
+6. Re-run full sweep (step 1 above)
+7. Document changes in a commit message referencing the sweep that triggered them
 
 ---
 
@@ -287,4 +326,6 @@ When replacing items after a failed sweep:
 - **5-Model Sweep (March 19):** All 5 models verified and run. Results: Pro 98/100, Flash 97/100, Haiku 97/100, Sonnet 95/100, DeepSeek 93/100. Success criteria: 1/5 met (C4 only). Brier spread 0.036 (need 0.05). 11 discriminating items. 16 overconfident errors. Verdict: NEEDS WORK — dataset not hard enough for frontier models.
 - **V4 Adversarial Pipeline (March 20):** 4-batch 2-agent adversarial generation pipeline produced 266 candidates → 102 survivors (38.3% yield). 58/102 (56.9%) discriminate across 4-model panel. Best mechanisms: IOED (94% disc), Prototype (83%), Anchoring (60%).
 - **V4.1 Remediation (March 20):** 37 items replaced via adversarial pipeline. 102-item dataset assembled with adjudication registry and grading_v2 engine (8 grader classes). Mechanism distribution: ModifiedCRT 18, Compositional 17, CodeExecution 16, AmbiguityMetacognition 14, Anchoring 10, Prototype 10, IOED 7, ConditionalTemporal 7, RLHF 3. All 212 tests pass. Awaiting V4.1 sweep.
-- **Current:** V4.1 sweep in progress on Kaggle. Next milestone: sweep success criteria verdict → dataset freeze → Family B design sprint.
+- **VPS Session (March 21):** Lean notebook upgraded to grading_v2 (8-rule registry-driven adjudication). V4.2 dataset (7 IOED replacements). Family B 48-item pilot integrated (UWAA/F1/AUARC). Kaggle Benchmarks mount path discovered. Per-item audit CSV export added. 5-model sweep completed: Pro 0.894, Sonnet 0.769, DeepSeek 0.776, Haiku 0.730. C1 PASS (spread=0.16), C4 PASS (52 items), C5 PASS (ECE range=0.14). 246 tests passing.
+- **Tri-label + Family B v3 (March 21):** Fixed 3 tri-label gold answers (gen_a2_001, gen_a2_007, gen_b_037: false→contested). Family B upgraded to v3: 60 items (was 48), 15 answer + 12 clarify + 18 verify + 15 abstain. All 71 candidates validated by Claude+DeepSeek+Gemini, 60 selected. Notebook self-tests updated (gen_b_039 replaces gen_b_037 for false-path test).
+- **Current:** V4.2 lean notebook with corrected tri-labels and Family B v3 (60 items). 5-model sweep complete (3/5 criteria verified PASS, C2/C3 pending mechanism analysis). Next: re-run sweep with corrected gold answers, finalize C2/C3 analysis, begin writeup.

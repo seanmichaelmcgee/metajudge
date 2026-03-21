@@ -96,16 +96,16 @@ class TestCalibrationMetrics:
 
 class TestAbstentionMetrics:
     def test_utility_correct_answer(self):
-        u = decision_utility_single("answer", True, True)
+        u = decision_utility_single("answer", True, "answer")
         assert u == 1.0
 
     def test_utility_abstain_on_answerable(self):
-        u = decision_utility_single("abstain", False, True)
+        u = decision_utility_single("abstain", False, "answer")
         assert u == -0.3
 
     def test_utility_abstain_on_unanswerable(self):
-        u = decision_utility_single("abstain", False, False)
-        assert u == 0.6
+        u = decision_utility_single("abstain", False, "abstain")
+        assert u == 1.0
 
     def test_binary_quality_correct_answer(self):
         assert abstention_quality_binary(False, True) == 1.0

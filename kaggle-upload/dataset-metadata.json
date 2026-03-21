@@ -1,0 +1,7 @@
+{
+  "title": "MetaJudge Benchmark",
+  "id": "seanmichaelmcgee/metajudge-benchmark",
+  "licenses": [{"name": "CC0-1.0"}],
+  "description": "102-item V4.2 calibration dataset, 48-item Family B selective abstention pilot, adjudication registry, and metajudge scoring package for the MetaJudge metacognition benchmark (Measuring Progress Toward AGI competition).",
+  "keywords": ["metacognition", "calibration", "agi", "benchmarks", "abstention"]
+}
