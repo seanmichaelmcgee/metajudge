@@ -39,17 +39,25 @@ class CalibrationResponse(BaseModel):
 # ---------------------------------------------------------------------------
 
 class AbstentionResponse(BaseModel):
-    """Response schema for abstention/deferral tasks."""
-    decision: Literal["answer", "ask", "abstain", "verify"] = Field(
-        ..., description="Action choice"
+    """Response schema for abstention/deferral tasks.
+
+    Four-action decision model for Family B (Selective Abstention /
+    Verification / Clarification).  Canonical action labels:
+    answer, clarify, verify, abstain.
+    """
+    decision: Literal["answer", "clarify", "verify", "abstain"] = Field(
+        ..., description="Action choice: answer | clarify | verify | abstain"
     )
-    answer: Optional[str] = Field(None, description="Answer if decision is 'answer'")
+    answer: Optional[str] = Field(None, description="Answer text (required when decision='answer')")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence 0-1")
-    missing_information: Optional[str] = Field(
-        None, description="What info is missing (if decision is 'ask')"
+    clarification_request: Optional[str] = Field(
+        None, description="Clarifying question the model would ask (diagnostic/weakly scored)"
+    )
+    verification_target: Optional[str] = Field(
+        None, description="What the model would verify and how (diagnostic only)"
     )
     abstention_reason: Optional[str] = Field(
-        None, description="Why abstaining (if decision is 'abstain')"
+        None, description="Why the model is abstaining (diagnostic only)"
     )
 
 
@@ -161,7 +169,7 @@ class TaskItemMetadata(BaseModel):
         "clear", "underspecified", "ambiguous", "adversarial"
     ] = "clear"
     intended_optimal_action: Literal[
-        "answer", "ask", "abstain", "verify", "revise", "keep"
+        "answer", "clarify", "abstain", "verify", "revise", "keep"
     ] = "answer"
     source_type_gold: Optional[Literal[
         "prompt", "inference", "memory", "guess", "unresolved"

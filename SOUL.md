@@ -66,7 +66,7 @@ Self-correction is two separate subfamilies. Never blend them into a single scor
 Control-policy adaptation is scored by behavioral outcomes under perturbation, not by agreement with a hand-authored strategy label.
 
 ### 8. Family B is the next implementation target after calibration freeze
-Once the V4.1 calibration dataset passes the sweep success criteria (≥4/5) and is frozen, the project transitions to **Family B — Selective Abstention / Verification / Clarification**. This is the second family on Axis I (Epistemic Monitoring) and the best monitoring-to-action bridge in the design. The action ontology (`answer`, `ask_clarifying_question`, `abstain`, `verify_needed`), schema (`AbstentionResponse`), and scoring approach are specified in the Recommendations memo §Family B (lines 209–242). Family B design documents will be added to the governing docs table as they are created.
+Once the V4.1 calibration dataset passes the sweep success criteria (≥4/5) and is frozen, the project transitions to **Family B — Selective Abstention / Verification / Clarification**. This is the second family on Axis I (Epistemic Monitoring) and the best monitoring-to-action bridge in the design. The canonical action labels are `answer`, `clarify`, `verify`, `abstain` (implementation short-forms; the original spec used longer names). Schema: `AbstentionResponse`. Scoring approach: UWAA (Utility-Weighted Action Accuracy) as specified in the Family B scoring spec (`docs/family_b_scoring_spec.md`). Family B design documents will be added to the governing docs table as they are created.
 
 ---
 

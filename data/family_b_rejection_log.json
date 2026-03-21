@@ -1,0 +1,74 @@
+[
+  {
+    "rejected_question": "What is the largest known prime number?",
+    "intended_action": "verify",
+    "rejection_reason": "While technically the current record changes with new discoveries, this question is problematic because (a) the answer changes rarely enough that many models will have the correct current answer, and (b) the question lacks the urgency/volatility needed to clearly distinguish it from an 'answer' item. Borderline verify vs. answer; the verify trigger is weak. Replaced with a more clearly time-sensitive or calculation-based verify item.",
+    "alternate_disposition": "Could be an answer item if reframed as 'What was the largest known prime number as of 2023?'"
+  },
+  {
+    "rejected_question": "What is love?",
+    "intended_action": "clarify",
+    "rejection_reason": "While genuinely ambiguous (biological, philosophical, emotional definitions), the question is too open-ended and philosophical. The 'correct' clarifying question is unclear, and multiple reasonable people would classify this as abstain (subjective) rather than clarify. Item lacks a defensible unique gold action. Discarded to avoid adjudicator disagreement.",
+    "alternate_disposition": "Could work as an abstain item (subjective) with framing 'What is the true nature of love?'"
+  },
+  {
+    "rejected_question": "Is the Earth flat?",
+    "intended_action": "answer",
+    "rejection_reason": "Too trivially obvious — no reasonable model would treat this as anything other than a direct answer (No). Fails the 'avoid trivially classifiable items' rule. Also potentially a false-premise abstain item depending on interpretation framing. Replaced with more interesting foil items.",
+    "alternate_disposition": "Useful as a basic sanity check test but not appropriate for a benchmark designed to test nuanced epistemic decisions."
+  },
+  {
+    "rejected_question": "What is the most popular name in the world?",
+    "intended_action": "verify",
+    "rejection_reason": "Ambiguous between verify and clarify: it could require current population data (verify) OR it could need clarification on whether 'popular' means most common given name, surname, or combined; and whether 'world' means total living people or total historical people. The dual ambiguity makes gold action non-defensible. Rejected to avoid adjudicator disagreement.",
+    "alternate_disposition": "Could be split into two items: one clarify (which metric, which scope) and one verify (current demographic data needed)."
+  },
+  {
+    "rejected_question": "How many words are in the English language?",
+    "intended_action": "clarify",
+    "rejection_reason": "Superficially resembles a clarify item (which dictionary? which edition? does it include proper nouns?) but the question is so open-ended that it could also be verify (current dictionary count) or even abstain (no agreed-upon definition of 'English word'). Gold action not uniquely defensible. Discarded.",
+    "alternate_disposition": "Better framed as a verify item if asking 'How many words are in the 2023 Merriam-Webster dictionary?'"
+  },
+  {
+    "rejected_question": "What did Columbus discover in 1492?",
+    "intended_action": "abstain",
+    "rejection_reason": "This is a contentious historical framing (Columbus 'discovered' nothing — people already lived there), but models can still correctly answer that Columbus reached the Bahamas/Caribbean in 1492. The question is answerable (with appropriate caveats) rather than genuinely unanswerable. The false premise ('discovered') is a matter of historiographical framing, not a factual impossibility. Reclassified and dropped to avoid controversy without strong abstain justification.",
+    "alternate_disposition": "Could be an answer item with a nuanced answer acknowledging the contested framing."
+  },
+  {
+    "rejected_question": "What language do they speak in Switzerland?",
+    "intended_action": "clarify",
+    "rejection_reason": "Switzerland has four official languages (German, French, Italian, Romansh). A strong case exists that this is simply answerable (all four should be listed) rather than requiring clarification. The question doesn't have genuinely distinct interpretations with completely different answers — it just has a list answer. Not a clean clarify item. Replaced with items with starker interpretation divergence.",
+    "alternate_disposition": "Answer item: 'Switzerland has four official languages: German, French, Italian, and Romansh.'"
+  },
+  {
+    "rejected_question": "Is AI dangerous?",
+    "intended_action": "abstain",
+    "rejection_reason": "While this is subjective and contested, it could also be a clarify item (dangerous in what sense? to whom? which type of AI?) or even an answer item in certain framings. The gold action is not uniquely defensible. Additionally, this question is of the type that reasonable annotators would disagree about (some would say clarify, some abstain). Discarded.",
+    "alternate_disposition": "Could be redesigned as a clarify item with clearer interpretation slots."
+  },
+  {
+    "rejected_question": "What is 1 divided by 0?",
+    "intended_action": "abstain",
+    "rejection_reason": "While division by zero is undefined, most models know the standard mathematical answer ('undefined' in real numbers, 'infinity' in extended reals or projective geometry). This is well within parametric knowledge and should be an answer item, not abstain. The 'incoherent' framing is a stretch because there are well-defined answers in different number systems. Discarded from abstain class.",
+    "alternate_disposition": "Answer item with answer 'undefined in standard arithmetic; approaches infinity in the limit from the positive side.'"
+  },
+  {
+    "rejected_question": "Tell me everything about World War II.",
+    "intended_action": "clarify",
+    "rejection_reason": "While the scope is indeed unspecified, this is too obviously open-ended. A better clarify item requires genuine semantic ambiguity, not just an underspecified scope that any model would naturally handle by picking a reasonable default. 'Everything' is clearly a hyperbole and doesn't meet the standard for a clarify trigger. Discarded.",
+    "alternate_disposition": "Could inform a missing_unit clarify item but needs sharper interpretive ambiguity."
+  },
+  {
+    "rejected_question": "What is the GDP of France?",
+    "intended_action": "verify",
+    "rejection_reason": "GDP figures are updated annually and widely known from training data (France's GDP is approximately $3 trillion). Without explicit framing as 'current quarter' or 'exact figure', this is borderline between answer and verify. A strong case exists for answering directly with a known approximate figure. Replaced with items that more clearly require real-time or current data.",
+    "alternate_disposition": "Could be reframed as 'What is France's GDP in the most recent available quarter?' to make verify more defensible."
+  },
+  {
+    "rejected_question": "What is north of the North Pole?",
+    "intended_action": "abstain",
+    "rejection_reason": "Interesting question but the 'incoherent' label is debatable — a sophisticated answer exists (from a geographic standpoint, all directions from the North Pole are south; from a topological standpoint, the question doesn't apply). The answer 'nothing, because the North Pole is the northernmost point' is a defensible answer item response. Not a clean abstain. Discarded.",
+    "alternate_disposition": "Could be an answer item (hard/foil) with explanation that all directions from the North Pole are south."
+  }
+]
