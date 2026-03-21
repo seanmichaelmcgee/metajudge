@@ -538,7 +538,7 @@ class TestGradeItem:
 
 class TestLoadRegistry:
     def test_loads_all_items(self, registry):
-        assert len(registry) == 65  # 102 - 37 replaced items after v4.1 triage
+        assert len(registry) == 102  # 65 base + 37 replacements = V4.1 full set
 
     def test_keyed_by_item_id(self, registry):
         assert "gen_a_030" in registry

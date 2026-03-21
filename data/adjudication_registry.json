@@ -1413,5 +1413,659 @@
       "contested"
     ],
     "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_001",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "12",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_002",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "-4 1",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_003",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "[[5], [5], [5]]",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_004",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "3 True",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_005",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "[1]\n[1, 2]\n[1, 2, 3]",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_006",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "2 3",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_007",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "True True False",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_008",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "2 0",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_009",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "True False True",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_010",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "[2, 3] [1, 4]",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_011",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "{'x': 1, 'y': 3, 'z': 4}",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_012",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "[1, 10, 4, 5]",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_013",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "[6, 8]",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_014",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "'' True 15",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ce_015",
+    "answer_type": "text",
+    "grader_rule": "code_output",
+    "gold_answer": "['date', 'apple', 'banana', 'cherry']",
+    "accepted_forms": [],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Python 3.11+ execution verified",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ct_001",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "47",
+    "accepted_forms": [
+      "47%",
+      "47 percent",
+      "0.47"
+    ],
+    "tolerance_class": "pct_1",
+    "tolerance_params": {
+      "rel_tol": 0.01
+    },
+    "time_anchor": "March 2025",
+    "source_anchor": "March 2025 IAU Minor Planet Center announcement; (274-146)/274 = 128/274 ≈ 0.4672 = 46.7% ≈ 47%",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ct_002",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "160",
+    "accepted_forms": [
+      "160",
+      "160 million",
+      "€160 million",
+      "160M"
+    ],
+    "tolerance_class": "abs_01",
+    "tolerance_params": {
+      "abs_tol": 0.01
+    },
+    "time_anchor": "June 2024 – June 2025",
+    "source_anchor": "ECB rate cutting cycle June 2024 to June 2025, 4.00% to 2.00%; €8B × 2.00% = €160M annual decrease",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ct_003",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "341",
+    "accepted_forms": [
+      "341",
+      "$341 billion",
+      "341 billion"
+    ],
+    "tolerance_class": "pct_2",
+    "tolerance_params": {
+      "rel_tol": 0.02
+    },
+    "time_anchor": "December 2025",
+    "source_anchor": "India GDP Dec 2025 ~$4.18T per government statement; India after 1yr: 4.18×1.065=$4.4517T; Japan after 1yr: 4.07×1.01=$4.1107T; gap: $4.4517T-$4.1107T=$0.3410T≈$341B",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ct_004",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "192000",
+    "accepted_forms": [
+      "192,000",
+      "192000"
+    ],
+    "tolerance_class": "pct_2",
+    "tolerance_params": {
+      "rel_tol": 0.02
+    },
+    "time_anchor": "February 2026",
+    "source_anchor": "UN World Population Prospects and Worldometer 2025 data; 70,000,000 / 365 ≈ 191,781 ≈ 192,000",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ct_005",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "106000",
+    "accepted_forms": [
+      "$106,000",
+      "106,000",
+      "106000"
+    ],
+    "tolerance_class": "pct_2",
+    "tolerance_params": {
+      "rel_tol": 0.02
+    },
+    "time_anchor": "January 2025",
+    "source_anchor": "U.S. Treasury and Census data January 2025; $36.2T / 340M = $36,200,000M / 340M ≈ $106,471 ≈ $106,000",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ct_006",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "2.07",
+    "accepted_forms": [
+      "2.07",
+      "$2.07 trillion",
+      "2.07 trillion",
+      "$2.07T"
+    ],
+    "tolerance_class": "abs_01",
+    "tolerance_params": {
+      "abs_tol": 0.01
+    },
+    "time_anchor": "Q2 FY2025-26",
+    "source_anchor": "Given figures: $1.05T + $1.02T = $2.07T. Growth rates are distractors — the question asks for the combined GDP in that quarter, which is simply the sum of the given figures.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_ct_007",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "30000",
+    "accepted_forms": [
+      "30,000",
+      "30000"
+    ],
+    "tolerance_class": "pct_1",
+    "tolerance_params": {
+      "rel_tol": 0.01
+    },
+    "time_anchor": "June 2024 – June 2025",
+    "source_anchor": "First half: €1M × 4.00% × 0.5 = €20,000. Second half: €1M × 2.00% × 0.5 = €10,000. Total: €30,000.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_crt_001",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "10",
+    "accepted_forms": [
+      "10",
+      "10 cents",
+      "$0.10",
+      "0.10"
+    ],
+    "tolerance_class": "abs_01",
+    "tolerance_params": {
+      "abs_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": "Let ball = x. Bat = x + $1.00. Together: x + (x+1.00) = 1.20. 2x = 0.20. x = $0.10 = 10 cents.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_crt_002",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "5",
+    "accepted_forms": [
+      "5",
+      "5 minutes",
+      "five",
+      "five minutes"
+    ],
+    "tolerance_class": "abs_01",
+    "tolerance_params": {
+      "abs_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": "Each machine makes 1 widget in 5 minutes. 100 machines make 100 widgets in 5 minutes (parallel production).",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_crt_003",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "8",
+    "accepted_forms": [
+      "8",
+      "8 minutes",
+      "eight",
+      "eight minutes"
+    ],
+    "tolerance_class": "abs_01",
+    "tolerance_params": {
+      "abs_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": "Each machine makes 1 widget in 8 minutes. 4 machines make 4 widgets in 8 minutes (parallel).",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_crt_004",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "28",
+    "accepted_forms": [
+      "28",
+      "28th day",
+      "day 28",
+      "twenty-eight"
+    ],
+    "tolerance_class": "abs_01",
+    "tolerance_params": {
+      "abs_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": "Day 30 = full. Day 29 = half. Day 28 = quarter. Each day backward halves the coverage.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_crt_005",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "11",
+    "accepted_forms": [
+      "11",
+      "11 hours",
+      "eleven",
+      "eleven hours"
+    ],
+    "tolerance_class": "abs_01",
+    "tolerance_params": {
+      "abs_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": "At hour 12 = full. At hour 11 = 1/3 of full (since one tripling later fills it). Working backward: 12-1 = 11.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_crt_006",
+    "answer_type": "numeric",
+    "grader_rule": "fraction_or_decimal",
+    "gold_answer": "3/8",
+    "accepted_forms": [
+      "3/8",
+      "0.375",
+      "37.5%"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "Initial pick has 1/4 chance. Other 3 doors collectively have 3/4. After host opens one goat door, that 3/4 is split between 2 remaining doors: 3/4 ÷ 2 = 3/8 each.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_crt_007",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "187.50",
+    "accepted_forms": [
+      "$187.50",
+      "187.50",
+      "$187.5",
+      "187.5"
+    ],
+    "tolerance_class": "abs_01",
+    "tolerance_params": {
+      "abs_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": "$200 × 1.25 = $250. $250 × 0.75 = $187.50. A 25% increase followed by a 25% decrease does NOT return to the original price.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_crt_008",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "28",
+    "accepted_forms": [
+      "28",
+      "28 days",
+      "twenty-eight"
+    ],
+    "tolerance_class": "abs_01",
+    "tolerance_params": {
+      "abs_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": "Net progress per day (except the last): 3-2 = 1 foot. After 27 days: 27 feet. On day 28: climbs 3 feet to reach 30 feet (the top) and escapes without sliding back.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_crt_009",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "They are equal",
+    "accepted_forms": [
+      "They are equal",
+      "equal",
+      "the same",
+      "neither weighs more",
+      "they weigh the same"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "After the transfer, both jars have 10L. Whatever wine is missing from Jar A has been replaced by an equal amount of water, and vice versa. So wine in B = water in A.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_crt_010",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "48",
+    "accepted_forms": [
+      "48",
+      "48 km/h",
+      "48 kph",
+      "forty-eight"
+    ],
+    "tolerance_class": "abs_01",
+    "tolerance_params": {
+      "abs_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": "Harmonic mean: 2×60×40/(60+40) = 4800/100 = 48 km/h. NOT (60+40)/2 = 50.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_crt_011",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "750",
+    "accepted_forms": [
+      "$750",
+      "750",
+      "$750.00",
+      "seven hundred fifty"
+    ],
+    "tolerance_class": "abs_01",
+    "tolerance_params": {
+      "abs_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": "Year 1: $1,000 × 1.50 = $1,500. Year 2: $1,500 × 0.50 = $750. A 50% gain followed by a 50% loss does NOT return to original.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_crt_012",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "There is no missing dollar",
+    "accepted_forms": [
+      "There is no missing dollar",
+      "no missing dollar",
+      "the money is accounted for",
+      "it's an accounting trick",
+      "there is no paradox"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": "The $27 paid by the friends INCLUDES the $2 tip. The correct accounting: $25 (meal) + $2 (tip) = $27 paid, and $3 returned. $27 + $3 = $30. The question misleadingly adds the $2 to $27 instead of subtracting it.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_comp_001",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "2",
+    "accepted_forms": [
+      "2",
+      "two"
+    ],
+    "tolerance_class": "abs_01",
+    "tolerance_params": {
+      "abs_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": "Burj Khalifa height: 828m (official). Golden Gate main span: 1,280m (goldengate.org). 828 × 1 = 828 < 1,280. 828 × 2 = 1,656 > 1,280. So 2 Burj Khalifas exceed the span.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_comp_002",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "5.3",
+    "accepted_forms": [
+      "5.3",
+      "5.3x",
+      "5.3 times"
+    ],
+    "tolerance_class": "pct_2",
+    "tolerance_params": {
+      "rel_tol": 0.02
+    },
+    "time_anchor": null,
+    "source_anchor": "Suriname area: ~163,821 km² (World Population Review). Belgium area: ~30,689 km² (Belgium.be official). 163,821 / 30,689 ≈ 5.34 ≈ 5.3.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v41_comp_003",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_dynamic",
+    "gold_answer": "2135",
+    "accepted_forms": [
+      "2,135",
+      "2135"
+    ],
+    "tolerance_class": "pct_1",
+    "tolerance_params": {
+      "rel_tol": 0.01
+    },
+    "time_anchor": null,
+    "source_anchor": "Everest: 8,849m (2020 survey). Challenger Deep: 10,984m. Difference: 10,984 - 8,849 = 2,135m of water above the peak.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
   }
 ]

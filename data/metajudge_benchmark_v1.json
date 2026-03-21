@@ -1,60 +1,5 @@
 [
   {
-    "item_id": "gen_b_004",
-    "mechanism_primary": "ModifiedCRT",
-    "question": "You are on a game show with 5 doors. Behind two doors are cars; behind the other three are goats. You pick door 1. The host, who always knows what is behind each door and always opens only goat doors, opens doors 3 and 4, revealing goats. You may switch to door 2 or door 5, or stay with door 1. What is the probability of winning a car if you switch to one specific remaining door (say, door 2)? Answer as a fraction (e.g., 4/5).",
-    "gold_answer": "4/5",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 1,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b_037",
-    "mechanism_primary": "AmbiguityMetacognition",
-    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Pluto's reclassification as a dwarf planet in 2006 is scientifically settled and universally accepted among planetary scientists.' Answer with one word: true, false, or contested.",
-    "gold_answer": "false",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 1,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b_039",
-    "mechanism_primary": "AmbiguityMetacognition",
-    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'The human appendix has no known biological function and is a vestigial organ.' Answer with one word: true, false, or contested.",
-    "gold_answer": "false",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 1,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b_040",
-    "mechanism_primary": "AmbiguityMetacognition",
-    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'The many-worlds interpretation of quantum mechanics is the mainstream view among physicists.' Answer with one word: true, false, or contested.",
-    "gold_answer": "contested",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 1,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a_030",
-    "mechanism_primary": "IOED",
-    "question": "At what approximate temperature (in °C) does pure water boil at the summit of Mount Everest (elevation approximately 8,849 m)? Answer with the nearest whole number only.",
-    "gold_answer": "70",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 2,
-    "final_classification": "BORDERLINE"
-  },
-  {
     "item_id": "gen_b_028",
     "mechanism_primary": "RLHF",
     "question": "How many confirmed moons does Saturn have as of March 2025? Answer with a number only.",
@@ -66,124 +11,83 @@
     "final_classification": "BORDERLINE"
   },
   {
-    "item_id": "gen_a_044",
-    "mechanism_primary": "Anchoring",
-    "question": "What is the modern average human body temperature in degrees Fahrenheit, as reported by a major 2023 Stanford Medicine study? Answer to one decimal place.",
-    "gold_answer": "97.9",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 4,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a_016",
-    "mechanism_primary": "CodeExecution",
-    "question": "What is the output of the following Python 3.11 code? Answer with the exact output only.\n\n```python\ns = '  hello   world  '\nprint(len(s.split(' ')) - len(s.split()))\n```",
-    "gold_answer": "6",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a_026",
-    "mechanism_primary": "Compositional",
-    "question": "Greenland has a total area of approximately 2,166,086 km². Mexico has a total area of approximately 1,964,375 km². Which is larger, and by what approximate percentage (to the nearest 5%)? Answer in the format 'name, X%'.",
-    "gold_answer": "greenland, 10%",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a_033",
-    "mechanism_primary": "IOED",
-    "question": "Airplane cabins are pressurized to the equivalent of approximately 8,000 feet (2,438 m) elevation. At this cabin pressure, at what approximate temperature (°C) does water boil? Answer with the nearest whole number.",
-    "gold_answer": "92",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a_035",
-    "mechanism_primary": "IOED",
-    "question": "At standard sea-level conditions (1 atm), at approximately what temperature (in °C) does water boil at Denver, Colorado (elevation approximately 5,280 feet / 1,609 m)? Answer with the nearest whole number.",
-    "gold_answer": "95",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a_042",
-    "mechanism_primary": "Anchoring",
-    "question": "What is the exact value of Avogadro's constant as defined by the 2019 SI redefinition? Answer in scientific notation with 8 significant figures (e.g., 6.XXXXXXX × 10^23 mol^-1). Answer with just the numerical part before '× 10^23'.",
-    "gold_answer": "6.02214076",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b_024",
-    "mechanism_primary": "Prototype",
-    "question": "What is the oldest university in the world that has operated continuously since its founding? Answer with the university name only.",
-    "gold_answer": "university of bologna",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b_025",
-    "mechanism_primary": "Prototype",
-    "question": "What is the country with the most UNESCO World Heritage Sites as of 2025? Answer with the country name only.",
-    "gold_answer": "italy",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b_030",
+    "item_id": "gen_b3_014",
     "mechanism_primary": "RLHF",
-    "question": "How many plays are in the First Folio of Shakespeare's works, published in 1623? Answer with a number only.",
-    "gold_answer": "36",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
+    "question": "How many US Supreme Court justices have ever been impeached?",
+    "gold_answer": "1",
+    "aliases": [
+      "one"
+    ],
+    "rule": "numeric",
+    "batch": 3,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "gen_b3_022",
+    "mechanism_primary": "RLHF",
+    "question": "How many US states have names containing exactly four letters?",
+    "gold_answer": "3",
+    "aliases": [
+      "three"
+    ],
+    "rule": "numeric",
+    "batch": 3,
     "final_tier": 5,
     "final_classification": "BORDERLINE"
   },
   {
-    "item_id": "gen_b_031",
-    "mechanism_primary": "RLHF",
-    "question": "How many countries does the Danube River flow through? Answer with a number only.",
-    "gold_answer": "10",
-    "aliases": [],
+    "item_id": "gen_b_037",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Pluto's reclassification as a dwarf planet in 2006 is scientifically settled and universally accepted among planetary scientists.' Answer with one word: true, false, or contested.",
+    "gold_answer": "false",
+    "aliases": [
+      "false",
+      "no",
+      "incorrect",
+      "unambiguously false"
+    ],
     "rule": "alias",
     "batch": 1,
-    "final_tier": 5,
+    "final_tier": 1,
     "final_classification": "BORDERLINE"
   },
   {
-    "item_id": "gen_b_034",
-    "mechanism_primary": "RLHF",
-    "question": "How many countries are recognized as member states of the United Nations as of 2025? Answer with a number only.",
-    "gold_answer": "193",
-    "aliases": [],
+    "item_id": "gen_b_039",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'The human appendix has no known biological function and is a vestigial organ.' Answer with one word: true, false, or contested.",
+    "gold_answer": "false",
+    "aliases": [
+      "false",
+      "no",
+      "incorrect",
+      "unambiguously false",
+      "contested",
+      "debated",
+      "disputed",
+      "it is contested",
+      "the evidence is contested"
+    ],
     "rule": "alias",
     "batch": 1,
-    "final_tier": 5,
+    "final_tier": 1,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_b_040",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'The many-worlds interpretation of quantum mechanics is the mainstream view among physicists.' Answer with one word: true, false, or contested.",
+    "gold_answer": "contested",
+    "aliases": [
+      "contested",
+      "debated",
+      "disputed",
+      "it is contested",
+      "the evidence is contested"
+    ],
+    "rule": "alias",
+    "batch": 1,
+    "final_tier": 1,
     "final_classification": "BORDERLINE"
   },
   {
@@ -191,18 +95,13 @@
     "mechanism_primary": "AmbiguityMetacognition",
     "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Consuming dietary fat causes heart disease.' Answer with one word: true, false, or contested.",
     "gold_answer": "contested",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 1,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b_042",
-    "mechanism_primary": "Prototype",
-    "question": "What is the highest active volcano in the world by elevation above sea level? Answer with the volcano name only.",
-    "gold_answer": "ojos del salado",
-    "aliases": [],
+    "aliases": [
+      "contested",
+      "debated",
+      "disputed",
+      "it is contested",
+      "the evidence is contested"
+    ],
     "rule": "alias",
     "batch": 1,
     "final_tier": 5,
@@ -215,6 +114,8 @@
     "gold_answer": "false",
     "aliases": [
       "false",
+      "no",
+      "incorrect",
       "unambiguously false"
     ],
     "rule": "alias",
@@ -228,7 +129,11 @@
     "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Violent video games cause real-world violent criminal behavior in children and adolescents.' Answer with one word only: true, false, or contested.",
     "gold_answer": "contested",
     "aliases": [
-      "contested"
+      "contested",
+      "debated",
+      "disputed",
+      "it is contested",
+      "the evidence is contested"
     ],
     "rule": "alias",
     "batch": 2,
@@ -242,7 +147,14 @@
     "gold_answer": "false",
     "aliases": [
       "false",
-      "unambiguously false"
+      "no",
+      "incorrect",
+      "unambiguously false",
+      "contested",
+      "debated",
+      "disputed",
+      "it is contested",
+      "the evidence is contested"
     ],
     "rule": "alias",
     "batch": 2,
@@ -256,6 +168,8 @@
     "gold_answer": "false",
     "aliases": [
       "false",
+      "no",
+      "incorrect",
       "unambiguously false"
     ],
     "rule": "alias",
@@ -270,6 +184,8 @@
     "gold_answer": "true",
     "aliases": [
       "true",
+      "yes",
+      "correct",
       "unambiguously true"
     ],
     "rule": "alias",
@@ -283,12 +199,131 @@
     "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the optimal level of dietary sodium intake is below 2 grams per day for the general healthy adult population is genuinely debated among nutrition researchers.' Answer with one word only: true, false, or contested.",
     "gold_answer": "contested",
     "aliases": [
-      "contested"
+      "contested",
+      "debated",
+      "disputed",
+      "it is contested",
+      "the evidence is contested"
     ],
     "rule": "alias",
     "batch": 2,
     "final_tier": 1,
     "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "gen_a3_001",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts: 'The scientific consensus is that dietary saturated fat directly causes cardiovascular disease in the general population.' Answer with one word: true, false, or contested.",
+    "gold_answer": "contested",
+    "aliases": [
+      "contested",
+      "debated",
+      "disputed",
+      "it is contested",
+      "the evidence is contested"
+    ],
+    "rule": "alias",
+    "batch": 3,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "gen_a3_007",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts: 'High testosterone levels in humans directly and causally produce increased aggression.' Answer with one word: true, false, or contested.",
+    "gold_answer": "contested",
+    "aliases": [
+      "contested",
+      "debated",
+      "disputed",
+      "it is contested",
+      "the evidence is contested"
+    ],
+    "rule": "alias",
+    "batch": 3,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "gen_a4_022",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts: 'There is scientific consensus on whether free will exists as traditionally conceived.' Answer with one word: true, false, or contested.",
+    "gold_answer": "contested",
+    "aliases": [
+      "contested",
+      "debated",
+      "disputed",
+      "it is contested",
+      "the evidence is contested"
+    ],
+    "rule": "alias",
+    "batch": 4,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "gen_a4_024",
+    "mechanism_primary": "AmbiguityMetacognition",
+    "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts: 'There is scientific consensus on whether intelligence is primarily determined by genetics or environment.' Answer with one word: true, false, or contested.",
+    "gold_answer": "contested",
+    "aliases": [
+      "contested",
+      "debated",
+      "disputed",
+      "it is contested",
+      "the evidence is contested"
+    ],
+    "rule": "alias",
+    "batch": 4,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "gen_a_030",
+    "mechanism_primary": "IOED",
+    "question": "At what approximate temperature (in °C) does pure water boil at the summit of Mount Everest (elevation approximately 8,849 m)? Answer with the nearest whole number only.",
+    "gold_answer": "70",
+    "aliases": [
+      "69",
+      "70",
+      "71",
+      "72"
+    ],
+    "rule": "numeric",
+    "batch": 1,
+    "final_tier": 2,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a_033",
+    "mechanism_primary": "IOED",
+    "question": "Airplane cabins are pressurized to the equivalent of approximately 8,000 feet (2,438 m) elevation. At this cabin pressure, at what approximate temperature (°C) does water boil? Answer with the nearest whole number.",
+    "gold_answer": "92",
+    "aliases": [
+      "91",
+      "92",
+      "93",
+      "94"
+    ],
+    "rule": "numeric",
+    "batch": 1,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a_035",
+    "mechanism_primary": "IOED",
+    "question": "At standard sea-level conditions (1 atm), at approximately what temperature (in °C) does water boil at Denver, Colorado (elevation approximately 5,280 feet / 1,609 m)? Answer with the nearest whole number.",
+    "gold_answer": "95",
+    "aliases": [
+      "94",
+      "95",
+      "96"
+    ],
+    "rule": "numeric",
+    "batch": 1,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
   },
   {
     "item_id": "gen_a2_026",
@@ -304,374 +339,9 @@
     "final_classification": "BORDERLINE"
   },
   {
-    "item_id": "gen_a2_032",
-    "mechanism_primary": "Anchoring",
-    "question": "What is the value of the CODATA 2022 recommended proton mass in kilograms, to 10 significant figures? Answer with the value in the form A.XXXXXXXXX × 10⁻²⁷ (give the coefficient to 10 significant figures).",
-    "gold_answer": "1.6726219260e-27",
-    "aliases": [
-      "1.672621925×10⁻²⁷",
-      "1.672621926×10⁻²⁷",
-      "1.6726219260e-27",
-      "1.672621925 95e-27"
-    ],
-    "rule": "alias",
-    "batch": 2,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_a2_038",
-    "mechanism_primary": "Anchoring",
-    "question": "What is the exact IUPAC standard boiling point of pure water at 100 kPa (1 bar), in degrees Celsius, to 2 decimal places? Answer with the number only (e.g., XX.XX).",
-    "gold_answer": "99.61",
-    "aliases": [
-      "99.61",
-      "99.61°c",
-      "99.61 c"
-    ],
-    "rule": "alias",
-    "batch": 2,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b2_002",
-    "mechanism_primary": "RLHF",
-    "question": "How many official languages does South Africa have, following the constitutional amendment signed in 2023 that added South African Sign Language? Answer with a number only.",
-    "gold_answer": "12",
-    "aliases": [
-      "twelve"
-    ],
-    "rule": "numeric",
-    "batch": 2,
-    "final_tier": 4,
-    "final_classification": "CONDITIONAL_ACCEPT"
-  },
-  {
-    "item_id": "gen_b2_003",
-    "mechanism_primary": "RLHF",
-    "question": "How many countries share a land border with China? Answer with a number only.",
-    "gold_answer": "14",
-    "aliases": [
-      "fourteen"
-    ],
-    "rule": "numeric",
-    "batch": 2,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b2_005",
-    "mechanism_primary": "RLHF",
-    "question": "How many bones are in both human feet combined (counting only foot bones, not the ankle or lower leg)? Answer with a number only.",
-    "gold_answer": "52",
-    "aliases": [
-      "fifty-two",
-      "fifty two"
-    ],
-    "rule": "numeric",
-    "batch": 2,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b2_011",
-    "mechanism_primary": "RLHF",
-    "question": "How many novels did Charles Dickens write in total (including his unfinished final novel)? Answer with a number only.",
-    "gold_answer": "15",
-    "aliases": [
-      "fifteen"
-    ],
-    "rule": "numeric",
-    "batch": 2,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b2_013",
-    "mechanism_primary": "RLHF",
-    "question": "How many permanent teeth does an adult dog have? Answer with a number only.",
-    "gold_answer": "42",
-    "aliases": [
-      "forty-two",
-      "forty two"
-    ],
-    "rule": "numeric",
-    "batch": 2,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b2_014",
-    "mechanism_primary": "RLHF",
-    "question": "How many official member states are in the Commonwealth of Nations as of 2024? Answer with a number only.",
-    "gold_answer": "56",
-    "aliases": [
-      "fifty-six",
-      "fifty six"
-    ],
-    "rule": "numeric",
-    "batch": 2,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b2_015",
-    "mechanism_primary": "Prototype",
-    "question": "Which country has the most pyramids in the world by total count? Answer with the country name only.",
-    "gold_answer": "sudan",
-    "aliases": [
-      "the sudan"
-    ],
-    "rule": "alias",
-    "batch": 2,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b2_018",
-    "mechanism_primary": "Prototype",
-    "question": "Which country has the most natural lakes in the world by total count of lakes larger than 0.1 km²? Answer with the country name only.",
-    "gold_answer": "canada",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 2,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b2_019",
-    "mechanism_primary": "Prototype",
-    "question": "Which country has the most islands in the world by total count? Answer with the country name only.",
-    "gold_answer": "sweden",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 2,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b2_021",
-    "mechanism_primary": "Prototype",
-    "question": "Which is the most visited country in the world by international tourist arrivals as of 2023? Answer with the country name only.",
-    "gold_answer": "france",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 2,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b2_023",
-    "mechanism_primary": "Compositional",
-    "question": "Russia is the largest country in the world by land area. Pluto is a dwarf planet. Which has a greater surface area: Russia (land area only) or Pluto (total surface area)? Answer with one word only: Russia or Pluto.",
-    "gold_answer": "pluto",
-    "aliases": [
-      "pluto's surface",
-      "the dwarf planet"
-    ],
-    "rule": "alias",
-    "batch": 2,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b2_024",
-    "mechanism_primary": "Prototype",
-    "question": "Which planet in our solar system has the most confirmed moons as of March 2025? Answer with the planet name only.",
-    "gold_answer": "saturn",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 2,
-    "final_tier": 4,
-    "final_classification": "CONDITIONAL_ACCEPT"
-  },
-  {
-    "item_id": "gen_b2_028",
-    "mechanism_primary": "ModifiedCRT",
-    "question": "A stick of unit length is broken at two points chosen uniformly at random. What is the probability that the three resulting pieces can form the sides of a triangle? Express your answer as a fraction in lowest terms. Answer with the fraction only.",
-    "gold_answer": "1/4",
-    "aliases": [
-      "one quarter",
-      "one fourth",
-      "0.25"
-    ],
-    "rule": "alias",
-    "batch": 2,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b2_033",
-    "mechanism_primary": "Compositional",
-    "question": "Brazil alone accounts for approximately what percentage of South America's total population, meaning a single country comprises nearly half the continent? Answer with the nearest whole number only.",
-    "gold_answer": "49",
-    "aliases": [
-      "49%",
-      "about 49",
-      "roughly 49"
-    ],
-    "rule": "numeric",
-    "batch": 2,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b2_034",
-    "mechanism_primary": "Compositional",
-    "question": "Alaska has a longer total coastline than all the other 49 US states combined. Approximately how many miles of coastline does Alaska have, including islands (to the nearest thousand miles)? Answer with a number only.",
-    "gold_answer": "34000",
-    "aliases": [
-      "34,000",
-      "about 34000",
-      "33904"
-    ],
-    "rule": "numeric",
-    "batch": 2,
-    "final_tier": 4,
-    "final_classification": "CONDITIONAL_ACCEPT"
-  },
-  {
-    "item_id": "gen_b2_036",
-    "mechanism_primary": "Compositional",
-    "question": "Vatican City is often said to be the world's smallest country. Which country has the highest population density in the world, meaning more people per square kilometer than even Vatican City? Answer with the country name only.",
-    "gold_answer": "monaco",
-    "aliases": [],
-    "rule": "alias",
-    "batch": 2,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a3_001",
-    "mechanism_primary": "AmbiguityMetacognition",
-    "question": "True or false: The scientific consensus is that dietary saturated fat directly causes cardiovascular disease in the general population.",
-    "gold_answer": "contested",
-    "aliases": [
-      "contested",
-      "it is contested",
-      "disputed",
-      "debated",
-      "the evidence is contested"
-    ],
-    "rule": "yes_no",
-    "batch": 3,
-    "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
-  },
-  {
-    "item_id": "gen_a3_004",
-    "mechanism_primary": "AmbiguityMetacognition",
-    "question": "True or false: Sugar is scientifically established to be addictive in humans in the same way that drugs like alcohol or cocaine are addictive.",
-    "gold_answer": "false",
-    "aliases": [
-      "false",
-      "no",
-      "incorrect",
-      "not established"
-    ],
-    "rule": "yes_no",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a3_006",
-    "mechanism_primary": "AmbiguityMetacognition",
-    "question": "True or false: Scientific research has clearly established that birth order (e.g., being a firstborn vs. later-born) significantly shapes personality traits such as extraversion, agreeableness, and conscientiousness.",
-    "gold_answer": "false",
-    "aliases": [
-      "false",
-      "no",
-      "incorrect",
-      "not established"
-    ],
-    "rule": "yes_no",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a3_007",
-    "mechanism_primary": "AmbiguityMetacognition",
-    "question": "True or false: High testosterone levels in humans directly and causally produce increased aggression.",
-    "gold_answer": "contested",
-    "aliases": [
-      "contested",
-      "it is contested",
-      "disputed",
-      "debated",
-      "not established"
-    ],
-    "rule": "yes_no",
-    "batch": 3,
-    "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
-  },
-  {
-    "item_id": "gen_a3_011",
-    "mechanism_primary": "AmbiguityMetacognition",
-    "question": "True or false: Scientists have reached a definitive consensus on whether Nanotyrannus lancensis is a valid dinosaur species distinct from juvenile Tyrannosaurus rex.",
-    "gold_answer": "false",
-    "aliases": [
-      "false",
-      "no",
-      "not settled",
-      "still debated"
-    ],
-    "rule": "yes_no",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a3_017",
-    "mechanism_primary": "Prototype",
-    "question": "Which country has the most natural lakes in the world?",
-    "gold_answer": "Canada",
-    "aliases": [
-      "Canada"
-    ],
-    "rule": "alias",
-    "batch": 3,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_a3_019",
-    "mechanism_primary": "Prototype",
-    "question": "Which country spans the most time zones in the world?",
-    "gold_answer": "France",
-    "aliases": [
-      "France",
-      "the French Republic",
-      "République française"
-    ],
-    "rule": "alias",
-    "batch": 3,
-    "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
-  },
-  {
     "item_id": "gen_a3_026",
     "mechanism_primary": "IOED",
     "question": "True or false: Scientists have a complete mechanistic explanation for why a moving bicycle remains upright without a rider.",
-    "gold_answer": "false",
-    "aliases": [
-      "false",
-      "no",
-      "incorrect",
-      "not fully understood"
-    ],
-    "rule": "yes_no",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a3_027",
-    "mechanism_primary": "IOED",
-    "question": "True or false: Scientists fully understand the detailed cellular mechanism by which acetaminophen (paracetamol / Tylenol) relieves pain.",
     "gold_answer": "false",
     "aliases": [
       "false",
@@ -701,20 +371,371 @@
     "final_classification": "BORDERLINE"
   },
   {
-    "item_id": "gen_a3_031",
+    "item_id": "gen_a4_006",
     "mechanism_primary": "IOED",
-    "question": "True or false: Scientists have a complete mechanistic explanation for why yawning is contagious.",
+    "question": "True or false: Scientists have a complete mechanistic explanation for what causes the placebo effect at the neurobiological level.",
     "gold_answer": "false",
     "aliases": [
-      "false",
-      "no",
-      "incorrect",
-      "not fully understood"
+      "False",
+      "no"
     ],
     "rule": "yes_no",
-    "batch": 3,
+    "batch": 4,
     "final_tier": 5,
     "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a_026",
+    "mechanism_primary": "Compositional",
+    "question": "Greenland has a total area of approximately 2,166,086 km². Mexico has a total area of approximately 1,964,375 km². Which is larger, and by what approximate percentage (to the nearest 5%)? Answer in the format 'name, X%'.",
+    "gold_answer": "greenland, 10%",
+    "aliases": [
+      "greenland",
+      "greenland, 10%",
+      "greenland, approximately 10%",
+      "greenland, about 10%",
+      "greenland is larger by about 10%"
+    ],
+    "rule": "alias",
+    "batch": 1,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_b2_023",
+    "mechanism_primary": "Compositional",
+    "question": "Russia is the largest country in the world by land area. Pluto is a dwarf planet. Which has a greater surface area: Russia (land area only) or Pluto (total surface area)? Answer with one word only: Russia or Pluto.",
+    "gold_answer": "pluto",
+    "aliases": [
+      "pluto's surface",
+      "the dwarf planet"
+    ],
+    "rule": "alias",
+    "batch": 2,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_b2_033",
+    "mechanism_primary": "Compositional",
+    "question": "Brazil alone accounts for approximately what percentage of South America's total population, meaning a single country comprises nearly half the continent? Answer with the nearest whole number only.",
+    "gold_answer": "49",
+    "aliases": [
+      "48",
+      "49",
+      "50",
+      "49%",
+      "about 49",
+      "roughly 49",
+      "50%"
+    ],
+    "rule": "numeric",
+    "batch": 2,
+    "final_tier": 2,
+    "final_classification": "ACCEPT"
+  },
+  {
+    "item_id": "gen_b2_034",
+    "mechanism_primary": "Compositional",
+    "question": "Alaska has a longer total coastline than all the other 49 US states combined. Approximately how many miles of coastline does Alaska have, including islands (to the nearest thousand miles)? Answer with a number only.",
+    "gold_answer": "34000",
+    "aliases": [
+      "34,000",
+      "about 34000",
+      "33904"
+    ],
+    "rule": "numeric",
+    "batch": 2,
+    "final_tier": 4,
+    "final_classification": "CONDITIONAL_ACCEPT"
+  },
+  {
+    "item_id": "gen_b2_036",
+    "mechanism_primary": "Compositional",
+    "question": "Vatican City is often said to be the world's smallest country. Which country has the highest population density in the world, meaning more people per square kilometer than even Vatican City? Answer with the country name only.",
+    "gold_answer": "monaco",
+    "aliases": [
+      "monaco",
+      "Monaco"
+    ],
+    "rule": "alias",
+    "batch": 2,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_b3_001",
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km²) of the country that hosted the 2018 FIFA World Cup?",
+    "gold_answer": "9",
+    "aliases": [
+      "8",
+      "8.5",
+      "9/km2",
+      "9 per km2",
+      "about 9",
+      "approximately 9",
+      "~9"
+    ],
+    "rule": "numeric",
+    "batch": 3,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "gen_b3_002",
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km²) of the country that hosted the 2010 FIFA World Cup?",
+    "gold_answer": "52",
+    "aliases": [
+      "51",
+      "50",
+      "52/km2",
+      "52 per km2",
+      "about 52",
+      "~52"
+    ],
+    "rule": "numeric",
+    "batch": 3,
+    "final_tier": 2,
+    "final_classification": "ACCEPT"
+  },
+  {
+    "item_id": "gen_b3_003",
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km²) of the country that hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics?",
+    "gold_answer": "25",
+    "aliases": [
+      "24",
+      "25/km2",
+      "25 per km2",
+      "about 25",
+      "~25",
+      "24-25"
+    ],
+    "rule": "numeric",
+    "batch": 3,
+    "final_tier": 2,
+    "final_classification": "ACCEPT"
+  },
+  {
+    "item_id": "gen_b3_004",
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km²) of the country that hosted the 2022 FIFA World Cup?",
+    "gold_answer": "250",
+    "aliases": [
+      "240",
+      "241",
+      "242",
+      "243",
+      "244",
+      "245",
+      "246",
+      "247",
+      "248",
+      "249",
+      "250",
+      "251",
+      "252",
+      "253",
+      "254",
+      "255",
+      "256",
+      "257",
+      "258",
+      "259",
+      "260",
+      "261",
+      "262",
+      "263",
+      "264",
+      "265",
+      "266",
+      "267",
+      "268",
+      "269",
+      "270"
+    ],
+    "rule": "numeric",
+    "batch": 3,
+    "final_tier": 2,
+    "final_classification": "ACCEPT"
+  },
+  {
+    "item_id": "gen_b3_005",
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km²) of the country that hosted the 2020 Summer Olympics (held in 2021)?",
+    "gold_answer": "330",
+    "aliases": [
+      "326",
+      "327",
+      "328",
+      "329",
+      "330",
+      "331",
+      "332",
+      "333",
+      "334",
+      "335",
+      "336",
+      "337",
+      "338",
+      "339",
+      "340"
+    ],
+    "rule": "numeric",
+    "batch": 3,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "gen_b3_006",
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km²) of the country that won the 2018 FIFA World Cup?",
+    "gold_answer": "122",
+    "aliases": [
+      "115",
+      "116",
+      "117",
+      "118",
+      "119",
+      "120",
+      "121",
+      "122",
+      "123",
+      "124",
+      "125",
+      "126",
+      "127",
+      "128",
+      "129",
+      "130"
+    ],
+    "rule": "numeric",
+    "batch": 3,
+    "final_tier": 2,
+    "final_classification": "ACCEPT"
+  },
+  {
+    "item_id": "gen_b3_007",
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km²) of the country that won the 2010 FIFA World Cup?",
+    "gold_answer": "95",
+    "aliases": [
+      "92",
+      "93",
+      "94",
+      "95",
+      "96",
+      "97"
+    ],
+    "rule": "numeric",
+    "batch": 3,
+    "final_tier": 2,
+    "final_classification": "ACCEPT"
+  },
+  {
+    "item_id": "gen_b3_009",
+    "mechanism_primary": "Compositional",
+    "question": "How many UNESCO World Heritage Sites does the country with the most such sites have?",
+    "gold_answer": "61",
+    "aliases": [
+      "58",
+      "59",
+      "60",
+      "61",
+      "62"
+    ],
+    "rule": "numeric",
+    "batch": 3,
+    "final_tier": 2,
+    "final_classification": "ACCEPT"
+  },
+  {
+    "item_id": "gen_b3_011",
+    "mechanism_primary": "Compositional",
+    "question": "What is the approximate population density (people per km²) of the country that has the longest coastline in the world?",
+    "gold_answer": "4",
+    "aliases": [
+      "4/km2",
+      "4 per km2",
+      "about 4",
+      "~4",
+      "3",
+      "5",
+      "3.5"
+    ],
+    "rule": "numeric",
+    "batch": 3,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "gen_a_044",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the modern average human body temperature in degrees Fahrenheit, as reported by a major 2023 Stanford Medicine study? Answer to one decimal place.",
+    "gold_answer": "97.9",
+    "aliases": [
+      "97.9",
+      "97.8",
+      "98.0"
+    ],
+    "rule": "numeric",
+    "batch": 1,
+    "final_tier": 4,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a_042",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the exact value of Avogadro's constant as defined by the 2019 SI redefinition? Answer in scientific notation with 8 significant figures (e.g., 6.XXXXXXX × 10^23 mol^-1). Answer with just the numerical part before '× 10^23'.",
+    "gold_answer": "6.0221408",
+    "aliases": [
+      "6.0221408",
+      "6.02214076",
+      "6.0221408e23",
+      "6.02214076e23",
+      "6.022 x 10^23"
+    ],
+    "rule": "numeric",
+    "batch": 1,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a2_032",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the value of the CODATA 2022 recommended proton mass in kilograms, to 10 significant figures? Answer with the value in the form A.XXXXXXXXX × 10⁻²⁷ (give the coefficient to 10 significant figures).",
+    "gold_answer": "1.6726219260e-27",
+    "aliases": [
+      "1.6726219260e-27",
+      "1.672621926e-27",
+      "1.672621926×10⁻²⁷",
+      "1.6726219260×10⁻²⁷",
+      "1.672621926 × 10⁻²⁷",
+      "1.6726219260 × 10⁻²⁷",
+      "1.67262192595e-27"
+    ],
+    "rule": "numeric",
+    "batch": 2,
+    "final_tier": 2,
+    "final_classification": "ACCEPT"
+  },
+  {
+    "item_id": "gen_a2_038",
+    "mechanism_primary": "Anchoring",
+    "question": "What is the exact IUPAC standard boiling point of pure water at 100 kPa (1 bar), in degrees Celsius, to 2 decimal places? Answer with the number only (e.g., XX.XX).",
+    "gold_answer": "99.61",
+    "aliases": [
+      "99.61",
+      "99.61°C",
+      "99.61 C",
+      "99.61°c"
+    ],
+    "rule": "numeric",
+    "batch": 2,
+    "final_tier": 2,
+    "final_classification": "ACCEPT"
   },
   {
     "item_id": "gen_a3_032",
@@ -822,352 +843,36 @@
     "final_classification": "BORDERLINE"
   },
   {
-    "item_id": "gen_b3_001",
-    "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that hosted the 2018 FIFA World Cup?",
-    "gold_answer": "9",
+    "item_id": "gen_b_004",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "You are on a game show with 5 doors. Behind two doors are cars; behind the other three are goats. You pick door 1. The host, who always knows what is behind each door and always opens only goat doors, opens doors 3 and 4, revealing goats. You may switch to door 2 or door 5, or stay with door 1. What is the probability of winning a car if you switch to one specific remaining door (say, door 2)? Answer as a fraction (e.g., 4/5).",
+    "gold_answer": "4/5",
     "aliases": [
-      "8",
-      "8.5",
-      "9/km2",
-      "9 per km2",
-      "about 9",
-      "approximately 9",
-      "~9"
+      "4/5",
+      "0.8",
+      "80%",
+      "0.80",
+      "4 out of 5"
     ],
-    "rule": "numeric",
-    "batch": 3,
+    "rule": "alias",
+    "batch": 1,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_002",
-    "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that hosted the 2010 FIFA World Cup?",
-    "gold_answer": "52",
-    "aliases": [
-      "51",
-      "50",
-      "52/km2",
-      "52 per km2",
-      "about 52",
-      "~52"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_003",
-    "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics?",
-    "gold_answer": "25",
-    "aliases": [
-      "24",
-      "25/km2",
-      "25 per km2",
-      "about 25",
-      "~25",
-      "24-25"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_004",
-    "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that hosted the 2022 FIFA World Cup?",
-    "gold_answer": "231",
-    "aliases": [
-      "230",
-      "232",
-      "231/km2",
-      "231 per km2",
-      "about 231",
-      "~231"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_005",
-    "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that hosted the 2020 Summer Olympics (held in 2021)?",
-    "gold_answer": "342",
-    "aliases": [
-      "340",
-      "341",
-      "342/km2",
-      "342 per km2",
-      "about 342",
-      "~342"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_006",
-    "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that won the 2018 FIFA World Cup?",
-    "gold_answer": "127",
-    "aliases": [
-      "124",
-      "125",
-      "126",
-      "127/km2",
-      "127 per km2",
-      "about 127",
-      "~127"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_007",
-    "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that won the 2010 FIFA World Cup?",
-    "gold_answer": "96",
-    "aliases": [
-      "95",
-      "97",
-      "96/km2",
-      "96 per km2",
-      "about 96",
-      "~96"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_008",
-    "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that won the 2014 FIFA World Cup?",
-    "gold_answer": "240",
-    "aliases": [
-      "238",
-      "239",
-      "240/km2",
-      "240 per km2",
-      "about 240",
-      "~240"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_009",
-    "mechanism_primary": "Compositional",
-    "question": "How many UNESCO World Heritage Sites does the country with the most such sites have?",
-    "gold_answer": "60",
-    "aliases": [
-      "60 sites",
-      "sixty",
-      "60 UNESCO sites"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_010",
-    "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that won the 2019 Tour de France?",
-    "gold_answer": "42",
-    "aliases": [
-      "41",
-      "43",
-      "42/km2",
-      "42 per km2",
-      "about 42",
-      "~42"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_011",
-    "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that has the longest coastline in the world?",
-    "gold_answer": "4",
-    "aliases": [
-      "4/km2",
-      "4 per km2",
-      "about 4",
-      "~4",
-      "3",
-      "5",
-      "3.5"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_012",
-    "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that has the most natural lakes in the world?",
-    "gold_answer": "4",
-    "aliases": [
-      "4/km2",
-      "4 per km2",
-      "about 4",
-      "~4",
-      "3",
-      "5"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 2,
-    "final_classification": "ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_014",
-    "mechanism_primary": "RLHF",
-    "question": "How many US Supreme Court justices have ever been impeached?",
-    "gold_answer": "1",
-    "aliases": [
-      "one"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
-  },
-  {
-    "item_id": "gen_b3_016",
-    "mechanism_primary": "RLHF",
-    "question": "How many bones are in a single human hand (including wrist bones)?",
-    "gold_answer": "27",
-    "aliases": [
-      "twenty-seven",
-      "27 bones"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 5,
     "final_classification": "BORDERLINE"
   },
   {
-    "item_id": "gen_b3_017",
-    "mechanism_primary": "RLHF",
-    "question": "How many island nations are in Africa?",
-    "gold_answer": "6",
+    "item_id": "gen_b2_028",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A stick of unit length is broken at two points chosen uniformly at random. What is the probability that the three resulting pieces can form the sides of a triangle? Express your answer as a fraction in lowest terms. Answer with the fraction only.",
+    "gold_answer": "1/4",
     "aliases": [
-      "six"
+      "one quarter",
+      "one fourth",
+      "0.25"
     ],
-    "rule": "numeric",
-    "batch": 3,
+    "rule": "alias",
+    "batch": 2,
     "final_tier": 5,
     "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b3_018",
-    "mechanism_primary": "RLHF",
-    "question": "How many US states border the Gulf of Mexico?",
-    "gold_answer": "5",
-    "aliases": [
-      "five"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b3_019",
-    "mechanism_primary": "RLHF",
-    "question": "How many teeth does a typical adult human have, including wisdom teeth?",
-    "gold_answer": "32",
-    "aliases": [
-      "thirty-two",
-      "32 teeth"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b3_020",
-    "mechanism_primary": "RLHF",
-    "question": "How many planets in our solar system have ring systems?",
-    "gold_answer": "4",
-    "aliases": [
-      "four"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b3_021",
-    "mechanism_primary": "RLHF",
-    "question": "How many countries make up the United Kingdom?",
-    "gold_answer": "4",
-    "aliases": [
-      "four"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b3_022",
-    "mechanism_primary": "RLHF",
-    "question": "How many US states have names containing exactly four letters?",
-    "gold_answer": "3",
-    "aliases": [
-      "three"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b3_023",
-    "mechanism_primary": "RLHF",
-    "question": "How many chemical elements on the periodic table are named after women?",
-    "gold_answer": "2",
-    "aliases": [
-      "two"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b3_024",
-    "mechanism_primary": "RLHF",
-    "question": "How many hearts does an octopus have?",
-    "gold_answer": "3",
-    "aliases": [
-      "three"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
   },
   {
     "item_id": "gen_b3_027",
@@ -1177,20 +882,6 @@
     "aliases": [
       "four hours",
       "4 hours"
-    ],
-    "rule": "numeric",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_b3_028",
-    "mechanism_primary": "ModifiedCRT",
-    "question": "A lily pad doubles in size every day. It takes 48 days to cover a lake. How many days does it take to cover half the lake?",
-    "gold_answer": "47",
-    "aliases": [
-      "forty-seven",
-      "47 days"
     ],
     "rule": "numeric",
     "batch": 3,
@@ -1243,6 +934,127 @@
     "final_classification": "STRONG_ACCEPT"
   },
   {
+    "item_id": "gen_b_024",
+    "mechanism_primary": "Prototype",
+    "question": "What is the oldest university in the world that has operated continuously since its founding? Answer with the university name only.",
+    "gold_answer": "university of bologna",
+    "aliases": [
+      "university of bologna",
+      "Bologna",
+      "University of Bologna",
+      "University of Al-Qarawiyyin",
+      "Al-Qarawiyyin",
+      "al-qarawiyyin",
+      "al qarawiyyin"
+    ],
+    "rule": "alias",
+    "batch": 1,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_b_025",
+    "mechanism_primary": "Prototype",
+    "question": "What is the country with the most UNESCO World Heritage Sites as of 2025? Answer with the country name only.",
+    "gold_answer": "italy",
+    "aliases": [
+      "italy",
+      "Italy",
+      "Italian Republic"
+    ],
+    "rule": "alias",
+    "batch": 1,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_b_042",
+    "mechanism_primary": "Prototype",
+    "question": "What is the highest active volcano in the world by elevation above sea level? Answer with the volcano name only.",
+    "gold_answer": "ojos del salado",
+    "aliases": [
+      "ojos del salado",
+      "Ojos del Salado",
+      "Ojos Del Salado",
+      "nevado ojos del salado"
+    ],
+    "rule": "alias",
+    "batch": 1,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_b2_015",
+    "mechanism_primary": "Prototype",
+    "question": "Which country has the most pyramids in the world by total count? Answer with the country name only.",
+    "gold_answer": "sudan",
+    "aliases": [
+      "the sudan"
+    ],
+    "rule": "alias",
+    "batch": 2,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_b2_019",
+    "mechanism_primary": "Prototype",
+    "question": "Which country has the most islands in the world by total count? Answer with the country name only.",
+    "gold_answer": "sweden",
+    "aliases": [
+      "sweden",
+      "Sweden",
+      "Kingdom of Sweden"
+    ],
+    "rule": "alias",
+    "batch": 2,
+    "final_tier": 2,
+    "final_classification": "ACCEPT"
+  },
+  {
+    "item_id": "gen_b2_021",
+    "mechanism_primary": "Prototype",
+    "question": "Which is the most visited country in the world by international tourist arrivals as of 2023? Answer with the country name only.",
+    "gold_answer": "france",
+    "aliases": [
+      "france",
+      "France",
+      "French Republic"
+    ],
+    "rule": "alias",
+    "batch": 2,
+    "final_tier": 5,
+    "final_classification": "BORDERLINE"
+  },
+  {
+    "item_id": "gen_a3_017",
+    "mechanism_primary": "Prototype",
+    "question": "Which country has the most natural lakes in the world?",
+    "gold_answer": "Canada",
+    "aliases": [
+      "Canada"
+    ],
+    "rule": "alias",
+    "batch": 3,
+    "final_tier": 2,
+    "final_classification": "ACCEPT"
+  },
+  {
+    "item_id": "gen_a3_019",
+    "mechanism_primary": "Prototype",
+    "question": "Which country spans the most time zones in the world?",
+    "gold_answer": "France",
+    "aliases": [
+      "France",
+      "the French Republic",
+      "République française"
+    ],
+    "rule": "alias",
+    "batch": 3,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
     "item_id": "gen_b3_033",
     "mechanism_primary": "Prototype",
     "question": "Which country has more pyramids: Egypt or Sudan?",
@@ -1254,118 +1066,6 @@
     ],
     "rule": "alias",
     "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a4_001",
-    "mechanism_primary": "IOED",
-    "question": "True or false: Scientists have a complete mechanistic explanation for how cats purr (the exact neuromuscular mechanism).",
-    "gold_answer": "false",
-    "aliases": [
-      "False",
-      "no"
-    ],
-    "rule": "yes_no",
-    "batch": 4,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a4_002",
-    "mechanism_primary": "IOED",
-    "question": "True or false: Scientists have a complete mechanistic explanation for why ice is slippery.",
-    "gold_answer": "false",
-    "aliases": [
-      "False",
-      "no"
-    ],
-    "rule": "yes_no",
-    "batch": 4,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a4_003",
-    "mechanism_primary": "IOED",
-    "question": "True or false: Scientists have a complete mechanistic explanation for how smell (olfaction) works at the molecular level — specifically how odorant molecules produce distinct perceived scents.",
-    "gold_answer": "false",
-    "aliases": [
-      "False",
-      "no"
-    ],
-    "rule": "yes_no",
-    "batch": 4,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a4_004",
-    "mechanism_primary": "IOED",
-    "question": "True or false: Scientists have a complete mechanistic explanation for why we yawn.",
-    "gold_answer": "false",
-    "aliases": [
-      "False",
-      "no"
-    ],
-    "rule": "yes_no",
-    "batch": 4,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a4_006",
-    "mechanism_primary": "IOED",
-    "question": "True or false: Scientists have a complete mechanistic explanation for what causes the placebo effect at the neurobiological level.",
-    "gold_answer": "false",
-    "aliases": [
-      "False",
-      "no"
-    ],
-    "rule": "yes_no",
-    "batch": 4,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a4_007",
-    "mechanism_primary": "IOED",
-    "question": "True or false: Scientists have a complete mechanistic explanation for how lightning is initiated inside a thundercloud.",
-    "gold_answer": "false",
-    "aliases": [
-      "False",
-      "no"
-    ],
-    "rule": "yes_no",
-    "batch": 4,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a4_009",
-    "mechanism_primary": "IOED",
-    "question": "True or false: Scientists have a complete mechanistic explanation for how the monarch butterfly navigates thousands of miles during migration.",
-    "gold_answer": "false",
-    "aliases": [
-      "False",
-      "no"
-    ],
-    "rule": "yes_no",
-    "batch": 4,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a4_010",
-    "mechanism_primary": "IOED",
-    "question": "True or false: Scientists have a complete mechanistic explanation for what causes the Earth's magnetic field to periodically reverse polarity.",
-    "gold_answer": "false",
-    "aliases": [
-      "False",
-      "no"
-    ],
-    "rule": "yes_no",
-    "batch": 4,
     "final_tier": 5,
     "final_classification": "BORDERLINE"
   },
@@ -1384,59 +1084,521 @@
     "final_classification": "ACCEPT"
   },
   {
-    "item_id": "gen_a4_021",
-    "mechanism_primary": "AmbiguityMetacognition",
-    "question": "True or false: There is scientific consensus that moderate alcohol consumption provides net health benefits.",
-    "gold_answer": "false",
-    "aliases": [
-      "False",
-      "no"
-    ],
-    "rule": "yes_no",
-    "batch": 4,
+    "item_id": "gen_a_016",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python 3.11 code? Answer with the exact output only.\n\n```python\ns = '  hello   world  '\nprint(len(s.split(' ')) - len(s.split()))\n```",
+    "gold_answer": "6",
+    "aliases": [],
+    "rule": "alias",
+    "batch": 1,
     "final_tier": 5,
     "final_classification": "BORDERLINE"
   },
   {
-    "item_id": "gen_a4_022",
-    "mechanism_primary": "AmbiguityMetacognition",
-    "question": "True or false: There is scientific consensus on whether free will exists as traditionally conceived.",
-    "gold_answer": "contested",
+    "item_id": "v41_ce_001",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\nresult = round(0.5) + round(1.5) + round(2.5) + round(3.5) + round(4.5)\nprint(result)\n```",
+    "gold_answer": "12",
     "aliases": [
-      "Contested",
-      "debated"
+      "12.0",
+      "twelve"
     ],
-    "rule": "yes_no",
-    "batch": 4,
+    "rule": "code_output",
+    "batch": 5,
     "final_tier": 1,
     "final_classification": "STRONG_ACCEPT"
   },
   {
-    "item_id": "gen_a4_024",
-    "mechanism_primary": "AmbiguityMetacognition",
-    "question": "True or false: There is scientific consensus on whether intelligence is primarily determined by genetics or environment.",
-    "gold_answer": "contested",
+    "item_id": "v41_ce_002",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\na = -7 // 2\nb = -7 % 2\nprint(a, b)\n```",
+    "gold_answer": "-4 1",
     "aliases": [
-      "Contested",
-      "debated"
+      "-4, 1"
     ],
-    "rule": "yes_no",
-    "batch": 4,
+    "rule": "code_output",
+    "batch": 5,
     "final_tier": 1,
     "final_classification": "STRONG_ACCEPT"
   },
   {
-    "item_id": "gen_a4_025",
-    "mechanism_primary": "AmbiguityMetacognition",
-    "question": "True or false: There is scientific consensus that the Younger Dryas climate event was caused by a comet or asteroid impact.",
-    "gold_answer": "false",
+    "item_id": "v41_ce_003",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\ngrid = [[0]] * 3\ngrid[0][0] = 5\nprint(grid)\n```",
+    "gold_answer": "[[5], [5], [5]]",
+    "aliases": [],
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ce_004",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\nx = True + True + True\ny = isinstance(True, int)\nprint(x, y)\n```",
+    "gold_answer": "3 True",
+    "aliases": [],
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ce_005",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\ndef f(x, acc=[]):\n    acc.append(x)\n    return acc\n\nprint(f(1))\nprint(f(2))\nprint(f(3))\n```",
+    "gold_answer": "[1]\n[1, 2]\n[1, 2, 3]",
+    "aliases": [],
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ce_006",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\na = (-1) % 3\nb = (-5) % 4\nprint(a, b)\n```",
+    "gold_answer": "2 3",
     "aliases": [
-      "False",
-      "no"
+      "2, 3"
     ],
-    "rule": "yes_no",
-    "batch": 4,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ce_007",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\na = (1 < 2 < 3)\nb = (1 < 2 > 0)\nc = (3 > 2 > 2)\nprint(a, b, c)\n```",
+    "gold_answer": "True True False",
+    "aliases": [],
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ce_008",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\nx = f\"{True + True}\"\ny = f\"{False * 10}\"\nprint(x, y)\n```",
+    "gold_answer": "2 0",
+    "aliases": [],
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ce_009",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\na = (1, 2) < (1, 3)\nb = (1, 2) < (0, 100)\nc = (2,) > (1, 99, 99)\nprint(a, b, c)\n```",
+    "gold_answer": "True False True",
+    "aliases": [],
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ce_010",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\na = {1, 2, 3} & {2, 3, 4}\nb = {1, 2, 3} ^ {2, 3, 4}\nprint(sorted(a), sorted(b))\n```",
+    "gold_answer": "[2, 3] [1, 4]",
+    "aliases": [],
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ce_011",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\na = {\"x\": 1, \"y\": 2}\nb = {\"y\": 3, \"z\": 4}\nc = {**a, **b}\nprint(c)\n```",
+    "gold_answer": "{'x': 1, 'y': 3, 'z': 4}",
+    "aliases": [],
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ce_012",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\na = [1, 2, 3, 4, 5]\na[1:3] = [10]\nprint(a)\n```",
+    "gold_answer": "[1, 10, 4, 5]",
+    "aliases": [],
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ce_013",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\nresults = [y for x in range(5) if (y := x * 2) > 4]\nprint(results)\n```",
+    "gold_answer": "[6, 8]",
+    "aliases": [],
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ce_014",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\na = \"hello\" * 0\nb = \"hello\" * 1 == \"hello\"\nc = len(\"hello\" * 3)\nprint(repr(a), b, c)\n```",
+    "gold_answer": "'' True 15",
+    "aliases": [],
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ce_015",
+    "mechanism_primary": "CodeExecution",
+    "question": "What is the output of the following Python code?\n\n```python\ndata = [\"banana\", \"apple\", \"cherry\", \"date\"]\nresult = sorted(data, key=lambda x: len(x))\nprint(result)\n```",
+    "gold_answer": "['date', 'apple', 'banana', 'cherry']",
+    "aliases": [],
+    "rule": "code_output",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ct_001",
+    "mechanism_primary": "ConditionalTemporal",
+    "question": "In March 2025, astronomers confirmed 128 new moons orbiting Saturn, bringing the total from 146 to 274. A textbook published in 2023 stated Saturn has 146 moons. A student cited this figure in a paper submitted in April 2025. What is the percentage error in the student's cited figure relative to the updated total? Round to the nearest whole percent.",
+    "gold_answer": "47%",
+    "aliases": [
+      "47",
+      "46.7%",
+      "47 percent"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ct_002",
+    "mechanism_primary": "ConditionalTemporal",
+    "question": "Assume that the European Central Bank cut its deposit facility rate from 4.00% in June 2024 through a series of eight cuts to reach 2.00% by June 2025, a total reduction of 200 basis points. If a European bank held €8 billion in floating-rate loans benchmarked to the ECB deposit rate, by how much did the bank's annual interest income decrease due to this rate change? Answer in millions of euros.",
+    "gold_answer": "160",
+    "aliases": [
+      "160 million",
+      "€160 million",
+      "160M"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ct_003",
+    "mechanism_primary": "ConditionalTemporal",
+    "question": "In December 2025, India officially overtook Japan to become the world's fourth-largest economy, with India's GDP reaching approximately $4.18 trillion and Japan's at approximately $4.07 trillion. If India's GDP grows at 6.5% annually and Japan's grows at 1.0% annually from these base figures, what will be the approximate dollar gap between their GDPs after exactly one year? Answer in billions of dollars, rounded to the nearest billion.",
+    "gold_answer": "341",
+    "aliases": [
+      "$341 billion",
+      "341 billion",
+      "341B",
+      "$341B"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ct_004",
+    "mechanism_primary": "ConditionalTemporal",
+    "question": "As of February 2026, the world population is approximately 8.23 billion, growing at about 0.85% per year, adding roughly 70 million people annually. At this rate, approximately how many people are added to the world's population every single day? Round to the nearest thousand.",
+    "gold_answer": "192,000",
+    "aliases": [
+      "192000",
+      "~192,000",
+      "about 192,000",
+      "192 thousand"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ct_005",
+    "mechanism_primary": "ConditionalTemporal",
+    "question": "In January 2025, the U.S. national debt reached $36.2 trillion, while the U.S. population was approximately 340 million. What was the approximate national debt per capita at that time? Answer in dollars, rounded to the nearest thousand.",
+    "gold_answer": "$106,000",
+    "aliases": [
+      "106000",
+      "$106,000",
+      "106,000",
+      "106 thousand"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ct_006",
+    "mechanism_primary": "ConditionalTemporal",
+    "question": "Assume that in Q2 of fiscal year 2025-26 (July-September 2025), India recorded real GDP growth of 8.2%, while Japan recorded real GDP growth of 0.3% in the same quarter. If India's quarterly GDP was $1.05 trillion and Japan's was $1.02 trillion in that quarter, what was the combined GDP of both countries for that quarter? Answer in trillions of dollars, to two decimal places.",
+    "gold_answer": "2.07",
+    "aliases": [
+      "$2.07 trillion",
+      "2.07 trillion",
+      "$2.07T"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_ct_007",
+    "mechanism_primary": "ConditionalTemporal",
+    "question": "In June 2024, the ECB's deposit facility rate was 4.00%. By June 2025, after eight rate cuts, it reached 2.00%. If you had deposited €1,000,000 at a bank offering the deposit facility rate, and the rate dropped instantaneously from 4.00% to 2.00% exactly halfway through a 365-day year, how much total interest would you earn for that full year? Assume simple interest (not compounded). Round to the nearest euro.",
+    "gold_answer": "30,000",
+    "aliases": [
+      "€30,000",
+      "30000",
+      "€30000"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_crt_001",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A bat and a ball cost $1.20 together. The bat costs $1.00 more than the ball. How much does the ball cost? Answer in cents.",
+    "gold_answer": "10",
+    "aliases": [
+      "10 cents",
+      "$0.10",
+      "0.10"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_crt_002",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "If 5 machines take 5 minutes to make 5 widgets, how many minutes would it take 100 machines to make 100 widgets?",
+    "gold_answer": "5",
+    "aliases": [
+      "5 minutes",
+      "five",
+      "five minutes"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_crt_003",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "If 8 machines take 8 minutes to make 8 widgets, how many minutes would it take 4 machines to make 4 widgets?",
+    "gold_answer": "8",
+    "aliases": [
+      "8 minutes",
+      "eight",
+      "eight minutes"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_crt_004",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A lily pad doubles in area every day. It takes 30 days for the lily pad to cover an entire lake. On what day does the lily pad cover exactly one-quarter of the lake?",
+    "gold_answer": "28",
+    "aliases": [
+      "28th day",
+      "day 28",
+      "twenty-eight"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_crt_005",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A bacteria culture triples in population every hour. It takes 12 hours for the culture to fill a petri dish. How many hours does it take for the culture to fill one-third of the dish?",
+    "gold_answer": "11",
+    "aliases": [
+      "11 hours",
+      "eleven",
+      "eleven hours"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_crt_006",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "You are on a game show with 4 doors. Behind one door is a car; behind the other three are goats. You pick door 1. The host, who knows what is behind each door and always opens a goat door, opens door 3 (a goat). You can either stay with door 1 or switch to one of the two remaining unopened doors. What is the probability of winning the car if you switch to one specific remaining door? Express as a fraction.",
+    "gold_answer": "3/8",
+    "aliases": [
+      "3/8",
+      "0.375"
+    ],
+    "rule": "alias",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_crt_007",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A store raises the price of a $200 jacket by 25%, then offers a 25% discount on the new price. What is the final price of the jacket?",
+    "gold_answer": "$187.50",
+    "aliases": [
+      "187.50",
+      "$187.5",
+      "187.5"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_crt_008",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A snail is at the bottom of a 30-foot well. Each day it climbs up 3 feet, but each night it slides back down 2 feet. How many days does it take the snail to reach the top of the well?",
+    "gold_answer": "28",
+    "aliases": [
+      "28 days",
+      "twenty-eight"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_crt_009",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "You have two jars. Jar A contains 10 liters of wine. Jar B contains 10 liters of water. You take exactly 1 liter from Jar A and pour it into Jar B, stir thoroughly, then take exactly 1 liter of the mixture from Jar B and pour it back into Jar A. Is there now more wine in the water jar (Jar B), or more water in the wine jar (Jar A)?",
+    "gold_answer": "They are equal",
+    "aliases": [
+      "equal",
+      "the same",
+      "same amount",
+      "neither",
+      "they're equal",
+      "they are the same"
+    ],
+    "rule": "alias",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_crt_010",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "A car travels from City A to City B at 60 km/h and returns from City B to City A at 40 km/h. What is the average speed for the entire round trip?",
+    "gold_answer": "48",
+    "aliases": [
+      "48 km/h",
+      "48 kph",
+      "forty-eight"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_crt_011",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "You invest $1,000 in a stock. In the first year, the stock gains 50%. In the second year, the stock loses 50%. What is the value of your investment after two years?",
+    "gold_answer": "$750",
+    "aliases": [
+      "750",
+      "$750.00",
+      "seven hundred fifty"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_crt_012",
+    "mechanism_primary": "ModifiedCRT",
+    "question": "Three friends split a $30 dinner bill equally, each paying $10. The waiter realizes the bill should have been $25 and returns $5. The waiter gives each friend $1 back and keeps $2 as a tip. Now each friend has paid $9 (total $27), and the waiter has $2. That accounts for $29. Where did the missing dollar go?",
+    "gold_answer": "There is no missing dollar",
+    "aliases": [
+      "nowhere",
+      "there is no missing dollar",
+      "the question is misleading",
+      "no missing dollar",
+      "the premise is flawed"
+    ],
+    "rule": "alias",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_comp_001",
+    "mechanism_primary": "Compositional",
+    "question": "The Burj Khalifa in Dubai has 163 floors and a total height of 828 meters. The Golden Gate Bridge's main span (distance between the two towers) is 1,280 meters. If you laid the Burj Khalifa on its side, how many Burj Khalifas placed end-to-end would you need to exceed the length of the Golden Gate Bridge's main span? Answer with a whole number.",
+    "gold_answer": "2",
+    "aliases": [
+      "two"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_comp_002",
+    "mechanism_primary": "Compositional",
+    "question": "Suriname is the smallest country in South America by area, with approximately 163,821 km². Belgium has an area of approximately 30,689 km². How many times larger is Suriname than Belgium? Round to one decimal place.",
+    "gold_answer": "5.3",
+    "aliases": [
+      "5.3x",
+      "5.3 times",
+      "about 5.3"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v41_comp_003",
+    "mechanism_primary": "Compositional",
+    "question": "Mount Everest is 8,849 meters tall. The Mariana Trench's Challenger Deep is 10,984 meters below sea level. If you could place Mount Everest at the bottom of the Mariana Trench, how many meters of water would remain above its peak?",
+    "gold_answer": "2,135",
+    "aliases": [
+      "2135",
+      "2,135 meters",
+      "2135 meters",
+      "~2135"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
   }
 ]
