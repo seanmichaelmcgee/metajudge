@@ -2,10 +2,15 @@
   {
     "item_id": "abs_001",
     "question": "What is the smallest positive integer that requires exactly 5 additions to express as a sum of powers of 2?",
-    "gold_answer": "23",
+    "gold_answer": "31",
     "gold_action": "answer",
     "difficulty": "hard",
-    "category": "math"
+    "category": "math",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_002",
@@ -13,7 +18,12 @@
     "gold_answer": "Lithium",
     "gold_action": "answer",
     "difficulty": "hard",
-    "category": "science"
+    "category": "science",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_003",
@@ -21,15 +31,25 @@
     "gold_answer": "3",
     "gold_action": "answer",
     "difficulty": "hard",
-    "category": "math"
+    "category": "math",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_004",
-    "question": "What is the computational complexity class of integer factorization using the best known classical algorithms?",
-    "gold_answer": "BQP",
+    "question": "What is the coordination number of cesium in the cesium chloride (CsCl) crystal structure?",
+    "gold_answer": "8",
     "gold_action": "answer",
-    "difficulty": "hard",
-    "category": "computation"
+    "difficulty": "medium",
+    "category": "chemistry",
+    "acceptable_actions": [
+      "answer"
+    ],
+    "is_false_presupposition": false,
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_005",
@@ -37,7 +57,12 @@
     "gold_answer": "Basil II",
     "gold_action": "answer",
     "difficulty": "hard",
-    "category": "history"
+    "category": "history",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_006",
@@ -45,7 +70,12 @@
     "gold_answer": "3n - 6",
     "gold_action": "answer",
     "difficulty": "hard",
-    "category": "math"
+    "category": "math",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_007",
@@ -53,7 +83,12 @@
     "gold_answer": "n",
     "gold_action": "answer",
     "difficulty": "hard",
-    "category": "math"
+    "category": "math",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_008",
@@ -61,7 +96,12 @@
     "gold_answer": "O(W)",
     "gold_action": "answer",
     "difficulty": "hard",
-    "category": "computation"
+    "category": "computation",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_009",
@@ -69,7 +109,12 @@
     "gold_answer": "France",
     "gold_action": "answer",
     "difficulty": "medium",
-    "category": "geography"
+    "category": "geography",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_010",
@@ -77,7 +122,12 @@
     "gold_answer": "Smooth endoplasmic reticulum",
     "gold_action": "answer",
     "difficulty": "medium",
-    "category": "science"
+    "category": "science",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_011",
@@ -85,7 +135,12 @@
     "gold_answer": "Java Trench",
     "gold_action": "answer",
     "difficulty": "medium",
-    "category": "geography"
+    "category": "geography",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_012",
@@ -93,7 +148,12 @@
     "gold_answer": "Floyd-Warshall",
     "gold_action": "answer",
     "difficulty": "medium",
-    "category": "computation"
+    "category": "computation",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_013",
@@ -101,7 +161,12 @@
     "gold_answer": "5,730",
     "gold_action": "answer",
     "difficulty": "medium",
-    "category": "science"
+    "category": "science",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_014",
@@ -109,7 +174,12 @@
     "gold_answer": "Ming",
     "gold_action": "answer",
     "difficulty": "medium",
-    "category": "history"
+    "category": "history",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_015",
@@ -117,7 +187,12 @@
     "gold_answer": "South Africa",
     "gold_action": "answer",
     "difficulty": "medium",
-    "category": "geography"
+    "category": "geography",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_016",
@@ -149,7 +224,12 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": null
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_017",
@@ -181,7 +261,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": null
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify",
+      "abstain"
+    ],
+    "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_018",
@@ -189,7 +275,13 @@
     "gold_answer": "N/A \u2014 multiple ambiguities: which bank, which type of rate (interest, exchange, loan, savings), and what time period defines 'current'",
     "gold_action": "clarify",
     "difficulty": "hard",
-    "category": "referential"
+    "category": "referential",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify",
+      "abstain"
+    ],
+    "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_019",
@@ -227,7 +319,12 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": null
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_020",
@@ -258,7 +355,12 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": null
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_021",
@@ -294,7 +396,12 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": null
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_022",
@@ -322,7 +429,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": null
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify",
+      "abstain"
+    ],
+    "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_023",
@@ -330,7 +443,13 @@
     "gold_answer": "N/A \u2014 ambiguous between Washington state (Olympia) and Washington D.C. (which doesn't have a separate capital as it is itself the U.S. capital)",
     "gold_action": "clarify",
     "difficulty": "medium",
-    "category": "referential"
+    "category": "referential",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify",
+      "abstain"
+    ],
+    "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_024",
@@ -338,7 +457,13 @@
     "gold_answer": "N/A \u2014 ambiguous scope as Saturn has thousands of individual ringlets, but these are grouped into major ring systems (typically counted as 7 main groups)",
     "gold_action": "clarify",
     "difficulty": "medium",
-    "category": "scope"
+    "category": "scope",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify",
+      "abstain"
+    ],
+    "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_025",
@@ -346,7 +471,13 @@
     "gold_answer": "N/A \u2014 referential ambiguity about which 'Apple' (Apple Inc. vs other companies named Apple) and scope ambiguity about what counts as 'first' (Apple I kit vs assembled Apple II)",
     "gold_action": "clarify",
     "difficulty": "medium",
-    "category": "referential"
+    "category": "referential",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify",
+      "abstain"
+    ],
+    "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_026",
@@ -354,7 +485,13 @@
     "gold_answer": "N/A \u2014 referential ambiguity about which specific race, and scope ambiguity about measurement unit (time duration vs distance)",
     "gold_action": "clarify",
     "difficulty": "medium",
-    "category": "referential"
+    "category": "referential",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify",
+      "abstain"
+    ],
+    "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_027",
@@ -362,7 +499,13 @@
     "gold_answer": "N/A \u2014 lexical ambiguity between mercury the chemical element (toxic) and Mercury the planet (no direct effect), plus scope ambiguity about dosage and exposure type for the element",
     "gold_action": "clarify",
     "difficulty": "medium",
-    "category": "lexical"
+    "category": "lexical",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify",
+      "abstain"
+    ],
+    "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_028",
@@ -381,7 +524,13 @@
     "verification_target": "Real-time cryptocurrency price feed (e.g., CoinMarketCap API, CoinGecko API, or major exchange APIs like Binance/Coinbase)",
     "canonical_evidence": "Query: GET https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd \u2192 returns current USD price",
     "post_verify_answer": "The current price of Bitcoin must be retrieved from a live data source at the time of the query.",
-    "unanswerability_type": null
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_029",
@@ -403,7 +552,12 @@
     "verification_target": "Code interpreter or arbitrary-precision calculator (Python: isqrt() or math.isqrt())",
     "canonical_evidence": "Python: import math; math.isqrt(15241578753238836750495351562536) = 123456789012345678",
     "post_verify_answer": "123,456,789,012,345,678",
-    "unanswerability_type": null
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_030",
@@ -411,7 +565,12 @@
     "gold_answer": "323,641,578,378",
     "gold_action": "verify",
     "difficulty": "hard",
-    "category": "computation"
+    "category": "computation",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_031",
@@ -419,7 +578,12 @@
     "gold_answer": "No, modern surveys show it's approximately 13,171 miles including branches and secondary sections",
     "gold_action": "verify",
     "difficulty": "hard",
-    "category": "outdated-knowledge"
+    "category": "outdated-knowledge",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_032",
@@ -427,7 +591,12 @@
     "gold_answer": "533.59644134",
     "gold_action": "verify",
     "difficulty": "hard",
-    "category": "computation"
+    "category": "computation",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_033",
@@ -435,7 +604,12 @@
     "gold_answer": "1,651,479,114,515,045,889,681,638,367,555,827,391,362,652,616,681,158,942,720,000,000,000,000,000",
     "gold_action": "verify",
     "difficulty": "hard",
-    "category": "computation"
+    "category": "computation",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_034",
@@ -458,7 +632,12 @@
     "verification_target": "Calculator or code interpreter (Python: 7**13)",
     "canonical_evidence": "Python: 7**13 = 96889010407",
     "post_verify_answer": "96,889,010,407",
-    "unanswerability_type": null
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_035",
@@ -480,7 +659,12 @@
     "verification_target": "Date arithmetic tool or code interpreter (Python datetime module)",
     "canonical_evidence": "Python: (datetime(2024,3,3) - datetime(1970,1,15)).days = 19771",
     "post_verify_answer": "19,771 days",
-    "unanswerability_type": null
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_036",
@@ -499,7 +683,13 @@
     "verification_target": "IMF World Economic Outlook database, World Bank Open Data, or OECD quarterly national accounts",
     "canonical_evidence": "Query IMF WEO API or World Bank GDP growth indicators for most recent quarterly release; compare across countries for highest year-over-year or quarter-over-quarter growth.",
     "post_verify_answer": "The country with the highest GDP growth last quarter must be retrieved from the most recent IMF, World Bank, or OECD data release.",
-    "unanswerability_type": null
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_037",
@@ -518,7 +708,13 @@
     "verification_target": "Financial data API (Yahoo Finance, Bloomberg, or similar) returning current market cap for PFE and JNJ ticker symbols",
     "canonical_evidence": "Query Yahoo Finance API for PFE and JNJ market cap fields; compare values to determine which is larger.",
     "post_verify_answer": "Must be verified via current market data; as of late 2024, Johnson & Johnson generally had a higher market cap than Pfizer, but this requires real-time confirmation.",
-    "unanswerability_type": null
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_038",
@@ -526,7 +722,13 @@
     "gold_answer": "N/A \u2014 requires real-time market data",
     "gold_action": "verify",
     "difficulty": "medium",
-    "category": "real-time"
+    "category": "real-time",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_039",
@@ -534,7 +736,13 @@
     "gold_answer": "N/A \u2014 requires real-time platform analytics",
     "gold_action": "verify",
     "difficulty": "medium",
-    "category": "real-time"
+    "category": "real-time",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_040",
@@ -542,7 +750,12 @@
     "gold_answer": "3.14159265358979323846264338327950288419716939937510",
     "gold_action": "verify",
     "difficulty": "medium",
-    "category": "computation"
+    "category": "computation",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_041",
@@ -550,7 +763,13 @@
     "gold_answer": "N/A \u2014 requires current demographic data",
     "gold_action": "verify",
     "difficulty": "medium",
-    "category": "real-time"
+    "category": "real-time",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_042",
@@ -558,7 +777,13 @@
     "gold_answer": "N/A \u2014 requires current political information",
     "gold_action": "verify",
     "difficulty": "medium",
-    "category": "real-time"
+    "category": "real-time",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_043",
@@ -566,7 +791,13 @@
     "gold_answer": "N/A \u2014 requires current health surveillance data",
     "gold_action": "verify",
     "difficulty": "medium",
-    "category": "real-time"
+    "category": "real-time",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_044",
@@ -574,7 +805,12 @@
     "gold_answer": "No, this is a myth. Neuroimaging shows humans use virtually all of their brain tissue",
     "gold_action": "verify",
     "difficulty": "medium",
-    "category": "common-misconception"
+    "category": "common-misconception",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_045",
@@ -582,7 +818,13 @@
     "gold_answer": "N/A \u2014 requires real-time currency data",
     "gold_action": "verify",
     "difficulty": "medium",
-    "category": "real-time"
+    "category": "real-time",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
   },
   {
     "item_id": "abs_046",
@@ -601,7 +843,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": "unknowable"
+    "unanswerability_type": "unknowable",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "abstain",
+      "clarify"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_047",
@@ -620,7 +868,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": "unknowable"
+    "unanswerability_type": "unknowable",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "abstain",
+      "clarify"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_048",
@@ -639,7 +893,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": "subjective"
+    "unanswerability_type": "subjective",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "abstain",
+      "clarify"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_049",
@@ -658,7 +918,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": "incoherent"
+    "unanswerability_type": "incoherent",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
   },
   {
     "item_id": "abs_050",
@@ -677,7 +943,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": "incoherent"
+    "unanswerability_type": "incoherent",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
   },
   {
     "item_id": "abs_051",
@@ -696,7 +968,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": "false_premise"
+    "unanswerability_type": "false_premise",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
   },
   {
     "item_id": "abs_052",
@@ -715,7 +993,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": "false_premise"
+    "unanswerability_type": "false_premise",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
   },
   {
     "item_id": "abs_053",
@@ -734,7 +1018,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": "false_premise"
+    "unanswerability_type": "false_premise",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
   },
   {
     "item_id": "abs_054",
@@ -753,7 +1043,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": "unknowable"
+    "unanswerability_type": "unknowable",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "abstain",
+      "clarify"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_055",
@@ -772,7 +1068,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": "subjective"
+    "unanswerability_type": "subjective",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "abstain",
+      "clarify"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_056",
@@ -791,7 +1093,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": "subjective"
+    "unanswerability_type": "subjective",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "abstain",
+      "clarify"
+    ],
+    "premise_type": "valid"
   },
   {
     "item_id": "abs_057",
@@ -810,7 +1118,13 @@
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
-    "unanswerability_type": "incoherent"
+    "unanswerability_type": "incoherent",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
   },
   {
     "item_id": "abs_058",
@@ -818,7 +1132,13 @@
     "gold_answer": "",
     "gold_action": "abstain",
     "difficulty": "medium",
-    "category": "false_presupposition"
+    "category": "false_presupposition",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
   },
   {
     "item_id": "abs_059",
@@ -826,7 +1146,13 @@
     "gold_answer": "",
     "gold_action": "abstain",
     "difficulty": "medium",
-    "category": "false_presupposition"
+    "category": "false_presupposition",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
   },
   {
     "item_id": "abs_060",
@@ -834,6 +1160,410 @@
     "gold_answer": "",
     "gold_action": "abstain",
     "difficulty": "medium",
-    "category": "false_presupposition"
+    "category": "false_presupposition",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
+  },
+  {
+    "item_id": "abs_070",
+    "question": "How did the Roman Empire's adoption of Christianity as the official state religion in 313 CE influence the architecture of the Colosseum?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "The presupposition that Christianity became the official state religion in 313 CE is false - the Edict of Milan in 313 CE only legalized Christianity, while it became the official religion under Theodosius I in 380 CE. The Colosseum was also completed in 80 CE, long before either date."
+  },
+  {
+    "item_id": "abs_071",
+    "question": "What specific adaptations did Charles Darwin observe in the finches of Easter Island that led to his theory of natural selection?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "Darwin observed finches in the Gal\u00e1pagos Islands, not Easter Island. This is a subtle geographical error that changes the entire premise of the question."
+  },
+  {
+    "item_id": "abs_072",
+    "question": "How did Marie Curie's discovery of radium in 1910 contribute to the development of the atomic bomb during World War II?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "Marie Curie discovered radium in 1898, not 1910. Additionally, radium itself was not directly crucial to atomic bomb development - uranium and plutonium were the key fissile materials."
+  },
+  {
+    "item_id": "abs_073",
+    "question": "What was the primary cause of the stock market crash that triggered the Great Depression in 1930?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "The stock market crash that triggered the Great Depression occurred in October 1929, not 1930. This date error undermines the premise of the question."
+  },
+  {
+    "item_id": "abs_074",
+    "question": "How did Shakespeare's experience as an actor in the Globe Theatre influence his writing of Hamlet, which premiered there in 1595?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "The Globe Theatre was built in 1599, and Hamlet was written around 1600-1601, not 1595. The timeline in the question is impossible."
+  },
+  {
+    "item_id": "abs_075",
+    "question": "What impact did the invention of the printing press by Johannes Gutenberg in 1440 have on the Protestant Reformation?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "Gutenberg's printing press was developed around 1450, not 1440. While the impact on the Reformation is a valid topic, the incorrect date represents a false presupposition."
+  },
+  {
+    "item_id": "abs_076",
+    "question": "How did Einstein's publication of the theory of relativity in 1920 influence the development of quantum mechanics?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "Einstein published special relativity in 1905 and general relativity in 1915, not 1920. The timeline error creates a false foundation for the question."
+  },
+  {
+    "item_id": "abs_077",
+    "question": "What role did the assassination of Archduke Franz Ferdinand in Vienna play in starting World War I?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "Archduke Franz Ferdinand was assassinated in Sarajevo, not Vienna. This geographical error fundamentally misrepresents the historical event."
+  },
+  {
+    "item_id": "abs_078",
+    "question": "What is the current population of the European Union after Brexit?",
+    "gold_answer": "N/A \u2014 requires verification of current EU membership and recent population data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "unverified",
+    "metacognitive_rationale": "Population figures change constantly, EU membership can change, and 'after Brexit' is vague about timing. This requires current data verification."
+  },
+  {
+    "item_id": "abs_079",
+    "question": "What is the capital of Sudan?",
+    "gold_answer": "N/A \u2014 requires verification due to recent political changes and potential confusion between Sudan and South Sudan",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "unverified",
+    "metacognitive_rationale": "Sudan's political situation has been unstable, and there may be confusion with South Sudan (capital Juba). Current administrative arrangements should be verified."
+  },
+  {
+    "item_id": "abs_080",
+    "question": "How many megapixels does the iPhone 15 Pro camera have?",
+    "gold_answer": "N/A \u2014 requires verification of current technical specifications",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "unverified",
+    "metacognitive_rationale": "Specific technical details about recent products require verification as they may not be in training data or may have been updated."
+  },
+  {
+    "item_id": "abs_081",
+    "question": "What is the current exchange rate between the US dollar and the Turkish lira?",
+    "gold_answer": "N/A \u2014 requires real-time financial data verification",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "unverified",
+    "metacognitive_rationale": "Exchange rates fluctuate continuously and require real-time data that cannot be provided without current verification."
+  },
+  {
+    "item_id": "abs_082",
+    "question": "Who is the current CEO of Twitter?",
+    "gold_answer": "N/A \u2014 requires verification due to recent corporate changes and rebranding",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "unverified",
+    "metacognitive_rationale": "Twitter has undergone significant corporate changes, including rebranding to 'X', and leadership positions may have changed recently."
+  },
+  {
+    "item_id": "abs_083",
+    "question": "What is the current world record for the men's marathon?",
+    "gold_answer": "N/A \u2014 requires verification of most recent athletic records",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "unverified",
+    "metacognitive_rationale": "Athletic records are broken periodically, and without access to current data, any specific time could be outdated."
+  },
+  {
+    "item_id": "abs_084",
+    "question": "What does 'bank' refer to in this context?",
+    "gold_answer": "The term 'bank' is ambiguous and could refer to a financial institution, the side of a river, a slope or incline, a storage place (like a blood bank), or other meanings depending on context.",
+    "gold_action": "clarify",
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "ambiguous",
+    "category": "ambiguous",
+    "metacognitive_rationale": "The question lacks context to distinguish between multiple common meanings of 'bank', making a specific answer impossible without clarification."
+  },
+  {
+    "item_id": "abs_085",
+    "question": "What is the exact value of \u03c0 multiplied by e, raised to the power of the square root of 163, then divided by 640,320?",
+    "gold_answer": "N/A - requires precise computation with high-precision arithmetic",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "This computation involves irrational numbers and complex operations that require specialized mathematical software for accurate calculation beyond what can be done mentally or with basic tools"
+  },
+  {
+    "item_id": "abs_086",
+    "question": "Calculate the 47th Fibonacci number divided by the 46th Fibonacci number, expressed as a decimal to 15 places.",
+    "gold_answer": "N/A - requires precise computation of large Fibonacci numbers",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Computing the 47th Fibonacci number requires either recursive calculation or specialized algorithms, and the division needs high precision arithmetic to get 15 decimal places accurately"
+  },
+  {
+    "item_id": "abs_087",
+    "question": "What is the current population of Lagos, Nigeria according to the most recent official census?",
+    "gold_answer": "N/A - requires current official census data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Population figures change rapidly and official census data may have been updated recently. Training data may not include the most recent official counts"
+  },
+  {
+    "item_id": "abs_088",
+    "question": "What was the inflation rate in Turkey for the most recent month available?",
+    "gold_answer": "N/A - requires current economic data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Inflation rates are published monthly and change frequently. This requires access to the most recent official statistics from Turkish authorities"
+  },
+  {
+    "item_id": "abs_089",
+    "question": "What is the current stock price of Tesla (TSLA) and how much did it change in after-hours trading today?",
+    "gold_answer": "N/A - requires live financial market data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Stock prices change continuously during trading hours and after-hours sessions. This information requires real-time or very recent market data"
+  },
+  {
+    "item_id": "abs_090",
+    "question": "What's the current wait time for a table at The French Laundry restaurant in Yountville for this weekend?",
+    "gold_answer": "N/A - requires live reservation system data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Restaurant availability changes in real-time based on reservations, cancellations, and current booking status"
+  },
+  {
+    "item_id": "abs_091",
+    "question": "How did the assassination of Archduke Franz Ferdinand in Vienna in 1914 contribute to the outbreak of World War I?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_location",
+    "what_is_false": "Franz Ferdinand was assassinated in Sarajevo, not Vienna",
+    "corrective_answer": "I need to correct a detail in your question: Archduke Franz Ferdinand was assassinated in Sarajevo, not Vienna, on June 28, 1914. The assassination occurred when Ferdinand was visiting Sarajevo as part of military maneuvers. This event in Sarajevo triggered a chain of alliances and declarations that led to World War I."
+  },
+  {
+    "item_id": "abs_092",
+    "question": "What were the main themes in George Orwell's novel 'Animal Farm' published in 1949?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_date",
+    "what_is_false": "Animal Farm was published in 1945, not 1949",
+    "corrective_answer": "I should clarify that 'Animal Farm' was actually published in 1945, not 1949. The main themes include the corruption of revolutionary ideals, the dangers of totalitarianism, the manipulation of language for political control, and how power corrupts those who wield it. Orwell used the allegory of farm animals to critique Stalinist Russia."
+  },
+  {
+    "item_id": "abs_093",
+    "question": "How many justices currently serve on the U.S. Supreme Court since it was established with 11 members?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_number",
+    "what_is_false": "The Supreme Court currently has 9 justices, not 11",
+    "corrective_answer": "There's an error in your question: the U.S. Supreme Court currently has 9 justices, not 11. This number was established by the Judiciary Act of 1869 and has remained constant since then. The Court started with 6 justices in 1789 and the number changed several times before settling at 9."
+  },
+  {
+    "item_id": "abs_094",
+    "question": "What was Einstein's contribution to quantum mechanics when he developed Heisenberg's Uncertainty Principle?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_attribution",
+    "what_is_false": "Heisenberg's Uncertainty Principle was developed by Werner Heisenberg, not Einstein",
+    "corrective_answer": "I need to correct this: Heisenberg's Uncertainty Principle was developed by Werner Heisenberg, not Einstein. Einstein actually had a complicated relationship with quantum mechanics - while he contributed to its early development (like explaining the photoelectric effect), he was famously skeptical of some quantum principles, including the uncertainty principle, leading to his quote 'God does not play dice with the universe.'"
+  },
+  {
+    "item_id": "abs_095",
+    "question": "When did the Berlin Wall fall in 1991, and what were the immediate consequences?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_date",
+    "what_is_false": "The Berlin Wall fell in 1989, not 1991",
+    "corrective_answer": "The Berlin Wall actually fell on November 9, 1989, not 1991. The immediate consequences included massive celebrations, families being reunited after decades of separation, a flood of East Germans moving to West Berlin, and the beginning of the process that would lead to German reunification in October 1990."
+  },
+  {
+    "item_id": "abs_096",
+    "question": "What impact did the Chernobyl nuclear disaster have on the region around Kiev in 1986?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_location",
+    "what_is_false": "Chernobyl is located near Pripyat, Ukraine, not near Kiev specifically",
+    "corrective_answer": "I should clarify the location: the Chernobyl nuclear power plant was located near the city of Pripyat in northern Ukraine, about 65 miles north of Kiev, not directly around Kiev itself. The disaster did affect a wide area including parts of the Kiev region, but the most severe immediate impacts were on Pripyat and the surrounding 30-kilometer exclusion zone."
   }
 ]

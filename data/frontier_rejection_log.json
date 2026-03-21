@@ -1,0 +1,35 @@
+[
+  {
+    "item": {
+      "question": "If it takes 5 machines 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?",
+      "gold_answer": "5 minutes",
+      "cue_type": "misleading_fluency",
+      "difficulty": "hard",
+      "metacognitive_rationale": "The pattern-matching response is '100 minutes' which feels mathematically consistent, but ignores that each machine makes one widget in 5 minutes regardless of how many machines there are."
+    },
+    "reason": "20. Verdict: REJECT. Reason: Gold answer calculation is based on a misunderstanding of percentage changes on temperatures, which inherently doesn't transform linearly in Fahrenheit/Celsius scales.",
+    "phase": "calibration"
+  },
+  {
+    "item": {
+      "question": "What happens to goldfish memory span?",
+      "gold_answer": "months to years",
+      "cue_type": "false_familiarity",
+      "difficulty": "hard",
+      "metacognitive_rationale": "The widespread 'fact' that goldfish have 3-second memory creates false familiarity and confidence, but research shows goldfish can remember things for months or years."
+    },
+    "reason": "8. Verdict: REJECT. Reason: Gold answer is vague and misleading, lacks scientific consensus.",
+    "phase": "calibration"
+  },
+  {
+    "item": {
+      "question": "Room A has temperature 70\u00b0F. Room B is 20% warmer than A. Room C is 20% cooler than B. What is Room C's temperature?",
+      "gold_answer": "67.2\u00b0F",
+      "cue_type": "compositional_trap",
+      "difficulty": "hard",
+      "metacognitive_rationale": "Each percentage calculation seems straightforward (70\u00d71.2=84, then 84\u00d70.8=67.2), but the asymmetry of percentage increases vs decreases is counterintuitive, and mental arithmetic across steps introduces errors."
+    },
+    "reason": "20. Verdict: REJECT. Reason: Gold answer calculation is based on a misunderstanding of percentage changes on temperatures, which inherently doesn't transform linearly in Fahrenheit/Celsius scales.",
+    "phase": "calibration"
+  }
+]

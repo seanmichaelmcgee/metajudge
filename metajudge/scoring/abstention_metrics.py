@@ -285,3 +285,96 @@ def compute_auarc(
     accuracies = cumsum / np.arange(1, n + 1)
 
     return float(np.mean(accuracies))
+
+
+# ---------------------------------------------------------------------------
+# Family B v2 scoring — corrective answer support
+# ---------------------------------------------------------------------------
+
+def score_family_b_item_v2(
+    model_decision: str,
+    model_answer: str,
+    is_correct: bool,
+    gold_action: str,
+    acceptable_actions: list = None,
+    is_false_presupposition: bool = False,
+) -> float:
+    """Score a Family B item with corrective-answer support.
+
+    Changes from v1:
+    - If the item is a false presupposition and the model gave a corrective answer
+      (decision="answer" but the answer corrects the premise), award +0.5 instead of -0.5
+    - If the model's decision is in acceptable_actions, use the better of
+      the standard utility or 0.3 (partial credit)
+
+    Args:
+        model_decision: The model's chosen action (answer/clarify/verify/abstain)
+        model_answer: The model's answer text (for corrective detection)
+        is_correct: Whether the model's factual answer was correct (if applicable)
+        gold_action: The intended gold action
+        acceptable_actions: List of acceptable actions for this item
+        is_false_presupposition: Whether this item has a false premise
+
+    Returns:
+        Utility score in [-1.0, +1.0]
+    """
+    if acceptable_actions is None:
+        acceptable_actions = [gold_action]
+
+    # Standard utility matrix (same as v1)
+    UTILITY = {
+        ("answer_correct", "answer"): +1.0,
+        ("answer_correct", "clarify"): +0.5,
+        ("answer_correct", "verify"): +0.5,
+        ("answer_correct", "abstain"): -0.5,
+        ("answer_incorrect", "answer"): -1.0,
+        ("answer_incorrect", "clarify"): -0.5,
+        ("answer_incorrect", "verify"): -0.5,
+        ("answer_incorrect", "abstain"): -0.5,
+        ("clarify", "answer"): -0.5,
+        ("clarify", "clarify"): +1.0,
+        ("clarify", "verify"): +0.3,
+        ("clarify", "abstain"): +0.3,
+        ("verify", "answer"): -0.5,
+        ("verify", "clarify"): +0.3,
+        ("verify", "verify"): +1.0,
+        ("verify", "abstain"): +0.3,
+        ("abstain", "answer"): -0.5,
+        ("abstain", "clarify"): +0.3,
+        ("abstain", "verify"): +0.3,
+        ("abstain", "abstain"): +1.0,
+    }
+
+    # Determine the row key
+    if gold_action == "answer":
+        row = "answer_correct" if is_correct else "answer_incorrect"
+    else:
+        row = gold_action
+
+    # Standard utility lookup
+    standard_utility = UTILITY.get((row, model_decision), -0.5)
+
+    # === CORRECTIVE ANSWER HANDLING ===
+    # If this is a false presupposition item and the model chose "answer",
+    # check if the answer is corrective (identifies the false premise)
+    if is_false_presupposition and model_decision == "answer":
+        corrective_indicators = [
+            "false", "incorrect", "not true", "no such", "did not",
+            "doesn't exist", "does not exist", "never", "premise",
+            "assumption", "there is no", "there are no", "there was no",
+            "not applicable", "n/a", "cannot", "impossible",
+            "none", "zero", "the question is wrong",
+        ]
+        answer_lower = (model_answer or "").lower()
+        is_corrective = any(ind in answer_lower for ind in corrective_indicators)
+
+        if is_corrective:
+            # Corrective answer on false premise: this is GOOD behavior
+            return +0.5  # partial credit (full credit goes to abstain)
+
+    # === ACCEPTABLE ALTERNATIVE HANDLING ===
+    # If the model's decision is in the acceptable alternatives, give at least partial credit
+    if model_decision in acceptable_actions and model_decision != gold_action:
+        return max(standard_utility, 0.3)  # at least partial credit
+
+    return standard_utility

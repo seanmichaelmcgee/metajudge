@@ -1,0 +1,87 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "monitoring": {
+    "n_items": 611,
+    "accuracy": 0.7643,
+    "mean_confidence": 0.9114,
+    "mean_brier_score": 0.8038,
+    "confidence_discrimination": 0.0494,
+    "overconfidence_rate": 0.7361,
+    "ece": 0.1505
+  },
+  "control": {
+    "n_items": 88,
+    "mean_utility": 0.4705,
+    "action_accuracy": 0.5455,
+    "over_answer_rate": 0.4583,
+    "per_action": {
+      "answer": {
+        "n": 16,
+        "correct": 16,
+        "accuracy": 1.0,
+        "mean_utility": 0.75
+      },
+      "clarify": {
+        "n": 13,
+        "correct": 9,
+        "accuracy": 0.6923,
+        "mean_utility": 0.5385
+      },
+      "verify": {
+        "n": 30,
+        "correct": 12,
+        "accuracy": 0.4,
+        "mean_utility": 0.1533
+      },
+      "abstain": {
+        "n": 29,
+        "correct": 11,
+        "accuracy": 0.3793,
+        "mean_utility": 0.6138
+      }
+    }
+  },
+  "quadrant": "monitoring_bad_control_bad",
+  "confidence_band_utility": {
+    "very_low": {
+      "n": 24,
+      "mean_utility": 0.9125,
+      "action_dist": {
+        "clarify": 7,
+        "verify": 9,
+        "abstain": 8
+      }
+    },
+    "high": {
+      "n": 1,
+      "mean_utility": 1.0,
+      "action_dist": {
+        "verify": 1
+      }
+    },
+    "very_high": {
+      "n": 11,
+      "mean_utility": 0.4,
+      "action_dist": {
+        "clarify": 4,
+        "verify": 2,
+        "answer": 5
+      }
+    },
+    "extreme": {
+      "n": 47,
+      "mean_utility": 0.3,
+      "action_dist": {
+        "answer": 39,
+        "clarify": 3,
+        "abstain": 5
+      }
+    }
+  },
+  "failure_modes": {
+    "overconfident_wrong_answer": 33,
+    "correct_but_over_cautious": 0,
+    "false_premise_not_caught": 0,
+    "unnecessary_clarification": 0
+  }
+}
