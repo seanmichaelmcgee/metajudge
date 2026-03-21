@@ -476,15 +476,15 @@ class TestGradeItem:
         assert result["correct"] is False
         assert result["method"] == "unknown"
 
-    def test_gen_a_030_regression(self, registry):
-        """gold=70, answer=71 → PASS via approx_numeric_small abs_tol=1."""
-        result = grade_item("gen_a_030", "71", registry)
+    def test_v42_ioed_001_regression(self, registry):
+        """gold=18, answer=19 → PASS via approx_numeric_small abs_tol=1."""
+        result = grade_item("v42_ioed_001", "19", registry)
         assert result["correct"] is True
         assert result["method"] == "approx_numeric_small"
 
-    def test_gen_a_030_too_far(self, registry):
-        """abs_tol=2.0 after v4.1 triage update, so 73 is now out of range."""
-        result = grade_item("gen_a_030", "73", registry)
+    def test_v42_ioed_001_too_far(self, registry):
+        """abs_tol=1.0, so 20 is out of range."""
+        result = grade_item("v42_ioed_001", "20", registry)
         assert result["correct"] is False
 
     def test_gen_a3_001_contested(self, registry):
@@ -541,7 +541,7 @@ class TestLoadRegistry:
         assert len(registry) == 102  # 65 base + 37 replacements = V4.1 full set
 
     def test_keyed_by_item_id(self, registry):
-        assert "gen_a_030" in registry
+        assert "v42_ioed_001" in registry
         assert "gen_b_004" in registry
         assert "gen_a3_001" in registry
 

@@ -279,112 +279,6 @@
     "final_classification": "STRONG_ACCEPT"
   },
   {
-    "item_id": "gen_a_030",
-    "mechanism_primary": "IOED",
-    "question": "At what approximate temperature (in °C) does pure water boil at the summit of Mount Everest (elevation approximately 8,849 m)? Answer with the nearest whole number only.",
-    "gold_answer": "70",
-    "aliases": [
-      "69",
-      "70",
-      "71",
-      "72"
-    ],
-    "rule": "numeric",
-    "batch": 1,
-    "final_tier": 2,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a_033",
-    "mechanism_primary": "IOED",
-    "question": "Airplane cabins are pressurized to the equivalent of approximately 8,000 feet (2,438 m) elevation. At this cabin pressure, at what approximate temperature (°C) does water boil? Answer with the nearest whole number.",
-    "gold_answer": "92",
-    "aliases": [
-      "91",
-      "92",
-      "93",
-      "94"
-    ],
-    "rule": "numeric",
-    "batch": 1,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a_035",
-    "mechanism_primary": "IOED",
-    "question": "At standard sea-level conditions (1 atm), at approximately what temperature (in °C) does water boil at Denver, Colorado (elevation approximately 5,280 feet / 1,609 m)? Answer with the nearest whole number.",
-    "gold_answer": "95",
-    "aliases": [
-      "94",
-      "95",
-      "96"
-    ],
-    "rule": "numeric",
-    "batch": 1,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a2_026",
-    "mechanism_primary": "IOED",
-    "question": "The standard (IUPAC) boiling point of water at exactly 1 bar (100 kPa) pressure is 99.61°C, not exactly 100°C. True or false? Answer with one word only.",
-    "gold_answer": "true",
-    "aliases": [
-      "true"
-    ],
-    "rule": "alias",
-    "batch": 2,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a3_026",
-    "mechanism_primary": "IOED",
-    "question": "True or false: Scientists have a complete mechanistic explanation for why a moving bicycle remains upright without a rider.",
-    "gold_answer": "false",
-    "aliases": [
-      "false",
-      "no",
-      "incorrect",
-      "not fully understood"
-    ],
-    "rule": "yes_no",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a3_029",
-    "mechanism_primary": "IOED",
-    "question": "True or false: The physical mechanism by which static electricity is generated when two materials are rubbed together (tribocharging) is fully understood by physics.",
-    "gold_answer": "false",
-    "aliases": [
-      "false",
-      "no",
-      "incorrect",
-      "not fully understood"
-    ],
-    "rule": "yes_no",
-    "batch": 3,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
-    "item_id": "gen_a4_006",
-    "mechanism_primary": "IOED",
-    "question": "True or false: Scientists have a complete mechanistic explanation for what causes the placebo effect at the neurobiological level.",
-    "gold_answer": "false",
-    "aliases": [
-      "False",
-      "no"
-    ],
-    "rule": "yes_no",
-    "batch": 4,
-    "final_tier": 5,
-    "final_classification": "BORDERLINE"
-  },
-  {
     "item_id": "gen_a_026",
     "mechanism_primary": "Compositional",
     "question": "Greenland has a total area of approximately 2,166,086 km². Mexico has a total area of approximately 1,964,375 km². Which is larger, and by what approximate percentage (to the nearest 5%)? Answer in the format 'name, X%'.",
@@ -1598,6 +1492,110 @@
     ],
     "rule": "numeric_tolerance",
     "batch": 5,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v42_ioed_001",
+    "mechanism_primary": "IOED",
+    "question": "The Clausius-Clapeyron equation predicts boiling point changes with pressure. If atmospheric pressure drops by exactly 50% from sea level (from 101.325 kPa to 50.6625 kPa), by approximately how many degrees Celsius does the boiling point of pure water decrease? Answer to the nearest whole number.",
+    "gold_answer": "18",
+    "aliases": [
+      "18",
+      "19"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 6,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v42_ioed_002",
+    "mechanism_primary": "IOED",
+    "question": "You invest $1000 at exactly 10% annual interest. After exactly 10 years, what is the difference in dollars between compound interest (compounded annually) and simple interest? Round to the nearest dollar.",
+    "gold_answer": "594",
+    "aliases": [
+      "594",
+      "593",
+      "$594",
+      "$593"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 6,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v42_ioed_003",
+    "mechanism_primary": "IOED",
+    "question": "A rope is wrapped exactly 1.5 turns around a cylindrical bollard. The coefficient of friction between rope and bollard is 0.3. A sailor holds one end with a force of 50 N. Using the capstan equation, what is the maximum load force (in Newtons) the rope can hold on the other end? Round to the nearest whole number.",
+    "gold_answer": "845",
+    "aliases": [
+      "845",
+      "844",
+      "846"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 6,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v42_ioed_004",
+    "mechanism_primary": "IOED",
+    "question": "Water flows at 2 m/s in a horizontal pipe of diameter 4 cm where the gauge pressure is 200 kPa. The pipe narrows to 2 cm diameter. Using Bernoulli's principle (water density = 1000 kg/m³), what is the gauge pressure in the narrower section, in kPa? Round to the nearest whole number.",
+    "gold_answer": "170",
+    "aliases": [
+      "170",
+      "170 kPa"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 6,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v42_ioed_005",
+    "mechanism_primary": "IOED",
+    "question": "A gas is compressed adiabatically from 1 atm to 10 atm. The initial temperature is 27°C (300 K). For a diatomic ideal gas (γ = 1.4), what is the final temperature in degrees Celsius? Round to the nearest whole number.",
+    "gold_answer": "306",
+    "aliases": [
+      "306",
+      "305",
+      "307"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 6,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v42_ioed_009",
+    "mechanism_primary": "IOED",
+    "question": "A wire carries a current of 5 A. A charged particle with charge q = +2 μC moves parallel to the wire at a distance of 10 cm, moving at speed 1000 m/s in the SAME direction as the current. What is the magnitude of the magnetic force on the charged particle in micronewtons? Use μ₀ = 4π × 10⁻⁷ T·m/A. Give your answer to 2 decimal places.",
+    "gold_answer": "0.02",
+    "aliases": [
+      "0.02",
+      "0.020",
+      "2×10⁻⁸"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 6,
+    "final_tier": 1,
+    "final_classification": "STRONG_ACCEPT"
+  },
+  {
+    "item_id": "v42_ioed_010",
+    "mechanism_primary": "IOED",
+    "question": "An object cools from 90°C to 60°C in exactly 10 minutes in a 20°C room (Newton's Law of Cooling applies). How many additional minutes does it take to cool from 60°C to 40°C? Round to the nearest whole number.",
+    "gold_answer": "12",
+    "aliases": [
+      "12",
+      "13",
+      "12 minutes"
+    ],
+    "rule": "numeric_tolerance",
+    "batch": 6,
     "final_tier": 1,
     "final_classification": "STRONG_ACCEPT"
   }

@@ -95,27 +95,6 @@
     "edge_case_notes": null
   },
   {
-    "item_id": "gen_a_030",
-    "answer_type": "numeric",
-    "grader_rule": "approx_numeric_small",
-    "gold_answer": "70",
-    "accepted_forms": [
-      "69",
-      "70",
-      "71",
-      "72"
-    ],
-    "tolerance_class": "abs_2",
-    "tolerance_params": {
-      "abs_tol": 2.0
-    },
-    "time_anchor": null,
-    "source_anchor": null,
-    "normalization_notes": null,
-    "tri_label_space": null,
-    "edge_case_notes": null
-  },
-  {
     "item_id": "gen_b_028",
     "answer_type": "text",
     "grader_rule": "alias_plus_normalization",
@@ -181,47 +160,6 @@
     ],
     "tolerance_class": null,
     "tolerance_params": null,
-    "time_anchor": null,
-    "source_anchor": null,
-    "normalization_notes": null,
-    "tri_label_space": null,
-    "edge_case_notes": null
-  },
-  {
-    "item_id": "gen_a_033",
-    "answer_type": "numeric",
-    "grader_rule": "approx_numeric_small",
-    "gold_answer": "92",
-    "accepted_forms": [
-      "91",
-      "92",
-      "93",
-      "94"
-    ],
-    "tolerance_class": "abs_2",
-    "tolerance_params": {
-      "abs_tol": 2.0
-    },
-    "time_anchor": null,
-    "source_anchor": null,
-    "normalization_notes": null,
-    "tri_label_space": null,
-    "edge_case_notes": null
-  },
-  {
-    "item_id": "gen_a_035",
-    "answer_type": "numeric",
-    "grader_rule": "approx_numeric_small",
-    "gold_answer": "95",
-    "accepted_forms": [
-      "94",
-      "95",
-      "96"
-    ],
-    "tolerance_class": "abs_2",
-    "tolerance_params": {
-      "abs_tol": 2.0
-    },
     "time_anchor": null,
     "source_anchor": null,
     "normalization_notes": null,
@@ -476,22 +414,6 @@
       "false",
       "contested"
     ],
-    "edge_case_notes": null
-  },
-  {
-    "item_id": "gen_a2_026",
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no",
-    "gold_answer": "true",
-    "accepted_forms": [
-      "true"
-    ],
-    "tolerance_class": null,
-    "tolerance_params": null,
-    "time_anchor": null,
-    "source_anchor": null,
-    "normalization_notes": null,
-    "tri_label_space": null,
     "edge_case_notes": null
   },
   {
@@ -764,44 +686,6 @@
       "France",
       "the French Republic",
       "République française"
-    ],
-    "tolerance_class": null,
-    "tolerance_params": null,
-    "time_anchor": null,
-    "source_anchor": null,
-    "normalization_notes": null,
-    "tri_label_space": null,
-    "edge_case_notes": null
-  },
-  {
-    "item_id": "gen_a3_026",
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no",
-    "gold_answer": "false",
-    "accepted_forms": [
-      "false",
-      "no",
-      "incorrect",
-      "not fully understood"
-    ],
-    "tolerance_class": null,
-    "tolerance_params": null,
-    "time_anchor": null,
-    "source_anchor": null,
-    "normalization_notes": null,
-    "tri_label_space": null,
-    "edge_case_notes": null
-  },
-  {
-    "item_id": "gen_a3_029",
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no",
-    "gold_answer": "false",
-    "accepted_forms": [
-      "false",
-      "no",
-      "incorrect",
-      "not fully understood"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -1321,24 +1205,6 @@
       "sudan",
       "the sudan",
       "Sudan has more pyramids"
-    ],
-    "tolerance_class": null,
-    "tolerance_params": null,
-    "time_anchor": null,
-    "source_anchor": null,
-    "normalization_notes": null,
-    "tri_label_space": null,
-    "edge_case_notes": null
-  },
-  {
-    "item_id": "gen_a4_006",
-    "answer_type": "yes_no",
-    "grader_rule": "yes_no",
-    "gold_answer": "false",
-    "accepted_forms": [
-      "false",
-      "False",
-      "no"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -2064,6 +1930,145 @@
     },
     "time_anchor": null,
     "source_anchor": "Everest: 8,849m (2020 survey). Challenger Deep: 10,984m. Difference: 10,984 - 8,849 = 2,135m of water above the peak.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v42_ioed_001",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "18",
+    "accepted_forms": [
+      "18",
+      "19"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": {
+      "abs_tol": 1.0
+    },
+    "time_anchor": null,
+    "source_anchor": "Antoine equation (log10(P/mmHg) = 8.10765 - 1750.286/(235+T)). At 760 mmHg: T=100°C. At 380 mmHg: T≈81.7°C. Decrease ≈ 18°C. NOT 50°C — the relationship is logarithmic, not linear.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v42_ioed_002",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "594",
+    "accepted_forms": [
+      "594",
+      "593",
+      "$594",
+      "$593"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": {
+      "abs_tol": 5.0
+    },
+    "time_anchor": null,
+    "source_anchor": "Simple: 1000×0.10×10 = $1000 interest → total $2000. Compound: 1000×(1.1)^10 = $2593.74. Difference: $2593.74 - $2000 = $593.74 ≈ $594.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v42_ioed_003",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "845",
+    "accepted_forms": [
+      "845",
+      "844",
+      "846"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": {
+      "abs_tol": 10.0
+    },
+    "time_anchor": null,
+    "source_anchor": "Capstan equation: T_load = T_hold × e^(μθ). θ = 1.5 × 2π = 9.4248 rad. e^(0.3 × 9.4248) = e^(2.8274) = 16.90. T_load = 50 × 16.90 = 845 N. Common wrong: linear thinking → 50 × (1 + 0.3×1.5×2π) ≈ 50 × 3.83 = 191 N.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v42_ioed_004",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "170",
+    "accepted_forms": [
+      "170",
+      "170 kPa"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": {
+      "abs_tol": 2.0
+    },
+    "time_anchor": null,
+    "source_anchor": "From continuity: v2=8 m/s. Bernoulli: P1 + ½ρv1² = P2 + ½ρv2². P2 = P1 + ½ρ(v1² - v2²) = 200000 + ½×1000×(4-64) = 200000 - 30000 = 170000 Pa = 170 kPa. Common wrong: pressure increases in narrower section (confusing Bernoulli).",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v42_ioed_005",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "306",
+    "accepted_forms": [
+      "306",
+      "305",
+      "307"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": {
+      "abs_tol": 3.0
+    },
+    "time_anchor": null,
+    "source_anchor": "Adiabatic relation: T2 = T1 × (P2/P1)^((γ-1)/γ) = 300 × 10^(0.4/1.4) = 300 × 10^0.2857 = 300 × 1.9307 = 579.2 K = 306°C. Common wrong: linear thinking → 300×(10-1)/1 = 2700°C, or 10×27 = 270°C.",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v42_ioed_009",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "0.02",
+    "accepted_forms": [
+      "0.02",
+      "0.020",
+      "2×10⁻⁸"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": {
+      "abs_tol": 0.005
+    },
+    "time_anchor": null,
+    "source_anchor": "B from wire: B = μ₀I/(2πr) = (4π×10⁻⁷ × 5)/(2π × 0.1) = 2×10⁻⁶/0.2π × π... B = (4π×10⁻⁷ × 5)/(2π × 0.1) = (20π×10⁻⁷)/(0.2π) = 10⁻⁵ T. F = qvB = 2×10⁻⁶ × 1000 × 10⁻⁵ = 2×10⁻⁸ N = 0.02 μN. Let me recheck: B = μ₀I/(2πr) = (4π×10⁻⁷)(5)/(2π×0.1) = 4π×5×10⁻⁷/(0.2π) = 10⁻⁵ T. F = qvB = 2×10⁻⁶ × 1000 × 10⁻⁵ = 2×10⁻⁸ N = 0.02 × 10⁻⁶ N = 0.02 μN. ✓",
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v42_ioed_010",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "12",
+    "accepted_forms": [
+      "12",
+      "13",
+      "12 minutes"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": {
+      "abs_tol": 1.0
+    },
+    "time_anchor": null,
+    "source_anchor": "Newton's cooling: T(t) = T_room + (T_0 - T_room)e^{-kt}. Phase 1: 60 = 20 + 70e^{-10k} → k = -ln(4/7)/10 = 0.05596/min. Phase 2: 40 = 20 + 40e^{-kt₂} → e^{-kt₂} = 0.5 → t₂ = ln2/k = 0.693/0.05596 = 12.4 min ≈ 12 min. Common wrong: 10 minutes (assuming same rate), 6.67 minutes (purely proportional to ΔT).",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
