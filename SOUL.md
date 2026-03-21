@@ -182,6 +182,8 @@ These four papers anchor the benchmark's theoretical framing:
 3. Xiong et al. (ICLR 2024) — Verbalized confidence is overconfident and prompt-sensitive
 4. Huang et al. (ICLR 2024) — Intrinsic self-correction often fails without external evidence
 
+For the full theoretical lineage (80+ papers across foundational psychology, modern cognitive science, and AI/ML), see `docs/metacognition_literature_report.md` and `docs/references.bib`.
+
 ---
 
 ## Standardized workflows
