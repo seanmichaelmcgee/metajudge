@@ -40,12 +40,9 @@
     "item_id": "gen_b_037",
     "mechanism_primary": "AmbiguityMetacognition",
     "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Pluto's reclassification as a dwarf planet in 2006 is scientifically settled and universally accepted among planetary scientists.' Answer with one word: true, false, or contested.",
-    "gold_answer": "false",
+    "gold_answer": "contested",
     "aliases": [
-      "false",
-      "no",
-      "incorrect",
-      "unambiguously false"
+      "contested"
     ],
     "rule": "alias",
     "batch": 1,
@@ -58,15 +55,7 @@
     "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'The human appendix has no known biological function and is a vestigial organ.' Answer with one word: true, false, or contested.",
     "gold_answer": "false",
     "aliases": [
-      "false",
-      "no",
-      "incorrect",
-      "unambiguously false",
-      "contested",
-      "debated",
-      "disputed",
-      "it is contested",
-      "the evidence is contested"
+      "false"
     ],
     "rule": "alias",
     "batch": 1,
@@ -111,12 +100,9 @@
     "item_id": "gen_a2_001",
     "mechanism_primary": "AmbiguityMetacognition",
     "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Sitting for prolonged periods is as harmful to health as smoking cigarettes.' Answer with one word only: true, false, or contested.",
-    "gold_answer": "false",
+    "gold_answer": "contested",
     "aliases": [
-      "false",
-      "no",
-      "incorrect",
-      "unambiguously false"
+      "contested"
     ],
     "rule": "alias",
     "batch": 2,
@@ -165,12 +151,9 @@
     "item_id": "gen_a2_007",
     "mechanism_primary": "AmbiguityMetacognition",
     "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Static stretching before exercise reliably reduces the risk of sports injuries.' Answer with one word only: true, false, or contested.",
-    "gold_answer": "false",
+    "gold_answer": "contested",
     "aliases": [
-      "false",
-      "no",
-      "incorrect",
-      "unambiguously false"
+      "contested"
     ],
     "rule": "alias",
     "batch": 2,
@@ -180,7 +163,7 @@
   {
     "item_id": "gen_a2_013",
     "mechanism_primary": "AmbiguityMetacognition",
-    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the Mpemba effect — hot water freezing faster than cold water — is a real, reproducible physical phenomenon is genuinely contested among physicists.' Answer with one word only: true, false, or contested.",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the Mpemba effect \u2014 hot water freezing faster than cold water \u2014 is a real, reproducible physical phenomenon is genuinely contested among physicists.' Answer with one word only: true, false, or contested.",
     "gold_answer": "true",
     "aliases": [
       "true",
@@ -281,7 +264,7 @@
   {
     "item_id": "gen_a_026",
     "mechanism_primary": "Compositional",
-    "question": "Greenland has a total area of approximately 2,166,086 km². Mexico has a total area of approximately 1,964,375 km². Which is larger, and by what approximate percentage (to the nearest 5%)? Answer in the format 'name, X%'.",
+    "question": "Greenland has a total area of approximately 2,166,086 km\u00b2. Mexico has a total area of approximately 1,964,375 km\u00b2. Which is larger, and by what approximate percentage (to the nearest 5%)? Answer in the format 'name, X%'.",
     "gold_answer": "greenland, 10%",
     "aliases": [
       "greenland",
@@ -360,7 +343,7 @@
   {
     "item_id": "gen_b3_001",
     "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that hosted the 2018 FIFA World Cup?",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that hosted the 2018 FIFA World Cup?",
     "gold_answer": "9",
     "aliases": [
       "8",
@@ -379,7 +362,7 @@
   {
     "item_id": "gen_b3_002",
     "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that hosted the 2010 FIFA World Cup?",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that hosted the 2010 FIFA World Cup?",
     "gold_answer": "52",
     "aliases": [
       "51",
@@ -397,7 +380,7 @@
   {
     "item_id": "gen_b3_003",
     "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics?",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics?",
     "gold_answer": "25",
     "aliases": [
       "24",
@@ -415,7 +398,7 @@
   {
     "item_id": "gen_b3_004",
     "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that hosted the 2022 FIFA World Cup?",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that hosted the 2022 FIFA World Cup?",
     "gold_answer": "250",
     "aliases": [
       "240",
@@ -458,7 +441,7 @@
   {
     "item_id": "gen_b3_005",
     "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that hosted the 2020 Summer Olympics (held in 2021)?",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that hosted the 2020 Summer Olympics (held in 2021)?",
     "gold_answer": "330",
     "aliases": [
       "326",
@@ -485,7 +468,7 @@
   {
     "item_id": "gen_b3_006",
     "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that won the 2018 FIFA World Cup?",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that won the 2018 FIFA World Cup?",
     "gold_answer": "122",
     "aliases": [
       "115",
@@ -513,7 +496,7 @@
   {
     "item_id": "gen_b3_007",
     "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that won the 2010 FIFA World Cup?",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that won the 2010 FIFA World Cup?",
     "gold_answer": "95",
     "aliases": [
       "92",
@@ -548,7 +531,7 @@
   {
     "item_id": "gen_b3_011",
     "mechanism_primary": "Compositional",
-    "question": "What is the approximate population density (people per km²) of the country that has the longest coastline in the world?",
+    "question": "What is the approximate population density (people per km\u00b2) of the country that has the longest coastline in the world?",
     "gold_answer": "4",
     "aliases": [
       "4/km2",
@@ -582,7 +565,7 @@
   {
     "item_id": "gen_a_042",
     "mechanism_primary": "Anchoring",
-    "question": "What is the exact value of Avogadro's constant as defined by the 2019 SI redefinition? Answer in scientific notation with 8 significant figures (e.g., 6.XXXXXXX × 10^23 mol^-1). Answer with just the numerical part before '× 10^23'.",
+    "question": "What is the exact value of Avogadro's constant as defined by the 2019 SI redefinition? Answer in scientific notation with 8 significant figures (e.g., 6.XXXXXXX \u00d7 10^23 mol^-1). Answer with just the numerical part before '\u00d7 10^23'.",
     "gold_answer": "6.0221408",
     "aliases": [
       "6.0221408",
@@ -599,15 +582,15 @@
   {
     "item_id": "gen_a2_032",
     "mechanism_primary": "Anchoring",
-    "question": "What is the value of the CODATA 2022 recommended proton mass in kilograms, to 10 significant figures? Answer with the value in the form A.XXXXXXXXX × 10⁻²⁷ (give the coefficient to 10 significant figures).",
+    "question": "What is the value of the CODATA 2022 recommended proton mass in kilograms, to 10 significant figures? Answer with the value in the form A.XXXXXXXXX \u00d7 10\u207b\u00b2\u2077 (give the coefficient to 10 significant figures).",
     "gold_answer": "1.6726219260e-27",
     "aliases": [
       "1.6726219260e-27",
       "1.672621926e-27",
-      "1.672621926×10⁻²⁷",
-      "1.6726219260×10⁻²⁷",
-      "1.672621926 × 10⁻²⁷",
-      "1.6726219260 × 10⁻²⁷",
+      "1.672621926\u00d710\u207b\u00b2\u2077",
+      "1.6726219260\u00d710\u207b\u00b2\u2077",
+      "1.672621926 \u00d7 10\u207b\u00b2\u2077",
+      "1.6726219260 \u00d7 10\u207b\u00b2\u2077",
       "1.67262192595e-27"
     ],
     "rule": "numeric",
@@ -622,9 +605,9 @@
     "gold_answer": "99.61",
     "aliases": [
       "99.61",
-      "99.61°C",
+      "99.61\u00b0C",
       "99.61 C",
-      "99.61°c"
+      "99.61\u00b0c"
     ],
     "rule": "numeric",
     "batch": 2,
@@ -641,7 +624,7 @@
       "299,792,458",
       "299792458 m/s",
       "299,792,458 m/s",
-      "2.99792458 × 10^8 m/s"
+      "2.99792458 \u00d7 10^8 m/s"
     ],
     "rule": "numeric",
     "batch": 3,
@@ -670,14 +653,14 @@
   {
     "item_id": "gen_a3_035",
     "mechanism_primary": "Anchoring",
-    "question": "Avogadro's number is often approximated as 6.022 × 10^23. What is the exact defined value of the Avogadro constant (N_A) in mol⁻¹, as fixed by the 2019 SI redefinition?",
+    "question": "Avogadro's number is often approximated as 6.022 \u00d7 10^23. What is the exact defined value of the Avogadro constant (N_A) in mol\u207b\u00b9, as fixed by the 2019 SI redefinition?",
     "gold_answer": "6.02214076e23",
     "aliases": [
-      "6.02214076×10^23",
+      "6.02214076\u00d710^23",
       "6.02214076e23",
-      "6.02214076 × 10^23 mol^-1",
-      "6.02214076×10²³",
-      "6.02214076 × 10²³ mol⁻¹"
+      "6.02214076 \u00d7 10^23 mol^-1",
+      "6.02214076\u00d710\u00b2\u00b3",
+      "6.02214076 \u00d7 10\u00b2\u00b3 mol\u207b\u00b9"
     ],
     "rule": "numeric",
     "batch": 3,
@@ -705,14 +688,14 @@
   {
     "item_id": "gen_a3_037",
     "mechanism_primary": "Anchoring",
-    "question": "The Planck constant is often written as approximately 6.626 × 10⁻³⁴ J·s. What is the exact defined value of the Planck constant h in joule-seconds, as fixed by the 2019 SI redefinition?",
+    "question": "The Planck constant is often written as approximately 6.626 \u00d7 10\u207b\u00b3\u2074 J\u00b7s. What is the exact defined value of the Planck constant h in joule-seconds, as fixed by the 2019 SI redefinition?",
     "gold_answer": "6.62607015e-34",
     "aliases": [
-      "6.62607015×10⁻³⁴",
+      "6.62607015\u00d710\u207b\u00b3\u2074",
       "6.62607015e-34",
-      "6.62607015 × 10⁻³⁴ J·s",
-      "6.62607015×10^-34 J·s",
-      "6.626 070 15 × 10⁻³⁴"
+      "6.62607015 \u00d7 10\u207b\u00b3\u2074 J\u00b7s",
+      "6.62607015\u00d710^-34 J\u00b7s",
+      "6.626 070 15 \u00d7 10\u207b\u00b3\u2074"
     ],
     "rule": "numeric",
     "batch": 3,
@@ -941,7 +924,7 @@
     "aliases": [
       "France",
       "the French Republic",
-      "République française"
+      "R\u00e9publique fran\u00e7aise"
     ],
     "rule": "alias",
     "batch": 3,
@@ -1178,11 +1161,11 @@
   {
     "item_id": "v41_ct_002",
     "mechanism_primary": "ConditionalTemporal",
-    "question": "Assume that the European Central Bank cut its deposit facility rate from 4.00% in June 2024 through a series of eight cuts to reach 2.00% by June 2025, a total reduction of 200 basis points. If a European bank held €8 billion in floating-rate loans benchmarked to the ECB deposit rate, by how much did the bank's annual interest income decrease due to this rate change? Answer in millions of euros.",
+    "question": "Assume that the European Central Bank cut its deposit facility rate from 4.00% in June 2024 through a series of eight cuts to reach 2.00% by June 2025, a total reduction of 200 basis points. If a European bank held \u20ac8 billion in floating-rate loans benchmarked to the ECB deposit rate, by how much did the bank's annual interest income decrease due to this rate change? Answer in millions of euros.",
     "gold_answer": "160",
     "aliases": [
       "160 million",
-      "€160 million",
+      "\u20ac160 million",
       "160M"
     ],
     "rule": "numeric_tolerance",
@@ -1256,12 +1239,12 @@
   {
     "item_id": "v41_ct_007",
     "mechanism_primary": "ConditionalTemporal",
-    "question": "In June 2024, the ECB's deposit facility rate was 4.00%. By June 2025, after eight rate cuts, it reached 2.00%. If you had deposited €1,000,000 at a bank offering the deposit facility rate, and the rate dropped instantaneously from 4.00% to 2.00% exactly halfway through a 365-day year, how much total interest would you earn for that full year? Assume simple interest (not compounded). Round to the nearest euro.",
+    "question": "In June 2024, the ECB's deposit facility rate was 4.00%. By June 2025, after eight rate cuts, it reached 2.00%. If you had deposited \u20ac1,000,000 at a bank offering the deposit facility rate, and the rate dropped instantaneously from 4.00% to 2.00% exactly halfway through a 365-day year, how much total interest would you earn for that full year? Assume simple interest (not compounded). Round to the nearest euro.",
     "gold_answer": "30,000",
     "aliases": [
-      "€30,000",
+      "\u20ac30,000",
       "30000",
-      "€30000"
+      "\u20ac30000"
     ],
     "rule": "numeric_tolerance",
     "batch": 5,
@@ -1467,7 +1450,7 @@
   {
     "item_id": "v41_comp_002",
     "mechanism_primary": "Compositional",
-    "question": "Suriname is the smallest country in South America by area, with approximately 163,821 km². Belgium has an area of approximately 30,689 km². How many times larger is Suriname than Belgium? Round to one decimal place.",
+    "question": "Suriname is the smallest country in South America by area, with approximately 163,821 km\u00b2. Belgium has an area of approximately 30,689 km\u00b2. How many times larger is Suriname than Belgium? Round to one decimal place.",
     "gold_answer": "5.3",
     "aliases": [
       "5.3x",
@@ -1543,7 +1526,7 @@
   {
     "item_id": "v42_ioed_004",
     "mechanism_primary": "IOED",
-    "question": "Water flows at 2 m/s in a horizontal pipe of diameter 4 cm where the gauge pressure is 200 kPa. The pipe narrows to 2 cm diameter. Using Bernoulli's principle (water density = 1000 kg/m³), what is the gauge pressure in the narrower section, in kPa? Round to the nearest whole number.",
+    "question": "Water flows at 2 m/s in a horizontal pipe of diameter 4 cm where the gauge pressure is 200 kPa. The pipe narrows to 2 cm diameter. Using Bernoulli's principle (water density = 1000 kg/m\u00b3), what is the gauge pressure in the narrower section, in kPa? Round to the nearest whole number.",
     "gold_answer": "170",
     "aliases": [
       "170",
@@ -1557,7 +1540,7 @@
   {
     "item_id": "v42_ioed_005",
     "mechanism_primary": "IOED",
-    "question": "A gas is compressed adiabatically from 1 atm to 10 atm. The initial temperature is 27°C (300 K). For a diatomic ideal gas (γ = 1.4), what is the final temperature in degrees Celsius? Round to the nearest whole number.",
+    "question": "A gas is compressed adiabatically from 1 atm to 10 atm. The initial temperature is 27\u00b0C (300 K). For a diatomic ideal gas (\u03b3 = 1.4), what is the final temperature in degrees Celsius? Round to the nearest whole number.",
     "gold_answer": "306",
     "aliases": [
       "306",
@@ -1572,12 +1555,12 @@
   {
     "item_id": "v42_ioed_009",
     "mechanism_primary": "IOED",
-    "question": "A wire carries a current of 5 A. A charged particle with charge q = +2 μC moves parallel to the wire at a distance of 10 cm, moving at speed 1000 m/s in the SAME direction as the current. What is the magnitude of the magnetic force on the charged particle in micronewtons? Use μ₀ = 4π × 10⁻⁷ T·m/A. Give your answer to 2 decimal places.",
+    "question": "A wire carries a current of 5 A. A charged particle with charge q = +2 \u03bcC moves parallel to the wire at a distance of 10 cm, moving at speed 1000 m/s in the SAME direction as the current. What is the magnitude of the magnetic force on the charged particle in micronewtons? Use \u03bc\u2080 = 4\u03c0 \u00d7 10\u207b\u2077 T\u00b7m/A. Give your answer to 2 decimal places.",
     "gold_answer": "0.02",
     "aliases": [
       "0.02",
       "0.020",
-      "2×10⁻⁸"
+      "2\u00d710\u207b\u2078"
     ],
     "rule": "numeric_tolerance",
     "batch": 6,
@@ -1587,7 +1570,7 @@
   {
     "item_id": "v42_ioed_010",
     "mechanism_primary": "IOED",
-    "question": "An object cools from 90°C to 60°C in exactly 10 minutes in a 20°C room (Newton's Law of Cooling applies). How many additional minutes does it take to cool from 60°C to 40°C? Round to the nearest whole number.",
+    "question": "An object cools from 90\u00b0C to 60\u00b0C in exactly 10 minutes in a 20\u00b0C room (Newton's Law of Cooling applies). How many additional minutes does it take to cool from 60\u00b0C to 40\u00b0C? Round to the nearest whole number.",
     "gold_answer": "12",
     "aliases": [
       "12",

@@ -23,12 +23,9 @@
     "item_id": "gen_b_037",
     "answer_type": "tri_label",
     "grader_rule": "tri_label",
-    "gold_answer": "false",
+    "gold_answer": "contested",
     "accepted_forms": [
-      "false",
-      "no",
-      "incorrect",
-      "unambiguously false"
+      "contested"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -48,15 +45,7 @@
     "grader_rule": "tri_label",
     "gold_answer": "false",
     "accepted_forms": [
-      "false",
-      "no",
-      "incorrect",
-      "unambiguously false",
-      "contested",
-      "debated",
-      "disputed",
-      "it is contested",
-      "the evidence is contested"
+      "false"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -275,12 +264,9 @@
     "item_id": "gen_a2_001",
     "answer_type": "tri_label",
     "grader_rule": "tri_label",
-    "gold_answer": "false",
+    "gold_answer": "contested",
     "accepted_forms": [
-      "false",
-      "no",
-      "incorrect",
-      "unambiguously false"
+      "contested"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -350,12 +336,9 @@
     "item_id": "gen_a2_007",
     "answer_type": "tri_label",
     "grader_rule": "tri_label",
-    "gold_answer": "false",
+    "gold_answer": "contested",
     "accepted_forms": [
-      "false",
-      "no",
-      "incorrect",
-      "unambiguously false"
+      "contested"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -424,10 +407,10 @@
     "accepted_forms": [
       "1.6726219260e-27",
       "1.672621926e-27",
-      "1.672621926×10⁻²⁷",
-      "1.6726219260×10⁻²⁷",
-      "1.672621926 × 10⁻²⁷",
-      "1.6726219260 × 10⁻²⁷",
+      "1.672621926\u00d710\u207b\u00b2\u2077",
+      "1.6726219260\u00d710\u207b\u00b2\u2077",
+      "1.672621926 \u00d7 10\u207b\u00b2\u2077",
+      "1.6726219260 \u00d7 10\u207b\u00b2\u2077",
       "1.67262192595e-27"
     ],
     "tolerance_class": "rel_1e6",
@@ -447,9 +430,9 @@
     "gold_answer": "99.61",
     "accepted_forms": [
       "99.61",
-      "99.61°C",
+      "99.61\u00b0C",
       "99.61 C",
-      "99.61°c"
+      "99.61\u00b0c"
     ],
     "tolerance_class": "rel_1e6",
     "tolerance_params": {
@@ -685,7 +668,7 @@
     "accepted_forms": [
       "France",
       "the French Republic",
-      "République française"
+      "R\u00e9publique fran\u00e7aise"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -705,7 +688,7 @@
       "299,792,458",
       "299792458 m/s",
       "299,792,458 m/s",
-      "2.99792458 × 10^8 m/s"
+      "2.99792458 \u00d7 10^8 m/s"
     ],
     "tolerance_class": "rel_1e6",
     "tolerance_params": {
@@ -748,10 +731,10 @@
     "gold_answer": "6.02214076e23",
     "accepted_forms": [
       "6.02214076e23",
-      "6.02214076×10^23",
-      "6.02214076 × 10^23 mol^-1",
-      "6.02214076×10²³",
-      "6.02214076 × 10²³ mol⁻¹"
+      "6.02214076\u00d710^23",
+      "6.02214076 \u00d7 10^23 mol^-1",
+      "6.02214076\u00d710\u00b2\u00b3",
+      "6.02214076 \u00d7 10\u00b2\u00b3 mol\u207b\u00b9"
     ],
     "tolerance_class": "rel_1e6",
     "tolerance_params": {
@@ -793,10 +776,10 @@
     "gold_answer": "6.62607015e-34",
     "accepted_forms": [
       "6.62607015e-34",
-      "6.62607015×10⁻³⁴",
-      "6.62607015 × 10⁻³⁴ J·s",
-      "6.62607015×10^-34 J·s",
-      "6.626 070 15 × 10⁻³⁴"
+      "6.62607015\u00d710\u207b\u00b3\u2074",
+      "6.62607015 \u00d7 10\u207b\u00b3\u2074 J\u00b7s",
+      "6.62607015\u00d710^-34 J\u00b7s",
+      "6.626 070 15 \u00d7 10\u207b\u00b3\u2074"
     ],
     "tolerance_class": "rel_1e6",
     "tolerance_params": {
@@ -1505,7 +1488,7 @@
       "rel_tol": 0.01
     },
     "time_anchor": "March 2025",
-    "source_anchor": "March 2025 IAU Minor Planet Center announcement; (274-146)/274 = 128/274 ≈ 0.4672 = 46.7% ≈ 47%",
+    "source_anchor": "March 2025 IAU Minor Planet Center announcement; (274-146)/274 = 128/274 \u2248 0.4672 = 46.7% \u2248 47%",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1518,15 +1501,15 @@
     "accepted_forms": [
       "160",
       "160 million",
-      "€160 million",
+      "\u20ac160 million",
       "160M"
     ],
     "tolerance_class": "abs_01",
     "tolerance_params": {
       "abs_tol": 0.01
     },
-    "time_anchor": "June 2024 – June 2025",
-    "source_anchor": "ECB rate cutting cycle June 2024 to June 2025, 4.00% to 2.00%; €8B × 2.00% = €160M annual decrease",
+    "time_anchor": "June 2024 \u2013 June 2025",
+    "source_anchor": "ECB rate cutting cycle June 2024 to June 2025, 4.00% to 2.00%; \u20ac8B \u00d7 2.00% = \u20ac160M annual decrease",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1546,7 +1529,7 @@
       "rel_tol": 0.02
     },
     "time_anchor": "December 2025",
-    "source_anchor": "India GDP Dec 2025 ~$4.18T per government statement; India after 1yr: 4.18×1.065=$4.4517T; Japan after 1yr: 4.07×1.01=$4.1107T; gap: $4.4517T-$4.1107T=$0.3410T≈$341B",
+    "source_anchor": "India GDP Dec 2025 ~$4.18T per government statement; India after 1yr: 4.18\u00d71.065=$4.4517T; Japan after 1yr: 4.07\u00d71.01=$4.1107T; gap: $4.4517T-$4.1107T=$0.3410T\u2248$341B",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1565,7 +1548,7 @@
       "rel_tol": 0.02
     },
     "time_anchor": "February 2026",
-    "source_anchor": "UN World Population Prospects and Worldometer 2025 data; 70,000,000 / 365 ≈ 191,781 ≈ 192,000",
+    "source_anchor": "UN World Population Prospects and Worldometer 2025 data; 70,000,000 / 365 \u2248 191,781 \u2248 192,000",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1585,7 +1568,7 @@
       "rel_tol": 0.02
     },
     "time_anchor": "January 2025",
-    "source_anchor": "U.S. Treasury and Census data January 2025; $36.2T / 340M = $36,200,000M / 340M ≈ $106,471 ≈ $106,000",
+    "source_anchor": "U.S. Treasury and Census data January 2025; $36.2T / 340M = $36,200,000M / 340M \u2248 $106,471 \u2248 $106,000",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1606,7 +1589,7 @@
       "abs_tol": 0.01
     },
     "time_anchor": "Q2 FY2025-26",
-    "source_anchor": "Given figures: $1.05T + $1.02T = $2.07T. Growth rates are distractors — the question asks for the combined GDP in that quarter, which is simply the sum of the given figures.",
+    "source_anchor": "Given figures: $1.05T + $1.02T = $2.07T. Growth rates are distractors \u2014 the question asks for the combined GDP in that quarter, which is simply the sum of the given figures.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1624,8 +1607,8 @@
     "tolerance_params": {
       "rel_tol": 0.01
     },
-    "time_anchor": "June 2024 – June 2025",
-    "source_anchor": "First half: €1M × 4.00% × 0.5 = €20,000. Second half: €1M × 2.00% × 0.5 = €10,000. Total: €30,000.",
+    "time_anchor": "June 2024 \u2013 June 2025",
+    "source_anchor": "First half: \u20ac1M \u00d7 4.00% \u00d7 0.5 = \u20ac20,000. Second half: \u20ac1M \u00d7 2.00% \u00d7 0.5 = \u20ac10,000. Total: \u20ac30,000.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1748,7 +1731,7 @@
     "tolerance_class": null,
     "tolerance_params": null,
     "time_anchor": null,
-    "source_anchor": "Initial pick has 1/4 chance. Other 3 doors collectively have 3/4. After host opens one goat door, that 3/4 is split between 2 remaining doors: 3/4 ÷ 2 = 3/8 each.",
+    "source_anchor": "Initial pick has 1/4 chance. Other 3 doors collectively have 3/4. After host opens one goat door, that 3/4 is split between 2 remaining doors: 3/4 \u00f7 2 = 3/8 each.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1769,7 +1752,7 @@
       "abs_tol": 0.01
     },
     "time_anchor": null,
-    "source_anchor": "$200 × 1.25 = $250. $250 × 0.75 = $187.50. A 25% increase followed by a 25% decrease does NOT return to the original price.",
+    "source_anchor": "$200 \u00d7 1.25 = $250. $250 \u00d7 0.75 = $187.50. A 25% increase followed by a 25% decrease does NOT return to the original price.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1830,7 +1813,7 @@
       "abs_tol": 0.01
     },
     "time_anchor": null,
-    "source_anchor": "Harmonic mean: 2×60×40/(60+40) = 4800/100 = 48 km/h. NOT (60+40)/2 = 50.",
+    "source_anchor": "Harmonic mean: 2\u00d760\u00d740/(60+40) = 4800/100 = 48 km/h. NOT (60+40)/2 = 50.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1851,7 +1834,7 @@
       "abs_tol": 0.01
     },
     "time_anchor": null,
-    "source_anchor": "Year 1: $1,000 × 1.50 = $1,500. Year 2: $1,500 × 0.50 = $750. A 50% gain followed by a 50% loss does NOT return to original.",
+    "source_anchor": "Year 1: $1,000 \u00d7 1.50 = $1,500. Year 2: $1,500 \u00d7 0.50 = $750. A 50% gain followed by a 50% loss does NOT return to original.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1890,7 +1873,7 @@
       "abs_tol": 0.01
     },
     "time_anchor": null,
-    "source_anchor": "Burj Khalifa height: 828m (official). Golden Gate main span: 1,280m (goldengate.org). 828 × 1 = 828 < 1,280. 828 × 2 = 1,656 > 1,280. So 2 Burj Khalifas exceed the span.",
+    "source_anchor": "Burj Khalifa height: 828m (official). Golden Gate main span: 1,280m (goldengate.org). 828 \u00d7 1 = 828 < 1,280. 828 \u00d7 2 = 1,656 > 1,280. So 2 Burj Khalifas exceed the span.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1910,7 +1893,7 @@
       "rel_tol": 0.02
     },
     "time_anchor": null,
-    "source_anchor": "Suriname area: ~163,821 km² (World Population Review). Belgium area: ~30,689 km² (Belgium.be official). 163,821 / 30,689 ≈ 5.34 ≈ 5.3.",
+    "source_anchor": "Suriname area: ~163,821 km\u00b2 (World Population Review). Belgium area: ~30,689 km\u00b2 (Belgium.be official). 163,821 / 30,689 \u2248 5.34 \u2248 5.3.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1948,7 +1931,7 @@
       "abs_tol": 1.0
     },
     "time_anchor": null,
-    "source_anchor": "Antoine equation (log10(P/mmHg) = 8.10765 - 1750.286/(235+T)). At 760 mmHg: T=100°C. At 380 mmHg: T≈81.7°C. Decrease ≈ 18°C. NOT 50°C — the relationship is logarithmic, not linear.",
+    "source_anchor": "Antoine equation (log10(P/mmHg) = 8.10765 - 1750.286/(235+T)). At 760 mmHg: T=100\u00b0C. At 380 mmHg: T\u224881.7\u00b0C. Decrease \u2248 18\u00b0C. NOT 50\u00b0C \u2014 the relationship is logarithmic, not linear.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1969,7 +1952,7 @@
       "abs_tol": 5.0
     },
     "time_anchor": null,
-    "source_anchor": "Simple: 1000×0.10×10 = $1000 interest → total $2000. Compound: 1000×(1.1)^10 = $2593.74. Difference: $2593.74 - $2000 = $593.74 ≈ $594.",
+    "source_anchor": "Simple: 1000\u00d70.10\u00d710 = $1000 interest \u2192 total $2000. Compound: 1000\u00d7(1.1)^10 = $2593.74. Difference: $2593.74 - $2000 = $593.74 \u2248 $594.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1989,7 +1972,7 @@
       "abs_tol": 10.0
     },
     "time_anchor": null,
-    "source_anchor": "Capstan equation: T_load = T_hold × e^(μθ). θ = 1.5 × 2π = 9.4248 rad. e^(0.3 × 9.4248) = e^(2.8274) = 16.90. T_load = 50 × 16.90 = 845 N. Common wrong: linear thinking → 50 × (1 + 0.3×1.5×2π) ≈ 50 × 3.83 = 191 N.",
+    "source_anchor": "Capstan equation: T_load = T_hold \u00d7 e^(\u03bc\u03b8). \u03b8 = 1.5 \u00d7 2\u03c0 = 9.4248 rad. e^(0.3 \u00d7 9.4248) = e^(2.8274) = 16.90. T_load = 50 \u00d7 16.90 = 845 N. Common wrong: linear thinking \u2192 50 \u00d7 (1 + 0.3\u00d71.5\u00d72\u03c0) \u2248 50 \u00d7 3.83 = 191 N.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -2008,7 +1991,7 @@
       "abs_tol": 2.0
     },
     "time_anchor": null,
-    "source_anchor": "From continuity: v2=8 m/s. Bernoulli: P1 + ½ρv1² = P2 + ½ρv2². P2 = P1 + ½ρ(v1² - v2²) = 200000 + ½×1000×(4-64) = 200000 - 30000 = 170000 Pa = 170 kPa. Common wrong: pressure increases in narrower section (confusing Bernoulli).",
+    "source_anchor": "From continuity: v2=8 m/s. Bernoulli: P1 + \u00bd\u03c1v1\u00b2 = P2 + \u00bd\u03c1v2\u00b2. P2 = P1 + \u00bd\u03c1(v1\u00b2 - v2\u00b2) = 200000 + \u00bd\u00d71000\u00d7(4-64) = 200000 - 30000 = 170000 Pa = 170 kPa. Common wrong: pressure increases in narrower section (confusing Bernoulli).",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -2028,7 +2011,7 @@
       "abs_tol": 3.0
     },
     "time_anchor": null,
-    "source_anchor": "Adiabatic relation: T2 = T1 × (P2/P1)^((γ-1)/γ) = 300 × 10^(0.4/1.4) = 300 × 10^0.2857 = 300 × 1.9307 = 579.2 K = 306°C. Common wrong: linear thinking → 300×(10-1)/1 = 2700°C, or 10×27 = 270°C.",
+    "source_anchor": "Adiabatic relation: T2 = T1 \u00d7 (P2/P1)^((\u03b3-1)/\u03b3) = 300 \u00d7 10^(0.4/1.4) = 300 \u00d7 10^0.2857 = 300 \u00d7 1.9307 = 579.2 K = 306\u00b0C. Common wrong: linear thinking \u2192 300\u00d7(10-1)/1 = 2700\u00b0C, or 10\u00d727 = 270\u00b0C.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -2041,14 +2024,14 @@
     "accepted_forms": [
       "0.02",
       "0.020",
-      "2×10⁻⁸"
+      "2\u00d710\u207b\u2078"
     ],
     "tolerance_class": null,
     "tolerance_params": {
       "abs_tol": 0.005
     },
     "time_anchor": null,
-    "source_anchor": "B from wire: B = μ₀I/(2πr) = (4π×10⁻⁷ × 5)/(2π × 0.1) = 2×10⁻⁶/0.2π × π... B = (4π×10⁻⁷ × 5)/(2π × 0.1) = (20π×10⁻⁷)/(0.2π) = 10⁻⁵ T. F = qvB = 2×10⁻⁶ × 1000 × 10⁻⁵ = 2×10⁻⁸ N = 0.02 μN. Let me recheck: B = μ₀I/(2πr) = (4π×10⁻⁷)(5)/(2π×0.1) = 4π×5×10⁻⁷/(0.2π) = 10⁻⁵ T. F = qvB = 2×10⁻⁶ × 1000 × 10⁻⁵ = 2×10⁻⁸ N = 0.02 × 10⁻⁶ N = 0.02 μN. ✓",
+    "source_anchor": "B from wire: B = \u03bc\u2080I/(2\u03c0r) = (4\u03c0\u00d710\u207b\u2077 \u00d7 5)/(2\u03c0 \u00d7 0.1) = 2\u00d710\u207b\u2076/0.2\u03c0 \u00d7 \u03c0... B = (4\u03c0\u00d710\u207b\u2077 \u00d7 5)/(2\u03c0 \u00d7 0.1) = (20\u03c0\u00d710\u207b\u2077)/(0.2\u03c0) = 10\u207b\u2075 T. F = qvB = 2\u00d710\u207b\u2076 \u00d7 1000 \u00d7 10\u207b\u2075 = 2\u00d710\u207b\u2078 N = 0.02 \u03bcN. Let me recheck: B = \u03bc\u2080I/(2\u03c0r) = (4\u03c0\u00d710\u207b\u2077)(5)/(2\u03c0\u00d70.1) = 4\u03c0\u00d75\u00d710\u207b\u2077/(0.2\u03c0) = 10\u207b\u2075 T. F = qvB = 2\u00d710\u207b\u2076 \u00d7 1000 \u00d7 10\u207b\u2075 = 2\u00d710\u207b\u2078 N = 0.02 \u00d7 10\u207b\u2076 N = 0.02 \u03bcN. \u2713",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -2068,7 +2051,7 @@
       "abs_tol": 1.0
     },
     "time_anchor": null,
-    "source_anchor": "Newton's cooling: T(t) = T_room + (T_0 - T_room)e^{-kt}. Phase 1: 60 = 20 + 70e^{-10k} → k = -ln(4/7)/10 = 0.05596/min. Phase 2: 40 = 20 + 40e^{-kt₂} → e^{-kt₂} = 0.5 → t₂ = ln2/k = 0.693/0.05596 = 12.4 min ≈ 12 min. Common wrong: 10 minutes (assuming same rate), 6.67 minutes (purely proportional to ΔT).",
+    "source_anchor": "Newton's cooling: T(t) = T_room + (T_0 - T_room)e^{-kt}. Phase 1: 60 = 20 + 70e^{-10k} \u2192 k = -ln(4/7)/10 = 0.05596/min. Phase 2: 40 = 20 + 40e^{-kt\u2082} \u2192 e^{-kt\u2082} = 0.5 \u2192 t\u2082 = ln2/k = 0.693/0.05596 = 12.4 min \u2248 12 min. Common wrong: 10 minutes (assuming same rate), 6.67 minutes (purely proportional to \u0394T).",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null

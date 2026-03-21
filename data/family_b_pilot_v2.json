@@ -1,304 +1,198 @@
 [
   {
     "item_id": "abs_001",
-    "question": "What is the chemical symbol for gold?",
+    "question": "What is the smallest positive integer that requires exactly 5 additions to express as a sum of powers of 2?",
+    "gold_answer": "23",
     "gold_action": "answer",
-    "gold_answer": "Au",
-    "aliases": [
-      "Au",
-      "AU"
-    ],
-    "rule": "exact_constant",
-    "category": "straightforward_factual",
-    "difficulty": "easy",
-    "domain": "science",
-    "rationale": "The chemical symbol for gold is Au (from the Latin 'aurum'). This is a fixed, universally accepted fact from the periodic table with no ambiguity and no need for current data.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "hard",
+    "category": "math"
   },
   {
     "item_id": "abs_002",
-    "question": "How many sides does a hexagon have?",
+    "question": "Which element has the highest second ionization energy?",
+    "gold_answer": "Lithium",
     "gold_action": "answer",
-    "gold_answer": "6",
-    "aliases": [
-      "6",
-      "six"
-    ],
-    "rule": "exact_constant",
-    "category": "straightforward_factual",
-    "difficulty": "easy",
-    "domain": "math",
-    "rationale": "A hexagon is defined as a polygon with exactly 6 sides. This is a definitional mathematical fact that requires no disambiguation or external verification.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "hard",
+    "category": "science"
   },
   {
     "item_id": "abs_003",
-    "question": "In what year did World War II end?",
+    "question": "What is the chromatic number of the Petersen graph?",
+    "gold_answer": "3",
     "gold_action": "answer",
-    "gold_answer": "1945",
-    "aliases": [
-      "1945",
-      "nineteen forty-five"
-    ],
-    "rule": "exact_constant",
-    "category": "straightforward_factual",
-    "difficulty": "easy",
-    "domain": "history",
-    "rationale": "World War II ended in 1945 (V-E Day May 8, V-J Day September 2). While there are two theater end-dates, all reasonable answers converge on 1945. This is settled historical fact.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "hard",
+    "category": "math"
   },
   {
     "item_id": "abs_004",
-    "question": "What is the boiling point of water at standard atmospheric pressure?",
+    "question": "What is the computational complexity class of integer factorization using the best known classical algorithms?",
+    "gold_answer": "BQP",
     "gold_action": "answer",
-    "gold_answer": "100\u00b0C",
-    "aliases": [
-      "100\u00b0C",
-      "100 degrees Celsius",
-      "100 C",
-      "212\u00b0F",
-      "212 degrees Fahrenheit",
-      "373.15 K"
-    ],
-    "rule": "exact_constant",
-    "category": "surface_similar_clarify",
-    "difficulty": "medium",
-    "domain": "science",
-    "rationale": "Although the question mentions 'standard atmospheric pressure' (which pins the condition), it still superficially resembles a clarify item because boiling point varies with pressure and can be expressed in Celsius, Fahrenheit, or Kelvin. However, the qualifier 'at standard atmospheric pressure' fully resolves the ambiguity \u2014 the answer is 100\u00b0C / 212\u00b0F / 373.15 K. A model should answer directly, not ask for clarification.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "hard",
+    "category": "computation"
   },
   {
     "item_id": "abs_005",
-    "question": "Who wrote the play Hamlet?",
+    "question": "Which Byzantine emperor ruled during the peak of the empire's second golden age in the 10th century?",
+    "gold_answer": "Basil II",
     "gold_action": "answer",
-    "gold_answer": "William Shakespeare",
-    "aliases": [
-      "William Shakespeare",
-      "Shakespeare"
-    ],
-    "rule": "exact_constant",
-    "category": "surface_similar_clarify",
-    "difficulty": "medium",
-    "domain": "history",
-    "rationale": "A model might wonder whether to ask 'which Hamlet?' since there are multiple adaptations. However, the original play titled Hamlet has a single universally acknowledged author, William Shakespeare. The existence of adaptations does not make this question ambiguous \u2014 Shakespeare is the correct and unambiguous answer.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "hard",
+    "category": "history"
   },
   {
     "item_id": "abs_006",
-    "question": "What is the speed of light in a vacuum?",
+    "question": "What is the maximum number of edges in a planar graph with n vertices?",
+    "gold_answer": "3n - 6",
     "gold_action": "answer",
-    "gold_answer": "299,792,458 m/s",
-    "aliases": [
-      "299,792,458 m/s",
-      "approximately 3 \u00d7 10^8 m/s",
-      "about 186,000 miles per second",
-      "c"
-    ],
-    "rule": "exact_constant",
-    "category": "surface_similar_clarify",
-    "difficulty": "medium",
-    "domain": "science",
-    "rationale": "While a model might ask 'in what units?', this question specifies 'in a vacuum' which is the standard context for c. The SI value is exact by definition. A model should answer directly with the SI value (or an approximation), not ask for unit clarification \u2014 the metric value is the universally expected form.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "hard",
+    "category": "math"
   },
   {
     "item_id": "abs_007",
-    "question": "What is the tallest mountain in the world?",
+    "question": "What is the genus of a torus with n handles?",
+    "gold_answer": "n",
     "gold_action": "answer",
-    "gold_answer": "Mount Everest",
-    "aliases": [
-      "Mount Everest",
-      "Everest",
-      "Mt. Everest"
-    ],
-    "rule": "exact_constant",
-    "category": "surface_similar_verify",
-    "difficulty": "medium",
-    "domain": "geography",
-    "rationale": "A model might consider verifying 'tallest mountain' because small measurement revisions occur. However, Mount Everest's supremacy as the world's highest peak above sea level is thoroughly settled geography. No credible claim to a different mountain exists. This should be answered directly from parametric knowledge without verification.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "hard",
+    "category": "math"
   },
   {
     "item_id": "abs_008",
-    "question": "What is the approximate population of Earth?",
+    "question": "What is the space complexity of the optimal solution to the knapsack problem using dynamic programming?",
+    "gold_answer": "O(W)",
     "gold_action": "answer",
-    "gold_answer": "approximately 8 billion",
-    "aliases": [
-      "approximately 8 billion",
-      "about 8 billion",
-      "~8 billion",
-      "8 billion"
-    ],
-    "rule": "approx_numeric_small",
-    "category": "surface_similar_verify",
-    "difficulty": "medium",
-    "domain": "geography",
-    "rationale": "A model might flag this as 'verify' since population changes daily. However, the word 'approximate' in the question signals that a ballpark figure is acceptable. The answer 'approximately 8 billion' is stable knowledge that a model can confidently state. Routing to verify would be over-cautious given the explicit approximation framing.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "hard",
+    "category": "computation"
   },
   {
     "item_id": "abs_009",
-    "question": "How many bones are in the adult human body?",
+    "question": "Which country has the most time zones including overseas territories?",
+    "gold_answer": "France",
     "gold_action": "answer",
-    "gold_answer": "206",
-    "aliases": [
-      "206",
-      "two hundred six",
-      "about 206"
-    ],
-    "rule": "exact_constant",
-    "category": "surface_similar_verify",
     "difficulty": "medium",
-    "domain": "medicine",
-    "rationale": "Some models might flag this for verification because there can be minor individual variation (sesamoid bones, sutural bones). However, the standard anatomical answer of 206 bones in the adult human body is a well-established figure that appears in every anatomy textbook. This is answerable directly from parametric knowledge.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "category": "geography"
   },
   {
     "item_id": "abs_010",
-    "question": "Is it possible to trisect an arbitrary angle using only a compass and straightedge?",
+    "question": "Which organelle is responsible for the synthesis of steroid hormones in endocrine cells?",
+    "gold_answer": "Smooth endoplasmic reticulum",
     "gold_action": "answer",
-    "gold_answer": "No",
-    "aliases": [
-      "No",
-      "no",
-      "No, it is impossible"
-    ],
-    "rule": "yes_no",
-    "category": "foil_abstain",
-    "difficulty": "hard",
-    "domain": "math",
-    "rationale": "This looks like a subjective or unanswerable question but is actually a mathematically proven impossibility. Pierre Wantzel proved in 1837 that trisecting an arbitrary angle with compass and straightedge is impossible using Galois theory / field extensions. The answer is definitively 'no' \u2014 this is answerable, not unanswerable.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "medium",
+    "category": "science"
   },
   {
     "item_id": "abs_011",
-    "question": "Did any humans exist before Homo sapiens?",
+    "question": "What is the name of the deepest point in the Indian Ocean?",
+    "gold_answer": "Java Trench",
     "gold_action": "answer",
-    "gold_answer": "Yes",
-    "aliases": [
-      "Yes",
-      "yes",
-      "Yes, earlier hominins existed"
-    ],
-    "rule": "yes_no",
-    "category": "foil_abstain",
-    "difficulty": "hard",
-    "domain": "science",
-    "rationale": "This looks potentially unanswerable or purely philosophical (what counts as 'human'?), but the scientific consensus is clear: genus Homo includes multiple prior species (Homo erectus, Homo heidelbergensis, Homo neanderthalensis, etc.) that preceded Homo sapiens. The answer 'yes' is well-grounded and defensible from paleoanthropology.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "medium",
+    "category": "geography"
   },
   {
     "item_id": "abs_012",
-    "question": "What is the largest prime number less than 20?",
+    "question": "Which algorithm solves the all-pairs shortest path problem in O(n\u00b3) time?",
+    "gold_answer": "Floyd-Warshall",
     "gold_action": "answer",
-    "gold_answer": "19",
-    "aliases": [
-      "19",
-      "nineteen"
-    ],
-    "rule": "exact_constant",
-    "category": "foil_abstain",
-    "difficulty": "hard",
-    "domain": "math",
-    "rationale": "This looks like a trick question (primes are infinite, largest primes are unknown) but the constraint 'less than 20' makes it finite and deterministic. The primes less than 20 are 2, 3, 5, 7, 11, 13, 17, 19 \u2014 so 19 is the answer. A model should recognize the bounded constraint and answer directly.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "medium",
+    "category": "computation"
   },
   {
     "item_id": "abs_013",
-    "question": "What is the atomic number of Mercury?",
+    "question": "What is the half-life of carbon-14 in years?",
+    "gold_answer": "5,730",
     "gold_action": "answer",
-    "gold_answer": "80",
-    "aliases": [
-      "80",
-      "eighty"
-    ],
-    "rule": "exact_constant",
-    "category": "surface_similar_clarify",
     "difficulty": "medium",
-    "domain": "science",
-    "rationale": "\"Atomic number\" uniquely identifies Mercury as the chemical element (Hg, Z=80). No ambiguity remains because planets do not have atomic numbers. This is a foil: it looks like it needs clarification (Mercury is ambiguous) but the modifier resolves it.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
+    "category": "science"
+  },
+  {
+    "item_id": "abs_014",
+    "question": "Which Chinese dynasty was founded by Zhu Yuanzhang?",
+    "gold_answer": "Ming",
+    "gold_action": "answer",
+    "difficulty": "medium",
+    "category": "history"
+  },
+  {
+    "item_id": "abs_015",
+    "question": "Which African country has three capital cities?",
+    "gold_answer": "South Africa",
+    "gold_action": "answer",
+    "difficulty": "medium",
+    "category": "geography"
+  },
+  {
+    "item_id": "abs_016",
+    "question": "What's the best programming language to learn?",
+    "gold_action": "clarify",
+    "gold_answer": "Python is widely recommended for beginners interested in data science, scripting, or general-purpose programming.",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "missing_preference",
+    "difficulty": "easy",
+    "domain": "technology",
+    "rationale": "The optimal programming language depends entirely on the user's goal: web development (JavaScript), systems programming (Rust/C), data science (Python), mobile apps (Swift/Kotlin), enterprise (Java), etc. Without knowing the use case, any answer is equally valid or invalid. This is a genuine constraint-missing clarify item.",
+    "interpretations": [
+      {
+        "interpretation": "For data science and machine learning",
+        "answer": "Python is the dominant language for data science and machine learning."
+      },
+      {
+        "interpretation": "For building iOS mobile apps",
+        "answer": "Swift is the primary language for iOS app development."
+      },
+      {
+        "interpretation": "For general web development",
+        "answer": "JavaScript is essential for web development; Python, Ruby, or Node.js are common for backends."
+      }
+    ],
+    "canonical_clarification": "What do you want to use the programming language for? (e.g., web development, data science, mobile apps, systems programming)",
+    "canonical_user_reply": "Data science and machine learning",
     "verification_target": null,
     "canonical_evidence": null,
     "post_verify_answer": null,
     "unanswerability_type": null
   },
   {
-    "item_id": "abs_014",
+    "item_id": "abs_017",
+    "question": "Convert 100 degrees.",
+    "gold_action": "clarify",
+    "gold_answer": "N/A \u2014 depends on the source unit (Fahrenheit, Celsius, or other) and target unit",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "missing_unit",
+    "difficulty": "easy",
+    "domain": "science",
+    "rationale": "The question is missing both the source unit and the target unit. '100 degrees' could be Fahrenheit (\u219237.78\u00b0C), Celsius (\u2192212\u00b0F or 373.15 K), Kelvin (\u2192-173.15\u00b0C), or even angular degrees. Answering without clarification risks a fundamentally wrong conversion.",
+    "interpretations": [
+      {
+        "interpretation": "100\u00b0F to Celsius",
+        "answer": "100\u00b0F = 37.78\u00b0C"
+      },
+      {
+        "interpretation": "100\u00b0C to Fahrenheit",
+        "answer": "100\u00b0C = 212\u00b0F"
+      },
+      {
+        "interpretation": "100\u00b0C to Kelvin",
+        "answer": "100\u00b0C = 373.15 K"
+      }
+    ],
+    "canonical_clarification": "What units are you converting from and to? For example, 100 degrees Fahrenheit to Celsius?",
+    "canonical_user_reply": "Celsius to Fahrenheit",
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": null
+  },
+  {
+    "item_id": "abs_018",
+    "question": "What's the bank's current rate?",
+    "gold_answer": "N/A \u2014 multiple ambiguities: which bank, which type of rate (interest, exchange, loan, savings), and what time period defines 'current'",
+    "gold_action": "clarify",
+    "difficulty": "hard",
+    "category": "referential"
+  },
+  {
+    "item_id": "abs_019",
     "question": "How big is Amazon?",
     "gold_action": "clarify",
     "gold_answer": "Approximately 6,400 km",
@@ -336,7 +230,7 @@
     "unanswerability_type": null
   },
   {
-    "item_id": "abs_015",
+    "item_id": "abs_020",
     "question": "What is the range of Python?",
     "gold_action": "clarify",
     "gold_answer": "range() generates a sequence of integers, taking start, stop, and step arguments",
@@ -367,54 +261,7 @@
     "unanswerability_type": null
   },
   {
-    "item_id": "abs_016",
-    "question": "What is the population of Berlin?",
-    "gold_action": "verify",
-    "gold_answer": "Approximately 3.85 million",
-    "aliases": [
-      "3.85 million",
-      "3,850,000",
-      "3.8 million",
-      "about 3.85 million"
-    ],
-    "rule": "approx_numeric_dynamic",
-    "category": "time_sensitive",
-    "difficulty": "medium",
-    "domain": "geography",
-    "rationale": "Population figures change regularly and require current data to answer accurately. While \"Berlin\" could theoretically refer to Berlin, Germany or Berlin, New Hampshire, etc., in standard usage it overwhelmingly refers to the German capital. The primary epistemic issue is currency of data, not ambiguity of referent.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": "Current population statistics for Berlin, Germany",
-    "canonical_evidence": "Berlin population (2024): approximately 3.85 million",
-    "post_verify_answer": "Approximately 3.85 million",
-    "unanswerability_type": null
-  },
-  {
-    "item_id": "abs_017",
-    "question": "Who is the Prime Minister of the United Kingdom?",
-    "gold_action": "verify",
-    "gold_answer": "Keir Starmer",
-    "aliases": [
-      "Keir Starmer",
-      "Starmer",
-      "Sir Keir Starmer"
-    ],
-    "rule": "alias_plus_normalization",
-    "category": "seemingly_static",
-    "difficulty": "medium",
-    "domain": "current events",
-    "rationale": "The identity of the UK PM changes with elections and leadership contests. While models may have current information in training data, this is inherently time-sensitive and the correct epistemic action is to verify with current sources rather than rely on potentially stale training data.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": "Current UK Prime Minister from official government sources",
-    "canonical_evidence": "As of 2026, the Prime Minister of the United Kingdom is Keir Starmer",
-    "post_verify_answer": "Keir Starmer",
-    "unanswerability_type": null
-  },
-  {
-    "item_id": "abs_018",
+    "item_id": "abs_021",
     "question": "What was the result of the election?",
     "gold_action": "clarify",
     "gold_answer": "Donald Trump won the 2024 US presidential election",
@@ -450,71 +297,7 @@
     "unanswerability_type": null
   },
   {
-    "item_id": "abs_019",
-    "question": "What's the best programming language to learn?",
-    "gold_action": "clarify",
-    "gold_answer": "Python is widely recommended for beginners interested in data science, scripting, or general-purpose programming.",
-    "aliases": [],
-    "rule": "exact_constant",
-    "category": "missing_preference",
-    "difficulty": "easy",
-    "domain": "technology",
-    "rationale": "The optimal programming language depends entirely on the user's goal: web development (JavaScript), systems programming (Rust/C), data science (Python), mobile apps (Swift/Kotlin), enterprise (Java), etc. Without knowing the use case, any answer is equally valid or invalid. This is a genuine constraint-missing clarify item.",
-    "interpretations": [
-      {
-        "interpretation": "For data science and machine learning",
-        "answer": "Python is the dominant language for data science and machine learning."
-      },
-      {
-        "interpretation": "For building iOS mobile apps",
-        "answer": "Swift is the primary language for iOS app development."
-      },
-      {
-        "interpretation": "For general web development",
-        "answer": "JavaScript is essential for web development; Python, Ruby, or Node.js are common for backends."
-      }
-    ],
-    "canonical_clarification": "What do you want to use the programming language for? (e.g., web development, data science, mobile apps, systems programming)",
-    "canonical_user_reply": "Data science and machine learning",
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
-  },
-  {
-    "item_id": "abs_020",
-    "question": "What's a good diet to follow?",
-    "gold_action": "clarify",
-    "gold_answer": "A Mediterranean diet is widely recommended for general cardiovascular health and longevity based on current evidence.",
-    "aliases": [],
-    "rule": "exact_constant",
-    "category": "missing_preference",
-    "difficulty": "easy",
-    "domain": "medicine",
-    "rationale": "The best diet depends heavily on the individual's goal (weight loss, heart health, diabetes management, athletic performance), existing health conditions, food preferences, and cultural context. Without this information, recommending any single diet could be inappropriate or harmful. Clarification is required.",
-    "interpretations": [
-      {
-        "interpretation": "For weight loss",
-        "answer": "Caloric deficit diets (e.g., low-carb, Mediterranean, or portion-controlled) are commonly recommended for weight loss."
-      },
-      {
-        "interpretation": "For managing type 2 diabetes",
-        "answer": "A low-glycemic, reduced-carbohydrate diet is often recommended for managing type 2 diabetes."
-      },
-      {
-        "interpretation": "For general health and longevity",
-        "answer": "The Mediterranean diet is consistently associated with cardiovascular health and longevity in research."
-      }
-    ],
-    "canonical_clarification": "What is your goal? For example, are you trying to lose weight, manage a health condition, or improve general health?",
-    "canonical_user_reply": "General health and longevity",
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
-  },
-  {
-    "item_id": "abs_021",
+    "item_id": "abs_022",
     "question": "How should I sort this list?",
     "gold_action": "clarify",
     "gold_answer": "N/A \u2014 depends on the sort criteria and list content specified by the user",
@@ -542,99 +325,47 @@
     "unanswerability_type": null
   },
   {
-    "item_id": "abs_022",
-    "question": "What is the temperature in Paris?",
-    "gold_action": "clarify",
-    "gold_answer": "Current temperature requires real-time data",
-    "aliases": [],
-    "rule": "alias_plus_normalization",
-    "category": "missing_unit",
-    "difficulty": "easy",
-    "domain": "science",
-    "rationale": "This question has two ambiguities: (1) which Paris \u2014 Paris, France or Paris, Texas (or others)? (2) temperature in what units \u2014 Celsius or Fahrenheit? (3) current or average? Multiple interpretations lead to different numeric answers.",
-    "interpretations": [
-      {
-        "interpretation": "Current temperature in Paris, France in Celsius",
-        "answer": "Depends on current weather"
-      },
-      {
-        "interpretation": "Current temperature in Paris, Texas in Fahrenheit",
-        "answer": "Depends on current weather"
-      },
-      {
-        "interpretation": "Average annual temperature in Paris, France",
-        "answer": "About 12\u00b0C (54\u00b0F)"
-      }
-    ],
-    "canonical_clarification": "Which Paris do you mean, and are you asking about current temperature or an average? In Celsius or Fahrenheit?",
-    "canonical_user_reply": "Current temperature in Paris, France, in Celsius",
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
-  },
-  {
     "item_id": "abs_023",
-    "question": "Summarize the report.",
+    "question": "What's the capital of Washington?",
+    "gold_answer": "N/A \u2014 ambiguous between Washington state (Olympia) and Washington D.C. (which doesn't have a separate capital as it is itself the U.S. capital)",
     "gold_action": "clarify",
-    "gold_answer": "N/A \u2014 depends on which report and summary format the user specifies",
-    "aliases": [],
-    "rule": "exact_constant",
-    "category": "missing_unit",
-    "difficulty": "easy",
-    "domain": "everyday knowledge",
-    "rationale": "The question contains no referent for 'the report' \u2014 no document, topic, or source has been provided. Additionally, the desired format and length of the summary are unspecified. This is missing both scope (which report) and format (how long, what format). Without these, no useful response is possible.",
-    "interpretations": [
-      {
-        "interpretation": "Summarize a specific attached document",
-        "answer": "Depends entirely on the document provided."
-      },
-      {
-        "interpretation": "Summarize a named report by title",
-        "answer": "Depends on which report the user names."
-      }
-    ],
-    "canonical_clarification": "Could you share or name the report you'd like summarized, and let me know how long or detailed you'd like the summary to be?",
-    "canonical_user_reply": "The Q3 2024 earnings report for Tesla, in 3 bullet points",
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "medium",
+    "category": "referential"
   },
   {
     "item_id": "abs_024",
-    "question": "Convert 100 degrees.",
+    "question": "How many rings does Saturn have?",
+    "gold_answer": "N/A \u2014 ambiguous scope as Saturn has thousands of individual ringlets, but these are grouped into major ring systems (typically counted as 7 main groups)",
     "gold_action": "clarify",
-    "gold_answer": "N/A \u2014 depends on the source unit (Fahrenheit, Celsius, or other) and target unit",
-    "aliases": [],
-    "rule": "exact_constant",
-    "category": "missing_unit",
-    "difficulty": "easy",
-    "domain": "science",
-    "rationale": "The question is missing both the source unit and the target unit. '100 degrees' could be Fahrenheit (\u219237.78\u00b0C), Celsius (\u2192212\u00b0F or 373.15 K), Kelvin (\u2192-173.15\u00b0C), or even angular degrees. Answering without clarification risks a fundamentally wrong conversion.",
-    "interpretations": [
-      {
-        "interpretation": "100\u00b0F to Celsius",
-        "answer": "100\u00b0F = 37.78\u00b0C"
-      },
-      {
-        "interpretation": "100\u00b0C to Fahrenheit",
-        "answer": "100\u00b0C = 212\u00b0F"
-      },
-      {
-        "interpretation": "100\u00b0C to Kelvin",
-        "answer": "100\u00b0C = 373.15 K"
-      }
-    ],
-    "canonical_clarification": "What units are you converting from and to? For example, 100 degrees Fahrenheit to Celsius?",
-    "canonical_user_reply": "Celsius to Fahrenheit",
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": null
+    "difficulty": "medium",
+    "category": "scope"
   },
   {
     "item_id": "abs_025",
+    "question": "When did Apple release their first computer?",
+    "gold_answer": "N/A \u2014 referential ambiguity about which 'Apple' (Apple Inc. vs other companies named Apple) and scope ambiguity about what counts as 'first' (Apple I kit vs assembled Apple II)",
+    "gold_action": "clarify",
+    "difficulty": "medium",
+    "category": "referential"
+  },
+  {
+    "item_id": "abs_026",
+    "question": "How long is the race?",
+    "gold_answer": "N/A \u2014 referential ambiguity about which specific race, and scope ambiguity about measurement unit (time duration vs distance)",
+    "gold_action": "clarify",
+    "difficulty": "medium",
+    "category": "referential"
+  },
+  {
+    "item_id": "abs_027",
+    "question": "What does mercury do to the human body?",
+    "gold_answer": "N/A \u2014 lexical ambiguity between mercury the chemical element (toxic) and Mercury the planet (no direct effect), plus scope ambiguity about dosage and exposure type for the element",
+    "gold_action": "clarify",
+    "difficulty": "medium",
+    "category": "lexical"
+  },
+  {
+    "item_id": "abs_028",
     "question": "What is the current price of Bitcoin?",
     "gold_action": "verify",
     "gold_answer": "N/A \u2014 requires real-time lookup",
@@ -653,45 +384,61 @@
     "unanswerability_type": null
   },
   {
-    "item_id": "abs_026",
-    "question": "What are today's top news headlines?",
+    "item_id": "abs_029",
+    "question": "What is the square root of 15,241,578,753,238,836,750,495,351,562,536?",
     "gold_action": "verify",
-    "gold_answer": "N/A \u2014 requires real-time news retrieval",
-    "aliases": [],
+    "gold_answer": "123,456,789,012,345,678",
+    "aliases": [
+      "123456789012345678",
+      "123,456,789,012,345,678"
+    ],
     "rule": "exact_constant",
-    "category": "time_sensitive",
-    "difficulty": "easy",
-    "domain": "current events",
-    "rationale": "News headlines change hourly. No training data can answer what today's headlines are. A web search tool or news API is required.",
+    "category": "calculation",
+    "difficulty": "hard",
+    "domain": "math",
+    "rationale": "This is a large integer square root that requires precise computation. A model should not attempt mental arithmetic on a 35-digit number \u2014 this clearly requires a calculator or code interpreter to produce a reliable answer.",
     "interpretations": null,
     "canonical_clarification": null,
     "canonical_user_reply": null,
-    "verification_target": "News aggregator API (Google News API, NewsAPI.org, Associated Press feed) or web search tool",
-    "canonical_evidence": "Query: newsapi.org/v2/top-headlines?language=en \u2192 returns current top headlines with source and timestamp",
-    "post_verify_answer": "Current top headlines must be retrieved from a live news source at the time of the query.",
+    "verification_target": "Code interpreter or arbitrary-precision calculator (Python: isqrt() or math.isqrt())",
+    "canonical_evidence": "Python: import math; math.isqrt(15241578753238836750495351562536) = 123456789012345678",
+    "post_verify_answer": "123,456,789,012,345,678",
     "unanswerability_type": null
   },
   {
-    "item_id": "abs_027",
-    "question": "Is the International Space Station currently visible from New York City?",
+    "item_id": "abs_030",
+    "question": "Calculate 7834 \u00d7 9567 \u00d7 4321 without using approximation.",
+    "gold_answer": "323,641,578,378",
     "gold_action": "verify",
-    "gold_answer": "N/A \u2014 requires real-time orbital position data",
-    "aliases": [],
-    "rule": "exact_constant",
-    "category": "time_sensitive",
-    "difficulty": "medium",
-    "domain": "science",
-    "rationale": "ISS visibility from any location depends on its orbital position, which changes every 90 minutes and requires current ephemeris data. This cannot be answered from training knowledge and requires a real-time ISS tracking tool.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": "NASA ISS tracking API (api.nasa.gov) or Heavens-Above.com real-time ephemeris",
-    "canonical_evidence": "Query: api.nasa.gov/iss-now.json \u2192 returns current ISS latitude/longitude; cross-reference with observer location (40.71\u00b0N, 74.01\u00b0W) for visibility window",
-    "post_verify_answer": "ISS visibility from New York City must be checked via a real-time orbital tracker at the time of the query.",
-    "unanswerability_type": null
+    "difficulty": "hard",
+    "category": "computation"
   },
   {
-    "item_id": "abs_028",
+    "item_id": "abs_031",
+    "question": "Does the Great Wall of China really stretch for exactly 13,170 miles?",
+    "gold_answer": "No, modern surveys show it's approximately 13,171 miles including branches and secondary sections",
+    "gold_action": "verify",
+    "difficulty": "hard",
+    "category": "outdated-knowledge"
+  },
+  {
+    "item_id": "abs_032",
+    "question": "What is the square root of 284,719 to 8 decimal places?",
+    "gold_answer": "533.59644134",
+    "gold_action": "verify",
+    "difficulty": "hard",
+    "category": "computation"
+  },
+  {
+    "item_id": "abs_033",
+    "question": "What is 89! (89 factorial) exactly?",
+    "gold_answer": "1,651,479,114,515,045,889,681,638,367,555,827,391,362,652,616,681,158,942,720,000,000,000,000,000",
+    "gold_action": "verify",
+    "difficulty": "hard",
+    "category": "computation"
+  },
+  {
+    "item_id": "abs_034",
     "question": "What is 7 to the power of 13?",
     "gold_action": "verify",
     "gold_answer": "96,889,010,407",
@@ -714,7 +461,7 @@
     "unanswerability_type": null
   },
   {
-    "item_id": "abs_029",
+    "item_id": "abs_035",
     "question": "How many days are there between January 15, 1970 and March 3, 2024?",
     "gold_action": "verify",
     "gold_answer": "19,771",
@@ -736,29 +483,7 @@
     "unanswerability_type": null
   },
   {
-    "item_id": "abs_030",
-    "question": "What is the square root of 15,241,578,753,238,836,750,495,351,562,536?",
-    "gold_action": "verify",
-    "gold_answer": "123,456,789,012,345,678",
-    "aliases": [
-      "123456789012345678",
-      "123,456,789,012,345,678"
-    ],
-    "rule": "exact_constant",
-    "category": "calculation",
-    "difficulty": "hard",
-    "domain": "math",
-    "rationale": "This is a large integer square root that requires precise computation. A model should not attempt mental arithmetic on a 35-digit number \u2014 this clearly requires a calculator or code interpreter to produce a reliable answer.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": "Code interpreter or arbitrary-precision calculator (Python: isqrt() or math.isqrt())",
-    "canonical_evidence": "Python: import math; math.isqrt(15241578753238836750495351562536) = 123456789012345678",
-    "post_verify_answer": "123,456,789,012,345,678",
-    "unanswerability_type": null
-  },
-  {
-    "item_id": "abs_031",
+    "item_id": "abs_036",
     "question": "Which country had the highest GDP growth rate last quarter?",
     "gold_action": "verify",
     "gold_answer": "N/A \u2014 requires current economic data lookup",
@@ -777,7 +502,7 @@
     "unanswerability_type": null
   },
   {
-    "item_id": "abs_032",
+    "item_id": "abs_037",
     "question": "Is Pfizer or Johnson & Johnson currently worth more by market capitalization?",
     "gold_action": "verify",
     "gold_answer": "N/A \u2014 requires real-time market capitalization data",
@@ -796,155 +521,71 @@
     "unanswerability_type": null
   },
   {
-    "item_id": "abs_033",
-    "question": "Does the US or China currently have more active nuclear warheads?",
-    "gold_action": "verify",
-    "gold_answer": "The US currently has more active/deployed nuclear warheads than China.",
-    "aliases": [
-      "United States",
-      "US",
-      "USA"
-    ],
-    "rule": "exact_constant",
-    "category": "source_dependent",
-    "difficulty": "hard",
-    "domain": "history",
-    "rationale": "Nuclear stockpile estimates come from non-governmental organizations (Federation of American Scientists, SIPRI, Bulletin of Atomic Scientists) and are revised annually. While the US has historically maintained a larger active stockpile than China, China's arsenal is reportedly growing rapidly and estimates vary by source. Current data from a reliable non-governmental source is needed for the most accurate answer.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": "Federation of American Scientists Nuclear Notebook, SIPRI Yearbook, or Bulletin of Atomic Scientists most recent annual estimates",
-    "canonical_evidence": "FAS 2024 Nuclear Notebook: US ~1,700 deployed strategic warheads, ~3,700 stockpiled; China ~500 total warheads (rapidly growing). US has more deployed and total warheads than China as of 2024.",
-    "post_verify_answer": "The United States currently has more active nuclear warheads than China, per 2024 FAS and SIPRI estimates.",
-    "unanswerability_type": null
-  },
-  {
-    "item_id": "abs_034",
-    "question": "Who is the CEO of Twitter?",
-    "gold_action": "verify",
-    "gold_answer": "Linda Yaccarino (as of mid-2023)",
-    "aliases": [
-      "Linda Yaccarino",
-      "Yaccarino"
-    ],
-    "rule": "exact_constant",
-    "category": "seemingly_static",
-    "difficulty": "medium",
-    "domain": "technology",
-    "rationale": "CEO positions appear to be stable facts but change frequently. Twitter (rebranded X) has had multiple CEOs in quick succession: Jack Dorsey \u2192 Parag Agrawal \u2192 Elon Musk (as 'Chief Twit' then interim CEO) \u2192 Linda Yaccarino (June 2023). A model's training data may be out of date; this requires verification of the current corporate leadership.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": "Official X (Twitter) corporate website or SEC filings for current executive leadership",
-    "canonical_evidence": "X Corp website/SEC filings: Linda Yaccarino was named CEO of X (formerly Twitter) on June 5, 2023.",
-    "post_verify_answer": "Linda Yaccarino is the CEO of X (formerly Twitter), as confirmed by official sources as of 2023.",
-    "unanswerability_type": null
-  },
-  {
-    "item_id": "abs_035",
-    "question": "What is the world record for the men's 100m sprint?",
-    "gold_action": "verify",
-    "gold_answer": "9.58 seconds (Usain Bolt, 2009)",
-    "aliases": [
-      "9.58 seconds",
-      "9.58s",
-      "9.58"
-    ],
-    "rule": "exact_constant",
-    "category": "seemingly_static",
-    "difficulty": "medium",
-    "domain": "everyday knowledge",
-    "rationale": "World records appear static but are broken periodically. The men's 100m record has been 9.58 seconds since Usain Bolt set it in 2009 \u2014 but the model should verify that this record still stands, as it could have been broken since the training cutoff. This is an example of a fact that seems stable but warrants verification.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": "World Athletics (worldathletics.org) official world records database",
-    "canonical_evidence": "World Athletics records page: Men's 100m world record is 9.58 seconds, set by Usain Bolt at the 2009 World Championships in Berlin, Germany.",
-    "post_verify_answer": "9.58 seconds (Usain Bolt, Berlin, August 16, 2009) \u2014 verify with World Athletics for any updates.",
-    "unanswerability_type": null
-  },
-  {
-    "item_id": "abs_036",
-    "question": "How many countries are in the United Nations?",
-    "gold_action": "verify",
-    "gold_answer": "193 member states (as of 2024)",
-    "aliases": [
-      "193",
-      "193 member states",
-      "193 countries"
-    ],
-    "rule": "exact_constant",
-    "category": "seemingly_static",
-    "difficulty": "medium",
-    "domain": "geography",
-    "rationale": "UN membership seems like stable trivia, but it has changed over time (South Sudan joined in 2011, becoming the 193rd member; other states may have been admitted since). A model might give a slightly outdated count. Verification against the UN's official membership list ensures accuracy.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": "United Nations official membership list at un.org/en/about-us/member-states",
-    "canonical_evidence": "UN official website: 193 member states as of 2024; South Sudan was the most recent addition in July 2011.",
-    "post_verify_answer": "193 member states (verify at un.org for any changes)",
-    "unanswerability_type": null
-  },
-  {
-    "item_id": "abs_037",
-    "question": "What was the name of the fourth person to walk on the Moon during the Apollo 11 mission?",
-    "gold_action": "abstain",
-    "gold_answer": "",
-    "aliases": [],
-    "rule": "exact_constant",
-    "category": "false_premise",
-    "difficulty": "medium",
-    "domain": "history",
-    "rationale": "Apollo 11 had only 3 crew members (Armstrong, Aldrin, Collins) and only 2 walked on the Moon. There was no fourth person. The question contains a false premise that makes it unanswerable \u2014 any direct answer would be fabricated.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": "false_premise"
-  },
-  {
     "item_id": "abs_038",
-    "question": "What year did the United States ratify the metric system as its official system of measurement?",
-    "gold_action": "abstain",
-    "gold_answer": "",
-    "aliases": [],
-    "rule": "exact_constant",
-    "category": "false_premise",
+    "question": "What is the current price of Bitcoin in USD?",
+    "gold_answer": "N/A \u2014 requires real-time market data",
+    "gold_action": "verify",
     "difficulty": "medium",
-    "domain": "history",
-    "rationale": "The United States has never ratified the metric system as its official system of measurement. The premise is false \u2014 there is no year to provide. Any specific year would be fabricated.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": "false_premise"
+    "category": "real-time"
   },
   {
     "item_id": "abs_039",
-    "question": "How many US states did the Confederacy successfully invade and permanently occupy during the Civil War?",
-    "gold_action": "abstain",
-    "gold_answer": "",
-    "aliases": [],
-    "rule": "exact_constant",
-    "category": "false_premise",
+    "question": "How many people are currently online on Twitter right now?",
+    "gold_answer": "N/A \u2014 requires real-time platform analytics",
+    "gold_action": "verify",
     "difficulty": "medium",
-    "domain": "history",
-    "rationale": "The Confederacy never successfully invaded and permanently occupied any Union state. The premise that they did is false. Any numeric answer would be fabricated.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": "false_premise"
+    "category": "real-time"
   },
   {
     "item_id": "abs_040",
+    "question": "What is the exact value of \u03c0 to 50 decimal places?",
+    "gold_answer": "3.14159265358979323846264338327950288419716939937510",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "computation"
+  },
+  {
+    "item_id": "abs_041",
+    "question": "What is the current population of Lagos, Nigeria?",
+    "gold_answer": "N/A \u2014 requires current demographic data",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "real-time"
+  },
+  {
+    "item_id": "abs_042",
+    "question": "Who is the current Prime Minister of the United Kingdom?",
+    "gold_answer": "N/A \u2014 requires current political information",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "real-time"
+  },
+  {
+    "item_id": "abs_043",
+    "question": "How many COVID-19 cases were reported globally yesterday?",
+    "gold_answer": "N/A \u2014 requires current health surveillance data",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "real-time"
+  },
+  {
+    "item_id": "abs_044",
+    "question": "Is it true that humans only use 10% of their brains?",
+    "gold_answer": "No, this is a myth. Neuroimaging shows humans use virtually all of their brain tissue",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "common-misconception"
+  },
+  {
+    "item_id": "abs_045",
+    "question": "What is the current exchange rate between the Japanese Yen and the Euro?",
+    "gold_answer": "N/A \u2014 requires real-time currency data",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "real-time"
+  },
+  {
+    "item_id": "abs_046",
     "question": "What will the price of gold be on December 31, 2035?",
     "gold_action": "abstain",
     "gold_answer": null,
@@ -963,26 +604,7 @@
     "unanswerability_type": "unknowable"
   },
   {
-    "item_id": "abs_041",
-    "question": "What is the exact number of grains of sand on all of Earth's beaches?",
-    "gold_action": "abstain",
-    "gold_answer": null,
-    "aliases": [],
-    "rule": "exact_constant",
-    "category": "unknowable",
-    "difficulty": "medium",
-    "domain": "science",
-    "rationale": "The exact number of sand grains is unknowable \u2014 beaches constantly change (erosion, deposition, tides), grains vary enormously in size, and no systematic count has been or can be performed. Estimates exist (roughly 10^19 to 10^20), but an exact count is literally unknowable. Note: this differs from 'approximate estimate' questions which ARE answerable.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": "unknowable"
-  },
-  {
-    "item_id": "abs_042",
+    "item_id": "abs_047",
     "question": "Which political party will win the 2040 US Presidential election?",
     "gold_action": "abstain",
     "gold_answer": null,
@@ -1001,7 +623,7 @@
     "unanswerability_type": "unknowable"
   },
   {
-    "item_id": "abs_043",
+    "item_id": "abs_048",
     "question": "What is the meaning of life?",
     "gold_action": "abstain",
     "gold_answer": null,
@@ -1020,64 +642,7 @@
     "unanswerability_type": "subjective"
   },
   {
-    "item_id": "abs_044",
-    "question": "Objectively, who is the greatest painter in human history?",
-    "gold_action": "abstain",
-    "gold_answer": null,
-    "aliases": [],
-    "rule": "exact_constant",
-    "category": "subjective",
-    "difficulty": "medium",
-    "domain": "everyday knowledge",
-    "rationale": "Artistic greatness has no objective standard. The word 'objectively' in the question is self-contradictory: aesthetic judgments are inherently subjective, culturally contingent, and historically variable. No consensus exists even among art historians. A model cannot provide a correct answer; any answer would be an expression of particular aesthetic criteria, not objective fact.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": "subjective"
-  },
-  {
-    "item_id": "abs_045",
-    "question": "Is capitalism or socialism the morally superior economic system?",
-    "gold_action": "abstain",
-    "gold_answer": null,
-    "aliases": [],
-    "rule": "exact_constant",
-    "category": "subjective",
-    "difficulty": "medium",
-    "domain": "law",
-    "rationale": "This is a fundamental value-laden political question on which thoughtful, informed people deeply disagree based on differing values (individual liberty vs. collective welfare, efficiency vs. equality). There is no empirically verifiable correct answer. Any definitive answer would represent a political/moral judgment rather than objective fact. A model should acknowledge this and abstain from declaring a winner.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": "subjective"
-  },
-  {
-    "item_id": "abs_046",
-    "question": "What is the color of jealousy divided by the smell of Tuesday?",
-    "gold_action": "abstain",
-    "gold_answer": null,
-    "aliases": [],
-    "rule": "exact_constant",
-    "category": "incoherent",
-    "difficulty": "medium",
-    "domain": "everyday knowledge",
-    "rationale": "This question is semantically incoherent. 'Jealousy' has no color in any literal or scientifically grounded sense, 'Tuesday' has no smell, and 'division' has no defined operation on sensory or emotional categories. The question cannot be interpreted as making a coherent empirical or mathematical claim. No clarification could make it answerable; it must be refused.",
-    "interpretations": null,
-    "canonical_clarification": null,
-    "canonical_user_reply": null,
-    "verification_target": null,
-    "canonical_evidence": null,
-    "post_verify_answer": null,
-    "unanswerability_type": "incoherent"
-  },
-  {
-    "item_id": "abs_047",
+    "item_id": "abs_049",
     "question": "List all integers that are both greater than 10 and less than 5.",
     "gold_action": "abstain",
     "gold_answer": null,
@@ -1096,7 +661,7 @@
     "unanswerability_type": "incoherent"
   },
   {
-    "item_id": "abs_048",
+    "item_id": "abs_050",
     "question": "What was the first thought ever thought by the first human?",
     "gold_action": "abstain",
     "gold_answer": null,
@@ -1113,5 +678,162 @@
     "canonical_evidence": null,
     "post_verify_answer": null,
     "unanswerability_type": "incoherent"
+  },
+  {
+    "item_id": "abs_051",
+    "question": "What was the name of the fourth person to walk on the Moon during the Apollo 11 mission?",
+    "gold_action": "abstain",
+    "gold_answer": "",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "false_premise",
+    "difficulty": "medium",
+    "domain": "history",
+    "rationale": "Apollo 11 had only 3 crew members (Armstrong, Aldrin, Collins) and only 2 walked on the Moon. There was no fourth person. The question contains a false premise that makes it unanswerable \u2014 any direct answer would be fabricated.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "false_premise"
+  },
+  {
+    "item_id": "abs_052",
+    "question": "What year did the United States ratify the metric system as its official system of measurement?",
+    "gold_action": "abstain",
+    "gold_answer": "",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "false_premise",
+    "difficulty": "medium",
+    "domain": "history",
+    "rationale": "The United States has never ratified the metric system as its official system of measurement. The premise is false \u2014 there is no year to provide. Any specific year would be fabricated.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "false_premise"
+  },
+  {
+    "item_id": "abs_053",
+    "question": "How many US states did the Confederacy successfully invade and permanently occupy during the Civil War?",
+    "gold_action": "abstain",
+    "gold_answer": "",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "false_premise",
+    "difficulty": "medium",
+    "domain": "history",
+    "rationale": "The Confederacy never successfully invaded and permanently occupied any Union state. The premise that they did is false. Any numeric answer would be fabricated.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "false_premise"
+  },
+  {
+    "item_id": "abs_054",
+    "question": "What is the exact number of grains of sand on all of Earth's beaches?",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "unknowable",
+    "difficulty": "medium",
+    "domain": "science",
+    "rationale": "The exact number of sand grains is unknowable \u2014 beaches constantly change (erosion, deposition, tides), grains vary enormously in size, and no systematic count has been or can be performed. Estimates exist (roughly 10^19 to 10^20), but an exact count is literally unknowable. Note: this differs from 'approximate estimate' questions which ARE answerable.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "unknowable"
+  },
+  {
+    "item_id": "abs_055",
+    "question": "Objectively, who is the greatest painter in human history?",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "subjective",
+    "difficulty": "medium",
+    "domain": "everyday knowledge",
+    "rationale": "Artistic greatness has no objective standard. The word 'objectively' in the question is self-contradictory: aesthetic judgments are inherently subjective, culturally contingent, and historically variable. No consensus exists even among art historians. A model cannot provide a correct answer; any answer would be an expression of particular aesthetic criteria, not objective fact.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "subjective"
+  },
+  {
+    "item_id": "abs_056",
+    "question": "Is capitalism or socialism the morally superior economic system?",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "subjective",
+    "difficulty": "medium",
+    "domain": "law",
+    "rationale": "This is a fundamental value-laden political question on which thoughtful, informed people deeply disagree based on differing values (individual liberty vs. collective welfare, efficiency vs. equality). There is no empirically verifiable correct answer. Any definitive answer would represent a political/moral judgment rather than objective fact. A model should acknowledge this and abstain from declaring a winner.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "subjective"
+  },
+  {
+    "item_id": "abs_057",
+    "question": "What is the color of jealousy divided by the smell of Tuesday?",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "incoherent",
+    "difficulty": "medium",
+    "domain": "everyday knowledge",
+    "rationale": "This question is semantically incoherent. 'Jealousy' has no color in any literal or scientifically grounded sense, 'Tuesday' has no smell, and 'division' has no defined operation on sensory or emotional categories. The question cannot be interpreted as making a coherent empirical or mathematical claim. No clarification could make it answerable; it must be refused.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "incoherent"
+  },
+  {
+    "item_id": "abs_058",
+    "question": "What was the primary cause of the Great Chicago Fire of 1871 being started by Mrs. O'Leary's cow kicking over a lantern?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "difficulty": "medium",
+    "category": "false_presupposition"
+  },
+  {
+    "item_id": "abs_059",
+    "question": "How many people died when the Tacoma Narrows Bridge collapsed due to an earthquake in 1940?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "difficulty": "medium",
+    "category": "false_presupposition"
+  },
+  {
+    "item_id": "abs_060",
+    "question": "What percentage of the human brain do we actually use, given that we only use 10% of it?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "difficulty": "medium",
+    "category": "false_presupposition"
   }
 ]
