@@ -1385,5 +1385,185 @@
     "premise_type": "ambiguous",
     "category": "ambiguous",
     "metacognitive_rationale": "The question lacks context to distinguish between multiple common meanings of 'bank', making a specific answer impossible without clarification."
+  },
+  {
+    "item_id": "abs_085",
+    "question": "What is the exact value of \u03c0 multiplied by e, raised to the power of the square root of 163, then divided by 640,320?",
+    "gold_answer": "N/A - requires precise computation with high-precision arithmetic",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "This computation involves irrational numbers and complex operations that require specialized mathematical software for accurate calculation beyond what can be done mentally or with basic tools"
+  },
+  {
+    "item_id": "abs_086",
+    "question": "Calculate the 47th Fibonacci number divided by the 46th Fibonacci number, expressed as a decimal to 15 places.",
+    "gold_answer": "N/A - requires precise computation of large Fibonacci numbers",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Computing the 47th Fibonacci number requires either recursive calculation or specialized algorithms, and the division needs high precision arithmetic to get 15 decimal places accurately"
+  },
+  {
+    "item_id": "abs_087",
+    "question": "What is the current population of Lagos, Nigeria according to the most recent official census?",
+    "gold_answer": "N/A - requires current official census data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Population figures change rapidly and official census data may have been updated recently. Training data may not include the most recent official counts"
+  },
+  {
+    "item_id": "abs_088",
+    "question": "What was the inflation rate in Turkey for the most recent month available?",
+    "gold_answer": "N/A - requires current economic data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Inflation rates are published monthly and change frequently. This requires access to the most recent official statistics from Turkish authorities"
+  },
+  {
+    "item_id": "abs_089",
+    "question": "What is the current stock price of Tesla (TSLA) and how much did it change in after-hours trading today?",
+    "gold_answer": "N/A - requires live financial market data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Stock prices change continuously during trading hours and after-hours sessions. This information requires real-time or very recent market data"
+  },
+  {
+    "item_id": "abs_090",
+    "question": "What's the current wait time for a table at The French Laundry restaurant in Yountville for this weekend?",
+    "gold_answer": "N/A - requires live reservation system data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Restaurant availability changes in real-time based on reservations, cancellations, and current booking status"
+  },
+  {
+    "item_id": "abs_091",
+    "question": "How did the assassination of Archduke Franz Ferdinand in Vienna in 1914 contribute to the outbreak of World War I?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_location",
+    "what_is_false": "Franz Ferdinand was assassinated in Sarajevo, not Vienna",
+    "corrective_answer": "I need to correct a detail in your question: Archduke Franz Ferdinand was assassinated in Sarajevo, not Vienna, on June 28, 1914. The assassination occurred when Ferdinand was visiting Sarajevo as part of military maneuvers. This event in Sarajevo triggered a chain of alliances and declarations that led to World War I."
+  },
+  {
+    "item_id": "abs_092",
+    "question": "What were the main themes in George Orwell's novel 'Animal Farm' published in 1949?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_date",
+    "what_is_false": "Animal Farm was published in 1945, not 1949",
+    "corrective_answer": "I should clarify that 'Animal Farm' was actually published in 1945, not 1949. The main themes include the corruption of revolutionary ideals, the dangers of totalitarianism, the manipulation of language for political control, and how power corrupts those who wield it. Orwell used the allegory of farm animals to critique Stalinist Russia."
+  },
+  {
+    "item_id": "abs_093",
+    "question": "How many justices currently serve on the U.S. Supreme Court since it was established with 11 members?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_number",
+    "what_is_false": "The Supreme Court currently has 9 justices, not 11",
+    "corrective_answer": "There's an error in your question: the U.S. Supreme Court currently has 9 justices, not 11. This number was established by the Judiciary Act of 1869 and has remained constant since then. The Court started with 6 justices in 1789 and the number changed several times before settling at 9."
+  },
+  {
+    "item_id": "abs_094",
+    "question": "What was Einstein's contribution to quantum mechanics when he developed Heisenberg's Uncertainty Principle?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_attribution",
+    "what_is_false": "Heisenberg's Uncertainty Principle was developed by Werner Heisenberg, not Einstein",
+    "corrective_answer": "I need to correct this: Heisenberg's Uncertainty Principle was developed by Werner Heisenberg, not Einstein. Einstein actually had a complicated relationship with quantum mechanics - while he contributed to its early development (like explaining the photoelectric effect), he was famously skeptical of some quantum principles, including the uncertainty principle, leading to his quote 'God does not play dice with the universe.'"
+  },
+  {
+    "item_id": "abs_095",
+    "question": "When did the Berlin Wall fall in 1991, and what were the immediate consequences?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_date",
+    "what_is_false": "The Berlin Wall fell in 1989, not 1991",
+    "corrective_answer": "The Berlin Wall actually fell on November 9, 1989, not 1991. The immediate consequences included massive celebrations, families being reunited after decades of separation, a flood of East Germans moving to West Berlin, and the beginning of the process that would lead to German reunification in October 1990."
+  },
+  {
+    "item_id": "abs_096",
+    "question": "What impact did the Chernobyl nuclear disaster have on the region around Kiev in 1986?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_location",
+    "what_is_false": "Chernobyl is located near Pripyat, Ukraine, not near Kiev specifically",
+    "corrective_answer": "I should clarify the location: the Chernobyl nuclear power plant was located near the city of Pripyat in northern Ukraine, about 65 miles north of Kiev, not directly around Kiev itself. The disaster did affect a wide area including parts of the Kiev region, but the most severe immediate impacts were on Pripyat and the surrounding 30-kilometer exclusion zone."
   }
 ]
