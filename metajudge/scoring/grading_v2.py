@@ -342,11 +342,16 @@ def _grade_fraction_or_decimal(answer: str, spec: Dict[str, Any]) -> Dict[str, A
 
 
 def _grade_code_output(answer: str, spec: Dict[str, Any]) -> Dict[str, Any]:
-    """Grade code execution output — exact match after strip/lower."""
+    """Grade code execution output — exact match after strip/lower + newline normalization."""
     norm = _normalize(answer)
     gold_norm = _normalize(spec["gold_answer"])
     if norm == gold_norm:
         return {"correct": True, "method": "code_output", "match_detail": "exact match"}
+    # Also try replacing literal \n with actual newlines before normalizing
+    norm_escaped = _normalize(answer.replace("\\n", "\n"))
+    gold_escaped = _normalize(spec["gold_answer"].replace("\\n", "\n"))
+    if norm_escaped == gold_escaped:
+        return {"correct": True, "method": "code_output", "match_detail": "newline-normalized match"}
     return {"correct": False, "method": "code_output",
             "match_detail": f"mismatch: {norm!r} vs {gold_norm!r}"}
 
