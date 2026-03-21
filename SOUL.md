@@ -21,17 +21,17 @@ It is not a general intelligence test. It is not a reasoning benchmark. It is a 
 
 These are the project's source-of-truth documents, in priority order:
 
-| Priority | Document | Location | Role |
-|----------|----------|----------|------|
-| 1 | **This file (SOUL.md)** | repo root | Principles, constraints, non-negotiables |
-| 2 | **Recommendations memo** | `docs/metacognition_assessor_recommendations.md` | Architectural revision guidance |
-| 3 | **Change prompt** | `docs/metacognition_assessor_change_prompt.md` | Implementation requirements checklist |
-| 4 | **V1 Architecture** | `planning/v1_architecture.md` | Current production plan |
-| 5 | **Scoring plan** | `planning/scoring_plan.md` | Brier-derived scoring, adjudication, diagnostics |
-| 6 | **Dataset construction plan** | `planning/dataset_construction_plan.md` | Item sourcing, canonicalization, pilot gates |
-| 7 | **Original framework** | `docs/source_framework.md` | Conceptual foundation (read for context, do not treat as current spec) |
+| Priority | Document | Location | Scope | Role |
+|----------|----------|----------|-------|------|
+| 1 | **This file (SOUL.md)** | repo root | All families | Principles, constraints, non-negotiables |
+| 2 | **Recommendations memo** | `docs/metacognition_assessor_recommendations.md` | All families | Two-axis framework, family specs, architectural guidance |
+| 3 | **Change prompt** | `docs/metacognition_assessor_change_prompt.md` | Family A | Implementation checklist (calibration-specific) |
+| 4 | **V1 Architecture** | `planning/v1_architecture.md` | Family A | Production plan for calibration pipeline |
+| 5 | **Scoring plan** | `planning/scoring_plan.md` | Family A | Brier-derived scoring, adjudication, diagnostics |
+| 6 | **Dataset construction plan** | `planning/dataset_construction_plan.md` | Family A | Item sourcing, canonicalization, pilot gates |
+| 7 | **Original framework** | `docs/source_framework.md` | Archived | Conceptual foundation (historical context only) |
 
-When documents conflict, higher priority wins. The original framework and implementation plan are historical context — they informed the current design but have been superseded by the recommendations memo.
+When documents conflict, higher priority wins. Documents scoped to "Family A" are authoritative for calibration work but do not govern Family B or later families. The Recommendations memo (priority 2) is the cross-family source of truth for family specs, schemas, and scoring approaches. Family B design documents will be inserted at priority 3–4 as they are created, shifting Family A documents down.
 
 ---
 
@@ -65,6 +65,9 @@ Self-correction is two separate subfamilies. Never blend them into a single scor
 ### 7. No "expected strategy" scoring unless objectively necessary
 Control-policy adaptation is scored by behavioral outcomes under perturbation, not by agreement with a hand-authored strategy label.
 
+### 8. Family B is the next implementation target after calibration freeze
+Once the V4.1 calibration dataset passes the sweep success criteria (≥4/5) and is frozen, the project transitions to **Family B — Selective Abstention / Verification / Clarification**. This is the second family on Axis I (Epistemic Monitoring) and the best monitoring-to-action bridge in the design. The action ontology (`answer`, `ask_clarifying_question`, `abstain`, `verify_needed`), schema (`AbstentionResponse`), and scoring approach are specified in the Recommendations memo §Family B (lines 209–242). Family B design documents will be added to the governing docs table as they are created.
+
 ---
 
 ## The five families
@@ -72,7 +75,7 @@ Control-policy adaptation is scored by behavioral outcomes under perturbation, n
 | ID | Family | Axis | Turns | Status |
 |----|--------|------|-------|--------|
 | A | Confidence Calibration | Monitoring | 1 | V1 implementation target |
-| B | Selective Abstention / Verification | Monitoring | 1 | V1 after calibration |
+| B | Selective Abstention / Verification | Monitoring | 1 | **Next: post V4.1 freeze** |
 | C | Self-Correction (intrinsic + evidence-assisted) | Control | 2 | V2 |
 | D | Grounding Sensitivity | Monitoring | 1 | V2 |
 | E | Control-Policy Adaptation | Control | 2 | V2 |
@@ -283,4 +286,5 @@ When replacing items after a failed sweep:
 - **SDK Alignment:** Notebook rebuilt to use `evaluate()` API per Kaggle SDK recommendations. Cell map updated to v3 (11 cells). Model discovery added to Cell 1.
 - **5-Model Sweep (March 19):** All 5 models verified and run. Results: Pro 98/100, Flash 97/100, Haiku 97/100, Sonnet 95/100, DeepSeek 93/100. Success criteria: 1/5 met (C4 only). Brier spread 0.036 (need 0.05). 11 discriminating items. 16 overconfident errors. Verdict: NEEDS WORK — dataset not hard enough for frontier models.
 - **V4 Adversarial Pipeline (March 20):** 4-batch 2-agent adversarial generation pipeline produced 266 candidates → 102 survivors (38.3% yield). 58/102 (56.9%) discriminate across 4-model panel. Best mechanisms: IOED (94% disc), Prototype (83%), Anchoring (60%).
-- **Current:** V4 102-item dataset reconstructed as `data/metajudge_benchmark_v1.json`. Notebook patched for V4 data. Awaiting 5-model sweep on V4 items to verify success criteria.
+- **V4.1 Remediation (March 20):** 37 items replaced via adversarial pipeline. 102-item dataset assembled with adjudication registry and grading_v2 engine (8 grader classes). Mechanism distribution: ModifiedCRT 18, Compositional 17, CodeExecution 16, AmbiguityMetacognition 14, Anchoring 10, Prototype 10, IOED 7, ConditionalTemporal 7, RLHF 3. All 212 tests pass. Awaiting V4.1 sweep.
+- **Current:** V4.1 sweep in progress on Kaggle. Next milestone: sweep success criteria verdict → dataset freeze → Family B design sprint.
