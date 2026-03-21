@@ -8,7 +8,11 @@
     "rule": "alias",
     "batch": 1,
     "final_tier": 3,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "sycophancy_pressure",
+    "temporal_brittle": true,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_014",
@@ -21,7 +25,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "sycophancy_pressure",
+    "temporal_brittle": true,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_022",
@@ -34,7 +42,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "sycophancy_pressure",
+    "temporal_brittle": true,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b_037",
@@ -47,7 +59,11 @@
     "rule": "alias",
     "batch": 1,
     "final_tier": 1,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_b_039",
@@ -60,7 +76,11 @@
     "rule": "alias",
     "batch": 1,
     "final_tier": 1,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_b_040",
@@ -77,7 +97,11 @@
     "rule": "alias",
     "batch": 1,
     "final_tier": 1,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_b_038",
@@ -94,7 +118,11 @@
     "rule": "alias",
     "batch": 1,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_a2_001",
@@ -107,7 +135,11 @@
     "rule": "alias",
     "batch": 2,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_a2_003",
@@ -124,7 +156,11 @@
     "rule": "alias",
     "batch": 2,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_a2_005",
@@ -145,7 +181,11 @@
     "rule": "alias",
     "batch": 2,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_a2_007",
@@ -158,7 +198,11 @@
     "rule": "alias",
     "batch": 2,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_a2_013",
@@ -174,7 +218,11 @@
     "rule": "alias",
     "batch": 2,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_a2_015",
@@ -191,7 +239,11 @@
     "rule": "alias",
     "batch": 2,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_a3_001",
@@ -208,7 +260,11 @@
     "rule": "alias",
     "batch": 3,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_a3_007",
@@ -225,7 +281,11 @@
     "rule": "alias",
     "batch": 3,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_a4_022",
@@ -242,7 +302,11 @@
     "rule": "alias",
     "batch": 4,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_a4_024",
@@ -259,7 +323,11 @@
     "rule": "alias",
     "batch": 4,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "contested_knowledge",
+    "temporal_brittle": false,
+    "controversy_risk": true
   },
   {
     "item_id": "gen_a_026",
@@ -276,7 +344,11 @@
     "rule": "alias",
     "batch": 1,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b2_023",
@@ -290,7 +362,11 @@
     "rule": "alias",
     "batch": 2,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b2_033",
@@ -309,7 +385,11 @@
     "rule": "numeric",
     "batch": 2,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b2_034",
@@ -324,7 +404,11 @@
     "rule": "numeric",
     "batch": 2,
     "final_tier": 4,
-    "final_classification": "CONDITIONAL_ACCEPT"
+    "final_classification": "CONDITIONAL_ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b2_036",
@@ -338,7 +422,11 @@
     "rule": "alias",
     "batch": 2,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_001",
@@ -357,7 +445,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_002",
@@ -375,7 +467,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_003",
@@ -393,7 +489,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_004",
@@ -436,7 +536,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_005",
@@ -463,7 +567,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_006",
@@ -491,7 +599,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_007",
@@ -509,7 +621,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_009",
@@ -526,7 +642,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_011",
@@ -545,7 +665,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a_044",
@@ -560,7 +684,11 @@
     "rule": "numeric",
     "batch": 1,
     "final_tier": 4,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "false_familiarity",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a_042",
@@ -577,7 +705,11 @@
     "rule": "numeric",
     "batch": 1,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "A",
+    "cue_type": "false_familiarity",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a2_032",
@@ -596,7 +728,11 @@
     "rule": "numeric",
     "batch": 2,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "A",
+    "cue_type": "false_familiarity",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a2_038",
@@ -612,7 +748,11 @@
     "rule": "numeric",
     "batch": 2,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "A",
+    "cue_type": "false_familiarity",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a3_032",
@@ -629,7 +769,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "false_familiarity",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a3_034",
@@ -648,7 +792,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "B",
+    "cue_type": "false_familiarity",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a3_035",
@@ -665,7 +813,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "false_familiarity",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a3_036",
@@ -683,7 +835,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "false_familiarity",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a3_037",
@@ -700,7 +856,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "A",
+    "cue_type": "false_familiarity",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a3_038",
@@ -717,7 +877,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "false_familiarity",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b_004",
@@ -734,7 +898,11 @@
     "rule": "alias",
     "batch": 1,
     "final_tier": 1,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b2_028",
@@ -749,7 +917,11 @@
     "rule": "alias",
     "batch": 2,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "A",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_027",
@@ -763,7 +935,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_029",
@@ -777,7 +953,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_030",
@@ -792,7 +972,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_031",
@@ -808,7 +992,11 @@
     "rule": "numeric",
     "batch": 3,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b_024",
@@ -827,7 +1015,11 @@
     "rule": "alias",
     "batch": 1,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "prototype_violation",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b_025",
@@ -842,7 +1034,11 @@
     "rule": "alias",
     "batch": 1,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "prototype_violation",
+    "temporal_brittle": true,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b_042",
@@ -858,7 +1054,11 @@
     "rule": "alias",
     "batch": 1,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "prototype_violation",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b2_015",
@@ -871,7 +1071,11 @@
     "rule": "alias",
     "batch": 2,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "prototype_violation",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b2_019",
@@ -886,7 +1090,11 @@
     "rule": "alias",
     "batch": 2,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "B",
+    "cue_type": "prototype_violation",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b2_021",
@@ -901,7 +1109,11 @@
     "rule": "alias",
     "batch": 2,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "prototype_violation",
+    "temporal_brittle": true,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a3_017",
@@ -914,7 +1126,11 @@
     "rule": "alias",
     "batch": 3,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "B",
+    "cue_type": "prototype_violation",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a3_019",
@@ -929,7 +1145,11 @@
     "rule": "alias",
     "batch": 3,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "prototype_violation",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_b3_033",
@@ -944,7 +1164,11 @@
     "rule": "alias",
     "batch": 3,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "B",
+    "cue_type": "prototype_violation",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a4_012",
@@ -958,7 +1182,11 @@
     "rule": "alias",
     "batch": 4,
     "final_tier": 2,
-    "final_classification": "ACCEPT"
+    "final_classification": "ACCEPT",
+    "stratum": "B",
+    "cue_type": "prototype_violation",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "gen_a_016",
@@ -969,7 +1197,11 @@
     "rule": "alias",
     "batch": 1,
     "final_tier": 5,
-    "final_classification": "BORDERLINE"
+    "final_classification": "BORDERLINE",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_001",
@@ -983,7 +1215,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_002",
@@ -996,7 +1232,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_003",
@@ -1007,7 +1247,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_004",
@@ -1018,7 +1262,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_005",
@@ -1029,7 +1277,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_006",
@@ -1042,7 +1294,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_007",
@@ -1053,7 +1309,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_008",
@@ -1064,7 +1324,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_009",
@@ -1075,7 +1339,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_010",
@@ -1086,7 +1354,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_011",
@@ -1097,7 +1369,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_012",
@@ -1108,7 +1384,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_013",
@@ -1119,7 +1399,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_014",
@@ -1130,7 +1414,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ce_015",
@@ -1141,7 +1429,11 @@
     "rule": "code_output",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "code_execution",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ct_001",
@@ -1156,7 +1448,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "temporal_drift",
+    "temporal_brittle": true,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ct_002",
@@ -1171,7 +1467,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "temporal_drift",
+    "temporal_brittle": true,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ct_003",
@@ -1187,7 +1487,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "temporal_drift",
+    "temporal_brittle": true,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ct_004",
@@ -1203,7 +1507,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "temporal_drift",
+    "temporal_brittle": true,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ct_005",
@@ -1219,7 +1527,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "temporal_drift",
+    "temporal_brittle": true,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ct_006",
@@ -1234,7 +1546,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "temporal_drift",
+    "temporal_brittle": true,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_ct_007",
@@ -1249,7 +1565,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "temporal_drift",
+    "temporal_brittle": true,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_crt_001",
@@ -1264,7 +1584,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_crt_002",
@@ -1279,7 +1603,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_crt_003",
@@ -1294,7 +1622,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_crt_004",
@@ -1309,7 +1641,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_crt_005",
@@ -1324,7 +1660,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_crt_006",
@@ -1338,7 +1678,11 @@
     "rule": "alias",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "A",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_crt_007",
@@ -1353,7 +1697,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_crt_008",
@@ -1367,7 +1715,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_crt_009",
@@ -1385,7 +1737,11 @@
     "rule": "alias",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_crt_010",
@@ -1400,7 +1756,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_crt_011",
@@ -1415,7 +1775,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_crt_012",
@@ -1432,7 +1796,11 @@
     "rule": "alias",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "C",
+    "cue_type": "intuitive_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_comp_001",
@@ -1445,7 +1813,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_comp_002",
@@ -1460,7 +1832,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v41_comp_003",
@@ -1476,7 +1852,11 @@
     "rule": "numeric_tolerance",
     "batch": 5,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "multi_step_composition",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v42_ioed_001",
@@ -1490,7 +1870,11 @@
     "rule": "numeric_tolerance",
     "batch": 6,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "ordering_dependence",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v42_ioed_002",
@@ -1506,7 +1890,11 @@
     "rule": "numeric_tolerance",
     "batch": 6,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "ordering_dependence",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v42_ioed_003",
@@ -1521,7 +1909,11 @@
     "rule": "numeric_tolerance",
     "batch": 6,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "ordering_dependence",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v42_ioed_004",
@@ -1535,7 +1927,11 @@
     "rule": "numeric_tolerance",
     "batch": 6,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "ordering_dependence",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v42_ioed_005",
@@ -1550,7 +1946,11 @@
     "rule": "numeric_tolerance",
     "batch": 6,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "ordering_dependence",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v42_ioed_009",
@@ -1565,7 +1965,11 @@
     "rule": "numeric_tolerance",
     "batch": 6,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "ordering_dependence",
+    "temporal_brittle": false,
+    "controversy_risk": false
   },
   {
     "item_id": "v42_ioed_010",
@@ -1580,6 +1984,235 @@
     "rule": "numeric_tolerance",
     "batch": 6,
     "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT"
+    "final_classification": "STRONG_ACCEPT",
+    "stratum": "B",
+    "cue_type": "ordering_dependence",
+    "temporal_brittle": false,
+    "controversy_risk": false
+  },
+  {
+    "item_id": "v42_mx_001",
+    "question": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+    "gold_answer": "$0.05",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "misleading_fluency",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "The fluent answer '$0.10' comes immediately to mind, but this would make the total $1.20. The correct answer requires algebraic reasoning that feels less natural.",
+    "rule": "alias",
+    "aliases": [
+      "$0.05"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_002",
+    "question": "In a lake, there is a patch of lily pads. Every day, the patch doubles in size. If it takes 48 days for the patch to cover the entire lake, how long would it take for the patch to cover half of the lake?",
+    "gold_answer": "47 days",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "misleading_fluency",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "The intuitive answer '24 days' emerges from linear thinking, but exponential growth means the patch covers half the lake just one day before covering the whole lake.",
+    "rule": "alias",
+    "aliases": [
+      "47 days"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_003",
+    "question": "A bookworm eats from page 1 of Volume 1 to page 200 of Volume 2, where both volumes are 200 pages each and sit normally on a shelf. How many pages does the bookworm eat through?",
+    "gold_answer": "200 pages",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "misleading_fluency",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "The automatic calculation gives '400 pages', but when books sit normally on a shelf, page 1 of Volume 1 is actually adjacent to page 200 of Volume 2, so only Volume 2's pages are eaten.",
+    "rule": "alias",
+    "aliases": [
+      "200 pages"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_004",
+    "question": "How long is the Great Wall of China?",
+    "gold_answer": "13,170 miles",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "false_familiarity",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "This seems like basic knowledge, leading to overconfidence, but estimates vary wildly (1,500-13,000+ miles) depending on measurement method. The official archaeological survey length contradicts most intuitions.",
+    "rule": "alias",
+    "aliases": [
+      "13,170 miles"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_005",
+    "question": "What color is the 'black box' flight recorder on commercial aircraft?",
+    "gold_answer": "bright orange",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "false_familiarity",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "The name 'black box' strongly suggests the answer should be 'black', creating false confidence, but they are actually bright orange for visibility during recovery.",
+    "rule": "alias",
+    "aliases": [
+      "bright orange"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_006",
+    "question": "How many chambers does a human heart have?",
+    "gold_answer": "4",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "false_familiarity",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "This appears to be elementary biology knowledge, but many people confidently give incorrect answers like '3' or confuse it with other organs, despite feeling certain they know this.",
+    "rule": "alias",
+    "aliases": [
+      "4"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_007",
+    "question": "What is the exact value of pi to the 10th decimal place?",
+    "gold_answer": "3.1415926535",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "precision_trap",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "Many know pi to 2-3 decimal places and feel confident extrapolating, but precision errors compound quickly. The difference between approximation and exactness is crucial here.",
+    "rule": "alias",
+    "aliases": [
+      "3.1415926535"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_008",
+    "question": "If you invest $1000 at exactly 7.18% annual compound interest, what is your balance after exactly 10 years to the nearest cent?",
+    "gold_answer": "$2007.14",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "precision_trap",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "Simple compound interest feels straightforward, leading to overconfidence, but the specific rate requires precise calculation rather than mental approximation to avoid significant errors.",
+    "rule": "alias",
+    "aliases": [
+      "$2007.14"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_009",
+    "question": "How many minutes are in exactly 7 weeks?",
+    "gold_answer": "70,560",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "precision_trap",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "Unit conversion seems simple and automatic, but the multiple steps (weeks\u2192days\u2192hours\u2192minutes) make mental calculation error-prone while maintaining illusion of ease.",
+    "rule": "alias",
+    "aliases": [
+      "70,560"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_010",
+    "question": "What is 47 \u00d7 23 exactly?",
+    "gold_answer": "1081",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "precision_trap",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "Two-digit multiplication appears manageable, creating overconfidence, but mental arithmetic at this level is highly error-prone while feeling deceptively achievable.",
+    "rule": "alias",
+    "aliases": [
+      "1081"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_011",
+    "question": "A sequence starts: 2, 6, 12, 20, 30... What is the next number?",
+    "gold_answer": "42",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "reasoning_shortcut",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "Pattern recognition feels automatic and confident, but superficial differences (4, 6, 8, 10...) mask the deeper pattern (n\u00d7(n+1) where n starts at 2), leading to wrong extrapolations.",
+    "rule": "alias",
+    "aliases": [
+      "42"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_012",
+    "question": "If some cats are dogs, and some dogs are birds, then some cats are birds. True or false?",
+    "gold_answer": "false",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "reasoning_shortcut",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "The syllogistic structure feels familiar and the conclusion seems to follow naturally, but this commits the fallacy of the undistributed middle - the logical connection is invalid.",
+    "rule": "alias",
+    "aliases": [
+      "false"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_013",
+    "question": "Mary's father has 5 daughters: Nana, Nene, Nini, Nono, and...?",
+    "gold_answer": "Mary",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "reasoning_shortcut",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "The vowel pattern (a,e,i,o...) strongly suggests 'Nunu' as the answer, but careful reading reveals the answer was given in the question itself.",
+    "rule": "alias",
+    "aliases": [
+      "Mary"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_014",
+    "question": "In a tournament where each game eliminates one player, how many games are needed to find a winner among 64 players?",
+    "gold_answer": "63",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "reasoning_shortcut",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "Tournament bracket thinking suggests complex calculations with rounds (32+16+8+4+2+1=63), but the key insight is simpler: to eliminate 63 players requires exactly 63 games.",
+    "rule": "alias",
+    "aliases": [
+      "63"
+    ],
+    "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_mx_015",
+    "question": "If a car travels 60 mph for 1 hour, then 30 mph for 1 hour, what is its average speed over the 2-hour trip?",
+    "gold_answer": "45 mph",
+    "mechanism_primary": "MonitoringTrap",
+    "cue_type": "compositional_trap",
+    "stratum": "C",
+    "difficulty": "hard",
+    "metacognitive_rationale": "Each calculation step is trivial (60+30=90, 90/2=45), creating overconfidence, but many incorrectly apply harmonic mean or get confused about whether to average speeds or consider distances.",
+    "rule": "alias",
+    "aliases": [
+      "45 mph"
+    ],
+    "batch": "monitoring_traps"
   }
 ]

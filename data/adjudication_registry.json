@@ -2055,5 +2055,261 @@
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
+  },
+  {
+    "item_id": "v42_mx_001",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "$0.05",
+    "accepted_forms": [
+      "$0.05"
+    ],
+    "tolerance_class": "abs_0.5",
+    "tolerance_params": {
+      "abs_tol": 0.5
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "The fluent answer '$0.10' comes immediately to mind, but this would make the total $1.20. The correc"
+  },
+  {
+    "item_id": "v42_mx_002",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "47 days",
+    "accepted_forms": [
+      "47 days"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "The intuitive answer '24 days' emerges from linear thinking, but exponential growth means the patch "
+  },
+  {
+    "item_id": "v42_mx_003",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "200 pages",
+    "accepted_forms": [
+      "200 pages"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "The automatic calculation gives '400 pages', but when books sit normally on a shelf, page 1 of Volum"
+  },
+  {
+    "item_id": "v42_mx_004",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "13,170 miles",
+    "accepted_forms": [
+      "13,170 miles"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "This seems like basic knowledge, leading to overconfidence, but estimates vary wildly (1,500-13,000+"
+  },
+  {
+    "item_id": "v42_mx_005",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "bright orange",
+    "accepted_forms": [
+      "bright orange"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "The name 'black box' strongly suggests the answer should be 'black', creating false confidence, but "
+  },
+  {
+    "item_id": "v42_mx_006",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "4",
+    "accepted_forms": [
+      "4"
+    ],
+    "tolerance_class": "abs_0.5",
+    "tolerance_params": {
+      "abs_tol": 0.5
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "This appears to be elementary biology knowledge, but many people confidently give incorrect answers "
+  },
+  {
+    "item_id": "v42_mx_007",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "3.1415926535",
+    "accepted_forms": [
+      "3.1415926535"
+    ],
+    "tolerance_class": "abs_0.5",
+    "tolerance_params": {
+      "abs_tol": 0.5
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "Many know pi to 2-3 decimal places and feel confident extrapolating, but precision errors compound q"
+  },
+  {
+    "item_id": "v42_mx_008",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "$2007.14",
+    "accepted_forms": [
+      "$2007.14"
+    ],
+    "tolerance_class": "abs_0.5",
+    "tolerance_params": {
+      "abs_tol": 0.5
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "Simple compound interest feels straightforward, leading to overconfidence, but the specific rate req"
+  },
+  {
+    "item_id": "v42_mx_009",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "70,560",
+    "accepted_forms": [
+      "70,560"
+    ],
+    "tolerance_class": "abs_0.5",
+    "tolerance_params": {
+      "abs_tol": 0.5
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "Unit conversion seems simple and automatic, but the multiple steps (weeks\u2192days\u2192hours\u2192minutes) make m"
+  },
+  {
+    "item_id": "v42_mx_010",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "1081",
+    "accepted_forms": [
+      "1081"
+    ],
+    "tolerance_class": "abs_0.5",
+    "tolerance_params": {
+      "abs_tol": 0.5
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "Two-digit multiplication appears manageable, creating overconfidence, but mental arithmetic at this "
+  },
+  {
+    "item_id": "v42_mx_011",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "42",
+    "accepted_forms": [
+      "42"
+    ],
+    "tolerance_class": "abs_0.5",
+    "tolerance_params": {
+      "abs_tol": 0.5
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "Pattern recognition feels automatic and confident, but superficial differences (4, 6, 8, 10...) mask"
+  },
+  {
+    "item_id": "v42_mx_012",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "false",
+    "accepted_forms": [
+      "false"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "The syllogistic structure feels familiar and the conclusion seems to follow naturally, but this comm"
+  },
+  {
+    "item_id": "v42_mx_013",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "Mary",
+    "accepted_forms": [
+      "Mary"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "The vowel pattern (a,e,i,o...) strongly suggests 'Nunu' as the answer, but careful reading reveals t"
+  },
+  {
+    "item_id": "v42_mx_014",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "63",
+    "accepted_forms": [
+      "63"
+    ],
+    "tolerance_class": "abs_0.5",
+    "tolerance_params": {
+      "abs_tol": 0.5
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "Tournament bracket thinking suggests complex calculations with rounds (32+16+8+4+2+1=63), but the ke"
+  },
+  {
+    "item_id": "v42_mx_015",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "45 mph",
+    "accepted_forms": [
+      "45 mph"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": "Each calculation step is trivial (60+30=90, 90/2=45), creating overconfidence, but many incorrectly "
   }
 ]
