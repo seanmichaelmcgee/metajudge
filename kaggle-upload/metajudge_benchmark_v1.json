@@ -1897,100 +1897,6 @@
     "controversy_risk": false
   },
   {
-    "item_id": "v42_ioed_003",
-    "mechanism_primary": "IOED",
-    "question": "A rope is wrapped exactly 1.5 turns around a cylindrical bollard. The coefficient of friction between rope and bollard is 0.3. A sailor holds one end with a force of 50 N. Using the capstan equation, what is the maximum load force (in Newtons) the rope can hold on the other end? Round to the nearest whole number.",
-    "gold_answer": "845",
-    "aliases": [
-      "845",
-      "844",
-      "846"
-    ],
-    "rule": "numeric_tolerance",
-    "batch": 6,
-    "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT",
-    "stratum": "B",
-    "cue_type": "ordering_dependence",
-    "temporal_brittle": false,
-    "controversy_risk": false
-  },
-  {
-    "item_id": "v42_ioed_004",
-    "mechanism_primary": "IOED",
-    "question": "Water flows at 2 m/s in a horizontal pipe of diameter 4 cm where the gauge pressure is 200 kPa. The pipe narrows to 2 cm diameter. Using Bernoulli's principle (water density = 1000 kg/m\u00b3), what is the gauge pressure in the narrower section, in kPa? Round to the nearest whole number.",
-    "gold_answer": "170",
-    "aliases": [
-      "170",
-      "170 kPa"
-    ],
-    "rule": "numeric_tolerance",
-    "batch": 6,
-    "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT",
-    "stratum": "B",
-    "cue_type": "ordering_dependence",
-    "temporal_brittle": false,
-    "controversy_risk": false
-  },
-  {
-    "item_id": "v42_ioed_005",
-    "mechanism_primary": "IOED",
-    "question": "A gas is compressed adiabatically from 1 atm to 10 atm. The initial temperature is 27\u00b0C (300 K). For a diatomic ideal gas (\u03b3 = 1.4), what is the final temperature in degrees Celsius? Round to the nearest whole number.",
-    "gold_answer": "306",
-    "aliases": [
-      "306",
-      "305",
-      "307"
-    ],
-    "rule": "numeric_tolerance",
-    "batch": 6,
-    "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT",
-    "stratum": "B",
-    "cue_type": "ordering_dependence",
-    "temporal_brittle": false,
-    "controversy_risk": false
-  },
-  {
-    "item_id": "v42_ioed_009",
-    "mechanism_primary": "IOED",
-    "question": "A wire carries a current of 5 A. A charged particle with charge q = +2 \u03bcC moves parallel to the wire at a distance of 10 cm, moving at speed 1000 m/s in the SAME direction as the current. What is the magnitude of the magnetic force on the charged particle in micronewtons? Use \u03bc\u2080 = 4\u03c0 \u00d7 10\u207b\u2077 T\u00b7m/A. Give your answer to 2 decimal places.",
-    "gold_answer": "0.02",
-    "aliases": [
-      "0.02",
-      "0.020",
-      "2\u00d710\u207b\u2078"
-    ],
-    "rule": "numeric_tolerance",
-    "batch": 6,
-    "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT",
-    "stratum": "B",
-    "cue_type": "ordering_dependence",
-    "temporal_brittle": false,
-    "controversy_risk": false
-  },
-  {
-    "item_id": "v42_ioed_010",
-    "mechanism_primary": "IOED",
-    "question": "An object cools from 90\u00b0C to 60\u00b0C in exactly 10 minutes in a 20\u00b0C room (Newton's Law of Cooling applies). How many additional minutes does it take to cool from 60\u00b0C to 40\u00b0C? Round to the nearest whole number.",
-    "gold_answer": "12",
-    "aliases": [
-      "12",
-      "13",
-      "12 minutes"
-    ],
-    "rule": "numeric_tolerance",
-    "batch": 6,
-    "final_tier": 1,
-    "final_classification": "STRONG_ACCEPT",
-    "stratum": "B",
-    "cue_type": "ordering_dependence",
-    "temporal_brittle": false,
-    "controversy_risk": false
-  },
-  {
     "item_id": "v42_mx_001",
     "question": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
     "gold_answer": "$0.05",
@@ -2214,5 +2120,85 @@
       "45 mph"
     ],
     "batch": "monitoring_traps"
+  },
+  {
+    "item_id": "v42_calc_001",
+    "question": "How many distinct ways can you arrange the letters in the word MISSISSIPPI?",
+    "gold_answer": "34650",
+    "aliases": [
+      "34650"
+    ],
+    "rule": "numeric",
+    "mechanism_primary": "MonitoringTrap",
+    "batch": "computation_traps",
+    "stratum": "A",
+    "cue_type": "computation_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false,
+    "difficulty": "medium"
+  },
+  {
+    "item_id": "v42_calc_002",
+    "question": "What is the remainder when 7^100 is divided by 13?",
+    "gold_answer": "9",
+    "aliases": [
+      "9"
+    ],
+    "rule": "numeric",
+    "mechanism_primary": "MonitoringTrap",
+    "batch": "computation_traps",
+    "stratum": "A",
+    "cue_type": "computation_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false,
+    "difficulty": "hard"
+  },
+  {
+    "item_id": "v42_calc_003",
+    "question": "If you roll two standard dice, what is the probability of getting a sum of exactly 7? Express as a simplified fraction.",
+    "gold_answer": "1/6",
+    "aliases": [
+      "1/6"
+    ],
+    "rule": "alias",
+    "mechanism_primary": "MonitoringTrap",
+    "batch": "computation_traps",
+    "stratum": "A",
+    "cue_type": "computation_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false,
+    "difficulty": "medium"
+  },
+  {
+    "item_id": "v42_calc_004",
+    "question": "What is the sum of the first 50 positive odd numbers?",
+    "gold_answer": "2500",
+    "aliases": [
+      "2500"
+    ],
+    "rule": "numeric",
+    "mechanism_primary": "MonitoringTrap",
+    "batch": "computation_traps",
+    "stratum": "A",
+    "cue_type": "computation_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false,
+    "difficulty": "medium"
+  },
+  {
+    "item_id": "v42_calc_005",
+    "question": "A regular hexagon has a side length of 10. What is its area? Give the exact value as a decimal rounded to 2 decimal places.",
+    "gold_answer": "259.81",
+    "aliases": [
+      "259.81"
+    ],
+    "rule": "numeric",
+    "mechanism_primary": "MonitoringTrap",
+    "batch": "computation_traps",
+    "stratum": "A",
+    "cue_type": "computation_trap",
+    "temporal_brittle": false,
+    "controversy_risk": false,
+    "difficulty": "medium"
   }
 ]

@@ -1958,105 +1958,6 @@
     "edge_case_notes": null
   },
   {
-    "item_id": "v42_ioed_003",
-    "answer_type": "numeric",
-    "grader_rule": "approx_numeric_small",
-    "gold_answer": "845",
-    "accepted_forms": [
-      "845",
-      "844",
-      "846"
-    ],
-    "tolerance_class": null,
-    "tolerance_params": {
-      "abs_tol": 10.0
-    },
-    "time_anchor": null,
-    "source_anchor": "Capstan equation: T_load = T_hold \u00d7 e^(\u03bc\u03b8). \u03b8 = 1.5 \u00d7 2\u03c0 = 9.4248 rad. e^(0.3 \u00d7 9.4248) = e^(2.8274) = 16.90. T_load = 50 \u00d7 16.90 = 845 N. Common wrong: linear thinking \u2192 50 \u00d7 (1 + 0.3\u00d71.5\u00d72\u03c0) \u2248 50 \u00d7 3.83 = 191 N.",
-    "normalization_notes": null,
-    "tri_label_space": null,
-    "edge_case_notes": null
-  },
-  {
-    "item_id": "v42_ioed_004",
-    "answer_type": "numeric",
-    "grader_rule": "approx_numeric_small",
-    "gold_answer": "170",
-    "accepted_forms": [
-      "170",
-      "170 kPa"
-    ],
-    "tolerance_class": null,
-    "tolerance_params": {
-      "abs_tol": 2.0
-    },
-    "time_anchor": null,
-    "source_anchor": "From continuity: v2=8 m/s. Bernoulli: P1 + \u00bd\u03c1v1\u00b2 = P2 + \u00bd\u03c1v2\u00b2. P2 = P1 + \u00bd\u03c1(v1\u00b2 - v2\u00b2) = 200000 + \u00bd\u00d71000\u00d7(4-64) = 200000 - 30000 = 170000 Pa = 170 kPa. Common wrong: pressure increases in narrower section (confusing Bernoulli).",
-    "normalization_notes": null,
-    "tri_label_space": null,
-    "edge_case_notes": null
-  },
-  {
-    "item_id": "v42_ioed_005",
-    "answer_type": "numeric",
-    "grader_rule": "approx_numeric_small",
-    "gold_answer": "306",
-    "accepted_forms": [
-      "306",
-      "305",
-      "307"
-    ],
-    "tolerance_class": null,
-    "tolerance_params": {
-      "abs_tol": 3.0
-    },
-    "time_anchor": null,
-    "source_anchor": "Adiabatic relation: T2 = T1 \u00d7 (P2/P1)^((\u03b3-1)/\u03b3) = 300 \u00d7 10^(0.4/1.4) = 300 \u00d7 10^0.2857 = 300 \u00d7 1.9307 = 579.2 K = 306\u00b0C. Common wrong: linear thinking \u2192 300\u00d7(10-1)/1 = 2700\u00b0C, or 10\u00d727 = 270\u00b0C.",
-    "normalization_notes": null,
-    "tri_label_space": null,
-    "edge_case_notes": null
-  },
-  {
-    "item_id": "v42_ioed_009",
-    "answer_type": "numeric",
-    "grader_rule": "approx_numeric_small",
-    "gold_answer": "0.02",
-    "accepted_forms": [
-      "0.02",
-      "0.020",
-      "2\u00d710\u207b\u2078"
-    ],
-    "tolerance_class": null,
-    "tolerance_params": {
-      "abs_tol": 0.005
-    },
-    "time_anchor": null,
-    "source_anchor": "B from wire: B = \u03bc\u2080I/(2\u03c0r) = (4\u03c0\u00d710\u207b\u2077 \u00d7 5)/(2\u03c0 \u00d7 0.1) = 2\u00d710\u207b\u2076/0.2\u03c0 \u00d7 \u03c0... B = (4\u03c0\u00d710\u207b\u2077 \u00d7 5)/(2\u03c0 \u00d7 0.1) = (20\u03c0\u00d710\u207b\u2077)/(0.2\u03c0) = 10\u207b\u2075 T. F = qvB = 2\u00d710\u207b\u2076 \u00d7 1000 \u00d7 10\u207b\u2075 = 2\u00d710\u207b\u2078 N = 0.02 \u03bcN. Let me recheck: B = \u03bc\u2080I/(2\u03c0r) = (4\u03c0\u00d710\u207b\u2077)(5)/(2\u03c0\u00d70.1) = 4\u03c0\u00d75\u00d710\u207b\u2077/(0.2\u03c0) = 10\u207b\u2075 T. F = qvB = 2\u00d710\u207b\u2076 \u00d7 1000 \u00d7 10\u207b\u2075 = 2\u00d710\u207b\u2078 N = 0.02 \u00d7 10\u207b\u2076 N = 0.02 \u03bcN. \u2713",
-    "normalization_notes": null,
-    "tri_label_space": null,
-    "edge_case_notes": null
-  },
-  {
-    "item_id": "v42_ioed_010",
-    "answer_type": "numeric",
-    "grader_rule": "approx_numeric_small",
-    "gold_answer": "12",
-    "accepted_forms": [
-      "12",
-      "13",
-      "12 minutes"
-    ],
-    "tolerance_class": null,
-    "tolerance_params": {
-      "abs_tol": 1.0
-    },
-    "time_anchor": null,
-    "source_anchor": "Newton's cooling: T(t) = T_room + (T_0 - T_room)e^{-kt}. Phase 1: 60 = 20 + 70e^{-10k} \u2192 k = -ln(4/7)/10 = 0.05596/min. Phase 2: 40 = 20 + 40e^{-kt\u2082} \u2192 e^{-kt\u2082} = 0.5 \u2192 t\u2082 = ln2/k = 0.693/0.05596 = 12.4 min \u2248 12 min. Common wrong: 10 minutes (assuming same rate), 6.67 minutes (purely proportional to \u0394T).",
-    "normalization_notes": null,
-    "tri_label_space": null,
-    "edge_case_notes": null
-  },
-  {
     "item_id": "v42_mx_001",
     "answer_type": "numeric",
     "grader_rule": "approx_numeric_small",
@@ -2311,5 +2212,93 @@
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": "Each calculation step is trivial (60+30=90, 90/2=45), creating overconfidence, but many incorrectly "
+  },
+  {
+    "item_id": "v42_calc_001",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "34650",
+    "accepted_forms": [
+      "34650"
+    ],
+    "tolerance_class": "abs_1",
+    "tolerance_params": {
+      "abs_tol": 1.0
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "11!/(1!\u00b74!\u00b74!\u00b72!)",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v42_calc_002",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "9",
+    "accepted_forms": [
+      "9"
+    ],
+    "tolerance_class": "abs_1",
+    "tolerance_params": {
+      "abs_tol": 1.0
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "Fermat: period=12, 100%12=4, 7^4\u22619 mod 13",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v42_calc_003",
+    "answer_type": "numeric",
+    "grader_rule": "fraction_or_decimal",
+    "gold_answer": "1/6",
+    "accepted_forms": [
+      "1/6"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "6 ways out of 36",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v42_calc_004",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "2500",
+    "accepted_forms": [
+      "2500"
+    ],
+    "tolerance_class": "abs_1",
+    "tolerance_params": {
+      "abs_tol": 1.0
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "n^2 = 2500",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "v42_calc_005",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "259.81",
+    "accepted_forms": [
+      "259.81"
+    ],
+    "tolerance_class": "abs_1",
+    "tolerance_params": {
+      "abs_tol": 1.0
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "(3\u221a3/2)\u00d7100 = 150\u221a3 \u2248 259.81",
+    "tri_label_space": null,
+    "edge_case_notes": null
   }
 ]

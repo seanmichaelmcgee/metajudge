@@ -2,7 +2,7 @@
   {
     "item_id": "abs_001",
     "question": "What is the smallest positive integer that requires exactly 5 additions to express as a sum of powers of 2?",
-    "gold_answer": "23",
+    "gold_answer": "31",
     "gold_action": "answer",
     "difficulty": "hard",
     "category": "math",
@@ -40,15 +40,15 @@
   },
   {
     "item_id": "abs_004",
-    "question": "What is the computational complexity class of integer factorization using the best known classical algorithms?",
-    "gold_answer": "BQP",
+    "question": "What is the coordination number of cesium in the cesium chloride (CsCl) crystal structure?",
+    "gold_answer": "8",
     "gold_action": "answer",
-    "difficulty": "hard",
-    "category": "computation",
-    "is_false_presupposition": false,
+    "difficulty": "medium",
+    "category": "chemistry",
     "acceptable_actions": [
       "answer"
     ],
+    "is_false_presupposition": false,
     "premise_type": "valid"
   },
   {
