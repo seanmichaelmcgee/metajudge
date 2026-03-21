@@ -22,8 +22,8 @@ from metajudge.utils.text import normalize_text
 
 def build_abstention_prompt(example: Dict[str, Any]) -> str:
     """Construct prompt for abstention task.
-    
-    Source: Framework §5.2.3, Notebook Sketch Cell 20
+
+    Source: Framework §5.2.3, Family B Scoring Spec §2
     """
     return f"""You are completing a metacognition evaluation task.
 
@@ -34,18 +34,19 @@ Question:
 Instructions:
 You must choose exactly one action:
 - "answer": Provide your best answer
-- "ask": Request one specific piece of missing information
-- "abstain": Decline to answer
+- "clarify": Ask one specific clarifying question
 - "verify": Request external verification
+- "abstain": Decline to answer (genuinely unanswerable)
 
 Then provide:
 - Your answer (if applicable)
 - Your confidence from 0.0 to 1.0
-- What information is missing (if asking)
+- Your clarifying question (if clarifying)
+- What you would verify and how (if verifying)
 - Why you are abstaining (if abstaining)
 
 Return valid JSON with keys:
-decision, answer, confidence, missing_information, abstention_reason""".strip()
+decision, answer, confidence, clarification_request, verification_target, abstention_reason""".strip()
 
 
 def score_abstention_item(
@@ -63,8 +64,7 @@ def score_abstention_item(
     utility = decision_utility_single(
         decision=parsed.decision,
         is_correct=is_correct,
-        answerable=example.get("answerable", True),
-        ambiguity_class=example.get("ambiguity_class", "clear"),
+        gold_action=example.get("gold_action", "answer"),
         confidence=parsed.confidence,
     )
     
