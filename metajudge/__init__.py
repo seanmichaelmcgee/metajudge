@@ -16,5 +16,5 @@ Design principle: Score metacognition by the consequences of self-monitoring
 on task behavior, not by what the model says about itself.
 """
 
-__version__ = "0.5.4"
+__version__ = "0.5.5"
 __benchmark_name__ = "metacognition_behavioral_suite_v1"

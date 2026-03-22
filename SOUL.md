@@ -76,8 +76,8 @@ Family B — Selective Abstention / Verification / Clarification — is now inte
 
 | ID | Family | Axis | Turns | Status |
 |----|--------|------|-------|--------|
-| A | Confidence Calibration | Monitoring | 1 | **V4.2 dataset, grading_v2, lean notebook live** |
-| B | Selective Abstention / Verification | Monitoring | 1 | **48-item pilot integrated, UWAA scoring** |
+| A | Confidence Calibration | Monitoring | 1 | **117-item V4.2 dataset, grading_v2, lean notebook live** |
+| B | Selective Abstention / Verification | Monitoring | 1 | **84-item pilot v0.5.4, UWAA scoring** |
 | C | Self-Correction (intrinsic + evidence-assisted) | Control | 2 | V2 |
 | D | Grounding Sensitivity | Monitoring | 1 | V2 |
 | E | Control-Policy Adaptation | Control | 2 | V2 |
@@ -170,6 +170,38 @@ These are the backbone of auditability. No run is considered valid without them.
 3. **Write tests** for any new scoring logic before implementing the Kaggle wrapper.
 4. **Keep the notebook thin** — scoring logic lives in `metajudge/`, SDK glue lives in the notebook.
 5. **Commit frequently** with clear messages referencing the family/phase being worked on.
+
+---
+
+## API iteration policy (v0.5.5+)
+
+Multi-turn API loops are authorized for item-level quality improvement. This replaces the earlier conservative per-call budgeting with a quality-first approach.
+
+### Approved uses
+- Item rewrite and wording refinement (multi-turn generator/critic/judge loops)
+- Adversarial critique of item construct validity
+- Alternative gold-label argument generation
+- Scientific wording comparison and narrowing
+- False-presupposition detection stress testing
+
+### Model preferences
+Use the most capable available models: Claude Opus/Sonnet, GPT-4o, Gemini 2.5 Pro, DeepSeek-R1. Multiple iteration rounds per item are expected — do not stop at one-shot when quality can be improved by further critique.
+
+### Budget discipline
+- Session-level awareness: do not burn the full $500 Kaggle budget in one run
+- Per-call penny-pinching is explicitly discouraged — prioritize item quality
+- Iterate as many rounds as needed to achieve defensible construct validity
+- Cache API responses where possible to avoid redundant calls
+
+### Prohibited uses (do not waste API quota)
+- CSV aggregation, unit conversions, simple calculations
+- Repository scanning or git diffs
+- Test writing boilerplate
+- Repeated summary generation
+
+### Security
+- API keys are **environment variables only** — NEVER committed to the repository
+- Keys must not appear in notebooks, config files, logs, or any tracked file
 
 ---
 

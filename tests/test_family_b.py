@@ -2,7 +2,7 @@
 Tests for Family B: Selective Abstention / Verification / Clarification
 
 Covers:
-- Pilot dataset structure validation (87 items, v3)
+- Pilot dataset structure validation (84 items, v3+v0.5.4)
 - Action distribution and balance
 - Per-class field requirements (clarify, verify, abstain, answer)
 - Scoring function correctness (UWAA, action F1, AUARC)
@@ -29,7 +29,7 @@ def pilot_items():
 
 class TestPilotDatasetStructure:
     def test_item_count(self, pilot_items):
-        assert len(pilot_items) == 87
+        assert len(pilot_items) == 84  # v0.5.4: 3 items removed
 
     def test_required_fields(self, pilot_items):
         required_fields = [
@@ -75,7 +75,7 @@ class TestActionDistribution:
         assert len(dist) == 4, f"Expected 4 action classes, got {len(dist)}"
 
     def test_no_class_too_small(self, pilot_items):
-        """v3 distribution: answer=15, clarify=13, verify=30, abstain=29.
+        """v0.5.4 distribution: answer=15, clarify=13, verify=27, abstain=29.
         Every class must have at least 10 items."""
         dist = Counter(item["gold_action"] for item in pilot_items)
         for action, count in dist.items():
