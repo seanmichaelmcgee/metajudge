@@ -1727,12 +1727,15 @@
     "question": "You have two jars. Jar A contains 10 liters of wine. Jar B contains 10 liters of water. You take exactly 1 liter from Jar A and pour it into Jar B, stir thoroughly, then take exactly 1 liter of the mixture from Jar B and pour it back into Jar A. Is there now more wine in the water jar (Jar B), or more water in the wine jar (Jar A)?",
     "gold_answer": "They are equal",
     "aliases": [
+      "neither",
+      "they are the same",
+      "they're equal",
       "equal",
       "the same",
+      "the amounts are equal",
+      "they are equal",
       "same amount",
-      "neither",
-      "they're equal",
-      "they are the same"
+      "same"
     ],
     "rule": "alias",
     "batch": 5,
@@ -1788,10 +1791,10 @@
     "gold_answer": "There is no missing dollar",
     "aliases": [
       "nowhere",
-      "there is no missing dollar",
       "the question is misleading",
-      "no missing dollar",
-      "the premise is flawed"
+      "the premise is flawed",
+      "there is no missing dollar",
+      "no missing dollar"
     ],
     "rule": "alias",
     "batch": 5,
@@ -1970,6 +1973,8 @@
     "metacognitive_rationale": "The name 'black box' strongly suggests the answer should be 'black', creating false confidence, but they are actually bright orange for visibility during recovery.",
     "rule": "alias",
     "aliases": [
+      "orange",
+      "Orange",
       "bright orange"
     ],
     "batch": "monitoring_traps"
