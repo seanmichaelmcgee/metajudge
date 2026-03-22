@@ -1995,9 +1995,12 @@
     "item_id": "v42_mx_003",
     "answer_type": "text",
     "grader_rule": "alias_plus_normalization",
-    "gold_answer": "200 pages",
+    "gold_answer": "0",
     "accepted_forms": [
-      "200 pages"
+      "0",
+      "zero",
+      "none",
+      "just the covers"
     ],
     "tolerance_class": null,
     "tolerance_params": null,

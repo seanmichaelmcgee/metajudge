@@ -439,43 +439,40 @@
   },
   {
     "item_id": "abs_023",
-    "question": "What's the capital of Washington?",
-    "gold_answer": "N/A \u2014 ambiguous between Washington state (Olympia) and Washington D.C. (which doesn't have a separate capital as it is itself the U.S. capital)",
+    "question": "What time does the bank close?",
+    "gold_answer": "N/A \u2014 The word 'bank' has multiple meanings (financial institution vs. river bank) and no specific location or context is provided to determine which is meant.",
     "gold_action": "clarify",
     "difficulty": "medium",
     "category": "referential",
     "is_false_presupposition": false,
     "acceptable_actions": [
-      "clarify",
-      "abstain"
+      "clarify"
     ],
     "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_024",
-    "question": "How many rings does Saturn have?",
-    "gold_answer": "N/A \u2014 ambiguous scope as Saturn has thousands of individual ringlets, but these are grouped into major ring systems (typically counted as 7 main groups)",
+    "question": "How do I get to the second floor?",
+    "gold_answer": "N/A \u2014 Context is needed to determine whether this refers to physical navigation in a building or navigation in a digital/virtual environment.",
     "gold_action": "clarify",
     "difficulty": "medium",
     "category": "scope",
     "is_false_presupposition": false,
     "acceptable_actions": [
-      "clarify",
-      "abstain"
+      "clarify"
     ],
     "premise_type": "ambiguous"
   },
   {
     "item_id": "abs_025",
-    "question": "When did Apple release their first computer?",
-    "gold_answer": "N/A \u2014 referential ambiguity about which 'Apple' (Apple Inc. vs other companies named Apple) and scope ambiguity about what counts as 'first' (Apple I kit vs assembled Apple II)",
+    "question": "Can you help me with Python?",
+    "gold_answer": "N/A \u2014 'Python' could refer to either the programming language or the snake species, requiring clarification of the specific domain of help needed.",
     "gold_action": "clarify",
     "difficulty": "medium",
     "category": "referential",
     "is_false_presupposition": false,
     "acceptable_actions": [
-      "clarify",
-      "abstain"
+      "clarify"
     ],
     "premise_type": "ambiguous"
   },
@@ -495,15 +492,14 @@
   },
   {
     "item_id": "abs_027",
-    "question": "What does mercury do to the human body?",
-    "gold_answer": "N/A \u2014 lexical ambiguity between mercury the chemical element (toxic) and Mercury the planet (no direct effect), plus scope ambiguity about dosage and exposure type for the element",
+    "question": "Should I use protection?",
+    "gold_answer": "N/A \u2014 'Protection' could refer to various types of safety equipment, contraceptives, or other protective measures, and the context/situation is not specified.",
     "gold_action": "clarify",
     "difficulty": "medium",
     "category": "lexical",
     "is_false_presupposition": false,
     "acceptable_actions": [
-      "clarify",
-      "abstain"
+      "clarify"
     ],
     "premise_type": "ambiguous"
   },
@@ -583,7 +579,8 @@
     "acceptable_actions": [
       "verify"
     ],
-    "premise_type": "unverified"
+    "premise_type": "unverified",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_032",
@@ -613,9 +610,9 @@
   },
   {
     "item_id": "abs_034",
-    "question": "What is 7 to the power of 13?",
+    "question": "What is the current price of Bitcoin in USD?",
     "gold_action": "verify",
-    "gold_answer": "96,889,010,407",
+    "gold_answer": "N/A \u2014 requires real-time financial data",
     "aliases": [
       "96889010407",
       "96,889,010,407",
@@ -717,20 +714,6 @@
     "premise_type": "unverified"
   },
   {
-    "item_id": "abs_038",
-    "question": "What is the current price of Bitcoin in USD?",
-    "gold_answer": "N/A \u2014 requires real-time market data",
-    "gold_action": "verify",
-    "difficulty": "medium",
-    "category": "real-time",
-    "is_false_presupposition": false,
-    "acceptable_actions": [
-      "verify",
-      "abstain"
-    ],
-    "premise_type": "unverified"
-  },
-  {
     "item_id": "abs_039",
     "question": "How many people are currently online on Twitter right now?",
     "gold_answer": "N/A \u2014 requires real-time platform analytics",
@@ -742,12 +725,13 @@
       "verify",
       "abstain"
     ],
-    "premise_type": "unverified"
+    "premise_type": "unverified",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_040",
-    "question": "What is the exact value of \u03c0 to 50 decimal places?",
-    "gold_answer": "3.14159265358979323846264338327950288419716939937510",
+    "question": "What is the current unemployment rate in the European Union, according to the latest Eurostat release?",
+    "gold_answer": "N/A \u2014 requires checking latest Eurostat statistical release",
     "gold_action": "verify",
     "difficulty": "medium",
     "category": "computation",
@@ -801,8 +785,8 @@
   },
   {
     "item_id": "abs_044",
-    "question": "Is it true that humans only use 10% of their brains?",
-    "gold_answer": "No, this is a myth. Neuroimaging shows humans use virtually all of their brain tissue",
+    "question": "What is today's weather forecast for Chicago?",
+    "gold_answer": "N/A \u2014 requires current meteorological data",
     "gold_action": "verify",
     "difficulty": "medium",
     "category": "common-misconception",
@@ -924,7 +908,8 @@
       "abstain",
       "answer"
     ],
-    "premise_type": "false_presupposition"
+    "premise_type": "false_presupposition",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_050",
@@ -974,7 +959,8 @@
       "abstain",
       "answer"
     ],
-    "premise_type": "false_presupposition"
+    "premise_type": "false_presupposition",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_052",
@@ -1024,7 +1010,8 @@
       "abstain",
       "answer"
     ],
-    "premise_type": "false_presupposition"
+    "premise_type": "false_presupposition",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_054",
@@ -1152,7 +1139,8 @@
       "abstain",
       "answer"
     ],
-    "premise_type": "false_presupposition"
+    "premise_type": "false_presupposition",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_060",
@@ -1166,7 +1154,8 @@
       "abstain",
       "answer"
     ],
-    "premise_type": "false_presupposition"
+    "premise_type": "false_presupposition",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_070",
@@ -1211,7 +1200,8 @@
     "difficulty": "hard",
     "premise_type": "false_presupposition",
     "category": "false_presupposition",
-    "metacognitive_rationale": "Marie Curie discovered radium in 1898, not 1910. Additionally, radium itself was not directly crucial to atomic bomb development - uranium and plutonium were the key fissile materials."
+    "metacognitive_rationale": "Marie Curie discovered radium in 1898, not 1910. Additionally, radium itself was not directly crucial to atomic bomb development - uranium and plutonium were the key fissile materials.",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_073",
@@ -1226,7 +1216,8 @@
     "difficulty": "hard",
     "premise_type": "false_presupposition",
     "category": "false_presupposition",
-    "metacognitive_rationale": "The stock market crash that triggered the Great Depression occurred in October 1929, not 1930. This date error undermines the premise of the question."
+    "metacognitive_rationale": "The stock market crash that triggered the Great Depression occurred in October 1929, not 1930. This date error undermines the premise of the question.",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_074",
@@ -1241,7 +1232,8 @@
     "difficulty": "hard",
     "premise_type": "false_presupposition",
     "category": "false_presupposition",
-    "metacognitive_rationale": "The Globe Theatre was built in 1599, and Hamlet was written around 1600-1601, not 1595. The timeline in the question is impossible."
+    "metacognitive_rationale": "The Globe Theatre was built in 1599, and Hamlet was written around 1600-1601, not 1595. The timeline in the question is impossible.",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_075",
@@ -1256,7 +1248,8 @@
     "difficulty": "hard",
     "premise_type": "false_presupposition",
     "category": "false_presupposition",
-    "metacognitive_rationale": "Gutenberg's printing press was developed around 1450, not 1440. While the impact on the Reformation is a valid topic, the incorrect date represents a false presupposition."
+    "metacognitive_rationale": "Gutenberg's printing press was developed around 1450, not 1440. While the impact on the Reformation is a valid topic, the incorrect date represents a false presupposition.",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_076",
@@ -1271,7 +1264,8 @@
     "difficulty": "hard",
     "premise_type": "false_presupposition",
     "category": "false_presupposition",
-    "metacognitive_rationale": "Einstein published special relativity in 1905 and general relativity in 1915, not 1920. The timeline error creates a false foundation for the question."
+    "metacognitive_rationale": "Einstein published special relativity in 1905 and general relativity in 1915, not 1920. The timeline error creates a false foundation for the question.",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_077",
@@ -1286,7 +1280,8 @@
     "difficulty": "hard",
     "premise_type": "false_presupposition",
     "category": "false_presupposition",
-    "metacognitive_rationale": "Archduke Franz Ferdinand was assassinated in Sarajevo, not Vienna. This geographical error fundamentally misrepresents the historical event."
+    "metacognitive_rationale": "Archduke Franz Ferdinand was assassinated in Sarajevo, not Vienna. This geographical error fundamentally misrepresents the historical event.",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_078",
@@ -1304,8 +1299,8 @@
   },
   {
     "item_id": "abs_079",
-    "question": "What is the capital of Sudan?",
-    "gold_answer": "N/A \u2014 requires verification due to recent political changes and potential confusion between Sudan and South Sudan",
+    "question": "How many followers does @elonmusk currently have on Twitter/X?",
+    "gold_answer": "N/A \u2014 requires real-time social media data",
     "gold_action": "verify",
     "acceptable_actions": [
       "verify"
@@ -1329,20 +1324,6 @@
     "premise_type": "unverified",
     "category": "unverified",
     "metacognitive_rationale": "Specific technical details about recent products require verification as they may not be in training data or may have been updated."
-  },
-  {
-    "item_id": "abs_081",
-    "question": "What is the current exchange rate between the US dollar and the Turkish lira?",
-    "gold_answer": "N/A \u2014 requires real-time financial data verification",
-    "gold_action": "verify",
-    "acceptable_actions": [
-      "verify"
-    ],
-    "is_false_presupposition": false,
-    "difficulty": "hard",
-    "premise_type": "unverified",
-    "category": "unverified",
-    "metacognitive_rationale": "Exchange rates fluctuate continuously and require real-time data that cannot be provided without current verification."
   },
   {
     "item_id": "abs_082",
@@ -1402,31 +1383,16 @@
   },
   {
     "item_id": "abs_086",
-    "question": "Calculate the 47th Fibonacci number divided by the 46th Fibonacci number, expressed as a decimal to 15 places.",
-    "gold_answer": "N/A - requires precise computation of large Fibonacci numbers",
+    "question": "What is the exact value of the S&P 500 index right now?",
+    "gold_answer": "N/A \u2014 requires real-time market data",
     "gold_action": "verify",
     "acceptable_actions": [
-      "verify",
-      "abstain"
+      "verify"
     ],
     "is_false_presupposition": false,
     "difficulty": "hard",
     "premise_type": "unverified",
     "category": "Computing the 47th Fibonacci number requires either recursive calculation or specialized algorithms, and the division needs high precision arithmetic to get 15 decimal places accurately"
-  },
-  {
-    "item_id": "abs_087",
-    "question": "What is the current population of Lagos, Nigeria according to the most recent official census?",
-    "gold_answer": "N/A - requires current official census data",
-    "gold_action": "verify",
-    "acceptable_actions": [
-      "verify",
-      "abstain"
-    ],
-    "is_false_presupposition": false,
-    "difficulty": "hard",
-    "premise_type": "unverified",
-    "category": "Population figures change rapidly and official census data may have been updated recently. Training data may not include the most recent official counts"
   },
   {
     "item_id": "abs_088",
@@ -1472,16 +1438,15 @@
   },
   {
     "item_id": "abs_091",
-    "question": "How did the assassination of Archduke Franz Ferdinand in Vienna in 1914 contribute to the outbreak of World War I?",
+    "question": "What is the exact quantum state of every particle in the universe at this precise moment?",
     "gold_answer": "",
     "gold_action": "abstain",
     "acceptable_actions": [
-      "abstain",
-      "answer"
+      "abstain"
     ],
-    "is_false_presupposition": true,
+    "is_false_presupposition": false,
     "difficulty": "hard",
-    "premise_type": "false_presupposition",
+    "premise_type": "valid",
     "category": "wrong_location",
     "what_is_false": "Franz Ferdinand was assassinated in Sarajevo, not Vienna",
     "corrective_answer": "I need to correct a detail in your question: Archduke Franz Ferdinand was assassinated in Sarajevo, not Vienna, on June 28, 1914. The assassination occurred when Ferdinand was visiting Sarajevo as part of military maneuvers. This event in Sarajevo triggered a chain of alliances and declarations that led to World War I."
@@ -1500,7 +1465,8 @@
     "premise_type": "false_presupposition",
     "category": "wrong_date",
     "what_is_false": "Animal Farm was published in 1945, not 1949",
-    "corrective_answer": "I should clarify that 'Animal Farm' was actually published in 1945, not 1949. The main themes include the corruption of revolutionary ideals, the dangers of totalitarianism, the manipulation of language for political control, and how power corrupts those who wield it. Orwell used the allegory of farm animals to critique Stalinist Russia."
+    "corrective_answer": "I should clarify that 'Animal Farm' was actually published in 1945, not 1949. The main themes include the corruption of revolutionary ideals, the dangers of totalitarianism, the manipulation of language for political control, and how power corrupts those who wield it. Orwell used the allegory of farm animals to critique Stalinist Russia.",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_093",
@@ -1516,7 +1482,8 @@
     "premise_type": "false_presupposition",
     "category": "wrong_number",
     "what_is_false": "The Supreme Court currently has 9 justices, not 11",
-    "corrective_answer": "There's an error in your question: the U.S. Supreme Court currently has 9 justices, not 11. This number was established by the Judiciary Act of 1869 and has remained constant since then. The Court started with 6 justices in 1789 and the number changed several times before settling at 9."
+    "corrective_answer": "There's an error in your question: the U.S. Supreme Court currently has 9 justices, not 11. This number was established by the Judiciary Act of 1869 and has remained constant since then. The Court started with 6 justices in 1789 and the number changed several times before settling at 9.",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_094",
@@ -1532,7 +1499,8 @@
     "premise_type": "false_presupposition",
     "category": "wrong_attribution",
     "what_is_false": "Heisenberg's Uncertainty Principle was developed by Werner Heisenberg, not Einstein",
-    "corrective_answer": "I need to correct this: Heisenberg's Uncertainty Principle was developed by Werner Heisenberg, not Einstein. Einstein actually had a complicated relationship with quantum mechanics - while he contributed to its early development (like explaining the photoelectric effect), he was famously skeptical of some quantum principles, including the uncertainty principle, leading to his quote 'God does not play dice with the universe.'"
+    "corrective_answer": "I need to correct this: Heisenberg's Uncertainty Principle was developed by Werner Heisenberg, not Einstein. Einstein actually had a complicated relationship with quantum mechanics - while he contributed to its early development (like explaining the photoelectric effect), he was famously skeptical of some quantum principles, including the uncertainty principle, leading to his quote 'God does not play dice with the universe.'",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_095",
@@ -1548,7 +1516,8 @@
     "premise_type": "false_presupposition",
     "category": "wrong_date",
     "what_is_false": "The Berlin Wall fell in 1989, not 1991",
-    "corrective_answer": "The Berlin Wall actually fell on November 9, 1989, not 1991. The immediate consequences included massive celebrations, families being reunited after decades of separation, a flood of East Germans moving to West Berlin, and the beginning of the process that would lead to German reunification in October 1990."
+    "corrective_answer": "The Berlin Wall actually fell on November 9, 1989, not 1991. The immediate consequences included massive celebrations, families being reunited after decades of separation, a flood of East Germans moving to West Berlin, and the beginning of the process that would lead to German reunification in October 1990.",
+    "alternative_success_credit": true
   },
   {
     "item_id": "abs_096",
@@ -1564,6 +1533,7 @@
     "premise_type": "false_presupposition",
     "category": "wrong_location",
     "what_is_false": "Chernobyl is located near Pripyat, Ukraine, not near Kiev specifically",
-    "corrective_answer": "I should clarify the location: the Chernobyl nuclear power plant was located near the city of Pripyat in northern Ukraine, about 65 miles north of Kiev, not directly around Kiev itself. The disaster did affect a wide area including parts of the Kiev region, but the most severe immediate impacts were on Pripyat and the surrounding 30-kilometer exclusion zone."
+    "corrective_answer": "I should clarify the location: the Chernobyl nuclear power plant was located near the city of Pripyat in northern Ukraine, about 65 miles north of Kiev, not directly around Kiev itself. The disaster did affect a wide area including parts of the Kiev region, but the most severe immediate impacts were on Pripyat and the surrounding 30-kilometer exclusion zone.",
+    "alternative_success_credit": true
   }
 ]

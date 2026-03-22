@@ -1929,7 +1929,7 @@
   {
     "item_id": "v42_mx_003",
     "question": "A bookworm eats from page 1 of Volume 1 to page 200 of Volume 2, where both volumes are 200 pages each and sit normally on a shelf. How many pages does the bookworm eat through?",
-    "gold_answer": "200 pages",
+    "gold_answer": "0",
     "mechanism_primary": "MonitoringTrap",
     "cue_type": "misleading_fluency",
     "stratum": "C",
@@ -1937,7 +1937,10 @@
     "metacognitive_rationale": "The automatic calculation gives '400 pages', but when books sit normally on a shelf, page 1 of Volume 1 is actually adjacent to page 200 of Volume 2, so only Volume 2's pages are eaten.",
     "rule": "alias",
     "aliases": [
-      "200 pages"
+      "0",
+      "zero",
+      "none",
+      "just the covers"
     ],
     "batch": "monitoring_traps"
   },
