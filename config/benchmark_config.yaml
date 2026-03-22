@@ -87,8 +87,8 @@ scoring:
 
 # Dataset targets
 dataset:
-  v1_pilot_items: 20
-  v1_full_items: 100
+  v1_calibration_items: 117
+  v1_family_b_items: 87
   full_benchmark_items: 380
   difficulty_tiers: [easy, medium, hard, deceptive, adversarial]
 

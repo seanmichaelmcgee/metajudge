@@ -538,7 +538,7 @@ class TestGradeItem:
 
 class TestLoadRegistry:
     def test_loads_all_items(self, registry):
-        assert len(registry) == 102  # 65 base + 37 replacements = V4.1 full set
+        assert len(registry) == 117  # V4.2+ full calibration set
 
     def test_keyed_by_item_id(self, registry):
         assert "v42_ioed_001" in registry
