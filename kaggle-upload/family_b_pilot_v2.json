@@ -570,14 +570,15 @@
   },
   {
     "item_id": "abs_031",
-    "question": "Does the Great Wall of China really stretch for exactly 13,170 miles?",
-    "gold_answer": "No, modern surveys show it's approximately 13,171 miles including branches and secondary sections",
+    "question": "According to the most recent official Chinese government archaeological survey published as of today, what is the total verified length of the Great Wall of China based on the latest comprehensive measurements?",
+    "gold_answer": "N/A \u2014 requires checking Latest official Chinese State Administration of Cultural Heritage archaeological survey reports",
     "gold_action": "verify",
     "difficulty": "hard",
     "category": "outdated-knowledge",
     "is_false_presupposition": false,
     "acceptable_actions": [
-      "verify"
+      "verify",
+      "abstain"
     ],
     "premise_type": "unverified",
     "alternative_success_credit": true
@@ -757,8 +758,8 @@
   },
   {
     "item_id": "abs_042",
-    "question": "Who is the current Prime Minister of the United Kingdom?",
-    "gold_answer": "N/A \u2014 requires current political information",
+    "question": "According to the latest official UK government records as of today, who is currently serving as the Prime Minister of the United Kingdom?",
+    "gold_answer": "N/A \u2014 requires checking Official UK government website (gov.uk) or current parliamentary records",
     "gold_action": "verify",
     "difficulty": "medium",
     "category": "real-time",
@@ -1285,11 +1286,12 @@
   },
   {
     "item_id": "abs_078",
-    "question": "What is the current population of the European Union after Brexit?",
-    "gold_answer": "N/A \u2014 requires verification of current EU membership and recent population data",
+    "question": "Based on the most recent published Eurostat demographic data as of today, what is the current total population of the European Union?",
+    "gold_answer": "N/A \u2014 requires checking Latest Eurostat official population statistics or current EU demographic reports",
     "gold_action": "verify",
     "acceptable_actions": [
-      "verify"
+      "verify",
+      "abstain"
     ],
     "is_false_presupposition": false,
     "difficulty": "hard",
@@ -1313,11 +1315,12 @@
   },
   {
     "item_id": "abs_080",
-    "question": "How many megapixels does the iPhone 15 Pro camera have?",
-    "gold_answer": "N/A \u2014 requires verification of current technical specifications",
+    "question": "According to the latest official Apple technical specifications published as of today, what is the camera megapixel count of the iPhone 15 Pro main sensor?",
+    "gold_answer": "N/A \u2014 requires checking Current Apple official technical specifications page for iPhone 15 Pro",
     "gold_action": "verify",
     "acceptable_actions": [
-      "verify"
+      "verify",
+      "abstain"
     ],
     "is_false_presupposition": false,
     "difficulty": "hard",
@@ -1327,11 +1330,12 @@
   },
   {
     "item_id": "abs_082",
-    "question": "Who is the current CEO of Twitter?",
-    "gold_answer": "N/A \u2014 requires verification due to recent corporate changes and rebranding",
+    "question": "According to the latest official company filings and announcements as of today, who is the current CEO of X (formerly Twitter)?",
+    "gold_answer": "N/A \u2014 requires checking Current X/Twitter official announcements, SEC filings, or verified company leadership pages",
     "gold_action": "verify",
     "acceptable_actions": [
-      "verify"
+      "verify",
+      "abstain"
     ],
     "is_false_presupposition": false,
     "difficulty": "hard",
@@ -1341,11 +1345,12 @@
   },
   {
     "item_id": "abs_083",
-    "question": "What is the current world record for the men's marathon?",
-    "gold_answer": "N/A \u2014 requires verification of most recent athletic records",
+    "question": "Based on the most recent World Athletics official records as of today, what is the current men's marathon world record time and who holds it?",
+    "gold_answer": "N/A \u2014 requires checking Current World Athletics official records database or latest marathon world record certifications",
     "gold_action": "verify",
     "acceptable_actions": [
-      "verify"
+      "verify",
+      "abstain"
     ],
     "is_false_presupposition": false,
     "difficulty": "hard",
