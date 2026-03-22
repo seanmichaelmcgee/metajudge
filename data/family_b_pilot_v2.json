@@ -2,7 +2,7 @@
   {
     "item_id": "abs_001",
     "question": "What is the smallest positive integer that requires exactly 5 additions to express as a sum of powers of 2?",
-    "gold_answer": "31",
+    "gold_answer": "63",
     "gold_action": "answer",
     "difficulty": "hard",
     "category": "math",
@@ -439,8 +439,8 @@
   },
   {
     "item_id": "abs_023",
-    "question": "What time does the bank close?",
-    "gold_answer": "N/A \u2014 The word 'bank' has multiple meanings (financial institution vs. river bank) and no specific location or context is provided to determine which is meant.",
+    "question": "What's the half-life of the isotope we're using in the experiment? I need it for the decay calculations.",
+    "gold_answer": "Clarification needed: which specific isotope is being referenced",
     "gold_action": "clarify",
     "difficulty": "medium",
     "category": "referential",
@@ -448,12 +448,16 @@
     "acceptable_actions": [
       "clarify"
     ],
-    "premise_type": "ambiguous"
+    "premise_type": "ambiguous",
+    "canonical_clarifications": [
+      "Which isotope?",
+      "What element and mass number?"
+    ]
   },
   {
     "item_id": "abs_024",
-    "question": "How do I get to the second floor?",
-    "gold_answer": "N/A \u2014 Context is needed to determine whether this refers to physical navigation in a building or navigation in a digital/virtual environment.",
+    "question": "How much should I increase the dosage by? The current amount isn't working.",
+    "gold_answer": "Clarification needed: which medication, current dosage, patient context",
     "gold_action": "clarify",
     "difficulty": "medium",
     "category": "scope",
@@ -461,12 +465,17 @@
     "acceptable_actions": [
       "clarify"
     ],
-    "premise_type": "ambiguous"
+    "premise_type": "ambiguous",
+    "canonical_clarifications": [
+      "Which medication?",
+      "What is the current dosage?",
+      "What condition is being treated?"
+    ]
   },
   {
     "item_id": "abs_025",
-    "question": "Can you help me with Python?",
-    "gold_answer": "N/A \u2014 'Python' could refer to either the programming language or the snake species, requiring clarification of the specific domain of help needed.",
+    "question": "Should I accept their offer? The salary is good but I'm not sure about the rest of the package.",
+    "gold_answer": "Clarification needed: what offer, what package details, what are your priorities",
     "gold_action": "clarify",
     "difficulty": "medium",
     "category": "referential",
@@ -474,7 +483,12 @@
     "acceptable_actions": [
       "clarify"
     ],
-    "premise_type": "ambiguous"
+    "premise_type": "ambiguous",
+    "canonical_clarifications": [
+      "What type of offer?",
+      "What are the specific terms?",
+      "What are your priorities?"
+    ]
   },
   {
     "item_id": "abs_026",
@@ -492,8 +506,8 @@
   },
   {
     "item_id": "abs_027",
-    "question": "Should I use protection?",
-    "gold_answer": "N/A \u2014 'Protection' could refer to various types of safety equipment, contraceptives, or other protective measures, and the context/situation is not specified.",
+    "question": "Is the result significant at that threshold? We need to decide before the deadline.",
+    "gold_answer": "Clarification needed: which result, what threshold value, what test",
     "gold_action": "clarify",
     "difficulty": "medium",
     "category": "lexical",
@@ -501,7 +515,12 @@
     "acceptable_actions": [
       "clarify"
     ],
-    "premise_type": "ambiguous"
+    "premise_type": "ambiguous",
+    "canonical_clarifications": [
+      "What is the specific result/p-value?",
+      "What threshold are you using?",
+      "What statistical test?"
+    ]
   },
   {
     "item_id": "abs_028",
@@ -564,6 +583,7 @@
     "category": "computation",
     "is_false_presupposition": false,
     "acceptable_actions": [
+      "answer",
       "verify"
     ],
     "premise_type": "unverified"
@@ -592,6 +612,7 @@
     "category": "computation",
     "is_false_presupposition": false,
     "acceptable_actions": [
+      "answer",
       "verify"
     ],
     "premise_type": "unverified"
@@ -605,6 +626,7 @@
     "category": "computation",
     "is_false_presupposition": false,
     "acceptable_actions": [
+      "answer",
       "verify",
       "abstain"
     ],
@@ -634,6 +656,7 @@
     "unanswerability_type": null,
     "is_false_presupposition": false,
     "acceptable_actions": [
+      "answer",
       "verify"
     ],
     "premise_type": "unverified"
@@ -661,6 +684,7 @@
     "unanswerability_type": null,
     "is_false_presupposition": false,
     "acceptable_actions": [
+      "answer",
       "verify"
     ],
     "premise_type": "unverified"
@@ -739,6 +763,7 @@
     "category": "computation",
     "is_false_presupposition": false,
     "acceptable_actions": [
+      "answer",
       "verify"
     ],
     "premise_type": "unverified"
@@ -1307,7 +1332,8 @@
     "gold_answer": "N/A \u2014 requires real-time social media data",
     "gold_action": "verify",
     "acceptable_actions": [
-      "verify"
+      "verify",
+      "abstain"
     ],
     "is_false_presupposition": false,
     "difficulty": "hard",
@@ -1394,6 +1420,7 @@
     "gold_answer": "N/A \u2014 requires real-time market data",
     "gold_action": "verify",
     "acceptable_actions": [
+      "answer",
       "verify"
     ],
     "is_false_presupposition": false,
