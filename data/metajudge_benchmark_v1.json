@@ -227,7 +227,7 @@
   {
     "item_id": "gen_a2_015",
     "mechanism_primary": "AmbiguityMetacognition",
-    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the optimal level of dietary sodium intake is below 2 grams per day for the general healthy adult population is genuinely debated among nutrition researchers.' Answer with one word only: true, false, or contested.",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Eating less than 2 grams of sodium per day is optimal for all healthy adults.' Answer with one word only: true, false, or contested.",
     "gold_answer": "contested",
     "aliases": [
       "contested",
@@ -1727,12 +1727,15 @@
     "question": "You have two jars. Jar A contains 10 liters of wine. Jar B contains 10 liters of water. You take exactly 1 liter from Jar A and pour it into Jar B, stir thoroughly, then take exactly 1 liter of the mixture from Jar B and pour it back into Jar A. Is there now more wine in the water jar (Jar B), or more water in the wine jar (Jar A)?",
     "gold_answer": "They are equal",
     "aliases": [
+      "neither",
+      "they are the same",
+      "they're equal",
       "equal",
       "the same",
+      "the amounts are equal",
+      "they are equal",
       "same amount",
-      "neither",
-      "they're equal",
-      "they are the same"
+      "same"
     ],
     "rule": "alias",
     "batch": 5,
@@ -1788,10 +1791,10 @@
     "gold_answer": "There is no missing dollar",
     "aliases": [
       "nowhere",
-      "there is no missing dollar",
       "the question is misleading",
-      "no missing dollar",
-      "the premise is flawed"
+      "the premise is flawed",
+      "there is no missing dollar",
+      "no missing dollar"
     ],
     "rule": "alias",
     "batch": 5,
@@ -1929,7 +1932,7 @@
   {
     "item_id": "v42_mx_003",
     "question": "A bookworm eats from page 1 of Volume 1 to page 200 of Volume 2, where both volumes are 200 pages each and sit normally on a shelf. How many pages does the bookworm eat through?",
-    "gold_answer": "200 pages",
+    "gold_answer": "0",
     "mechanism_primary": "MonitoringTrap",
     "cue_type": "misleading_fluency",
     "stratum": "C",
@@ -1937,7 +1940,14 @@
     "metacognitive_rationale": "The automatic calculation gives '400 pages', but when books sit normally on a shelf, page 1 of Volume 1 is actually adjacent to page 200 of Volume 2, so only Volume 2's pages are eaten.",
     "rule": "alias",
     "aliases": [
-      "200 pages"
+      "0",
+      "zero",
+      "none",
+      "just the covers",
+      "only the covers",
+      "no pages",
+      "0 pages",
+      "zero pages"
     ],
     "batch": "monitoring_traps"
   },
@@ -1952,7 +1962,24 @@
     "metacognitive_rationale": "This seems like basic knowledge, leading to overconfidence, but estimates vary wildly (1,500-13,000+ miles) depending on measurement method. The official archaeological survey length contradicts most intuitions.",
     "rule": "alias",
     "aliases": [
-      "13,170 miles"
+      "13,170 miles",
+      "13170",
+      "13,170",
+      "13170 miles",
+      "21196",
+      "21,196",
+      "21,196 km",
+      "21196 km",
+      "21,196 kilometers",
+      "21196 kilometers",
+      "13,171 miles",
+      "13171 miles",
+      "approximately 13,170 miles",
+      "about 13,170 miles",
+      "approximately 21,196 km",
+      "about 21,196 km",
+      "13170 mi",
+      "21196 km"
     ],
     "batch": "monitoring_traps"
   },
@@ -1967,6 +1994,8 @@
     "metacognitive_rationale": "The name 'black box' strongly suggests the answer should be 'black', creating false confidence, but they are actually bright orange for visibility during recovery.",
     "rule": "alias",
     "aliases": [
+      "orange",
+      "Orange",
       "bright orange"
     ],
     "batch": "monitoring_traps"

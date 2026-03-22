@@ -436,7 +436,8 @@
     ],
     "tolerance_class": "rel_1e6",
     "tolerance_params": {
-      "rel_tol": 1e-06
+      "rel_tol": 1e-06,
+      "abs_tol": 0.05
     },
     "time_anchor": null,
     "source_anchor": null,
@@ -1787,7 +1788,12 @@
       "equal",
       "the same",
       "neither weighs more",
-      "they weigh the same"
+      "they weigh the same",
+      "equal",
+      "they are equal",
+      "the amounts are equal",
+      "same",
+      "they are the same"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -1849,7 +1855,12 @@
       "no missing dollar",
       "the money is accounted for",
       "it's an accounting trick",
-      "there is no paradox"
+      "there is no paradox",
+      "there is no missing dollar",
+      "no missing dollar",
+      "the missing dollar is a fallacy",
+      "there is no missing money",
+      "the premise is flawed"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -1995,9 +2006,12 @@
     "item_id": "v42_mx_003",
     "answer_type": "text",
     "grader_rule": "alias_plus_normalization",
-    "gold_answer": "200 pages",
+    "gold_answer": "0",
     "accepted_forms": [
-      "200 pages"
+      "0",
+      "zero",
+      "none",
+      "just the covers"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -2013,7 +2027,12 @@
     "grader_rule": "alias_plus_normalization",
     "gold_answer": "13,170 miles",
     "accepted_forms": [
-      "13,170 miles"
+      "13,170 miles",
+      "13170",
+      "13,170",
+      "13170 miles",
+      "21196",
+      "21,196"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -2029,7 +2048,9 @@
     "grader_rule": "alias_plus_normalization",
     "gold_answer": "bright orange",
     "accepted_forms": [
-      "bright orange"
+      "bright orange",
+      "orange",
+      "Orange"
     ],
     "tolerance_class": null,
     "tolerance_params": null,

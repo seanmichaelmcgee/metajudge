@@ -206,7 +206,7 @@ def compute_bridge_report(
     failure_modes = {
         "overconfident_wrong_answer": 0,  # high conf + wrong + chose answer
         "correct_but_over_cautious": 0,   # would have been correct but abstained/verified
-        "false_premise_not_caught": 0,    # false presup item + model answered within premise
+        "false_premise_uncorrected": 0,    # false presup item + model answered within premise
         "unnecessary_clarification": 0,   # answerable item + model asked clarify
     }
 
@@ -220,7 +220,7 @@ def compute_bridge_report(
             # Check if it was a corrective answer or a premise-accepting answer
             # Heuristic: if utility is negative, they accepted the false premise
             if r["utility"] < 0:
-                failure_modes["false_premise_not_caught"] += 1
+                failure_modes["false_premise_uncorrected"] += 1
         if r["gold_action"] == "answer" and r["model_decision"] == "clarify":
             failure_modes["unnecessary_clarification"] += 1
 

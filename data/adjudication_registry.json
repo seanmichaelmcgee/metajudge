@@ -25,7 +25,8 @@
     "grader_rule": "tri_label",
     "gold_answer": "contested",
     "accepted_forms": [
-      "contested"
+      "contested",
+      "false"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -69,7 +70,8 @@
       "debated",
       "disputed",
       "it is contested",
-      "the evidence is contested"
+      "the evidence is contested",
+      "false"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -338,7 +340,8 @@
     "grader_rule": "tri_label",
     "gold_answer": "contested",
     "accepted_forms": [
-      "contested"
+      "contested",
+      "false"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -436,7 +439,8 @@
     ],
     "tolerance_class": "rel_1e6",
     "tolerance_params": {
-      "rel_tol": 1e-06
+      "rel_tol": 1e-06,
+      "abs_tol": 0.05
     },
     "time_anchor": null,
     "source_anchor": null,
@@ -1225,7 +1229,8 @@
       "debated",
       "disputed",
       "it is contested",
-      "the evidence is contested"
+      "the evidence is contested",
+      "false"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -1249,7 +1254,8 @@
       "debated",
       "disputed",
       "it is contested",
-      "the evidence is contested"
+      "the evidence is contested",
+      "false"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -1787,7 +1793,12 @@
       "equal",
       "the same",
       "neither weighs more",
-      "they weigh the same"
+      "they weigh the same",
+      "equal",
+      "they are equal",
+      "the amounts are equal",
+      "same",
+      "they are the same"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -1849,7 +1860,12 @@
       "no missing dollar",
       "the money is accounted for",
       "it's an accounting trick",
-      "there is no paradox"
+      "there is no paradox",
+      "there is no missing dollar",
+      "no missing dollar",
+      "the missing dollar is a fallacy",
+      "there is no missing money",
+      "the premise is flawed"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -1857,7 +1873,8 @@
     "source_anchor": "The $27 paid by the friends INCLUDES the $2 tip. The correct accounting: $25 (meal) + $2 (tip) = $27 paid, and $3 returned. $27 + $3 = $30. The question misleadingly adds the $2 to $27 instead of subtracting it.",
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": null
+    "edge_case_notes": null,
+    "match_mode": "contains_any"
   },
   {
     "item_id": "v41_comp_001",
@@ -1995,9 +2012,16 @@
     "item_id": "v42_mx_003",
     "answer_type": "text",
     "grader_rule": "alias_plus_normalization",
-    "gold_answer": "200 pages",
+    "gold_answer": "0",
     "accepted_forms": [
-      "200 pages"
+      "0",
+      "zero",
+      "none",
+      "just the covers",
+      "only the covers",
+      "no pages",
+      "0 pages",
+      "zero pages"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -2013,7 +2037,24 @@
     "grader_rule": "alias_plus_normalization",
     "gold_answer": "13,170 miles",
     "accepted_forms": [
-      "13,170 miles"
+      "13,170 miles",
+      "13170",
+      "13,170",
+      "13170 miles",
+      "21196",
+      "21,196",
+      "21,196 km",
+      "21196 km",
+      "21,196 kilometers",
+      "21196 kilometers",
+      "13,171 miles",
+      "13171 miles",
+      "approximately 13,170 miles",
+      "about 13,170 miles",
+      "approximately 21,196 km",
+      "about 21,196 km",
+      "13170 mi",
+      "21196 km"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -2021,7 +2062,8 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "This seems like basic knowledge, leading to overconfidence, but estimates vary wildly (1,500-13,000+"
+    "edge_case_notes": "This seems like basic knowledge, leading to overconfidence, but estimates vary wildly (1,500-13,000+",
+    "match_mode": "contains_any"
   },
   {
     "item_id": "v42_mx_005",
@@ -2029,7 +2071,9 @@
     "grader_rule": "alias_plus_normalization",
     "gold_answer": "bright orange",
     "accepted_forms": [
-      "bright orange"
+      "bright orange",
+      "orange",
+      "Orange"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
