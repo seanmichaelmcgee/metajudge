@@ -18,9 +18,10 @@
 | `gen_b_004` | Source text / gold correctness | **CORRECT** | 4/5 verified via proper Bayesian analysis |
 | `gen_a4_012` | Category ambiguity | **NEEDS REVIEW** | "banana" as gold for production volume is defensible but ambiguous |
 
-## Remaining P0 Work (v0.5.5)
-1. Fix `v42_mx_008` gold: $2007.14 → $2000.50
-2. Review `gen_a4_012` wording/category — tighten or replace
-3. Tri-label queue (9 items)
-4. Family B refinement (multiple item queues)
-5. Statistics module
+## Completed in v0.5.5
+1. Fixed `v42_mx_008` gold: $2007.14 → $2000.50
+2. Rewrote `gen_a4_012` with FAOSTAT source qualifier
+3. Tri-label queue: 9 items reviewed (2 changed, 7 confirmed)
+4. Family B: 4 clarify rewrites, 7 verify widenings, 1 gold fix
+5. Statistics module: McNemar, permutation, bootstrap, Stuart-Maxwell, Holm
+6. 290 tests passing, all data consistency checks pass
