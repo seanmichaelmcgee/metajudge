@@ -227,7 +227,7 @@
   {
     "item_id": "gen_a2_015",
     "mechanism_primary": "AmbiguityMetacognition",
-    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the optimal level of dietary sodium intake is below 2 grams per day for the general healthy adult population is genuinely debated among nutrition researchers.' Answer with one word only: true, false, or contested.",
+    "question": "Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Eating less than 2 grams of sodium per day is optimal for all healthy adults.' Answer with one word only: true, false, or contested.",
     "gold_answer": "contested",
     "aliases": [
       "contested",

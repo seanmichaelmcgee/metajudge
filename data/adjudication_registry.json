@@ -25,7 +25,8 @@
     "grader_rule": "tri_label",
     "gold_answer": "contested",
     "accepted_forms": [
-      "contested"
+      "contested",
+      "false"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -69,7 +70,8 @@
       "debated",
       "disputed",
       "it is contested",
-      "the evidence is contested"
+      "the evidence is contested",
+      "false"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -338,7 +340,8 @@
     "grader_rule": "tri_label",
     "gold_answer": "contested",
     "accepted_forms": [
-      "contested"
+      "contested",
+      "false"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -1226,7 +1229,8 @@
       "debated",
       "disputed",
       "it is contested",
-      "the evidence is contested"
+      "the evidence is contested",
+      "false"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -1250,7 +1254,8 @@
       "debated",
       "disputed",
       "it is contested",
-      "the evidence is contested"
+      "the evidence is contested",
+      "false"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
