@@ -649,6 +649,27 @@ class TestV054Regressions:
                             "The Great Wall is approximately 13,170 miles long", registry)
         assert result["correct"] is True
 
+    # --- v0.5.5 tri-label fixes ---
+    def test_gen_a2_005_false_accepted(self, registry):
+        """Dietary fat claim: gold is false, contested should NOT be accepted."""
+        result = grade_item("gen_a2_005", "false", registry)
+        assert result["correct"] is True
+
+    def test_gen_a2_005_contested_rejected(self, registry):
+        """Dietary fat claim: contested is NOT accepted (gold=false)."""
+        result = grade_item("gen_a2_005", "contested", registry)
+        assert result["correct"] is False
+
+    def test_gen_b_037_false_accepted(self, registry):
+        """Pluto universality claim: gold changed to false."""
+        result = grade_item("gen_b_037", "false", registry)
+        assert result["correct"] is True
+
+    def test_gen_b_037_contested_rejected(self, registry):
+        """Pluto universality claim: contested no longer accepted."""
+        result = grade_item("gen_b_037", "contested", registry)
+        assert result["correct"] is False
+
 
 # ===========================================================================
 # Registry loading

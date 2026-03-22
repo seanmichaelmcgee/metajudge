@@ -52,9 +52,12 @@
     "item_id": "gen_b_037",
     "mechanism_primary": "AmbiguityMetacognition",
     "question": "Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Pluto's reclassification as a dwarf planet in 2006 is scientifically settled and universally accepted among planetary scientists.' Answer with one word: true, false, or contested.",
-    "gold_answer": "contested",
+    "gold_answer": "false",
     "aliases": [
-      "contested"
+      "false",
+      "no",
+      "incorrect",
+      "unambiguously false"
     ],
     "rule": "alias",
     "batch": 1,
@@ -171,12 +174,7 @@
       "false",
       "no",
       "incorrect",
-      "unambiguously false",
-      "contested",
-      "debated",
-      "disputed",
-      "it is contested",
-      "the evidence is contested"
+      "unambiguously false"
     ],
     "rule": "alias",
     "batch": 2,
