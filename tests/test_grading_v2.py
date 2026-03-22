@@ -622,6 +622,19 @@ class TestV054Regressions:
         result = grade_item("v41_crt_012", "The answer is 29", registry)
         assert result["correct"] is False
 
+    # --- v42_mx_008 compound interest (v0.5.5 fix: $2007.14 → $2000.50) ---
+    def test_v42_mx_008_correct_gold(self, registry):
+        result = grade_item("v42_mx_008", "$2000.50", registry)
+        assert result["correct"] is True
+
+    def test_v42_mx_008_no_dollar_sign(self, registry):
+        result = grade_item("v42_mx_008", "2000.50", registry)
+        assert result["correct"] is True
+
+    def test_v42_mx_008_reject_old_wrong_gold(self, registry):
+        result = grade_item("v42_mx_008", "$2007.14", registry)
+        assert result["correct"] is False
+
     # --- A3: v42_mx_004 Great Wall ---
     def test_v42_mx_004_km(self, registry):
         result = grade_item("v42_mx_004", "21,196 km", registry)

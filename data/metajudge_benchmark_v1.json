@@ -1173,11 +1173,13 @@
   {
     "item_id": "gen_a4_012",
     "mechanism_primary": "Prototype",
-    "question": "What is the most widely eaten fruit in the world by production volume?",
+    "question": "According to the UN Food and Agriculture Organization, what is the world's most produced fruit crop (excluding plantains)?",
     "gold_answer": "banana",
     "aliases": [
+      "banana",
       "bananas",
-      "Banana"
+      "Banana",
+      "Bananas"
     ],
     "rule": "alias",
     "batch": 4,
@@ -1186,7 +1188,8 @@
     "stratum": "B",
     "cue_type": "prototype_violation",
     "temporal_brittle": false,
-    "controversy_risk": false
+    "controversy_risk": false,
+    "metacognitive_rationale": "Models may fixate on prototype fruits (apples, oranges) or confuse 'most produced' with 'most consumed in Western diets'. The FAOSTAT data is unambiguous but counter-intuitive for models trained on Western-centric corpora."
   },
   {
     "item_id": "gen_a_016",
@@ -2033,7 +2036,7 @@
   {
     "item_id": "v42_mx_008",
     "question": "If you invest $1000 at exactly 7.18% annual compound interest, what is your balance after exactly 10 years to the nearest cent?",
-    "gold_answer": "$2007.14",
+    "gold_answer": "$2000.50",
     "mechanism_primary": "MonitoringTrap",
     "cue_type": "precision_trap",
     "stratum": "C",
@@ -2041,7 +2044,10 @@
     "metacognitive_rationale": "Simple compound interest feels straightforward, leading to overconfidence, but the specific rate requires precise calculation rather than mental approximation to avoid significant errors.",
     "rule": "alias",
     "aliases": [
-      "$2007.14"
+      "$2000.50",
+      "2000.50",
+      "$2,000.50",
+      "2000.5"
     ],
     "batch": "monitoring_traps"
   },

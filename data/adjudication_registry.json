@@ -1209,7 +1209,8 @@
     "accepted_forms": [
       "banana",
       "bananas",
-      "Banana"
+      "Banana",
+      "Bananas"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -2123,13 +2124,16 @@
     "item_id": "v42_mx_008",
     "answer_type": "numeric",
     "grader_rule": "approx_numeric_small",
-    "gold_answer": "$2007.14",
+    "gold_answer": "$2000.50",
     "accepted_forms": [
-      "$2007.14"
+      "$2000.50",
+      "2000.50",
+      "$2,000.50",
+      "2000.5"
     ],
-    "tolerance_class": "abs_0.5",
+    "tolerance_class": "abs_0.01",
     "tolerance_params": {
-      "abs_tol": 0.5
+      "abs_tol": 0.01
     },
     "time_anchor": null,
     "source_anchor": null,

@@ -1,0 +1,26 @@
+# v0.5.5 State Reconciliation
+
+## Baseline
+- Branch: `claude/audit-metajudge-v0.5.4-ofVQ9` with `sprint/v0.5.4` merged
+- Calibration: 117 items (all in adjudication registry)
+- Family B: 84 items (answer=15, clarify=13, verify=27, abstain=29)
+- Tests: 263 passing
+
+## P0 Calibration Defects — Status After Merge
+
+| Item | Problem | Status | Notes |
+|------|---------|--------|-------|
+| `v42_mx_003` | Bookworm alias fragility | **FIXED** | Expanded accepted_forms in registry |
+| `v42_mx_004` | Great Wall unit/tolerance | **FIXED** | contains_any mode + mi/km variants |
+| `v42_mx_005` | Black box "bright orange" aliases | **FIXED** | In registry with orange variants |
+| `v42_mx_008` | Wrong gold answer ($2007.14) | **STILL WRONG** | Correct: $2000.50 (annual compound 7.18% × 10yr) |
+| `v41_crt_012` | Explanatory answers under-credited | **FIXED** | contains_any matching for explanations |
+| `gen_b_004` | Source text / gold correctness | **CORRECT** | 4/5 verified via proper Bayesian analysis |
+| `gen_a4_012` | Category ambiguity | **NEEDS REVIEW** | "banana" as gold for production volume is defensible but ambiguous |
+
+## Remaining P0 Work (v0.5.5)
+1. Fix `v42_mx_008` gold: $2007.14 → $2000.50
+2. Review `gen_a4_012` wording/category — tighten or replace
+3. Tri-label queue (9 items)
+4. Family B refinement (multiple item queues)
+5. Statistics module
