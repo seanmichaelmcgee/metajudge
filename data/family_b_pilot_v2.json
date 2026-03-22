@@ -605,7 +605,8 @@
     "category": "computation",
     "is_false_presupposition": false,
     "acceptable_actions": [
-      "verify"
+      "verify",
+      "abstain"
     ],
     "premise_type": "unverified"
   },
@@ -793,7 +794,8 @@
     "category": "common-misconception",
     "is_false_presupposition": false,
     "acceptable_actions": [
-      "verify"
+      "verify",
+      "abstain"
     ],
     "premise_type": "unverified"
   },
