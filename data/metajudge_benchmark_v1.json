@@ -1943,7 +1943,11 @@
       "0",
       "zero",
       "none",
-      "just the covers"
+      "just the covers",
+      "only the covers",
+      "no pages",
+      "0 pages",
+      "zero pages"
     ],
     "batch": "monitoring_traps"
   },
@@ -1958,7 +1962,24 @@
     "metacognitive_rationale": "This seems like basic knowledge, leading to overconfidence, but estimates vary wildly (1,500-13,000+ miles) depending on measurement method. The official archaeological survey length contradicts most intuitions.",
     "rule": "alias",
     "aliases": [
-      "13,170 miles"
+      "13,170 miles",
+      "13170",
+      "13,170",
+      "13170 miles",
+      "21196",
+      "21,196",
+      "21,196 km",
+      "21196 km",
+      "21,196 kilometers",
+      "21196 kilometers",
+      "13,171 miles",
+      "13171 miles",
+      "approximately 13,170 miles",
+      "about 13,170 miles",
+      "approximately 21,196 km",
+      "about 21,196 km",
+      "13170 mi",
+      "21196 km"
     ],
     "batch": "monitoring_traps"
   },

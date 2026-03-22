@@ -1868,7 +1868,8 @@
     "source_anchor": "The $27 paid by the friends INCLUDES the $2 tip. The correct accounting: $25 (meal) + $2 (tip) = $27 paid, and $3 returned. $27 + $3 = $30. The question misleadingly adds the $2 to $27 instead of subtracting it.",
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": null
+    "edge_case_notes": null,
+    "match_mode": "contains_any"
   },
   {
     "item_id": "v41_comp_001",
@@ -2011,7 +2012,11 @@
       "0",
       "zero",
       "none",
-      "just the covers"
+      "just the covers",
+      "only the covers",
+      "no pages",
+      "0 pages",
+      "zero pages"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -2032,7 +2037,19 @@
       "13,170",
       "13170 miles",
       "21196",
-      "21,196"
+      "21,196",
+      "21,196 km",
+      "21196 km",
+      "21,196 kilometers",
+      "21196 kilometers",
+      "13,171 miles",
+      "13171 miles",
+      "approximately 13,170 miles",
+      "about 13,170 miles",
+      "approximately 21,196 km",
+      "about 21,196 km",
+      "13170 mi",
+      "21196 km"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -2040,7 +2057,8 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "This seems like basic knowledge, leading to overconfidence, but estimates vary wildly (1,500-13,000+"
+    "edge_case_notes": "This seems like basic knowledge, leading to overconfidence, but estimates vary wildly (1,500-13,000+",
+    "match_mode": "contains_any"
   },
   {
     "item_id": "v42_mx_005",

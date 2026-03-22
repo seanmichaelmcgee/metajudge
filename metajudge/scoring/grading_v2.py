@@ -374,6 +374,13 @@ def _grade_alias_plus_normalization(answer: str, spec: Dict[str, Any]) -> Dict[s
         if _normalize(form) == norm:
             return {"correct": True, "method": "alias_plus_normalization", "match_detail": f"alias match: {form!r}"}
 
+    # Substring matching mode for items with explanatory answers
+    match_mode = spec.get("match_mode")
+    if match_mode == "contains_any":
+        for form in ([gold_norm] + [_normalize(f) for f in accepted]):
+            if form and form in norm:
+                return {"correct": True, "method": "alias_plus_normalization", "match_detail": f"contains match: {form!r}"}
+
     # Try with scientific notation normalization
     norm_sci = _normalize_sci(answer)
     gold_sci = _normalize_sci(spec["gold_answer"])
