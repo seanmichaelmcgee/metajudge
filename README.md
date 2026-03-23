@@ -2,7 +2,7 @@
 
 A behavioral benchmark for metacognitive monitoring and control in frontier language models, built for the [Kaggle Measuring Progress Toward AGI — Cognitive Abilities](https://www.kaggle.com/competitions/kaggle-measuring-agi) hackathon (Metacognition track).
 
-**Current version:** v0.5.1
+**Current version:** v0.5.5
 **Deadline:** April 16, 2026
 **Submission:** Kaggle Community Benchmark + Writeup (1500 words)
 
@@ -25,7 +25,7 @@ The benchmark is organized around three layers:
 ### Layer 2 — Family B: Selective Abstention (Control)
 *Given uncertainty, does the model choose the right epistemic action?*
 
-- 87-item benchmark testing four control actions: **answer**, **clarify**, **verify**, **abstain**
+- 84-item benchmark testing four control actions: **answer**, **clarify**, **verify**, **abstain**
 - 23 false-presupposition items testing corrective non-answer behavior
 - Scored via Utility-Weighted Action Accuracy (UWAA) with a 5×4 payoff matrix
 - Acceptable alternative responses credited (e.g., corrective premise rejection on false-premise items)
@@ -39,7 +39,7 @@ The benchmark is organized around three layers:
 
 ---
 
-## Key Finding (v0.5.1)
+## Key Finding
 
 There is a clear monotonic relationship between expressed confidence and control quality:
 
@@ -65,6 +65,8 @@ Models that express uncertainty make dramatically better control decisions than 
 
 Success criteria: C1 (Brier spread ≥ 0.05) ✓, C4 (conf-acc gap ≥ 10 items) ✓, C5 (ECE range ≥ 0.03) ✓
 
+*Leaderboard data from v0.5.1 run. Re-run with v0.5.5 grading for updated numbers.*
+
 ---
 
 ## Repository Structure
@@ -78,15 +80,15 @@ metajudge/                 # Python package — scoring, schemas, metrics
 data/                      # Production datasets
   metajudge_benchmark_v1.json    # 117-item calibration set (V4.2)
   adjudication_registry.json     # Grading registry (8 rules)
-  family_b_pilot_v2.json         # 87-item Family B set
+  family_b_pilot_v2.json         # 84-item Family B set
 notebooks/
   metajudge_submission_lean.ipynb # Production Kaggle notebook
 kaggle-upload/             # Ready-to-upload Kaggle dataset
 docs/                      # Scientific documentation and charters
   metacognition_literature_report.md  # 80+ paper annotated bibliography
   references.bib                      # BibTeX references
-  sprint_report_v0.5.1.md            # Latest run report
-tests/                     # Unit and integration tests (246+)
+  v0_5_5_change_log.md              # Latest change log
+tests/                     # Unit and integration tests (290)
 outputs/                   # Run artifacts (audit CSVs, bridge reports)
 ```
 
@@ -140,6 +142,46 @@ Action F1 and AUARC as diagnostic metrics.
 
 ### Bridge
 Derived analytics consuming both families. Confidence-band utility mapping, quadrant classification, failure-mode clustering.
+
+---
+
+## Automated Reporting
+
+The notebook produces the following outputs automatically after each run:
+
+### Audit CSVs (per-model)
+- `calibration_item_audit.csv` — per-item grading results with confidence bands, mechanism, grader rule
+- `calibration_summary_by_model.csv` — per-model accuracy, Brier, ECE, overconfidence rate, discrimination
+- `calibration_summary_by_mechanism.csv` — per-mechanism accuracy and ceiling flags
+- `family_b_item_audit.csv` — per-item action decisions, utility, false-presupposition handling
+- `family_b_summary_by_model.csv` — per-model UWAA, action rates, verify trigger rate, over-answer rate
+- `audit_review_queue.csv` — highest-priority defects (high-conf wrong, missed verifications, uncaught false premises)
+
+### JSON Reports
+- `run_summary.json` — complete run metadata with per-model stats for both families
+- `bridge_report_all_models.json` — cross-family monitoring-control coupling analysis
+- `success_criteria_verdict.json` — C1–C5 pass/fail with FREEZE/REPLACE/NEEDS_WORK verdict
+- `pairwise_stats_calibration.json` — McNemar, permutation, bootstrap CI between model pairs
+- `pairwise_stats_family_b.json` — Stuart-Maxwell action distribution + utility permutation tests
+
+### Success Criteria (C1–C5)
+| Criterion | Measure | Threshold |
+|-----------|---------|-----------|
+| C1 | Brier score spread across models | ≥ 0.05 |
+| C2 | High-deception mechanism accuracy | < 80% on ≥ 3 models |
+| C3 | High-adversarial mechanism accuracy | < 70% on ≥ 3 models |
+| C4 | Items with conf-accuracy gap > 0.20 | ≥ 10 items |
+| C5 | ECE range across models | ≥ 0.03 |
+
+Verdict: **FREEZE** (≥ 4 pass), **REPLACE** (3 pass), **NEEDS_WORK** (< 3 pass).
+
+### Statistical Testing (`metajudge.scoring.statistics`)
+All pairwise model comparisons with Holm-Bonferroni correction:
+- McNemar's test (paired binary accuracy)
+- Paired permutation test (mean Brier/utility, 10K permutations)
+- Paired bootstrap CI (95%, 10K resamples)
+- Stuart-Maxwell test (action distribution homogeneity)
+- Spearman correlation + bootstrap CI (bridge metrics)
 
 ---
 
