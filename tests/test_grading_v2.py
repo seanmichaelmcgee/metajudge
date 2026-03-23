@@ -533,12 +533,151 @@ class TestGradeItem:
 
 
 # ===========================================================================
+# contains_any match mode
+# ===========================================================================
+
+class TestContainsAnyMode:
+    """Tests for the contains_any substring matching mode."""
+
+    def test_exact_still_works(self):
+        spec = _spec("no missing dollar", accepted_forms=["no missing dollar"], match_mode="contains_any")
+        result = _grade_alias_plus_normalization("no missing dollar", spec)
+        assert result["correct"] is True
+
+    def test_substring_match_gold(self):
+        spec = _spec("there is no missing dollar",
+                      accepted_forms=["no missing dollar"],
+                      match_mode="contains_any")
+        result = _grade_alias_plus_normalization(
+            "There is no missing dollar. The $27 includes the $2 tip.", spec)
+        assert result["correct"] is True
+        assert "contains match" in result["match_detail"]
+
+    def test_substring_match_alias(self):
+        spec = _spec("there is no missing dollar",
+                      accepted_forms=["no missing dollar", "the premise is flawed"],
+                      match_mode="contains_any")
+        result = _grade_alias_plus_normalization("The premise is flawed because...", spec)
+        assert result["correct"] is True
+
+    def test_no_substring_match(self):
+        spec = _spec("there is no missing dollar",
+                      accepted_forms=["no missing dollar"],
+                      match_mode="contains_any")
+        result = _grade_alias_plus_normalization("The answer is 29", spec)
+        assert result["correct"] is False
+
+    def test_without_match_mode(self):
+        """Without match_mode, substring matching does NOT apply."""
+        spec = _spec("there is no missing dollar",
+                      accepted_forms=["no missing dollar"])
+        result = _grade_alias_plus_normalization(
+            "There is no missing dollar. The $27 includes the $2 tip.", spec)
+        assert result["correct"] is False
+
+
+# ===========================================================================
+# v0.5.4 integration tests — real registry
+# ===========================================================================
+
+class TestV054Regressions:
+    """Integration tests for v0.5.4 grading fixes using real registry."""
+
+    # --- A1: v42_mx_003 bookworm ---
+    def test_v42_mx_003_zero(self, registry):
+        result = grade_item("v42_mx_003", "0", registry)
+        assert result["correct"] is True
+
+    def test_v42_mx_003_zero_word(self, registry):
+        result = grade_item("v42_mx_003", "zero", registry)
+        assert result["correct"] is True
+
+    def test_v42_mx_003_just_covers(self, registry):
+        result = grade_item("v42_mx_003", "just the covers", registry)
+        assert result["correct"] is True
+
+    def test_v42_mx_003_zero_pages(self, registry):
+        result = grade_item("v42_mx_003", "0 pages", registry)
+        assert result["correct"] is True
+
+    def test_v42_mx_003_reject_400(self, registry):
+        result = grade_item("v42_mx_003", "400", registry)
+        assert result["correct"] is False
+
+    def test_v42_mx_003_reject_2(self, registry):
+        result = grade_item("v42_mx_003", "2", registry)
+        assert result["correct"] is False
+
+    # --- A2: v41_crt_012 missing dollar ---
+    def test_v41_crt_012_exact(self, registry):
+        result = grade_item("v41_crt_012", "There is no missing dollar", registry)
+        assert result["correct"] is True
+
+    def test_v41_crt_012_explanatory(self, registry):
+        result = grade_item("v41_crt_012",
+                            "There is no missing dollar. The $27 includes the $2 tip.", registry)
+        assert result["correct"] is True
+
+    def test_v41_crt_012_reject_29(self, registry):
+        result = grade_item("v41_crt_012", "The answer is 29", registry)
+        assert result["correct"] is False
+
+    # --- v42_mx_008 compound interest (v0.5.5 fix: $2007.14 → $2000.50) ---
+    def test_v42_mx_008_correct_gold(self, registry):
+        result = grade_item("v42_mx_008", "$2000.50", registry)
+        assert result["correct"] is True
+
+    def test_v42_mx_008_no_dollar_sign(self, registry):
+        result = grade_item("v42_mx_008", "2000.50", registry)
+        assert result["correct"] is True
+
+    def test_v42_mx_008_reject_old_wrong_gold(self, registry):
+        result = grade_item("v42_mx_008", "$2007.14", registry)
+        assert result["correct"] is False
+
+    # --- A3: v42_mx_004 Great Wall ---
+    def test_v42_mx_004_km(self, registry):
+        result = grade_item("v42_mx_004", "21,196 km", registry)
+        assert result["correct"] is True
+
+    def test_v42_mx_004_miles_variant(self, registry):
+        result = grade_item("v42_mx_004", "13,171 miles", registry)
+        assert result["correct"] is True
+
+    def test_v42_mx_004_explanatory(self, registry):
+        result = grade_item("v42_mx_004",
+                            "The Great Wall is approximately 13,170 miles long", registry)
+        assert result["correct"] is True
+
+    # --- v0.5.5 tri-label fixes ---
+    def test_gen_a2_005_false_accepted(self, registry):
+        """Dietary fat claim: gold is false, contested should NOT be accepted."""
+        result = grade_item("gen_a2_005", "false", registry)
+        assert result["correct"] is True
+
+    def test_gen_a2_005_contested_rejected(self, registry):
+        """Dietary fat claim: contested is NOT accepted (gold=false)."""
+        result = grade_item("gen_a2_005", "contested", registry)
+        assert result["correct"] is False
+
+    def test_gen_b_037_false_accepted(self, registry):
+        """Pluto universality claim: gold changed to false."""
+        result = grade_item("gen_b_037", "false", registry)
+        assert result["correct"] is True
+
+    def test_gen_b_037_contested_rejected(self, registry):
+        """Pluto universality claim: contested no longer accepted."""
+        result = grade_item("gen_b_037", "contested", registry)
+        assert result["correct"] is False
+
+
+# ===========================================================================
 # Registry loading
 # ===========================================================================
 
 class TestLoadRegistry:
     def test_loads_all_items(self, registry):
-        assert len(registry) == 117  # V4.2+ full calibration set
+        assert len(registry) == 117  # V4.2 full set
 
     def test_keyed_by_item_id(self, registry):
         assert "v42_ioed_001" in registry
