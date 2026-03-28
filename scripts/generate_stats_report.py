@@ -350,8 +350,251 @@ def compute_bridge_correlations(cal_by_model):
 def generate_visualizations(data, cal_stats, fb_stats, cal_metrics,
                             fb_metrics, mech_stats, bridge_corr,
                             cal_stats_clean, fb_stats_clean):
-    """Generate all PNG visualizations. (Part 2)"""
-    pass  # Will be implemented next
+    """Generate all PNG visualizations."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+
+    sns.set_theme(style="whitegrid", font_scale=1.1)
+    COLORS = sns.color_palette("tab10", n_colors=len(cal_metrics))
+    model_order = sorted(cal_metrics.keys(), key=lambda m: short_name(m))
+    model_colors = {m: COLORS[i] for i, m in enumerate(model_order)}
+
+    # --- 1. Calibration reliability diagram ---
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.plot([0, 1], [0, 1], "k--", alpha=0.5, label="Perfect calibration")
+    for model in model_order:
+        bins = cal_metrics[model]["reliability_bins"]
+        confs = [b[0] for b in bins if b[2] > 0]
+        accs = [b[1] for b in bins if b[2] > 0]
+        ax.plot(confs, accs, "o-", color=model_colors[model],
+                label=short_name(model), markersize=6)
+    ax.set_xlabel("Mean Predicted Confidence")
+    ax.set_ylabel("Observed Accuracy")
+    ax.set_title("Calibration Reliability Diagram")
+    ax.legend(loc="lower right", fontsize=9)
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    fig.tight_layout()
+    fig.savefig(FIGURES_DIR / "cal_reliability_diagram.png", dpi=150)
+    plt.close(fig)
+    print("  [1/11] cal_reliability_diagram.png")
+
+    # --- 2. Brier score forest plot ---
+    pairs = list(cal_stats["pairwise"].keys())
+    fig, ax = plt.subplots(figsize=(10, max(4, len(pairs) * 0.5)))
+    y_pos = list(range(len(pairs)))
+    for i, pair in enumerate(pairs):
+        d = cal_stats["pairwise"][pair]
+        ci = d["bootstrap_ci"]
+        ax.errorbar(ci["observed_diff"], i,
+                    xerr=[[ci["observed_diff"] - ci["ci_lower"]],
+                          [ci["ci_upper"] - ci["observed_diff"]]],
+                    fmt="o", color="steelblue", capsize=4, markersize=6)
+    ax.axvline(0, color="red", linestyle="--", alpha=0.5)
+    ax.set_yticks(y_pos)
+    ax.set_yticklabels(pairs, fontsize=9)
+    ax.set_xlabel("Brier Score Difference (A − B)")
+    ax.set_title("Pairwise Brier Score Differences with 95% Bootstrap CI")
+    fig.tight_layout()
+    fig.savefig(FIGURES_DIR / "cal_brier_forest_plot.png", dpi=150)
+    plt.close(fig)
+    print("  [2/11] cal_brier_forest_plot.png")
+
+    # --- 3. Per-mechanism accuracy heatmap ---
+    mechanisms = sorted(mech_stats.keys())
+    models_sorted = model_order
+    acc_matrix = []
+    for mech in mechanisms:
+        row = [mech_stats[mech].get(m, {}).get("accuracy", float("nan"))
+               for m in models_sorted]
+        acc_matrix.append(row)
+    acc_arr = np.array(acc_matrix)
+
+    fig, ax = plt.subplots(figsize=(10, max(5, len(mechanisms) * 0.6)))
+    sns.heatmap(acc_arr, annot=True, fmt=".2f", cmap="RdYlGn",
+                xticklabels=[short_name(m) for m in models_sorted],
+                yticklabels=mechanisms, ax=ax, vmin=0, vmax=1,
+                linewidths=0.5)
+    ax.set_title("Accuracy by Mechanism × Model")
+    fig.tight_layout()
+    fig.savefig(FIGURES_DIR / "cal_mechanism_heatmap.png", dpi=150)
+    plt.close(fig)
+    print("  [3/11] cal_mechanism_heatmap.png")
+
+    # --- 4. Per-mechanism Brier bars ---
+    fig, ax = plt.subplots(figsize=(12, 6))
+    x = np.arange(len(mechanisms))
+    width = 0.15
+    for i, model in enumerate(models_sorted):
+        vals = [mech_stats[mech].get(model, {}).get("mean_brier", 0)
+                for mech in mechanisms]
+        ax.bar(x + i * width, vals, width, label=short_name(model),
+               color=model_colors[model])
+    ax.set_xticks(x + width * (len(models_sorted) - 1) / 2)
+    ax.set_xticklabels(mechanisms, rotation=45, ha="right", fontsize=9)
+    ax.set_ylabel("Mean Brier Score")
+    ax.set_title("Mean Brier Score by Mechanism × Model")
+    ax.legend(fontsize=8)
+    fig.tight_layout()
+    fig.savefig(FIGURES_DIR / "cal_mechanism_brier_bars.png", dpi=150)
+    plt.close(fig)
+    print("  [4/11] cal_mechanism_brier_bars.png")
+
+    # --- 5. Calibration p-value heatmap ---
+    pair_names = list(cal_stats["pairwise"].keys())
+    test_types = ["McNemar (acc)", "Permutation (Brier)"]
+    pval_matrix = []
+    for pair in pair_names:
+        d = cal_stats["pairwise"][pair]
+        pval_matrix.append([d["mcnemar"]["p_value"], d["permutation"]["p_value"]])
+    pval_arr = np.array(pval_matrix)
+
+    fig, ax = plt.subplots(figsize=(6, max(4, len(pair_names) * 0.5)))
+    sns.heatmap(pval_arr, annot=True, fmt=".3f", cmap="RdYlGn_r",
+                xticklabels=test_types, yticklabels=pair_names,
+                ax=ax, vmin=0, vmax=0.2, linewidths=0.5)
+    ax.set_title("Calibration P-values (darker = more significant)")
+    fig.tight_layout()
+    fig.savefig(FIGURES_DIR / "cal_pvalue_heatmap.png", dpi=150)
+    plt.close(fig)
+    print("  [5/11] cal_pvalue_heatmap.png")
+
+    # --- 6. Family B action distribution ---
+    fb_model_order = sorted(fb_metrics.keys(), key=lambda m: short_name(m))
+    actions = ["answer", "clarify", "verify", "abstain"]
+    action_colors = {"answer": "#4CAF50", "clarify": "#2196F3",
+                     "verify": "#FF9800", "abstain": "#F44336"}
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    bottom = np.zeros(len(fb_model_order))
+    for action in actions:
+        vals = [fb_metrics[m]["action_dist"].get(action, 0) for m in fb_model_order]
+        ax.bar([short_name(m) for m in fb_model_order], vals, bottom=bottom,
+               label=action, color=action_colors[action])
+        bottom += np.array(vals)
+    ax.set_ylabel("Proportion")
+    ax.set_title("Action Distribution by Model (Family B)")
+    ax.legend()
+    fig.tight_layout()
+    fig.savefig(FIGURES_DIR / "fb_action_distribution.png", dpi=150)
+    plt.close(fig)
+    print("  [6/11] fb_action_distribution.png")
+
+    # --- 7. Family B action confusion heatmaps ---
+    # One subplot per model (exclude models with <10 items)
+    fb_models_full = [m for m in fb_model_order if fb_metrics[m]["n_items"] >= 10]
+    n_models = len(fb_models_full)
+    fig, axes = plt.subplots(1, n_models, figsize=(4 * n_models, 4))
+    if n_models == 1:
+        axes = [axes]
+    for idx, model in enumerate(fb_models_full):
+        items = data["fb_by_model"][model]
+        conf_mat = np.zeros((4, 4), dtype=int)
+        for v in items.values():
+            gi = actions.index(v["gold_action"]) if v["gold_action"] in actions else -1
+            di = actions.index(v["model_decision"]) if v["model_decision"] in actions else -1
+            if gi >= 0 and di >= 0:
+                conf_mat[gi][di] += 1
+        sns.heatmap(conf_mat, annot=True, fmt="d", cmap="Blues",
+                    xticklabels=actions, yticklabels=actions,
+                    ax=axes[idx], linewidths=0.5)
+        axes[idx].set_title(short_name(model), fontsize=10)
+        axes[idx].set_xlabel("Model Decision")
+        axes[idx].set_ylabel("Gold Action")
+    fig.suptitle("Action Confusion Matrices (Family B)", fontsize=13)
+    fig.tight_layout()
+    fig.savefig(FIGURES_DIR / "fb_action_confusion.png", dpi=150)
+    plt.close(fig)
+    print("  [7/11] fb_action_confusion.png")
+
+    # --- 8. Family B utility forest plot ---
+    if fb_stats["pairwise"]:
+        fb_pairs = list(fb_stats["pairwise"].keys())
+        fig, ax = plt.subplots(figsize=(10, max(4, len(fb_pairs) * 0.5)))
+        for i, pair in enumerate(fb_pairs):
+            d = fb_stats["pairwise"][pair]
+            ci = d["bootstrap_ci"]
+            ax.errorbar(ci["observed_diff"], i,
+                        xerr=[[ci["observed_diff"] - ci["ci_lower"]],
+                              [ci["ci_upper"] - ci["observed_diff"]]],
+                        fmt="o", color="darkorange", capsize=4, markersize=6)
+        ax.axvline(0, color="red", linestyle="--", alpha=0.5)
+        ax.set_yticks(range(len(fb_pairs)))
+        ax.set_yticklabels(fb_pairs, fontsize=9)
+        ax.set_xlabel("Utility Difference (A − B)")
+        ax.set_title("Pairwise Utility Differences with 95% Bootstrap CI (Family B)")
+        fig.tight_layout()
+        fig.savefig(FIGURES_DIR / "fb_utility_forest_plot.png", dpi=150)
+        plt.close(fig)
+    print("  [8/11] fb_utility_forest_plot.png")
+
+    # --- 9. Confidence distribution violin plots ---
+    conf_data = []
+    conf_labels = []
+    for model in model_order:
+        confs = [v["confidence"] for v in data["cal_by_model"][model].values()]
+        conf_data.extend(confs)
+        conf_labels.extend([short_name(model)] * len(confs))
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    import pandas as pd
+    df_conf = pd.DataFrame({"Confidence": conf_data, "Model": conf_labels})
+    sns.violinplot(data=df_conf, x="Model", y="Confidence", ax=ax,
+                   palette="tab10", inner="quartile")
+    ax.set_title("Confidence Distribution by Model (Calibration)")
+    ax.set_ylim(0, 1.05)
+    fig.tight_layout()
+    fig.savefig(FIGURES_DIR / "bridge_confidence_violins.png", dpi=150)
+    plt.close(fig)
+    print("  [9/11] bridge_confidence_violins.png")
+
+    # --- 10. Confidence-accuracy scatter with Spearman ---
+    fig, ax = plt.subplots(figsize=(8, 6))
+    for model in model_order:
+        bins = cal_metrics[model]["reliability_bins"]
+        confs = [b[0] for b in bins if b[2] > 0]
+        accs = [b[1] for b in bins if b[2] > 0]
+        rho = bridge_corr[model]["rho"]
+        ax.plot(confs, accs, "o-", color=model_colors[model],
+                label=f"{short_name(model)} (ρ={rho:.2f})", markersize=5)
+    ax.plot([0, 1], [0, 1], "k--", alpha=0.3)
+    ax.set_xlabel("Confidence")
+    ax.set_ylabel("Accuracy")
+    ax.set_title("Confidence vs Accuracy with Spearman ρ")
+    ax.legend(fontsize=8, loc="lower right")
+    fig.tight_layout()
+    fig.savefig(FIGURES_DIR / "bridge_confidence_accuracy.png", dpi=150)
+    plt.close(fig)
+    print("  [10/11] bridge_confidence_accuracy.png")
+
+    # --- 11. Master significance heatmap ---
+    all_pairs = list(cal_stats["pairwise"].keys())
+    # Combine cal and FB test p-values
+    test_cols = ["McNemar", "Brier Perm", "Utility Perm", "Stuart-Maxwell"]
+    sig_matrix = []
+    for pair in all_pairs:
+        row = []
+        cd = cal_stats["pairwise"].get(pair, {})
+        row.append(cd.get("mcnemar", {}).get("p_value", float("nan")))
+        row.append(cd.get("permutation", {}).get("p_value", float("nan")))
+        fd = fb_stats["pairwise"].get(pair, {})
+        row.append(fd.get("permutation", {}).get("p_value", float("nan")))
+        row.append(fd.get("stuart_maxwell", {}).get("p_value", float("nan")))
+        sig_matrix.append(row)
+    sig_arr = np.array(sig_matrix)
+
+    fig, ax = plt.subplots(figsize=(8, max(4, len(all_pairs) * 0.5)))
+    sns.heatmap(sig_arr, annot=True, fmt=".3f", cmap="RdYlGn_r",
+                xticklabels=test_cols, yticklabels=all_pairs,
+                ax=ax, vmin=0, vmax=0.2, linewidths=0.5,
+                mask=np.isnan(sig_arr))
+    ax.set_title("Master Significance Heatmap (p-values)")
+    fig.tight_layout()
+    fig.savefig(FIGURES_DIR / "significance_master_heatmap.png", dpi=150)
+    plt.close(fig)
+    print("  [11/11] significance_master_heatmap.png")
 
 
 def generate_backgrounder(output_path):
