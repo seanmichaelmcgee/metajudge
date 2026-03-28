@@ -1,0 +1,7 @@
+{
+  "title": "MetaJudge Benchmark Data",
+  "id": "seanmcgee2025/metajudge-data",
+  "licenses": [{"name": "CC-BY-4.0"}],
+  "description": "Benchmark datasets for MetaJudge: calibration items (Family A, 117 items), selective abstention items (Family B, 84 items), adjudication registry, and clean subset manifest. See https://github.com/seanmichaelmcgee/metajudge for details.",
+  "keywords": ["metacognition", "llm-evaluation", "calibration", "benchmark"]
+}

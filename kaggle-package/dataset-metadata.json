@@ -1,0 +1,7 @@
+{
+  "title": "MetaJudge Package",
+  "id": "seanmcgee2025/metajudge-package",
+  "licenses": [{"name": "CC-BY-4.0"}],
+  "description": "Python scoring and analysis package for the MetaJudge benchmark. Contains scoring functions, schemas, statistical tests, and notebook helpers. Import via sys.path.insert(0, '/kaggle/input/metajudge-package').",
+  "keywords": ["metacognition", "llm-evaluation", "python-package"]
+}
