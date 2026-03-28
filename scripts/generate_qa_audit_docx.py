@@ -40,6 +40,7 @@ FB_BY_MODEL = RESULTS_DIR / "family_b_summary_by_model (2).csv"
 
 BENCHMARK_JSON = KAGGLE_DIR / "metajudge_benchmark_v1.json"
 FAMILY_B_JSON = KAGGLE_DIR / "family_b_pilot_v2.json"
+JUSTIFICATIONS_MD = OUTPUT_DIR / "metajudge_v0551_gold_answer_justifications.md"
 
 # ── Display names ──────────────────────────────────────────────────────────
 MODEL_ORDER = [
@@ -65,9 +66,27 @@ HEADER_BG = "1F4E79"
 HEADER_FG = RGBColor(0xFF, 0xFF, 0xFF)
 LIGHT_GRAY_BG = "F2F2F2"
 GOLD_ANS_BG = "FFF9C4"
+JUSTIFICATION_BG = "E8F5E9"
 
 
 # ── Data loading ───────────────────────────────────────────────────────────
+
+def load_justifications():
+    """Parse justifications markdown into dict keyed by item_id."""
+    if not JUSTIFICATIONS_MD.exists():
+        print("  Warning: justifications file not found, skipping.")
+        return {}
+    import re
+    with open(JUSTIFICATIONS_MD) as f:
+        content = f.read()
+    # Match #### item_id blocks and extract the Justification line
+    pattern = r'#### (\S+)\n.*?\*\*Justification:\*\* (.+?)(?=\n\n#### |\n\n### |\n\n## |\n\n---|\Z)'
+    matches = re.findall(pattern, content, re.DOTALL)
+    result = {}
+    for item_id, justification in matches:
+        result[item_id] = justification.strip()
+    return result
+
 
 def load_benchmark_items():
     """Load full question text and metadata from benchmark JSONs."""
@@ -555,6 +574,23 @@ def add_item_section(doc, item, heading_level=3, show_suspect_reasons=False):
     shading = parse_xml(f'<w:shd {nsdecls("w")} w:fill="{GOLD_ANS_BG}" w:val="clear"/>')
     pPr.append(shading)
 
+    # Justification (if available)
+    justification = item.get("_justification", "")
+    if justification:
+        p = doc.add_paragraph()
+        run = p.add_run("Justification: ")
+        run.font.bold = True
+        run.font.size = Pt(9)
+        run.font.name = "Calibri"
+        run.font.color.rgb = RGBColor(0x1B, 0x5E, 0x20)
+        run = p.add_run(justification)
+        run.font.size = Pt(9)
+        run.font.name = "Calibri"
+        run.font.color.rgb = RGBColor(0x2E, 0x7D, 0x32)
+        pPr = p._p.get_or_add_pPr()
+        shading = parse_xml(f'<w:shd {nsdecls("w")} w:fill="{JUSTIFICATION_BG}" w:val="clear"/>')
+        pPr.append(shading)
+
     # Model response table
     is_family_b = item["family"] == "B"
 
@@ -746,7 +782,24 @@ def generate_document(items, title, subtitle, run_summary, success_criteria,
 
 # ── Main ───────────────────────────────────────────────────────────────────
 
+def attach_justifications(items, justifications):
+    """Attach justification text to each item dict."""
+    matched = 0
+    for item in items:
+        j = justifications.get(item["item_id"], "")
+        if j:
+            item["_justification"] = j
+            matched += 1
+    return matched
+
+
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Generate QA audit .docx documents")
+    parser.add_argument("--merged-only", action="store_true",
+                        help="Only generate the merged (with justifications) document")
+    args = parser.parse_args()
+
     print("Loading data...")
     cal_meta, fb_meta = load_benchmark_items()
     cal_rows = load_csv(CAL_CSV)
@@ -758,52 +811,77 @@ def main():
     print(f"  Calibration: {len(cal_rows)} rows, {len(cal_meta)} benchmark items")
     print(f"  Family B: {len(fb_rows)} rows, {len(fb_meta)} benchmark items")
 
+    # Load justifications
+    justifications = load_justifications()
+    print(f"  Justifications: {len(justifications)} loaded")
+
     # Build grouped data
     cal_items = build_cal_grouped(cal_rows, cal_meta)
     fb_items = build_fb_grouped(fb_rows, fb_meta)
     all_items = cal_items + fb_items
 
+    # Attach justifications
+    matched = attach_justifications(all_items, justifications)
+    print(f"  Justifications matched: {matched}/{len(all_items)}")
+
     print(f"  Total unique items: {len(all_items)} (Cal: {len(cal_items)}, FB: {len(fb_items)})")
 
     OUTPUT_DIR.mkdir(exist_ok=True)
 
-    # Doc 1: Complete audit
-    print("\nGenerating Doc 1: Complete Audit...")
+    if not args.merged_only:
+        # Doc 1: Complete audit (without justifications — original)
+        # Strip justifications for the plain version
+        for item in all_items:
+            item.pop("_justification", None)
+
+        print("\nGenerating Doc 1: Complete Audit...")
+        generate_document(
+            items=all_items,
+            title="MetaJudge v0.5.5.1",
+            subtitle="Complete QA Audit Report -- All Items",
+            run_summary=run_summary,
+            success_criteria=success_criteria,
+            output_path=OUTPUT_DIR / "metajudge_v0551_qa_audit_complete.docx",
+        )
+
+        # Doc 2: Highest yield
+        print("\nGenerating Doc 2: Highest Yield...")
+        highest_yield = select_highest_yield(all_items, top_n=40)
+        generate_document(
+            items=highest_yield,
+            title="MetaJudge v0.5.5.1",
+            subtitle="Highest-Yield Items -- Best Model Discrimination",
+            run_summary=run_summary,
+            success_criteria=success_criteria,
+            output_path=OUTPUT_DIR / "metajudge_v0551_qa_audit_highest_yield.docx",
+        )
+
+        # Doc 3: Most suspect
+        print("\nGenerating Doc 3: Most Suspect...")
+        suspect = select_suspect(all_items, review_queue)
+        generate_document(
+            items=suspect,
+            title="MetaJudge v0.5.5.1",
+            subtitle="Suspect & Problematic Items -- Review Required",
+            run_summary=run_summary,
+            success_criteria=success_criteria,
+            output_path=OUTPUT_DIR / "metajudge_v0551_qa_audit_suspect.docx",
+            show_suspect_reasons=True,
+        )
+
+    # Doc 4: Merged audit with justifications
+    print("\nGenerating Merged Audit (with justifications)...")
+    attach_justifications(all_items, justifications)
     generate_document(
         items=all_items,
         title="MetaJudge v0.5.5.1",
-        subtitle="Complete QA Audit Report -- All Items",
+        subtitle="Complete QA Audit with Gold Answer Justifications",
         run_summary=run_summary,
         success_criteria=success_criteria,
-        output_path=OUTPUT_DIR / "metajudge_v0551_qa_audit_complete.docx",
+        output_path=OUTPUT_DIR / "metajudge_v0551_qa_audit_with_justifications.docx",
     )
 
-    # Doc 2: Highest yield
-    print("\nGenerating Doc 2: Highest Yield...")
-    highest_yield = select_highest_yield(all_items, top_n=40)
-    generate_document(
-        items=highest_yield,
-        title="MetaJudge v0.5.5.1",
-        subtitle="Highest-Yield Items -- Best Model Discrimination",
-        run_summary=run_summary,
-        success_criteria=success_criteria,
-        output_path=OUTPUT_DIR / "metajudge_v0551_qa_audit_highest_yield.docx",
-    )
-
-    # Doc 3: Most suspect
-    print("\nGenerating Doc 3: Most Suspect...")
-    suspect = select_suspect(all_items, review_queue)
-    generate_document(
-        items=suspect,
-        title="MetaJudge v0.5.5.1",
-        subtitle="Suspect & Problematic Items -- Review Required",
-        run_summary=run_summary,
-        success_criteria=success_criteria,
-        output_path=OUTPUT_DIR / "metajudge_v0551_qa_audit_suspect.docx",
-        show_suspect_reasons=True,
-    )
-
-    print(f"\nDone! All three documents saved to {OUTPUT_DIR}/")
+    print(f"\nDone! Documents saved to {OUTPUT_DIR}/")
 
 
 if __name__ == "__main__":
