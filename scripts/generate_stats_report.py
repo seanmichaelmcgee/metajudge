@@ -1294,8 +1294,137 @@ def generate_docx_report(output_path, data, cal_stats, fb_stats,
 
 
 def generate_reproducibility_log(output_path):
-    """Generate reproducibility log markdown. (Part 5)"""
-    pass  # Will be implemented next
+    """Generate reproducibility log markdown."""
+    import importlib
+
+    def get_version(pkg):
+        try:
+            return importlib.import_module(pkg).__version__
+        except (ImportError, AttributeError):
+            return "not installed"
+
+    def file_sha256(path):
+        if not path.exists():
+            return "file not found"
+        h = hashlib.sha256()
+        with open(path, "rb") as f:
+            for chunk in iter(lambda: f.read(8192), b""):
+                h.update(chunk)
+        return h.hexdigest()
+
+    figures = sorted(FIGURES_DIR.glob("*.png"))
+
+    text = f"""# MetaJudge v0.5.5.1 — Statistical Analysis Reproducibility Log
+
+## Environment
+
+- **Python**: {platform.python_version()}
+- **Platform**: {platform.platform()}
+- **Architecture**: {platform.machine()}
+
+## Package Versions
+
+| Package | Version |
+|---------|---------|
+| numpy | {get_version("numpy")} |
+| scipy | {get_version("scipy")} |
+| matplotlib | {get_version("matplotlib")} |
+| seaborn | {get_version("seaborn")} |
+| python-docx | {get_version("docx")} |
+| pandas | {get_version("pandas")} |
+
+## Random Seeds
+
+All bootstrap and permutation procedures use a fixed seed for reproducibility:
+
+- **Bootstrap CI**: seed = {SEED} (via `np.random.default_rng({SEED})`)
+- **Permutation test**: seed = {SEED} (via `np.random.default_rng({SEED})`)
+- **Bootstrap resamples**: n = 10,000
+- **Permutation iterations**: n = 10,000
+
+Seeds are hardcoded in `metajudge/scoring/statistics.py` and not configurable
+at runtime, ensuring identical results across runs.
+
+## Data Checksums (SHA-256)
+
+| File | SHA-256 |
+|------|---------|
+| calibration_item_audit (8).csv | `{file_sha256(CAL_CSV)}` |
+| family_b_item_audit (8).csv | `{file_sha256(FB_CSV)}` |
+| run_summary (7).json | `{file_sha256(RUN_SUMMARY)}` |
+| audit_review_queue (2).csv | `{file_sha256(AUDIT_QUEUE_CSV)}` |
+
+## Script Invocation
+
+```bash
+# From project root
+pip install -e ".[dev]"
+pip install matplotlib seaborn scipy
+
+python scripts/generate_stats_report.py
+```
+
+**Prerequisites**: Data files must be extracted to `/tmp/v0551/v0.5.5.1 - results/`.
+
+## Output Manifest
+
+### Reports
+
+| File | Description |
+|------|-------------|
+| `outputs/metajudge_v0551_stats_backgrounder.md` | Statistical testing rationale and references |
+| `outputs/metajudge_v0551_stats_report.docx` | Polished results report with embedded figures |
+| `outputs/metajudge_v0551_stats_reproducibility.md` | This file |
+
+### Figures ({len(figures)} PNGs)
+
+| File | Description |
+|------|-------------|
+"""
+    fig_descriptions = {
+        "bridge_confidence_accuracy.png": "Confidence vs accuracy per model with Spearman ρ",
+        "bridge_confidence_violins.png": "Confidence distribution violin plots by model",
+        "cal_brier_forest_plot.png": "Pairwise Brier score differences with 95% bootstrap CIs",
+        "cal_mechanism_brier_bars.png": "Mean Brier score by mechanism × model",
+        "cal_mechanism_heatmap.png": "Accuracy heatmap: mechanisms × models",
+        "cal_pvalue_heatmap.png": "Calibration p-value heatmap (McNemar + permutation)",
+        "cal_reliability_diagram.png": "Calibration reliability diagram (all models overlaid)",
+        "fb_action_confusion.png": "Action confusion matrices per model (Family B)",
+        "fb_action_distribution.png": "Action distribution stacked bar chart (Family B)",
+        "fb_utility_forest_plot.png": "Pairwise utility differences with 95% bootstrap CIs",
+        "significance_master_heatmap.png": "Master significance heatmap (all tests × all pairs)",
+    }
+    for fig in figures:
+        desc = fig_descriptions.get(fig.name, fig.name)
+        text += f"| `{fig.name}` | {desc} |\n"
+
+    text += """
+## Reproduction Steps
+
+1. Clone the repository and check out the analysis branch
+2. Extract v0.5.5.1 data to `/tmp/v0551/`
+3. Install dependencies: `pip install -e ".[dev]" && pip install matplotlib seaborn scipy`
+4. Run: `python scripts/generate_stats_report.py`
+5. Verify outputs match checksums and figure count
+
+## Statistical Tests Summary
+
+| Test | Function | Source |
+|------|----------|--------|
+| McNemar's test | `mcnemar_test()` | `metajudge/scoring/statistics.py` |
+| Paired permutation test | `paired_permutation_test()` | `metajudge/scoring/statistics.py` |
+| Paired bootstrap CI | `paired_bootstrap_ci()` | `metajudge/scoring/statistics.py` |
+| Single-sample bootstrap CI | `bootstrap_ci_single()` | `metajudge/scoring/statistics.py` |
+| Stuart-Maxwell test | `stuart_maxwell_test()` | `metajudge/scoring/statistics.py` |
+| Spearman + bootstrap CI | `spearman_with_ci()` | `metajudge/scoring/statistics.py` |
+| Holm-Bonferroni correction | `holm_correction()` | `metajudge/scoring/statistics.py` |
+| Cohen's d (effect size) | `compute_effect_sizes()` | `scripts/generate_stats_report.py` |
+| Odds ratio (McNemar) | `compute_odds_ratio()` | `scripts/generate_stats_report.py` |
+"""
+
+    with open(output_path, "w") as f:
+        f.write(text.strip() + "\n")
+    print(f"  Reproducibility log: {output_path}")
 
 
 # ---------------------------------------------------------------------------
