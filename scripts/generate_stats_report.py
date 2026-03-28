@@ -940,8 +940,357 @@ Bulletin*, 1(6), 80–83.
 def generate_docx_report(output_path, data, cal_stats, fb_stats,
                          cal_metrics, fb_metrics, mech_stats, bridge_corr,
                          cal_stats_clean, fb_stats_clean):
-    """Generate polished .docx results report. (Part 4)"""
-    pass  # Will be implemented next
+    """Generate polished .docx results report with embedded figures."""
+    from docx import Document
+    from docx.shared import Inches, Pt, RGBColor
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from docx.oxml.ns import qn
+
+    doc = Document()
+
+    # -- Styles --
+    style = doc.styles["Normal"]
+    style.font.name = "Calibri"
+    style.font.size = Pt(11)
+
+    def add_heading(text, level=1):
+        h = doc.add_heading(text, level=level)
+        for run in h.runs:
+            run.font.color.rgb = RGBColor(0x1F, 0x4E, 0x79)
+        return h
+
+    def add_table_from_data(headers, rows):
+        """Add a formatted table to the document."""
+        table = doc.add_table(rows=1 + len(rows), cols=len(headers))
+        table.style = "Light Grid Accent 1"
+        # Header row
+        for i, h in enumerate(headers):
+            cell = table.rows[0].cells[i]
+            cell.text = h
+            for p in cell.paragraphs:
+                for run in p.runs:
+                    run.bold = True
+                    run.font.size = Pt(9)
+        # Data rows
+        for r_idx, row in enumerate(rows):
+            for c_idx, val in enumerate(row):
+                cell = table.rows[r_idx + 1].cells[c_idx]
+                cell.text = str(val)
+                for p in cell.paragraphs:
+                    for run in p.runs:
+                        run.font.size = Pt(9)
+        return table
+
+    def fmt_p(val):
+        """Format p-value for display."""
+        if val < 0.001:
+            return "<0.001"
+        return f"{val:.3f}"
+
+    def fmt_f(val, decimals=3):
+        """Format float."""
+        if isinstance(val, float) and (np.isnan(val) or np.isinf(val)):
+            return "N/A"
+        return f"{val:.{decimals}f}"
+
+    def sig_star(p):
+        if p < 0.001:
+            return "***"
+        if p < 0.01:
+            return "**"
+        if p < 0.05:
+            return "*"
+        return ""
+
+    # ===== TITLE PAGE =====
+    title_para = doc.add_paragraph()
+    title_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    run = title_para.add_run("MetaJudge v0.5.5.1\nStatistical Analysis Report")
+    run.font.size = Pt(24)
+    run.font.color.rgb = RGBColor(0x1F, 0x4E, 0x79)
+    run.bold = True
+
+    subtitle = doc.add_paragraph()
+    subtitle.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    run = subtitle.add_run("Preliminary — Full Item Set + Sensitivity Analysis")
+    run.font.size = Pt(14)
+    run.font.color.rgb = RGBColor(0x66, 0x66, 0x66)
+
+    info = doc.add_paragraph()
+    info.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    info.add_run(f"Models: {len(cal_stats['models'])} | "
+                 f"Calibration items: {cal_stats['n_items']} | "
+                 f"Family B items: {fb_stats['n_items']}\n"
+                 f"Date: 2026-03-28 | Benchmark version: v0.5.5.1").font.size = Pt(10)
+
+    doc.add_page_break()
+
+    # ===== 1. EXECUTIVE SUMMARY =====
+    add_heading("1. Executive Summary", level=1)
+
+    doc.add_paragraph(
+        "This report presents pairwise statistical comparisons across five frontier "
+        "language models on the MetaJudge v0.5.5.1 benchmark, covering both "
+        "confidence calibration (Family A, 117 items) and selective abstention "
+        "(Family B, 84 items). All tests are non-parametric with Holm-Bonferroni "
+        "correction for multiple comparisons."
+    )
+
+    # Count significant results
+    n_sig_cal = sum(1 for v in cal_stats["holm"].values()
+                    if v.get("significant_0.05"))
+    n_sig_fb = sum(1 for v in fb_stats["holm"].values()
+                   if v.get("significant_0.05"))
+    total_tests = len(cal_stats["holm"]) + len(fb_stats["holm"])
+
+    doc.add_paragraph(
+        f"Key findings: {n_sig_cal + n_sig_fb} of {total_tests} tests reached "
+        f"statistical significance after Holm-Bonferroni correction "
+        f"(α = 0.05). {n_sig_cal} in calibration, {n_sig_fb} in Family B."
+    )
+
+    doc.add_page_break()
+
+    # ===== 2. FAMILY A: CALIBRATION RESULTS =====
+    add_heading("2. Family A: Calibration Results", level=1)
+
+    # 2.1 Model leaderboard
+    add_heading("2.1 Model Leaderboard", level=2)
+    model_order = sorted(cal_metrics.keys(), key=lambda m: short_name(m))
+    headers = ["Model", "n", "Accuracy", "Mean Brier", "ECE", "Overconf. Rate"]
+    rows = []
+    for m in model_order:
+        d = cal_metrics[m]
+        rows.append([
+            short_name(m), str(d["n_items"]),
+            fmt_f(d["accuracy"]), fmt_f(d["mean_brier"]),
+            fmt_f(d["ece"]), fmt_f(d["overconfidence_rate"]),
+        ])
+    add_table_from_data(headers, rows)
+
+    # 2.2 Pairwise comparisons
+    add_heading("2.2 Pairwise Statistical Comparisons", level=2)
+    doc.add_paragraph(
+        "McNemar's test compares binary accuracy; paired permutation test compares "
+        "mean Brier scores. Bootstrap 95% CIs quantify effect magnitude. "
+        "Cohen's d measures standardized effect size."
+    )
+
+    headers = ["Pair", "Acc A", "Acc B", "McNemar p", "Brier Δ", "Perm p",
+               "95% CI", "Cohen's d", "Sig"]
+    rows = []
+    for pair, d in cal_stats["pairwise"].items():
+        ci = d["bootstrap_ci"]
+        # Check if any test for this pair is significant after correction
+        holm_acc = cal_stats["holm"].get(f"{pair}_acc", {})
+        holm_brier = cal_stats["holm"].get(f"{pair}_brier", {})
+        is_sig = (holm_acc.get("significant_0.05", False) or
+                  holm_brier.get("significant_0.05", False))
+        rows.append([
+            pair,
+            fmt_f(d["acc_a"]), fmt_f(d["acc_b"]),
+            fmt_p(d["mcnemar"]["p_value"]),
+            fmt_f(ci["observed_diff"]),
+            fmt_p(d["permutation"]["p_value"]),
+            f"[{fmt_f(ci['ci_lower'])}, {fmt_f(ci['ci_upper'])}]",
+            fmt_f(d["cohens_d"], 2),
+            "Yes" + sig_star(min(d["mcnemar"]["p_value"],
+                                 d["permutation"]["p_value"])) if is_sig else "No",
+        ])
+    add_table_from_data(headers, rows)
+
+    # 2.3 Figures
+    add_heading("2.3 Calibration Reliability Diagram", level=2)
+    doc.add_picture(str(FIGURES_DIR / "cal_reliability_diagram.png"),
+                    width=Inches(5.5))
+
+    add_heading("2.4 Brier Score Forest Plot", level=2)
+    doc.add_picture(str(FIGURES_DIR / "cal_brier_forest_plot.png"),
+                    width=Inches(5.5))
+
+    add_heading("2.5 Per-Mechanism Analysis", level=2)
+    doc.add_picture(str(FIGURES_DIR / "cal_mechanism_heatmap.png"),
+                    width=Inches(5.5))
+    doc.add_paragraph()
+    doc.add_picture(str(FIGURES_DIR / "cal_mechanism_brier_bars.png"),
+                    width=Inches(5.5))
+
+    # Mechanism summary table
+    mechanisms = sorted(mech_stats.keys())
+    headers = ["Mechanism"] + [short_name(m) for m in model_order] + ["n"]
+    rows = []
+    for mech in mechanisms:
+        row = [mech]
+        n_items = 0
+        for m in model_order:
+            md = mech_stats[mech].get(m, {})
+            row.append(fmt_f(md.get("accuracy", float("nan"))))
+            n_items = max(n_items, md.get("n", 0))
+        underpowered = " ⚠" if n_items < 10 else ""
+        row.append(f"{n_items}{underpowered}")
+        rows.append(row)
+    add_table_from_data(headers, rows)
+    doc.add_paragraph("⚠ = fewer than 10 items (descriptive only)", style="Normal")
+
+    add_heading("2.6 P-value Heatmap", level=2)
+    doc.add_picture(str(FIGURES_DIR / "cal_pvalue_heatmap.png"),
+                    width=Inches(4.5))
+
+    doc.add_page_break()
+
+    # ===== 3. FAMILY B: SELECTIVE ABSTENTION =====
+    add_heading("3. Family B: Selective Abstention Results", level=1)
+
+    # 3.1 Model leaderboard
+    add_heading("3.1 Model Leaderboard", level=2)
+    fb_model_order = sorted(fb_metrics.keys(), key=lambda m: short_name(m))
+    headers = ["Model", "n", "UWAA", "Mean Utility", "Action Acc", "Macro F1"]
+    rows = []
+    for m in fb_model_order:
+        d = fb_metrics[m]
+        rows.append([
+            short_name(m), str(d["n_items"]),
+            fmt_f(d["uwaa"]), fmt_f(d["mean_utility"]),
+            fmt_f(d["action_accuracy"]),
+            fmt_f(d["action_f1"]["macro"]["f1"]),
+        ])
+    add_table_from_data(headers, rows)
+
+    if fb_metrics.get(list(fb_metrics.keys())[0], {}).get("n_items", 0) == 1:
+        doc.add_paragraph(
+            "Note: Gemini Flash has only 1 Family B item and is excluded from "
+            "pairwise statistical comparisons."
+        )
+
+    # 3.2 Pairwise comparisons
+    if fb_stats["pairwise"]:
+        add_heading("3.2 Pairwise Statistical Comparisons", level=2)
+        headers = ["Pair", "Util A", "Util B", "Util Perm p", "S-M p",
+                   "95% CI", "Cohen's d", "Sig"]
+        rows = []
+        for pair, d in fb_stats["pairwise"].items():
+            ci = d["bootstrap_ci"]
+            holm_util = fb_stats["holm"].get(f"{pair}_util", {})
+            holm_act = fb_stats["holm"].get(f"{pair}_actions", {})
+            is_sig = (holm_util.get("significant_0.05", False) or
+                      holm_act.get("significant_0.05", False))
+            rows.append([
+                pair,
+                fmt_f(d["util_mean_a"]), fmt_f(d["util_mean_b"]),
+                fmt_p(d["permutation"]["p_value"]),
+                fmt_p(d["stuart_maxwell"]["p_value"]),
+                f"[{fmt_f(ci['ci_lower'])}, {fmt_f(ci['ci_upper'])}]",
+                fmt_f(d["cohens_d"], 2),
+                "Yes" + sig_star(min(d["permutation"]["p_value"],
+                                     d["stuart_maxwell"]["p_value"])) if is_sig else "No",
+            ])
+        add_table_from_data(headers, rows)
+
+    # 3.3 Figures
+    add_heading("3.3 Action Distribution", level=2)
+    doc.add_picture(str(FIGURES_DIR / "fb_action_distribution.png"),
+                    width=Inches(5.5))
+
+    add_heading("3.4 Action Confusion Matrices", level=2)
+    doc.add_picture(str(FIGURES_DIR / "fb_action_confusion.png"),
+                    width=Inches(6.0))
+
+    if (FIGURES_DIR / "fb_utility_forest_plot.png").exists():
+        add_heading("3.5 Utility Forest Plot", level=2)
+        doc.add_picture(str(FIGURES_DIR / "fb_utility_forest_plot.png"),
+                        width=Inches(5.5))
+
+    doc.add_page_break()
+
+    # ===== 4. BRIDGE ANALYSIS =====
+    add_heading("4. Cross-Family Bridge Analysis", level=1)
+
+    add_heading("4.1 Confidence-Accuracy Correlation", level=2)
+    headers = ["Model", "Spearman ρ", "p-value", "95% CI"]
+    rows = []
+    for m in model_order:
+        d = bridge_corr[m]
+        rows.append([
+            short_name(m), fmt_f(d["rho"], 3), fmt_p(d["p_value"]),
+            f"[{fmt_f(d['ci_lower'], 3)}, {fmt_f(d['ci_upper'], 3)}]",
+        ])
+    add_table_from_data(headers, rows)
+
+    doc.add_picture(str(FIGURES_DIR / "bridge_confidence_accuracy.png"),
+                    width=Inches(5.5))
+
+    add_heading("4.2 Confidence Distributions", level=2)
+    doc.add_picture(str(FIGURES_DIR / "bridge_confidence_violins.png"),
+                    width=Inches(5.5))
+
+    doc.add_page_break()
+
+    # ===== 5. SIGNIFICANCE SUMMARY =====
+    add_heading("5. Statistical Significance Summary", level=1)
+
+    add_heading("5.1 Master P-value Table (Holm-Corrected)", level=2)
+    all_holm = {**cal_stats["holm"], **fb_stats["holm"]}
+    headers = ["Test", "Raw p", "Adjusted p", "Significant"]
+    rows = []
+    for name, d in sorted(all_holm.items(), key=lambda x: x[1]["raw_p"]):
+        rows.append([
+            name, fmt_p(d["raw_p"]), fmt_p(d["adjusted_p"]),
+            "Yes" + sig_star(d["adjusted_p"]) if d["significant_0.05"] else "No",
+        ])
+    add_table_from_data(headers, rows)
+
+    add_heading("5.2 Master Significance Heatmap", level=2)
+    doc.add_picture(str(FIGURES_DIR / "significance_master_heatmap.png"),
+                    width=Inches(5.5))
+
+    doc.add_page_break()
+
+    # ===== 6. SENSITIVITY ANALYSIS =====
+    add_heading("6. Robustness to Item Exclusion", level=1)
+
+    doc.add_paragraph(
+        f"Sensitivity analysis: {len(data['flagged_items'])} items flagged in the "
+        f"audit review queue were excluded to assess robustness. This reduced "
+        f"calibration from {cal_stats['n_items']} to {cal_stats_clean['n_items']} "
+        f"items and Family B from {fb_stats['n_items']} to {fb_stats_clean['n_items']} items."
+    )
+
+    add_heading("6.1 Calibration — Full vs Clean", level=2)
+    headers = ["Pair", "Full Brier p", "Clean Brier p", "Full Sig", "Clean Sig"]
+    rows = []
+    for pair in cal_stats["pairwise"]:
+        full_p = cal_stats["pairwise"][pair]["permutation"]["p_value"]
+        clean_d = cal_stats_clean["pairwise"].get(pair, {})
+        clean_p = clean_d.get("permutation", {}).get("p_value", float("nan"))
+        full_sig = cal_stats["holm"].get(f"{pair}_brier", {}).get("significant_0.05", False)
+        clean_sig = cal_stats_clean["holm"].get(f"{pair}_brier", {}).get("significant_0.05", False)
+        rows.append([
+            pair, fmt_p(full_p), fmt_p(clean_p),
+            "Yes" if full_sig else "No",
+            "Yes" if clean_sig else "No",
+        ])
+    add_table_from_data(headers, rows)
+
+    if fb_stats_clean["pairwise"]:
+        add_heading("6.2 Family B — Full vs Clean", level=2)
+        headers = ["Pair", "Full Util p", "Clean Util p", "Full Sig", "Clean Sig"]
+        rows = []
+        for pair in fb_stats["pairwise"]:
+            full_p = fb_stats["pairwise"][pair]["permutation"]["p_value"]
+            clean_d = fb_stats_clean["pairwise"].get(pair, {})
+            clean_p = clean_d.get("permutation", {}).get("p_value", float("nan"))
+            full_sig = fb_stats["holm"].get(f"{pair}_util", {}).get("significant_0.05", False)
+            clean_sig = fb_stats_clean["holm"].get(f"{pair}_util", {}).get("significant_0.05", False)
+            rows.append([
+                pair, fmt_p(full_p), fmt_p(clean_p),
+                "Yes" if full_sig else "No",
+                "Yes" if clean_sig else "No",
+            ])
+        add_table_from_data(headers, rows)
+
+    # Save
+    doc.save(str(output_path))
+    print(f"  Report: {output_path}")
 
 
 def generate_reproducibility_log(output_path):
