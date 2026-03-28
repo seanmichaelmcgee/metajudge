@@ -829,12 +829,11 @@ def main():
     OUTPUT_DIR.mkdir(exist_ok=True)
 
     if not args.merged_only:
-        # Doc 1: Complete audit (without justifications — original)
-        # Strip justifications for the plain version
+        # Doc 1: Complete audit (without justifications — original plain version)
         for item in all_items:
             item.pop("_justification", None)
 
-        print("\nGenerating Doc 1: Complete Audit...")
+        print("\nGenerating Doc 1: Complete Audit (no justifications)...")
         generate_document(
             items=all_items,
             title="MetaJudge v0.5.5.1",
@@ -844,8 +843,11 @@ def main():
             output_path=OUTPUT_DIR / "metajudge_v0551_qa_audit_complete.docx",
         )
 
-        # Doc 2: Highest yield
-        print("\nGenerating Doc 2: Highest Yield...")
+        # Re-attach justifications for remaining docs
+        attach_justifications(all_items, justifications)
+
+        # Doc 2: Highest yield (with justifications)
+        print("\nGenerating Doc 2: Highest Yield (with justifications)...")
         highest_yield = select_highest_yield(all_items, top_n=40)
         generate_document(
             items=highest_yield,
@@ -856,8 +858,8 @@ def main():
             output_path=OUTPUT_DIR / "metajudge_v0551_qa_audit_highest_yield.docx",
         )
 
-        # Doc 3: Most suspect
-        print("\nGenerating Doc 3: Most Suspect...")
+        # Doc 3: Most suspect (with justifications)
+        print("\nGenerating Doc 3: Most Suspect (with justifications)...")
         suspect = select_suspect(all_items, review_queue)
         generate_document(
             items=suspect,
