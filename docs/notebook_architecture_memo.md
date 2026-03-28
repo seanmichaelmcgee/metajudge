@@ -32,13 +32,17 @@ This has been split into two purpose-built notebooks:
 
 ## Official Score Decision
 
-**Calibration-only** (not composite). Rationale:
-- Family B has the Gemini Flash gap (n=1) making a fair composite impossible
-- Families C-E are designed but not yet instrumented
-- The composite score module exists in the package but requires all families
-- Calibration-only is clean, defensible, and properly scored with a strictly proper rule
+**Official `%choose` task: Calibration-only.** Rationale:
+- The benchmark task must work for any single model, including those with FB gaps
+- Gemini Flash has only 1 FB item — composite would fail or mislead
+- Calibration-only is clean, defensible, and uses a strictly proper scoring rule
 
-Family B results are prominently featured in the narrative notebook.
+**Narrative notebook: Partial composite (0.60·Cal + 0.40·UWAA).** Rationale:
+- Both families are in production with package-owned scoring
+- `compute_composite_score()` in `metajudge/scoring/composite_score.py` handles this
+- Displayed for models with sufficient FB data (excludes Gemini Flash)
+- Follows SOUL.md 60/40 monitoring/control weighting
+- Full 6-family composite awaits Families C-E instrumentation
 
 ## Clean Dataset Decision
 
