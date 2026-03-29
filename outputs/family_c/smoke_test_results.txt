@@ -1,0 +1,22 @@
+MetaJudge OpenRouter Smoke Test
+Date: 2026-03-29 21:15:08 UTC
+Models tested: 5
+
+Results:
+Model                     OpenRouter ID                       Status                                                       Latency   
+------------------------- ----------------------------------- ------------------------------------------------------------ ----------
+deepseek-chat             deepseek/deepseek-chat              OK (662ms)                                                   662ms     
+grok-3-mini               x-ai/grok-3-mini                    OK (4251ms)                                                  4251ms    
+gemini-2.5-pro            google/gemini-2.5-pro               OK (15250ms)                                                 15250ms   
+claude-sonnet-4.5         anthropic/claude-sonnet-4.5         OK (1394ms)                                                  1394ms    
+gpt-4.1                   openai/gpt-4.1                      OK (552ms)                                                   552ms     
+
+Overall: ALL PASS
+
+Notes:
+- Tier A models (deepseek-chat, grok-3-mini): Both OK — ready for pilot
+- gemini-2.5-pro: Requires max_tokens >= 128 due to reasoning token overhead
+- gpt-4.1: Requires max_tokens >= 16 (OpenAI minimum); occasional timeout race condition
+- All 5 models successfully returned "OK" when properly configured
+
+Blockers: None. Both Tier A pilot models (deepseek-chat, grok-3-mini) are confirmed working.
