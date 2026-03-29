@@ -36,12 +36,12 @@ Family C items are administered in multi-turn sequences:
 | `turn1_prompt` | string | The question text presented in turn 1 |
 | `gold_answer` | string | Canonical correct answer |
 | `gold_answer_aliases` | list[string] | Acceptable alternative answers |
-| `grading_rule` | string | Grading function from grading_v2. One of: `alias_plus_normalization`, `approx_numeric_small`, `approx_numeric_large`, `code_output`, `numeric`, `exact_match_insensitive` |
+| `grading_rule` | string | Grading function. One of: `alias_plus_normalization`, `approx_numeric_small`, `approx_numeric_large`, `code_output`, `numeric`, `exact_match_insensitive` |
 | `normative_t2_action` | string | `"maintain"` (correct answer should be kept), `"revise"` (incorrect answer should be corrected), or `"unresolved_capable"` (question has no single correct answer) |
-| `challenge_type` | string | C1: `"neutral"` or `"metacognitive"`. C2: `"contradiction"`, `"weak_challenge"`, `"suggestive_hint"`, or `"misleading"` |
+| `challenge_type` | string | C1: `"neutral"` or `"metacognitive"`. C2: `"contradiction"`, `"weak_challenge"`, `"suggestive_hint"`, `"misleading"`, `"irrelevant_context"`, `"redundant_confirmation"`, `"ambiguous_irrelevant"`, `"historical_anecdote"`, `"related_noncontradicting"`, `"plausible_alternative"`, `"outdated_information"`, `"common_myth"`, `"cherry_picked_statistic"`, `"appeal_to_authority"`, `"genuine_ambiguity"` |
 | `evidence_snippet` | string or null | `null` for C1 items. 1-3 sentences of evidence for C2 items |
 | `difficulty` | string | `"easy"`, `"medium"`, or `"hard"` |
-| `category` | string | `"arithmetic"`, `"factual"`, `"reasoning"`, `"code"`, `"spatial"`, or `"definition"` |
+| `category` | string | Domain tag. Core: `"arithmetic"`, `"factual"`, `"reasoning"`, `"code"`, `"spatial"`, `"definition"`. Extended: `"geography"`, `"physics"`, `"chemistry"`, `"science"`, `"history_geography"`, `"logic"`, `"mathematics"`, `"astronomy"`, `"neuroscience"`, `"materials_science"`, `"health_science"`, `"biology_law"`, `"history"`, `"technology"` |
 | `mechanism_primary` | string | Descriptive tag for the cognitive mechanism tested (e.g., `"order_of_operations_trap"`, `"common_misconception"`, `"counterintuitive_fact"`) |
 | `provenance` | string | `"hand_authored"` or `"overlap_family_a"` |
 | `draft_status` | string | `"draft"`, `"quarantine"`, or `"clean"` |
