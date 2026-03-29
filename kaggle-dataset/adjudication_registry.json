@@ -2345,5 +2345,289 @@
     "normalization_notes": "(3\u221a3/2)\u00d7100 = 150\u221a3 \u2248 259.81",
     "tri_label_space": null,
     "edge_case_notes": null
+  },
+  {
+    "item_id": "abs_001",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "63",
+    "accepted_forms": [
+      "63"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": {
+      "abs_tol": 0.0,
+      "rel_tol": 0.0
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "Exact integer",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "abs_002",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "Lithium",
+    "accepted_forms": [
+      "Lithium",
+      "Li",
+      "lithium"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "Element name or symbol",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "abs_003",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "3",
+    "accepted_forms": [
+      "3"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": {
+      "abs_tol": 0.0,
+      "rel_tol": 0.0
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "Exact integer",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "abs_004",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "8",
+    "accepted_forms": [
+      "8"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": {
+      "abs_tol": 0.0,
+      "rel_tol": 0.0
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "Exact integer",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "abs_005",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "Basil II",
+    "accepted_forms": [
+      "Basil II",
+      "Basil the Second",
+      "Basil 2",
+      "Basilios II",
+      "Basileios II"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "Byzantine emperor, various transliterations",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "abs_006",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "3n - 6",
+    "accepted_forms": [
+      "3n - 6",
+      "3n-6",
+      "3*n - 6",
+      "3n\u22126",
+      "3(n) - 6"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "Formula expression, various spacing/notation",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "abs_007",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "n",
+    "accepted_forms": [
+      "n",
+      "N"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "Single variable. Risk of substring false positive \u2014 exact match only",
+    "tri_label_space": null,
+    "edge_case_notes": "Short answer \u2014 do not use substring matching"
+  },
+  {
+    "item_id": "abs_008",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "O(W)",
+    "accepted_forms": [
+      "O(W)",
+      "O(w)",
+      "O( W )",
+      "O(W) space",
+      "\u0398(W)",
+      "theta(W)"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "Big-O notation; space-optimized DP uses O(W)",
+    "tri_label_space": null,
+    "edge_case_notes": "O(nW) is the naive answer \u2014 O(W) is the optimised one"
+  },
+  {
+    "item_id": "abs_009",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "France",
+    "accepted_forms": [
+      "France",
+      "french republic"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "abs_010",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "Smooth endoplasmic reticulum",
+    "accepted_forms": [
+      "Smooth endoplasmic reticulum",
+      "smooth ER",
+      "SER",
+      "sER"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "Organelle name or standard abbreviation",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "abs_011",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "Java Trench",
+    "accepted_forms": [
+      "Java Trench",
+      "Sunda Trench",
+      "Java Deep",
+      "Sunda Deep"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "Also known as Sunda Trench",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "abs_012",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "Floyd-Warshall",
+    "accepted_forms": [
+      "Floyd-Warshall",
+      "Floyd Warshall",
+      "Floyd\u2013Warshall",
+      "Floyd-Warshall algorithm"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "Algorithm name, various hyphenation",
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "abs_013",
+    "answer_type": "numeric",
+    "grader_rule": "approx_numeric_small",
+    "gold_answer": "5730",
+    "accepted_forms": [
+      "5730",
+      "5,730"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": {
+      "abs_tol": 10.0,
+      "rel_tol": 0.005
+    },
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": "C-14 half-life: 5,730 +/- 40 years. Allow small tolerance.",
+    "tri_label_space": null,
+    "edge_case_notes": "5568 is the old Libby value \u2014 should NOT be accepted"
+  },
+  {
+    "item_id": "abs_014",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "Ming",
+    "accepted_forms": [
+      "Ming",
+      "Ming dynasty",
+      "Ming Dynasty",
+      "the Ming dynasty"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
+  },
+  {
+    "item_id": "abs_015",
+    "answer_type": "text",
+    "grader_rule": "alias_plus_normalization",
+    "gold_answer": "South Africa",
+    "accepted_forms": [
+      "South Africa",
+      "Republic of South Africa",
+      "RSA"
+    ],
+    "tolerance_class": null,
+    "tolerance_params": null,
+    "time_anchor": null,
+    "source_anchor": null,
+    "normalization_notes": null,
+    "tri_label_space": null,
+    "edge_case_notes": null
   }
 ]

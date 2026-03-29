@@ -419,19 +419,29 @@ _GRADERS = {
 }
 
 
-def grade_item(item_id: str, model_answer: str, registry: Dict[str, Dict[str, Any]]) -> Dict[str, Any]:
+def grade_item(
+    item_id: str,
+    model_answer: str,
+    registry: Dict[str, Dict[str, Any]],
+    gold_answer: Optional[str] = None,
+) -> Dict[str, Any]:
     """Grade a single item using the adjudication registry.
 
     Args:
         item_id: The benchmark item identifier.
         model_answer: The model's raw answer string.
         registry: The loaded registry dict (item_id -> spec).
+        gold_answer: Optional fallback gold answer for items not in the
+            registry. When provided and the item is missing from the
+            registry, uses normalised string + numeric comparison.
 
     Returns:
         {"correct": bool, "method": str, "match_detail": str}
     """
     spec = registry.get(item_id)
     if spec is None:
+        if gold_answer is not None:
+            return _grade_fallback(model_answer, gold_answer)
         return {"correct": False, "method": "unknown", "match_detail": f"item {item_id!r} not in registry"}
 
     rule = spec.get("grader_rule", "alias_plus_normalization")
@@ -440,3 +450,30 @@ def grade_item(item_id: str, model_answer: str, registry: Dict[str, Dict[str, An
         return {"correct": False, "method": rule, "match_detail": f"unknown grader rule: {rule!r}"}
 
     return grader(model_answer, spec)
+
+
+def _grade_fallback(model_answer: str, gold_answer: str) -> Dict[str, Any]:
+    """Lightweight fallback grading for items not in the registry.
+
+    Tries normalised string match, then comma-stripped numeric match.
+    Deliberately conservative — no substring or containment matching.
+    """
+    norm_ans = _normalize(model_answer)
+    norm_gold = _normalize(gold_answer)
+
+    if norm_ans is None or norm_gold is None:
+        return {"correct": False, "method": "fallback", "match_detail": "empty answer or gold"}
+
+    # Exact normalised match
+    if norm_ans == norm_gold:
+        return {"correct": True, "method": "fallback", "match_detail": "normalised exact match"}
+
+    # Numeric comparison (handles commas, whitespace)
+    ans_float = _parse_float(model_answer)
+    gold_float = _parse_float(gold_answer)
+    if ans_float is not None and gold_float is not None:
+        if _nums_close(ans_float, gold_float, rel_tol=1e-6):
+            return {"correct": True, "method": "fallback", "match_detail": "numeric match"}
+
+    return {"correct": False, "method": "fallback",
+            "match_detail": f"no match: {norm_ans!r} vs gold {norm_gold!r}"}

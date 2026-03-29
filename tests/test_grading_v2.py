@@ -677,7 +677,7 @@ class TestV054Regressions:
 
 class TestLoadRegistry:
     def test_loads_all_items(self, registry):
-        assert len(registry) == 117  # V4.2 full set
+        assert len(registry) == 132  # V4.2 full set (117 cal + 15 Family B)
 
     def test_keyed_by_item_id(self, registry):
         assert "v42_ioed_001" in registry
@@ -688,3 +688,59 @@ class TestLoadRegistry:
         required = {"item_id", "grader_rule", "gold_answer"}
         for item_id, spec in registry.items():
             assert required.issubset(spec.keys()), f"{item_id} missing keys"
+
+
+class TestFamilyBRegistry:
+    """Tests for the 15 Family B answer-item registry entries."""
+
+    def test_family_b_items_present(self, registry):
+        for i in range(1, 16):
+            assert f"abs_{i:03d}" in registry
+
+    def test_family_b_grading(self, registry):
+        from metajudge.scoring.grading_v2 import grade_item
+
+        # abs_002: Lithium (alias match)
+        assert grade_item("abs_002", "Lithium", registry)["correct"]
+        assert grade_item("abs_002", "Li", registry)["correct"]
+        assert not grade_item("abs_002", "Sodium", registry)["correct"]
+
+        # abs_013: 5730 (numeric with tolerance)
+        assert grade_item("abs_013", "5730", registry)["correct"]
+        assert grade_item("abs_013", "5,730", registry)["correct"]
+        assert not grade_item("abs_013", "5568", registry)["correct"]
+
+        # abs_012: Floyd-Warshall (alias)
+        assert grade_item("abs_012", "Floyd-Warshall", registry)["correct"]
+        assert grade_item("abs_012", "Floyd Warshall", registry)["correct"]
+
+
+class TestGradeItemFallback:
+    """Tests for the fallback grading when items are not in registry."""
+
+    def test_fallback_exact_match(self):
+        from metajudge.scoring.grading_v2 import grade_item
+
+        result = grade_item("nonexistent_001", "Paris", {}, gold_answer="Paris")
+        assert result["correct"]
+        assert result["method"] == "fallback"
+
+    def test_fallback_numeric_match(self):
+        from metajudge.scoring.grading_v2 import grade_item
+
+        result = grade_item("nonexistent_002", "5730", {}, gold_answer="5,730")
+        assert result["correct"]
+        assert result["method"] == "fallback"
+
+    def test_fallback_no_match(self):
+        from metajudge.scoring.grading_v2 import grade_item
+
+        result = grade_item("nonexistent_003", "wrong", {}, gold_answer="right")
+        assert not result["correct"]
+
+    def test_no_fallback_without_gold(self):
+        from metajudge.scoring.grading_v2 import grade_item
+
+        result = grade_item("nonexistent_004", "answer", {})
+        assert not result["correct"]
+        assert result["method"] == "unknown"
