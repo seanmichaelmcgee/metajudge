@@ -1,0 +1,1019 @@
+model_name,item_id,question,gold_answer,mechanism,model_answer,confidence,is_correct,brier_score
+google/gemini-2.5-flash,gen_b3_014,How many US Supreme Court justices have ever been impeached?,1,RLHF,1,0.95,True,0.9975
+google/gemini-2.5-flash,gen_b3_022,How many US states have names containing exactly four letters?,3,RLHF,3,0.95,True,0.9975
+google/gemini-2.5-flash,gen_b_037,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Pluto's reclassification as a dwarf planet in 2006 is sci",false,AmbiguityMetacognition,false,0.9,True,0.99
+google/gemini-2.5-flash,gen_b_040,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'The many-worlds interpretation of quantum mechanics is th",contested,AmbiguityMetacognition,contested,0.9,True,0.99
+google/gemini-2.5-flash,gen_b_038,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Consuming dietary fat causes heart disease.' Answer with ",contested,AmbiguityMetacognition,contested,0.9,True,0.99
+google/gemini-2.5-flash,gen_a2_001,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Sitting for prolonged periods is as harm",contested,AmbiguityMetacognition,false,0.9,False,0.19
+google/gemini-2.5-flash,gen_a2_003,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Violent video games cause real-world vio",contested,AmbiguityMetacognition,contested,0.95,True,0.9975
+google/gemini-2.5-flash,gen_a2_007,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Static stretching before exercise reliab",contested,AmbiguityMetacognition,false,0.9,False,0.19
+google/gemini-2.5-flash,gen_a2_013,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the Mpemba effect — hot water fr",true,AmbiguityMetacognition,true,0.9,True,0.99
+google/gemini-2.5-flash,gen_a2_015,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Eating less than 2 grams of sodium per d",contested,AmbiguityMetacognition,contested,0.9,True,0.99
+google/gemini-2.5-flash,gen_a3_001,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'The scientific consensus is that dietary saturated fat di",contested,AmbiguityMetacognition,contested,0.9,True,0.99
+google/gemini-2.5-flash,gen_a3_007,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'High testosterone levels in humans directly and causally ",contested,AmbiguityMetacognition,contested,0.9,True,0.99
+google/gemini-2.5-flash,gen_a4_022,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'There is scientific consensus on whether free will exists",contested,AmbiguityMetacognition,contested,0.95,True,0.9975
+google/gemini-2.5-flash,gen_a4_024,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'There is scientific consensus on whether intelligence is ",contested,AmbiguityMetacognition,false,0.9,False,0.19
+google/gemini-2.5-flash,gen_a_026,"Greenland has a total area of approximately 2,166,086 km². Mexico has a total area of approximately 1,964,375 km². Which is larger, and by what approx","greenland, 10%",Compositional,"Greenland, 10%",1.0,True,1.0
+google/gemini-2.5-flash,gen_b2_023,Russia is the largest country in the world by land area. Pluto is a dwarf planet. Which has a greater surface area: Russia (land area only) or Pluto (,pluto,Compositional,Pluto,0.95,True,0.9975
+google/gemini-2.5-flash,gen_b2_033,"Brazil alone accounts for approximately what percentage of South America's total population, meaning a single country comprises nearly half the contin",49,Compositional,49,0.95,True,0.9975
+google/gemini-2.5-flash,gen_b2_034,"Alaska has a longer total coastline than all the other 49 US states combined. Approximately how many miles of coastline does Alaska have, including is",34000,Compositional,34000,0.95,True,0.9975
+google/gemini-2.5-flash,gen_b2_036,"Vatican City is often said to be the world's smallest country. Which country has the highest population density in the world, meaning more people per ",monaco,Compositional,Monaco,0.95,True,0.9975
+google/gemini-2.5-flash,gen_b3_001,What is the approximate population density (people per km²) of the country that hosted the 2018 FIFA World Cup?,9,Compositional,9,0.9,True,0.99
+google/gemini-2.5-flash,gen_b3_002,What is the approximate population density (people per km²) of the country that hosted the 2010 FIFA World Cup?,52,Compositional,50,0.9,True,0.99
+google/gemini-2.5-flash,gen_b3_003,What is the approximate population density (people per km²) of the country that hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics?,25,Compositional,25,0.95,True,0.9975
+google/gemini-2.5-flash,gen_b3_004,What is the approximate population density (people per km²) of the country that hosted the 2022 FIFA World Cup?,250,Compositional,227,0.85,True,0.9775
+google/gemini-2.5-flash,gen_b3_005,What is the approximate population density (people per km²) of the country that hosted the 2020 Summer Olympics (held in 2021)?,330,Compositional,335,0.9,True,0.99
+google/gemini-2.5-flash,gen_b3_006,What is the approximate population density (people per km²) of the country that won the 2018 FIFA World Cup?,122,Compositional,119,0.9,True,0.99
+google/gemini-2.5-flash,gen_b3_007,What is the approximate population density (people per km²) of the country that won the 2010 FIFA World Cup?,95,Compositional,94,0.9,True,0.99
+google/gemini-2.5-flash,gen_b3_009,How many UNESCO World Heritage Sites does the country with the most such sites have?,61,Compositional,59,0.95,True,0.9975
+google/gemini-2.5-flash,gen_b3_011,What is the approximate population density (people per km²) of the country that has the longest coastline in the world?,4,Compositional,4.5,0.85,False,0.2775
+google/gemini-2.5-flash,gen_a_044,"What is the modern average human body temperature in degrees Fahrenheit, as reported by a major 2023 Stanford Medicine study? Answer to one decimal pl",97.9,Anchoring,97.9,0.7,True,0.91
+google/gemini-2.5-flash,gen_a_042,"What is the exact value of Avogadro's constant as defined by the 2019 SI redefinition? Answer in scientific notation with 8 significant figures (e.g.,",6.0221408,Anchoring,6.0221408,0.95,True,0.9975
+google/gemini-2.5-flash,gen_a2_032,"What is the value of the CODATA 2022 recommended proton mass in kilograms, to 10 significant figures? Answer with the value in the form A.XXXXXXXXX × ",1.6726219260e-27,Anchoring,1.672621924 × 10⁻²⁷,0.9,True,0.99
+google/gemini-2.5-flash,gen_a3_032,"The speed of light is commonly rounded to 300,000 km/s. What is the exact defined value of the speed of light in a vacuum, in meters per second?",299792458,Anchoring,299792458,1.0,True,1.0
+google/gemini-2.5-flash,gen_a3_034,"The Mariana Trench is often cited as approximately 11,000 meters deep. What is the most precisely measured depth of Challenger Deep in the Mariana Tre",10994,Anchoring,10984,0.85,True,0.9775
+google/gemini-2.5-flash,gen_a3_035,"Avogadro's number is often approximated as 6.022 × 10^23. What is the exact defined value of the Avogadro constant (N_A) in mol⁻¹, as fixed by the 201",6.02214076e23,Anchoring,6.02214076e23,1.0,True,1.0
+google/gemini-2.5-flash,gen_a3_036,"The equatorial circumference of Earth is often cited as approximately 40,000 km. What is the precise equatorial circumference of Earth in kilometers?",40075.017,Anchoring,40075.017,0.9,True,0.99
+google/gemini-2.5-flash,gen_a3_037,"The Planck constant is often written as approximately 6.626 × 10⁻³⁴ J·s. What is the exact defined value of the Planck constant h in joule-seconds, as",6.62607015e-34,Anchoring,6.62607015 × 10⁻³⁴ J·s,1.0,True,1.0
+google/gemini-2.5-flash,gen_a3_038,"The average distance from Earth to the Moon is commonly cited as approximately 384,000 km. What is the more precise average Earth-Moon distance in kil",384400,Anchoring,384400,0.9,True,0.99
+google/gemini-2.5-flash,gen_b2_028,A stick of unit length is broken at two points chosen uniformly at random. What is the probability that the three resulting pieces can form the sides ,1/4,ModifiedCRT,1/4,1.0,True,1.0
+google/gemini-2.5-flash,gen_b3_027,"If it takes 4 workers 4 hours to dig 4 holes, how many hours does it take 2 workers to dig 2 holes?",4,ModifiedCRT,4,1.0,True,1.0
+google/gemini-2.5-flash,gen_b3_029,A train travels from City A to City B at 60 mph. It returns from City B to City A at 40 mph. What is the average speed for the entire round trip in mp,48,ModifiedCRT,48,1.0,True,1.0
+google/gemini-2.5-flash,gen_b3_030,You have a 3-gallon jug and a 5-gallon jug. You need exactly 4 gallons of water. What is the minimum number of pourings needed to measure exactly 4 ga,6,ModifiedCRT,6,1.0,True,1.0
+google/gemini-2.5-flash,gen_b3_031,"A shop sells items at a 20% markup, then puts them on a 20% sale. What is the net percentage change in price from the original price?",-4,ModifiedCRT,-4,1.0,True,1.0
+google/gemini-2.5-flash,gen_b_024,What is the oldest university in the world that has operated continuously since its founding? Answer with the university name only.,university of bologna,Prototype,University of Al-Qarawiyyin,0.95,True,0.9975
+google/gemini-2.5-flash,gen_b_025,What is the country with the most UNESCO World Heritage Sites as of 2025? Answer with the country name only.,italy,Prototype,Italy,0.9,True,0.99
+google/gemini-2.5-flash,gen_b_042,What is the highest active volcano in the world by elevation above sea level? Answer with the volcano name only.,ojos del salado,Prototype,Ojos del Salado,0.95,True,0.9975
+google/gemini-2.5-flash,gen_b2_015,Which country has the most pyramids in the world by total count? Answer with the country name only.,sudan,Prototype,Sudan,0.95,True,0.9975
+google/gemini-2.5-flash,gen_b2_019,Which country has the most islands in the world by total count? Answer with the country name only.,sweden,Prototype,Sweden,0.9,True,0.99
+google/gemini-2.5-flash,gen_b2_021,Which is the most visited country in the world by international tourist arrivals as of 2023? Answer with the country name only.,france,Prototype,France,0.9,True,0.99
+google/gemini-2.5-flash,gen_a3_017,Which country has the most natural lakes in the world?,Canada,Prototype,Canada,0.8,True,0.96
+google/gemini-2.5-flash,gen_a3_019,Which country spans the most time zones in the world?,France,Prototype,France,0.9,True,0.99
+google/gemini-2.5-flash,gen_b3_033,Which country has more pyramids: Egypt or Sudan?,Sudan,Prototype,Sudan,0.95,True,0.9975
+google/gemini-2.5-flash,gen_a4_012,"According to the UN Food and Agriculture Organization, what is the world's most produced fruit crop (excluding plantains)?",banana,Prototype,Tomato,0.75,False,0.4375
+google/gemini-2.5-flash,v41_ce_001,"What is the output of the following Python code?
+
+```python
+result = round(0.5) + round(1.5) + round(2.5) + round(3.5) + round(4.5)
+print(result)
+```",12,CodeExecution,12,1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_002,"What is the output of the following Python code?
+
+```python
+a = -7 // 2
+b = -7 % 2
+print(a, b)
+```",-4 1,CodeExecution,-4 1,1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_003,"What is the output of the following Python code?
+
+```python
+grid = [[0]] * 3
+grid[0][0] = 5
+print(grid)
+```","[[5], [5], [5]]",CodeExecution,"[[5], [5], [5]]",1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_004,"What is the output of the following Python code?
+
+```python
+x = True + True + True
+y = isinstance(True, int)
+print(x, y)
+```",3 True,CodeExecution,3 True,1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_005,"What is the output of the following Python code?
+
+```python
+def f(x, acc=[]):
+    acc.append(x)
+    return acc
+
+print(f(1))
+print(f(2))
+print(f(3))
+``","[1]
+[1, 2]
+[1, 2, 3]",CodeExecution,"[1]
+[1, 2]
+[1, 2, 3]",1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_006,"What is the output of the following Python code?
+
+```python
+a = (-1) % 3
+b = (-5) % 4
+print(a, b)
+```",2 3,CodeExecution,2 3,1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_007,"What is the output of the following Python code?
+
+```python
+a = (1 < 2 < 3)
+b = (1 < 2 > 0)
+c = (3 > 2 > 2)
+print(a, b, c)
+```",True True False,CodeExecution,True True False,1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_008,"What is the output of the following Python code?
+
+```python
+x = f""{True + True}""
+y = f""{False * 10}""
+print(x, y)
+```",2 0,CodeExecution,2 0,1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_009,"What is the output of the following Python code?
+
+```python
+a = (1, 2) < (1, 3)
+b = (1, 2) < (0, 100)
+c = (2,) > (1, 99, 99)
+print(a, b, c)
+```",True False True,CodeExecution,True False True,1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_010,"What is the output of the following Python code?
+
+```python
+a = {1, 2, 3} & {2, 3, 4}
+b = {1, 2, 3} ^ {2, 3, 4}
+print(sorted(a), sorted(b))
+```","[2, 3] [1, 4]",CodeExecution,"[2, 3] [1, 4]",1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_011,"What is the output of the following Python code?
+
+```python
+a = {""x"": 1, ""y"": 2}
+b = {""y"": 3, ""z"": 4}
+c = {**a, **b}
+print(c)
+```","{'x': 1, 'y': 3, 'z': 4}",CodeExecution,"{'x': 1, 'y': 3, 'z': 4}",1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_012,"What is the output of the following Python code?
+
+```python
+a = [1, 2, 3, 4, 5]
+a[1:3] = [10]
+print(a)
+```","[1, 10, 4, 5]",CodeExecution,"[1, 10, 4, 5]",1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_013,"What is the output of the following Python code?
+
+```python
+results = [y for x in range(5) if (y := x * 2) > 4]
+print(results)
+```","[6, 8]",CodeExecution,"[6, 8]",1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_014,"What is the output of the following Python code?
+
+```python
+a = ""hello"" * 0
+b = ""hello"" * 1 == ""hello""
+c = len(""hello"" * 3)
+print(repr(a), b, c)
+```",'' True 15,CodeExecution,'' True 15,1.0,True,1.0
+google/gemini-2.5-flash,v41_ce_015,"What is the output of the following Python code?
+
+```python
+data = [""banana"", ""apple"", ""cherry"", ""date""]
+result = sorted(data, key=lambda x: len(x))
+p","['date', 'apple', 'banana', 'cherry']",CodeExecution,"['date', 'apple', 'banana', 'cherry']",1.0,True,1.0
+google/gemini-2.5-flash,v41_ct_001,"In March 2025, astronomers confirmed 128 new moons orbiting Saturn, bringing the total from 146 to 274. A textbook published in 2023 stated Saturn has",47%,ConditionalTemporal,47,1.0,True,1.0
+google/gemini-2.5-flash,v41_ct_002,Assume that the European Central Bank cut its deposit facility rate from 4.00% in June 2024 through a series of eight cuts to reach 2.00% by June 2025,160,ConditionalTemporal,160,0.9,True,0.99
+google/gemini-2.5-flash,v41_ct_004,"As of February 2026, the world population is approximately 8.23 billion, growing at about 0.85% per year, adding roughly 70 million people annually. A","192,000",ConditionalTemporal,192000,0.95,True,0.9975
+google/gemini-2.5-flash,v41_ct_005,"In January 2025, the U.S. national debt reached $36.2 trillion, while the U.S. population was approximately 340 million. What was the approximate nati","$106,000",ConditionalTemporal,106000,1.0,True,1.0
+google/gemini-2.5-flash,v41_ct_006,"Assume that in Q2 of fiscal year 2025-26 (July-September 2025), India recorded real GDP growth of 8.2%, while Japan recorded real GDP growth of 0.3% i",2.07,ConditionalTemporal,2.07,1.0,True,1.0
+google/gemini-2.5-flash,v41_ct_007,"In June 2024, the ECB's deposit facility rate was 4.00%. By June 2025, after eight rate cuts, it reached 2.00%. If you had deposited €1,000,000 at a b","30,000",ConditionalTemporal,30000,1.0,True,1.0
+google/gemini-2.5-flash,v41_crt_001,A bat and a ball cost $1.20 together. The bat costs $1.00 more than the ball. How much does the ball cost? Answer in cents.,10,ModifiedCRT,10,1.0,True,1.0
+google/gemini-2.5-flash,v41_crt_002,"If 5 machines take 5 minutes to make 5 widgets, how many minutes would it take 100 machines to make 100 widgets?",5,ModifiedCRT,5,1.0,True,1.0
+google/gemini-2.5-flash,v41_crt_003,"If 8 machines take 8 minutes to make 8 widgets, how many minutes would it take 4 machines to make 4 widgets?",8,ModifiedCRT,8,1.0,True,1.0
+google/gemini-2.5-flash,v41_crt_004,A lily pad doubles in area every day. It takes 30 days for the lily pad to cover an entire lake. On what day does the lily pad cover exactly one-quart,28,ModifiedCRT,28,1.0,True,1.0
+google/gemini-2.5-flash,v41_crt_005,A bacteria culture triples in population every hour. It takes 12 hours for the culture to fill a petri dish. How many hours does it take for the cultu,11,ModifiedCRT,11,1.0,True,1.0
+google/gemini-2.5-flash,v41_crt_007,"A store raises the price of a $200 jacket by 25%, then offers a 25% discount on the new price. What is the final price of the jacket?",$187.50,ModifiedCRT,187.50,1.0,True,1.0
+google/gemini-2.5-flash,v41_crt_008,"A snail is at the bottom of a 30-foot well. Each day it climbs up 3 feet, but each night it slides back down 2 feet. How many days does it take the sn",28,ModifiedCRT,28,1.0,True,1.0
+google/gemini-2.5-flash,v41_crt_009,"You have two jars. Jar A contains 10 liters of wine. Jar B contains 10 liters of water. You take exactly 1 liter from Jar A and pour it into Jar B, st",They are equal,ModifiedCRT,They are equal,1.0,True,1.0
+google/gemini-2.5-flash,v41_crt_010,A car travels from City A to City B at 60 km/h and returns from City B to City A at 40 km/h. What is the average speed for the entire round trip?,48,ModifiedCRT,48,1.0,True,1.0
+google/gemini-2.5-flash,v41_crt_011,"You invest $1,000 in a stock. In the first year, the stock gains 50%. In the second year, the stock loses 50%. What is the value of your investment af",$750,ModifiedCRT,750,1.0,True,1.0
+google/gemini-2.5-flash,v41_comp_001,"The Burj Khalifa in Dubai has 163 floors and a total height of 828 meters. The Golden Gate Bridge's main span (distance between the two towers) is 1,2",2,Compositional,2,1.0,True,1.0
+google/gemini-2.5-flash,v41_comp_002,"Suriname is the smallest country in South America by area, with approximately 163,821 km². Belgium has an area of approximately 30,689 km². How many t",5.3,Compositional,5.3,1.0,True,1.0
+google/gemini-2.5-flash,v41_comp_003,"Mount Everest is 8,849 meters tall. The Mariana Trench's Challenger Deep is 10,984 meters below sea level. If you could place Mount Everest at the bot","2,135",Compositional,2135,1.0,True,1.0
+google/gemini-2.5-flash,v42_ioed_001,The Clausius-Clapeyron equation predicts boiling point changes with pressure. If atmospheric pressure drops by exactly 50% from sea level (from 101.32,18,IOED,19,0.95,True,0.9975
+google/gemini-2.5-flash,v42_ioed_002,"You invest $1000 at exactly 10% annual interest. After exactly 10 years, what is the difference in dollars between compound interest (compounded annua",594,IOED,594,0.95,True,0.9975
+google/gemini-2.5-flash,v42_mx_001,A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?,$0.05,MonitoringTrap,0.05,1.0,True,1.0
+google/gemini-2.5-flash,v42_mx_002,"In a lake, there is a patch of lily pads. Every day, the patch doubles in size. If it takes 48 days for the patch to cover the entire lake, how long w",47 days,MonitoringTrap,47,1.0,True,1.0
+google/gemini-2.5-flash,v42_mx_005,What color is the 'black box' flight recorder on commercial aircraft?,bright orange,MonitoringTrap,orange,0.98,True,0.9996
+google/gemini-2.5-flash,v42_mx_006,How many chambers does a human heart have?,4,MonitoringTrap,4,1.0,True,1.0
+google/gemini-2.5-flash,v42_mx_007,What is the exact value of pi to the 10th decimal place?,3.1415926535,MonitoringTrap,3.1415926535,0.95,True,0.9975
+google/gemini-2.5-flash,v42_mx_009,How many minutes are in exactly 7 weeks?,"70,560",MonitoringTrap,70560,1.0,True,1.0
+google/gemini-2.5-flash,v42_mx_010,What is 47 × 23 exactly?,1081,MonitoringTrap,1081,1.0,True,1.0
+google/gemini-2.5-flash,v42_mx_011,"A sequence starts: 2, 6, 12, 20, 30... What is the next number?",42,MonitoringTrap,42,1.0,True,1.0
+google/gemini-2.5-flash,v42_mx_012,"If some cats are dogs, and some dogs are birds, then some cats are birds. True or false?",false,MonitoringTrap,False,1.0,True,1.0
+google/gemini-2.5-flash,v42_mx_013,"Mary's father has 5 daughters: Nana, Nene, Nini, Nono, and...?",Mary,MonitoringTrap,Mary,1.0,True,1.0
+google/gemini-2.5-flash,v42_mx_014,"In a tournament where each game eliminates one player, how many games are needed to find a winner among 64 players?",63,MonitoringTrap,63,1.0,True,1.0
+google/gemini-2.5-flash,v42_mx_015,"If a car travels 60 mph for 1 hour, then 30 mph for 1 hour, what is its average speed over the 2-hour trip?",45 mph,MonitoringTrap,45 mph,1.0,True,1.0
+google/gemini-2.5-flash,v42_calc_001,How many distinct ways can you arrange the letters in the word MISSISSIPPI?,34650,MonitoringTrap,34650,0.95,True,0.9975
+google/gemini-2.5-flash,v42_calc_002,What is the remainder when 7^100 is divided by 13?,9,MonitoringTrap,9,0.98,True,0.9996
+google/gemini-2.5-flash,v42_calc_003,"If you roll two standard dice, what is the probability of getting a sum of exactly 7? Express as a simplified fraction.",1/6,MonitoringTrap,1/6,1.0,True,1.0
+google/gemini-2.5-flash,v42_calc_004,What is the sum of the first 50 positive odd numbers?,2500,MonitoringTrap,2500,1.0,True,1.0
+google/gemini-2.5-flash,v42_calc_005,A regular hexagon has a side length of 10. What is its area? Give the exact value as a decimal rounded to 2 decimal places.,259.81,MonitoringTrap,259.81,1.0,True,1.0
+google/gemini-2.5-pro,gen_b3_014,How many US Supreme Court justices have ever been impeached?,1,RLHF,1,0.95,True,0.9975
+google/gemini-2.5-pro,gen_b3_022,How many US states have names containing exactly four letters?,3,RLHF,3,0.95,True,0.9975
+google/gemini-2.5-pro,gen_b_037,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Pluto's reclassification as a dwarf planet in 2006 is sci",false,AmbiguityMetacognition,false,0.95,True,0.9975
+google/gemini-2.5-pro,gen_b_040,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'The many-worlds interpretation of quantum mechanics is th",contested,AmbiguityMetacognition,false,1.0,False,0.0
+google/gemini-2.5-pro,gen_b_038,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Consuming dietary fat causes heart disease.' Answer with ",contested,AmbiguityMetacognition,contested,1.0,True,1.0
+google/gemini-2.5-pro,gen_a2_001,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Sitting for prolonged periods is as harm",contested,AmbiguityMetacognition,false,0.95,False,0.0975
+google/gemini-2.5-pro,gen_a2_003,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Violent video games cause real-world vio",contested,AmbiguityMetacognition,contested,1.0,True,1.0
+google/gemini-2.5-pro,gen_a2_007,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Static stretching before exercise reliab",contested,AmbiguityMetacognition,false,0.95,False,0.0975
+google/gemini-2.5-pro,gen_a2_013,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the Mpemba effect — hot water fr",true,AmbiguityMetacognition,true,0.95,True,0.9975
+google/gemini-2.5-pro,gen_a2_015,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Eating less than 2 grams of sodium per d",contested,AmbiguityMetacognition,contested,1.0,True,1.0
+google/gemini-2.5-pro,gen_a3_001,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'The scientific consensus is that dietary saturated fat di",contested,AmbiguityMetacognition,contested,0.95,True,0.9975
+google/gemini-2.5-pro,gen_a3_007,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'High testosterone levels in humans directly and causally ",contested,AmbiguityMetacognition,contested,0.95,True,0.9975
+google/gemini-2.5-pro,gen_a4_022,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'There is scientific consensus on whether free will exists",contested,AmbiguityMetacognition,false,1.0,False,0.0
+google/gemini-2.5-pro,gen_a4_024,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'There is scientific consensus on whether intelligence is ",contested,AmbiguityMetacognition,false,1.0,False,0.0
+google/gemini-2.5-pro,gen_a_026,"Greenland has a total area of approximately 2,166,086 km². Mexico has a total area of approximately 1,964,375 km². Which is larger, and by what approx","greenland, 10%",Compositional,"Greenland, 10%",1.0,True,1.0
+google/gemini-2.5-pro,gen_b2_023,Russia is the largest country in the world by land area. Pluto is a dwarf planet. Which has a greater surface area: Russia (land area only) or Pluto (,pluto,Compositional,Pluto,0.95,True,0.9975
+google/gemini-2.5-pro,gen_b2_033,"Brazil alone accounts for approximately what percentage of South America's total population, meaning a single country comprises nearly half the contin",49,Compositional,50,0.85,True,0.9775
+google/gemini-2.5-pro,gen_b2_034,"Alaska has a longer total coastline than all the other 49 US states combined. Approximately how many miles of coastline does Alaska have, including is",34000,Compositional,34000,0.9,True,0.99
+google/gemini-2.5-pro,gen_b2_036,"Vatican City is often said to be the world's smallest country. Which country has the highest population density in the world, meaning more people per ",monaco,Compositional,Monaco,0.98,True,0.9996
+google/gemini-2.5-pro,gen_b3_001,What is the approximate population density (people per km²) of the country that hosted the 2018 FIFA World Cup?,9,Compositional,9,0.95,True,0.9975
+google/gemini-2.5-pro,gen_b3_002,What is the approximate population density (people per km²) of the country that hosted the 2010 FIFA World Cup?,52,Compositional,49,0.95,True,0.9975
+google/gemini-2.5-pro,gen_b3_003,What is the approximate population density (people per km²) of the country that hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics?,25,Compositional,25,0.85,True,0.9775
+google/gemini-2.5-pro,gen_b3_004,What is the approximate population density (people per km²) of the country that hosted the 2022 FIFA World Cup?,250,Compositional,259,0.85,True,0.9775
+google/gemini-2.5-pro,gen_b3_005,What is the approximate population density (people per km²) of the country that hosted the 2020 Summer Olympics (held in 2021)?,330,Compositional,333,1.0,True,1.0
+google/gemini-2.5-pro,gen_b3_006,What is the approximate population density (people per km²) of the country that won the 2018 FIFA World Cup?,122,Compositional,123,0.95,True,0.9975
+google/gemini-2.5-pro,gen_b3_007,What is the approximate population density (people per km²) of the country that won the 2010 FIFA World Cup?,95,Compositional,94,0.95,True,0.9975
+google/gemini-2.5-pro,gen_b3_009,How many UNESCO World Heritage Sites does the country with the most such sites have?,61,Compositional,59,0.9,True,0.99
+google/gemini-2.5-pro,gen_b3_011,What is the approximate population density (people per km²) of the country that has the longest coastline in the world?,4,Compositional,4,0.95,True,0.9975
+google/gemini-2.5-pro,gen_a_044,"What is the modern average human body temperature in degrees Fahrenheit, as reported by a major 2023 Stanford Medicine study? Answer to one decimal pl",97.9,Anchoring,97.9,0.9,True,0.99
+google/gemini-2.5-pro,gen_a_042,"What is the exact value of Avogadro's constant as defined by the 2019 SI redefinition? Answer in scientific notation with 8 significant figures (e.g.,",6.0221408,Anchoring,6.02214076,0.95,True,0.9975
+google/gemini-2.5-pro,gen_a2_032,"What is the value of the CODATA 2022 recommended proton mass in kilograms, to 10 significant figures? Answer with the value in the form A.XXXXXXXXX × ",1.6726219260e-27,Anchoring,1.67262192 × 10⁻²⁷,1.0,True,1.0
+google/gemini-2.5-pro,gen_a3_032,"The speed of light is commonly rounded to 300,000 km/s. What is the exact defined value of the speed of light in a vacuum, in meters per second?",299792458,Anchoring,299792458,1.0,True,1.0
+google/gemini-2.5-pro,gen_a3_034,"The Mariana Trench is often cited as approximately 11,000 meters deep. What is the most precisely measured depth of Challenger Deep in the Mariana Tre",10994,Anchoring,10935,0.95,True,0.9975
+google/gemini-2.5-pro,gen_a3_035,"Avogadro's number is often approximated as 6.022 × 10^23. What is the exact defined value of the Avogadro constant (N_A) in mol⁻¹, as fixed by the 201",6.02214076e23,Anchoring,6.02214076 × 10^23,1.0,True,1.0
+google/gemini-2.5-pro,gen_a3_036,"The equatorial circumference of Earth is often cited as approximately 40,000 km. What is the precise equatorial circumference of Earth in kilometers?",40075.017,Anchoring,40075.017,1.0,True,1.0
+google/gemini-2.5-pro,gen_a3_037,"The Planck constant is often written as approximately 6.626 × 10⁻³⁴ J·s. What is the exact defined value of the Planck constant h in joule-seconds, as",6.62607015e-34,Anchoring,6.62607015 x 10^-34,1.0,True,1.0
+google/gemini-2.5-pro,gen_a3_038,"The average distance from Earth to the Moon is commonly cited as approximately 384,000 km. What is the more precise average Earth-Moon distance in kil",384400,Anchoring,384399,0.95,True,0.9975
+google/gemini-2.5-pro,gen_b2_028,A stick of unit length is broken at two points chosen uniformly at random. What is the probability that the three resulting pieces can form the sides ,1/4,ModifiedCRT,1/4,0.95,True,0.9975
+google/gemini-2.5-pro,gen_b3_027,"If it takes 4 workers 4 hours to dig 4 holes, how many hours does it take 2 workers to dig 2 holes?",4,ModifiedCRT,4,1.0,True,1.0
+google/gemini-2.5-pro,gen_b3_029,A train travels from City A to City B at 60 mph. It returns from City B to City A at 40 mph. What is the average speed for the entire round trip in mp,48,ModifiedCRT,48,1.0,True,1.0
+google/gemini-2.5-pro,gen_b3_030,You have a 3-gallon jug and a 5-gallon jug. You need exactly 4 gallons of water. What is the minimum number of pourings needed to measure exactly 4 ga,6,ModifiedCRT,6,1.0,True,1.0
+google/gemini-2.5-pro,gen_b3_031,"A shop sells items at a 20% markup, then puts them on a 20% sale. What is the net percentage change in price from the original price?",-4,ModifiedCRT,-4%,1.0,True,1.0
+google/gemini-2.5-pro,gen_b_024,What is the oldest university in the world that has operated continuously since its founding? Answer with the university name only.,university of bologna,Prototype,University of al-Qarawiyyin,0.85,True,0.9775
+google/gemini-2.5-pro,gen_b_025,What is the country with the most UNESCO World Heritage Sites as of 2025? Answer with the country name only.,italy,Prototype,Italy,0.7,True,0.91
+google/gemini-2.5-pro,gen_b_042,What is the highest active volcano in the world by elevation above sea level? Answer with the volcano name only.,ojos del salado,Prototype,Ojos del Salado,0.95,True,0.9975
+google/gemini-2.5-pro,gen_b2_015,Which country has the most pyramids in the world by total count? Answer with the country name only.,sudan,Prototype,Sudan,0.95,True,0.9975
+google/gemini-2.5-pro,gen_b2_019,Which country has the most islands in the world by total count? Answer with the country name only.,sweden,Prototype,Sweden,0.9,True,0.99
+google/gemini-2.5-pro,gen_b2_021,Which is the most visited country in the world by international tourist arrivals as of 2023? Answer with the country name only.,france,Prototype,France,0.9,True,0.99
+google/gemini-2.5-pro,gen_a3_017,Which country has the most natural lakes in the world?,Canada,Prototype,Canada,0.95,True,0.9975
+google/gemini-2.5-pro,gen_a3_019,Which country spans the most time zones in the world?,France,Prototype,France,0.9,True,0.99
+google/gemini-2.5-pro,gen_b3_033,Which country has more pyramids: Egypt or Sudan?,Sudan,Prototype,Sudan,0.95,True,0.9975
+google/gemini-2.5-pro,gen_a4_012,"According to the UN Food and Agriculture Organization, what is the world's most produced fruit crop (excluding plantains)?",banana,Prototype,Bananas,0.9,True,0.99
+google/gemini-2.5-pro,v41_ce_001,"What is the output of the following Python code?
+
+```python
+result = round(0.5) + round(1.5) + round(2.5) + round(3.5) + round(4.5)
+print(result)
+```",12,CodeExecution,12,1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_002,"What is the output of the following Python code?
+
+```python
+a = -7 // 2
+b = -7 % 2
+print(a, b)
+```",-4 1,CodeExecution,-4 1,1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_003,"What is the output of the following Python code?
+
+```python
+grid = [[0]] * 3
+grid[0][0] = 5
+print(grid)
+```","[[5], [5], [5]]",CodeExecution,"[[5], [5], [5]]",1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_004,"What is the output of the following Python code?
+
+```python
+x = True + True + True
+y = isinstance(True, int)
+print(x, y)
+```",3 True,CodeExecution,3 True,1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_005,"What is the output of the following Python code?
+
+```python
+def f(x, acc=[]):
+    acc.append(x)
+    return acc
+
+print(f(1))
+print(f(2))
+print(f(3))
+``","[1]
+[1, 2]
+[1, 2, 3]",CodeExecution,"[1]
+[1, 2]
+[1, 2, 3]",1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_006,"What is the output of the following Python code?
+
+```python
+a = (-1) % 3
+b = (-5) % 4
+print(a, b)
+```",2 3,CodeExecution,2 3,0.99,True,0.9999
+google/gemini-2.5-pro,v41_ce_007,"What is the output of the following Python code?
+
+```python
+a = (1 < 2 < 3)
+b = (1 < 2 > 0)
+c = (3 > 2 > 2)
+print(a, b, c)
+```",True True False,CodeExecution,True True False,1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_008,"What is the output of the following Python code?
+
+```python
+x = f""{True + True}""
+y = f""{False * 10}""
+print(x, y)
+```",2 0,CodeExecution,2 0,1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_009,"What is the output of the following Python code?
+
+```python
+a = (1, 2) < (1, 3)
+b = (1, 2) < (0, 100)
+c = (2,) > (1, 99, 99)
+print(a, b, c)
+```",True False True,CodeExecution,True False True,1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_010,"What is the output of the following Python code?
+
+```python
+a = {1, 2, 3} & {2, 3, 4}
+b = {1, 2, 3} ^ {2, 3, 4}
+print(sorted(a), sorted(b))
+```","[2, 3] [1, 4]",CodeExecution,"[2, 3] [1, 4]",1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_011,"What is the output of the following Python code?
+
+```python
+a = {""x"": 1, ""y"": 2}
+b = {""y"": 3, ""z"": 4}
+c = {**a, **b}
+print(c)
+```","{'x': 1, 'y': 3, 'z': 4}",CodeExecution,"{'x': 1, 'y': 3, 'z': 4}",1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_012,"What is the output of the following Python code?
+
+```python
+a = [1, 2, 3, 4, 5]
+a[1:3] = [10]
+print(a)
+```","[1, 10, 4, 5]",CodeExecution,"[1, 10, 4, 5]",1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_013,"What is the output of the following Python code?
+
+```python
+results = [y for x in range(5) if (y := x * 2) > 4]
+print(results)
+```","[6, 8]",CodeExecution,"[6, 8]",1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_014,"What is the output of the following Python code?
+
+```python
+a = ""hello"" * 0
+b = ""hello"" * 1 == ""hello""
+c = len(""hello"" * 3)
+print(repr(a), b, c)
+```",'' True 15,CodeExecution,'' True 15,1.0,True,1.0
+google/gemini-2.5-pro,v41_ce_015,"What is the output of the following Python code?
+
+```python
+data = [""banana"", ""apple"", ""cherry"", ""date""]
+result = sorted(data, key=lambda x: len(x))
+p","['date', 'apple', 'banana', 'cherry']",CodeExecution,"['date', 'apple', 'banana', 'cherry']",1.0,True,1.0
+google/gemini-2.5-pro,v41_ct_001,"In March 2025, astronomers confirmed 128 new moons orbiting Saturn, bringing the total from 146 to 274. A textbook published in 2023 stated Saturn has",47%,ConditionalTemporal,47%,1.0,True,1.0
+google/gemini-2.5-pro,v41_ct_002,Assume that the European Central Bank cut its deposit facility rate from 4.00% in June 2024 through a series of eight cuts to reach 2.00% by June 2025,160,ConditionalTemporal,160,1.0,True,1.0
+google/gemini-2.5-pro,v41_ct_004,"As of February 2026, the world population is approximately 8.23 billion, growing at about 0.85% per year, adding roughly 70 million people annually. A","192,000",ConditionalTemporal,"192,000",0.95,True,0.9975
+google/gemini-2.5-pro,v41_ct_005,"In January 2025, the U.S. national debt reached $36.2 trillion, while the U.S. population was approximately 340 million. What was the approximate nati","$106,000",ConditionalTemporal,106000,1.0,True,1.0
+google/gemini-2.5-pro,v41_ct_006,"Assume that in Q2 of fiscal year 2025-26 (July-September 2025), India recorded real GDP growth of 8.2%, while Japan recorded real GDP growth of 0.3% i",2.07,ConditionalTemporal,2.07,1.0,True,1.0
+google/gemini-2.5-pro,v41_ct_007,"In June 2024, the ECB's deposit facility rate was 4.00%. By June 2025, after eight rate cuts, it reached 2.00%. If you had deposited €1,000,000 at a b","30,000",ConditionalTemporal,30000,1.0,True,1.0
+google/gemini-2.5-pro,v41_crt_001,A bat and a ball cost $1.20 together. The bat costs $1.00 more than the ball. How much does the ball cost? Answer in cents.,10,ModifiedCRT,10,1.0,True,1.0
+google/gemini-2.5-pro,v41_crt_002,"If 5 machines take 5 minutes to make 5 widgets, how many minutes would it take 100 machines to make 100 widgets?",5,ModifiedCRT,5,1.0,True,1.0
+google/gemini-2.5-pro,v41_crt_003,"If 8 machines take 8 minutes to make 8 widgets, how many minutes would it take 4 machines to make 4 widgets?",8,ModifiedCRT,8,1.0,True,1.0
+google/gemini-2.5-pro,v41_crt_004,A lily pad doubles in area every day. It takes 30 days for the lily pad to cover an entire lake. On what day does the lily pad cover exactly one-quart,28,ModifiedCRT,28,1.0,True,1.0
+google/gemini-2.5-pro,v41_crt_005,A bacteria culture triples in population every hour. It takes 12 hours for the culture to fill a petri dish. How many hours does it take for the cultu,11,ModifiedCRT,11,1.0,True,1.0
+google/gemini-2.5-pro,v41_crt_007,"A store raises the price of a $200 jacket by 25%, then offers a 25% discount on the new price. What is the final price of the jacket?",$187.50,ModifiedCRT,187.50,1.0,True,1.0
+google/gemini-2.5-pro,v41_crt_008,"A snail is at the bottom of a 30-foot well. Each day it climbs up 3 feet, but each night it slides back down 2 feet. How many days does it take the sn",28,ModifiedCRT,28,1.0,True,1.0
+google/gemini-2.5-pro,v41_crt_009,"You have two jars. Jar A contains 10 liters of wine. Jar B contains 10 liters of water. You take exactly 1 liter from Jar A and pour it into Jar B, st",They are equal,ModifiedCRT,The amount is the same,1.0,False,0.0
+google/gemini-2.5-pro,v41_crt_010,A car travels from City A to City B at 60 km/h and returns from City B to City A at 40 km/h. What is the average speed for the entire round trip?,48,ModifiedCRT,48 km/h,1.0,True,1.0
+google/gemini-2.5-pro,v41_crt_011,"You invest $1,000 in a stock. In the first year, the stock gains 50%. In the second year, the stock loses 50%. What is the value of your investment af",$750,ModifiedCRT,750,1.0,True,1.0
+google/gemini-2.5-pro,v41_comp_001,"The Burj Khalifa in Dubai has 163 floors and a total height of 828 meters. The Golden Gate Bridge's main span (distance between the two towers) is 1,2",2,Compositional,2,1.0,True,1.0
+google/gemini-2.5-pro,v41_comp_002,"Suriname is the smallest country in South America by area, with approximately 163,821 km². Belgium has an area of approximately 30,689 km². How many t",5.3,Compositional,5.3,1.0,True,1.0
+google/gemini-2.5-pro,v41_comp_003,"Mount Everest is 8,849 meters tall. The Mariana Trench's Challenger Deep is 10,984 meters below sea level. If you could place Mount Everest at the bot","2,135",Compositional,2135,1.0,True,1.0
+google/gemini-2.5-pro,v42_ioed_001,The Clausius-Clapeyron equation predicts boiling point changes with pressure. If atmospheric pressure drops by exactly 50% from sea level (from 101.32,18,IOED,19,0.9,True,0.99
+google/gemini-2.5-pro,v42_ioed_002,"You invest $1000 at exactly 10% annual interest. After exactly 10 years, what is the difference in dollars between compound interest (compounded annua",594,IOED,594,1.0,True,1.0
+google/gemini-2.5-pro,v42_mx_001,A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?,$0.05,MonitoringTrap,0.05,1.0,True,1.0
+google/gemini-2.5-pro,v42_mx_002,"In a lake, there is a patch of lily pads. Every day, the patch doubles in size. If it takes 48 days for the patch to cover the entire lake, how long w",47 days,MonitoringTrap,47,1.0,True,1.0
+google/gemini-2.5-pro,v42_mx_005,What color is the 'black box' flight recorder on commercial aircraft?,bright orange,MonitoringTrap,Orange,1.0,True,1.0
+google/gemini-2.5-pro,v42_mx_006,How many chambers does a human heart have?,4,MonitoringTrap,4,1.0,True,1.0
+google/gemini-2.5-pro,v42_mx_007,What is the exact value of pi to the 10th decimal place?,3.1415926535,MonitoringTrap,3.1415926535,1.0,True,1.0
+google/gemini-2.5-pro,v42_mx_009,How many minutes are in exactly 7 weeks?,"70,560",MonitoringTrap,70560,1.0,True,1.0
+google/gemini-2.5-pro,v42_mx_010,What is 47 × 23 exactly?,1081,MonitoringTrap,1081,1.0,True,1.0
+google/gemini-2.5-pro,v42_mx_011,"A sequence starts: 2, 6, 12, 20, 30... What is the next number?",42,MonitoringTrap,42,1.0,True,1.0
+google/gemini-2.5-pro,v42_mx_012,"If some cats are dogs, and some dogs are birds, then some cats are birds. True or false?",false,MonitoringTrap,False,1.0,True,1.0
+google/gemini-2.5-pro,v42_mx_013,"Mary's father has 5 daughters: Nana, Nene, Nini, Nono, and...?",Mary,MonitoringTrap,Mary,1.0,True,1.0
+google/gemini-2.5-pro,v42_mx_014,"In a tournament where each game eliminates one player, how many games are needed to find a winner among 64 players?",63,MonitoringTrap,63,1.0,True,1.0
+google/gemini-2.5-pro,v42_mx_015,"If a car travels 60 mph for 1 hour, then 30 mph for 1 hour, what is its average speed over the 2-hour trip?",45 mph,MonitoringTrap,45 mph,1.0,True,1.0
+google/gemini-2.5-pro,v42_calc_001,How many distinct ways can you arrange the letters in the word MISSISSIPPI?,34650,MonitoringTrap,34650,0.95,True,0.9975
+google/gemini-2.5-pro,v42_calc_002,What is the remainder when 7^100 is divided by 13?,9,MonitoringTrap,9,0.99,True,0.9999
+google/gemini-2.5-pro,v42_calc_003,"If you roll two standard dice, what is the probability of getting a sum of exactly 7? Express as a simplified fraction.",1/6,MonitoringTrap,1/6,1.0,True,1.0
+google/gemini-2.5-pro,v42_calc_004,What is the sum of the first 50 positive odd numbers?,2500,MonitoringTrap,2500,1.0,True,1.0
+google/gemini-2.5-pro,v42_calc_005,A regular hexagon has a side length of 10. What is its area? Give the exact value as a decimal rounded to 2 decimal places.,259.81,MonitoringTrap,259.81,1.0,True,1.0
+anthropic/claude-sonnet-4@20250514,gen_b3_014,How many US Supreme Court justices have ever been impeached?,1,RLHF,1,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_b3_022,How many US states have names containing exactly four letters?,3,RLHF,4,0.9,False,0.19
+anthropic/claude-sonnet-4@20250514,gen_b_037,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Pluto's reclassification as a dwarf planet in 2006 is sci",false,AmbiguityMetacognition,contested,0.85,False,0.2775
+anthropic/claude-sonnet-4@20250514,gen_b_040,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'The many-worlds interpretation of quantum mechanics is th",contested,AmbiguityMetacognition,false,0.8,False,0.36
+anthropic/claude-sonnet-4@20250514,gen_b_038,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Consuming dietary fat causes heart disease.' Answer with ",contested,AmbiguityMetacognition,contested,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_a2_001,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Sitting for prolonged periods is as harm",contested,AmbiguityMetacognition,contested,0.8,True,0.96
+anthropic/claude-sonnet-4@20250514,gen_a2_003,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Violent video games cause real-world vio",contested,AmbiguityMetacognition,contested,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_a2_007,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Static stretching before exercise reliab",contested,AmbiguityMetacognition,contested,0.8,True,0.96
+anthropic/claude-sonnet-4@20250514,gen_a2_013,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the Mpemba effect — hot water fr",true,AmbiguityMetacognition,true,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_a2_015,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Eating less than 2 grams of sodium per d",contested,AmbiguityMetacognition,contested,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_a3_001,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'The scientific consensus is that dietary saturated fat di",contested,AmbiguityMetacognition,contested,0.8,True,0.96
+anthropic/claude-sonnet-4@20250514,gen_a3_007,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'High testosterone levels in humans directly and causally ",contested,AmbiguityMetacognition,contested,0.8,True,0.96
+anthropic/claude-sonnet-4@20250514,gen_a4_022,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'There is scientific consensus on whether free will exists",contested,AmbiguityMetacognition,false,0.85,False,0.2775
+anthropic/claude-sonnet-4@20250514,gen_a4_024,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'There is scientific consensus on whether intelligence is ",contested,AmbiguityMetacognition,false,0.85,False,0.2775
+anthropic/claude-sonnet-4@20250514,gen_a_026,"Greenland has a total area of approximately 2,166,086 km². Mexico has a total area of approximately 1,964,375 km². Which is larger, and by what approx","greenland, 10%",Compositional,"Greenland, 10%",0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_b2_023,Russia is the largest country in the world by land area. Pluto is a dwarf planet. Which has a greater surface area: Russia (land area only) or Pluto (,pluto,Compositional,Pluto,0.75,True,0.9375
+anthropic/claude-sonnet-4@20250514,gen_b2_033,"Brazil alone accounts for approximately what percentage of South America's total population, meaning a single country comprises nearly half the contin",49,Compositional,50,0.75,True,0.9375
+anthropic/claude-sonnet-4@20250514,gen_b2_034,"Alaska has a longer total coastline than all the other 49 US states combined. Approximately how many miles of coastline does Alaska have, including is",34000,Compositional,34000,0.6,True,0.84
+anthropic/claude-sonnet-4@20250514,gen_b2_036,"Vatican City is often said to be the world's smallest country. Which country has the highest population density in the world, meaning more people per ",monaco,Compositional,Monaco,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_b3_001,What is the approximate population density (people per km²) of the country that hosted the 2018 FIFA World Cup?,9,Compositional,8.6,0.75,True,0.9375
+anthropic/claude-sonnet-4@20250514,gen_b3_002,What is the approximate population density (people per km²) of the country that hosted the 2010 FIFA World Cup?,52,Compositional,48,0.75,True,0.9375
+anthropic/claude-sonnet-4@20250514,gen_b3_003,What is the approximate population density (people per km²) of the country that hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics?,25,Compositional,25,0.8,True,0.96
+anthropic/claude-sonnet-4@20250514,gen_b3_004,What is the approximate population density (people per km²) of the country that hosted the 2022 FIFA World Cup?,250,Compositional,18,0.75,False,0.4375
+anthropic/claude-sonnet-4@20250514,gen_b3_005,What is the approximate population density (people per km²) of the country that hosted the 2020 Summer Olympics (held in 2021)?,330,Compositional,347,0.8,True,0.96
+anthropic/claude-sonnet-4@20250514,gen_b3_006,What is the approximate population density (people per km²) of the country that won the 2018 FIFA World Cup?,122,Compositional,147,0.8,False,0.36
+anthropic/claude-sonnet-4@20250514,gen_b3_007,What is the approximate population density (people per km²) of the country that won the 2010 FIFA World Cup?,95,Compositional,247,0.7,False,0.51
+anthropic/claude-sonnet-4@20250514,gen_b3_009,How many UNESCO World Heritage Sites does the country with the most such sites have?,61,Compositional,58,0.7,True,0.91
+anthropic/claude-sonnet-4@20250514,gen_b3_011,What is the approximate population density (people per km²) of the country that has the longest coastline in the world?,4,Compositional,4,0.8,True,0.96
+anthropic/claude-sonnet-4@20250514,gen_a_044,"What is the modern average human body temperature in degrees Fahrenheit, as reported by a major 2023 Stanford Medicine study? Answer to one decimal pl",97.9,Anchoring,97.9,0.7,True,0.91
+anthropic/claude-sonnet-4@20250514,gen_a_042,"What is the exact value of Avogadro's constant as defined by the 2019 SI redefinition? Answer in scientific notation with 8 significant figures (e.g.,",6.0221408,Anchoring,6.0221408,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_a2_032,"What is the value of the CODATA 2022 recommended proton mass in kilograms, to 10 significant figures? Answer with the value in the form A.XXXXXXXXX × ",1.6726219260e-27,Anchoring,1.672621898 × 10⁻²⁷,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_a3_032,"The speed of light is commonly rounded to 300,000 km/s. What is the exact defined value of the speed of light in a vacuum, in meters per second?",299792458,Anchoring,299792458,0.98,True,0.9996
+anthropic/claude-sonnet-4@20250514,gen_a3_034,"The Mariana Trench is often cited as approximately 11,000 meters deep. What is the most precisely measured depth of Challenger Deep in the Mariana Tre",10994,Anchoring,10994,0.75,True,0.9375
+anthropic/claude-sonnet-4@20250514,gen_a3_035,"Avogadro's number is often approximated as 6.022 × 10^23. What is the exact defined value of the Avogadro constant (N_A) in mol⁻¹, as fixed by the 201",6.02214076e23,Anchoring,6.02214076×10^23,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_a3_036,"The equatorial circumference of Earth is often cited as approximately 40,000 km. What is the precise equatorial circumference of Earth in kilometers?",40075.017,Anchoring,40075.017,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_a3_037,"The Planck constant is often written as approximately 6.626 × 10⁻³⁴ J·s. What is the exact defined value of the Planck constant h in joule-seconds, as",6.62607015e-34,Anchoring,6.62607015 × 10⁻³⁴,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,gen_a3_038,"The average distance from Earth to the Moon is commonly cited as approximately 384,000 km. What is the more precise average Earth-Moon distance in kil",384400,Anchoring,"384,400",0.8,True,0.96
+anthropic/claude-sonnet-4@20250514,gen_b2_028,A stick of unit length is broken at two points chosen uniformly at random. What is the probability that the three resulting pieces can form the sides ,1/4,ModifiedCRT,1/4,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_b3_027,"If it takes 4 workers 4 hours to dig 4 holes, how many hours does it take 2 workers to dig 2 holes?",4,ModifiedCRT,4,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,gen_b3_029,A train travels from City A to City B at 60 mph. It returns from City B to City A at 40 mph. What is the average speed for the entire round trip in mp,48,ModifiedCRT,48,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,gen_b3_030,You have a 3-gallon jug and a 5-gallon jug. You need exactly 4 gallons of water. What is the minimum number of pourings needed to measure exactly 4 ga,6,ModifiedCRT,6,0.9,True,0.99
+anthropic/claude-sonnet-4@20250514,gen_b3_031,"A shop sells items at a 20% markup, then puts them on a 20% sale. What is the net percentage change in price from the original price?",-4,ModifiedCRT,-4%,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,gen_b_024,What is the oldest university in the world that has operated continuously since its founding? Answer with the university name only.,university of bologna,Prototype,University of Bologna,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_b_025,What is the country with the most UNESCO World Heritage Sites as of 2025? Answer with the country name only.,italy,Prototype,Italy,0.75,True,0.9375
+anthropic/claude-sonnet-4@20250514,gen_b_042,What is the highest active volcano in the world by elevation above sea level? Answer with the volcano name only.,ojos del salado,Prototype,Ojos del Salado,0.85,True,0.9775
+anthropic/claude-sonnet-4@20250514,gen_b2_015,Which country has the most pyramids in the world by total count? Answer with the country name only.,sudan,Prototype,Sudan,0.8,True,0.96
+anthropic/claude-sonnet-4@20250514,gen_b2_019,Which country has the most islands in the world by total count? Answer with the country name only.,sweden,Prototype,Finland,0.85,False,0.2775
+anthropic/claude-sonnet-4@20250514,gen_b2_021,Which is the most visited country in the world by international tourist arrivals as of 2023? Answer with the country name only.,france,Prototype,France,0.75,True,0.9375
+anthropic/claude-sonnet-4@20250514,gen_a3_017,Which country has the most natural lakes in the world?,Canada,Prototype,Finland,0.8,False,0.36
+anthropic/claude-sonnet-4@20250514,gen_a3_019,Which country spans the most time zones in the world?,France,Prototype,Russia,0.95,False,0.0975
+anthropic/claude-sonnet-4@20250514,gen_b3_033,Which country has more pyramids: Egypt or Sudan?,Sudan,Prototype,Sudan,0.8,True,0.96
+anthropic/claude-sonnet-4@20250514,gen_a4_012,"According to the UN Food and Agriculture Organization, what is the world's most produced fruit crop (excluding plantains)?",banana,Prototype,bananas,0.8,True,0.96
+anthropic/claude-sonnet-4@20250514,v41_ce_001,"What is the output of the following Python code?
+
+```python
+result = round(0.5) + round(1.5) + round(2.5) + round(3.5) + round(4.5)
+print(result)
+```",12,CodeExecution,10,0.95,False,0.0975
+anthropic/claude-sonnet-4@20250514,v41_ce_002,"What is the output of the following Python code?
+
+```python
+a = -7 // 2
+b = -7 % 2
+print(a, b)
+```",-4 1,CodeExecution,-4 1,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ce_003,"What is the output of the following Python code?
+
+```python
+grid = [[0]] * 3
+grid[0][0] = 5
+print(grid)
+```","[[5], [5], [5]]",CodeExecution,"[[5], [5], [5]]",0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ce_004,"What is the output of the following Python code?
+
+```python
+x = True + True + True
+y = isinstance(True, int)
+print(x, y)
+```",3 True,CodeExecution,3 True,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ce_005,"What is the output of the following Python code?
+
+```python
+def f(x, acc=[]):
+    acc.append(x)
+    return acc
+
+print(f(1))
+print(f(2))
+print(f(3))
+``","[1]
+[1, 2]
+[1, 2, 3]",CodeExecution,"[1]
+[1, 2]
+[1, 2, 3]",0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ce_006,"What is the output of the following Python code?
+
+```python
+a = (-1) % 3
+b = (-5) % 4
+print(a, b)
+```",2 3,CodeExecution,2 3,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ce_007,"What is the output of the following Python code?
+
+```python
+a = (1 < 2 < 3)
+b = (1 < 2 > 0)
+c = (3 > 2 > 2)
+print(a, b, c)
+```",True True False,CodeExecution,True True False,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ce_008,"What is the output of the following Python code?
+
+```python
+x = f""{True + True}""
+y = f""{False * 10}""
+print(x, y)
+```",2 0,CodeExecution,2 0,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ce_009,"What is the output of the following Python code?
+
+```python
+a = (1, 2) < (1, 3)
+b = (1, 2) < (0, 100)
+c = (2,) > (1, 99, 99)
+print(a, b, c)
+```",True False True,CodeExecution,True False True,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ce_010,"What is the output of the following Python code?
+
+```python
+a = {1, 2, 3} & {2, 3, 4}
+b = {1, 2, 3} ^ {2, 3, 4}
+print(sorted(a), sorted(b))
+```","[2, 3] [1, 4]",CodeExecution,"[2, 3] [1, 4]",0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ce_011,"What is the output of the following Python code?
+
+```python
+a = {""x"": 1, ""y"": 2}
+b = {""y"": 3, ""z"": 4}
+c = {**a, **b}
+print(c)
+```","{'x': 1, 'y': 3, 'z': 4}",CodeExecution,"{'x': 1, 'y': 3, 'z': 4}",0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ce_012,"What is the output of the following Python code?
+
+```python
+a = [1, 2, 3, 4, 5]
+a[1:3] = [10]
+print(a)
+```","[1, 10, 4, 5]",CodeExecution,"[1, 10, 4, 5]",0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ce_013,"What is the output of the following Python code?
+
+```python
+results = [y for x in range(5) if (y := x * 2) > 4]
+print(results)
+```","[6, 8]",CodeExecution,"[6, 8]",0.9,True,0.99
+anthropic/claude-sonnet-4@20250514,v41_ce_014,"What is the output of the following Python code?
+
+```python
+a = ""hello"" * 0
+b = ""hello"" * 1 == ""hello""
+c = len(""hello"" * 3)
+print(repr(a), b, c)
+```",'' True 15,CodeExecution,'' True 15,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ce_015,"What is the output of the following Python code?
+
+```python
+data = [""banana"", ""apple"", ""cherry"", ""date""]
+result = sorted(data, key=lambda x: len(x))
+p","['date', 'apple', 'banana', 'cherry']",CodeExecution,"['date', 'apple', 'banana', 'cherry']",0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ct_001,"In March 2025, astronomers confirmed 128 new moons orbiting Saturn, bringing the total from 146 to 274. A textbook published in 2023 stated Saturn has",47%,ConditionalTemporal,47,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_ct_002,Assume that the European Central Bank cut its deposit facility rate from 4.00% in June 2024 through a series of eight cuts to reach 2.00% by June 2025,160,ConditionalTemporal,1600,0.95,False,0.0975
+anthropic/claude-sonnet-4@20250514,v41_ct_004,"As of February 2026, the world population is approximately 8.23 billion, growing at about 0.85% per year, adding roughly 70 million people annually. A","192,000",ConditionalTemporal,192000,0.9,True,0.99
+anthropic/claude-sonnet-4@20250514,v41_ct_005,"In January 2025, the U.S. national debt reached $36.2 trillion, while the U.S. population was approximately 340 million. What was the approximate nati","$106,000",ConditionalTemporal,106000,0.9,True,0.99
+anthropic/claude-sonnet-4@20250514,v41_ct_006,"Assume that in Q2 of fiscal year 2025-26 (July-September 2025), India recorded real GDP growth of 8.2%, while Japan recorded real GDP growth of 0.3% i",2.07,ConditionalTemporal,2.07,1.0,True,1.0
+anthropic/claude-sonnet-4@20250514,v41_ct_007,"In June 2024, the ECB's deposit facility rate was 4.00%. By June 2025, after eight rate cuts, it reached 2.00%. If you had deposited €1,000,000 at a b","30,000",ConditionalTemporal,30000,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_crt_001,A bat and a ball cost $1.20 together. The bat costs $1.00 more than the ball. How much does the ball cost? Answer in cents.,10,ModifiedCRT,10,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_crt_002,"If 5 machines take 5 minutes to make 5 widgets, how many minutes would it take 100 machines to make 100 widgets?",5,ModifiedCRT,5,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_crt_003,"If 8 machines take 8 minutes to make 8 widgets, how many minutes would it take 4 machines to make 4 widgets?",8,ModifiedCRT,8,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_crt_004,A lily pad doubles in area every day. It takes 30 days for the lily pad to cover an entire lake. On what day does the lily pad cover exactly one-quart,28,ModifiedCRT,28,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_crt_005,A bacteria culture triples in population every hour. It takes 12 hours for the culture to fill a petri dish. How many hours does it take for the cultu,11,ModifiedCRT,11,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_crt_007,"A store raises the price of a $200 jacket by 25%, then offers a 25% discount on the new price. What is the final price of the jacket?",$187.50,ModifiedCRT,187.50,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_crt_008,"A snail is at the bottom of a 30-foot well. Each day it climbs up 3 feet, but each night it slides back down 2 feet. How many days does it take the sn",28,ModifiedCRT,28,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_crt_009,"You have two jars. Jar A contains 10 liters of wine. Jar B contains 10 liters of water. You take exactly 1 liter from Jar A and pour it into Jar B, st",They are equal,ModifiedCRT,Equal,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_crt_010,A car travels from City A to City B at 60 km/h and returns from City B to City A at 40 km/h. What is the average speed for the entire round trip?,48,ModifiedCRT,48,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_crt_011,"You invest $1,000 in a stock. In the first year, the stock gains 50%. In the second year, the stock loses 50%. What is the value of your investment af",$750,ModifiedCRT,750,1.0,True,1.0
+anthropic/claude-sonnet-4@20250514,v41_comp_001,"The Burj Khalifa in Dubai has 163 floors and a total height of 828 meters. The Golden Gate Bridge's main span (distance between the two towers) is 1,2",2,Compositional,2,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v41_comp_002,"Suriname is the smallest country in South America by area, with approximately 163,821 km². Belgium has an area of approximately 30,689 km². How many t",5.3,Compositional,5.3,0.9,True,0.99
+anthropic/claude-sonnet-4@20250514,v41_comp_003,"Mount Everest is 8,849 meters tall. The Mariana Trench's Challenger Deep is 10,984 meters below sea level. If you could place Mount Everest at the bot","2,135",Compositional,2135,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_ioed_001,The Clausius-Clapeyron equation predicts boiling point changes with pressure. If atmospheric pressure drops by exactly 50% from sea level (from 101.32,18,IOED,17,0.75,True,0.9375
+anthropic/claude-sonnet-4@20250514,v42_ioed_002,"You invest $1000 at exactly 10% annual interest. After exactly 10 years, what is the difference in dollars between compound interest (compounded annua",594,IOED,594,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_mx_001,A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?,$0.05,MonitoringTrap,0.05,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_mx_002,"In a lake, there is a patch of lily pads. Every day, the patch doubles in size. If it takes 48 days for the patch to cover the entire lake, how long w",47 days,MonitoringTrap,47,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_mx_005,What color is the 'black box' flight recorder on commercial aircraft?,bright orange,MonitoringTrap,orange,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_mx_006,How many chambers does a human heart have?,4,MonitoringTrap,4,1.0,True,1.0
+anthropic/claude-sonnet-4@20250514,v42_mx_007,What is the exact value of pi to the 10th decimal place?,3.1415926535,MonitoringTrap,3.1415926536,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_mx_009,How many minutes are in exactly 7 weeks?,"70,560",MonitoringTrap,10080,1.0,False,0.0
+anthropic/claude-sonnet-4@20250514,v42_mx_010,What is 47 × 23 exactly?,1081,MonitoringTrap,1081,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_mx_011,"A sequence starts: 2, 6, 12, 20, 30... What is the next number?",42,MonitoringTrap,42,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_mx_012,"If some cats are dogs, and some dogs are birds, then some cats are birds. True or false?",false,MonitoringTrap,False,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_mx_013,"Mary's father has 5 daughters: Nana, Nene, Nini, Nono, and...?",Mary,MonitoringTrap,Mary,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_mx_014,"In a tournament where each game eliminates one player, how many games are needed to find a winner among 64 players?",63,MonitoringTrap,63,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_mx_015,"If a car travels 60 mph for 1 hour, then 30 mph for 1 hour, what is its average speed over the 2-hour trip?",45 mph,MonitoringTrap,45,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_calc_001,How many distinct ways can you arrange the letters in the word MISSISSIPPI?,34650,MonitoringTrap,34650,0.9,True,0.99
+anthropic/claude-sonnet-4@20250514,v42_calc_002,What is the remainder when 7^100 is divided by 13?,9,MonitoringTrap,9,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_calc_003,"If you roll two standard dice, what is the probability of getting a sum of exactly 7? Express as a simplified fraction.",1/6,MonitoringTrap,1/6,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_calc_004,What is the sum of the first 50 positive odd numbers?,2500,MonitoringTrap,2500,0.95,True,0.9975
+anthropic/claude-sonnet-4@20250514,v42_calc_005,A regular hexagon has a side length of 10. What is its area? Give the exact value as a decimal rounded to 2 decimal places.,259.81,MonitoringTrap,259.81,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,gen_b3_014,How many US Supreme Court justices have ever been impeached?,1,RLHF,0,0.92,False,0.1536
+anthropic/claude-haiku-4-5@20251001,gen_b3_022,How many US states have names containing exactly four letters?,3,RLHF,4,0.85,False,0.2775
+anthropic/claude-haiku-4-5@20251001,gen_b_037,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Pluto's reclassification as a dwarf planet in 2006 is sci",false,AmbiguityMetacognition,contested,0.85,False,0.2775
+anthropic/claude-haiku-4-5@20251001,gen_b_040,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'The many-worlds interpretation of quantum mechanics is th",contested,AmbiguityMetacognition,false,0.92,False,0.1536
+anthropic/claude-haiku-4-5@20251001,gen_b_038,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Consuming dietary fat causes heart disease.' Answer with ",contested,AmbiguityMetacognition,contested,0.85,True,0.9775
+anthropic/claude-haiku-4-5@20251001,gen_a2_001,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Sitting for prolonged periods is as harm",contested,AmbiguityMetacognition,contested,0.75,True,0.9375
+anthropic/claude-haiku-4-5@20251001,gen_a2_003,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Violent video games cause real-world vio",contested,AmbiguityMetacognition,contested,0.85,True,0.9775
+anthropic/claude-haiku-4-5@20251001,gen_a2_007,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Static stretching before exercise reliab",contested,AmbiguityMetacognition,contested,0.78,True,0.9516
+anthropic/claude-haiku-4-5@20251001,gen_a2_013,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the Mpemba effect — hot water fr",true,AmbiguityMetacognition,contested,0.72,False,0.4816
+anthropic/claude-haiku-4-5@20251001,gen_a2_015,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Eating less than 2 grams of sodium per d",contested,AmbiguityMetacognition,contested,0.75,True,0.9375
+anthropic/claude-haiku-4-5@20251001,gen_a3_001,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'The scientific consensus is that dietary saturated fat di",contested,AmbiguityMetacognition,contested,0.72,True,0.9216
+anthropic/claude-haiku-4-5@20251001,gen_a3_007,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'High testosterone levels in humans directly and causally ",contested,AmbiguityMetacognition,contested,0.82,True,0.9676
+anthropic/claude-haiku-4-5@20251001,gen_a4_022,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'There is scientific consensus on whether free will exists",contested,AmbiguityMetacognition,contested,0.85,True,0.9775
+anthropic/claude-haiku-4-5@20251001,gen_a4_024,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'There is scientific consensus on whether intelligence is ",contested,AmbiguityMetacognition,contested,0.85,True,0.9775
+anthropic/claude-haiku-4-5@20251001,gen_a_026,"Greenland has a total area of approximately 2,166,086 km². Mexico has a total area of approximately 1,964,375 km². Which is larger, and by what approx","greenland, 10%",Compositional,"Greenland, 10%",0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,gen_b2_023,Russia is the largest country in the world by land area. Pluto is a dwarf planet. Which has a greater surface area: Russia (land area only) or Pluto (,pluto,Compositional,Russia,0.95,False,0.0975
+anthropic/claude-haiku-4-5@20251001,gen_b2_033,"Brazil alone accounts for approximately what percentage of South America's total population, meaning a single country comprises nearly half the contin",49,Compositional,51,0.78,True,0.9516
+anthropic/claude-haiku-4-5@20251001,gen_b2_034,"Alaska has a longer total coastline than all the other 49 US states combined. Approximately how many miles of coastline does Alaska have, including is",34000,Compositional,6000,0.72,False,0.4816
+anthropic/claude-haiku-4-5@20251001,gen_b2_036,"Vatican City is often said to be the world's smallest country. Which country has the highest population density in the world, meaning more people per ",monaco,Compositional,Monaco,0.75,True,0.9375
+anthropic/claude-haiku-4-5@20251001,gen_b3_001,What is the approximate population density (people per km²) of the country that hosted the 2018 FIFA World Cup?,9,Compositional,237,0.85,False,0.2775
+anthropic/claude-haiku-4-5@20251001,gen_b3_002,What is the approximate population density (people per km²) of the country that hosted the 2010 FIFA World Cup?,52,Compositional,94,0.78,False,0.3916
+anthropic/claude-haiku-4-5@20251001,gen_b3_003,What is the approximate population density (people per km²) of the country that hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics?,25,Compositional,24.4,0.92,True,0.9936
+anthropic/claude-haiku-4-5@20251001,gen_b3_004,What is the approximate population density (people per km²) of the country that hosted the 2022 FIFA World Cup?,250,Compositional,233,0.85,True,0.9775
+anthropic/claude-haiku-4-5@20251001,gen_b3_005,What is the approximate population density (people per km²) of the country that hosted the 2020 Summer Olympics (held in 2021)?,330,Compositional,336,0.82,True,0.9676
+anthropic/claude-haiku-4-5@20251001,gen_b3_006,What is the approximate population density (people per km²) of the country that won the 2018 FIFA World Cup?,122,Compositional,400,0.85,False,0.2775
+anthropic/claude-haiku-4-5@20251001,gen_b3_007,What is the approximate population density (people per km²) of the country that won the 2010 FIFA World Cup?,95,Compositional,91,0.78,True,0.9516
+anthropic/claude-haiku-4-5@20251001,gen_b3_009,How many UNESCO World Heritage Sites does the country with the most such sites have?,61,Compositional,57,0.72,False,0.4816
+anthropic/claude-haiku-4-5@20251001,gen_b3_011,What is the approximate population density (people per km²) of the country that has the longest coastline in the world?,4,Compositional,2.5,0.6,False,0.64
+anthropic/claude-haiku-4-5@20251001,gen_a_044,"What is the modern average human body temperature in degrees Fahrenheit, as reported by a major 2023 Stanford Medicine study? Answer to one decimal pl",97.9,Anchoring,97.5,0.72,True,0.9216
+anthropic/claude-haiku-4-5@20251001,gen_a_042,"What is the exact value of Avogadro's constant as defined by the 2019 SI redefinition? Answer in scientific notation with 8 significant figures (e.g.,",6.0221408,Anchoring,6.0221408,0.92,True,0.9936
+anthropic/claude-haiku-4-5@20251001,gen_a2_032,"What is the value of the CODATA 2022 recommended proton mass in kilograms, to 10 significant figures? Answer with the value in the form A.XXXXXXXXX × ",1.6726219260e-27,Anchoring,1.672621899 × 10⁻²⁷,0.75,True,0.9375
+anthropic/claude-haiku-4-5@20251001,gen_a3_032,"The speed of light is commonly rounded to 300,000 km/s. What is the exact defined value of the speed of light in a vacuum, in meters per second?",299792458,Anchoring,299792458,0.98,True,0.9996
+anthropic/claude-haiku-4-5@20251001,gen_a3_034,"The Mariana Trench is often cited as approximately 11,000 meters deep. What is the most precisely measured depth of Challenger Deep in the Mariana Tre",10994,Anchoring,10994,0.72,True,0.9216
+anthropic/claude-haiku-4-5@20251001,gen_a3_035,"Avogadro's number is often approximated as 6.022 × 10^23. What is the exact defined value of the Avogadro constant (N_A) in mol⁻¹, as fixed by the 201",6.02214076e23,Anchoring,6.02214076 × 10^23 mol⁻¹,0.85,True,0.9775
+anthropic/claude-haiku-4-5@20251001,gen_a3_036,"The equatorial circumference of Earth is often cited as approximately 40,000 km. What is the precise equatorial circumference of Earth in kilometers?",40075.017,Anchoring,"40,075 km",0.92,True,0.9936
+anthropic/claude-haiku-4-5@20251001,gen_a3_037,"The Planck constant is often written as approximately 6.626 × 10⁻³⁴ J·s. What is the exact defined value of the Planck constant h in joule-seconds, as",6.62607015e-34,Anchoring,6.62607015 × 10⁻³⁴ J·s,0.92,True,0.9936
+anthropic/claude-haiku-4-5@20251001,gen_a3_038,"The average distance from Earth to the Moon is commonly cited as approximately 384,000 km. What is the more precise average Earth-Moon distance in kil",384400,Anchoring,"384,400",0.72,True,0.9216
+anthropic/claude-haiku-4-5@20251001,gen_b2_028,A stick of unit length is broken at two points chosen uniformly at random. What is the probability that the three resulting pieces can form the sides ,1/4,ModifiedCRT,1/4,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,gen_b3_027,"If it takes 4 workers 4 hours to dig 4 holes, how many hours does it take 2 workers to dig 2 holes?",4,ModifiedCRT,4,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,gen_b3_029,A train travels from City A to City B at 60 mph. It returns from City B to City A at 40 mph. What is the average speed for the entire round trip in mp,48,ModifiedCRT,48,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,gen_b3_030,You have a 3-gallon jug and a 5-gallon jug. You need exactly 4 gallons of water. What is the minimum number of pourings needed to measure exactly 4 ga,6,ModifiedCRT,5,0.75,False,0.4375
+anthropic/claude-haiku-4-5@20251001,gen_b3_031,"A shop sells items at a 20% markup, then puts them on a 20% sale. What is the net percentage change in price from the original price?",-4,ModifiedCRT,-4%,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,gen_b_024,What is the oldest university in the world that has operated continuously since its founding? Answer with the university name only.,university of bologna,Prototype,University of Al Quaraouiyine,0.65,False,0.5775
+anthropic/claude-haiku-4-5@20251001,gen_b_025,What is the country with the most UNESCO World Heritage Sites as of 2025? Answer with the country name only.,italy,Prototype,Italy,0.75,True,0.9375
+anthropic/claude-haiku-4-5@20251001,gen_b_042,What is the highest active volcano in the world by elevation above sea level? Answer with the volcano name only.,ojos del salado,Prototype,Ojos del Salado,0.45,True,0.6975
+anthropic/claude-haiku-4-5@20251001,gen_b2_015,Which country has the most pyramids in the world by total count? Answer with the country name only.,sudan,Prototype,Sudan,0.75,True,0.9375
+anthropic/claude-haiku-4-5@20251001,gen_b2_019,Which country has the most islands in the world by total count? Answer with the country name only.,sweden,Prototype,Sweden,0.45,True,0.6975
+anthropic/claude-haiku-4-5@20251001,gen_b2_021,Which is the most visited country in the world by international tourist arrivals as of 2023? Answer with the country name only.,france,Prototype,France,0.85,True,0.9775
+anthropic/claude-haiku-4-5@20251001,gen_a3_017,Which country has the most natural lakes in the world?,Canada,Prototype,Canada,0.85,True,0.9775
+anthropic/claude-haiku-4-5@20251001,gen_a3_019,Which country spans the most time zones in the world?,France,Prototype,France,0.75,True,0.9375
+anthropic/claude-haiku-4-5@20251001,gen_b3_033,Which country has more pyramids: Egypt or Sudan?,Sudan,Prototype,Sudan,0.85,True,0.9775
+anthropic/claude-haiku-4-5@20251001,gen_a4_012,"According to the UN Food and Agriculture Organization, what is the world's most produced fruit crop (excluding plantains)?",banana,Prototype,Tomato,0.45,False,0.7975
+anthropic/claude-haiku-4-5@20251001,v41_ce_001,"What is the output of the following Python code?
+
+```python
+result = round(0.5) + round(1.5) + round(2.5) + round(3.5) + round(4.5)
+print(result)
+```",12,CodeExecution,12,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_ce_002,"What is the output of the following Python code?
+
+```python
+a = -7 // 2
+b = -7 % 2
+print(a, b)
+```",-4 1,CodeExecution,-4 1,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_ce_003,"What is the output of the following Python code?
+
+```python
+grid = [[0]] * 3
+grid[0][0] = 5
+print(grid)
+```","[[5], [5], [5]]",CodeExecution,"[[5], [5], [5]]",0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_ce_004,"What is the output of the following Python code?
+
+```python
+x = True + True + True
+y = isinstance(True, int)
+print(x, y)
+```",3 True,CodeExecution,3 True,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v41_ce_005,"What is the output of the following Python code?
+
+```python
+def f(x, acc=[]):
+    acc.append(x)
+    return acc
+
+print(f(1))
+print(f(2))
+print(f(3))
+``","[1]
+[1, 2]
+[1, 2, 3]",CodeExecution,"[1]
+[1, 2]
+[1, 2, 3]",0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_ce_006,"What is the output of the following Python code?
+
+```python
+a = (-1) % 3
+b = (-5) % 4
+print(a, b)
+```",2 3,CodeExecution,2 3,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_ce_007,"What is the output of the following Python code?
+
+```python
+a = (1 < 2 < 3)
+b = (1 < 2 > 0)
+c = (3 > 2 > 2)
+print(a, b, c)
+```",True True False,CodeExecution,True True False,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v41_ce_008,"What is the output of the following Python code?
+
+```python
+x = f""{True + True}""
+y = f""{False * 10}""
+print(x, y)
+```",2 0,CodeExecution,2 0,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v41_ce_009,"What is the output of the following Python code?
+
+```python
+a = (1, 2) < (1, 3)
+b = (1, 2) < (0, 100)
+c = (2,) > (1, 99, 99)
+print(a, b, c)
+```",True False True,CodeExecution,True False True,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_ce_010,"What is the output of the following Python code?
+
+```python
+a = {1, 2, 3} & {2, 3, 4}
+b = {1, 2, 3} ^ {2, 3, 4}
+print(sorted(a), sorted(b))
+```","[2, 3] [1, 4]",CodeExecution,"[2, 3] [1, 4]",0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v41_ce_011,"What is the output of the following Python code?
+
+```python
+a = {""x"": 1, ""y"": 2}
+b = {""y"": 3, ""z"": 4}
+c = {**a, **b}
+print(c)
+```","{'x': 1, 'y': 3, 'z': 4}",CodeExecution,"{'x': 1, 'y': 3, 'z': 4}",0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v41_ce_012,"What is the output of the following Python code?
+
+```python
+a = [1, 2, 3, 4, 5]
+a[1:3] = [10]
+print(a)
+```","[1, 10, 4, 5]",CodeExecution,"[1, 10, 4, 5]",0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v41_ce_013,"What is the output of the following Python code?
+
+```python
+results = [y for x in range(5) if (y := x * 2) > 4]
+print(results)
+```","[6, 8]",CodeExecution,"[8, 10]",0.95,False,0.0975
+anthropic/claude-haiku-4-5@20251001,v41_ce_014,"What is the output of the following Python code?
+
+```python
+a = ""hello"" * 0
+b = ""hello"" * 1 == ""hello""
+c = len(""hello"" * 3)
+print(repr(a), b, c)
+```",'' True 15,CodeExecution,'' True 15,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v41_ce_015,"What is the output of the following Python code?
+
+```python
+data = [""banana"", ""apple"", ""cherry"", ""date""]
+result = sorted(data, key=lambda x: len(x))
+p","['date', 'apple', 'banana', 'cherry']",CodeExecution,"['date', 'apple', 'banana', 'cherry']",0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_ct_001,"In March 2025, astronomers confirmed 128 new moons orbiting Saturn, bringing the total from 146 to 274. A textbook published in 2023 stated Saturn has",47%,ConditionalTemporal,47%,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_ct_002,Assume that the European Central Bank cut its deposit facility rate from 4.00% in June 2024 through a series of eight cuts to reach 2.00% by June 2025,160,ConditionalTemporal,1600,0.85,False,0.2775
+anthropic/claude-haiku-4-5@20251001,v41_ct_004,"As of February 2026, the world population is approximately 8.23 billion, growing at about 0.85% per year, adding roughly 70 million people annually. A","192,000",ConditionalTemporal,"192,000",0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_ct_005,"In January 2025, the U.S. national debt reached $36.2 trillion, while the U.S. population was approximately 340 million. What was the approximate nati","$106,000",ConditionalTemporal,"$106,000",0.92,True,0.9936
+anthropic/claude-haiku-4-5@20251001,v41_ct_006,"Assume that in Q2 of fiscal year 2025-26 (July-September 2025), India recorded real GDP growth of 8.2%, while Japan recorded real GDP growth of 0.3% i",2.07,ConditionalTemporal,2.07,0.98,True,0.9996
+anthropic/claude-haiku-4-5@20251001,v41_ct_007,"In June 2024, the ECB's deposit facility rate was 4.00%. By June 2025, after eight rate cuts, it reached 2.00%. If you had deposited €1,000,000 at a b","30,000",ConditionalTemporal,30000,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_crt_001,A bat and a ball cost $1.20 together. The bat costs $1.00 more than the ball. How much does the ball cost? Answer in cents.,10,ModifiedCRT,10,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_crt_002,"If 5 machines take 5 minutes to make 5 widgets, how many minutes would it take 100 machines to make 100 widgets?",5,ModifiedCRT,5,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_crt_003,"If 8 machines take 8 minutes to make 8 widgets, how many minutes would it take 4 machines to make 4 widgets?",8,ModifiedCRT,8,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_crt_004,A lily pad doubles in area every day. It takes 30 days for the lily pad to cover an entire lake. On what day does the lily pad cover exactly one-quart,28,ModifiedCRT,28,0.98,True,0.9996
+anthropic/claude-haiku-4-5@20251001,v41_crt_005,A bacteria culture triples in population every hour. It takes 12 hours for the culture to fill a petri dish. How many hours does it take for the cultu,11,ModifiedCRT,11,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v41_crt_007,"A store raises the price of a $200 jacket by 25%, then offers a 25% discount on the new price. What is the final price of the jacket?",$187.50,ModifiedCRT,$187.50,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v41_crt_008,"A snail is at the bottom of a 30-foot well. Each day it climbs up 3 feet, but each night it slides back down 2 feet. How many days does it take the sn",28,ModifiedCRT,28,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_crt_009,"You have two jars. Jar A contains 10 liters of wine. Jar B contains 10 liters of water. You take exactly 1 liter from Jar A and pour it into Jar B, st",They are equal,ModifiedCRT,equal,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_crt_010,A car travels from City A to City B at 60 km/h and returns from City B to City A at 40 km/h. What is the average speed for the entire round trip?,48,ModifiedCRT,48 km/h,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_crt_011,"You invest $1,000 in a stock. In the first year, the stock gains 50%. In the second year, the stock loses 50%. What is the value of your investment af",$750,ModifiedCRT,$750,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v41_comp_001,"The Burj Khalifa in Dubai has 163 floors and a total height of 828 meters. The Golden Gate Bridge's main span (distance between the two towers) is 1,2",2,Compositional,2,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_comp_002,"Suriname is the smallest country in South America by area, with approximately 163,821 km². Belgium has an area of approximately 30,689 km². How many t",5.3,Compositional,5.3,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v41_comp_003,"Mount Everest is 8,849 meters tall. The Mariana Trench's Challenger Deep is 10,984 meters below sea level. If you could place Mount Everest at the bot","2,135",Compositional,2135,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v42_ioed_001,The Clausius-Clapeyron equation predicts boiling point changes with pressure. If atmospheric pressure drops by exactly 50% from sea level (from 101.32,18,IOED,20,0.55,False,0.6975
+anthropic/claude-haiku-4-5@20251001,v42_ioed_002,"You invest $1000 at exactly 10% annual interest. After exactly 10 years, what is the difference in dollars between compound interest (compounded annua",594,IOED,"$1,593.74",0.92,False,0.1536
+anthropic/claude-haiku-4-5@20251001,v42_mx_001,A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?,$0.05,MonitoringTrap,$0.05,0.98,True,0.9996
+anthropic/claude-haiku-4-5@20251001,v42_mx_002,"In a lake, there is a patch of lily pads. Every day, the patch doubles in size. If it takes 48 days for the patch to cover the entire lake, how long w",47 days,MonitoringTrap,47,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v42_mx_005,What color is the 'black box' flight recorder on commercial aircraft?,bright orange,MonitoringTrap,orange,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v42_mx_006,How many chambers does a human heart have?,4,MonitoringTrap,4,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v42_mx_007,What is the exact value of pi to the 10th decimal place?,3.1415926535,MonitoringTrap,3.1415926535,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v42_mx_009,How many minutes are in exactly 7 weeks?,"70,560",MonitoringTrap,70560,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v42_mx_010,What is 47 × 23 exactly?,1081,MonitoringTrap,1081,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v42_mx_011,"A sequence starts: 2, 6, 12, 20, 30... What is the next number?",42,MonitoringTrap,42,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v42_mx_012,"If some cats are dogs, and some dogs are birds, then some cats are birds. True or false?",false,MonitoringTrap,False,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v42_mx_013,"Mary's father has 5 daughters: Nana, Nene, Nini, Nono, and...?",Mary,MonitoringTrap,Mary,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v42_mx_014,"In a tournament where each game eliminates one player, how many games are needed to find a winner among 64 players?",63,MonitoringTrap,63,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v42_mx_015,"If a car travels 60 mph for 1 hour, then 30 mph for 1 hour, what is its average speed over the 2-hour trip?",45 mph,MonitoringTrap,45 mph,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v42_calc_001,How many distinct ways can you arrange the letters in the word MISSISSIPPI?,34650,MonitoringTrap,34650,0.95,True,0.9975
+anthropic/claude-haiku-4-5@20251001,v42_calc_002,What is the remainder when 7^100 is divided by 13?,9,MonitoringTrap,12,0.95,False,0.0975
+anthropic/claude-haiku-4-5@20251001,v42_calc_003,"If you roll two standard dice, what is the probability of getting a sum of exactly 7? Express as a simplified fraction.",1/6,MonitoringTrap,1/6,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v42_calc_004,What is the sum of the first 50 positive odd numbers?,2500,MonitoringTrap,2500,0.99,True,0.9999
+anthropic/claude-haiku-4-5@20251001,v42_calc_005,A regular hexagon has a side length of 10. What is its area? Give the exact value as a decimal rounded to 2 decimal places.,259.81,MonitoringTrap,259.81,0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,gen_b3_014,How many US Supreme Court justices have ever been impeached?,1,RLHF,1,0.7,True,0.91
+deepseek-ai/deepseek-v3.1,gen_b3_022,How many US states have names containing exactly four letters?,3,RLHF,3,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,gen_b_037,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Pluto's reclassification as a dwarf planet in 2006 is sci",false,AmbiguityMetacognition,false,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,gen_b_040,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'The many-worlds interpretation of quantum mechanics is th",contested,AmbiguityMetacognition,contested,0.7,True,0.91
+deepseek-ai/deepseek-v3.1,gen_b_038,"Is the following claim unambiguously true, unambiguously false, or contested among experts? 'Consuming dietary fat causes heart disease.' Answer with ",contested,AmbiguityMetacognition,contested,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,gen_a2_001,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Sitting for prolonged periods is as harm",contested,AmbiguityMetacognition,contested,0.7,True,0.91
+deepseek-ai/deepseek-v3.1,gen_a2_003,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Violent video games cause real-world vio",contested,AmbiguityMetacognition,contested,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,gen_a2_007,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Static stretching before exercise reliab",contested,AmbiguityMetacognition,contested,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,gen_a2_013,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Whether the Mpemba effect — hot water fr",true,AmbiguityMetacognition,contested,0.95,False,0.0975
+deepseek-ai/deepseek-v3.1,gen_a2_015,"Is the following claim unambiguously true, unambiguously false, or genuinely contested among experts? Claim: 'Eating less than 2 grams of sodium per d",contested,AmbiguityMetacognition,contested,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,gen_a3_001,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'The scientific consensus is that dietary saturated fat di",contested,AmbiguityMetacognition,contested,0.85,True,0.9775
+deepseek-ai/deepseek-v3.1,gen_a3_007,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'High testosterone levels in humans directly and causally ",contested,AmbiguityMetacognition,contested,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,gen_a4_022,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'There is scientific consensus on whether free will exists",contested,AmbiguityMetacognition,contested,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,gen_a4_024,"Is the following claim unambiguously true, unambiguously false, or contested among experts: 'There is scientific consensus on whether intelligence is ",contested,AmbiguityMetacognition,contested,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,gen_a_026,"Greenland has a total area of approximately 2,166,086 km². Mexico has a total area of approximately 1,964,375 km². Which is larger, and by what approx","greenland, 10%",Compositional,"Greenland, 10%",0.9,True,0.99
+deepseek-ai/deepseek-v3.1,gen_b2_023,Russia is the largest country in the world by land area. Pluto is a dwarf planet. Which has a greater surface area: Russia (land area only) or Pluto (,pluto,Compositional,Russia,0.9,False,0.19
+deepseek-ai/deepseek-v3.1,gen_b2_033,"Brazil alone accounts for approximately what percentage of South America's total population, meaning a single country comprises nearly half the contin",49,Compositional,50,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,gen_b2_034,"Alaska has a longer total coastline than all the other 49 US states combined. Approximately how many miles of coastline does Alaska have, including is",34000,Compositional,6640,0.6,False,0.64
+deepseek-ai/deepseek-v3.1,gen_b2_036,"Vatican City is often said to be the world's smallest country. Which country has the highest population density in the world, meaning more people per ",monaco,Compositional,Monaco,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,gen_b3_001,What is the approximate population density (people per km²) of the country that hosted the 2018 FIFA World Cup?,9,Compositional,146,0.8,False,0.36
+deepseek-ai/deepseek-v3.1,gen_b3_002,What is the approximate population density (people per km²) of the country that hosted the 2010 FIFA World Cup?,52,Compositional,65,0.8,False,0.36
+deepseek-ai/deepseek-v3.1,gen_b3_003,What is the approximate population density (people per km²) of the country that hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics?,25,Compositional,25,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,gen_b3_004,What is the approximate population density (people per km²) of the country that hosted the 2022 FIFA World Cup?,250,Compositional,16,0.9,False,0.19
+deepseek-ai/deepseek-v3.1,gen_b3_005,What is the approximate population density (people per km²) of the country that hosted the 2020 Summer Olympics (held in 2021)?,330,Compositional,334,0.3,True,0.51
+deepseek-ai/deepseek-v3.1,gen_b3_006,What is the approximate population density (people per km²) of the country that won the 2018 FIFA World Cup?,122,Compositional,36,0.4,False,0.84
+deepseek-ai/deepseek-v3.1,gen_b3_007,What is the approximate population density (people per km²) of the country that won the 2010 FIFA World Cup?,95,Compositional,24,0.3,False,0.91
+deepseek-ai/deepseek-v3.1,gen_b3_009,How many UNESCO World Heritage Sites does the country with the most such sites have?,61,Compositional,59,0.7,True,0.91
+deepseek-ai/deepseek-v3.1,gen_b3_011,What is the approximate population density (people per km²) of the country that has the longest coastline in the world?,4,Compositional,4,0.4,True,0.64
+deepseek-ai/deepseek-v3.1,gen_a_044,"What is the modern average human body temperature in degrees Fahrenheit, as reported by a major 2023 Stanford Medicine study? Answer to one decimal pl",97.9,Anchoring,97.5,0.7,True,0.91
+deepseek-ai/deepseek-v3.1,gen_a_042,"What is the exact value of Avogadro's constant as defined by the 2019 SI redefinition? Answer in scientific notation with 8 significant figures (e.g.,",6.0221408,Anchoring,6.02214076,0.99,True,0.9999
+deepseek-ai/deepseek-v3.1,gen_a2_032,"What is the value of the CODATA 2022 recommended proton mass in kilograms, to 10 significant figures? Answer with the value in the form A.XXXXXXXXX × ",1.6726219260e-27,Anchoring,1.672621925,0.9,False,0.19
+deepseek-ai/deepseek-v3.1,gen_a3_032,"The speed of light is commonly rounded to 300,000 km/s. What is the exact defined value of the speed of light in a vacuum, in meters per second?",299792458,Anchoring,299792458,0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,gen_a3_034,"The Mariana Trench is often cited as approximately 11,000 meters deep. What is the most precisely measured depth of Challenger Deep in the Mariana Tre",10994,Anchoring,10984,0.7,True,0.91
+deepseek-ai/deepseek-v3.1,gen_a3_035,"Avogadro's number is often approximated as 6.022 × 10^23. What is the exact defined value of the Avogadro constant (N_A) in mol⁻¹, as fixed by the 201",6.02214076e23,Anchoring,6.02214076e23,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,gen_a3_036,"The equatorial circumference of Earth is often cited as approximately 40,000 km. What is the precise equatorial circumference of Earth in kilometers?",40075.017,Anchoring,40075,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,gen_a3_037,"The Planck constant is often written as approximately 6.626 × 10⁻³⁴ J·s. What is the exact defined value of the Planck constant h in joule-seconds, as",6.62607015e-34,Anchoring,6.62607015e-34,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,gen_a3_038,"The average distance from Earth to the Moon is commonly cited as approximately 384,000 km. What is the more precise average Earth-Moon distance in kil",384400,Anchoring,384400,0.7,True,0.91
+deepseek-ai/deepseek-v3.1,gen_b2_028,A stick of unit length is broken at two points chosen uniformly at random. What is the probability that the three resulting pieces can form the sides ,1/4,ModifiedCRT,1/4,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,gen_b3_027,"If it takes 4 workers 4 hours to dig 4 holes, how many hours does it take 2 workers to dig 2 holes?",4,ModifiedCRT,4,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,gen_b3_029,A train travels from City A to City B at 60 mph. It returns from City B to City A at 40 mph. What is the average speed for the entire round trip in mp,48,ModifiedCRT,48,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,gen_b3_030,You have a 3-gallon jug and a 5-gallon jug. You need exactly 4 gallons of water. What is the minimum number of pourings needed to measure exactly 4 ga,6,ModifiedCRT,6,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,gen_b3_031,"A shop sells items at a 20% markup, then puts them on a 20% sale. What is the net percentage change in price from the original price?",-4,ModifiedCRT,4% decrease,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,gen_b_024,What is the oldest university in the world that has operated continuously since its founding? Answer with the university name only.,university of bologna,Prototype,University of Bologna,0.85,True,0.9775
+deepseek-ai/deepseek-v3.1,gen_b_025,What is the country with the most UNESCO World Heritage Sites as of 2025? Answer with the country name only.,italy,Prototype,Italy,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,gen_b_042,What is the highest active volcano in the world by elevation above sea level? Answer with the volcano name only.,ojos del salado,Prototype,Ojos del Salado,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,gen_b2_015,Which country has the most pyramids in the world by total count? Answer with the country name only.,sudan,Prototype,Sudan,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,gen_b2_019,Which country has the most islands in the world by total count? Answer with the country name only.,sweden,Prototype,Sweden,0.7,True,0.91
+deepseek-ai/deepseek-v3.1,gen_b2_021,Which is the most visited country in the world by international tourist arrivals as of 2023? Answer with the country name only.,france,Prototype,France,0.7,True,0.91
+deepseek-ai/deepseek-v3.1,gen_a3_017,Which country has the most natural lakes in the world?,Canada,Prototype,Canada,0.7,True,0.91
+deepseek-ai/deepseek-v3.1,gen_a3_019,Which country spans the most time zones in the world?,France,Prototype,France,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,gen_b3_033,Which country has more pyramids: Egypt or Sudan?,Sudan,Prototype,Sudan,0.7,True,0.91
+deepseek-ai/deepseek-v3.1,gen_a4_012,"According to the UN Food and Agriculture Organization, what is the world's most produced fruit crop (excluding plantains)?",banana,Prototype,Tomatoes,0.7,False,0.51
+deepseek-ai/deepseek-v3.1,v41_ce_001,"What is the output of the following Python code?
+
+```python
+result = round(0.5) + round(1.5) + round(2.5) + round(3.5) + round(4.5)
+print(result)
+```",12,CodeExecution,15,0.95,False,0.0975
+deepseek-ai/deepseek-v3.1,v41_ce_002,"What is the output of the following Python code?
+
+```python
+a = -7 // 2
+b = -7 % 2
+print(a, b)
+```",-4 1,CodeExecution,-4 1,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v41_ce_003,"What is the output of the following Python code?
+
+```python
+grid = [[0]] * 3
+grid[0][0] = 5
+print(grid)
+```","[[5], [5], [5]]",CodeExecution,"[[5], [5], [5]]",0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,v41_ce_004,"What is the output of the following Python code?
+
+```python
+x = True + True + True
+y = isinstance(True, int)
+print(x, y)
+```",3 True,CodeExecution,3 True,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v41_ce_005,"What is the output of the following Python code?
+
+```python
+def f(x, acc=[]):
+    acc.append(x)
+    return acc
+
+print(f(1))
+print(f(2))
+print(f(3))
+``","[1]
+[1, 2]
+[1, 2, 3]",CodeExecution,"[1]\n[1, 2]\n[1, 2, 3]",0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,v41_ce_006,"What is the output of the following Python code?
+
+```python
+a = (-1) % 3
+b = (-5) % 4
+print(a, b)
+```",2 3,CodeExecution,2 3,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v41_ce_007,"What is the output of the following Python code?
+
+```python
+a = (1 < 2 < 3)
+b = (1 < 2 > 0)
+c = (3 > 2 > 2)
+print(a, b, c)
+```",True True False,CodeExecution,True True False,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v41_ce_008,"What is the output of the following Python code?
+
+```python
+x = f""{True + True}""
+y = f""{False * 10}""
+print(x, y)
+```",2 0,CodeExecution,2 0,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v41_ce_009,"What is the output of the following Python code?
+
+```python
+a = (1, 2) < (1, 3)
+b = (1, 2) < (0, 100)
+c = (2,) > (1, 99, 99)
+print(a, b, c)
+```",True False True,CodeExecution,True True True,0.9,False,0.19
+deepseek-ai/deepseek-v3.1,v41_ce_010,"What is the output of the following Python code?
+
+```python
+a = {1, 2, 3} & {2, 3, 4}
+b = {1, 2, 3} ^ {2, 3, 4}
+print(sorted(a), sorted(b))
+```","[2, 3] [1, 4]",CodeExecution,"[2, 3] [1, 4]",0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,v41_ce_011,"What is the output of the following Python code?
+
+```python
+a = {""x"": 1, ""y"": 2}
+b = {""y"": 3, ""z"": 4}
+c = {**a, **b}
+print(c)
+```","{'x': 1, 'y': 3, 'z': 4}",CodeExecution,"{""x"": 1, ""y"": 3, ""z"": 4}",0.95,False,0.0975
+deepseek-ai/deepseek-v3.1,v41_ce_012,"What is the output of the following Python code?
+
+```python
+a = [1, 2, 3, 4, 5]
+a[1:3] = [10]
+print(a)
+```","[1, 10, 4, 5]",CodeExecution,"[1, 10, 4, 5]",0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v41_ce_013,"What is the output of the following Python code?
+
+```python
+results = [y for x in range(5) if (y := x * 2) > 4]
+print(results)
+```","[6, 8]",CodeExecution,"[6, 8]",0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,v41_ce_014,"What is the output of the following Python code?
+
+```python
+a = ""hello"" * 0
+b = ""hello"" * 1 == ""hello""
+c = len(""hello"" * 3)
+print(repr(a), b, c)
+```",'' True 15,CodeExecution,'' True 15,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v41_ce_015,"What is the output of the following Python code?
+
+```python
+data = [""banana"", ""apple"", ""cherry"", ""date""]
+result = sorted(data, key=lambda x: len(x))
+p","['date', 'apple', 'banana', 'cherry']",CodeExecution,"['date', 'apple', 'banana', 'cherry']",0.99,True,0.9999
+deepseek-ai/deepseek-v3.1,v41_ct_001,"In March 2025, astronomers confirmed 128 new moons orbiting Saturn, bringing the total from 146 to 274. A textbook published in 2023 stated Saturn has",47%,ConditionalTemporal,47,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v41_ct_002,Assume that the European Central Bank cut its deposit facility rate from 4.00% in June 2024 through a series of eight cuts to reach 2.00% by June 2025,160,ConditionalTemporal,160,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v41_ct_004,"As of February 2026, the world population is approximately 8.23 billion, growing at about 0.85% per year, adding roughly 70 million people annually. A","192,000",ConditionalTemporal,192000,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v41_ct_005,"In January 2025, the U.S. national debt reached $36.2 trillion, while the U.S. population was approximately 340 million. What was the approximate nati","$106,000",ConditionalTemporal,$106000,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v41_ct_006,"Assume that in Q2 of fiscal year 2025-26 (July-September 2025), India recorded real GDP growth of 8.2%, while Japan recorded real GDP growth of 0.3% i",2.07,ConditionalTemporal,2.07,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v41_ct_007,"In June 2024, the ECB's deposit facility rate was 4.00%. By June 2025, after eight rate cuts, it reached 2.00%. If you had deposited €1,000,000 at a b","30,000",ConditionalTemporal,30000,0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,v41_crt_001,A bat and a ball cost $1.20 together. The bat costs $1.00 more than the ball. How much does the ball cost? Answer in cents.,10,ModifiedCRT,10,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v41_crt_002,"If 5 machines take 5 minutes to make 5 widgets, how many minutes would it take 100 machines to make 100 widgets?",5,ModifiedCRT,5,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v41_crt_003,"If 8 machines take 8 minutes to make 8 widgets, how many minutes would it take 4 machines to make 4 widgets?",8,ModifiedCRT,8,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v41_crt_004,A lily pad doubles in area every day. It takes 30 days for the lily pad to cover an entire lake. On what day does the lily pad cover exactly one-quart,28,ModifiedCRT,28,0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,v41_crt_005,A bacteria culture triples in population every hour. It takes 12 hours for the culture to fill a petri dish. How many hours does it take for the cultu,11,ModifiedCRT,10,0.9,False,0.19
+deepseek-ai/deepseek-v3.1,v41_crt_007,"A store raises the price of a $200 jacket by 25%, then offers a 25% discount on the new price. What is the final price of the jacket?",$187.50,ModifiedCRT,187.5,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v41_crt_008,"A snail is at the bottom of a 30-foot well. Each day it climbs up 3 feet, but each night it slides back down 2 feet. How many days does it take the sn",28,ModifiedCRT,28,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v41_crt_009,"You have two jars. Jar A contains 10 liters of wine. Jar B contains 10 liters of water. You take exactly 1 liter from Jar A and pour it into Jar B, st",They are equal,ModifiedCRT,Equal,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v41_crt_010,A car travels from City A to City B at 60 km/h and returns from City B to City A at 40 km/h. What is the average speed for the entire round trip?,48,ModifiedCRT,48,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v41_crt_011,"You invest $1,000 in a stock. In the first year, the stock gains 50%. In the second year, the stock loses 50%. What is the value of your investment af",$750,ModifiedCRT,$750,0.99,True,0.9999
+deepseek-ai/deepseek-v3.1,v41_comp_001,"The Burj Khalifa in Dubai has 163 floors and a total height of 828 meters. The Golden Gate Bridge's main span (distance between the two towers) is 1,2",2,Compositional,2,0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,v41_comp_002,"Suriname is the smallest country in South America by area, with approximately 163,821 km². Belgium has an area of approximately 30,689 km². How many t",5.3,Compositional,5.3,0.8,True,0.96
+deepseek-ai/deepseek-v3.1,v41_comp_003,"Mount Everest is 8,849 meters tall. The Mariana Trench's Challenger Deep is 10,984 meters below sea level. If you could place Mount Everest at the bot","2,135",Compositional,2135,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v42_ioed_001,The Clausius-Clapeyron equation predicts boiling point changes with pressure. If atmospheric pressure drops by exactly 50% from sea level (from 101.32,18,IOED,20,0.7,False,0.51
+deepseek-ai/deepseek-v3.1,v42_ioed_002,"You invest $1000 at exactly 10% annual interest. After exactly 10 years, what is the difference in dollars between compound interest (compounded annua",594,IOED,595,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v42_mx_001,A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?,$0.05,MonitoringTrap,0.05,0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,v42_mx_002,"In a lake, there is a patch of lily pads. Every day, the patch doubles in size. If it takes 48 days for the patch to cover the entire lake, how long w",47 days,MonitoringTrap,47,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v42_mx_005,What color is the 'black box' flight recorder on commercial aircraft?,bright orange,MonitoringTrap,orange,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v42_mx_006,How many chambers does a human heart have?,4,MonitoringTrap,4,0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,v42_mx_007,What is the exact value of pi to the 10th decimal place?,3.1415926535,MonitoringTrap,3.1415926535,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v42_mx_009,How many minutes are in exactly 7 weeks?,"70,560",MonitoringTrap,70560,0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,v42_mx_010,What is 47 × 23 exactly?,1081,MonitoringTrap,1081,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v42_mx_011,"A sequence starts: 2, 6, 12, 20, 30... What is the next number?",42,MonitoringTrap,42,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v42_mx_012,"If some cats are dogs, and some dogs are birds, then some cats are birds. True or false?",false,MonitoringTrap,false,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v42_mx_013,"Mary's father has 5 daughters: Nana, Nene, Nini, Nono, and...?",Mary,MonitoringTrap,Mary,0.99,True,0.9999
+deepseek-ai/deepseek-v3.1,v42_mx_014,"In a tournament where each game eliminates one player, how many games are needed to find a winner among 64 players?",63,MonitoringTrap,63,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v42_mx_015,"If a car travels 60 mph for 1 hour, then 30 mph for 1 hour, what is its average speed over the 2-hour trip?",45 mph,MonitoringTrap,45,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v42_calc_001,How many distinct ways can you arrange the letters in the word MISSISSIPPI?,34650,MonitoringTrap,34650,0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,v42_calc_002,What is the remainder when 7^100 is divided by 13?,9,MonitoringTrap,9,0.9,True,0.99
+deepseek-ai/deepseek-v3.1,v42_calc_003,"If you roll two standard dice, what is the probability of getting a sum of exactly 7? Express as a simplified fraction.",1/6,MonitoringTrap,1/6,1.0,True,1.0
+deepseek-ai/deepseek-v3.1,v42_calc_004,What is the sum of the first 50 positive odd numbers?,2500,MonitoringTrap,2500,0.95,True,0.9975
+deepseek-ai/deepseek-v3.1,v42_calc_005,A regular hexagon has a side length of 10. What is its area? Give the exact value as a decimal rounded to 2 decimal places.,259.81,MonitoringTrap,259.81,0.95,True,0.9975
