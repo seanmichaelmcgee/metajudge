@@ -1,0 +1,105 @@
+{
+  "validation_run": "c2_wr_batch1",
+  "version": "v0.6.2",
+  "timestamp": "2026-03-30",
+  "canary_model": "deepseek/deepseek-chat",
+  "description": "Canary validation for C2 wrong-to-right batch 1 candidates. Each item was tested against deepseek-chat to verify the model gets T1 wrong (required for WR items).",
+  "methodology": {
+    "prompt_format": "{question}\n\nGive your answer concisely.",
+    "temperature": 0.3,
+    "max_tokens": 200,
+    "multiple_runs_for_borderline": true,
+    "total_items_tested_across_rounds": 60,
+    "rounds": 10,
+    "accepted_threshold": "Model must get item wrong on T1 at least once to be considered a WR candidate"
+  },
+  "summary": {
+    "total_candidates_generated": 6,
+    "canary_passed_model_wrong": 6,
+    "canary_failed_too_easy": 0,
+    "api_errors": 0,
+    "weakness_categories": {
+      "multi_constraint_enumeration_error": 1,
+      "continuous_position_computation_error": 3,
+      "palindrome_carry_propagation_error": 1
+    }
+  },
+  "results": [
+    {
+      "item_id": "sc_c2_wr_006",
+      "question_preview": "You flip a fair coin 4 times. P(exactly 2 heads AND consecutive)?",
+      "correct_answer": "3/16",
+      "canary_model_answer": "1/4 (also observed: 1/8 in other runs)",
+      "canary_model_wrong": true,
+      "canary_consistency": "Model gets it wrong ~70% of the time across 10 runs. Sometimes answers 3/16 with extended reasoning, but with concise prompts typically answers 1/4 or 1/8.",
+      "verdict": "ACCEPT",
+      "weakness_category": "multi_constraint_enumeration_error",
+      "notes": "Model includes sequences like HHTH (which has 3 heads, not 2) in its enumeration, or miscounts the number of positions for consecutive HH."
+    },
+    {
+      "item_id": "sc_c2_wr_007",
+      "question_preview": "Clock reads 5:25. Angle between hands?",
+      "correct_answer": "12.5 degrees",
+      "canary_model_answer": "47.5 degrees",
+      "canary_model_wrong": true,
+      "canary_consistency": "Consistently wrong on concise prompts. Gets correct with extended step-by-step reasoning in some runs.",
+      "verdict": "ACCEPT",
+      "weakness_category": "continuous_position_computation_error",
+      "notes": "At 5:25, minute hand=150°, hour hand=162.5°. Correct angle=12.5°. Model likely computes hour hand as 150° (ignoring the 12.5° movement past the 5) and then adds an error, or confuses the direction."
+    },
+    {
+      "item_id": "sc_c2_wr_008",
+      "question_preview": "Odometer reads 15951. Miles to next palindrome?",
+      "correct_answer": "110",
+      "canary_model_answer": "10",
+      "canary_model_wrong": true,
+      "canary_consistency": "Consistently wrong. Model claims 15961 is the next palindrome (it is not: 15961 reversed is 16951).",
+      "verdict": "ACCEPT",
+      "weakness_category": "palindrome_carry_propagation_error",
+      "notes": "The key trap: the middle digit is 9, so incrementing it requires a carry to the flanking digits. Next palindrome is 16061, not 15961. The model fails to verify its candidate palindrome."
+    },
+    {
+      "item_id": "sc_c2_wr_009",
+      "question_preview": "Clock reads 8:05. Angle between hands?",
+      "correct_answer": "147.5 degrees",
+      "canary_model_answer": "152.5 degrees",
+      "canary_model_wrong": true,
+      "canary_consistency": "Wrong on concise prompt. May self-correct with extended reasoning.",
+      "verdict": "ACCEPT",
+      "weakness_category": "continuous_position_computation_error",
+      "notes": "At 8:05: minute=30°, hour=242.5°. Raw diff=212.5°, smaller=147.5°. Model's 152.5° suggests a 5° error in the hour hand position (likely computing 8×30+5×0.5=245 instead of 242.5, i.e., using hours=8 instead of accounting for the 5 minutes correctly)."
+    },
+    {
+      "item_id": "sc_c2_wr_010",
+      "question_preview": "Clock reads 1:50. Angle between hands?",
+      "correct_answer": "115 degrees",
+      "canary_model_answer": "95 degrees",
+      "canary_model_wrong": true,
+      "canary_consistency": "Wrong on concise prompt.",
+      "verdict": "ACCEPT",
+      "weakness_category": "continuous_position_computation_error",
+      "notes": "At 1:50: minute=300°, hour=55°. Raw diff=245°, smaller=115°. Model's 95° suggests either wrong minute hand position or wrong reflex angle computation."
+    },
+    {
+      "item_id": "sc_c2_wr_011",
+      "question_preview": "Clock reads 11:20. Angle between hands?",
+      "correct_answer": "140 degrees",
+      "canary_model_answer": "70 degrees",
+      "canary_model_wrong": true,
+      "canary_consistency": "Wrong on concise prompt. Notably, 70° is exactly half of 140°.",
+      "verdict": "ACCEPT",
+      "weakness_category": "continuous_position_computation_error",
+      "notes": "At 11:20: minute=120°, hour=340°. Raw diff=220°, smaller=140°. Model's 70° is exactly half — possibly computing the raw difference as 220° and then halving instead of subtracting from 360°. Alternatively, computing only the hour hand's fractional movement (20×0.5=10°) and adding to some base calculation incorrectly."
+    }
+  ],
+  "rejected_items_summary": {
+    "total_tested": 60,
+    "total_rejected": 54,
+    "common_rejection_reasons": [
+      "DeepSeek-chat solves most standard math/logic puzzles correctly (base rate neglect, Monty Hall variants, combinatorics, modular arithmetic, etc.)",
+      "Well-known cognitive traps (bat-and-ball, percentage asymmetry, exponential growth) are in training data and answered correctly",
+      "Even non-standard problems like Stirling numbers, harmonic means, and pigeonhole principle are handled correctly",
+      "The model only reliably fails on: (a) multi-constraint enumeration with concise prompts, (b) clock angle computations with specific times, (c) palindrome gap problems with carry propagation"
+    ]
+  }
+}
