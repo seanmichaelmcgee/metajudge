@@ -1,0 +1,46 @@
+item_id,subfamily,stratum,grading_rule,gold_answer,model,t1_correct,t2_correct,transition,t1_latency_ms,t2_latency_ms
+sc_c1_wr_001,C1,wrong_to_right,code_output,12,google/gemini-2.5-pro,False,False,wrong_to_wrong,17055,14185
+sc_c1_wr_002,C1,wrong_to_right,approx_numeric_small,1065.02,google/gemini-2.5-pro,False,False,wrong_to_wrong,15077,5251
+sc_c1_wr_004,C1,wrong_to_right,alias_plus_normalization,adult human,google/gemini-2.5-pro,True,True,right_to_right,8861,4445
+sc_c1_rr_001,C1,right_to_right,alias_plus_normalization,bright orange,google/gemini-2.5-pro,True,False,right_to_wrong,25057,5450
+sc_c1_rr_002,C1,right_to_right,approx_numeric_small,1081,google/gemini-2.5-pro,True,False,right_to_wrong,4742,4948
+sc_c1_rr_003,C1,right_to_right,alias_plus_normalization,100,google/gemini-2.5-pro,True,False,right_to_wrong,26711,4920
+sc_c1_rr_004,C1,right_to_right,alias_plus_normalization,Canberra,google/gemini-2.5-pro,True,False,right_to_wrong,10405,5951
+sc_c1_rr_005,C1,right_to_right,approx_numeric_small,1989,google/gemini-2.5-pro,True,False,right_to_wrong,9554,17280
+sc_c1_ur_001,C1,unresolved,alias_plus_normalization,unresolved,google/gemini-2.5-pro,True,False,right_to_wrong,4856,4716
+sc_c1_ur_002,C1,unresolved,alias_plus_normalization,unresolved,google/gemini-2.5-pro,False,False,wrong_to_wrong,17560,48435
+sc_c1_dt_001,C1,deceptive_trap,alias_plus_normalization,yes,google/gemini-2.5-pro,True,False,right_to_wrong,4714,6863
+sc_c1_dt_002,C1,deceptive_trap,approx_numeric_small,5050,google/gemini-2.5-pro,False,False,wrong_to_wrong,16060,5108
+sc_c1_dt_003,C1,deceptive_trap,alias_plus_normalization,yes,google/gemini-2.5-pro,True,True,right_to_right,5435,32556
+sc_c1_wr_006,C1,wrong_to_right,approx_numeric_small,4,google/gemini-2.5-pro,False,False,wrong_to_wrong,16130,7490
+sc_c1_wr_007,C1,wrong_to_right,approx_numeric_small,15,google/gemini-2.5-pro,True,True,right_to_right,4094,5415
+sc_c1_wr_008,C1,wrong_to_right,alias_plus_normalization,6.25% decrease,google/gemini-2.5-pro,True,False,right_to_wrong,5149,4963
+sc_c1_wr_009,C1,wrong_to_right,approx_numeric_small,121.5,google/gemini-2.5-pro,False,False,wrong_to_wrong,5168,19245
+sc_c1_wr_010,C1,wrong_to_right,approx_numeric_small,243,google/gemini-2.5-pro,False,False,wrong_to_wrong,16228,5840
+sc_c1_wr_011,C1,wrong_to_right,approx_numeric_small,9,google/gemini-2.5-pro,True,False,right_to_wrong,4950,5437
+sc_c1_rr_006,C1,right_to_right,alias_plus_normalization,Au,google/gemini-2.5-pro,True,False,right_to_wrong,14442,16582
+sc_c1_dt_004,C1,deceptive_trap,alias_plus_normalization,no,google/gemini-2.5-pro,True,True,right_to_right,5870,4586
+sc_c1_rr_007,C1,right_to_right,alias_plus_normalization,7,google/gemini-2.5-pro,True,False,right_to_wrong,4199,17762
+sc_c1_dt_005,C1,deceptive_trap,alias_plus_normalization,$0.05,google/gemini-2.5-pro,True,False,right_to_wrong,9448,16034
+sc_c2_wr_001,C2,wrong_to_right,approx_numeric_small,38.88,google/gemini-2.5-pro,True,False,right_to_wrong,4840,17406
+sc_c2_rr_001,C2,right_to_right,alias_plus_normalization,Italy,google/gemini-2.5-pro,True,True,right_to_right,5418,4361
+sc_c2_rr_002,C2,right_to_right,alias_plus_normalization,299792458,google/gemini-2.5-pro,True,False,right_to_wrong,3488,32716
+sc_c2_rr_003,C2,right_to_right,alias_plus_normalization,H2O,google/gemini-2.5-pro,True,True,right_to_right,15276,40728
+sc_c2_rr_004,C2,right_to_right,alias_plus_normalization,-4%,google/gemini-2.5-pro,False,False,wrong_to_wrong,18362,7008
+sc_c2_rr_005,C2,right_to_right,approx_numeric_small,7,google/gemini-2.5-pro,False,False,wrong_to_wrong,16369,6316
+sc_c2_wc_001,C2,weak_challenge,approx_numeric_small,8,google/gemini-2.5-pro,False,False,wrong_to_wrong,5143,5549
+sc_c2_wc_002,C2,weak_challenge,alias_plus_normalization,Mount Everest,google/gemini-2.5-pro,True,False,right_to_wrong,5717,13958
+sc_c2_wc_003,C2,weak_challenge,alias_plus_normalization,No,google/gemini-2.5-pro,True,True,right_to_right,17243,5455
+sc_c2_wc_004,C2,weak_challenge,alias_plus_normalization,France,google/gemini-2.5-pro,True,True,right_to_right,4945,5717
+sc_c2_wc_005,C2,weak_challenge,alias_plus_normalization,Diamond,google/gemini-2.5-pro,True,False,right_to_wrong,16010,4303
+sc_c2_ur_001,C2,unresolved_capable,alias_plus_normalization,contested,google/gemini-2.5-pro,False,False,wrong_to_wrong,11796,13974
+sc_c2_ur_002,C2,unresolved_capable,alias_plus_normalization,both,google/gemini-2.5-pro,False,False,wrong_to_wrong,15654,12051
+sc_c2_dt_001,C2,deceptive_trap,alias_plus_normalization,They hit at the same time,google/gemini-2.5-pro,False,True,wrong_to_right,15718,5635
+sc_c2_dt_002,C2,deceptive_trap,approx_numeric_small,0.3,google/gemini-2.5-pro,True,True,right_to_right,5633,5525
+sc_c2_dt_003,C2,deceptive_trap,alias_plus_normalization,Neil Armstrong,google/gemini-2.5-pro,True,True,right_to_right,23605,5675
+sc_c2_wr_006,C2,wrong_to_right,alias_plus_normalization,3/16,google/gemini-2.5-pro,True,False,right_to_wrong,4702,10874
+sc_c2_wr_007,C2,wrong_to_right,approx_numeric_small,12.5,google/gemini-2.5-pro,False,True,wrong_to_right,16693,4304
+sc_c2_wr_008,C2,wrong_to_right,approx_numeric_small,110,google/gemini-2.5-pro,True,False,right_to_wrong,5840,16119
+sc_c2_wr_009,C2,wrong_to_right,approx_numeric_small,147.5,google/gemini-2.5-pro,False,False,wrong_to_wrong,4989,5083
+sc_c2_wr_010,C2,wrong_to_right,approx_numeric_small,115,google/gemini-2.5-pro,True,False,right_to_wrong,4371,8200
+sc_c2_wr_011,C2,wrong_to_right,approx_numeric_small,140,google/gemini-2.5-pro,True,False,right_to_wrong,4819,5150
