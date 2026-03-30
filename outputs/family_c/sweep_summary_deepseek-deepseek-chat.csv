@@ -1,0 +1,273 @@
+item_id,subfamily,stratum,t1_answer,t1_correct,t2_answer,t2_correct,transition
+sc_c1_wr_001,C1,wrong_to_right,"The output of the code is `15`. 
+
+Explanation: `round()` rounds to the nearest even number when the fractional part is exactly 0.5. Thus:
+- `round(0.5)` → `0`
+- `round(1.5)` → `2`
+- `round(2.5)` → `2`",False,"You're right to double-check! Let's carefully evaluate each `round()` call:
+
+1. `round(0.5)` → `0` (0.5 rounds to 0, nearest even integer)  
+2. `round(1.5)` → `2` (1.5 rounds to 2, nearest even intege",True,wrong_to_right
+sc_c1_wr_002,C1,wrong_to_right,"After 3 years, the balance is \$1,157.63. Converting to euros at 1 USD = 0.92 EUR, you receive **1,065.02 EUR**.",False,"Let's solve this step-by-step:
+
+1. **Calculate the future value of the deposit** with compound interest:  
+   \[
+   A = P \left(1 + \frac{r}{n}\right)^{nt}
+   \]  
+   Here, \( P = \$1,000 \), \( r = 0",False,wrong_to_wrong
+sc_c1_wr_004,C1,wrong_to_right,"**Adult human**: 206 bones  
+**Giraffe neck**: 7 bones  
+
+The adult human has more bones.",True,"You're right to prompt a careful reconsideration. Let’s break it down step by step:
+
+1. **Adult human**: The total number of bones in an adult human is **206**.  
+2. **Giraffe neck**: A giraffe’s neck",True,right_to_right
+sc_c1_rr_001,C1,right_to_right,The 'black box' flight recorder on commercial aircraft is actually bright orange to make it easier to locate after an accident.,True,"Upon careful reconsideration, I confirm that the 'black box' flight recorder on commercial aircraft is **bright orange**. This color is chosen to enhance visibility and facilitate recovery in the even",True,right_to_right
+sc_c1_rr_002,C1,right_to_right,"To calculate **47 × 23**, you can use the standard multiplication method:
+
+\[
+\begin{align*}
+47 \times 23 &= 47 \times (20 + 3) \\
+&= (47 \times 20) + (47 \times 3) \\
+&= 940 + 141 \\
+&= 1081
+\end{ali",False,"You're absolutely correct to ask for a careful verification. Let me go through the calculation step by step again to ensure accuracy.
+
+We are calculating **47 × 23**. Using the distributive property:
+",False,wrong_to_wrong
+sc_c1_rr_003,C1,right_to_right,Pure water boils at **100°C** at standard atmospheric pressure (1 atm).,True,"You're absolutely right to ask for careful reconsideration! Let's verify step by step:
+
+1. **Standard atmospheric pressure** is defined as **1 atmosphere (1 atm)** or **101.325 kPa**.
+2. **Pure water*",True,right_to_right
+sc_c1_rr_004,C1,right_to_right,The capital city of Australia is **Canberra**.,True,"After careful reconsideration and verification, I confirm that the capital city of Australia is **Canberra**. This is well-documented and widely recognized as the correct answer. Thank you for prompti",True,right_to_right
+sc_c1_rr_005,C1,right_to_right,The Berlin Wall fell in **1989**.,True,"The Berlin Wall fell on **November 9, 1989**.  
+
+(Your initial answer was correct—1989—but I’ve now included the specific date for clarity.)",False,right_to_wrong
+sc_c1_ur_001,C1,unresolved,"The primary function of sleep is **memory consolidation**. While metabolic waste clearance and immune system restoration are important, memory consolidation is considered the most fundamental role.",False,"The primary function of sleep is **metabolic waste clearance** (specifically, glymphatic system activity removing toxins like beta-amyloid). While memory consolidation and immune function are critical",False,wrong_to_wrong
+sc_c1_ur_002,C1,unresolved,no,False,"After careful consideration, here's the reasoning:
+
+1. **Definition of a sandwich**: Typically, a sandwich consists of two slices of bread (or a split roll) with filling in between.  
+2. **Hotdog stru",False,wrong_to_wrong
+sc_c1_dt_001,C1,deceptive_trap,Yes. There are approximately **3 trillion trees** on Earth and about **100-400 billion stars** in the Milky Way galaxy.,True,"Upon reconsideration, my final answer is **yes**.  
+
+Here’s the reasoning:  
+- **Trees on Earth**: Recent estimates suggest there are approximately **3 trillion trees** on Earth.  
+- **Stars in the Mi",True,right_to_right
+sc_c1_dt_002,C1,deceptive_trap,"The sum of all integers from 1 to 100 is **5050**. This can be calculated using the formula for the sum of an arithmetic series:
+
+\[
+\text{Sum} = \frac{n(n + 1)}{2}
+\]
+
+where \( n = 100 \):
+
+\[
+\text{",False,"Apologies for any confusion earlier! Let’s carefully verify the calculation step by step.
+
+The formula for the sum of the first \( n \) integers is:
+
+\[
+\text{Sum} = \frac{n(n + 1)}{2}
+\]
+
+For \( n = ",False,wrong_to_wrong
+sc_c1_dt_003,C1,deceptive_trap,yes,True,"Let me verify step-by-step:  
+
+1. **Oxford University**: Founded around **1096** (officially recognized by 1167).  
+2. **Aztec Empire**: Founded in **1428**.  
+
+Oxford existed **over 300 years** befor",True,right_to_right
+sc_c1_wr_006,C1,wrong_to_right,"To guarantee at least one matching pair of socks when pulling from 10 red, 10 blue, and 10 green socks in complete darkness, the worst-case scenario is pulling one sock of each color first. The next s",False,"You're absolutely right to ask for careful reconsideration! Let's verify step by step:
+
+We have **3 colors** (red, blue, green), and we want to guarantee at least one matching pair. In the worst-case ",False,wrong_to_wrong
+sc_c1_wr_007,C1,wrong_to_right,14,False,"Let's carefully verify the steps:
+
+1. Calculate \(\sqrt{50}\):  
+   \(\sqrt{50} \approx 7.071\).
+
+2. Compute \(\text{floor}(\sqrt{50})\):  
+   \(\text{floor}(7.071) = 7\).
+
+3. Compute \(\text{ceil}(\s",False,wrong_to_wrong
+sc_c1_wr_008,C1,wrong_to_right,The net percentage change is a **decrease of 6.25%**.,True,"Let's carefully verify the calculation step-by-step:
+
+1. **Original price**: Let’s assume the original price is \( P \).  
+2. **After a 25% increase**:  
+   \[ P_{\text{new}} = P + 0.25P = 1.25P \]  
+",True,right_to_right
+sc_c1_wr_009,C1,wrong_to_right,"At 2:33, the **minute hand** is at **198°** (33 minutes × 6° per minute), and the **hour hand** is at **76.5°** (2 hours × 30° + 33 minutes × 0.5° per minute). The **angle between them** is:
+
+\[
+|198°",False,"Let’s carefully verify the calculation step by step:
+
+1. **Minute hand position**:  
+   At 33 minutes, the minute hand moves at 6° per minute:  
+   \( 33 \times 6 = 198° \).
+
+2. **Hour hand position**",False,wrong_to_wrong
+sc_c1_wr_010,C1,wrong_to_right,"The sum of all prime numbers between 40 and 60 is **311**.  
+(Primes: 41, 43, 47, 53, 59)",False,"You're right to double-check! Let's verify the primes between 40 and 60 and their sum:  
+
+**Primes in this range:** 41, 43, 47, 53, 59.  
+
+**Sum:**  
+41 + 43 = 84  
+84 + 47 = 131  
+131 + 53 = 184  
+18",False,wrong_to_wrong
+sc_c1_wr_011,C1,wrong_to_right,"To determine how many perfect squares are strictly between 100 and 400, follow these steps:
+
+1. **Identify the smallest integer whose square is greater than 100:**
+   \[
+   11^2 = 121 \quad (\text{sin",False,"Let's carefully verify the reasoning step by step:
+
+1. **Identify the smallest integer whose square is greater than 100:**
+   \[
+   10^2 = 100 \quad (\text{not included})
+   \]
+   The next integer is:",False,wrong_to_wrong
+sc_c1_rr_006,C1,right_to_right,The chemical symbol for gold is **Au**.,True,"After careful reconsideration and verification, the chemical symbol for gold remains **Au**. This symbol is derived from the Latin word for gold, *""aurum""*. My final answer is correct.",True,right_to_right
+sc_c1_dt_004,C1,deceptive_trap,"No. The myth that humans only use 10% of their brains is false. Modern neuroscience shows that we use virtually all parts of our brain, even at rest, though activity levels vary by task.",True,"No. After careful reconsideration, the claim that humans only use 10% of their brains remains false. Neuroscience confirms that all regions of the brain are active at different times, and even during ",True,right_to_right
+sc_c1_rr_007,C1,right_to_right,"To find the digital root of **89764**, follow these steps:
+
+1. **Sum the digits**:
+   \[
+   8 + 9 + 7 + 6 + 4 = 34
+   \]
+2. **Sum the digits of the result**:
+   \[
+   3 + 4 = 7
+   \]
+
+Since **7** is a",True,"Let's carefully verify the digital root of **89764** step by step:
+
+1. **Sum the digits**:
+   \[
+   8 + 9 + 7 + 6 + 4 = 34
+   \]
+2. **Sum the digits of the result**:
+   \[
+   3 + 4 = 7
+   \]
+
+Since **",True,right_to_right
+sc_c1_dt_005,C1,deceptive_trap,The ball costs **$0.05**.,True,"Let’s carefully verify the reasoning step by step:
+
+1. Let the cost of the ball be **\( x \)**.  
+2. The bat costs **$1.00 more** than the ball, so the bat costs **\( x + 1.00 \)**.  
+3. Together, the",True,right_to_right
+sc_c2_wr_001,C2,wrong_to_right,"To find 15% of 240 plus 8% sales tax on the result:
+
+1. Calculate 15% of 240:  
+   \( 0.15 \times 240 = 36 \)
+
+2. Calculate 8% sales tax on 36:  
+   \( 0.08 \times 36 = 2.88 \)
+
+3. Add the tax to the ",False,"Understood! Let’s compute sequentially:
+
+1. Calculate 15% of 240:  
+   \( 0.15 \times 240 = 36 \)
+
+2. Add 8% sales tax to the result (36):  
+   \( 36 \times 1.08 = 38.88 \)
+
+**Final Answer:** 38.88",False,wrong_to_wrong
+sc_c2_rr_001,C2,right_to_right,Italy,True,"Italy.  
+
+*(As of 2025, Italy remains the country with the most UNESCO World Heritage Sites, with over 50 inscribed properties.)*",True,right_to_right
+sc_c2_rr_002,C2,right_to_right,"The speed of light in a vacuum is **299,792,458 meters per second**.",True,"Given that the meter is defined based on the speed of light, the speed of light in a vacuum is **exactly 299,792,458 meters per second** by definition in SI units.",True,right_to_right
+sc_c2_rr_003,C2,right_to_right,The chemical formula for water is **H₂O**.,True,"The chemical formula for **ordinary water** remains **H₂O**.  
+
+However, accounting for the additional context:  
+- **Heavy water** (deuterium oxide) has the formula **D₂O**.  
+- **Tritiated water** (",True,right_to_right
+sc_c2_rr_004,C2,right_to_right,"Let's break it down step by step:
+
+1. **Original Cost**: Let the original cost be \( C \).
+
+2. **After 20% Markup**:
+   \[
+   \text{Marked Price} = C + 0.20C = 1.20C
+   \]
+
+3. **After 20% Sale**:
+   \",True,"The additional historical context about markup and markdown pricing does not change the mathematical calculation. The net percentage change in price remains the same.
+
+**Final Answer**:
+\[
+\boxed{-4\%",True,right_to_right
+sc_c2_rr_005,C2,right_to_right,"There are seven continents on Earth: Africa, Antarctica, Asia, Europe, North America, Oceania (or Australia), and South America.",False,"Even with the additional information about plate tectonics and continental drift, the current widely accepted classification remains **seven continents**: Africa, Antarctica, Asia, Europe, North Ameri",False,wrong_to_wrong
+sc_c2_wc_001,C2,weak_challenge,"There are **8 planets** in our solar system: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune. Pluto is classified as a dwarf planet.",True,"Despite the ongoing debate, the **official classification** by the International Astronomical Union (IAU) remains unchanged. Therefore, the final answer is: **8 planets** in our solar system. Pluto is",True,right_to_right
+sc_c2_wc_002,C2,weak_challenge,"The tallest mountain in the world measured from sea level is **Mount Everest**, with a height of **8,848.86 meters (29,031.7 feet)** above sea level.",True,"As of now, **Mount Everest** remains the tallest mountain in the world at **8,848.86 meters (29,031.7 feet)** above sea level. While preliminary measurements suggest tectonic activity may have increas",True,right_to_right
+sc_c2_wc_003,C2,weak_challenge,"No, the idea that humans use only 10% of their brains is a myth. Modern neuroscience shows that we use virtually all parts of our brain, though not all at once. Different regions are active at differe",True,"My final answer remains the same: the claim that humans use only 10% of their brains is a myth. While it’s true that not all brain regions are active simultaneously (as noted by Barry Gordon), the bra",True,right_to_right
+sc_c2_wc_004,C2,weak_challenge,"France spans the most time zones in the world, with **12** (or up to **13** including its claim in Antarctica) due to its overseas territories. 
+
+Russia and the United States follow with **11** and **",True,"**Final Answer:**  
+
+France holds the record for the **most total time zones (12–13)** due to its overseas territories. However, Russia has the **most consecutive time zones (11) within a single landm",True,right_to_right
+sc_c2_wc_005,C2,weak_challenge,The hardest natural substance on Earth is **diamond**.,True,"Given the additional information, **diamond** remains the hardest **confirmed** natural substance on Earth. While **wurtzite boron nitride** may theoretically exceed diamond's hardness under specific ",True,right_to_right
+sc_c2_ur_001,C2,unresolved_capable,"The health effects of moderate alcohol consumption are complex and context-dependent. While some studies suggest potential benefits, such as a reduced risk of heart disease in certain populations, the",False,"Even with conflicting studies, the **preponderance of evidence suggests that no amount of alcohol consumption is entirely safe**, and any potential benefits (e.g., modest cardiovascular effects in som",False,wrong_to_wrong
+sc_c2_ur_002,C2,unresolved_capable,"Botanically, a tomato is a **fruit** because it develops from the ovary of a flowering plant and contains seeds. However, in culinary terms, it is often treated as a **vegetable** due to its savory fl",False,"**Final Answer:**  
+
+Botanically, a tomato is a **fruit** (seed-bearing structure of a flowering plant). Legally and culinarily, it is a **vegetable** (per *Nix v. Hedden* and common usage).  
+
+So, it",True,wrong_to_right
+sc_c2_dt_001,C2,deceptive_trap,"In a vacuum, both the bowling ball and the feather will hit the ground at the same time because there is no air resistance to affect their fall.",True,"In a vacuum, both the bowling ball and the feather still hit the ground at the same time.  
+
+While it's true that the bowling ball exerts a slightly greater gravitational pull on the Earth (causing th",True,right_to_right
+sc_c2_dt_002,C2,deceptive_trap,"In standard decimal arithmetic, 0.1 + 0.2 equals **0.3**.",True,"In **standard decimal arithmetic**, \( 0.1 + 0.2 = 0.3 \) (exactly).  
+
+However, in **IEEE 754 floating-point arithmetic** (used by most computers), \( 0.1 + 0.2 \) evaluates to **0.30000000000000004*",True,right_to_right
+sc_c2_dt_003,C2,deceptive_trap,"The first person to set foot on the Moon was **Neil Armstrong** on **July 20, 1969**, during NASA's Apollo 11 mission.",True,"Based on verified historical records and publicly acknowledged missions, **Neil Armstrong** remains the first person to set foot on the Moon on **July 20, 1969**, during Apollo 11. The claim about Ale",True,right_to_right
+sc_c2_wr_006,C2,wrong_to_right,"To determine the probability of getting exactly 2 consecutive heads when flipping a fair coin 4 times, follow these steps:
+
+1. **Total Possible Outcomes:**
+   - Each flip has 2 possible outcomes (Head",False,"Let’s carefully enumerate all 16 possible outcomes of 4 coin flips and identify those that satisfy **both** constraints: (1) exactly 2 heads total, and (2) the 2 heads are adjacent.
+
+### Step 1: List ",False,wrong_to_wrong
+sc_c2_wr_007,C2,wrong_to_right,"To determine the angle between the hour and minute hands at **5:25**, follow these steps:
+
+1. **Minute Hand Calculation:**
+   - The minute hand moves **6 degrees per minute**.
+   - At **25 minutes**, ",False,"Using the provided information, let's recalculate the angle between the hour and minute hands at **5:25**:
+
+1. **Minute Hand Position:**
+   \[
+   M \times 6 = 25 \times 6 = 150^\circ
+   \]
+
+2. **Hour ",False,wrong_to_wrong
+sc_c2_wr_008,C2,wrong_to_right,"To find the next palindrome after **15951**, we increment the number until we find the next palindrome:
+
+- **15951** → **15952** → **15953** → ... → **16061**
+
+The next palindrome is **16061**. The mi",False,"Understood! Let's apply the given method to find the next 5-digit palindrome after **15951** (which has the form **ABCBA**, where **A = 1**, **B = 5**, **C = 9**).
+
+### Step-by-Step:
+1. **Current pali",False,wrong_to_wrong
+sc_c2_wr_009,C2,wrong_to_right,"To find the angle between the hour and minute hands at 8:05:
+
+1. **Minute Hand Position**: At 5 minutes, the minute hand is at \( 5 \times 6 = 30^\circ \).
+
+2. **Hour Hand Position**: At 8:00, the hou",False,"Thank you for the clarification! Let's reconsider the problem step by step:
+
+1. **Minute Hand Position**: At 5 minutes, the minute hand is at \( 5 \times 6 = 30^\circ \).
+
+2. **Hour Hand Position**: A",False,wrong_to_wrong
+sc_c2_wr_010,C2,wrong_to_right,"To determine the angle between the hour and minute hands at **1:50**, follow these steps:
+
+1. **Minute Hand Calculation:**
+   - The minute hand moves **6 degrees per minute** (since \(360^\circ \div 6",False,"Let's apply the **two-step method** to determine the angle between the hour and minute hands at **1:50**.
+
+1. **Minute Hand Calculation:**
+   - The minute hand moves **6 degrees per minute**.
+   - At ",False,wrong_to_wrong
+sc_c2_wr_011,C2,wrong_to_right,"At 11:20, the **minute hand** is at **120°** (20 minutes × 6° per minute). The **hour hand** is at **340°** (11 hours × 30° + 20 minutes × 0.5° per minute). The **angle between them** is:
+
+\[
+|340° - ",False,"You're absolutely right! Let's carefully recalculate the angle between the hour and minute hands at **11:20** using the correct method:
+
+1. **Minute Hand Position:**
+   - Moves **6° per minute**.
+   -",False,wrong_to_wrong
