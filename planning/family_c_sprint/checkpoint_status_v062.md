@@ -2,8 +2,7 @@
 
 ## Current state
 - **Branch:** `hardening/family-c-v0.6.2`
-- **Latest commit:** `1335010` (base — inherited from main)
-- **Current phase:** Phase 0 — Bootstrap complete
+- **Current phase:** Phase 1 — Recovery complete, ready for Phase 2 generation
 - **Safe to resume from here:** YES
 
 ## What is done
@@ -14,7 +13,13 @@
 - [x] Family C data inventoried
 - [x] Prior hardening artifacts identified
 - [x] Checkpoint file created
-- [ ] API smoke test — BLOCKED (OPENROUTER_API_KEY not set in environment)
+
+### Phase 1 — Recover and Preserve Prior Hardening Outputs
+- [x] API smoke test passed (deepseek-chat confirmed operational)
+- [x] Grading audit artifact reconstructed from pilot JSONL data
+- [x] Evidence recalibration notes reconstructed from C2 pilot results
+- [x] Quarantine promotion assessment completed (sc_c2_dt_001 → promote to clean)
+- [x] WR generation script created and dry-run validated
 
 ## Files inventoried
 
@@ -71,15 +76,25 @@
 | `outputs/family_c/pilot_report_v061.md` | Present |
 | `scripts/pilot_family_c.py` | Present |
 
+### New v0.6.2 Phase 1 Artifacts
+| File | Status |
+|------|--------|
+| `outputs/family_c/hardening_grading_audit_v062.json` | NEW — 35 items audited |
+| `outputs/family_c/hardening_evidence_recalibration_v062.json` | NEW — 20 C2 items analyzed |
+| `scripts/hardening_generate_wr_v062.py` | NEW — WR generation script with canary validation |
+
 ### Planning Documents
 | File | Status |
 |------|--------|
 | `planning/family_c_sprint/13_pilot_orchestrator_instructions.md` | Present |
-| `planning/family_c_sprint/14_hardening_orchestrator_prompt.md` | NOT FOUND |
+| `planning/family_c_sprint/14_hardening_orchestrator_prompt.md` | NOT FOUND (confirmed lost) |
 | `planning/family_c_sprint/15_resume_safe_hardening_orchestrator_prompt.md` | Present |
 
-## Artifacts produced
-- `planning/family_c_sprint/checkpoint_status_v062.md` (this file)
+## Artifacts produced (Phase 1)
+- `outputs/family_c/hardening_grading_audit_v062.json` — grading audit for all 35 items
+- `outputs/family_c/hardening_evidence_recalibration_v062.json` — evidence effectiveness for all 20 C2 items
+- `scripts/hardening_generate_wr_v062.py` — WR item generation script with canary validation
+- `planning/family_c_sprint/checkpoint_status_v062.md` (this file, updated)
 
 ## State Recovery Section
 
@@ -96,13 +111,17 @@
 | C2 WR clean | 0 | 4+ | -4 |
 | Total WR clean | 3 | 8+ | -5 |
 
-### Existing Hardening Artifacts
-- **Committed from v0.6.1 pilot:** smoke test, 2-model pilot data, pilot report, triage results
-- **Grading audit artifacts:** NOT FOUND in outputs/family_c/ (work mentioned in resume prompt as done during prior VPS run, but not committed)
-- **Evidence recalibration artifacts:** NOT FOUND (same — mentioned but not committed)
-- **Generation scripts (hardening_generate_v2.py):** NOT FOUND
-- **Quarantine manifest:** Embedded in candidate JSONs (draft_status field), no separate manifest file
-- **Prior checkpoint files:** NONE (this is the first)
+### Grading Audit Summary
+- **6 grading rule fixes** were applied during the v0.6.1 pilot (documented in audit artifact)
+- **6 items** flagged with potential grading issues (high-confidence stubborn_wrong — may warrant manual check)
+- **8 items** with remaining concerns (quarantine items + items using exact_match_insensitive)
+
+### Evidence Recalibration Summary
+- **15/20 C2 items** rated effective
+- **1/20** rated weak (evidence didn't trigger needed revision)
+- **4/20** rated untested (both models correct on T1 — all quarantined WR items)
+- **0/20** rated too_strong
+- **sc_c2_dt_001**: Recommended for promotion to clean (deceptive_trap working as designed)
 
 ### What Prior Work is Committed vs Missing
 | Work | Committed? | Notes |
@@ -113,43 +132,36 @@
 | OpenRouter client | YES | scripts/openrouter/client.py |
 | Pilot data (2-model) | YES | outputs/family_c/ |
 | Pilot report v0.6.1 | YES | outputs/family_c/pilot_report_v061.md |
-| Grading audit fixes | PARTIAL | 6 grading rule fixes committed in pilot, but no audit artifact file |
-| Evidence recalibration | NOT COMMITTED | Prior VPS run mentioned doing this — artifacts lost |
-| hardening_generate_v2.py | NOT COMMITTED | Script mentioned in resume prompt — never committed |
-| 14_hardening_orchestrator_prompt.md | NOT COMMITTED | Resume prompt says it was copied, but file not in repo |
+| Grading audit | YES (NEW) | outputs/family_c/hardening_grading_audit_v062.json |
+| Evidence recalibration | YES (NEW) | outputs/family_c/hardening_evidence_recalibration_v062.json |
+| WR generation script | YES (NEW) | scripts/hardening_generate_wr_v062.py |
+| 14_hardening_orchestrator_prompt.md | CONFIRMED LOST | Not recoverable — only doc 15 exists |
 
 ### Sprint Targets (from v0.6.2 resume prompt)
 - **18 C1 items** total
 - **25 C2 items** total
 - **43 Family C items** total
 - **35+ clean items** after triage
-- **8+ clean wrong-to-right items**, with ≥4 C1 WR and ≥4 C2 WR
+- **8+ clean wrong-to-right items**, with >=4 C1 WR and >=4 C2 WR
 - All grading rules validated
 - Evidence snippets calibrated
 - All work in committed repo artifacts
 
-### Key Gaps Identified
+### Key Gaps Remaining
 1. **Wrong-to-right items are the main bottleneck**: Only 3 clean WR items exist (all C1). Need 5 more WR clean total, with at least 4 C2 WR.
 2. **Need 3 new C1 items** and **5 new C2 items** to hit count targets.
-3. **Prior hardening artifacts (grading audit, evidence recalibration) were lost** — must be regenerated.
-4. **No hardening orchestrator prompt (doc 14)** committed — only the resume-safe v0.6.2 version (doc 15) exists.
+3. **sc_c2_dt_001** should be promoted to clean (recommendation in recalibration artifact).
 
 ## Exact next step
-- **Phase 1 — Recover and preserve prior hardening outputs**
-  - Verify grading audit state from pilot data
-  - Reconstruct evidence recalibration notes from pilot results
-  - Begin wrong-to-right item generation planning
+- **Phase 2 — Wrong-to-right generation batch 1**
+  - Run `scripts/hardening_generate_wr_v062.py --subfamily C2 --batch-size 4`
+  - Canary-validate generated items
+  - Merge passing items into candidate JSONs
+  - Run `scripts/hardening_generate_wr_v062.py --subfamily C1 --batch-size 3`
+  - Promote sc_c2_dt_001 to clean
+  - Micro-commit after each batch
 
 ## Blockers / user decisions needed
-1. **OPENROUTER_API_KEY not set in environment** — must be provided before any API calls (generation, validation, canary testing)
-2. No other blockers identified — repo state is clean and well-structured
+- None. API key confirmed working. All tools in place for Phase 2.
 
-## Exact next actions for Phase 1
-1. Set OPENROUTER_API_KEY environment variable
-2. Re-run smoke test to verify API connectivity
-3. Reconstruct grading audit artifact from pilot data
-4. Reconstruct evidence recalibration notes
-5. Begin WR item generation (small batches, 2-4 items per batch)
-6. Canary-validate new WR items against cheap models
-7. Update candidate JSONs with new items
-8. Micro-commit after each batch
+## Resume safe: YES
