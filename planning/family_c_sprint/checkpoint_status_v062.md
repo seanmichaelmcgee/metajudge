@@ -2,8 +2,8 @@
 
 ## Current state
 - **Branch:** `hardening/family-c-v0.6.2`
-- **Latest commit:** `a1d0554` (final sprint commit)
-- **Current phase:** Phase 5 — Sprint complete, pending final review
+- **Latest commit:** (see git log)
+- **Current phase:** Phase 6 — 5-model sweep complete, analysis written
 - **Safe to resume from here:** YES
 
 ## Sprint Results Summary
@@ -28,6 +28,36 @@
 - [x] Phase 3: Grok canary validation + grading robustness + evidence calibration
 - [x] Phase 4: Triage (all drafts promoted to clean)
 - [x] Phase 5: Final report and checkpoint
+- [x] Phase 6: 5-model sweep complete and analyzed
+
+### 5-Model Sweep Results
+
+**Models tested:** DeepSeek Chat, Grok 3 Mini, GPT-4.1, Claude Sonnet 4.5, Gemini 2.5 Pro
+**Items:** 45 clean items (25 C1 + 20 C2)
+
+| Model | R→R | W→R | R→W | W→W | T1 Acc | T2 Acc | Self-Corr Rate |
+|-------|-----|-----|-----|-----|--------|--------|----------------|
+| DeepSeek | 23 | 2 | 1* | 19 | 53.3% | 55.6% | 9.5% |
+| Grok | 23 | 0 | 6* | 16 | 64.4% | 51.1% | 0.0% |
+| GPT-4.1 | 25 | 1 | 2* | 17 | 60.0% | 57.8% | 5.6% |
+| Claude | 25 | 5 | 3* | 12 | 62.2% | 66.7% | 29.4% |
+| Gemini** | 10 | 2 | 20 | 13 | 66.7% | 26.7% | 13.3% |
+
+*R→W counts include sc_c1_rr_005 (universal grading bug) and Grok counts are entirely grading artifacts.
+**Gemini R→W count massively inflated by grading/parsing artifacts — results unreliable.
+
+**Key findings:**
+- Claude is the best self-corrector (29.4% W→R rate, 5x next-best)
+- Grok shows zero genuine self-correction or damage (all R→W are grading artifacts)
+- 64% of items differentiate ≥2 models; 22% differentiate ≥3 models
+- wrong_to_right stratum items produce the most model differentiation
+- Gemini needs re-grading before results can be trusted
+
+**Grading issues identified:**
+- sc_c1_rr_005: Universal R→W across all 5 models — Berlin Wall "1989" vs "November 9, 1989"
+- All 6 Grok R→W items: grading artifacts (correct answer in T2 but grader can't extract)
+- Gemini T2: systematic parsing failure on verbose responses (20 apparent R→W)
+- `approx_numeric_small` grader needs robust number extraction from text
 
 ### Files Changed in This Sprint
 - `data/family_c/family_c_c1_candidates.json` — merged hardening items into main C1 candidates
@@ -64,11 +94,19 @@
 2. 4 clock-angle C2 items share identical evidence snippet — consider varying for future versions
 3. `approx_numeric_small` items have no tolerance_params set — consider adding abs_tol: 0.1
 4. 6 quarantined items remain (all original WR items too easy for both pilot models)
-5. 5-model narrative sweep not yet run
-6. Integration into thin benchmark notebook not yet done
+5. ~~5-model narrative sweep not yet run~~ — **DONE** (Phase 6)
+6. Gemini re-grading — implement answer extraction preprocessing, re-grade all Gemini T2 responses
+7. Grading fixes — fix approx_numeric_small to handle numbers in verbose text, commas, date-embedded numbers
+8. Integration into thin benchmark notebook
+
+### Sweep Analysis Artifacts
+- `outputs/family_c/sweep_analysis_v062.md` — Comprehensive 5-model sweep analysis report
+- `outputs/family_c/sweep_cross_model_v062.csv` — Cross-model comparison (45 items × 5 models)
+- `outputs/family_c/sweep_raw_{model_slug}.jsonl` — Raw sweep data (5 files)
+- `outputs/family_c/sweep_summary_{model_slug}.csv` — Per-model summaries (5 files)
 
 ### Blockers
-None — sprint targets met, ready for 5-model sweep.
+None — sweep complete.
 
 ### Next Step
-5-model narrative sweep on the 45-clean-item corpus.
+Gemini re-grading, then narrative notebook integration.

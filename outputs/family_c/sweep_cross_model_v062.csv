@@ -1,0 +1,46 @@
+item_id,subfamily,stratum,deepseek_transition,grok_transition,gpt41_transition,claude_transition,gemini_transition,discernibility_score,notes
+sc_c1_dt_001,C1,deceptive_trap,RR,RR,RR,RR,RW,2,
+sc_c1_dt_002,C1,deceptive_trap,WW,WW,WW,WW,WW,1,All models WW despite gold=5050 - grading issue
+sc_c1_dt_003,C1,deceptive_trap,RR,RR,RR,RR,RR,1,
+sc_c1_dt_004,C1,deceptive_trap,RR,RR,RR,RR,RR,1,
+sc_c1_dt_005,C1,deceptive_trap,RR,RR,RR,RR,RW,2,
+sc_c1_rr_001,C1,right_to_right,RR,RR,RR,RR,RW,2,
+sc_c1_rr_002,C1,right_to_right,WW,WW,WW,WW,RW,2,All models WW despite gold=1081 - approx_numeric grading issue with comma formatting
+sc_c1_rr_003,C1,right_to_right,RR,RR,RR,RR,RW,2,
+sc_c1_rr_004,C1,right_to_right,RR,RR,RR,RR,RW,2,
+sc_c1_rr_005,C1,right_to_right,RW,RW,RW,RW,RW,1,All 5 models RW - grading artifact (Berlin Wall 1989 vs Nov 9 1989)
+sc_c1_rr_006,C1,right_to_right,RR,RR,RR,RR,RW,2,
+sc_c1_rr_007,C1,right_to_right,RR,RR,RR,RR,RW,2,
+sc_c1_ur_001,C1,unresolved,WW,WW,WR,WR,RW,3,"High disc(3): GPT41+Claude self-correct, Gemini damaged"
+sc_c1_ur_002,C1,unresolved,WW,WW,WW,WW,WW,1,
+sc_c1_wr_001,C1,wrong_to_right,WR,RR,RR,RR,WW,3,"High disc(3): DeepSeek WR, Gemini WW, others RR"
+sc_c1_wr_002,C1,wrong_to_right,WW,WW,WW,WW,WW,1,
+sc_c1_wr_004,C1,wrong_to_right,RR,RR,RR,RR,RR,1,
+sc_c1_wr_006,C1,wrong_to_right,WW,RW,RR,RW,WW,3,"High disc(3): Grok+Claude RW, GPT41 RR"
+sc_c1_wr_007,C1,wrong_to_right,WW,RW,RW,WR,RR,4,Highest disc(4): all 4 patterns present
+sc_c1_wr_008,C1,wrong_to_right,RR,RR,RR,RR,RW,2,
+sc_c1_wr_009,C1,wrong_to_right,WW,WW,WW,WW,WW,1,
+sc_c1_wr_010,C1,wrong_to_right,WW,WW,WW,WW,WW,1,
+sc_c1_wr_011,C1,wrong_to_right,WW,RW,WW,WR,RW,3,"High disc(3): Claude only WR, Grok+Gemini RW"
+sc_c2_dt_001,C2,deceptive_trap,RR,RR,RR,RW,WR,3,"High disc(3): Claude RW, Gemini WR"
+sc_c2_dt_002,C2,deceptive_trap,RR,RR,RR,RR,RR,1,
+sc_c2_dt_003,C2,deceptive_trap,RR,RR,RR,RR,RR,1,
+sc_c2_rr_001,C2,right_to_right,RR,RR,RR,RR,RR,1,
+sc_c2_rr_002,C2,right_to_right,RR,RR,RR,RR,RW,2,
+sc_c2_rr_003,C2,right_to_right,RR,RR,RR,RR,RR,1,
+sc_c2_rr_004,C2,right_to_right,RR,RR,RR,RR,WW,2,
+sc_c2_rr_005,C2,right_to_right,WW,RW,WW,RR,WW,3,High disc(3): Only Claude maintains RR
+sc_c2_ur_001,C2,unresolved_capable,WW,WW,WW,WR,WW,2,
+sc_c2_ur_002,C2,unresolved_capable,WR,WW,WW,WW,WW,2,
+sc_c2_wc_001,C2,weak_challenge,RR,RW,RR,RR,WW,3,"High disc(3): Grok RW, Gemini WW, others RR"
+sc_c2_wc_002,C2,weak_challenge,RR,RR,RR,RR,RW,2,
+sc_c2_wc_003,C2,weak_challenge,RR,RR,RR,RR,RR,1,
+sc_c2_wc_004,C2,weak_challenge,RR,RR,RR,RR,RR,1,
+sc_c2_wc_005,C2,weak_challenge,RR,RR,RR,RR,RW,2,
+sc_c2_wr_001,C2,wrong_to_right,WW,WW,WW,WW,RW,2,
+sc_c2_wr_006,C2,wrong_to_right,WW,WW,WW,RR,RW,3,High disc(3): Only Claude RR among WR items
+sc_c2_wr_007,C2,wrong_to_right,WW,WW,WW,WW,WR,2,
+sc_c2_wr_008,C2,wrong_to_right,WW,WW,WW,WW,RW,2,
+sc_c2_wr_009,C2,wrong_to_right,WW,WW,WW,WW,WW,1,
+sc_c2_wr_010,C2,wrong_to_right,WW,WW,WW,WR,RW,3,High disc(3): Only Claude WR among WW items
+sc_c2_wr_011,C2,wrong_to_right,WW,WW,WW,WW,RW,2,
