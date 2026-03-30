@@ -771,10 +771,10 @@
     "category": "chemistry",
     "mechanism_primary": "temperature_dependent_kw_ignored",
     "provenance": "hand_authored",
-    "draft_status": "draft",
+    "draft_status": "quarantine",
     "is_linking_item": false,
     "linking_item_id": null,
-    "audit_notes": "Phase 2 batch 1 item 3. Author: claude-sonnet-4.6, Adversary: grok-4.1-fast (PASS iter 1), Auditor: gpt-5.2 (ACCEPT, conf=0.88, gold verified=6.808). Canaries: 0/3 correct (all said 7.0). Trap: models universally state neutral pH=7.0, forgetting Kw is temperature-dependent. At 37\u00b0C, Kw=2.42\u00d710\u207b\u00b9\u2074, so pH=\u00bd\u00d7pKw=\u00bd\u00d713.616\u22486.81. Tighter tolerance (abs_tol=0.05) because answer is 6.81 and we don't want 7.0 to pass.",
+    "audit_notes": "Phase 2 batch 1 item 3. Author: claude-sonnet-4.6, Adversary: grok-4.1-fast (PASS iter 1), Auditor: gpt-5.2 (ACCEPT, conf=0.88, gold verified=6.808). Canaries: 0/3 correct (all said 7.0). Trap: models universally state neutral pH=7.0, forgetting Kw is temperature-dependent. At 37\u00b0C, Kw=2.42\u00d710\u207b\u00b9\u2074, so pH=\u00bd\u00d7pKw=\u00bd\u00d713.616\u22486.81. Tighter tolerance (abs_tol=0.05) because answer is 6.81 and we don't want 7.0 to pass. | Quarantined: frontier validation batch 1 \u2014 all 3 items too easy (\u226580% T1 frontier accuracy excl. Gemini truncation). See batch1_validation_report.md.",
     "three_turn_probe": false,
     "three_turn_purpose": null
   }
