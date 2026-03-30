@@ -3,8 +3,9 @@
 ## Current state
 - **Branch:** `hardening/family-c-v0.6.2`
 - **Latest commit:** (see git log)
-- **Current phase:** Phase 7 — Corrected sweep analysis + Gemini rerun + WR item audit
+- **Current phase:** Next-phase Phase 0 — state recovery complete
 - **Safe to resume from here:** YES
+- **Requires user confirmation:** YES
 
 ## Sprint Results Summary
 
@@ -131,4 +132,4 @@
 None — corrected analysis complete, Gemini re-run in progress.
 
 ### Next Step
-Integrate Gemini re-run results, then narrative notebook integration.
+**Phase 1 — Grading semantics freeze.** Lock grader behavior with unit tests before generating new items. Define target T1 accuracy range (40-60%) for WR items. Design adversarial generation pipeline.
