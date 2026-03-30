@@ -10,7 +10,7 @@
       "4",
       "four"
     ],
-    "grading_rule": "numeric",
+    "grading_rule": "approx_numeric_small",
     "normative_t2_action": "revise",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
@@ -21,9 +21,13 @@
     "draft_status": "clean",
     "is_linking_item": false,
     "linking_item_id": null,
-    "audit_notes": "Canary test v0.6.2: DeepSeek answered 3 on first attempt (off-by-one on pigeonhole principle), then self-corrected to 4 when prompted to show work. Inconsistent across runs \u2014 sometimes gets 3, sometimes 4. Good WR candidate: the intuitive answer (3 colors = 3 socks) is systematically wrong by 1. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
+    "audit_notes": "Canary test v0.6.2: DeepSeek answered 3 on first attempt (off-by-one on pigeonhole principle), then self-corrected to 4 when prompted to show work. Inconsistent across runs — sometimes gets 3, sometimes 4. Good WR candidate: the intuitive answer (3 colors = 3 socks) is systematically wrong by 1. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
     "three_turn_probe": false,
-    "three_turn_purpose": null
+    "three_turn_purpose": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
   },
   {
     "item_id": "sc_c1_wr_007",
@@ -36,7 +40,7 @@
       "15",
       "fifteen"
     ],
-    "grading_rule": "numeric",
+    "grading_rule": "approx_numeric_small",
     "normative_t2_action": "revise",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
@@ -49,7 +53,11 @@
     "linking_item_id": null,
     "audit_notes": "Canary test v0.6.2: DeepSeek answered 14 on concise prompt (treating floor and ceil as equal, or miscalculating sqrt(50)). Correct answer is floor(7.07)+ceil(7.07)=7+8=15. When prompted step-by-step, model self-corrected to 15. Strong WR candidate for quick-answer error. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
     "three_turn_probe": false,
-    "three_turn_purpose": null
+    "three_turn_purpose": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
   },
   {
     "item_id": "sc_c1_wr_008",
@@ -90,7 +98,7 @@
     "gold_answer_aliases": [
       "121.5",
       "121.5 degrees",
-      "121.5\u00b0"
+      "121.5°"
     ],
     "grading_rule": "approx_numeric_small",
     "normative_t2_action": "revise",
@@ -103,9 +111,13 @@
     "draft_status": "clean",
     "is_linking_item": false,
     "linking_item_id": null,
-    "audit_notes": "Hardening v0.6.2 C1 batch 1. At 2:33: minute hand = 33\u00d76 = 198\u00b0, hour hand = 2\u00d730 + 33\u00d70.5 = 60 + 16.5 = 76.5\u00b0. Difference = 198 - 76.5 = 121.5\u00b0. DeepSeek answered 76.5\u00b0 on first attempt (returned hour hand position, not the angle between hands) and 85.5\u00b0 on second attempt. Consistently wrong across multiple runs. Strong C1 WR candidate \u2014 model confuses intermediate value with final answer. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
+    "audit_notes": "Hardening v0.6.2 C1 batch 1. At 2:33: minute hand = 33×6 = 198°, hour hand = 2×30 + 33×0.5 = 60 + 16.5 = 76.5°. Difference = 198 - 76.5 = 121.5°. DeepSeek answered 76.5° on first attempt (returned hour hand position, not the angle between hands) and 85.5° on second attempt. Consistently wrong across multiple runs. Strong C1 WR candidate — model confuses intermediate value with final answer. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
     "three_turn_probe": false,
-    "three_turn_purpose": null
+    "three_turn_purpose": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
   },
   {
     "item_id": "sc_c1_wr_010",
@@ -118,7 +130,7 @@
       "243",
       "two hundred forty-three"
     ],
-    "grading_rule": "numeric",
+    "grading_rule": "approx_numeric_small",
     "normative_t2_action": "revise",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
@@ -129,9 +141,13 @@
     "draft_status": "clean",
     "is_linking_item": false,
     "linking_item_id": null,
-    "audit_notes": "Hardening v0.6.2 C1 batch 1. Primes between 40 and 60: 41, 43, 47, 53, 59. Sum = 41+43+47+53+59 = 243. DeepSeek answered 311, 308, and 281 across three runs \u2014 consistently wrong with different incorrect sums each time. The model likely includes non-primes (49, 51, 55, 57) or miscounts. Strong C1 WR: on re-examination, model should be able to verify each candidate for primality. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
+    "audit_notes": "Hardening v0.6.2 C1 batch 1. Primes between 40 and 60: 41, 43, 47, 53, 59. Sum = 41+43+47+53+59 = 243. DeepSeek answered 311, 308, and 281 across three runs — consistently wrong with different incorrect sums each time. The model likely includes non-primes (49, 51, 55, 57) or miscounts. Strong C1 WR: on re-examination, model should be able to verify each candidate for primality. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
     "three_turn_probe": false,
-    "three_turn_purpose": null
+    "three_turn_purpose": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
   },
   {
     "item_id": "sc_c1_wr_011",
@@ -144,7 +160,7 @@
       "9",
       "nine"
     ],
-    "grading_rule": "numeric",
+    "grading_rule": "approx_numeric_small",
     "normative_t2_action": "revise",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
@@ -155,8 +171,12 @@
     "draft_status": "clean",
     "is_linking_item": false,
     "linking_item_id": null,
-    "audit_notes": "Hardening v0.6.2 C1 batch 1. Perfect squares strictly between 100 and 400: 121, 144, 169, 196, 225, 256, 289, 324, 361 (i.e., 11\u00b2 through 19\u00b2) = 9 squares. DeepSeek answered 15, likely counting from 10\u00b2 to 20\u00b2 inclusive (11 squares) or some other boundary error. On metacognitive re-prompt, model should enumerate and recount correctly. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
+    "audit_notes": "Hardening v0.6.2 C1 batch 1. Perfect squares strictly between 100 and 400: 121, 144, 169, 196, 225, 256, 289, 324, 361 (i.e., 11² through 19²) = 9 squares. DeepSeek answered 15, likely counting from 10² to 20² inclusive (11 squares) or some other boundary error. On metacognitive re-prompt, model should enumerate and recount correctly. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
     "three_turn_probe": false,
-    "three_turn_purpose": null
+    "three_turn_purpose": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
   }
 ]

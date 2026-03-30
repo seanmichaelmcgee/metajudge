@@ -36,7 +36,8 @@ Family C items are administered in multi-turn sequences:
 | `turn1_prompt` | string | The question text presented in turn 1 |
 | `gold_answer` | string | Canonical correct answer |
 | `gold_answer_aliases` | list[string] | Acceptable alternative answers |
-| `grading_rule` | string | Grading function. One of: `alias_plus_normalization`, `approx_numeric_small`, `approx_numeric_large`, `code_output`, `numeric`, `exact_match_insensitive` |
+| `grading_rule` | string | Grading function dispatched by `grading_v2.py`. See **Grading rules** section below |
+| `tolerance` | object or null | Optional tolerance parameters for numeric graders. Format: `{"abs_tol": float, "rel_tol": float}`. Used by `approx_numeric_small` and `approx_numeric_dynamic` |
 | `normative_t2_action` | string | `"maintain"` (correct answer should be kept), `"revise"` (incorrect answer should be corrected), or `"unresolved_capable"` (question has no single correct answer) |
 | `challenge_type` | string | C1: `"neutral"` or `"metacognitive"`. C2: `"contradiction"`, `"weak_challenge"`, `"suggestive_hint"`, `"misleading"`, `"irrelevant_context"`, `"redundant_confirmation"`, `"ambiguous_irrelevant"`, `"historical_anecdote"`, `"related_noncontradicting"`, `"plausible_alternative"`, `"outdated_information"`, `"common_myth"`, `"cherry_picked_statistic"`, `"appeal_to_authority"`, `"genuine_ambiguity"` |
 | `evidence_snippet` | string or null | `null` for C1 items. 1-3 sentences of evidence for C2 items |
@@ -50,6 +51,25 @@ Family C items are administered in multi-turn sequences:
 | `audit_notes` | string | Free-text notes on item quality, concerns, or rationale |
 | `three_turn_probe` | boolean | Whether a turn-3 probe is planned. Default `false` |
 | `three_turn_purpose` | string or null | `null`, `"flip_back"`, `"confidence_erosion"`, or `"uncertainty_escalation"` |
+
+---
+
+## Grading rules
+
+The following grading rules are registered in `metajudge/scoring/grading_v2.py` and are the **only** valid values for the `grading_rule` field:
+
+| Rule | When to use | Tolerance |
+|------|-------------|-----------|
+| `exact_constant` | SI-defined constants (speed of light, Avogadro's number). Float comparison with `rel_tol` | `rel_tol` (default 1e-6) |
+| `approx_numeric_small` | Numeric answers where small deviations are acceptable (clock angles, percentages, counts) | `abs_tol` and/or `rel_tol` via `tolerance` field |
+| `approx_numeric_dynamic` | Time-sensitive or source-sensitive numerics (population, GDP). Carries `time_anchor` metadata | `abs_tol` and/or `rel_tol` via `tolerance` field |
+| `tri_label` | Three-valued classification: {true, false, contested} | N/A |
+| `yes_no` | Binary true/false or yes/no items | N/A |
+| `fraction_or_decimal` | Accepts both fraction (3/16) and decimal (0.1875) forms | N/A |
+| `code_output` | Exact string match after strip/lower + newline normalization | N/A |
+| `alias_plus_normalization` | Default catch-all. Matches gold answer, aliases, and scientific notation variants. Also does numeric fallback | N/A |
+
+**Note:** `numeric` and `exact_match_insensitive` are NOT valid grading rules. Items using these should be migrated to `approx_numeric_small` (for pure numbers) or `alias_plus_normalization` (for text answers with aliases).
 
 ---
 
