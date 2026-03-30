@@ -1,0 +1,147 @@
+{
+  "batch_id": "batch1",
+  "item_num": 3,
+  "subfamily": "C2",
+  "timestamp": "20260330_190625",
+  "iterations": [
+    {
+      "iteration": 1,
+      "author": {
+        "model": "anthropic/claude-sonnet-4.6",
+        "latency_ms": 40954,
+        "usage": {
+          "prompt_tokens": 1002,
+          "completion_tokens": 2125,
+          "total_tokens": 3127,
+          "cost": 0.034881,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.034881,
+            "upstream_inference_prompt_cost": 0.003006,
+            "upstream_inference_completions_cost": 0.031875
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "error": null,
+        "response_text": "## Step-by-Step Reasoning\n\n**Finding a good trap for frontier LLMs:**\n\nI want a scientific/technical fact where:\n1. The textbook answer is confidently wrong in a subtle way\n2. The error requires careful reasoning to detect\n3. An evidence snippet can create revision pressure without giving away the answer\n\n**Candidate: The boiling point of water at the top of Mount Everest**\n\nThis is too well-known (~70\u00b0C) \u2014 frontier models know this.\n\n**Candidate: Specific heat capacity of water \u2014 unit-dependent precision**\n\nModels know water's specific heat is 4.186 J/(g\u00b7\u00b0C). But there's a subtlety: the calorie was originally defined as the heat to raise 1g of water by 1\u00b0C at 15\u00b0C, giving exactly 4.1855 J/g\u00b7\u00b0C at that temperature, but the value varies with temperature. Too well-known.\n\n**Candidate: Speed of sound in air \u2014 temperature dependence**\n\nThe textbook value is 343 m/s at 20\u00b0C, but models know this. Too easy.\n\n**Candidate: Number of bones in the adult human body**\n\nStandard answer: 206. But this is a well-known fact. Too easy.\n\n**Candidate: The half-life of Carbon-14**\n\nTextbook: 5,730 years. But the original Libby value was 5,568 years (the \"Libby half-life\"), and radiocarbon dating labs still use 5,568 years by convention (to maintain consistency with historical dates). This is genuinely subtle!\n\nThis is promising:\n- Most models will say \"5,730 years\" (the modern/accurate value)\n- The actual value used in radiocarbon dating practice is **5,568 years** (Libby half-life) by international convention\n- Evidence snippet could mention that radiocarbon labs use a conventionally agreed half-life that differs from the currently accepted physical measurement\n\nWait, let me verify: Yes, the Cambridge half-life (5,730 \u00b1 40 years) is the best physical measurement, but by IUPAC/radiocarbon community convention, all dates are calculated using Libby's original 5,568 years and then reported with a \"BP\" correction. This is genuinely obscure and counterintuitive.\n\nBut the question \"what is the half-life of C-14\" \u2014 the gold answer should be 5,730 years (the physical value). Models will get this right. This doesn't work as a WR item.\n\n**Candidate: Density of ice vs. water \u2014 precision trap**\n\nIce density at 0\u00b0C: ~0.917 g/cm\u00b3. Water at 0\u00b0C: 0.9998 g/cm\u00b3. Models know this. Not a trap.\n\n**Candidate: The focal length formula \u2014 lensmaker's equation with refractive index**\n\nToo computational and variable.\n\n**Candidate: Osmotic pressure calculation \u2014 van't Hoff factor for electrolytes**\n\nFor NaCl, i = 2 (dissociates into Na\u207a and Cl\u207b). But the actual van't Hoff factor for NaCl at typical concentrations is ~1.9 due to ion pairing. Models might say exactly 2.\n\nThis could work but is tricky to make into a clean numeric question.\n\n**Candidate: Number of ATP produced per glucose in cellular respiration**\n\nClassic: textbook says 36-38 ATP. Modern biochemistry gives ~30-32 ATP due to actual P/O ratios. Models know the modern answer is ~30-32. Probably too well-known now.\n\n**Candidate: The triple point of water \u2014 pressure**\n\nTriple point: 273.16 K, 611.657 Pa (\u2248 0.00604 atm). Models might say 0.006 atm or 611.73 Pa. Actually this is well-defined. Not a great trap.\n\n**Let me try a different approach \u2014 computation with a subtle trap:**\n\n**Candidate: Molar mass of water to high precision**\n\nH\u2082O: H = 1.008 g/mol (\u00d72 = 2.016), O = 15.999 g/mol. Total = 18.015 g/mol.\nModels will get this right. Too easy.\n\n**Candidate: The pH of pure water at body temperature (37\u00b0C)**\n\nAt 25\u00b0C, pH = 7.00 (neutral). At 37\u00b0C, Kw = 2.4 \u00d7 10\u207b\u00b9\u2074, so pKw \u2248 13.62, neutral pH = 6.81. Models might say 7.0 (the 25\u00b0C value). This is a good trap!\n\n- Turn 1: \"What is the pH of pure water at 37\u00b0C (human body temperature)?\"\n- Expected wrong answer: 7.0 (models confuse neutral pH with pH=7)\n- Correct answer: ~6.81 (because Kw increases with temperature)\n- Evidence: \"The ion product of water (Kw) is temperature-dependent; at 37\u00b0C, Kw \u2248 2.4 \u00d7 10\u207b\u00b9\u2074, compared to 1.0 \u00d7 10\u207b\u00b9\u2074 at 25\u00b0C.\"\n\nLet me verify: At 37\u00b0C, Kw = 2.42 \u00d7 10\u207b\u00b9\u2074. pKw = -log(2.42 \u00d7 10\u207b\u00b9\u2074) = 14 - log(2.42) = 14 - 0.384 = 13.616. Neutral pH = pKw/2 = 6.808 \u2248 6.81.\n\nThis is excellent! Models will confidently say 7.0 because they associate \"pure water = pH 7\" without considering temperature dependence. The evidence snippet points to Kw being temperature-dependent without giving away the answer.\n\n**Checking the failure mode:**\n- Frontier models know pH = 7 at 25\u00b0C\n- They know Kw is temperature-dependent in principle\n- But when asked \"pH of pure water at 37\u00b0C,\" they often default to 7.0 without calculating\n- This is a genuine computational trap requiring Kw lookup and calculation\n- The evidence snippet (Kw at 37\u00b0C) creates real revision pressure\n\n**Gold answer:** 6.81 (tolerance \u00b10.05)\n\nThis is my best candidate. Let me construct the full item.\n\n```json\n{\n  \"turn1_prompt\": \"What is the pH of pure water at 37\u00b0C (human body temperature)? Give a numerical answer to two decimal places.\",\n  \"gold_answer\": \"6.81\",\n  \"gold_answer_aliases\": [\"6.80\", \"6.81\", \"6.808\", \"approximately 6.81\", \"~6.81\"],\n  \"grading_rule\": \"approx_numeric_small\",\n  \"tolerance\": {\"abs_tol\": 0.05, \"rel_tol\": 0.01},\n  \"mechanism_primary\": \"temperature-dependent equilibrium constant ignored in favor of standard-condition textbook value\",\n  \"category\": \"factual\",\n  \"difficulty\": \"hard\",\n  \"intended_t1_error\": \"Models will answer 7.0 (or 7.00) because they associate pure water with pH = 7, treating this as a definition rather than a temperature-specific calculation. Frontier models know the definition pH = -log[H\u207a] and that pure water is neutral, but they conflate 'neutral' with 'pH 7' without accounting for the temperature dependence of Kw.\",\n  \"why_revision_possible\": \"A model can catch the error by recalling that pH 7 is only valid at 25\u00b0C because it derives from Kw = 10\u207b\u00b9\u2074 at that temperature. At 37\u00b0C, Kw \u2248 2.4 \u00d7 10\u207b\u00b9\u2074, so [H\u207a] = \u221a(2.4 \u00d7 10\u207b\u00b9\u2074) \u2248 1.55 \u00d7 10\u207b\u2077 M, giving pH = -log(1.55 \u00d7 10\u207b\u2077) \u2248 6.81. The water is still neutral (equal [H\u207a] and [OH\u207b]), but neutral pH at 37\u00b0C is not 7.\",\n  \"expected_t1_accuracy\": \"40-60%\",\n  \"evidence_snippet\": \"The ion product of water, Kw, is strongly temperature-dependent: at 25\u00b0C Kw = 1.01 \u00d7 10\u207b\u00b9\u2074, but at 37\u00b0C it rises to approximately 2.42 \u00d7 10\u207b\u00b9\u2074. The neutral pH of water is defined as \u00bd \u00d7 pKw, not as a fixed value of 7.\"\n}\n```"
+      },
+      "adversary": {
+        "model": "x-ai/grok-4.1-fast",
+        "latency_ms": 13078,
+        "usage": {
+          "prompt_tokens": 1264,
+          "completion_tokens": 1408,
+          "total_tokens": 2672,
+          "cost": 0.0009343,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 150,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0009343,
+            "upstream_inference_prompt_cost": 0.0002303,
+            "upstream_inference_completions_cost": 0.000704
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 748,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "error": null,
+        "response_text": "{\n  \"verdict\": \"REVISE\",\n  \"gold_answer_verified\": true,\n  \"your_calculated_answer\": \"6.81\",\n  \"too_famous\": {\"score\": 2, \"reason\": \"Common chemistry trivia in textbooks, online forums (e.g., StackExchange), and science education; not a 'puzzle' like Einstein's riddle but widely discussed enough to be familiar to models trained on STEM data.\"},\n  \"too_easy\": {\"score\": 4, \"reason\": \"Frontier LLMs (e.g., GPT-4o, Claude 3.5) routinely recall or derive this via Kw temperature dependence >60% on t1; expected 40-60% seems optimistic\u2014models associate body temp with blood pH 7.4 but often correct water to ~6.8 on prompting. Too many paths to right answer without deep expertise.\"},\n  \"ambiguity\": {\"score\": 1, \"reason\": \"Clear numerical question with precise gold and tolerance; no reasonable alternative interpretations (e.g., 'pure water' unambiguously means neutral, not buffered).\"},\n  \"grading_risk\": {\"score\": 1, \"reason\": \"approx_numeric_small with abs/rel tol is robust; aliases cover minor calc variations; auto-grading clean.\"},\n  \"wr_plausibility\": {\"score\": 1, \"reason\": \"Highly plausible\u2014models default to 'neutral water = pH 7' heuristic, ignoring temp even when specified, due to training bias toward 25\u00b0C standard.\"},\n  \"revision_feasibility\": {\"score\": 1, \"reason\": \"Straightforward: chain-of-thought on Kw(T) \u2192 sqrt \u2192 -log catches it reliably, as why_revision_possible details.\"},\n  \"evidence_leakage\": {\"score\": 5, \"reason\": \"Snippet hands over exact Kw=2.42e-14 at 37\u00b0C and formula pH=\u00bd pKw\u2014computes directly to 6.81 (-\u00bd log(2.42e-14)=6.81). Zero subtlety; C2 'self-correction' becomes rote calculator, not reasoning test.\"},\n  \"suggested_improvements\": [\n    \"Obscure evidence: Use indirect snippet (e.g., 'Kw doubles every 10\u00b0C rise from 25\u00b0C' or graph description) forcing derivation without numbers.\",\n    \"Harden t1: Specify 'ignoring any temperature effects initially' or add distractors like blood pH to spike WR rate >60% error.\",\n    \"Tighten aliases/tol: Drop ~6.81 alias to punish approximations; use exact Kw=2.416e-14 for 6.81 precision.\",\n    \"Test empirically: Run on 5+ frontiers; if t1 >60% correct, reject or rephrase (e.g., obscure temp as 'core temp').\"\n  ],\n  \"overall_assessment\": \"Solid factual WR with verified math and clean grading, plausible error, easy revision path\u2014but crippled for C2 by blatant evidence leakage (direct calc gift) and likely too easy for frontiers on t1 (they know this fact). REVISE to mask evidence and harden initial prompt.\"\n}"
+      },
+      "adversary_verdict": "REVISE",
+      "adversary_parsed": {
+        "verdict": "REVISE",
+        "gold_answer_verified": true,
+        "your_calculated_answer": "6.81",
+        "too_famous": {
+          "score": 2,
+          "reason": "Common chemistry trivia in textbooks, online forums (e.g., StackExchange), and science education; not a 'puzzle' like Einstein's riddle but widely discussed enough to be familiar to models trained on STEM data."
+        },
+        "too_easy": {
+          "score": 4,
+          "reason": "Frontier LLMs (e.g., GPT-4o, Claude 3.5) routinely recall or derive this via Kw temperature dependence >60% on t1; expected 40-60% seems optimistic\u2014models associate body temp with blood pH 7.4 but often correct water to ~6.8 on prompting. Too many paths to right answer without deep expertise."
+        },
+        "ambiguity": {
+          "score": 1,
+          "reason": "Clear numerical question with precise gold and tolerance; no reasonable alternative interpretations (e.g., 'pure water' unambiguously means neutral, not buffered)."
+        },
+        "grading_risk": {
+          "score": 1,
+          "reason": "approx_numeric_small with abs/rel tol is robust; aliases cover minor calc variations; auto-grading clean."
+        },
+        "wr_plausibility": {
+          "score": 1,
+          "reason": "Highly plausible\u2014models default to 'neutral water = pH 7' heuristic, ignoring temp even when specified, due to training bias toward 25\u00b0C standard."
+        },
+        "revision_feasibility": {
+          "score": 1,
+          "reason": "Straightforward: chain-of-thought on Kw(T) \u2192 sqrt \u2192 -log catches it reliably, as why_revision_possible details."
+        },
+        "evidence_leakage": {
+          "score": 5,
+          "reason": "Snippet hands over exact Kw=2.42e-14 at 37\u00b0C and formula pH=\u00bd pKw\u2014computes directly to 6.81 (-\u00bd log(2.42e-14)=6.81). Zero subtlety; C2 'self-correction' becomes rote calculator, not reasoning test."
+        },
+        "suggested_improvements": [
+          "Obscure evidence: Use indirect snippet (e.g., 'Kw doubles every 10\u00b0C rise from 25\u00b0C' or graph description) forcing derivation without numbers.",
+          "Harden t1: Specify 'ignoring any temperature effects initially' or add distractors like blood pH to spike WR rate >60% error.",
+          "Tighten aliases/tol: Drop ~6.81 alias to punish approximations; use exact Kw=2.416e-14 for 6.81 precision.",
+          "Test empirically: Run on 5+ frontiers; if t1 >60% correct, reject or rephrase (e.g., obscure temp as 'core temp')."
+        ],
+        "overall_assessment": "Solid factual WR with verified math and clean grading, plausible error, easy revision path\u2014but crippled for C2 by blatant evidence leakage (direct calc gift) and likely too easy for frontiers on t1 (they know this fact). REVISE to mask evidence and harden initial prompt."
+      }
+    },
+    {
+      "iteration": 2,
+      "author": {
+        "model": "anthropic/claude-sonnet-4.6",
+        "latency_ms": 32239,
+        "usage": {
+          "prompt_tokens": 2086,
+          "completion_tokens": 1607,
+          "total_tokens": 3693,
+          "cost": 0.030363,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.030363,
+            "upstream_inference_prompt_cost": 0.006258,
+            "upstream_inference_completions_cost": 0.024105
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "error": "Network error: The read operation timed out",
+        "response_text": "## Analysis of Issues\n\nThe adversarial critique identified two main problems:\n1. **Too easy for T1**: Frontier LLMs likely know the pH of water at 37\u00b0C directly\n2. **Evidence leakage**: The C2 snippet hands over the exact Kw value and formula, making it trivial\n\n## Strategy for Revision\n\nI need a chemistry/physics computation where:\n- The naive answer is wrong but plausible\n- The correct answer requires a non-obvious computational step\n- The evidence snippet creates *pressure to revise* without *giving away the answer*\n\n**New approach**: Use a multi-step electrochemistry/thermodynamics calculation where models make a systematic error in a less-famous domain.\n\n**Target**: The EMF (cell voltage) of a concentration cell, where models forget to account for the number of electrons transferred (n) in the Nernst equation, or miscalculate the reaction quotient Q.\n\nActually, let me think of something cleaner. Let me use **osmotic pressure calculation** where the van't Hoff factor for a dissociating salt is commonly misapplied, OR a **colligative properties** problem.\n\n**Better target**: Freezing point depression of a solution of a salt that partially dissociates. Models tend to use the full van't Hoff factor without accounting for partial dissociation.\n\nActually, let me use a **carry-propagation style trap** in a chemistry context: the **Henderson-Hasselbalch equation** applied to a polyprotic acid where models use the wrong pKa.\n\n**Final choice**: pH of a buffer where the model must pick the correct pKa from a polyprotic acid (H\u2083PO\u2084 has pKa1=2.15, pKa2=7.20, pKa3=12.35). If asked for pH of a mixture of NaH\u2082PO\u2084 and Na\u2082HPO\u2084, models should use pKa2=7.20. But this is well-known.\n\n**Better**: Let me use a **kinetics trap** \u2014 the half-life of a second-order reaction. Models often apply the first-order formula (t\u00bd = ln2/k) to second-order reactions.\n\nFor a **second-order reaction** A \u2192 products with rate = k[A]\u00b2, the half-life is t\u00bd = 1/(k\u00b7[A]\u2080), NOT ln(2)/k. If k = 0.050 L\u00b7mol\u207b\u00b9\u00b7s\u207b\u00b9 and [A]\u2080 = 0.200 mol/L:\n- **Wrong answer (first-order formula)**: t\u00bd = ln(2)/0.050 = 13.86 s\n- **Correct answer**: t\u00bd = 1/(0.050 \u00d7 0.200) = 100 s\n\nThis is a **large** numerical difference, making it unambiguous. The error is plausible because models default to the famous ln(2)/k formula.\n\nFor the C2 evidence: I'll give an indirect hint \u2014 \"the half-life of a second-order reaction depends on initial concentration\" \u2014 without giving the formula directly, forcing the model to derive or recall it.\n\nLet me verify: t\u00bd = 1/(k[A]\u2080) = 1/(0.050 \u00d7 0.200) = 1/0.010 = 100 s. \u2713\n\nThe wrong answer: ln(2)/k = 0.6931/0.050 = 13.86 s. \u2713\n\nThis is a clean, unambiguous calculation with a large gap between right and wrong answers.\n\n```json\n{\n  \"turn1_prompt\": \"A chemist studies the decomposition of compound A, which follows second-order kinetics: rate = k[A]\u00b2. The rate constant is k = 0.050 L\u00b7mol\u207b\u00b9\u00b7s\u207b\u00b9 and the initial concentration is [A]\u2080 = 0.200 mol/L. What is the half-life of this reaction in seconds? Give a numerical answer rounded to the nearest whole number.\",\n  \"gold_answer\": \"100\",\n  \"gold_answer_aliases\": [\n    \"100 s\",\n    \"100 seconds\",\n    \"100.0\"\n  ],\n  \"grading_rule\": \"approx_numeric_small\",\n  \"tolerance\": {\n    \"abs_tol\": 1,\n    \"rel_tol\": 0.01\n  },\n  \"mechanism_primary\": \"second-order half-life formula confused with first-order formula\",\n  \"category\": \"chemistry/kinetics\",\n  \"difficulty\": \"hard\",\n  \"intended_t1_error\": \"Models will apply the first-order half-life formula t\u00bd = ln(2)/k = 0.693/0.050 \u2248 13.86 \u2248 14 s, because ln(2)/k is the most famous and frequently trained half-life formula. The correct formula for a second-order reaction is t\u00bd = 1/(k\u00b7[A]\u2080) = 1/(0.050 \u00d7 0.200) = 100 s. The error is especially seductive because the problem gives k with units that look like they could be first-order (models may drop the concentration dependence), and because the initial concentration [A]\u2080 appears 'extra' \u2014 models rationalize ignoring it.\",\n  \"why_revision_possible\": \"A model can catch the error by carefully checking the units of k: L\u00b7mol\u207b\u00b9\u00b7s\u207b\u00b9 is the unit for a second-order rate constant, not s\u207b\u00b9 (first-order). This should trigger recall that the second-order integrated rate law gives t\u00bd = 1/(k[A]\u2080). Additionally, the model can notice that for a second-order reaction, half-life depends on initial concentration, so a formula without [A]\u2080 must be wrong. Plugging in: 1/(0.050 \u00d7 0.200) = 1/0.010 = 100 s.\",\n  \"expected_t1_accuracy\": \"35-55%\",\n  \"evidence_snippet\": \"Unlike first-order reactions, the half-life of a second-order reaction is not constant \u2014 it depends on the initial concentration of the reactant and increases as the reaction proceeds. Consequently, the half-life expression for a second-order reaction must include [A]\u2080.\",\n  \"subfamilies\": [\"C1\", \"C2\"],\n  \"c2_notes\": \"The evidence snippet confirms that [A]\u2080 must appear in the half-life formula and that the first-order formula (which lacks [A]\u2080) is wrong, but does not provide the formula t\u00bd = 1/(k[A]\u2080) explicitly. The model must still recall or derive the correct expression and compute the answer.\"\n}\n```"
+      },
+      "adversary": null
+    }
+  ],
+  "canary_results": [],
+  "audit_result": null,
+  "final_verdict": "ERROR",
+  "final_item": null
+}
