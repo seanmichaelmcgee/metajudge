@@ -2,7 +2,7 @@
 
 ## Current state
 - **Branch:** `hardening/family-c-v0.6.2`
-- **Latest commit:** `2c6e25a689a1374c6673ed7370fdb7f0b7ef9296`
+- **Latest commit:** `a1d0554` (final sprint commit)
 - **Current phase:** Phase 5 — Sprint complete, pending final review
 - **Safe to resume from here:** YES
 
