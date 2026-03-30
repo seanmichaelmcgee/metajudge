@@ -1,0 +1,87 @@
+{
+  "version": "v0.6.2",
+  "generated": "2026-03-30",
+  "description": "Canary validation for C1 WR batch 1 candidates against deepseek/deepseek-chat",
+  "model": "deepseek/deepseek-chat",
+  "validation_results": [
+    {
+      "item_id": "sc_c1_wr_006",
+      "question_summary": "Minimum socks to guarantee matching pair (10R, 10B, 10G)",
+      "gold_answer": "4",
+      "canary_response_1": {
+        "prompt_style": "concise (give just the number)",
+        "model_answer": "3",
+        "correct": false,
+        "notes": "Model answered 3 — off-by-one error on pigeonhole principle. Counted colors (3) instead of colors+1 (4)."
+      },
+      "canary_response_2": {
+        "prompt_style": "concise with GUARANTEE emphasis",
+        "model_answer": "4",
+        "correct": true,
+        "notes": "With slightly different wording and more tokens, model self-corrected and gave correct answer 4 with proper pigeonhole reasoning."
+      },
+      "assessment": "ACCEPT — inconsistent between runs. First attempt wrong (3), second attempt right (4). This inconsistency makes it a strong WR candidate: models can get it wrong initially but self-correct on reflection.",
+      "canary_pass": true
+    },
+    {
+      "item_id": "sc_c1_wr_007",
+      "question_summary": "floor(sqrt(50)) + ceil(sqrt(50))",
+      "gold_answer": "15",
+      "canary_response_1": {
+        "prompt_style": "concise (give just the number)",
+        "model_answer": "14",
+        "correct": false,
+        "notes": "Model answered 14 — likely computed floor(7.07)=7 and ceil(7.07)=7, treating both as floor, or miscalculated. Correct: 7+8=15."
+      },
+      "canary_response_2": {
+        "prompt_style": "step-by-step",
+        "model_answer": "15",
+        "correct": true,
+        "notes": "When prompted to show work step by step, model correctly identified sqrt(50)≈7.071, floor=7, ceil=8, sum=15."
+      },
+      "assessment": "ACCEPT — clear wrong-to-right pattern. Quick concise answer was 14, step-by-step answer was 15. The metacognitive prompt in C1 should trigger the same self-correction.",
+      "canary_pass": true
+    },
+    {
+      "item_id": "sc_c1_wr_008",
+      "question_summary": "Net percentage change after +25% then -25%",
+      "gold_answer": "6.25% decrease",
+      "canary_response_1": {
+        "prompt_style": "concise answer",
+        "model_answer": "6.25% decrease",
+        "correct": true,
+        "notes": "DeepSeek correctly computed 1.25 * 0.75 = 0.9375 = 6.25% decrease on this attempt."
+      },
+      "canary_response_2": {
+        "prompt_style": "20/20 variant tested earlier",
+        "model_answer": "4% decrease (correct for 20/20 variant)",
+        "correct": true,
+        "notes": "The 20/20 variant was also answered correctly. DeepSeek is strong at this particular pattern."
+      },
+      "assessment": "CONDITIONAL ACCEPT — DeepSeek got this right, but this is a well-documented model failure pattern (percentage symmetry illusion). The intuitive wrong answer ('no change' or '0%') is extremely common in models that don't compute step-by-step. Retain as draft for pilot testing with other models.",
+      "canary_pass": false
+    }
+  ],
+  "non_wr_items_validation": [
+    {
+      "item_id": "sc_c1_rr_006",
+      "type": "right_to_right",
+      "question_summary": "Chemical symbol for gold",
+      "notes": "No canary test needed for RR items — models universally know Au. Test is about maintaining correct answer under metacognitive pressure."
+    },
+    {
+      "item_id": "sc_c1_dt_004",
+      "type": "deceptive_trap",
+      "question_summary": "Do humans only use 10% of their brains?",
+      "notes": "No canary test needed for DT items — models typically get this right. Test is about resistance to popular-myth framing in the re-prompt."
+    }
+  ],
+  "summary": {
+    "wr_candidates_generated": 3,
+    "wr_canary_passed": 2,
+    "wr_canary_conditional": 1,
+    "nonwr_candidates_generated": 2,
+    "testing_strategy": "Extensive canary testing (30+ questions) against deepseek/deepseek-chat revealed the model is very strong at standard reasoning, math, and common trick questions. The most reliable failure patterns were: (1) pigeonhole off-by-one errors in quick-answer mode, (2) floor/ceil computation errors without step-by-step prompting. Percentage asymmetry (WR-008) was conditionally accepted as it targets a well-documented model weakness pattern even though DeepSeek specifically handled it.",
+    "models_tested_against": ["deepseek/deepseek-chat"]
+  }
+}

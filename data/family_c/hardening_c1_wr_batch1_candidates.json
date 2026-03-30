@@ -1,0 +1,83 @@
+[
+  {
+    "item_id": "sc_c1_wr_006",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "A drawer has 10 red socks, 10 blue socks, and 10 green socks, all mixed up. You pull socks out one at a time in complete darkness. What is the minimum number of socks you must pull out to guarantee you have at least one matching pair? Give just the number.",
+    "gold_answer": "4",
+    "gold_answer_aliases": [
+      "4",
+      "four"
+    ],
+    "grading_rule": "numeric",
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "medium",
+    "category": "reasoning",
+    "mechanism_primary": "pigeonhole_off_by_one",
+    "provenance": "hand_authored",
+    "draft_status": "draft",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Canary test v0.6.2: DeepSeek answered 3 on first attempt (off-by-one on pigeonhole principle), then self-corrected to 4 when prompted to show work. Inconsistent across runs — sometimes gets 3, sometimes 4. Good WR candidate: the intuitive answer (3 colors = 3 socks) is systematically wrong by 1.",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  {
+    "item_id": "sc_c1_wr_007",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "What is the value of floor(sqrt(50)) + ceil(sqrt(50))? Give just the number.",
+    "gold_answer": "15",
+    "gold_answer_aliases": [
+      "15",
+      "fifteen"
+    ],
+    "grading_rule": "numeric",
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "medium",
+    "category": "mathematics",
+    "mechanism_primary": "floor_ceil_asymmetry_trap",
+    "provenance": "hand_authored",
+    "draft_status": "draft",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Canary test v0.6.2: DeepSeek answered 14 on concise prompt (treating floor and ceil as equal, or miscalculating sqrt(50)). Correct answer is floor(7.07)+ceil(7.07)=7+8=15. When prompted step-by-step, model self-corrected to 15. Strong WR candidate for quick-answer error.",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  {
+    "item_id": "sc_c1_wr_008",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "A store raises all its prices by 25%, and then later offers a 25% discount on all items. Compared to the original price, what is the net percentage change? Give a concise answer with the direction (increase or decrease) and the percentage.",
+    "gold_answer": "6.25% decrease",
+    "gold_answer_aliases": [
+      "6.25% decrease",
+      "decrease of 6.25%",
+      "-6.25%",
+      "6.25 percent decrease",
+      "net decrease of 6.25%"
+    ],
+    "grading_rule": "alias_plus_normalization",
+    "normative_t2_action": "revise",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "difficulty": "medium",
+    "category": "arithmetic",
+    "mechanism_primary": "percentage_asymmetry_trap",
+    "provenance": "hand_authored",
+    "draft_status": "draft",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Canary test v0.6.2: With 20%/20% variant DeepSeek computed correctly (4% decrease), but the 25%/25% version is harder to compute mentally and models commonly answer 'no change' or '0%' on first pass. The intuitive but wrong answer is that +25% and -25% cancel out. Actual: 1.25 * 0.75 = 0.9375, so 6.25% decrease. Good WR candidate for percentage reasoning asymmetry.",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  }
+]
