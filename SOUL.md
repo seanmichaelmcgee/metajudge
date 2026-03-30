@@ -27,11 +27,11 @@ These are the project's source-of-truth documents, in priority order:
 | 2 | **Recommendations memo** | `docs/metacognition_assessor_recommendations.md` | All families | Two-axis framework, family specs, architectural guidance |
 | 3 | **Family B scoring spec** | `docs/family_b_scoring_spec.md` | Family B | UWAA scoring, utility matrix, action F1, AUARC |
 | 4 | **Family B notebook integration** | `docs/family_b_notebook_integration.md` | Family B | Cells 9-15, embedding strategy, composite |
-| 5 | **Change prompt** | `docs/metacognition_assessor_change_prompt.md` | Family A | Implementation checklist (calibration-specific) |
-| 6 | **V1 Architecture** | `planning/v1_architecture.md` | Family A | Production plan for calibration pipeline |
-| 7 | **Scoring plan** | `planning/scoring_plan.md` | Family A | Brier-derived scoring, adjudication, diagnostics |
-| 8 | **Dataset construction plan** | `planning/dataset_construction_plan.md` | Family A | Item sourcing, canonicalization, pilot gates |
-| 9 | **Original framework** | `docs/source_framework.md` | Archived | Conceptual foundation (historical context only) |
+| 5 | **Family C scoring blueprint** | `planning/family_c_sprint/03_scoring_blueprint.md` | Family C | Transition scoring, damage:gain, confidence adjustment |
+| 6 | **Family C sprint checklist** | `planning/family_c_sprint/07_sprint_checklist.md` | Family C | Current execution plan (Days 1-3) |
+| 7 | **Family C item schema** | `data/family_c/SCHEMA.md` | Family C | Item bundle specification |
+| 8 | **Scoring plan** | `planning/scoring_plan.md` | Family A | Brier-derived scoring, adjudication, diagnostics |
+| — | *Archived documents* | `docs/archive/`, `planning/archive/` | Historical | Superseded plans and completed charters (see directory READMEs) |
 
 When documents conflict, higher priority wins. Documents scoped to "Family A" are authoritative for calibration work but do not govern Family B or later families. The Recommendations memo (priority 2) is the cross-family source of truth for family specs, schemas, and scoring approaches.
 
@@ -78,7 +78,7 @@ Family B — Selective Abstention / Verification / Clarification — is now inte
 |----|--------|------|-------|--------|
 | A | Confidence Calibration | Monitoring | 1 | **117-item V4.2 dataset, grading_v2, lean notebook live** |
 | B | Selective Abstention / Verification | Monitoring | 1 | **84-item pilot v0.5.4, UWAA scoring** |
-| C | Self-Correction (intrinsic + evidence-assisted) | Control | 2 | V2 |
+| C | Self-Correction (intrinsic + evidence-assisted) | Control | 2 | **35-item pilot v0.6.1, 2-model validated, 5-model sweep pending** |
 | D | Grounding Sensitivity | Monitoring | 1 | V2 |
 | E | Control-Policy Adaptation | Control | 2 | V2 |
 
@@ -157,6 +157,7 @@ Every serious Kaggle run MUST produce per-item audit CSVs written to `/kaggle/wo
 |------|-----------------|------|
 | `calibration_item_audit.csv` | item_id, gold_answer, grader_rule, model_answer, confidence, is_correct, brier_score | Every run |
 | `family_b_item_audit.csv` | item_id, gold_answer, gold_action, model_decision, model_answer, is_correct, utility | When Family B runs |
+| `family_c_item_audit.csv` | item_id, subfamily, stratum, transition, base_score, conf_adj, scaled_score | When Family C runs |
 | `run_summary.json` | timestamp, accuracy, mean_score, per-family stats | Every run |
 
 These are the backbone of auditability. No run is considered valid without them.
@@ -166,10 +167,11 @@ These are the backbone of auditability. No run is considered valid without them.
 ## What agents should do
 
 1. **Read this file first** before starting work.
-2. **Check the V1 architecture** for the current implementation plan.
+2. **Check the current sprint docs** — for Family C work, start with `planning/family_c_sprint/07_sprint_checklist.md`.
 3. **Write tests** for any new scoring logic before implementing the Kaggle wrapper.
 4. **Keep the notebook thin** — scoring logic lives in `metajudge/`, SDK glue lives in the notebook.
 5. **Commit frequently** with clear messages referencing the family/phase being worked on.
+6. **Use v2 modules** for Family C — `self_correction_v2.py` in both `tasks/` and `scoring/`. The v1 modules are superseded.
 
 ---
 
@@ -362,4 +364,6 @@ When replacing items after a failed sweep:
 - **V4.1 Remediation (March 20):** 37 items replaced via adversarial pipeline. 102-item dataset assembled with adjudication registry and grading_v2 engine (8 grader classes). Mechanism distribution: ModifiedCRT 18, Compositional 17, CodeExecution 16, AmbiguityMetacognition 14, Anchoring 10, Prototype 10, IOED 7, ConditionalTemporal 7, RLHF 3. All 212 tests pass. Awaiting V4.1 sweep.
 - **VPS Session (March 21):** Lean notebook upgraded to grading_v2 (8-rule registry-driven adjudication). V4.2 dataset (7 IOED replacements). Family B 48-item pilot integrated (UWAA/F1/AUARC). Kaggle Benchmarks mount path discovered. Per-item audit CSV export added. 5-model sweep completed: Pro 0.894, Sonnet 0.769, DeepSeek 0.776, Haiku 0.730. C1 PASS (spread=0.16), C4 PASS (52 items), C5 PASS (ECE range=0.14). 246 tests passing.
 - **Tri-label + Family B v3 (March 21):** Fixed 3 tri-label gold answers (gen_a2_001, gen_a2_007, gen_b_037: false→contested). Family B upgraded to v3: 60 items (was 48), 15 answer + 12 clarify + 18 verify + 15 abstain. All 71 candidates validated by Claude+DeepSeek+Gemini, 60 selected. Notebook self-tests updated (gen_b_039 replaces gen_b_037 for false-path test).
-- **Current:** V4.2 lean notebook with corrected tri-labels and Family B v3 (60 items). 5-model sweep complete (3/5 criteria verified PASS, C2/C3 pending mechanism analysis). Next: re-run sweep with corrected gold answers, finalize C2/C3 analysis, begin writeup.
+- **Family A+B Validated (March 25):** v0.5.5.1.1 clean-subset results finalized. 105 calibration items, 72 abstention items across 5 models. Narrative notebook and stats report produced.
+- **Family C Sprint (March 28-present):** 17 planning docs authored. v2 task and scoring modules built (`self_correction_v2.py`). 35 seed items (15 C1, 20 C2) with 6 grading rules. OpenRouter client for multi-model execution. 2-model pilot (deepseek-chat, grok-3-mini) completed: 28 items clean, 7 quarantined. Grok showed 0% revision rate (validating Huang et al.); DeepSeek showed 1 damage event on deceptive-trap (validating construct). 5-model panel run pending.
+- **Current:** Family C v0.6.1 pilot validated. Next: 5-model panel run on 28 clean items, statistical validation, decision gate for benchmark promotion.
