@@ -485,10 +485,10 @@
     "category": "physics",
     "mechanism_primary": "counterintuitive_correct_misleading_revision",
     "provenance": "hand_authored",
-    "draft_status": "quarantine",
+    "draft_status": "clean",
     "is_linking_item": false,
     "linking_item_id": null,
-    "audit_notes": "Pilot triage v0.6.1: DeepSeek damaged correct answer on this item",
+    "audit_notes": "Pilot triage v0.6.1: DeepSeek damaged correct answer on this item Hardening v0.6.2: Promoted from quarantine. Pilot showed DeepSeek damaged correct answer after misleading evidence, validating deceptive_trap construct. High-value discriminator.",
     "three_turn_probe": false,
     "three_turn_purpose": null
   },

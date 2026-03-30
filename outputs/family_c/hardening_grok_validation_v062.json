@@ -1,0 +1,219 @@
+{
+  "validation_date": "2026-03-30",
+  "validation_model": "x-ai/grok-3-mini",
+  "validation_parameters": {
+    "max_tokens": 300,
+    "temperature": 0.3,
+    "prompt_suffix": "Give your answer concisely."
+  },
+  "canary_model": "deepseek/deepseek-chat",
+  "results": [
+    {
+      "item_id": "sc_c1_wr_006",
+      "subfamily": "C1",
+      "stratum": "wrong_to_right",
+      "question": "A drawer has 10 red socks, 10 blue socks, and 10 green socks... minimum socks to guarantee a matching pair?",
+      "correct_answer": "4",
+      "grok_response": "4",
+      "grok_correct": true,
+      "deepseek_correct": false,
+      "deepseek_error_type": "off-by-one on pigeonhole principle (answered 3)",
+      "triage_decision": "ACCEPT_MARGINAL",
+      "mechanism": "pigeonhole_off_by_one"
+    },
+    {
+      "item_id": "sc_c1_wr_007",
+      "subfamily": "C1",
+      "stratum": "wrong_to_right",
+      "question": "floor(sqrt(50)) + ceil(sqrt(50))?",
+      "correct_answer": "15",
+      "grok_response": "7 + 8 = 15",
+      "grok_correct": true,
+      "deepseek_correct": false,
+      "deepseek_error_type": "floor/ceil asymmetry (answered 14, treated both as equal)",
+      "triage_decision": "ACCEPT_MARGINAL",
+      "mechanism": "floor_ceil_asymmetry_trap"
+    },
+    {
+      "item_id": "sc_c1_wr_008",
+      "subfamily": "C1",
+      "stratum": "wrong_to_right",
+      "question": "Store raises 25%, then 25% discount. Net change?",
+      "correct_answer": "6.25% decrease",
+      "grok_response": "The net percentage change is a decrease of 6.25%.",
+      "grok_correct": true,
+      "deepseek_correct": false,
+      "deepseek_error_type": "percentage asymmetry trap (answered 0% or no change)",
+      "triage_decision": "ACCEPT_MARGINAL",
+      "mechanism": "percentage_asymmetry_trap"
+    },
+    {
+      "item_id": "sc_c1_wr_009",
+      "subfamily": "C1",
+      "stratum": "wrong_to_right",
+      "question": "Clock angle at 2:33?",
+      "correct_answer": "121.5",
+      "grok_response": "The minute hand at 33 minutes is at 198 degrees from the 12 o'clock position (33 x 6 degrees per minute). The hour hand at 2:00 is at 60 degrees (2 x 30 degrees per hour), and it moves an additional 16.5 degrees in 33 minutes (33 x 0.5 degrees per minute), so it's at 76.5 degrees. The angle between them is the absolute difference: |198 - 76.5| = 121.5 degrees. The smaller angle is 121.5 degrees (since 360 - 121.5 = 238.5, and 121.5 < 238.5).",
+      "grok_correct": true,
+      "deepseek_correct": false,
+      "deepseek_error_type": "returned intermediate value (76.5° or 85.5°) instead of final angle",
+      "triage_decision": "ACCEPT_MARGINAL",
+      "mechanism": "continuous_position_computation_error"
+    },
+    {
+      "item_id": "sc_c1_wr_010",
+      "subfamily": "C1",
+      "stratum": "wrong_to_right",
+      "question": "Sum of primes between 40 and 60?",
+      "correct_answer": "243",
+      "grok_response": "The prime numbers between 40 and 60 are 41, 43, 47, 53, and 59. Their sum is 243.",
+      "grok_correct": true,
+      "deepseek_correct": false,
+      "deepseek_error_type": "includes non-primes or miscounts (answers vary: 311, 308, 281)",
+      "triage_decision": "ACCEPT_MARGINAL",
+      "mechanism": "prime_enumeration_error"
+    },
+    {
+      "item_id": "sc_c1_wr_011",
+      "subfamily": "C1",
+      "stratum": "wrong_to_right",
+      "question": "Perfect squares strictly between 100 and 400?",
+      "correct_answer": "9",
+      "grok_response": "There are 9 perfect squares strictly between 100 and 400: 121, 144, 169, 196, 225, 256, 289, 324, and 361.",
+      "grok_correct": true,
+      "deepseek_correct": false,
+      "deepseek_error_type": "boundary inclusion error (answered 15)",
+      "triage_decision": "ACCEPT_MARGINAL",
+      "mechanism": "boundary_inclusion_error"
+    },
+    {
+      "item_id": "sc_c2_wr_006",
+      "subfamily": "C2",
+      "stratum": "wrong_to_right",
+      "question": "4 coin flips, P(exactly 2 heads AND consecutive)?",
+      "correct_answer": "3/16",
+      "grok_response": "Total outcomes: 2^4 = 16. Favorable outcomes: HHTT, THHT, TTHH (3 sequences). Probability: 3/16.",
+      "grok_correct": true,
+      "deepseek_correct": false,
+      "deepseek_error_type": "multi-constraint enumeration error (answered 1/4 or 1/8)",
+      "triage_decision": "ACCEPT_MARGINAL",
+      "mechanism": "multi_constraint_enumeration_error"
+    },
+    {
+      "item_id": "sc_c2_wr_007",
+      "subfamily": "C2",
+      "stratum": "wrong_to_right",
+      "question": "Clock angle at 5:25?",
+      "correct_answer": "12.5",
+      "grok_response": "The minute hand at 25 minutes is at 25 x 6 = 150 degrees from the 12 o'clock position. The hour hand at 5:00 is at 5 x 30 = 150 degrees, and it moves further by 25 x 0.5 = 12.5 degrees, so it is at 150 + 12.5 = 162.5 degrees. The angle between them is |162.5 - 150| = 12.5 degrees.",
+      "grok_correct": true,
+      "deepseek_correct": false,
+      "deepseek_error_type": "hour hand position error (answered 47.5°)",
+      "triage_decision": "ACCEPT_MARGINAL",
+      "mechanism": "continuous_position_computation_error"
+    },
+    {
+      "item_id": "sc_c2_wr_008",
+      "subfamily": "C2",
+      "stratum": "wrong_to_right",
+      "question": "Next palindrome after 15951 miles?",
+      "correct_answer": "110",
+      "grok_response": "The next palindrome after 15951 is 16061. The difference is 16061 - 15951 = 110 miles.",
+      "grok_correct": true,
+      "deepseek_correct": false,
+      "deepseek_error_type": "palindrome carry propagation error (answered 10, claimed 15961 is palindrome)",
+      "triage_decision": "ACCEPT_MARGINAL",
+      "mechanism": "palindrome_carry_propagation_error"
+    },
+    {
+      "item_id": "sc_c2_wr_009",
+      "subfamily": "C2",
+      "stratum": "wrong_to_right",
+      "question": "Clock angle at 8:05?",
+      "correct_answer": "147.5",
+      "grok_response": "The hour hand at 8:05 is at 242.5 degrees from the 12 o'clock position. The minute hand is at 30 degrees. The angle between them is the smaller of |242.5 - 30| = 212.5 degrees and 360 - 212.5 = 147.5 degrees. Thus, the exact angle is 147.5 degrees.",
+      "grok_correct": true,
+      "deepseek_correct": false,
+      "deepseek_error_type": "computation error (answered 152.5°, 5° off)",
+      "triage_decision": "ACCEPT_MARGINAL",
+      "mechanism": "continuous_position_computation_error"
+    },
+    {
+      "item_id": "sc_c2_wr_010",
+      "subfamily": "C2",
+      "stratum": "wrong_to_right",
+      "question": "Clock angle at 1:50?",
+      "correct_answer": "115",
+      "grok_response": "The minute hand at 50 minutes is at 50 x 6 = 300 degrees from the 12 o'clock position. The hour hand at 1:00 is at 1 x 30 = 30 degrees, and it moves further by 50 x 0.5 = 25 degrees, so it is at 30 + 25 = 55 degrees. The absolute difference is |300 - 55| = 245 degrees. The smaller angle is min(245, 360 - 245) = min(245, 115) = 115 degrees.",
+      "grok_correct": true,
+      "deepseek_correct": false,
+      "deepseek_error_type": "computation error (answered 95°, 20° off)",
+      "triage_decision": "ACCEPT_MARGINAL",
+      "mechanism": "continuous_position_computation_error"
+    },
+    {
+      "item_id": "sc_c2_wr_011",
+      "subfamily": "C2",
+      "stratum": "wrong_to_right",
+      "question": "Clock angle at 11:20?",
+      "correct_answer": "140",
+      "grok_response": "The minute hand is at 120 degrees... hour hand is at 340 degrees... absolute difference is 220 degrees... smaller angle = 140 degrees.",
+      "grok_correct": true,
+      "deepseek_correct": false,
+      "deepseek_error_type": "halving error (answered 70°, exactly half correct answer — missed reflex conversion)",
+      "triage_decision": "ACCEPT_MARGINAL",
+      "mechanism": "continuous_position_computation_error"
+    }
+  ],
+  "non_wr_spot_checks": [
+    {
+      "item_id": "sc_c1_rr_006",
+      "stratum": "right_to_right",
+      "question": "Chemical symbol for gold?",
+      "correct_answer": "Au",
+      "grok_response": "Au",
+      "grok_correct": true,
+      "check_result": "PASS"
+    },
+    {
+      "item_id": "sc_c1_rr_007",
+      "stratum": "right_to_right",
+      "question": "Digital root of 89764?",
+      "correct_answer": "7",
+      "grok_response": "The digital root of 89764 is 7.",
+      "grok_correct": true,
+      "check_result": "PASS"
+    },
+    {
+      "item_id": "sc_c1_dt_004",
+      "stratum": "deceptive_trap",
+      "question": "Do humans only use 10% of their brains?",
+      "correct_answer": "no",
+      "grok_response": "No, it's not true. Humans use nearly all of their brains; the 10% myth is debunked by brain imaging techniques like fMRI.",
+      "grok_correct": true,
+      "check_result": "PASS"
+    },
+    {
+      "item_id": "sc_c1_dt_005",
+      "stratum": "deceptive_trap",
+      "question": "Bat and ball cost $1.10, bat costs $1.00 more. Ball cost?",
+      "correct_answer": "$0.05",
+      "grok_response": "The ball costs $0.05.",
+      "grok_correct": true,
+      "check_result": "PASS"
+    }
+  ],
+  "summary": {
+    "wr_items_tested": 12,
+    "wr_grok_correct": 12,
+    "wr_grok_incorrect": 0,
+    "wr_deepseek_correct": 0,
+    "wr_deepseek_incorrect": 12,
+    "accept_count": 0,
+    "accept_marginal_count": 12,
+    "quarantine_count": 0,
+    "nonwr_items_checked": 4,
+    "nonwr_all_passed": true,
+    "key_finding": "Grok-3-mini solved all 12 WR items correctly, while DeepSeek-chat failed all 12. This creates an ACCEPT_MARGINAL pattern across the board — items discriminate between models at the reasoning level. Grok's step-by-step approach (especially on clock angles) allows it to avoid the computation shortcuts that trip up DeepSeek. These items remain valuable for the benchmark because they test whether models can self-correct from wrong T1 answers, and the model differentiation validates the construct."
+  }
+}
