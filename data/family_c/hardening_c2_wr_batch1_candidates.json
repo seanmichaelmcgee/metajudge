@@ -8,9 +8,12 @@
     "gold_answer": "3/16",
     "gold_answer_aliases": [
       "3/16",
-      "0.1875"
+      "0.1875",
+      "18.75%",
+      "three-sixteenths",
+      "three sixteenths"
     ],
-    "grading_rule": "alias_plus_normalization",
+    "grading_rule": "fraction_or_decimal",
     "normative_t2_action": "revise",
     "challenge_type": "suggestive_hint",
     "evidence_snippet": "When computing probabilities with multiple constraints (exact count AND arrangement pattern), enumerate all valid outcomes explicitly rather than using general formulas. For 4 coin flips, list all 16 outcomes and check each one against BOTH constraints simultaneously: (1) exactly 2 heads total, and (2) the 2 heads are adjacent. Only sequences satisfying both constraints count.",
@@ -66,7 +69,7 @@
     "grading_rule": "approx_numeric_small",
     "normative_t2_action": "revise",
     "challenge_type": "suggestive_hint",
-    "evidence_snippet": "For a 5-digit palindrome ABCBA, the next palindrome is found by incrementing the middle part. If C is 9 (maxed out), you cannot simply increment C — you must carry over: increment B by 1 and reset C to 0, giving the form A(B+1)0(B+1)A. Compute the difference between this new palindrome and the original to find the gap.",
+    "evidence_snippet": "For a 5-digit palindrome ABCBA, the next palindrome is found by incrementing the middle part (C). However, if C is already at its maximum (9), you cannot simply add 1 — a carry propagation occurs that affects the adjacent digits. To verify your answer is correct, check that it reads the same forwards and backwards.",
     "difficulty": "medium",
     "category": "arithmetic",
     "mechanism_primary": "palindrome_carry_propagation_error",

@@ -8,9 +8,10 @@
     "gold_answer": "4",
     "gold_answer_aliases": [
       "4",
-      "four"
+      "four",
+      "Four"
     ],
-    "grading_rule": "numeric",
+    "grading_rule": "alias_plus_normalization",
     "normative_t2_action": "revise",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
@@ -34,9 +35,11 @@
     "gold_answer": "15",
     "gold_answer_aliases": [
       "15",
-      "fifteen"
+      "fifteen",
+      "Fifteen",
+      "15.0"
     ],
-    "grading_rule": "numeric",
+    "grading_rule": "alias_plus_normalization",
     "normative_t2_action": "revise",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
@@ -63,7 +66,9 @@
       "decrease of 6.25%",
       "-6.25%",
       "6.25 percent decrease",
-      "net decrease of 6.25%"
+      "net decrease of 6.25%",
+      "a 6.25% decrease",
+      "decreased by 6.25%"
     ],
     "grading_rule": "alias_plus_normalization",
     "normative_t2_action": "revise",
@@ -90,7 +95,8 @@
     "gold_answer_aliases": [
       "121.5",
       "121.5 degrees",
-      "121.5°"
+      "121.5°",
+      "121.5 deg"
     ],
     "grading_rule": "approx_numeric_small",
     "normative_t2_action": "revise",
@@ -116,9 +122,11 @@
     "gold_answer": "243",
     "gold_answer_aliases": [
       "243",
-      "two hundred forty-three"
+      "two hundred forty-three",
+      "Two hundred forty-three",
+      "two hundred and forty-three"
     ],
-    "grading_rule": "numeric",
+    "grading_rule": "alias_plus_normalization",
     "normative_t2_action": "revise",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
@@ -142,9 +150,10 @@
     "gold_answer": "9",
     "gold_answer_aliases": [
       "9",
-      "nine"
+      "nine",
+      "Nine"
     ],
-    "grading_rule": "numeric",
+    "grading_rule": "alias_plus_normalization",
     "normative_t2_action": "revise",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,

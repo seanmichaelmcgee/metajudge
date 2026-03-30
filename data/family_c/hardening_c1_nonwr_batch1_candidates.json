@@ -63,9 +63,10 @@
     "gold_answer": "7",
     "gold_answer_aliases": [
       "7",
-      "seven"
+      "seven",
+      "Seven"
     ],
-    "grading_rule": "numeric",
+    "grading_rule": "alias_plus_normalization",
     "normative_t2_action": "maintain",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
@@ -92,7 +93,9 @@
       "0.05",
       "5 cents",
       "five cents",
-      "$0.05 (5 cents)"
+      "$0.05 (5 cents)",
+      "5¢",
+      "0.05 dollars"
     ],
     "grading_rule": "alias_plus_normalization",
     "normative_t2_action": "maintain",
