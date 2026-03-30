@@ -20,12 +20,24 @@ reliability of its own outputs and act on that information.
 
 ```
 metajudge/       # Core Python package — scoring, schemas, task definitions
+  scoring/
+    self_correction_v2.py  # Family C scoring (USE THIS, not self_correction_metrics.py)
+  tasks/
+    self_correction_v2.py  # Family C task defs (USE THIS, not self_correction.py)
 tests/           # pytest unit and integration tests
 notebooks/       # Kaggle submission notebook (thin — logic lives in metajudge/)
-data/            # Benchmark datasets (large files gitignored)
+data/            # Benchmark datasets
+  family_c/      # Family C item bundles (C1 + C2 candidates, SCHEMA.md)
 config/          # Benchmark configuration (weights, thresholds)
-docs/            # Design documents
-planning/        # Architecture plans (v1_architecture.md is current)
+  family_c_scoring.yaml  # Family C base scores, damage penalties, ranges
+docs/            # Design documents (see docs/README.md for index)
+planning/        # Architecture and sprint plans (see planning/README.md for index)
+  family_c_sprint/  # Current sprint — 17 planning docs for Family C
+scripts/         # Runners and utilities
+  pilot_family_c.py  # Family C model sweep runner
+  openrouter/    # OpenRouter API client
+outputs/         # Run artifacts, audit CSVs, figures
+  family_c/      # Family C pilot outputs
 ```
 
 ---
@@ -33,19 +45,21 @@ planning/        # Architecture plans (v1_architecture.md is current)
 ## Governing documents (read in this order)
 
 1. `SOUL.md` — principles and non-negotiables. This wins.
-2. `docs/metacognition_assessor_recommendations.md` — architectural guidance
-3. `planning/v1_architecture.md` — current implementation plan
-4. `planning/scoring_plan.md` — Brier scoring and adjudication
+2. `planning/family_c_sprint/07_sprint_checklist.md` — current sprint execution plan
+3. `planning/family_c_sprint/03_scoring_blueprint.md` — Family C scoring design
+4. `data/family_c/SCHEMA.md` — Family C item bundle specification
+5. `docs/metacognition_assessor_recommendations.md` — cross-family architecture (background)
+6. `planning/scoring_plan.md` — Family A Brier scoring (background)
 
 ---
 
 ## The five families (do not add others without updating SOUL.md)
 
-| ID | Family | Axis | V1 status |
-|----|--------|------|-----------|
-| A  | Confidence Calibration | Monitoring | Current sprint |
-| B  | Selective Abstention / Verification | Monitoring | After A |
-| C  | Self-Correction | Control | V2 |
+| ID | Family | Axis | Status |
+|----|--------|------|--------|
+| A  | Confidence Calibration | Monitoring | **Complete** — 105 clean items, grading_v2, lean notebook live |
+| B  | Selective Abstention / Verification | Monitoring | **Complete** — 72 clean items, UWAA scoring |
+| C  | Self-Correction | Control | **Current sprint** — v0.6.1 pilot, 28 clean items, 5-model sweep pending |
 | D  | Grounding Sensitivity | Monitoring | V2 |
 | E  | Control-Policy Adaptation | Control | V2 |
 
