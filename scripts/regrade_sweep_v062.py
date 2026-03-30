@@ -193,8 +193,14 @@ def grade_alias_plus_normalization_v2(response: str, gold: str, aliases: list[st
     return False
 
 
-def grade_approx_numeric_small_v2(response: str, gold: str, tolerance: dict | None) -> bool:
-    """Improved numeric grading: checks ALL numbers, not just the first."""
+def grade_approx_numeric_small_v2(response: str, gold: str, tolerance: dict | None,
+                                   aliases: list[str] | None = None) -> bool:
+    """Improved numeric grading: checks text aliases first, then ALL numbers."""
+    # Check text aliases before numeric extraction (fixes "Seven continents" bug)
+    if aliases:
+        if check_text_answer(response, gold, aliases):
+            return True
+
     try:
         gold_num = float(gold.replace(",", ""))
     except (ValueError, TypeError):
@@ -278,7 +284,7 @@ def grade_item_v2(response: str, item: dict) -> bool:
     if rule == "alias_plus_normalization":
         return grade_alias_plus_normalization_v2(response, gold, aliases)
     elif rule == "approx_numeric_small":
-        return grade_approx_numeric_small_v2(response, gold, tolerance)
+        return grade_approx_numeric_small_v2(response, gold, tolerance, aliases)
     elif rule == "code_output":
         return grade_code_output_v2(response, gold, aliases)
     elif rule == "fraction_or_decimal":

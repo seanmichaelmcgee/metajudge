@@ -3,9 +3,24 @@
 ## Current state
 - **Branch:** `hardening/family-c-v0.6.2`
 - **Latest commit:** (see git log)
-- **Current phase:** Next-phase Phase 0 — state recovery complete
+- **Current phase:** Phase 1 (Next-Phase) — Grading semantics frozen for WR hardening
 - **Safe to resume from here:** YES
-- **Requires user confirmation:** YES
+- **User confirmation required:** YES — Phase 2 (high-cost WR hardening batches) awaits user go-ahead
+
+### Phase 1 (Next-Phase) Artifacts
+- `planning/family_c_sprint/grading_freeze_note_phase1.md` — grading semantics freeze documentation
+- `tests/test_sweep_grading_v2.py` — 48 unit tests for all grading rules (semantics freeze)
+- `scripts/regrade_sweep_v062.py` — v2 grader with alias fix in `grade_approx_numeric_small_v2`
+
+### Phase 1 Bug Fix: Alias Check in approx_numeric_small
+- `grade_approx_numeric_small_v2` now checks text aliases before numeric extraction
+- Dispatcher `grade_item_v2` now passes aliases to `grade_approx_numeric_small_v2`
+- Impact on original 225 sweep results: 3 items legitimately corrected (all alias-match fixes)
+  - sc_c2_rr_005 (DeepSeek, GPT-4.1): gold=7, alias "seven" now matched → W→W becomes R→R
+  - sc_c2_wc_001 (Gemini): gold=8, alias "eight" now matched in T1 → W→W becomes R→W
+
+### Next Action
+- **Phase 2:** High-cost WR hardening batches (awaiting user confirmation)
 
 ## Sprint Results Summary
 
