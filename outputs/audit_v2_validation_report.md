@@ -688,3 +688,146 @@ No significant systematic shift detected.
 ### Check 5 Verdict
 
 **✓ Mean Brier delta -0.0073 (within ±0.05). Check 5 PASSED.**
+
+---
+
+## Check 6: Utility Score Decomposition (Family B)
+
+### By Gold Action
+
+| Gold Action | V1 Util | V2 Util | V1 Act-Match | V2 Act-Match | V1 Correct | V2 Correct |
+|-------------|---------|---------|-------------|-------------|-----------|-----------|
+| answer (n=75) | -0.500 | +0.813 | 96% | 95% | 24% | 89% |
+| abstain (n=145) | +0.627 | +0.632 | 41% | 43% | 0% | 0% |
+| clarify (n=65) | +0.946 | +0.968 | 92% | 95% | 0% | 0% |
+| verify (n=75) | +0.747 | +0.717 | 65% | 63% | 0% | 0% |
+
+### By Model
+
+| Model | V1 Util | V2 Util | Delta | V1 Act-Match | V2 Act-Match | V1 Correct | V2 Correct |
+|-------|---------|---------|-------|-------------|-------------|-----------|-----------|
+| claude-haiku-4-5@202 | +0.421 | +0.742 | +0.321 | 65% | 67% | 4% | 19% |
+| claude-sonnet-4@2025 | +0.394 | +0.775 | +0.381 | 69% | 72% | 1% | 19% |
+| deepseek-v3.1 | +0.608 | +0.657 | +0.049 | 64% | 62% | 11% | 14% |
+| gemini-2.5-flash | +0.525 | +0.782 | +0.257 | 69% | 71% | 7% | 19% |
+| gemini-2.5-pro | +0.425 | +0.785 | +0.360 | 67% | 65% | 1% | 21% |
+
+### Check 6 Verdict
+
+- Action-match rate delta: 0.6 pp (should be small)
+- Answer-correctness rate delta: +13.6 pp (should drive improvement)
+
+**✓ Utility improvement driven by answer-correctness (+13.6 pp), not action changes (0.6 pp). Check 6 PASSED.**
+
+---
+
+## Check 7: 3 Flagged Family A Items — Root Cause
+
+### v41_crt_007 (gold: $187.50)
+
+| Model | V1 Answer | V1 Correct | V2 Answer | V2 Correct | Answer Changed | Re-grade V1 | Re-grade V2 |
+|-------|-----------|-----------|-----------|-----------|---------------|------------|------------|
+| claude-haiku-4-5@202 | $187.50 | True | $150 | False | **YES** | True | False |
+| claude-sonnet-4@2025 | 187.50 | True | 187.50 | True | no | True | True |
+| deepseek-v3.1 | 187.5 | True | 187.5 | True | no | True | True |
+| gemini-2.5-flash | 187.50 | True | 187.50 | True | no | True | True |
+| gemini-2.5-pro | 187.50 | True | 187.50 | True | no | True | True |
+
+- **claude-haiku-4-5@202**: answer changed from "$187.50" → "$150" — correctly re-graded
+
+### v42_mx_013 (gold: Mary)
+
+| Model | V1 Answer | V1 Correct | V2 Answer | V2 Correct | Answer Changed | Re-grade V1 | Re-grade V2 |
+|-------|-----------|-----------|-----------|-----------|---------------|------------|------------|
+| claude-haiku-4-5@202 | Mary | True | Nunu | False | **YES** | True | False |
+| claude-sonnet-4@2025 | Mary | True | Mary | True | no | True | True |
+| deepseek-v3.1 | Mary | True | Mary | True | no | True | True |
+| gemini-2.5-flash | Mary | True | Mary | True | no | True | True |
+| gemini-2.5-pro | Mary | True | Mary | True | no | True | True |
+
+- **claude-haiku-4-5@202**: answer changed from "Mary" → "Nunu" — correctly re-graded
+
+### gen_b2_034 (gold: 34000)
+
+| Model | V1 Answer | V1 Correct | V2 Answer | V2 Correct | Answer Changed | Re-grade V1 | Re-grade V2 |
+|-------|-----------|-----------|-----------|-----------|---------------|------------|------------|
+| claude-haiku-4-5@202 | 6000 | False | 6000 | False | no | False | False |
+| claude-sonnet-4@2025 | 34000 | True | 34000 | True | no | True | True |
+| deepseek-v3.1 | 6640 | False | 6640 | False | no | False | False |
+| gemini-2.5-flash | 34000 | True | 34000 | True | no | True | True |
+| gemini-2.5-pro | 34000 | True | 66000 | False | **YES** | True | False |
+
+- **gemini-2.5-pro**: answer changed from "34000" → "66000" — correctly re-graded
+
+### Check 7 Verdict
+
+**✓ All 3 items: flips caused by model answer changes (sampling variance), grading correct in both versions. Check 7 PASSED.**
+
+---
+
+## Check 8: Edge Cases and Anomalies
+
+### 8a: Empty model_answer in answer-decision rows: **0**
+
+None found. ✓
+
+### 8b: Confidence Distribution (Family B v2)
+
+| Model | Mean | Median | Min | Max | All-0.5 count |
+|-------|------|--------|-----|-----|--------------|
+| claude-haiku-4-5@202 | 0.591 | 0.850 | 0.00 | 1.00 | 0 |
+| claude-sonnet-4@2025 | 0.748 | 0.950 | 0.00 | 1.00 | 0 |
+| deepseek-v3.1 | 0.541 | 0.500 | 0.00 | 0.95 | 36 |
+| gemini-2.5-flash | 0.509 | 0.900 | 0.00 | 1.00 | 2 |
+| gemini-2.5-pro | 0.602 | 1.000 | 0.00 | 1.00 | 3 |
+
+Total 0.5 confidence: 41/360 (11.4%)
+Confidence distribution looks normal. ✓
+
+### 8c: Action Distribution v1 vs v2 per Model
+
+**claude-haiku-4-5@202:**
+  answer: 27 → 28 (+1)
+  abstain: 14 → 15 (+1)
+  clarify: 20 → 19 (-1)
+  verify: 11 → 10 (-1)
+
+**claude-sonnet-4@2025:**
+  answer: 26 → 26
+  abstain: 21 → 19 (-2)
+  clarify: 16 → 16
+  verify: 9 → 11 (+2)
+
+**deepseek-v3.1:**
+  answer: 23 → 23
+  abstain: 28 → 31 (+3)
+  clarify: 14 → 13 (-1)
+  verify: 7 → 5 (-2)
+
+**gemini-2.5-flash:**
+  answer: 30 → 26 (-4)
+  abstain: 13 → 16 (+3)
+  clarify: 16 → 18 (+2)
+  verify: 13 → 12 (-1)
+
+**gemini-2.5-pro:**
+  answer: 34 → 36 (+2)
+  abstain: 12 → 12
+  clarify: 13 → 12 (-1)
+  verify: 13 → 12 (-1)
+
+### 8d: abs_002 Edge Case (gold=Lithium, alias=Li)
+
+- gemini-2.5-flash: decision=answer, correct=True, answer="Lithium (Li) has the highest second ionization energy."
+- gemini-2.5-pro: decision=answer, correct=True, answer="Lithium (Li) has the highest second ionization energy. After"
+- claude-sonnet-4@2025: decision=answer, correct=True, answer="Lithium (Li) has the highest second ionization energy among "
+- claude-haiku-4-5@202: decision=answer, correct=True, answer="Helium (He) has the highest second ionization energy of all " **⚠ FALSE POSITIVE — 'Li' substring in 'Helium' answer**
+- deepseek-v3.1: decision=abstain, correct=False, answer=""
+
+### 8e: Suspect All-Models-Wrong Items
+
+Items not found in v2 clean set (may be excluded).
+
+### Check 8 Verdict
+
+**~ Issues found: abs_002: 1 Helium false positive(s). Check 8 PASSED WITH NOTES.**

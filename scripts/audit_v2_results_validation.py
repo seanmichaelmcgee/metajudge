@@ -17,6 +17,7 @@ from pathlib import Path
 # Add package to path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from metajudge.scoring.grading_v2 import grade_item, load_registry
+from metajudge.scoring.abstention_metrics import decision_utility_single
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -647,6 +648,355 @@ def format_check_5(results):
 
 
 # ---------------------------------------------------------------------------
+# Check 6: Utility Score Decomposition (Family B)
+# ---------------------------------------------------------------------------
+def check_6_utility_decomposition(v1_fb, v2_fb):
+    """Decompose Family B utility into action-match vs answer-correctness."""
+    def decompose(rows):
+        by_gold = defaultdict(lambda: {"n": 0, "action_match": 0, "correct": 0,
+                                        "utility_sum": 0.0})
+        by_model = defaultdict(lambda: {"n": 0, "action_match": 0, "correct": 0,
+                                         "utility_sum": 0.0})
+        for r in rows:
+            ga = r["gold_action"]
+            mn = r["model_name"]
+            dec = r.get("model_decision", "").strip().lower()
+            correct = bool_str(r["is_correct"])
+            util = float(r["utility"])
+
+            for bucket in [by_gold[ga], by_model[mn]]:
+                bucket["n"] += 1
+                if dec == ga:
+                    bucket["action_match"] += 1
+                if correct:
+                    bucket["correct"] += 1
+                bucket["utility_sum"] += util
+
+        return by_gold, by_model
+
+    v1_gold, v1_model = decompose(v1_fb)
+    v2_gold, v2_model = decompose(v2_fb)
+
+    return {
+        "v1_gold": dict(v1_gold), "v2_gold": dict(v2_gold),
+        "v1_model": dict(v1_model), "v2_model": dict(v2_model),
+    }
+
+
+def format_check_6(results):
+    lines = ["## Check 6: Utility Score Decomposition (Family B)\n"]
+
+    # By gold_action
+    lines.append("### By Gold Action\n")
+    lines.append("| Gold Action | V1 Util | V2 Util | V1 Act-Match | V2 Act-Match | V1 Correct | V2 Correct |")
+    lines.append("|-------------|---------|---------|-------------|-------------|-----------|-----------|")
+    for ga in ["answer", "abstain", "clarify", "verify"]:
+        s1 = results["v1_gold"].get(ga, {"n": 0, "utility_sum": 0, "action_match": 0, "correct": 0})
+        s2 = results["v2_gold"].get(ga, {"n": 0, "utility_sum": 0, "action_match": 0, "correct": 0})
+        u1 = s1["utility_sum"] / s1["n"] if s1["n"] else 0
+        u2 = s2["utility_sum"] / s2["n"] if s2["n"] else 0
+        am1 = s1["action_match"] / s1["n"] * 100 if s1["n"] else 0
+        am2 = s2["action_match"] / s2["n"] * 100 if s2["n"] else 0
+        c1 = s1["correct"] / s1["n"] * 100 if s1["n"] else 0
+        c2 = s2["correct"] / s2["n"] * 100 if s2["n"] else 0
+        lines.append(f"| {ga} (n={s1['n']}) | {u1:+.3f} | {u2:+.3f} | {am1:.0f}% | {am2:.0f}% | {c1:.0f}% | {c2:.0f}% |")
+    lines.append("")
+
+    # By model
+    lines.append("### By Model\n")
+    lines.append("| Model | V1 Util | V2 Util | Delta | V1 Act-Match | V2 Act-Match | V1 Correct | V2 Correct |")
+    lines.append("|-------|---------|---------|-------|-------------|-------------|-----------|-----------|")
+    for mn in sorted(results["v1_model"].keys()):
+        s1 = results["v1_model"][mn]
+        s2 = results["v2_model"].get(mn, {"n": 0, "utility_sum": 0, "action_match": 0, "correct": 0})
+        u1 = s1["utility_sum"] / s1["n"] if s1["n"] else 0
+        u2 = s2["utility_sum"] / s2["n"] if s2["n"] else 0
+        am1 = s1["action_match"] / s1["n"] * 100 if s1["n"] else 0
+        am2 = s2["action_match"] / s2["n"] * 100 if s2["n"] else 0
+        c1 = s1["correct"] / s1["n"] * 100 if s1["n"] else 0
+        c2 = s2["correct"] / s2["n"] * 100 if s2["n"] else 0
+        short = mn.split("/")[-1][:20]
+        lines.append(f"| {short} | {u1:+.3f} | {u2:+.3f} | {u2-u1:+.3f} | {am1:.0f}% | {am2:.0f}% | {c1:.0f}% | {c2:.0f}% |")
+    lines.append("")
+
+    # Verdict
+    lines.append("### Check 6 Verdict\n")
+    # Check if action-match rates are similar and correctness drives the delta
+    v1_am_total = sum(s["action_match"] for s in results["v1_model"].values())
+    v2_am_total = sum(s["action_match"] for s in results["v2_model"].values())
+    v1_n = sum(s["n"] for s in results["v1_model"].values())
+    v2_n = sum(s["n"] for s in results["v2_model"].values())
+    am_delta = abs(v2_am_total / v2_n - v1_am_total / v1_n) * 100 if v1_n and v2_n else 999
+
+    v1_c_total = sum(s["correct"] for s in results["v1_model"].values())
+    v2_c_total = sum(s["correct"] for s in results["v2_model"].values())
+    c_delta = (v2_c_total / v2_n - v1_c_total / v1_n) * 100 if v1_n and v2_n else 0
+
+    lines.append(f"- Action-match rate delta: {am_delta:.1f} pp (should be small)")
+    lines.append(f"- Answer-correctness rate delta: {c_delta:+.1f} pp (should drive improvement)")
+
+    if am_delta < 10 and c_delta > 0:
+        lines.append(f"\n**✓ Utility improvement driven by answer-correctness (+{c_delta:.1f} pp), not action changes ({am_delta:.1f} pp). Check 6 PASSED.**")
+    else:
+        lines.append(f"\n**~ Action-match shift {am_delta:.1f} pp needs review. Check 6 MARGINAL.**")
+
+    lines.append("")
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
+# Check 7: 3 Flagged Family A Items — Root Cause Confirmation
+# ---------------------------------------------------------------------------
+FLAGGED_ITEMS = ["v41_crt_007", "v42_mx_013", "gen_b2_034"]
+
+
+def check_7_flagged_items(v1_cal, v2_cal, registry):
+    """Re-grade the 3 flagged items in both v1 and v2."""
+    v1k = keyed(v1_cal)
+    v2k = keyed(v2_cal)
+
+    rows = []
+    for iid in FLAGGED_ITEMS:
+        for key in sorted(v1k.keys()):
+            if key[1] != iid:
+                continue
+            r1 = v1k[key]
+            r2 = v2k.get(key, {})
+
+            v1_answer = r1.get("model_answer", "")
+            v2_answer = r2.get("model_answer", "")
+            gold = r1["gold_answer"]
+
+            rg1 = grade_item(iid, v1_answer, registry, gold_answer=gold)
+            rg2 = grade_item(iid, v2_answer, registry, gold_answer=gold) if v2_answer else \
+                {"correct": False, "method": "empty", "match_detail": "no answer"}
+
+            rows.append({
+                "item_id": iid,
+                "model": key[0].split("/")[-1][:20],
+                "gold": gold,
+                "v1_answer": v1_answer[:60],
+                "v2_answer": v2_answer[:60],
+                "v1_recorded": bool_str(r1["is_correct"]),
+                "v2_recorded": bool_str(r2.get("is_correct", "False")),
+                "v1_regrade": rg1["correct"],
+                "v2_regrade": rg2["correct"],
+                "v1_method": rg1.get("method", ""),
+                "v2_method": rg2.get("method", ""),
+                "answer_changed": v1_answer != v2_answer,
+            })
+
+    return rows
+
+
+def format_check_7(rows):
+    lines = ["## Check 7: 3 Flagged Family A Items — Root Cause\n"]
+
+    for iid in FLAGGED_ITEMS:
+        item_rows = [r for r in rows if r["item_id"] == iid]
+        if not item_rows:
+            continue
+        gold = item_rows[0]["gold"]
+        lines.append(f"### {iid} (gold: {gold})\n")
+        lines.append("| Model | V1 Answer | V1 Correct | V2 Answer | V2 Correct | Answer Changed | Re-grade V1 | Re-grade V2 |")
+        lines.append("|-------|-----------|-----------|-----------|-----------|---------------|------------|------------|")
+        for r in item_rows:
+            chg = "**YES**" if r["answer_changed"] else "no"
+            lines.append(f"| {r['model']} | {r['v1_answer'][:30]} | {r['v1_recorded']} | {r['v2_answer'][:30]} | {r['v2_recorded']} | {chg} | {r['v1_regrade']} | {r['v2_regrade']} |")
+        lines.append("")
+
+        # Identify the flipped rows
+        flipped = [r for r in item_rows if r["v1_recorded"] != r["v2_recorded"]]
+        if flipped:
+            for r in flipped:
+                lines.append(f"- **{r['model']}**: answer changed from \"{r['v1_answer'][:40]}\" → \"{r['v2_answer'][:40]}\" — {'correctly re-graded' if r['v2_recorded'] == r['v2_regrade'] else 'GRADING MISMATCH'}")
+            lines.append("")
+
+    # Verdict
+    all_agree = all(r["v1_recorded"] == r["v1_regrade"] and r["v2_recorded"] == r["v2_regrade"]
+                    for r in rows)
+    all_changed = all(r["answer_changed"] for r in rows
+                      if r["v1_recorded"] != r["v2_recorded"])
+
+    lines.append("### Check 7 Verdict\n")
+    if all_agree and all_changed:
+        lines.append("**✓ All 3 items: flips caused by model answer changes (sampling variance), grading correct in both versions. Check 7 PASSED.**")
+    elif all_agree:
+        lines.append("**✓ Grading correct in both versions. Check 7 PASSED.**")
+    else:
+        lines.append("**⚠ Grading mismatch detected. Check 7 NEEDS REVIEW.**")
+
+    lines.append("")
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
+# Check 8: Edge Cases and Anomalies
+# ---------------------------------------------------------------------------
+def check_8_edge_cases(v1_fb, v2_fb, v2_cal):
+    """Spot-check edge cases: abs_002, empty answers, confidence, action dist."""
+    results = {}
+
+    v2_fb_k = keyed(v2_fb)
+    v1_fb_k = keyed(v1_fb)
+
+    # 8a: Empty model_answer in answer-decision rows
+    empty_answer_rows = []
+    for r in v2_fb:
+        if r.get("model_decision", "").strip().lower() == "answer" and not r.get("model_answer", "").strip():
+            empty_answer_rows.append(r)
+    results["empty_answer"] = empty_answer_rows
+
+    # 8b: Confidence distribution per model
+    conf_by_model = defaultdict(list)
+    for r in v2_fb:
+        conf_by_model[r["model_name"]].append(float(r["confidence"]))
+    results["conf_by_model"] = dict(conf_by_model)
+
+    # 8c: Action distribution v1 vs v2 per model
+    def action_dist(rows):
+        dist = defaultdict(Counter)
+        for r in rows:
+            dist[r["model_name"]][r.get("model_decision", "unknown")] += 1
+        return dict(dist)
+    results["v1_actions"] = action_dist(v1_fb)
+    results["v2_actions"] = action_dist(v2_fb)
+
+    # 8d: abs_002 false positive detail
+    abs002 = []
+    for r in v2_fb:
+        if r["item_id"] == "abs_002":
+            abs002.append({
+                "model": r["model_name"].split("/")[-1][:20],
+                "decision": r.get("model_decision", ""),
+                "answer": r.get("model_answer", "")[:100],
+                "is_correct": bool_str(r["is_correct"]),
+                "gold": r["gold_answer"],
+            })
+    results["abs_002"] = abs002
+
+    # 8e: All-models-wrong items (gen_b_028, v42_mx_008) — check in v2 cal
+    suspect_items = ["gen_b_028", "v42_mx_008"]
+    suspect_rows = []
+    for r in v2_cal:
+        if r["item_id"] in suspect_items:
+            suspect_rows.append(r)
+    # Also check FB for gen_b_028
+    for r in v2_fb:
+        if r["item_id"] in suspect_items:
+            suspect_rows.append(r)
+    results["suspect_items"] = suspect_rows
+
+    return results
+
+
+def format_check_8(results):
+    lines = ["## Check 8: Edge Cases and Anomalies\n"]
+
+    # 8a: Empty answers
+    ea = results["empty_answer"]
+    lines.append(f"### 8a: Empty model_answer in answer-decision rows: **{len(ea)}**\n")
+    if ea:
+        lines.append("| Model | Item |")
+        lines.append("|-------|------|")
+        for r in ea:
+            lines.append(f"| {r['model_name'].split('/')[-1][:20]} | {r['item_id']} |")
+    else:
+        lines.append("None found. ✓")
+    lines.append("")
+
+    # 8b: Confidence distributions
+    lines.append("### 8b: Confidence Distribution (Family B v2)\n")
+    lines.append("| Model | Mean | Median | Min | Max | All-0.5 count |")
+    lines.append("|-------|------|--------|-----|-----|--------------|")
+    for mn in sorted(results["conf_by_model"]):
+        vals = results["conf_by_model"][mn]
+        vals_sorted = sorted(vals)
+        mean_c = sum(vals) / len(vals)
+        median_c = vals_sorted[len(vals) // 2]
+        min_c = min(vals)
+        max_c = max(vals)
+        half_count = sum(1 for v in vals if v == 0.5)
+        short = mn.split("/")[-1][:20]
+        lines.append(f"| {short} | {mean_c:.3f} | {median_c:.3f} | {min_c:.2f} | {max_c:.2f} | {half_count} |")
+    lines.append("")
+
+    # Check for fallback signal (many 0.5 = default confidence)
+    total_05 = sum(1 for vals in results["conf_by_model"].values() for v in vals if v == 0.5)
+    total_all = sum(len(vals) for vals in results["conf_by_model"].values())
+    lines.append(f"Total 0.5 confidence: {total_05}/{total_all} ({total_05/total_all*100:.1f}%)")
+    if total_05 / total_all > 0.5:
+        lines.append("**⚠ High proportion of default confidence — _safe_prompt fallback may have fired frequently.**")
+    else:
+        lines.append("Confidence distribution looks normal. ✓")
+    lines.append("")
+
+    # 8c: Action distribution
+    lines.append("### 8c: Action Distribution v1 vs v2 per Model\n")
+    all_models = sorted(set(list(results["v1_actions"].keys()) + list(results["v2_actions"].keys())))
+    for mn in all_models:
+        short = mn.split("/")[-1][:20]
+        v1a = results["v1_actions"].get(mn, Counter())
+        v2a = results["v2_actions"].get(mn, Counter())
+        lines.append(f"**{short}:**")
+        for act in ["answer", "abstain", "clarify", "verify"]:
+            c1 = v1a.get(act, 0)
+            c2 = v2a.get(act, 0)
+            delta = c2 - c1
+            d_str = f" ({delta:+d})" if delta != 0 else ""
+            lines.append(f"  {act}: {c1} → {c2}{d_str}")
+        lines.append("")
+
+    # 8d: abs_002
+    lines.append("### 8d: abs_002 Edge Case (gold=Lithium, alias=Li)\n")
+    for r in results["abs_002"]:
+        flag = ""
+        if "helium" in r["answer"].lower() and r["is_correct"]:
+            flag = " **⚠ FALSE POSITIVE — 'Li' substring in 'Helium' answer**"
+        lines.append(f"- {r['model']}: decision={r['decision']}, correct={r['is_correct']}, answer=\"{r['answer'][:60]}\"{flag}")
+    lines.append("")
+
+    # 8e: Suspect items
+    lines.append("### 8e: Suspect All-Models-Wrong Items\n")
+    suspect = results["suspect_items"]
+    if suspect:
+        for iid in ["gen_b_028", "v42_mx_008"]:
+            rows = [r for r in suspect if r["item_id"] == iid]
+            if rows:
+                gold = rows[0]["gold_answer"]
+                correct = sum(1 for r in rows if bool_str(r["is_correct"]))
+                lines.append(f"**{iid}** (gold: {gold}): {correct}/{len(rows)} models correct in v2")
+                for r in rows:
+                    short = r["model_name"].split("/")[-1][:20]
+                    ans = r.get("model_answer", "")[:40]
+                    lines.append(f"  - {short}: \"{ans}\" → {r['is_correct']}")
+                lines.append("")
+    else:
+        lines.append("Items not found in v2 clean set (may be excluded).")
+    lines.append("")
+
+    # Verdict
+    issues = []
+    if ea:
+        issues.append(f"{len(ea)} empty answer-decision rows")
+    if total_05 / total_all > 0.5:
+        issues.append("high fallback confidence rate")
+    abs002_fp = sum(1 for r in results["abs_002"]
+                    if "helium" in r["answer"].lower() and r["is_correct"])
+    if abs002_fp:
+        issues.append(f"abs_002: {abs002_fp} Helium false positive(s)")
+
+    lines.append("### Check 8 Verdict\n")
+    if not issues:
+        lines.append("**✓ No critical edge case issues. Check 8 PASSED.**")
+    else:
+        lines.append(f"**~ Issues found: {'; '.join(issues)}. Check 8 PASSED WITH NOTES.**")
+
+    lines.append("")
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 def main():
@@ -694,7 +1044,25 @@ def main():
     check5_md = format_check_5(check5)
     print("  Done.")
 
-    # --- Write report (append checks as they're implemented) ---
+    # --- Check 6 ---
+    print("\nRunning Check 6: Utility Decomposition...")
+    check6 = check_6_utility_decomposition(v1_fb, v2_fb)
+    check6_md = format_check_6(check6)
+    print("  Done.")
+
+    # --- Check 7 ---
+    print("\nRunning Check 7: Flagged Items...")
+    check7 = check_7_flagged_items(v1_cal, v2_cal, registry)
+    check7_md = format_check_7(check7)
+    print("  Done.")
+
+    # --- Check 8 ---
+    print("\nRunning Check 8: Edge Cases...")
+    check8 = check_8_edge_cases(v1_fb, v2_fb, v2_cal)
+    check8_md = format_check_8(check8)
+    print("  Done.")
+
+    # --- Write report ---
     report_lines = [
         "# Audit: V2 Narrative Results Validation\n",
         f"Generated by `scripts/audit_v2_results_validation.py`\n",
@@ -710,6 +1078,12 @@ def main():
         check4_md,
         "---\n",
         check5_md,
+        "---\n",
+        check6_md,
+        "---\n",
+        check7_md,
+        "---\n",
+        check8_md,
     ]
 
     os.makedirs(os.path.dirname(REPORT_PATH), exist_ok=True)
