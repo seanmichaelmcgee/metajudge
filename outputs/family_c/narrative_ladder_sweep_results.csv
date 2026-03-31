@@ -1,0 +1,8 @@
+model,tier,n_items,t1_accuracy,t2_accuracy,t2_minus_t1,self_correction_rate,damage_rate,wr_t1_solve_rate,wr_wr_rate,rr_stability,error_count
+claude-3.5-haiku,weak,45,0.889,0.867,-0.022,0.0,0.025,0.938,0.0,1.0,2
+gemma-3-27b-it,weak,45,0.822,0.822,0.0,0.25,0.054,0.875,0.062,0.917,5
+gemini-2.5-flash,mid,45,0.911,0.933,0.022,1.0,0.073,0.812,0.188,1.0,0
+deepseek-chat,mid,45,0.933,0.889,-0.044,0.0,0.048,1.0,0.0,0.917,2
+claude-sonnet-4.6,frontier,45,0.956,0.889,-0.067,0.5,0.093,1.0,0.0,0.917,0
+gemini-2.5-pro,frontier,45,0.933,0.956,0.022,0.333,0.0,1.0,0.0,1.0,0
+deepseek-r1,frontier,45,0.911,0.911,0.0,0.25,0.024,1.0,0.0,1.0,0
