@@ -2,7 +2,7 @@
 
 A behavioral benchmark for metacognitive monitoring and control in frontier language models, built for the [Kaggle Measuring Progress Toward AGI — Cognitive Abilities](https://www.kaggle.com/competitions/kaggle-measuring-agi) hackathon (Metacognition track).
 
-**Current version:** v0.6.1 (Family C pilot)
+**Current version:** v0.6.2 (Family C 5-model sweep)
 **Deadline:** April 16, 2026
 **Submission:** Kaggle Community Benchmark + Writeup (1,500 words)
 
@@ -28,24 +28,24 @@ MetaJudge evaluates whether language models can **track the reliability of their
 - Scored via **UWAA** (Utility-Weighted Action Accuracy) with 5x4 payoff matrix
 - Corrective answers on false-premise items credited; acceptable alternatives awarded partial credit
 
-### Axis III — Self-Correction (Control) *[current sprint]*
+### Axis III — Self-Correction (Control)
 *Can the model detect and repair its own errors?*
 
-- 35 seed items (28 clean after 2-model pilot triage) across two subfamilies:
-  - **C1 — Intrinsic:** Model prompted to reconsider with no new evidence (neutral or metacognitive challenge)
-  - **C2 — Evidence-assisted:** Model given a weak/suggestive evidence snippet and asked to reconsider
+- 45 clean items across two subfamilies:
+  - **C1 — Intrinsic** (25 items): Model prompted to reconsider with no new evidence
+  - **C2 — Evidence-assisted** (20 items): Model given a weak/suggestive evidence snippet
 - 5 strata: wrong-to-right, right-to-right, weak-challenge, unresolved, deceptive-trap
 - Scored via **transition-based scoring** with inverted damage:gain penalties (damage > gain) and confidence adjustment
 - Config-driven scoring via `config/family_c_scoring.yaml`
 - Grounded in Huang et al. (ICLR 2024): intrinsic self-correction fails without external evidence
 
-**Status:** 2-model pilot complete (deepseek-chat, grok-3-mini). 5-model panel run pending. See `outputs/family_c/pilot_report_v061.md` for pilot results.
+**Status:** 5-model sweep complete. See `outputs/family_c/sweep_analysis_v062.md` for full analysis and `outputs/family_c/power_analysis_v062.md` for statistical power assessment.
 
 ### Composite MetaScore
 
 **Current (Families A+B):** `MetaScore = 0.60 x Calibration + 0.40 x UWAA`
 
-**Provisional (with Family C):** Weights will be rebalanced after Family C validation:
+**Provisional (with Family C):** Weights will be rebalanced after Family C promotion:
 
 ```python
 WEIGHTS = {
@@ -83,8 +83,8 @@ data/                             # Production datasets
   adjudication_registry.json      #   132 grading rules (117 cal + 15 FB)
   clean_subset_manifest.json      #   Exclusion lists for clean subset
   family_c/                       #   Family C item bundles
-    family_c_c1_candidates.json   #     15 C1 items (13 clean)
-    family_c_c2_candidates.json   #     20 C2 items (15 clean)
+    family_c_c1_candidates.json   #     25 C1 items
+    family_c_c2_candidates.json   #     20 C2 items
     SCHEMA.md                     #     Item bundle specification
 
 config/
@@ -97,16 +97,17 @@ notebooks/
 
 scripts/
   pilot_family_c.py               #   Family C model sweep runner
+  power_analysis_v062.py          #   Statistical power analysis for Family C
   openrouter/client.py            #   OpenRouter API client for multi-model execution
 
 kaggle-dataset/                   #   -> Upload as Kaggle Dataset "metajudge-data"
 kaggle-package/                   #   -> Upload as Kaggle Dataset "metajudge-package"
 
-tests/                            #   Unit and integration tests (290+)
+tests/                            #   Unit and integration tests (409)
 outputs/                          #   Run artifacts (audit CSVs, figures)
-  family_c/                       #     Family C pilot outputs (JSONL, CSV, report)
-docs/                             #   Scientific documentation (see docs/README.md)
-planning/                         #   Architecture and sprint plans (see planning/README.md)
+  family_c/                       #     Sweep results, power analysis, pilot data
+docs/                             #   Scientific documentation
+planning/                         #   Architecture and sprint plans
   family_c_sprint/                #     Current sprint: 17 planning docs for Family C
 ```
 
@@ -151,7 +152,7 @@ Utility matrix maps (model action x gold action) -> [-1, +1].
 Corrective non-answers on false-presupposition items receive +0.5.
 Acceptable alternative actions receive at least +0.3 partial credit.
 
-### Self-Correction (Axis III) *[current sprint]*
+### Self-Correction (Axis III)
 Transition-based scoring classifies each item into one of six outcomes: `correction_gain`, `maintain_correct`, `neutral_revision`, `damage`, `stubborn_wrong`, `failed_revision`. Base scores differ between C1 (harsh on damage: -0.40) and C2 (more forgiving: -0.25, but -0.40 for misleading evidence). Confidence adjustment in [-0.15, +0.10] applied per transition. Raw scores rescaled from [-0.55, 0.30] to [0, 1]. See `planning/family_c_sprint/03_scoring_blueprint.md` for worked examples.
 
 ### Composite
@@ -172,14 +173,31 @@ After Family C promotion: weights rebalanced per `config/benchmark_config.yaml`.
 | Claude Sonnet 4 | 0.8843 | 86.7% | 0.6972 | 0.8095 |
 | Claude Haiku 4.5 | 0.8595 | 81.0% | 0.7104 | 0.7999 |
 
-### Family C Pilot (v0.6.1 — 2-model, 35 items)
+### Family C (v0.6.2 — 5-model, 45 clean items)
 
-| Model | Parse Rate | Mean Scaled Score | Damage Rate | Revision Rate |
-|-------|-----------|-------------------|-------------|---------------|
-| deepseek-chat | 35/35 | 0.9203 | 2.9% | 11.4% |
-| grok-3-mini | 35/35 | 0.9849 | 0.0% | 0.0% |
+**T2-T1 accuracy delta** (recommended headline metric — uses all 45 paired observations):
 
-Key finding: Grok never revised (0% revision rate), validating the "stubborn baseline" from Huang et al. DeepSeek showed 1 damage event on a deceptive-trap item, validating that construct. Full 5-model results pending.
+| Model | T1 Acc | T2 Acc | Delta | W->R | R->W | Profile |
+|-------|--------|--------|-------|------|------|---------|
+| DeepSeek Chat | 80.0% | 88.9% | **+8.9pp*** | 4 | 0 | Self-corrector |
+| GPT-4.1 | 84.4% | 88.9% | +4.4pp | 2 | 0 | Moderate |
+| Claude Sonnet 4.5 | 91.1% | 93.3% | +2.2pp | 2 | 1 | Cautious corrector |
+| Grok 3 Mini | 88.9% | 88.9% | +0.0pp | 0 | 0 | Rigid (never revises) |
+| Gemini 2.5 Pro | — | — | — | — | — | *Excluded (verbose T2 grading artifacts)* |
+
+*\*Only statistically significant result at alpha=0.05 (bootstrap CI: [+2.2, +17.8]pp)*
+
+**Key findings:**
+- DeepSeek is the strongest self-corrector (+8.9pp net improvement, 4 W->R corrections, 0 damage)
+- Grok shows zero revision behavior — validates the "stubborn baseline" from Huang et al.
+- Claude has the highest T1 accuracy (91.1%) but only modest self-correction (+2.2pp), with 1 damage event
+- 64% of items (29/45) differentiate at least 2 models; 22% (10/45) differentiate 3+ models
+
+**Statistical caveats** (see `outputs/family_c/power_analysis_v062.md`):
+- SC rate CIs are 40-70% wide due to small wrong-on-T1 denominators (4-9 items per model)
+- McNemar pairwise: 0/6 model pairs significant at alpha=0.05
+- 75-150 total items needed for defensible SC rate comparisons
+- Rescaling compression: `_RAW_MAX=0.30` clamps 2/6 transitions to scaled 1.0, collapsing top-end discrimination
 
 ---
 
@@ -191,18 +209,17 @@ Key finding: Grok never revised (0% revision rate), validating the "stubborn bas
 3. **`planning/family_c_sprint/07_sprint_checklist.md`** — Current sprint execution plan
 4. **`data/family_c/SCHEMA.md`** — Item bundle specification for Family C
 5. **`config/family_c_scoring.yaml`** — Scoring weights and thresholds
+6. **`outputs/family_c/power_analysis_v062.md`** — Statistical power assessment
 
 ### For theoretical background (not needed for task execution)
-6. **`docs/metacognition_assessor_recommendations.md`** — Cross-family architecture rationale
-7. **`docs/metacognition_literature_report.md`** — 80+ paper annotated bibliography
-8. **`planning/family_c_sprint/Theoretical_grounding_MetaJudge_Family_C.md`** — Family C theoretical analysis
-9. **`docs/references.bib`** — Full reference database
+7. **`docs/metacognition_assessor_recommendations.md`** — Cross-family architecture rationale
+8. **`docs/metacognition_literature_report.md`** — 80+ paper annotated bibliography
+9. **`planning/family_c_sprint/Theoretical_grounding_MetaJudge_Family_C.md`** — Family C theoretical analysis
+10. **`docs/references.bib`** — Full reference database
 
 ### For historical context (read only if needed)
-10. **`planning/archive/v1_architecture.md`** — Original Family A implementation plan
-11. **`docs/archive/`** — Superseded design docs, sprint reports, orchestrator briefs
-
-See `docs/README.md` and `planning/README.md` for complete document indexes.
+11. **`planning/v1_architecture.md`** — Original Family A implementation plan
+12. **`outputs/family_c/sweep_analysis_v062.md`** — Full 5-model sweep analysis with per-model breakdowns
 
 ---
 
@@ -226,7 +243,7 @@ For the full bibliography, see `docs/metacognition_literature_report.md`.
 
 ```bash
 pip install -e ".[dev]"       # Install
-pytest tests/ --tb=short      # Test (290+)
+pytest tests/ --tb=short      # Test (409)
 ruff check .                  # Lint
 black .                       # Format
 mypy metajudge/ --ignore-missing-imports  # Type check
