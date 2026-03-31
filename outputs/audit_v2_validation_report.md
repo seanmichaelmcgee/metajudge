@@ -136,3 +136,37 @@ V2: `outputs/results-narrative-v0551-v2/calibration_item_audit (10).csv` + `outp
 - Family B abs_* FLIP_TO_WRONG: **0** (should be 0)
 
 **✓ No regressions in abs_* items. Check 1 PASSED.**
+
+---
+
+## Check 2: Cross-Reference with Audit Predictions
+
+### CONTAINS_GOLD_BUT_WRONG Predictions (49 rows)
+
+These are the 49 rows the pre-audit flagged as false negatives.
+
+| V2 Outcome | Count | % |
+|------------|-------|---|
+| CONFIRMED | 47 | 95.9% |
+| STILL_WRONG | 2 | 4.1% |
+
+**Concordance rate: 47/49 = 95.9%**
+
+### Predictions Not Confirmed (2 rows)
+
+These were predicted to flip but didn't (model may have given a different answer in v2).
+
+| Model | Item | Gold | Audit Answer | V2 Answer |
+|-------|------|------|-------------|-----------|
+| gemini-2.5-flash | abs_007 | n | The genus of a torus with n handles is n |  |
+| deepseek-v3.1 | abs_010 | Smooth endoplasmic reticulum | The endoplasmic reticulum, specifically  | Endoplasmic reticulum |
+
+### Unexpected Flips (1 rows)
+
+Rows that flipped to correct in v2 but were NOT predicted by the audit.
+
+- claude-haiku-4-5@202 × abs_005
+
+### Check 2 Verdict
+
+**✓ Concordance 95.9% — audit predictions strongly confirmed. Check 2 PASSED.**

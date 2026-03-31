@@ -172,6 +172,133 @@ def format_check_1(results):
 
 
 # ---------------------------------------------------------------------------
+# Check 2: Cross-Reference with Audit Predictions
+# ---------------------------------------------------------------------------
+def check_2_audit_concordance(check1_results, audit_preds):
+    """Compare pre-audit predicted flips with actual v1→v2 flips."""
+    # Index check1 FB results by (model_name, item_id)
+    fb_by_key = {(r["model_name"], r["item_id"]): r for r in check1_results["fb"]}
+    cal_by_key = {(r["model_name"], r["item_id"]): r for r in check1_results["cal"]}
+
+    # Categorize audit predictions
+    pred_contains_gold = []  # FLIP_TO_CORRECT|CONTAINS_GOLD_BUT_WRONG
+    pred_flip_correct = []   # any FLIP_TO_CORRECT (including excluded)
+    pred_all_other = []
+
+    for p in audit_preds:
+        flags = p.get("flag", "")
+        if "CONTAINS_GOLD_BUT_WRONG" in flags:
+            pred_contains_gold.append(p)
+        if "FLIP_TO_CORRECT" in flags:
+            pred_flip_correct.append(p)
+
+    # Check concordance for CONTAINS_GOLD_BUT_WRONG predictions
+    concordance_rows = []
+    for p in pred_contains_gold:
+        key = (p["model_name"], p["item_id"])
+        actual = fb_by_key.get(key)
+        if actual is None:
+            status = "NOT_IN_V2"
+        elif actual["status"] == "FLIP_TO_CORRECT":
+            status = "CONFIRMED"
+        elif actual["status"] == "SAME_CORRECT":
+            status = "ALREADY_CORRECT"  # was correct in both
+        elif actual["status"] == "SAME_WRONG":
+            status = "STILL_WRONG"
+        else:
+            status = actual["status"]
+
+        concordance_rows.append({
+            "item_id": p["item_id"],
+            "model_name": p["model_name"],
+            "family": p["family"],
+            "predicted_flag": p["flag"],
+            "v2_status": status,
+            "audit_answer": p.get("model_answer", "")[:80],
+            "v2_answer": actual["v2_answer"][:80] if actual else "",
+            "gold": p.get("gold_answer_source", "")[:40],
+        })
+
+    # Check for unexpected flips (in v2 but NOT predicted by audit)
+    actual_fb_flips = {(r["model_name"], r["item_id"])
+                       for r in check1_results["fb"] if r["status"] == "FLIP_TO_CORRECT"}
+    predicted_fb_flips = {(p["model_name"], p["item_id"])
+                          for p in pred_flip_correct if p["family"] == "B"}
+    unexpected_flips = actual_fb_flips - predicted_fb_flips
+
+    return {
+        "concordance_rows": concordance_rows,
+        "unexpected_flips": unexpected_flips,
+        "pred_contains_gold": pred_contains_gold,
+    }
+
+
+def format_check_2(results):
+    """Format Check 2 results as markdown."""
+    lines = ["## Check 2: Cross-Reference with Audit Predictions\n"]
+
+    rows = results["concordance_rows"]
+    total = len(rows)
+    status_counts = Counter(r["v2_status"] for r in rows)
+
+    lines.append(f"### CONTAINS_GOLD_BUT_WRONG Predictions ({total} rows)\n")
+    lines.append("These are the 49 rows the pre-audit flagged as false negatives.\n")
+    lines.append("| V2 Outcome | Count | % |")
+    lines.append("|------------|-------|---|")
+    for s in ["CONFIRMED", "ALREADY_CORRECT", "STILL_WRONG", "NOT_IN_V2"]:
+        c = status_counts.get(s, 0)
+        pct = c / total * 100 if total else 0
+        if c > 0:
+            lines.append(f"| {s} | {c} | {pct:.1f}% |")
+    # Any other statuses
+    for s, c in status_counts.items():
+        if s not in ("CONFIRMED", "ALREADY_CORRECT", "STILL_WRONG", "NOT_IN_V2"):
+            pct = c / total * 100
+            lines.append(f"| {s} | {c} | {pct:.1f}% |")
+    lines.append("")
+
+    confirmed = status_counts.get("CONFIRMED", 0)
+    concordance = confirmed / total * 100 if total else 0
+    lines.append(f"**Concordance rate: {confirmed}/{total} = {concordance:.1f}%**\n")
+
+    # Show any STILL_WRONG rows (predictions that didn't materialize)
+    still_wrong = [r for r in rows if r["v2_status"] == "STILL_WRONG"]
+    if still_wrong:
+        lines.append(f"### Predictions Not Confirmed ({len(still_wrong)} rows)\n")
+        lines.append("These were predicted to flip but didn't (model may have given a different answer in v2).\n")
+        lines.append("| Model | Item | Gold | Audit Answer | V2 Answer |")
+        lines.append("|-------|------|------|-------------|-----------|")
+        for r in still_wrong:
+            mn = r["model_name"].split("/")[-1][:20]
+            lines.append(f"| {mn} | {r['item_id']} | {r['gold'][:30]} | {r['audit_answer'][:40]} | {r['v2_answer'][:40]} |")
+        lines.append("")
+
+    # Show unexpected flips
+    unexpected = results["unexpected_flips"]
+    if unexpected:
+        lines.append(f"### Unexpected Flips ({len(unexpected)} rows)\n")
+        lines.append("Rows that flipped to correct in v2 but were NOT predicted by the audit.\n")
+        for mn, iid in sorted(unexpected):
+            lines.append(f"- {mn.split('/')[-1][:20]} × {iid}")
+        lines.append("")
+    else:
+        lines.append("### Unexpected Flips: None\n")
+        lines.append("All v2 FLIP_TO_CORRECT rows were predicted by the audit.\n")
+
+    # Verdict
+    lines.append("### Check 2 Verdict\n")
+    if concordance >= 90:
+        lines.append(f"**✓ Concordance {concordance:.1f}% — audit predictions strongly confirmed. Check 2 PASSED.**")
+    elif concordance >= 70:
+        lines.append(f"**~ Concordance {concordance:.1f}% — mostly confirmed, some variance. Check 2 MARGINAL.**")
+    else:
+        lines.append(f"**⚠ Concordance {concordance:.1f}% — below threshold. Check 2 NEEDS REVIEW.**")
+
+    lines.append("")
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 def main():
@@ -193,6 +320,14 @@ def main():
     check1_md = format_check_1(check1)
     print("  Done.")
 
+    # --- Check 2 ---
+    print("\nRunning Check 2: Audit Concordance...")
+    audit_preds = load_csv(AUDIT_PREDS)
+    print(f"  Loaded {len(audit_preds)} audit prediction rows")
+    check2 = check_2_audit_concordance(check1, audit_preds)
+    check2_md = format_check_2(check2)
+    print("  Done.")
+
     # --- Write report (append checks as they're implemented) ---
     report_lines = [
         "# Audit: V2 Narrative Results Validation\n",
@@ -201,6 +336,8 @@ def main():
         f"V2: `{V2_CAL}` + `{V2_FB}`\n",
         "---\n",
         check1_md,
+        "---\n",
+        check2_md,
     ]
 
     os.makedirs(os.path.dirname(REPORT_PATH), exist_ok=True)
