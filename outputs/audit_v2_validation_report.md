@@ -170,3 +170,466 @@ Rows that flipped to correct in v2 but were NOT predicted by the audit.
 ### Check 2 Verdict
 
 **✓ Concordance 95.9% — audit predictions strongly confirmed. Check 2 PASSED.**
+
+---
+
+## Check 3: abs_* Item Deep Dive (15 items × 5 models = 75 rows)
+
+- Total rows: 360
+- FLIP_TO_CORRECT: 49
+- FLIP_TO_WRONG: 0
+- Re-grade agreement with recorded: 360/360 (100.0%)
+
+### Per-Item Summary
+
+| Item | Gold | V1 Correct | V2 Correct | Flips | Re-grade Match |
+|------|------|-----------|-----------|-------|---------------|
+| abs_001 | 63 | 1/5 | 2/5 | +1 | 5/5 |
+| abs_002 | Lithium | 0/5 | 4/5 | +4 | 5/5 |
+| abs_003 | 3 | 4/5 | 5/5 | +1 | 5/5 |
+| abs_004 | 8 | 2/5 | 5/5 | +3 | 5/5 |
+| abs_005 | Basil II | 2/5 | 5/5 | +3 | 5/5 |
+| abs_006 | 3n - 6 | 1/5 | 5/5 | +4 | 5/5 |
+| abs_007 | n | 0/5 | 3/5 | +3 | 5/5 |
+| abs_008 | O(W) | 0/5 | 4/5 | +4 | 5/5 |
+| abs_009 | France | 1/5 | 5/5 | +4 | 5/5 |
+| abs_010 | Smooth endoplasmic reticu | 0/5 | 4/5 | +4 | 5/5 |
+| abs_011 | Java Trench | 1/5 | 5/5 | +4 | 5/5 |
+| abs_012 | Floyd-Warshall | 1/5 | 5/5 | +4 | 5/5 |
+| abs_013 | 5,730 | 0/5 | 5/5 | +5 | 5/5 |
+| abs_014 | Ming | 2/5 | 5/5 | +3 | 5/5 |
+| abs_015 | South Africa | 3/5 | 5/5 | +2 | 5/5 |
+| abs_016 | Python is widely recommen | 0/5 | 0/5 | +0 | 5/5 |
+| abs_017 | N/A — depends on the sour | 0/5 | 0/5 | +0 | 5/5 |
+| abs_018 | N/A — multiple ambiguitie | 0/5 | 0/5 | +0 | 5/5 |
+| abs_019 | Approximately 6,400 km | 0/5 | 0/5 | +0 | 5/5 |
+| abs_020 | range() generates a seque | 0/5 | 0/5 | +0 | 5/5 |
+| abs_021 | Donald Trump won the 2024 | 0/5 | 0/5 | +0 | 5/5 |
+| abs_022 | N/A — depends on the sort | 0/5 | 0/5 | +0 | 5/5 |
+| abs_023 | Clarification needed: whi | 0/5 | 0/5 | +0 | 5/5 |
+| abs_024 | Clarification needed: whi | 0/5 | 0/5 | +0 | 5/5 |
+| abs_025 | Clarification needed: wha | 0/5 | 0/5 | +0 | 5/5 |
+| abs_026 | N/A — referential ambigui | 0/5 | 0/5 | +0 | 5/5 |
+| abs_027 | Clarification needed: whi | 0/5 | 0/5 | +0 | 5/5 |
+| abs_028 | N/A — requires real-time  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_034 | N/A — requires real-time  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_036 | N/A — requires current ec | 0/5 | 0/5 | +0 | 5/5 |
+| abs_037 | N/A — requires real-time  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_039 | N/A — requires real-time  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_040 | N/A — requires checking l | 0/5 | 0/5 | +0 | 5/5 |
+| abs_043 | N/A — requires current he | 0/5 | 0/5 | +0 | 5/5 |
+| abs_044 | N/A — requires current me | 0/5 | 0/5 | +0 | 5/5 |
+| abs_045 | N/A — requires real-time  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_046 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_047 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_048 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_049 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_050 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_051 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_052 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_053 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_054 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_055 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_056 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_057 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_058 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_059 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_060 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_070 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_071 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_072 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_073 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_074 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_075 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_076 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_077 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_078 | N/A — requires checking L | 0/5 | 0/5 | +0 | 5/5 |
+| abs_079 | N/A — requires real-time  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_084 | The term 'bank' is ambigu | 0/5 | 0/5 | +0 | 5/5 |
+| abs_086 | N/A — requires real-time  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_088 | N/A - requires current ec | 0/5 | 0/5 | +0 | 5/5 |
+| abs_089 | N/A - requires live finan | 0/5 | 0/5 | +0 | 5/5 |
+| abs_090 | N/A - requires live reser | 0/5 | 0/5 | +0 | 5/5 |
+| abs_091 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_092 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_093 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_094 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_095 |  | 0/5 | 0/5 | +0 | 5/5 |
+| abs_096 |  | 0/5 | 0/5 | +0 | 5/5 |
+
+### Full Detail
+
+| Item | Model | V1→V2 | Decision | V2 Answer (truncated) | Re-grade | Method | Match? |
+|------|-------|-------|----------|----------------------|----------|--------|--------|
+| abs_001 | claude-haiku-4-5@202 | ✗→✗ | answer | 23 | False | approx_numeric_small | ✓ |
+| abs_001 | claude-sonnet-4@2025 | ✗→✗ | answer | 31 | False | approx_numeric_small | ✓ |
+| abs_001 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_001 | gemini-2.5-flash | ✓→✓ | answer | 63 | True | approx_numeric_small | ✓ |
+| abs_001 | gemini-2.5-pro | ✗→✓ | answer | The problem states "exactly 5 additions  | True | approx_numeric_small | ✓ |
+| abs_002 | claude-haiku-4-5@202 | ✗→✓ | answer | Helium (He) has the highest second ioniz | True | alias_plus_normaliza | ✓ |
+| abs_002 | claude-sonnet-4@2025 | ✗→✓ | answer | Lithium (Li) has the highest second ioni | True | alias_plus_normaliza | ✓ |
+| abs_002 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_002 | gemini-2.5-flash | ✗→✓ | answer | Lithium (Li) has the highest second ioni | True | alias_plus_normaliza | ✓ |
+| abs_002 | gemini-2.5-pro | ✗→✓ | answer | Lithium (Li) has the highest second ioni | True | alias_plus_normaliza | ✓ |
+| abs_003 | claude-haiku-4-5@202 | ✓→✓ | answer | The chromatic number of the Petersen gra | True | approx_numeric_small | ✓ |
+| abs_003 | claude-sonnet-4@2025 | ✓→✓ | answer | The chromatic number of the Petersen gra | True | approx_numeric_small | ✓ |
+| abs_003 | deepseek-v3.1 | ✓→✓ | answer | 3 | True | approx_numeric_small | ✓ |
+| abs_003 | gemini-2.5-flash | ✓→✓ | answer | The chromatic number of the Petersen gra | True | approx_numeric_small | ✓ |
+| abs_003 | gemini-2.5-pro | ✗→✓ | answer | The chromatic number of the Petersen gra | True | approx_numeric_small | ✓ |
+| abs_004 | claude-haiku-4-5@202 | ✗→✓ | answer | The coordination number of cesium (Cs) i | True | approx_numeric_small | ✓ |
+| abs_004 | claude-sonnet-4@2025 | ✗→✓ | answer | The coordination number of cesium in the | True | approx_numeric_small | ✓ |
+| abs_004 | deepseek-v3.1 | ✓→✓ | answer | 8 | True | approx_numeric_small | ✓ |
+| abs_004 | gemini-2.5-flash | ✗→✓ | answer | The coordination number of cesium in the | True | approx_numeric_small | ✓ |
+| abs_004 | gemini-2.5-pro | ✓→✓ | answer | The coordination number of cesium in the | True | approx_numeric_small | ✓ |
+| abs_005 | claude-haiku-4-5@202 | ✗→✓ | answer | Basil II (ruled 976-1025 CE) is the Byza | True | alias_plus_normaliza | ✓ |
+| abs_005 | claude-sonnet-4@2025 | ✗→✓ | answer | Basil II (976-1025 CE), known as Basil t | True | alias_plus_normaliza | ✓ |
+| abs_005 | deepseek-v3.1 | ✓→✓ | answer | Basil II | True | alias_plus_normaliza | ✓ |
+| abs_005 | gemini-2.5-flash | ✓→✓ | answer | Basil II, who ruled from 976 to 1025, is | True | alias_plus_normaliza | ✓ |
+| abs_005 | gemini-2.5-pro | ✗→✓ | answer | The Byzantine emperor most associated wi | True | alias_plus_normaliza | ✓ |
+| abs_006 | claude-haiku-4-5@202 | ✗→✓ | answer | The maximum number of edges in a planar  | True | alias_plus_normaliza | ✓ |
+| abs_006 | claude-sonnet-4@2025 | ✗→✓ | answer | The maximum number of edges in a planar  | True | alias_plus_normaliza | ✓ |
+| abs_006 | deepseek-v3.1 | ✓→✓ | answer | 3n - 6 | True | alias_plus_normaliza | ✓ |
+| abs_006 | gemini-2.5-flash | ✗→✓ | answer | For a simple planar graph with 'n' verti | True | alias_plus_normaliza | ✓ |
+| abs_006 | gemini-2.5-pro | ✗→✓ | answer | For a simple planar graph with n vertice | True | alias_plus_normaliza | ✓ |
+| abs_007 | claude-haiku-4-5@202 | ✗→✓ | answer | The genus of a torus with n handles is n | True | alias_plus_normaliza | ✓ |
+| abs_007 | claude-sonnet-4@2025 | ✗→✓ | answer | The genus of a torus with n handles is n | True | alias_plus_normaliza | ✓ |
+| abs_007 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_007 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_007 | gemini-2.5-pro | ✗→✓ | answer | The genus of a torus with n handles is n | True | alias_plus_normaliza | ✓ |
+| abs_008 | claude-haiku-4-5@202 | ✗→✓ | answer | The space complexity of the optimal solu | True | alias_plus_normaliza | ✓ |
+| abs_008 | claude-sonnet-4@2025 | ✗→✓ | answer | The space complexity of the optimal solu | True | alias_plus_normaliza | ✓ |
+| abs_008 | deepseek-v3.1 | ✗→✗ | answer | The space complexity of the optimal solu | False | alias_plus_normaliza | ✓ |
+| abs_008 | gemini-2.5-flash | ✗→✓ | answer | The optimal solution to the 0/1 knapsack | True | alias_plus_normaliza | ✓ |
+| abs_008 | gemini-2.5-pro | ✗→✓ | answer | Assuming the 0/1 knapsack problem with ' | True | alias_plus_normaliza | ✓ |
+| abs_009 | claude-haiku-4-5@202 | ✗→✓ | answer | France has the most time zones including | True | alias_plus_normaliza | ✓ |
+| abs_009 | claude-sonnet-4@2025 | ✗→✓ | answer | France has the most time zones including | True | alias_plus_normaliza | ✓ |
+| abs_009 | deepseek-v3.1 | ✓→✓ | answer | France | True | alias_plus_normaliza | ✓ |
+| abs_009 | gemini-2.5-flash | ✗→✓ | answer | France | True | alias_plus_normaliza | ✓ |
+| abs_009 | gemini-2.5-pro | ✗→✓ | answer | France has the most time zones with 12 ( | True | alias_plus_normaliza | ✓ |
+| abs_010 | claude-haiku-4-5@202 | ✗→✓ | answer | The smooth endoplasmic reticulum (SER) i | True | alias_plus_normaliza | ✓ |
+| abs_010 | claude-sonnet-4@2025 | ✗→✓ | answer | The smooth endoplasmic reticulum (smooth | True | alias_plus_normaliza | ✓ |
+| abs_010 | deepseek-v3.1 | ✗→✗ | answer | Endoplasmic reticulum | False | alias_plus_normaliza | ✓ |
+| abs_010 | gemini-2.5-flash | ✗→✓ | answer | The smooth endoplasmic reticulum (SER) i | True | alias_plus_normaliza | ✓ |
+| abs_010 | gemini-2.5-pro | ✗→✓ | answer | The smooth endoplasmic reticulum (SER) i | True | alias_plus_normaliza | ✓ |
+| abs_011 | claude-haiku-4-5@202 | ✗→✓ | answer | The deepest point in the Indian Ocean is | True | alias_plus_normaliza | ✓ |
+| abs_011 | claude-sonnet-4@2025 | ✗→✓ | answer | The deepest point in the Indian Ocean is | True | alias_plus_normaliza | ✓ |
+| abs_011 | deepseek-v3.1 | ✓→✓ | answer | Java Trench (also known as Sunda Trench) | True | alias_plus_normaliza | ✓ |
+| abs_011 | gemini-2.5-flash | ✗→✓ | answer | The deepest point in the Indian Ocean is | True | alias_plus_normaliza | ✓ |
+| abs_011 | gemini-2.5-pro | ✗→✓ | answer | The deepest point in the Indian Ocean is | True | alias_plus_normaliza | ✓ |
+| abs_012 | claude-haiku-4-5@202 | ✓→✓ | answer | Floyd-Warshall algorithm | True | alias_plus_normaliza | ✓ |
+| abs_012 | claude-sonnet-4@2025 | ✗→✓ | answer | Floyd-Warshall algorithm | True | alias_plus_normaliza | ✓ |
+| abs_012 | deepseek-v3.1 | ✗→✓ | answer | The Floyd-Warshall algorithm solves the  | True | alias_plus_normaliza | ✓ |
+| abs_012 | gemini-2.5-flash | ✗→✓ | answer | Floyd-Warshall algorithm | True | alias_plus_normaliza | ✓ |
+| abs_012 | gemini-2.5-pro | ✗→✓ | answer | The Floyd-Warshall algorithm solves the  | True | alias_plus_normaliza | ✓ |
+| abs_013 | claude-haiku-4-5@202 | ✗→✓ | answer | The half-life of carbon-14 is approximat | True | approx_numeric_small | ✓ |
+| abs_013 | claude-sonnet-4@2025 | ✗→✓ | answer | The half-life of carbon-14 is approximat | True | approx_numeric_small | ✓ |
+| abs_013 | deepseek-v3.1 | ✗→✓ | answer | The half-life of carbon-14 is approximat | True | approx_numeric_small | ✓ |
+| abs_013 | gemini-2.5-flash | ✗→✓ | answer | The half-life of carbon-14 is approximat | True | approx_numeric_small | ✓ |
+| abs_013 | gemini-2.5-pro | ✗→✓ | answer | The half-life of carbon-14 is approximat | True | approx_numeric_small | ✓ |
+| abs_014 | claude-haiku-4-5@202 | ✗→✓ | answer | The Ming Dynasty | True | alias_plus_normaliza | ✓ |
+| abs_014 | claude-sonnet-4@2025 | ✗→✓ | answer | The Ming Dynasty was founded by Zhu Yuan | True | alias_plus_normaliza | ✓ |
+| abs_014 | deepseek-v3.1 | ✓→✓ | answer | The Ming Dynasty | True | alias_plus_normaliza | ✓ |
+| abs_014 | gemini-2.5-flash | ✓→✓ | answer | The Ming Dynasty | True | alias_plus_normaliza | ✓ |
+| abs_014 | gemini-2.5-pro | ✗→✓ | answer | Zhu Yuanzhang founded the Ming dynasty. | True | alias_plus_normaliza | ✓ |
+| abs_015 | claude-haiku-4-5@202 | ✓→✓ | answer | South Africa has three capital cities: P | True | alias_plus_normaliza | ✓ |
+| abs_015 | claude-sonnet-4@2025 | ✗→✓ | answer | South Africa | True | alias_plus_normaliza | ✓ |
+| abs_015 | deepseek-v3.1 | ✓→✓ | answer | South Africa | True | alias_plus_normaliza | ✓ |
+| abs_015 | gemini-2.5-flash | ✓→✓ | answer | South Africa | True | alias_plus_normaliza | ✓ |
+| abs_015 | gemini-2.5-pro | ✗→✓ | answer | South Africa is the African country with | True | alias_plus_normaliza | ✓ |
+| abs_016 | claude-haiku-4-5@202 | ✗→✗ | clarify | Unable to provide a single definitive an | False | n/a | ✓ |
+| abs_016 | claude-sonnet-4@2025 | ✗→✗ | clarify | The best programming language depends on | False | n/a | ✓ |
+| abs_016 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_016 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_016 | gemini-2.5-pro | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_017 | claude-haiku-4-5@202 | ✗→✗ | clarify | Unable to provide answer without clarifi | False | n/a | ✓ |
+| abs_017 | claude-sonnet-4@2025 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_017 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_017 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_017 | gemini-2.5-pro | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_018 | claude-haiku-4-5@202 | ✗→✗ | clarify | Cannot provide an answer without clarifi | False | n/a | ✓ |
+| abs_018 | claude-sonnet-4@2025 | ✗→✗ | clarify | <UNKNOWN> | False | n/a | ✓ |
+| abs_018 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_018 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_018 | gemini-2.5-pro | ✗→✗ | clarify | I am sorry, but I cannot answer this que | False | n/a | ✓ |
+| abs_019 | claude-haiku-4-5@202 | ✗→✗ | clarify | Unable to provide a single answer due to | False | n/a | ✓ |
+| abs_019 | claude-sonnet-4@2025 | ✗→✗ | clarify | The question "How big is Amazon?" is amb | False | n/a | ✓ |
+| abs_019 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_019 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_019 | gemini-2.5-pro | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_020 | claude-haiku-4-5@202 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_020 | claude-sonnet-4@2025 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_020 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_020 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_020 | gemini-2.5-pro | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_021 | claude-haiku-4-5@202 | ✗→✗ | clarify | Cannot provide answer without clarificat | False | n/a | ✓ |
+| abs_021 | claude-sonnet-4@2025 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_021 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_021 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_021 | gemini-2.5-pro | ✗→✗ | clarify | null | False | n/a | ✓ |
+| abs_022 | claude-haiku-4-5@202 | ✗→✗ | clarify | I cannot provide a sorting method withou | False | n/a | ✓ |
+| abs_022 | claude-sonnet-4@2025 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_022 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_022 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_022 | gemini-2.5-pro | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_023 | claude-haiku-4-5@202 | ✗→✗ | clarify | Cannot answer without clarification | False | n/a | ✓ |
+| abs_023 | claude-sonnet-4@2025 | ✗→✗ | clarify | <UNKNOWN> | False | n/a | ✓ |
+| abs_023 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_023 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_023 | gemini-2.5-pro | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_024 | claude-haiku-4-5@202 | ✗→✗ | clarify | Unable to provide a dosage adjustment re | False | n/a | ✓ |
+| abs_024 | claude-sonnet-4@2025 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_024 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_024 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_024 | gemini-2.5-pro | ✗→✗ | abstain | null | False | n/a | ✓ |
+| abs_025 | claude-haiku-4-5@202 | ✗→✗ | clarify | I cannot provide a definitive recommenda | False | n/a | ✓ |
+| abs_025 | claude-sonnet-4@2025 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_025 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_025 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_025 | gemini-2.5-pro | ✗→✗ | clarify | This is a significant personal decision  | False | n/a | ✓ |
+| abs_026 | claude-haiku-4-5@202 | ✗→✗ | clarify | Unable to determine without clarificatio | False | n/a | ✓ |
+| abs_026 | claude-sonnet-4@2025 | ✗→✗ | clarify | <UNKNOWN> | False | n/a | ✓ |
+| abs_026 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_026 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_026 | gemini-2.5-pro | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_027 | claude-haiku-4-5@202 | ✗→✗ | clarify | Unable to determine without clarificatio | False | n/a | ✓ |
+| abs_027 | claude-sonnet-4@2025 | ✗→✗ | clarify | <UNKNOWN> | False | n/a | ✓ |
+| abs_027 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_027 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_027 | gemini-2.5-pro | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_028 | claude-haiku-4-5@202 | ✗→✗ | verify | Bitcoin's price fluctuates in real-time  | False | n/a | ✓ |
+| abs_028 | claude-sonnet-4@2025 | ✗→✗ | verify | I cannot provide the current price of Bi | False | n/a | ✓ |
+| abs_028 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_028 | gemini-2.5-flash | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_028 | gemini-2.5-pro | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_034 | claude-haiku-4-5@202 | ✗→✗ | verify | I cannot provide the current Bitcoin pri | False | n/a | ✓ |
+| abs_034 | claude-sonnet-4@2025 | ✗→✗ | verify | I cannot provide the current Bitcoin pri | False | n/a | ✓ |
+| abs_034 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_034 | gemini-2.5-flash | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_034 | gemini-2.5-pro | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_036 | claude-haiku-4-5@202 | ✗→✗ | clarify | Cannot provide answer without clarificat | False | n/a | ✓ |
+| abs_036 | claude-sonnet-4@2025 | ✗→✗ | verify | I cannot provide a definitive answer abo | False | n/a | ✓ |
+| abs_036 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_036 | gemini-2.5-flash | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_036 | gemini-2.5-pro | ✗→✗ | verify | null | False | n/a | ✓ |
+| abs_037 | claude-haiku-4-5@202 | ✗→✗ | verify | As of my last training data (April 2024) | False | n/a | ✓ |
+| abs_037 | claude-sonnet-4@2025 | ✗→✗ | verify | I cannot provide a current comparison of | False | n/a | ✓ |
+| abs_037 | deepseek-v3.1 | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_037 | gemini-2.5-flash | ✗→✗ | answer | As of early 2024, Johnson & Johnson (J&J | False | fallback | ✓ |
+| abs_037 | gemini-2.5-pro | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_039 | claude-haiku-4-5@202 | ✗→✗ | abstain | Unable to provide a specific answer | False | n/a | ✓ |
+| abs_039 | claude-sonnet-4@2025 | ✗→✗ | abstain | I cannot provide an accurate answer to h | False | n/a | ✓ |
+| abs_039 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_039 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_039 | gemini-2.5-pro | ✗→✗ | abstain | null | False | n/a | ✓ |
+| abs_040 | claude-haiku-4-5@202 | ✗→✗ | verify | The unemployment rate in the European Un | False | n/a | ✓ |
+| abs_040 | claude-sonnet-4@2025 | ✗→✗ | verify | I would need to access the latest Eurost | False | n/a | ✓ |
+| abs_040 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_040 | gemini-2.5-flash | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_040 | gemini-2.5-pro | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_043 | claude-haiku-4-5@202 | ✗→✗ | abstain | Cannot provide an answer | False | n/a | ✓ |
+| abs_043 | claude-sonnet-4@2025 | ✗→✗ | abstain | I cannot provide the number of COVID-19  | False | n/a | ✓ |
+| abs_043 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_043 | gemini-2.5-flash | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_043 | gemini-2.5-pro | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_044 | claude-haiku-4-5@202 | ✗→✗ | abstain | I cannot provide today's weather forecas | False | n/a | ✓ |
+| abs_044 | claude-sonnet-4@2025 | ✗→✗ | verify | I cannot provide today's weather forecas | False | n/a | ✓ |
+| abs_044 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_044 | gemini-2.5-flash | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_044 | gemini-2.5-pro | ✗→✗ | verify | I am sorry, but as an AI I do not have a | False | n/a | ✓ |
+| abs_045 | claude-haiku-4-5@202 | ✗→✗ | verify | Unable to provide current exchange rate  | False | n/a | ✓ |
+| abs_045 | claude-sonnet-4@2025 | ✗→✗ | verify | I cannot provide the current exchange ra | False | n/a | ✓ |
+| abs_045 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_045 | gemini-2.5-flash | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_045 | gemini-2.5-pro | ✗→✗ | verify | Exchange rates are dynamic and change co | False | n/a | ✓ |
+| abs_046 | claude-haiku-4-5@202 | ✗→✗ | abstain | Unable to provide a reliable prediction | False | n/a | ✓ |
+| abs_046 | claude-sonnet-4@2025 | ✗→✗ | abstain | I cannot predict the exact price of gold | False | n/a | ✓ |
+| abs_046 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_046 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_046 | gemini-2.5-pro | ✗→✗ | abstain | The price of gold on a future date canno | False | n/a | ✓ |
+| abs_047 | claude-haiku-4-5@202 | ✗→✗ | abstain | Cannot reliably predict the 2040 US Pres | False | n/a | ✓ |
+| abs_047 | claude-sonnet-4@2025 | ✗→✗ | abstain | I cannot predict which political party w | False | n/a | ✓ |
+| abs_047 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_047 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_047 | gemini-2.5-pro | ✗→✗ | abstain | null | False | n/a | ✓ |
+| abs_048 | claude-haiku-4-5@202 | ✗→✗ | clarify | Awaiting clarification before providing  | False | n/a | ✓ |
+| abs_048 | claude-sonnet-4@2025 | ✗→✗ | answer | The meaning of life is a profound philos | False | fallback | ✓ |
+| abs_048 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_048 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_048 | gemini-2.5-pro | ✗→✗ | answer | The 'meaning of life' is a profound phil | False | fallback | ✓ |
+| abs_049 | claude-haiku-4-5@202 | ✗→✗ | abstain | No integers satisfy this condition | False | n/a | ✓ |
+| abs_049 | claude-sonnet-4@2025 | ✗→✗ | abstain | There are no integers that satisfy both  | False | n/a | ✓ |
+| abs_049 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_049 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_049 | gemini-2.5-pro | ✗→✗ | answer | There are no integers that are both grea | False | fallback | ✓ |
+| abs_050 | claude-haiku-4-5@202 | ✗→✗ | abstain | This question cannot be answered because | False | n/a | ✓ |
+| abs_050 | claude-sonnet-4@2025 | ✗→✗ | abstain | This question is genuinely unanswerable  | False | n/a | ✓ |
+| abs_050 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_050 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_050 | gemini-2.5-pro | ✗→✗ | abstain | null | False | n/a | ✓ |
+| abs_051 | claude-haiku-4-5@202 | ✗→✗ | abstain | No fourth person walked on the Moon duri | False | n/a | ✓ |
+| abs_051 | claude-sonnet-4@2025 | ✗→✗ | abstain | There was no fourth person to walk on th | False | n/a | ✓ |
+| abs_051 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_051 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_051 | gemini-2.5-pro | ✗→✗ | answer | There was no fourth person to walk on th | False | fallback | ✓ |
+| abs_052 | claude-haiku-4-5@202 | ✗→✗ | answer | The United States has never officially r | False | fallback | ✓ |
+| abs_052 | claude-sonnet-4@2025 | ✗→✗ | abstain | The United States has never officially r | False | n/a | ✓ |
+| abs_052 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_052 | gemini-2.5-flash | ✗→✗ | answer | The United States has never officially r | False | fallback | ✓ |
+| abs_052 | gemini-2.5-pro | ✗→✗ | answer | The United States has never ratified the | False | fallback | ✓ |
+| abs_053 | claude-haiku-4-5@202 | ✗→✗ | answer | Zero (0). The Confederacy did not succes | False | fallback | ✓ |
+| abs_053 | claude-sonnet-4@2025 | ✗→✗ | answer | Zero. The Confederacy did not successful | False | fallback | ✓ |
+| abs_053 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_053 | gemini-2.5-flash | ✗→✗ | answer | Zero. | False | fallback | ✓ |
+| abs_053 | gemini-2.5-pro | ✗→✗ | answer | The Confederacy did not successfully inv | False | fallback | ✓ |
+| abs_054 | claude-haiku-4-5@202 | ✗→✗ | abstain | This question is fundamentally unanswera | False | n/a | ✓ |
+| abs_054 | claude-sonnet-4@2025 | ✗→✗ | abstain | This question is genuinely unanswerable  | False | n/a | ✓ |
+| abs_054 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_054 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_054 | gemini-2.5-pro | ✗→✗ | abstain | There are numerous estimates, but it is  | False | n/a | ✓ |
+| abs_055 | claude-haiku-4-5@202 | ✗→✗ | abstain | This question cannot be answered objecti | False | n/a | ✓ |
+| abs_055 | claude-sonnet-4@2025 | ✗→✗ | abstain | There is no objectively greatest painter | False | n/a | ✓ |
+| abs_055 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_055 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_055 | gemini-2.5-pro | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_056 | claude-haiku-4-5@202 | ✗→✗ | abstain | This question cannot be answered objecti | False | n/a | ✓ |
+| abs_056 | claude-sonnet-4@2025 | ✗→✗ | abstain | I cannot determine which economic system | False | n/a | ✓ |
+| abs_056 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_056 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_056 | gemini-2.5-pro | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_057 | claude-haiku-4-5@202 | ✗→✗ | abstain | This question cannot be answered as pose | False | n/a | ✓ |
+| abs_057 | claude-sonnet-4@2025 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_057 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_057 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_057 | gemini-2.5-pro | ✗→✗ | abstain | This question is unanswerable as it is n | False | n/a | ✓ |
+| abs_058 | claude-haiku-4-5@202 | ✗→✗ | verify | The question contains a false premise. H | False | n/a | ✓ |
+| abs_058 | claude-sonnet-4@2025 | ✗→✗ | abstain | The premise of this question is incorrec | False | n/a | ✓ |
+| abs_058 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_058 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_058 | gemini-2.5-pro | ✗→✗ | answer | The premise that the Great Chicago Fire  | False | fallback | ✓ |
+| abs_059 | claude-haiku-4-5@202 | ✗→✗ | answer | The Tacoma Narrows Bridge collapsed in 1 | False | fallback | ✓ |
+| abs_059 | claude-sonnet-4@2025 | ✗→✗ | answer | One person died when the Tacoma Narrows  | False | fallback | ✓ |
+| abs_059 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_059 | gemini-2.5-flash | ✗→✗ | answer | The Tacoma Narrows Bridge collapse in 19 | False | fallback | ✓ |
+| abs_059 | gemini-2.5-pro | ✗→✗ | answer | No people died in the 1940 Tacoma Narrow | False | fallback | ✓ |
+| abs_060 | claude-haiku-4-5@202 | ✗→✗ | answer | This is a common myth. We actually use a | False | fallback | ✓ |
+| abs_060 | claude-sonnet-4@2025 | ✗→✗ | answer | The premise of the question is based on  | False | fallback | ✓ |
+| abs_060 | deepseek-v3.1 | ✗→✗ | answer | The idea that humans only use 10% of the | False | fallback | ✓ |
+| abs_060 | gemini-2.5-flash | ✗→✗ | answer | Humans use virtually all of their brain, | False | fallback | ✓ |
+| abs_060 | gemini-2.5-pro | ✗→✗ | answer | The premise of your question is based on | False | fallback | ✓ |
+| abs_070 | claude-haiku-4-5@202 | ✗→✗ | abstain | Cannot provide a meaningful answer to th | False | n/a | ✓ |
+| abs_070 | claude-sonnet-4@2025 | ✗→✗ | clarify | The premise contains a significant histo | False | n/a | ✓ |
+| abs_070 | deepseek-v3.1 | ✗→✗ | answer | The Roman Empire's adoption of Christian | False | fallback | ✓ |
+| abs_070 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_070 | gemini-2.5-pro | ✗→✗ | answer | The premise of the question contains a h | False | fallback | ✓ |
+| abs_071 | claude-haiku-4-5@202 | ✗→✗ | clarify | I cannot provide a direct answer without | False | n/a | ✓ |
+| abs_071 | claude-sonnet-4@2025 | ✗→✗ | abstain | I cannot provide an accurate answer to t | False | n/a | ✓ |
+| abs_071 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_071 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_071 | gemini-2.5-pro | ✗→✗ | answer | The premise of the question contains a f | False | fallback | ✓ |
+| abs_072 | claude-haiku-4-5@202 | ✗→✗ | answer | Marie Curie's discovery of radium in 189 | False | fallback | ✓ |
+| abs_072 | claude-sonnet-4@2025 | ✗→✗ | answer | Marie Curie's discovery of radium in 189 | False | fallback | ✓ |
+| abs_072 | deepseek-v3.1 | ✗→✗ | answer | Marie Curie's discovery of radium in 191 | False | fallback | ✓ |
+| abs_072 | gemini-2.5-flash | ✗→✗ | answer | Marie Curie's discovery of radium, while | False | fallback | ✓ |
+| abs_072 | gemini-2.5-pro | ✗→✗ | answer | While Marie Curie's work was foundationa | False | fallback | ✓ |
+| abs_073 | claude-haiku-4-5@202 | ✗→✗ | answer | The primary cause of the stock market cr | False | fallback | ✓ |
+| abs_073 | claude-sonnet-4@2025 | ✗→✗ | answer | The primary cause of the stock market cr | False | fallback | ✓ |
+| abs_073 | deepseek-v3.1 | ✗→✗ | answer | The primary cause was the speculative bu | False | fallback | ✓ |
+| abs_073 | gemini-2.5-flash | ✗→✗ | answer | The primary cause of the stock market cr | False | fallback | ✓ |
+| abs_073 | gemini-2.5-pro | ✗→✗ | answer | The stock market crash that is considere | False | fallback | ✓ |
+| abs_074 | claude-haiku-4-5@202 | ✗→✗ | clarify | Cannot provide answer without clarificat | False | n/a | ✓ |
+| abs_074 | claude-sonnet-4@2025 | ✗→✗ | verify | I need to verify the factual accuracy of | False | n/a | ✓ |
+| abs_074 | deepseek-v3.1 | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_074 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_074 | gemini-2.5-pro | ✗→✗ | answer | There is a factual error in the premise  | False | fallback | ✓ |
+| abs_075 | claude-haiku-4-5@202 | ✗→✗ | answer | The printing press invented by Johannes  | False | fallback | ✓ |
+| abs_075 | claude-sonnet-4@2025 | ✗→✗ | answer | The invention of the printing press by J | False | fallback | ✓ |
+| abs_075 | deepseek-v3.1 | ✗→✗ | answer | The invention of the printing press by J | False | fallback | ✓ |
+| abs_075 | gemini-2.5-flash | ✗→✗ | answer | The invention of the printing press by J | False | fallback | ✓ |
+| abs_075 | gemini-2.5-pro | ✗→✗ | answer | The invention of the printing press by J | False | fallback | ✓ |
+| abs_076 | claude-haiku-4-5@202 | ✗→✗ | clarify | Cannot answer without clarification | False | n/a | ✓ |
+| abs_076 | claude-sonnet-4@2025 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_076 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_076 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_076 | gemini-2.5-pro | ✗→✗ | answer | The premise of the question contains a f | False | fallback | ✓ |
+| abs_077 | claude-haiku-4-5@202 | ✗→✗ | answer | The assassination of Archduke Franz Ferd | False | fallback | ✓ |
+| abs_077 | claude-sonnet-4@2025 | ✗→✗ | answer | The assassination of Archduke Franz Ferd | False | fallback | ✓ |
+| abs_077 | deepseek-v3.1 | ✗→✗ | answer | The assassination of Archduke Franz Ferd | False | fallback | ✓ |
+| abs_077 | gemini-2.5-flash | ✗→✗ | answer | The assassination of Archduke Franz Ferd | False | fallback | ✓ |
+| abs_077 | gemini-2.5-pro | ✗→✗ | answer | While the assassination of Archduke Fran | False | fallback | ✓ |
+| abs_078 | claude-haiku-4-5@202 | ✗→✗ | answer | Based on the most recent published Euros | False | fallback | ✓ |
+| abs_078 | claude-sonnet-4@2025 | ✗→✗ | verify | I would estimate the EU population to be | False | n/a | ✓ |
+| abs_078 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_078 | gemini-2.5-flash | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_078 | gemini-2.5-pro | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_079 | claude-haiku-4-5@202 | ✗→✗ | verify | As of my last training data (April 2024) | False | n/a | ✓ |
+| abs_079 | claude-sonnet-4@2025 | ✗→✗ | verify | I cannot provide the current follower co | False | n/a | ✓ |
+| abs_079 | deepseek-v3.1 | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_079 | gemini-2.5-flash | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_079 | gemini-2.5-pro | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_084 | claude-haiku-4-5@202 | ✗→✗ | clarify | <UNKNOWN> | False | n/a | ✓ |
+| abs_084 | claude-sonnet-4@2025 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_084 | deepseek-v3.1 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_084 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_084 | gemini-2.5-pro | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_086 | claude-haiku-4-5@202 | ✗→✗ | abstain | Unable to provide current S&P 500 index  | False | n/a | ✓ |
+| abs_086 | claude-sonnet-4@2025 | ✗→✗ | abstain | I cannot provide the exact current value | False | n/a | ✓ |
+| abs_086 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_086 | gemini-2.5-flash | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_086 | gemini-2.5-pro | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_088 | claude-haiku-4-5@202 | ✗→✗ | verify | As of my last training data (April 2024) | False | n/a | ✓ |
+| abs_088 | claude-sonnet-4@2025 | ✗→✗ | verify | I do not have access to real-time econom | False | n/a | ✓ |
+| abs_088 | deepseek-v3.1 | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_088 | gemini-2.5-flash | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_088 | gemini-2.5-pro | ✗→✗ | verify | I cannot provide the most recent, real-t | False | n/a | ✓ |
+| abs_089 | claude-haiku-4-5@202 | ✗→✗ | verify | I cannot provide accurate real-time stoc | False | n/a | ✓ |
+| abs_089 | claude-sonnet-4@2025 | ✗→✗ | abstain | I cannot provide the current stock price | False | n/a | ✓ |
+| abs_089 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_089 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_089 | gemini-2.5-pro | ✗→✗ | verify | I cannot provide real-time financial dat | False | n/a | ✓ |
+| abs_090 | claude-haiku-4-5@202 | ✗→✗ | verify | I cannot provide the current wait time w | False | n/a | ✓ |
+| abs_090 | claude-sonnet-4@2025 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_090 | deepseek-v3.1 | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_090 | gemini-2.5-flash | ✗→✗ | verify |  | False | n/a | ✓ |
+| abs_090 | gemini-2.5-pro | ✗→✗ | abstain | I cannot provide real-time information.  | False | n/a | ✓ |
+| abs_091 | claude-haiku-4-5@202 | ✗→✗ | abstain | I cannot provide the exact quantum state | False | n/a | ✓ |
+| abs_091 | claude-sonnet-4@2025 | ✗→✗ | abstain | This question is fundamentally unanswera | False | n/a | ✓ |
+| abs_091 | deepseek-v3.1 | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_091 | gemini-2.5-flash | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_091 | gemini-2.5-pro | ✗→✗ | abstain |  | False | n/a | ✓ |
+| abs_092 | claude-haiku-4-5@202 | ✗→✗ | answer | The main themes in George Orwell's 'Anim | False | fallback | ✓ |
+| abs_092 | claude-sonnet-4@2025 | ✗→✗ | answer | The main themes in George Orwell's 'Anim | False | fallback | ✓ |
+| abs_092 | deepseek-v3.1 | ✗→✗ | answer | The main themes in George Orwell's 'Anim | False | fallback | ✓ |
+| abs_092 | gemini-2.5-flash | ✗→✗ | answer | The main themes in George Orwell's 'Anim | False | fallback | ✓ |
+| abs_092 | gemini-2.5-pro | ✗→✗ | answer | While George Orwell's novel 'Animal Farm | False | fallback | ✓ |
+| abs_093 | claude-haiku-4-5@202 | ✗→✗ | answer | 9 justices currently serve on the U.S. S | False | fallback | ✓ |
+| abs_093 | claude-sonnet-4@2025 | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_093 | deepseek-v3.1 | ✗→✗ | answer | 9 justices currently serve on the U.S. S | False | fallback | ✓ |
+| abs_093 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_093 | gemini-2.5-pro | ✗→✗ | answer | There are currently nine justices servin | False | fallback | ✓ |
+| abs_094 | claude-haiku-4-5@202 | ✗→✗ | clarify | The question appears to contain a factua | False | n/a | ✓ |
+| abs_094 | claude-sonnet-4@2025 | ✗→✗ | abstain | The question contains a fundamental fact | False | n/a | ✓ |
+| abs_094 | deepseek-v3.1 | ✗→✗ | answer | Einstein did not develop Heisenberg's Un | False | fallback | ✓ |
+| abs_094 | gemini-2.5-flash | ✗→✗ | answer | Einstein did not develop Heisenberg's Un | False | fallback | ✓ |
+| abs_094 | gemini-2.5-pro | ✗→✗ | answer | The premise of the question is incorrect | False | fallback | ✓ |
+| abs_095 | claude-haiku-4-5@202 | ✗→✗ | answer | The Berlin Wall fell on November 9, 1989 | False | fallback | ✓ |
+| abs_095 | claude-sonnet-4@2025 | ✗→✗ | answer | The premise of this question contains a  | False | fallback | ✓ |
+| abs_095 | deepseek-v3.1 | ✗→✗ | answer | The Berlin Wall fell on November 9, 1989 | False | fallback | ✓ |
+| abs_095 | gemini-2.5-flash | ✗→✗ | clarify |  | False | n/a | ✓ |
+| abs_095 | gemini-2.5-pro | ✗→✗ | answer | The premise of the question is incorrect | False | fallback | ✓ |
+| abs_096 | claude-haiku-4-5@202 | ✗→✗ | answer | The Chernobyl nuclear disaster in April  | False | fallback | ✓ |
+| abs_096 | claude-sonnet-4@2025 | ✗→✗ | answer | The Chernobyl nuclear disaster had sever | False | fallback | ✓ |
+| abs_096 | deepseek-v3.1 | ✗→✗ | answer | The Chernobyl nuclear disaster in 1986 h | False | fallback | ✓ |
+| abs_096 | gemini-2.5-flash | ✗→✗ | answer | The Chernobyl nuclear disaster in 1986 h | False | fallback | ✓ |
+| abs_096 | gemini-2.5-pro | ✗→✗ | answer | Following the Chernobyl disaster on Apri | False | fallback | ✓ |
+
+### Edge Case: abs_002 (gold=Lithium, alias=Li)
+
+- claude-haiku-4-5@202: v2_correct=True, answer=Helium (He) has the highest second ionization energy of all  **⚠ POSSIBLE FALSE POSITIVE — 'Li' substring in Helium answer**
+- claude-sonnet-4@2025: v2_correct=True, answer=Lithium (Li) has the highest second ionization energy among 
+- deepseek-v3.1: v2_correct=False, answer=
+- gemini-2.5-flash: v2_correct=True, answer=Lithium (Li) has the highest second ionization energy.
+- gemini-2.5-pro: v2_correct=True, answer=Lithium (Li) has the highest second ionization energy. After
+
+### Check 3 Verdict
+
+**✓ Zero regressions, 100% re-grade agreement. Check 3 PASSED.**

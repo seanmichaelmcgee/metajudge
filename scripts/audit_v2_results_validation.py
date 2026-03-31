@@ -299,6 +299,129 @@ def format_check_2(results):
 
 
 # ---------------------------------------------------------------------------
+# Check 3: abs_* Item Deep Dive
+# ---------------------------------------------------------------------------
+def check_3_abs_deep_dive(check1_results, v2_fb, registry):
+    """Re-grade each abs_001..abs_015 × 5 models independently."""
+    v2k = keyed(v2_fb)
+    abs_rows = [r for r in check1_results["fb"] if r["item_id"].startswith("abs_")]
+    abs_rows.sort(key=lambda r: (r["item_id"], r["model_name"]))
+
+    detail = []
+    for r in abs_rows:
+        key = (r["model_name"], r["item_id"])
+        v2r = v2k.get(key, {})
+        v2_answer = v2r.get("model_answer", "")
+        v2_decision = v2r.get("model_decision", "")
+        gold = r["gold_answer"]
+
+        # Re-grade independently
+        regrade = {"correct": False, "method": "n/a", "match_detail": "non-answer decision"}
+        if v2_decision == "answer" and v2_answer:
+            regrade = grade_item(r["item_id"], v2_answer, registry, gold_answer=gold)
+
+        recorded_correct = r["v2_correct"]
+        regrade_correct = regrade["correct"]
+        agreement = recorded_correct == regrade_correct
+
+        detail.append({
+            "item_id": r["item_id"],
+            "model": r["model_name"].split("/")[-1][:20],
+            "model_full": r["model_name"],
+            "gold": gold,
+            "v1_correct": r["v1_correct"],
+            "v2_correct": recorded_correct,
+            "v2_decision": v2_decision,
+            "v2_answer": v2_answer[:100],
+            "flip": r["status"],
+            "regrade_correct": regrade_correct,
+            "regrade_method": regrade.get("method", ""),
+            "regrade_detail": regrade.get("match_detail", "")[:80],
+            "agreement": agreement,
+        })
+
+    return detail
+
+
+def format_check_3(detail):
+    """Format Check 3 results as markdown."""
+    lines = ["## Check 3: abs_* Item Deep Dive (15 items × 5 models = 75 rows)\n"]
+
+    # Summary stats
+    total = len(detail)
+    flips_ftc = sum(1 for d in detail if d["flip"] == "FLIP_TO_CORRECT")
+    flips_ftw = sum(1 for d in detail if d["flip"] == "FLIP_TO_WRONG")
+    agreements = sum(1 for d in detail if d["agreement"])
+    disagreements = [d for d in detail if not d["agreement"]]
+
+    lines.append(f"- Total rows: {total}")
+    lines.append(f"- FLIP_TO_CORRECT: {flips_ftc}")
+    lines.append(f"- FLIP_TO_WRONG: {flips_ftw}")
+    lines.append(f"- Re-grade agreement with recorded: {agreements}/{total} ({agreements/total*100:.1f}%)")
+    lines.append("")
+
+    # Per-item summary
+    items = sorted(set(d["item_id"] for d in detail))
+    lines.append("### Per-Item Summary\n")
+    lines.append("| Item | Gold | V1 Correct | V2 Correct | Flips | Re-grade Match |")
+    lines.append("|------|------|-----------|-----------|-------|---------------|")
+    for iid in items:
+        rows = [d for d in detail if d["item_id"] == iid]
+        gold = rows[0]["gold"][:25]
+        v1c = sum(1 for d in rows if d["v1_correct"])
+        v2c = sum(1 for d in rows if d["v2_correct"])
+        ftc = sum(1 for d in rows if d["flip"] == "FLIP_TO_CORRECT")
+        agree = sum(1 for d in rows if d["agreement"])
+        lines.append(f"| {iid} | {gold} | {v1c}/5 | {v2c}/5 | +{ftc} | {agree}/5 |")
+    lines.append("")
+
+    # Full detail table
+    lines.append("### Full Detail\n")
+    lines.append("| Item | Model | V1→V2 | Decision | V2 Answer (truncated) | Re-grade | Method | Match? |")
+    lines.append("|------|-------|-------|----------|----------------------|----------|--------|--------|")
+    for d in detail:
+        v2a = d["v2_answer"][:40].replace("|", "\\|")
+        arrow = "✓→✓" if d["v1_correct"] and d["v2_correct"] else \
+                "✗→✓" if not d["v1_correct"] and d["v2_correct"] else \
+                "✓→✗" if d["v1_correct"] and not d["v2_correct"] else "✗→✗"
+        match = "✓" if d["agreement"] else "**✗**"
+        lines.append(f"| {d['item_id']} | {d['model']} | {arrow} | {d['v2_decision']} | {v2a} | {d['regrade_correct']} | {d['regrade_method'][:20]} | {match} |")
+    lines.append("")
+
+    # Disagreements
+    if disagreements:
+        lines.append(f"### Re-grade Disagreements ({len(disagreements)} rows)\n")
+        lines.append("These rows have different `is_correct` in the v2 CSV vs independent re-grading.\n")
+        for d in disagreements:
+            lines.append(f"- **{d['item_id']}** × {d['model']}: recorded={d['v2_correct']}, regrade={d['regrade_correct']}")
+            lines.append(f"  - Decision: {d['v2_decision']}, Answer: {d['v2_answer'][:60]}")
+            lines.append(f"  - Re-grade: {d['regrade_method']} — {d['regrade_detail']}")
+        lines.append("")
+
+    # abs_002 edge case check
+    abs002 = [d for d in detail if d["item_id"] == "abs_002"]
+    lines.append("### Edge Case: abs_002 (gold=Lithium, alias=Li)\n")
+    for d in abs002:
+        flag = ""
+        if "helium" in d["v2_answer"].lower() and d["regrade_correct"]:
+            flag = " **⚠ POSSIBLE FALSE POSITIVE — 'Li' substring in Helium answer**"
+        lines.append(f"- {d['model']}: v2_correct={d['v2_correct']}, answer={d['v2_answer'][:60]}{flag}")
+    lines.append("")
+
+    # Verdict
+    lines.append("### Check 3 Verdict\n")
+    if flips_ftw == 0 and len(disagreements) == 0:
+        lines.append("**✓ Zero regressions, 100% re-grade agreement. Check 3 PASSED.**")
+    elif flips_ftw == 0:
+        lines.append(f"**~ Zero regressions but {len(disagreements)} re-grade disagreement(s). Check 3 MARGINAL.**")
+    else:
+        lines.append(f"**⚠ {flips_ftw} regressions found. Check 3 NEEDS REVIEW.**")
+
+    lines.append("")
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 def main():
@@ -328,6 +451,12 @@ def main():
     check2_md = format_check_2(check2)
     print("  Done.")
 
+    # --- Check 3 ---
+    print("\nRunning Check 3: abs_* Deep Dive...")
+    check3 = check_3_abs_deep_dive(check1, v2_fb, registry)
+    check3_md = format_check_3(check3)
+    print("  Done.")
+
     # --- Write report (append checks as they're implemented) ---
     report_lines = [
         "# Audit: V2 Narrative Results Validation\n",
@@ -338,6 +467,8 @@ def main():
         check1_md,
         "---\n",
         check2_md,
+        "---\n",
+        check3_md,
     ]
 
     os.makedirs(os.path.dirname(REPORT_PATH), exist_ok=True)
