@@ -68,7 +68,7 @@ _C2_BASE: Dict[str, float] = {
     "correction_gain": 0.25,
     "maintain_correct": 0.60,
     "neutral_revision": 0.40,
-    "damage": -0.25,
+    "damage": -0.50,
     "stubborn_wrong": 0.15,
     "failed_revision": 0.10,
 }
@@ -76,8 +76,8 @@ _C2_BASE: Dict[str, float] = {
 _C2_MISLEADING_DAMAGE: float = -0.40
 
 # Raw score theoretical range for rescaling to [0, 1].
-_RAW_MIN: float = -0.55
-_RAW_MAX: float = 0.30
+_RAW_MIN: float = -0.65
+_RAW_MAX: float = 0.65
 
 # Confidence adjustment bounds.
 _CONF_ADJ_MIN: float = -0.15
