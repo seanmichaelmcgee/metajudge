@@ -422,6 +422,231 @@ def format_check_3(detail):
 
 
 # ---------------------------------------------------------------------------
+# Check 4: Independent Re-Grading of All V2 Results
+# ---------------------------------------------------------------------------
+def check_4_independent_regrade(v2_cal, v2_fb, registry):
+    """Re-grade every v2 row with grade_item() and compare."""
+    results = {"cal": [], "fb": []}
+
+    # Calibration — all rows use grade_item
+    for r in v2_cal:
+        recorded = bool_str(r["is_correct"])
+        rg = grade_item(r["item_id"], r["model_answer"], registry,
+                        gold_answer=r["gold_answer"])
+        results["cal"].append({
+            "item_id": r["item_id"],
+            "model_name": r["model_name"],
+            "recorded": recorded,
+            "regraded": rg["correct"],
+            "agree": recorded == rg["correct"],
+            "method": rg.get("method", ""),
+            "detail": rg.get("match_detail", "")[:80],
+            "answer": r["model_answer"][:60],
+            "gold": r["gold_answer"][:40],
+        })
+
+    # Family B — only re-grade rows where decision == "answer" and answer exists
+    for r in v2_fb:
+        recorded = bool_str(r["is_correct"])
+        decision = r.get("model_decision", "").strip().lower()
+        answer = r.get("model_answer", "")
+
+        if decision == "answer" and answer:
+            rg = grade_item(r["item_id"], answer, registry,
+                            gold_answer=r["gold_answer"])
+            regraded = rg["correct"]
+            method = rg.get("method", "")
+            detail = rg.get("match_detail", "")[:80]
+        else:
+            # Non-answer decisions: is_correct should be False
+            regraded = False
+            method = "non-answer"
+            detail = f"decision={decision}"
+
+        results["fb"].append({
+            "item_id": r["item_id"],
+            "model_name": r["model_name"],
+            "recorded": recorded,
+            "regraded": regraded,
+            "agree": recorded == regraded,
+            "method": method,
+            "detail": detail,
+            "decision": decision,
+            "answer": answer[:60],
+            "gold": r["gold_answer"][:40],
+        })
+
+    return results
+
+
+def format_check_4(results):
+    """Format Check 4 results as markdown."""
+    lines = ["## Check 4: Independent Re-Grading of All V2 Results\n"]
+
+    for family, label in [("cal", "Family A (Calibration)"), ("fb", "Family B (Abstention)")]:
+        rows = results[family]
+        total = len(rows)
+        agree = sum(1 for r in rows if r["agree"])
+        disagree = [r for r in rows if not r["agree"]]
+
+        lines.append(f"### {label}\n")
+        lines.append(f"- Total rows: {total}")
+        lines.append(f"- Agreement: {agree}/{total} ({agree/total*100:.1f}%)")
+        lines.append(f"- Disagreements: {len(disagree)}")
+        lines.append("")
+
+        if disagree:
+            lines.append("#### Disagreements\n")
+            lines.append("| Model | Item | Gold | Answer | Recorded | Re-graded | Method |")
+            lines.append("|-------|------|------|--------|----------|-----------|--------|")
+            for d in disagree[:30]:  # cap at 30
+                mn = d["model_name"].split("/")[-1][:18]
+                lines.append(f"| {mn} | {d['item_id']} | {d['gold'][:20]} | {d['answer'][:30]} | {d['recorded']} | {d['regraded']} | {d['method']} |")
+            if len(disagree) > 30:
+                lines.append(f"| ... | ... | ... | ... | ... | ... | ({len(disagree)-30} more) |")
+            lines.append("")
+
+    # Verdict
+    cal_agree = sum(1 for r in results["cal"] if r["agree"])
+    fb_agree = sum(1 for r in results["fb"] if r["agree"])
+    cal_total = len(results["cal"])
+    fb_total = len(results["fb"])
+    overall = (cal_agree + fb_agree) / (cal_total + fb_total) * 100
+
+    lines.append("### Check 4 Verdict\n")
+    if overall >= 99:
+        lines.append(f"**✓ Overall re-grade agreement {overall:.1f}%. Check 4 PASSED.**")
+    elif overall >= 95:
+        lines.append(f"**~ Overall re-grade agreement {overall:.1f}%. Check 4 MARGINAL.**")
+    else:
+        lines.append(f"**⚠ Overall re-grade agreement {overall:.1f}%. Check 4 NEEDS REVIEW.**")
+
+    lines.append("")
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
+# Check 5: Family A Calibration Stability
+# ---------------------------------------------------------------------------
+def check_5_calibration_stability(v1_cal, v2_cal):
+    """Compare calibration metrics v1 vs v2 per model + item-level deltas."""
+    v1k = keyed(v1_cal)
+    v2k = keyed(v2_cal)
+
+    # Per-model stats
+    model_stats = {}
+    for label, data in [("v1", v1_cal), ("v2", v2_cal)]:
+        by_model = defaultdict(lambda: {"correct": 0, "total": 0, "brier_sum": 0.0, "conf_sum": 0.0})
+        for r in data:
+            m = r["model_name"]
+            by_model[m]["total"] += 1
+            if bool_str(r["is_correct"]):
+                by_model[m]["correct"] += 1
+            by_model[m]["brier_sum"] += float(r["brier_score"])
+            by_model[m]["conf_sum"] += float(r["confidence"])
+        model_stats[label] = dict(by_model)
+
+    # Item-level Brier deltas
+    brier_deltas = []
+    for k in sorted(v1k.keys()):
+        if k in v2k:
+            b1 = float(v1k[k]["brier_score"])
+            b2 = float(v2k[k]["brier_score"])
+            brier_deltas.append({
+                "model_name": k[0],
+                "item_id": k[1],
+                "v1_brier": b1,
+                "v2_brier": b2,
+                "delta": b2 - b1,
+            })
+
+    return {"model_stats": model_stats, "brier_deltas": brier_deltas}
+
+
+def format_check_5(results):
+    """Format Check 5 results as markdown."""
+    lines = ["## Check 5: Family A Calibration Stability\n"]
+
+    ms = results["model_stats"]
+    models = sorted(ms["v1"].keys())
+
+    lines.append("### Per-Model Comparison\n")
+    lines.append("| Model | V1 Acc | V2 Acc | V1 1-Brier | V2 1-Brier | V1 Conf | V2 Conf |")
+    lines.append("|-------|--------|--------|------------|------------|---------|---------|")
+    v1_scores = []
+    v2_scores = []
+    for m in models:
+        s1 = ms["v1"][m]
+        s2 = ms["v2"].get(m, {"correct": 0, "total": 1, "brier_sum": 0, "conf_sum": 0})
+        a1 = s1["correct"] / s1["total"]
+        a2 = s2["correct"] / s2["total"]
+        b1 = 1 - s1["brier_sum"] / s1["total"]
+        b2 = 1 - s2["brier_sum"] / s2["total"]
+        c1 = s1["conf_sum"] / s1["total"]
+        c2 = s2["conf_sum"] / s2["total"]
+        v1_scores.append(b1)
+        v2_scores.append(b2)
+        mn = m.split("/")[-1][:20]
+        lines.append(f"| {mn} | {a1:.3f} | {a2:.3f} | {b1:.4f} | {b2:.4f} | {c1:.3f} | {c2:.3f} |")
+    lines.append("")
+
+    # Rank order check
+    v1_rank = sorted(range(len(v1_scores)), key=lambda i: -v1_scores[i])
+    v2_rank = sorted(range(len(v2_scores)), key=lambda i: -v2_scores[i])
+    rank_preserved = v1_rank == v2_rank
+    lines.append(f"**Rank order preserved: {'Yes' if rank_preserved else 'No'}**")
+
+    if not rank_preserved:
+        lines.append(f"- V1 rank: {[models[i].split('/')[-1][:12] for i in v1_rank]}")
+        lines.append(f"- V2 rank: {[models[i].split('/')[-1][:12] for i in v2_rank]}")
+    lines.append("")
+
+    # Brier delta statistics
+    deltas = [d["delta"] for d in results["brier_deltas"]]
+    n = len(deltas)
+    mean_d = sum(deltas) / n
+    std_d = (sum((d - mean_d) ** 2 for d in deltas) / (n - 1)) ** 0.5
+    min_d = min(deltas)
+    max_d = max(deltas)
+    pos = sum(1 for d in deltas if d > 0)
+    neg = sum(1 for d in deltas if d < 0)
+    zero = sum(1 for d in deltas if d == 0)
+
+    lines.append("### Item-Level Brier Score Deltas (v2 - v1)\n")
+    lines.append(f"- N: {n}")
+    lines.append(f"- Mean delta: {mean_d:+.4f}")
+    lines.append(f"- Std dev: {std_d:.4f}")
+    lines.append(f"- Range: [{min_d:+.4f}, {max_d:+.4f}]")
+    lines.append(f"- Positive (v2 better): {pos} ({pos/n*100:.1f}%)")
+    lines.append(f"- Negative (v1 better): {neg} ({neg/n*100:.1f}%)")
+    lines.append(f"- Zero (same): {zero} ({zero/n*100:.1f}%)")
+    lines.append("")
+
+    # t-test for mean = 0
+    if std_d > 0:
+        t_stat = mean_d / (std_d / n ** 0.5)
+        # Two-tailed p approximation for large n (normal)
+        import math
+        p_approx = 2 * (1 - 0.5 * (1 + math.erf(abs(t_stat) / 2 ** 0.5)))
+        lines.append(f"**t-test (H0: mean delta = 0):** t = {t_stat:.3f}, p ≈ {p_approx:.4f}")
+        if p_approx > 0.05:
+            lines.append("No significant systematic shift detected.")
+        else:
+            lines.append(f"Statistically significant shift (p < 0.05), but magnitude is small ({mean_d:+.4f}).")
+    lines.append("")
+
+    # Verdict
+    lines.append("### Check 5 Verdict\n")
+    if abs(mean_d) < 0.05:
+        lines.append(f"**✓ Mean Brier delta {mean_d:+.4f} (within ±0.05). Check 5 PASSED.**")
+    else:
+        lines.append(f"**⚠ Mean Brier delta {mean_d:+.4f} (outside ±0.05). Check 5 NEEDS REVIEW.**")
+
+    lines.append("")
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 def main():
@@ -457,6 +682,18 @@ def main():
     check3_md = format_check_3(check3)
     print("  Done.")
 
+    # --- Check 4 ---
+    print("\nRunning Check 4: Independent Re-Grading...")
+    check4 = check_4_independent_regrade(v2_cal, v2_fb, registry)
+    check4_md = format_check_4(check4)
+    print("  Done.")
+
+    # --- Check 5 ---
+    print("\nRunning Check 5: Calibration Stability...")
+    check5 = check_5_calibration_stability(v1_cal, v2_cal)
+    check5_md = format_check_5(check5)
+    print("  Done.")
+
     # --- Write report (append checks as they're implemented) ---
     report_lines = [
         "# Audit: V2 Narrative Results Validation\n",
@@ -469,6 +706,10 @@ def main():
         check2_md,
         "---\n",
         check3_md,
+        "---\n",
+        check4_md,
+        "---\n",
+        check5_md,
     ]
 
     os.makedirs(os.path.dirname(REPORT_PATH), exist_ok=True)

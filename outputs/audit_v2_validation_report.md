@@ -633,3 +633,58 @@ Rows that flipped to correct in v2 but were NOT predicted by the audit.
 ### Check 3 Verdict
 
 **✓ Zero regressions, 100% re-grade agreement. Check 3 PASSED.**
+
+---
+
+## Check 4: Independent Re-Grading of All V2 Results
+
+### Family A (Calibration)
+
+- Total rows: 525
+- Agreement: 525/525 (100.0%)
+- Disagreements: 0
+
+### Family B (Abstention)
+
+- Total rows: 360
+- Agreement: 360/360 (100.0%)
+- Disagreements: 0
+
+### Check 4 Verdict
+
+**✓ Overall re-grade agreement 100.0%. Check 4 PASSED.**
+
+---
+
+## Check 5: Family A Calibration Stability
+
+### Per-Model Comparison
+
+| Model | V1 Acc | V2 Acc | V1 1-Brier | V2 1-Brier | V1 Conf | V2 Conf |
+|-------|--------|--------|------------|------------|---------|---------|
+| claude-haiku-4-5@202 | 0.810 | 0.781 | 0.1405 | 0.1641 | 0.879 | 0.877 |
+| claude-sonnet-4@2025 | 0.867 | 0.876 | 0.1157 | 0.1105 | 0.884 | 0.882 |
+| deepseek-v3.1 | 0.857 | 0.857 | 0.1174 | 0.1053 | 0.865 | 0.859 |
+| gemini-2.5-flash | 0.952 | 0.933 | 0.0394 | 0.0636 | 0.957 | 0.954 |
+| gemini-2.5-pro | 0.943 | 0.933 | 0.0583 | 0.0646 | 0.972 | 0.968 |
+
+**Rank order preserved: No**
+- V1 rank: ['claude-haiku', 'deepseek-v3.', 'claude-sonne', 'gemini-2.5-p', 'gemini-2.5-f']
+- V2 rank: ['claude-haiku', 'claude-sonne', 'deepseek-v3.', 'gemini-2.5-p', 'gemini-2.5-f']
+
+### Item-Level Brier Score Deltas (v2 - v1)
+
+- N: 525
+- Mean delta: -0.0073
+- Std dev: 0.1677
+- Range: [-0.9604, +1.0000]
+- Positive (v2 better): 91 (17.3%)
+- Negative (v1 better): 111 (21.1%)
+- Zero (same): 323 (61.5%)
+
+**t-test (H0: mean delta = 0):** t = -1.004, p ≈ 0.3154
+No significant systematic shift detected.
+
+### Check 5 Verdict
+
+**✓ Mean Brier delta -0.0073 (within ±0.05). Check 5 PASSED.**
