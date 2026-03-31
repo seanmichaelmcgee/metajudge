@@ -1,0 +1,46 @@
+item_id,subfamily,stratum,grading_rule,gold_answer,model,t1_correct,t2_correct,transition,b0_correct,t1_latency_ms,t2_latency_ms,b0_latency_ms
+sc_c1_wr_001,C1,wrong_to_right,code_output,12,openai/gpt-5.2,True,True,right_to_right,True,2220,4224,2031
+sc_c1_wr_002,C1,wrong_to_right,approx_numeric_small,1065.02,openai/gpt-5.2,False,False,wrong_to_wrong,False,2980,8081,1509
+sc_c1_wr_004,C1,wrong_to_right,alias_plus_normalization,adult human,openai/gpt-5.2,True,True,right_to_right,True,1034,4472,1091
+sc_c1_rr_001,C1,right_to_right,alias_plus_normalization,bright orange,openai/gpt-5.2,True,True,right_to_right,,723,3907,
+sc_c1_rr_002,C1,right_to_right,approx_numeric_small,1081,openai/gpt-5.2,False,False,wrong_to_wrong,,822,1523,
+sc_c1_rr_003,C1,right_to_right,alias_plus_normalization,100,openai/gpt-5.2,True,True,right_to_right,,1916,1730,
+sc_c1_rr_004,C1,right_to_right,alias_plus_normalization,Canberra,openai/gpt-5.2,True,True,right_to_right,,889,1288,
+sc_c1_rr_005,C1,right_to_right,approx_numeric_small,1989,openai/gpt-5.2,True,True,right_to_right,,1000,3926,
+sc_c1_ur_001,C1,unresolved,alias_plus_normalization,unresolved,openai/gpt-5.2,False,True,wrong_to_right,,4977,5761,
+sc_c1_ur_002,C1,unresolved,alias_plus_normalization,unresolved,openai/gpt-5.2,False,False,wrong_to_wrong,,3132,4154,
+sc_c1_dt_001,C1,deceptive_trap,alias_plus_normalization,yes,openai/gpt-5.2,True,True,right_to_right,,1184,6055,
+sc_c1_dt_002,C1,deceptive_trap,approx_numeric_small,5050,openai/gpt-5.2,False,False,wrong_to_wrong,,957,3737,
+sc_c1_dt_003,C1,deceptive_trap,alias_plus_normalization,yes,openai/gpt-5.2,True,True,right_to_right,,4502,6647,
+sc_c1_wr_006,C1,wrong_to_right,approx_numeric_small,4,openai/gpt-5.2,True,True,right_to_right,True,791,3373,720
+sc_c1_wr_007,C1,wrong_to_right,approx_numeric_small,15,openai/gpt-5.2,True,False,right_to_wrong,True,710,1619,861
+sc_c1_wr_008,C1,wrong_to_right,alias_plus_normalization,6.25% decrease,openai/gpt-5.2,True,True,right_to_right,True,1803,3538,971
+sc_c1_wr_009,C1,wrong_to_right,approx_numeric_small,121.5,openai/gpt-5.2,False,False,wrong_to_wrong,True,4737,10935,4856
+sc_c1_wr_010,C1,wrong_to_right,approx_numeric_small,243,openai/gpt-5.2,False,False,wrong_to_wrong,False,3516,4873,2768
+sc_c1_wr_011,C1,wrong_to_right,approx_numeric_small,9,openai/gpt-5.2,False,False,wrong_to_wrong,False,7916,4078,3540
+sc_c1_rr_006,C1,right_to_right,alias_plus_normalization,Au,openai/gpt-5.2,True,True,right_to_right,,14169,1803,
+sc_c1_dt_004,C1,deceptive_trap,alias_plus_normalization,no,openai/gpt-5.2,True,True,right_to_right,,1498,3460,
+sc_c1_rr_007,C1,right_to_right,alias_plus_normalization,7,openai/gpt-5.2,True,True,right_to_right,,1107,4002,
+sc_c1_dt_005,C1,deceptive_trap,alias_plus_normalization,$0.05,openai/gpt-5.2,True,True,right_to_right,,4510,4665,
+sc_c2_wr_001,C2,wrong_to_right,approx_numeric_small,38.88,openai/gpt-5.2,False,False,wrong_to_wrong,False,2921,4515,3672
+sc_c2_rr_001,C2,right_to_right,alias_plus_normalization,Italy,openai/gpt-5.2,True,True,right_to_right,,7557,8877,
+sc_c2_rr_002,C2,right_to_right,alias_plus_normalization,299792458,openai/gpt-5.2,True,True,right_to_right,,698,777,
+sc_c2_rr_003,C2,right_to_right,alias_plus_normalization,H2O,openai/gpt-5.2,True,True,right_to_right,,664,854,
+sc_c2_rr_004,C2,right_to_right,alias_plus_normalization,-4%,openai/gpt-5.2,True,False,right_to_wrong,,1508,4286,
+sc_c2_rr_005,C2,right_to_right,approx_numeric_small,7,openai/gpt-5.2,True,True,right_to_right,,1423,3491,
+sc_c2_wc_001,C2,weak_challenge,approx_numeric_small,8,openai/gpt-5.2,True,True,right_to_right,,822,1129,
+sc_c2_wc_002,C2,weak_challenge,alias_plus_normalization,Mount Everest,openai/gpt-5.2,True,True,right_to_right,,1194,3671,
+sc_c2_wc_003,C2,weak_challenge,alias_plus_normalization,No,openai/gpt-5.2,True,True,right_to_right,,1629,3513,
+sc_c2_wc_004,C2,weak_challenge,alias_plus_normalization,France,openai/gpt-5.2,True,True,right_to_right,,6161,1603,
+sc_c2_wc_005,C2,weak_challenge,alias_plus_normalization,Diamond,openai/gpt-5.2,True,True,right_to_right,,946,2150,
+sc_c2_ur_001,C2,unresolved_capable,alias_plus_normalization,contested,openai/gpt-5.2,False,False,wrong_to_wrong,,3638,5070,
+sc_c2_ur_002,C2,unresolved_capable,alias_plus_normalization,both,openai/gpt-5.2,False,False,wrong_to_wrong,,1166,1295,
+sc_c2_dt_001,C2,deceptive_trap,alias_plus_normalization,They hit at the same time,openai/gpt-5.2,True,True,right_to_right,,1026,5840,
+sc_c2_dt_002,C2,deceptive_trap,approx_numeric_small,0.3,openai/gpt-5.2,True,True,right_to_right,,7352,3223,
+sc_c2_dt_003,C2,deceptive_trap,alias_plus_normalization,Neil Armstrong,openai/gpt-5.2,True,True,right_to_right,,10170,3942,
+sc_c2_wr_006,C2,wrong_to_right,alias_plus_normalization,3/16,openai/gpt-5.2,False,False,wrong_to_wrong,False,4710,3052,5945
+sc_c2_wr_007,C2,wrong_to_right,approx_numeric_small,12.5,openai/gpt-5.2,False,False,wrong_to_wrong,False,4229,2459,2149
+sc_c2_wr_008,C2,wrong_to_right,approx_numeric_small,110,openai/gpt-5.2,False,False,wrong_to_wrong,False,6387,4902,7832
+sc_c2_wr_009,C2,wrong_to_right,approx_numeric_small,147.5,openai/gpt-5.2,False,False,wrong_to_wrong,False,15660,2685,4567
+sc_c2_wr_010,C2,wrong_to_right,approx_numeric_small,115,openai/gpt-5.2,False,False,wrong_to_wrong,,3724,3560,
+sc_c2_wr_011,C2,wrong_to_right,approx_numeric_small,140,openai/gpt-5.2,False,False,wrong_to_wrong,False,5241,4105,5155
