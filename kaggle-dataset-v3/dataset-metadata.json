@@ -1,0 +1,18 @@
+{
+  "title": "MetaJudge Benchmark Data v3 (Families A+B+C)",
+  "id": "seanmcgee2025/metajudge-data-v3",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0"
+    }
+  ],
+  "description": "MetaJudge benchmark v3: adds Family C (Self-Correction) to existing Family A (Calibration) and Family B (Selective Abstention). Family C: 55 clean items (30 C1 intrinsic + 25 C2 evidence-assisted). Registry extended with Family C grading entries. Family A/B data unchanged from v2.",
+  "keywords": [
+    "metacognition",
+    "llm-evaluation",
+    "calibration",
+    "self-correction",
+    "benchmark",
+    "families-abc"
+  ]
+}
