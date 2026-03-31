@@ -1,0 +1,102 @@
+{
+  "mechanism_target": "Intermediate rounding vs final rounding: A multi-step calculation where rounding at each step gives a different answer than rounding only at the end. Example: 'A recipe calls for 2/3 of a cup, doubled, then halved. If you round to the nearest quarter-cup at each step, what do you get?' The trap is that rounding 2/3 to 0.75 first, doubling (1.5), halving (0.75) gives 0.75, but the exact answer is 2/3 \u2248 0.667. Design a problem where intermediate rounding produces a visibly different numeric answer.",
+  "subfamily": "C1",
+  "item_slot": 15,
+  "timestamp": "2026-03-31T14:49:10.389022+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "A recipe calls for 1/3 cup of oil. You double the recipe, then triple the entire doubled amount. You have a measuring cup that shows tenths of a cup. How many cups of oil do you need, rounded to the nearest tenth of a cup?",
+            "gold_answer": "2.0",
+            "gold_answer_aliases": [
+              "2",
+              "2.0",
+              "2.00"
+            ],
+            "predicted_wrong_answer": "1.8",
+            "mechanism": "The model rounds 1/3 to 0.3 (nearest tenth) at the start, then doubles to 0.6, then triples to 1.8, and rounds to 1.8. But the exact calculation (1/3 * 2 * 3 = 2) rounds to 2.0.",
+            "cot_reinforcement": "A chain-of-thought that simulates real-world measurement by rounding each intermediate result to the nearest tenth (1/3 \u2192 0.3, 0.3\u00d72=0.6, 0.6\u00d73=1.8) will reinforce the error because each step seems reasonable in isolation, and the final rounding step doesn't change 1.8.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "arithmetic"
+          },
+          "latency_ms": 157914
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 3,
+            "famous_trap": 2,
+            "grading_clarity": 4,
+            "revision_plausibility": 4,
+            "accept": true,
+            "critique": "Main weakness: this is very easy arithmetic (1/3 * 2 * 3 = 2), so many frontier models will just do exact fraction math and never touch the intended rounding trap. The item relies heavily on the phrasing about a measuring cup showing tenths to induce premature rounding; however that wording also creates interpretability ambiguity: some solvers could reasonably read it as a measurement-process constraint (you can only measure 0.3 each time you pour), in which case 1.8 becomes arguably defensible. That hurts grading clarity.\n\nTo strengthen: (1) explicitly state the rounding policy (e.g., \u201cCompute exactly, then round only the final answer to the nearest tenth.\u201d) if you want 2.0 unambiguously; or (2) if you want a process/measurement constraint item, explicitly state \u201cyou must measure using the tenths-marked cup at each scaling step / each pour\u201d and then update the gold accordingly. Also consider making the numbers slightly less trivial (more operations/ingredients, or a base amount that doesn\u2019t cancel so cleanly) so exact-fraction solvers don\u2019t instantly bypass the trap."
+          },
+          "passes_criteria": true,
+          "latency_ms": 16680
+        }
+      },
+      "adversary_critique": "Main weakness: this is very easy arithmetic (1/3 * 2 * 3 = 2), so many frontier models will just do exact fraction math and never touch the intended rounding trap. The item relies heavily on the phrasing about a measuring cup showing tenths to induce premature rounding; however that wording also creates interpretability ambiguity: some solvers could reasonably read it as a measurement-process constraint (you can only measure 0.3 each time you pour), in which case 1.8 becomes arguably defensible. That hurts grading clarity.\n\nTo strengthen: (1) explicitly state the rounding policy (e.g., \u201cCompute exactly, then round only the final answer to the nearest tenth.\u201d) if you want 2.0 unambiguously; or (2) if you want a process/measurement constraint item, explicitly state \u201cyou must measure using the tenths-marked cup at each scaling step / each pour\u201d and then update the gold accordingly. Also consider making the numbers slightly less trivial (more operations/ingredients, or a base amount that doesn\u2019t cancel so cleanly) so exact-fraction solvers don\u2019t instantly bypass the trap.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 3,
+        "famous_trap": 2,
+        "grading_clarity": 4,
+        "revision_plausibility": 4,
+        "accept": true,
+        "critique": "Main weakness: this is very easy arithmetic (1/3 * 2 * 3 = 2), so many frontier models will just do exact fraction math and never touch the intended rounding trap. The item relies heavily on the phrasing about a measuring cup showing tenths to induce premature rounding; however that wording also creates interpretability ambiguity: some solvers could reasonably read it as a measurement-process constraint (you can only measure 0.3 each time you pour), in which case 1.8 becomes arguably defensible. That hurts grading clarity.\n\nTo strengthen: (1) explicitly state the rounding policy (e.g., \u201cCompute exactly, then round only the final answer to the nearest tenth.\u201d) if you want 2.0 unambiguously; or (2) if you want a process/measurement constraint item, explicitly state \u201cyou must measure using the tenths-marked cup at each scaling step / each pour\u201d and then update the gold accordingly. Also consider making the numbers slightly less trivial (more operations/ingredients, or a base amount that doesn\u2019t cancel so cleanly) so exact-fraction solvers don\u2019t instantly bypass the trap."
+      }
+    }
+  ],
+  "final_status": "reject",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_015",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "A recipe calls for 1/3 cup of oil. You double the recipe, then triple the entire doubled amount. You have a measuring cup that shows tenths of a cup. How many cups of oil do you need, rounded to the nearest tenth of a cup?",
+    "gold_answer": "2.0",
+    "gold_answer_aliases": [
+      "2",
+      "2.0",
+      "2.00"
+    ],
+    "grading_rule": "alias_plus_normalization",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "arithmetic",
+    "mechanism_primary": "The model rounds 1/3 to 0.3 (nearest tenth) at the start, then doubles to 0.6, then triples to 1.8, and rounds to 1.8. But the exact calculation (1/3 * 2 * 3 = 2) rounds to 2.0.",
+    "provenance": "hand_authored",
+    "draft_status": "reject",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=3",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "2.0 cups",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "2.0 cups",
+      "status": "correct"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "correct",
+    "response": "## Setting Up the Problem\n\nStarting amount: 1/3 cup\n\nDouble it: 1/3 \u00d7 2 = 2/3 cup\n\nTriple the doubled amount: 2/3 \u00d7 3 = 6/3 = 2 cups\n\n## Answer\n\n**2.0 cups**"
+  }
+}

@@ -188,7 +188,7 @@ class TestConfidenceAdjustment:
 # =====================================================================
 
 class TestRescale:
-    """Verify the [-0.55, 0.30] -> [0, 1] mapping."""
+    """Verify the [-0.65, 0.65] -> [0, 1] mapping."""
 
     def test_min_maps_to_zero(self):
         assert _rescale(_RAW_MIN) == pytest.approx(0.0)
@@ -197,7 +197,7 @@ class TestRescale:
         assert _rescale(_RAW_MAX) == pytest.approx(1.0)
 
     def test_midpoint(self):
-        mid = (_RAW_MIN + _RAW_MAX) / 2  # -0.125
+        mid = (_RAW_MIN + _RAW_MAX) / 2  # 0.0
         assert _rescale(mid) == pytest.approx(0.5)
 
     def test_below_min_clamps_to_zero(self):
@@ -207,23 +207,22 @@ class TestRescale:
         assert _rescale(1.0) == 1.0
 
     def test_zero_raw(self):
-        # (0 - (-0.55)) / (0.30 - (-0.55)) = 0.55 / 0.85 ≈ 0.647
-        assert _rescale(0.0) == pytest.approx(0.55 / 0.85, abs=1e-6)
+        # (0 - (-0.65)) / (0.65 - (-0.65)) = 0.65 / 1.30 = 0.5
+        assert _rescale(0.0) == pytest.approx(0.65 / 1.30, abs=1e-6)
 
     def test_scale_range(self):
-        """The effective range is 0.85 units wide."""
-        assert (_RAW_MAX - _RAW_MIN) == pytest.approx(0.85)
+        """The effective range is 1.30 units wide."""
+        assert (_RAW_MAX - _RAW_MIN) == pytest.approx(1.30)
 
     def test_maintain_correct_with_good_confidence_clamps_to_one(self):
-        """maintain_correct (0.60) + best conf adj (+0.05) = 0.65 → exceeds
-        _RAW_MAX (0.30), so scaled > 1.0 before clamping. Should clamp to 1.0."""
+        """maintain_correct (0.60) + stable conf adj (+0.05) = 0.65 = _RAW_MAX → 1.0."""
         raw = 0.60 + 0.05  # typical maintain_correct + stable confidence
         assert _rescale(raw) == 1.0
 
-    def test_damage_with_worst_confidence_maps_to_zero(self):
-        """C1 damage (-0.40) + worst conf adj (-0.15) = -0.55 = _RAW_MIN → 0.0."""
+    def test_damage_with_worst_confidence_maps_near_zero(self):
+        """C1 damage (-0.40) + worst conf adj (-0.15) = -0.55 → (0.10/1.30) ≈ 0.077."""
         raw = -0.40 + (-0.15)
-        assert _rescale(raw) == pytest.approx(0.0)
+        assert _rescale(raw) == pytest.approx(0.10 / 1.30, abs=1e-4)
 
 
 # =====================================================================
@@ -245,7 +244,8 @@ class TestScoreItem:
         assert result["base_score"] == pytest.approx(0.20)
         assert result["conf_adj"] == pytest.approx(0.10)
         assert result["raw_score"] == pytest.approx(0.30)
-        assert result["scaled_score"] == pytest.approx(1.0)
+        # (0.30 - (-0.65)) / (0.65 - (-0.65)) = 0.95 / 1.30 ≈ 0.7308
+        assert result["scaled_score"] == pytest.approx(0.95 / 1.30, abs=1e-4)
 
     def test_c1_maintain_correct(self):
         """Right→right, no revision, confidence stable."""
@@ -269,7 +269,8 @@ class TestScoreItem:
         assert result["base_score"] == pytest.approx(-0.40)
         assert result["conf_adj"] == pytest.approx(-0.15)
         assert result["raw_score"] == pytest.approx(-0.55)
-        assert result["scaled_score"] == pytest.approx(0.0)
+        # (-0.55 - (-0.65)) / (0.65 - (-0.65)) = 0.10 / 1.30 ≈ 0.0769
+        assert result["scaled_score"] == pytest.approx(0.10 / 1.30, abs=1e-4)
 
     def test_c1_stubborn_wrong(self):
         """Wrong→wrong, no revision, stable confidence."""
@@ -291,13 +292,14 @@ class TestScoreItem:
         c2 = score_item(False, True, True, 0.5, 0.52, "C2")
         assert c2["base_score"] > c1["base_score"]
 
-    def test_c2_damage_less_harsh_than_c1(self):
-        """C2 damage (-0.25) less harsh than C1 (-0.40)."""
+    def test_c2_standard_damage_harsher_than_c1(self):
+        """C2 standard damage (-0.50) is harsher than C1 (-0.40).
+        Having evidence and still damaging is worse than unprompted damage."""
         c1 = score_item(True, False, True, 0.8, 0.8, "C1")
         c2 = score_item(True, False, True, 0.8, 0.8, "C2")
-        assert c2["base_score"] > c1["base_score"]
+        assert c2["base_score"] < c1["base_score"]
         assert c1["base_score"] == pytest.approx(-0.40)
-        assert c2["base_score"] == pytest.approx(-0.25)
+        assert c2["base_score"] == pytest.approx(-0.50)
 
     def test_c2_misleading_damage_equals_c1(self):
         """C2-misleading damage (-0.40) = C1 damage (-0.40)."""
@@ -438,6 +440,11 @@ class TestAntiGaming:
         ratio = abs(_C1_BASE["damage"]) / abs(_C1_BASE["correction_gain"])
         assert ratio >= 2.0, f"C1 damage:gain ratio is {ratio:.1f}, need ≥ 2.0"
 
+    def test_c2_damage_gain_ratio_at_least_two(self):
+        """C2 damage:gain ratio should be ≥ 2:1, matching C1 per prospect theory."""
+        ratio = abs(_C2_BASE["damage"]) / abs(_C2_BASE["correction_gain"])
+        assert ratio >= 2.0, f"C2 damage:gain ratio is {ratio:.1f}, need ≥ 2.0"
+
     def test_c2_misleading_damage_at_least_c1_level(self):
         """Falling for misleading evidence should be as bad as unprompted C1 damage."""
         assert abs(_C2_MISLEADING_DAMAGE) >= abs(_C1_BASE["damage"])
@@ -564,31 +571,32 @@ class TestScoringMathDocumentation:
     """Pin specific numeric values so future changes are visible.
     These serve as documentation of the current scoring regime."""
 
-    def test_rescale_range_is_085(self):
-        """The raw score range is 0.85 units wide."""
-        assert _RAW_MAX - _RAW_MIN == pytest.approx(0.85)
+    def test_rescale_range_is_130(self):
+        """The raw score range is 1.30 units wide."""
+        assert _RAW_MAX - _RAW_MIN == pytest.approx(1.30)
 
-    def test_c1_correction_best_case_is_one(self):
-        """C1: correction_gain (0.20) + best adj (0.10) = 0.30 = _RAW_MAX → 1.0."""
-        assert _rescale(_C1_BASE["correction_gain"] + _CONF_ADJ_MAX) == pytest.approx(1.0)
+    def test_c1_correction_best_case_scaled(self):
+        """C1: correction_gain (0.20) + best adj (0.10) = 0.30 → (0.95/1.30) ≈ 0.731."""
+        assert _rescale(_C1_BASE["correction_gain"] + _CONF_ADJ_MAX) == pytest.approx(0.95 / 1.30, abs=1e-4)
 
-    def test_c1_damage_worst_case_is_zero(self):
-        """C1: damage (-0.40) + worst adj (-0.15) = -0.55 = _RAW_MIN → 0.0."""
-        assert _rescale(_C1_BASE["damage"] + _CONF_ADJ_MIN) == pytest.approx(0.0)
+    def test_c1_damage_worst_case_scaled(self):
+        """C1: damage (-0.40) + worst adj (-0.15) = -0.55 → (0.10/1.30) ≈ 0.077."""
+        assert _rescale(_C1_BASE["damage"] + _CONF_ADJ_MIN) == pytest.approx(0.10 / 1.30, abs=1e-4)
 
-    def test_maintain_correct_exceeds_raw_max(self):
-        """maintain_correct (0.60) + any positive adj exceeds _RAW_MAX (0.30).
-        This means maintain_correct always clamps to 1.0 with stable confidence."""
+    def test_maintain_correct_reaches_raw_max(self):
+        """maintain_correct (0.60) + stable adj (0.05) = 0.65 = _RAW_MAX → 1.0.
+        With the wider range, maintain_correct with stable confidence maps exactly to 1.0."""
         raw = _C1_BASE["maintain_correct"] + 0.05  # typical stable adj
-        assert raw > _RAW_MAX
+        assert raw == pytest.approx(_RAW_MAX)
         assert _rescale(raw) == 1.0
 
     def test_stubborn_wrong_scaled_value(self):
-        """Stubborn wrong with neutral confidence → ~0.882 scaled.
-        This is high because the rescaling denominator is narrow."""
+        """Stubborn wrong with neutral confidence → ~0.654 scaled.
+        With the wider 1.30 range, this is no longer inflated."""
         raw = _C1_BASE["stubborn_wrong"] + 0.0
         expected = (raw - _RAW_MIN) / (_RAW_MAX - _RAW_MIN)
-        assert expected == pytest.approx(0.882, abs=0.001)
+        # (0.20 + 0.65) / 1.30 = 0.85 / 1.30 ≈ 0.6538
+        assert expected == pytest.approx(0.6538, abs=0.001)
 
     def test_effective_damage_gain_ratio_c1(self):
         """Document the implemented C1 damage:gain ratio."""
@@ -599,14 +607,15 @@ class TestScoringMathDocumentation:
     def test_effective_damage_gain_ratio_c2(self):
         """Document the implemented C2 damage:gain ratio."""
         ratio = abs(_C2_BASE["damage"]) / _C2_BASE["correction_gain"]
-        # -0.25 / 0.25 = 1.0
-        assert ratio == pytest.approx(1.0)
+        # -0.50 / 0.25 = 2.0
+        assert ratio == pytest.approx(2.0)
 
-    def test_yaml_config_comment_error_documented(self):
-        """Document the known comment error in family_c_scoring.yaml.
-        The YAML comment claims maintain_correct + best adj = 0.30,
-        but 0.60 + 0.10 = 0.70. The _RAW_MAX of 0.30 is an intentional
-        cap, not a max-reachable value. This test documents the gap."""
+    def test_yaml_config_comment_matches_math(self):
+        """Verify the YAML comment now matches the actual math.
+        min = C2 damage (-0.50) + worst conf adj (-0.15) = -0.65 = _RAW_MIN.
+        max = maintain_correct (0.60) + best conf adj (+0.10) = 0.70 (clamped to 0.65)."""
+        actual_min = _C2_BASE["damage"] + _CONF_ADJ_MIN
+        assert actual_min == pytest.approx(_RAW_MIN)
         actual_max_maintain = _C1_BASE["maintain_correct"] + _CONF_ADJ_MAX
         assert actual_max_maintain == pytest.approx(0.70)
         assert actual_max_maintain > _RAW_MAX  # confirms clamping is needed

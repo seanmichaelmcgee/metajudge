@@ -1,0 +1,27 @@
+{
+  "item_id": "sc_c1_wr_019",
+  "family": "C",
+  "subfamily": "C1",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "What is the output of print(int(-2.5)) in Python 3?",
+  "gold_answer": "-2",
+  "gold_answer_aliases": [
+    "-2",
+    "negative two"
+  ],
+  "grading_rule": "alias_plus_normalization",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "metacognitive",
+  "evidence_snippet": null,
+  "difficulty": "hard",
+  "category": "code",
+  "mechanism_primary": "The int() function for floats in Python truncates toward zero (rounds toward zero), while the common default assumption is that it floors (rounds toward negative infinity).",
+  "provenance": "hand_authored",
+  "draft_status": "reject",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=4, cr=2",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}

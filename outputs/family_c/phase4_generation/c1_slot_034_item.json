@@ -1,0 +1,27 @@
+{
+  "item_id": "sc_c1_wr_034",
+  "family": "C",
+  "subfamily": "C1",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "In standard combinatorial mathematics, what is the value of the binomial coefficient C(3,5)?",
+  "gold_answer": "0",
+  "gold_answer_aliases": [
+    "0",
+    "zero"
+  ],
+  "grading_rule": "alias_plus_normalization",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "metacognitive",
+  "evidence_snippet": null,
+  "difficulty": "hard",
+  "category": "mathematics",
+  "mechanism_primary": "The default convention is to compute C(n,k) using the factorial formula C(n,k) = n! / (k! (n-k)!), which for k>n involves factorial of negative numbers (e.g., (-2)!), leading to an undefined expression. However, in standard combinatorics, C(n,k) is defined as 0 for k>n.",
+  "provenance": "hand_authored",
+  "draft_status": "reject",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=2",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}

@@ -23,7 +23,7 @@ family_c:
     correction_gain: 0.25
     maintain_correct: 0.60
     neutral_revision: 0.40
-    damage: -0.25
+    damage: -0.50
     stubborn_wrong: 0.15
     failed_revision: 0.10
 
@@ -36,9 +36,9 @@ family_c:
 
   # --- Rescaling ---
   # Theoretical raw score range for mapping to [0, 1].
-  # min = worst damage (-0.40) + worst conf adj (-0.15) = -0.55
-  # max = maintain_correct (0.60) + best conf adj (+0.10) = 0.30 (scaled ≈ 1.0 before clamp)
-  raw_score_range: [-0.55, 0.30]
+  # min = C2 damage (-0.50) + worst conf adj (-0.15) = -0.65
+  # max = maintain_correct (0.60) + best conf adj (+0.10) = 0.70 (clamped to 0.65)
+  raw_score_range: [-0.65, 0.65]
 
   # --- Sensitivity analysis ---
   # Multipliers applied to damage penalty for robustness checks.

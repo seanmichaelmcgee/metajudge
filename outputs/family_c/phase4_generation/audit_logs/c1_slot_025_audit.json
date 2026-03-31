@@ -1,0 +1,148 @@
+{
+  "mechanism_target": "Significant figures in multiplication: 'Multiply 2.50 by 4.1 and report the answer with the correct number of significant figures.' 2.50 has 3 sig figs, 4.1 has 2 sig figs. Product = 10.25, but with 2 sig figs = 10. (or 1.0 \u00d7 10^1). Models compute 10.25 and present it without applying the sig fig rule. The trap: the arithmetic is trivially correct, but the convention about limiting to the fewest sig figs is what models miss.",
+  "subfamily": "C1",
+  "item_slot": 25,
+  "timestamp": "2026-03-31T15:41:49.549564+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "Multiply 1.234 by 5.6 and report the answer with the correct number of significant figures.",
+            "gold_answer": "6.9",
+            "gold_answer_aliases": [
+              "6.9",
+              "6.9e0",
+              "6.90"
+            ],
+            "predicted_wrong_answer": "6.9104",
+            "mechanism": "The error arises from computing the exact product without applying the significant figures rule for multiplication: the result must have the same number of significant figures as the factor with the fewest significant figures (here, 5.6 has 2 sig figs, so 6.9104 rounds to 6.9).",
+            "cot_reinforcement": "In chain-of-thought reasoning, the model will likely derive the multiplication step-by-step, obtain 6.9104, and present it as the final answer, reinforcing the exact arithmetic and neglecting the significant figures convention.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 77951
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 3,
+            "grading_clarity": 3,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "Main issue: this is not CoT-resistant. A typical chain-of-thought for this prompt explicitly recalls the sig-fig multiplication rule (fewest sig figs) and will therefore self-correct from 6.9104 to 6.9 very reliably; CoT helps rather than hurts.\n\nGrading clarity is also weak because you list \"6.90\" as a gold alias. In standard significant-figures conventions, \"6.90\" communicates 3 significant figures, which contradicts the instruction to report the answer with the correct number of significant figures (2, from 5.6). Accepting both \"6.9\" and \"6.90\" makes the target ambiguous and undermines the benchmark\u2019s premise.\n\nFamousness: significant-fig rounding is a common classroom rule; it\u2019s not a niche, novel trap. It\u2019s not a meme puzzle, but it\u2019s also not especially original.\n\nSuggestions to fix:\n- Remove \"6.90\" from gold aliases; keep only representations that unambiguously indicate 2 sig figs (\"6.9\", \"6.9e0\").\n- Tighten grading to reject answers that imply extra significant figures if you\u2019re testing sig-fig discipline.\n- If you want more CoT resistance / difficulty, use numbers where sig-fig counting is itself tricky (e.g., trailing zeros, scientific notation, or measured quantities like 0.0560 \u00d7 1.2340) so CoT arithmetic can reinforce the wrong sig-fig interpretation rather than trivially reminding the model of the rule."
+          },
+          "passes_criteria": false,
+          "latency_ms": 13417
+        }
+      },
+      "adversary_critique": "Main issue: this is not CoT-resistant. A typical chain-of-thought for this prompt explicitly recalls the sig-fig multiplication rule (fewest sig figs) and will therefore self-correct from 6.9104 to 6.9 very reliably; CoT helps rather than hurts.\n\nGrading clarity is also weak because you list \"6.90\" as a gold alias. In standard significant-figures conventions, \"6.90\" communicates 3 significant figures, which contradicts the instruction to report the answer with the correct number of significant figures (2, from 5.6). Accepting both \"6.9\" and \"6.90\" makes the target ambiguous and undermines the benchmark\u2019s premise.\n\nFamousness: significant-fig rounding is a common classroom rule; it\u2019s not a niche, novel trap. It\u2019s not a meme puzzle, but it\u2019s also not especially original.\n\nSuggestions to fix:\n- Remove \"6.90\" from gold aliases; keep only representations that unambiguously indicate 2 sig figs (\"6.9\", \"6.9e0\").\n- Tighten grading to reject answers that imply extra significant figures if you\u2019re testing sig-fig discipline.\n- If you want more CoT resistance / difficulty, use numbers where sig-fig counting is itself tricky (e.g., trailing zeros, scientific notation, or measured quantities like 0.0560 \u00d7 1.2340) so CoT arithmetic can reinforce the wrong sig-fig interpretation rather than trivially reminding the model of the rule.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 3,
+        "grading_clarity": 3,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "Main issue: this is not CoT-resistant. A typical chain-of-thought for this prompt explicitly recalls the sig-fig multiplication rule (fewest sig figs) and will therefore self-correct from 6.9104 to 6.9 very reliably; CoT helps rather than hurts.\n\nGrading clarity is also weak because you list \"6.90\" as a gold alias. In standard significant-figures conventions, \"6.90\" communicates 3 significant figures, which contradicts the instruction to report the answer with the correct number of significant figures (2, from 5.6). Accepting both \"6.9\" and \"6.90\" makes the target ambiguous and undermines the benchmark\u2019s premise.\n\nFamousness: significant-fig rounding is a common classroom rule; it\u2019s not a niche, novel trap. It\u2019s not a meme puzzle, but it\u2019s also not especially original.\n\nSuggestions to fix:\n- Remove \"6.90\" from gold aliases; keep only representations that unambiguously indicate 2 sig figs (\"6.9\", \"6.9e0\").\n- Tighten grading to reject answers that imply extra significant figures if you\u2019re testing sig-fig discipline.\n- If you want more CoT resistance / difficulty, use numbers where sig-fig counting is itself tricky (e.g., trailing zeros, scientific notation, or measured quantities like 0.0560 \u00d7 1.2340) so CoT arithmetic can reinforce the wrong sig-fig interpretation rather than trivially reminding the model of the rule."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "Compute (2.50 \u00d7 4.1) \u00f7 2.0 and express the result with the correct number of significant figures.",
+            "gold_answer": "5.1",
+            "gold_answer_aliases": [
+              "5.1"
+            ],
+            "predicted_wrong_answer": "5.0",
+            "mechanism": "The default convention in step-by-step significant figures calculation is to round intermediate results after each operation, but for accuracy, extra digits should be retained until the final answer. Here, rounding the product 10.25 to 10. (with 2 sig figs) before division leads to an incorrect final rounding.",
+            "cot_reinforcement": "Chain-of-thought reasoning will likely compute 2.50 \u00d7 4.1 = 10.25, round it to 10. based on significant figures, then divide by 2.0 to get 5.0, applying the intermediate rounding convention consistently and failing to recognize the need for retaining precision until the end.",
+            "grading_rule": "fraction_or_decimal",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 214633
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 1,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "Main weakness: it\u2019s not very CoT-resistant. Many strong models (and many \u201cshow your work\u201d solutions) explicitly know the rule of keeping guard digits and only rounding at the end for significant-figure arithmetic, so step-by-step reasoning often self-corrects toward 5.1 rather than reinforcing 5.0. The described \u2018default convention\u2019 (rounding intermediates to the limiting sig figs after each operation) is not actually the standard best practice; it\u2019s widely taught as a mistake to avoid, which makes the trap less effective against frontier models.\n\nGrading is clear (5.125 \u2192 2 sig figs \u2192 5.1), and revision is plausible (a model can notice the intermediate-rounding error). But because the correct procedure is common knowledge, this is likely too easy and won\u2019t reliably induce the targeted wrong answer.\n\nSuggestions to strengthen:\n- Increase ambiguity/temptation by adding more steps and mixing operations (e.g., multiplication/division followed by subtraction where decimal-place rules differ), which often causes more persistent errors.\n- Use numbers that create a borderline rounding case at the end (e.g., final value like 5.05 with 2 sig figs) so a small intermediate-rounding choice flips the final digit.\n- If you want the intermediate-rounding pitfall specifically, design it so the intermediate rounding is \u2018plausibly justified\u2019 (e.g., measurement context with stated instrument precision) rather than an obviously-known-to-be-wrong practice."
+          },
+          "passes_criteria": false,
+          "latency_ms": 18893
+        }
+      },
+      "adversary_critique": "Main weakness: it\u2019s not very CoT-resistant. Many strong models (and many \u201cshow your work\u201d solutions) explicitly know the rule of keeping guard digits and only rounding at the end for significant-figure arithmetic, so step-by-step reasoning often self-corrects toward 5.1 rather than reinforcing 5.0. The described \u2018default convention\u2019 (rounding intermediates to the limiting sig figs after each operation) is not actually the standard best practice; it\u2019s widely taught as a mistake to avoid, which makes the trap less effective against frontier models.\n\nGrading is clear (5.125 \u2192 2 sig figs \u2192 5.1), and revision is plausible (a model can notice the intermediate-rounding error). But because the correct procedure is common knowledge, this is likely too easy and won\u2019t reliably induce the targeted wrong answer.\n\nSuggestions to strengthen:\n- Increase ambiguity/temptation by adding more steps and mixing operations (e.g., multiplication/division followed by subtraction where decimal-place rules differ), which often causes more persistent errors.\n- Use numbers that create a borderline rounding case at the end (e.g., final value like 5.05 with 2 sig figs) so a small intermediate-rounding choice flips the final digit.\n- If you want the intermediate-rounding pitfall specifically, design it so the intermediate rounding is \u2018plausibly justified\u2019 (e.g., measurement context with stated instrument precision) rather than an obviously-known-to-be-wrong practice.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 1,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "Main weakness: it\u2019s not very CoT-resistant. Many strong models (and many \u201cshow your work\u201d solutions) explicitly know the rule of keeping guard digits and only rounding at the end for significant-figure arithmetic, so step-by-step reasoning often self-corrects toward 5.1 rather than reinforcing 5.0. The described \u2018default convention\u2019 (rounding intermediates to the limiting sig figs after each operation) is not actually the standard best practice; it\u2019s widely taught as a mistake to avoid, which makes the trap less effective against frontier models.\n\nGrading is clear (5.125 \u2192 2 sig figs \u2192 5.1), and revision is plausible (a model can notice the intermediate-rounding error). But because the correct procedure is common knowledge, this is likely too easy and won\u2019t reliably induce the targeted wrong answer.\n\nSuggestions to strengthen:\n- Increase ambiguity/temptation by adding more steps and mixing operations (e.g., multiplication/division followed by subtraction where decimal-place rules differ), which often causes more persistent errors.\n- Use numbers that create a borderline rounding case at the end (e.g., final value like 5.05 with 2 sig figs) so a small intermediate-rounding choice flips the final digit.\n- If you want the intermediate-rounding pitfall specifically, design it so the intermediate rounding is \u2018plausibly justified\u2019 (e.g., measurement context with stated instrument precision) rather than an obviously-known-to-be-wrong practice."
+      }
+    }
+  ],
+  "final_status": "accept",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_025",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "Compute (2.50 \u00d7 4.1) \u00f7 2.0 and express the result with the correct number of significant figures.",
+    "gold_answer": "5.1",
+    "gold_answer_aliases": [
+      "5.1"
+    ],
+    "grading_rule": "fraction_or_decimal",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "The default convention in step-by-step significant figures calculation is to round intermediate results after each operation, but for accuracy, extra digits should be retained until the final answer. Here, rounding the product 10.25 to 10. (with 2 sig figs) before division leads to an incorrect final rounding.",
+    "provenance": "hand_authored",
+    "draft_status": "draft",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "5.1 (rounded to 2 significant figures)",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "Here's how to compute the expression with the correct number of significant figures:\n\n1. **Multiplication:**\n   * 2.50 has 3 significant figures.\n   * 4.1 has 2 significant figures.\n   * The result of the multiplication should have 2 significant figures (the least number of significant figures in th",
+      "status": "wrong"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "correct",
+    "response": "## Setting Up the Calculation\n\n**Step 1: Identify significant figures in each number**\n- 2.50 \u2192 3 significant figures\n- 4.1 \u2192 2 significant figures\n- 2.0 \u2192 2 significant figures\n\n**Step 2: Perform the calculation**\n\n$$\\frac{2.50 \\times 4.1}{2.0} = \\frac{10.25}{2.0} = 5.125$$\n\n**Step 3: Apply significant figures rules**\n\nFor multiplication and division, the result should have the **same number of significant figures as the measurement with the fewest** \u2192 **2 significant figures**\n\n## Result\n\n$$\\b"
+  }
+}

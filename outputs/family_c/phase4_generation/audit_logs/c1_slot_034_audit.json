@@ -1,0 +1,150 @@
+{
+  "mechanism_target": "Power set of empty set: How many subsets does the empty set have? Answer: 1. P(\u2205)={\u2205}, |P(\u2205)|=2^0=1.",
+  "subfamily": "C1",
+  "item_slot": 34,
+  "timestamp": "2026-03-31T16:23:25.935505+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "How many functions are there from the empty set to the empty set?",
+            "gold_answer": "1",
+            "gold_answer_aliases": [
+              "1",
+              "one",
+              "1.0"
+            ],
+            "predicted_wrong_answer": "0",
+            "mechanism": "The intuitive convention that 'no elements means no functions' leads to answering 0, but formally the empty function (the empty set of ordered pairs) satisfies the definition and is unique.",
+            "cot_reinforcement": "Step-by-step reasoning often reinforces the error by focusing on the need to map each element: since the domain has no elements, it concludes that no mappings can be defined, ignoring the set-theoretic definition that the empty set is a valid function.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 251313
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very standard discrete-math / set-theory fact (\u201cthere is exactly one function from \u2205 to any set\u201d), so many frontier models will answer 1 immediately from memorized knowledge. That also makes it not very CoT-resistant: step-by-step reasoning often *fixes* the naive intuition by recalling/deriving that the empty relation vacuously satisfies the function definition and is unique. The trap is also fairly well-known (common exam/homework question), pushing famous_trap high. Grading is crystal clear (answer is unambiguously 1) and self-correction is plausible.\n\nSuggestions to strengthen: keep the vacuous-truth mechanism but make it less memorized and less obviously \u201cempty function.\u201d For example, embed it in a less canonical framing (e.g., count homomorphisms between specific algebraic structures where the underlying set is empty / initial object reasoning), or combine with a second constraint that breaks rote recall (e.g., \u201cHow many functions f: \u2205\u2192\u2205 are surjective/injective/bijective?\u201d still ends up 1 but is even more common; better is something like counting structures on \u2205 that satisfy a predicate that\u2019s easy to mis-handle). Alternatively, use a non-empty codomain but add a property that flips the count (e.g., \u2018How many *surjections* from \u2205 to S?\u2019 which is 0 for nonempty S) to test careful definition application rather than recall."
+          },
+          "passes_criteria": false,
+          "latency_ms": 14476
+        }
+      },
+      "adversary_critique": "This is a very standard discrete-math / set-theory fact (\u201cthere is exactly one function from \u2205 to any set\u201d), so many frontier models will answer 1 immediately from memorized knowledge. That also makes it not very CoT-resistant: step-by-step reasoning often *fixes* the naive intuition by recalling/deriving that the empty relation vacuously satisfies the function definition and is unique. The trap is also fairly well-known (common exam/homework question), pushing famous_trap high. Grading is crystal clear (answer is unambiguously 1) and self-correction is plausible.\n\nSuggestions to strengthen: keep the vacuous-truth mechanism but make it less memorized and less obviously \u201cempty function.\u201d For example, embed it in a less canonical framing (e.g., count homomorphisms between specific algebraic structures where the underlying set is empty / initial object reasoning), or combine with a second constraint that breaks rote recall (e.g., \u201cHow many functions f: \u2205\u2192\u2205 are surjective/injective/bijective?\u201d still ends up 1 but is even more common; better is something like counting structures on \u2205 that satisfy a predicate that\u2019s easy to mis-handle). Alternatively, use a non-empty codomain but add a property that flips the count (e.g., \u2018How many *surjections* from \u2205 to S?\u2019 which is 0 for nonempty S) to test careful definition application rather than recall.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very standard discrete-math / set-theory fact (\u201cthere is exactly one function from \u2205 to any set\u201d), so many frontier models will answer 1 immediately from memorized knowledge. That also makes it not very CoT-resistant: step-by-step reasoning often *fixes* the naive intuition by recalling/deriving that the empty relation vacuously satisfies the function definition and is unique. The trap is also fairly well-known (common exam/homework question), pushing famous_trap high. Grading is crystal clear (answer is unambiguously 1) and self-correction is plausible.\n\nSuggestions to strengthen: keep the vacuous-truth mechanism but make it less memorized and less obviously \u201cempty function.\u201d For example, embed it in a less canonical framing (e.g., count homomorphisms between specific algebraic structures where the underlying set is empty / initial object reasoning), or combine with a second constraint that breaks rote recall (e.g., \u201cHow many functions f: \u2205\u2192\u2205 are surjective/injective/bijective?\u201d still ends up 1 but is even more common; better is something like counting structures on \u2205 that satisfy a predicate that\u2019s easy to mis-handle). Alternatively, use a non-empty codomain but add a property that flips the count (e.g., \u2018How many *surjections* from \u2205 to S?\u2019 which is 0 for nonempty S) to test careful definition application rather than recall."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "In standard combinatorial mathematics, what is the value of the binomial coefficient C(3,5)?",
+            "gold_answer": "0",
+            "gold_answer_aliases": [
+              "0",
+              "zero"
+            ],
+            "predicted_wrong_answer": "undefined",
+            "mechanism": "The default convention is to compute C(n,k) using the factorial formula C(n,k) = n! / (k! (n-k)!), which for k>n involves factorial of negative numbers (e.g., (-2)!), leading to an undefined expression. However, in standard combinatorics, C(n,k) is defined as 0 for k>n.",
+            "cot_reinforcement": "Chain-of-thought reasoning will likely involve step-by-step application of the factorial formula, resulting in an undefined expression like 3! / (5! * (-2)!) or division by zero, reinforcing the belief that the value is undefined rather than recalling the convention that it is 0.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 210347
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very common/intro-level convention check: for integers n,k with k>n, (n choose k)=0. Frontier models are quite likely to know or retrieve that rule immediately, so it\u2019s not \u201chard\u201d in practice (too_easy_frontier=2). The proposed failure mode (\u201cCoT applies factorials and gets (-2)! undefined\u201d) is plausible for weaker systems, but for capable models CoT usually helps: it will either switch to the combinatorial interpretation (number of 5-subsets of a 3-set) or recall the identity (n choose k)=0 for k>n, so cot_resistant is low (2). It\u2019s also a well-known trap/exercise seen in many textbooks and Q&A sites (famous_trap=4), violating the novelty constraint.\n\nSuggestions to strengthen: (1) avoid the ubiquitous k>n case; (2) introduce a less-memorized but still unambiguous convention conflict (e.g., specify an exact definition upfront that differs from a common shortcut); (3) create a scenario where step-by-step application of a familiar formula systematically yields a plausible but wrong result without an easy \u201coh right, convention\u201d escape hatch. If you keep binomials, consider a case involving negative upper indices with the generalized identity (e.g., (-3 choose 5)) but then you must clearly specify whether you\u2019re using the generalized binomial via falling factorials/Gamma or restricting to combinatorial n,k\u2208N, otherwise grading becomes ambiguous."
+          },
+          "passes_criteria": false,
+          "latency_ms": 12405
+        }
+      },
+      "adversary_critique": "This is a very common/intro-level convention check: for integers n,k with k>n, (n choose k)=0. Frontier models are quite likely to know or retrieve that rule immediately, so it\u2019s not \u201chard\u201d in practice (too_easy_frontier=2). The proposed failure mode (\u201cCoT applies factorials and gets (-2)! undefined\u201d) is plausible for weaker systems, but for capable models CoT usually helps: it will either switch to the combinatorial interpretation (number of 5-subsets of a 3-set) or recall the identity (n choose k)=0 for k>n, so cot_resistant is low (2). It\u2019s also a well-known trap/exercise seen in many textbooks and Q&A sites (famous_trap=4), violating the novelty constraint.\n\nSuggestions to strengthen: (1) avoid the ubiquitous k>n case; (2) introduce a less-memorized but still unambiguous convention conflict (e.g., specify an exact definition upfront that differs from a common shortcut); (3) create a scenario where step-by-step application of a familiar formula systematically yields a plausible but wrong result without an easy \u201coh right, convention\u201d escape hatch. If you keep binomials, consider a case involving negative upper indices with the generalized identity (e.g., (-3 choose 5)) but then you must clearly specify whether you\u2019re using the generalized binomial via falling factorials/Gamma or restricting to combinatorial n,k\u2208N, otherwise grading becomes ambiguous.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very common/intro-level convention check: for integers n,k with k>n, (n choose k)=0. Frontier models are quite likely to know or retrieve that rule immediately, so it\u2019s not \u201chard\u201d in practice (too_easy_frontier=2). The proposed failure mode (\u201cCoT applies factorials and gets (-2)! undefined\u201d) is plausible for weaker systems, but for capable models CoT usually helps: it will either switch to the combinatorial interpretation (number of 5-subsets of a 3-set) or recall the identity (n choose k)=0 for k>n, so cot_resistant is low (2). It\u2019s also a well-known trap/exercise seen in many textbooks and Q&A sites (famous_trap=4), violating the novelty constraint.\n\nSuggestions to strengthen: (1) avoid the ubiquitous k>n case; (2) introduce a less-memorized but still unambiguous convention conflict (e.g., specify an exact definition upfront that differs from a common shortcut); (3) create a scenario where step-by-step application of a familiar formula systematically yields a plausible but wrong result without an easy \u201coh right, convention\u201d escape hatch. If you keep binomials, consider a case involving negative upper indices with the generalized identity (e.g., (-3 choose 5)) but then you must clearly specify whether you\u2019re using the generalized binomial via falling factorials/Gamma or restricting to combinatorial n,k\u2208N, otherwise grading becomes ambiguous."
+      }
+    }
+  ],
+  "final_status": "reject",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_034",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "In standard combinatorial mathematics, what is the value of the binomial coefficient C(3,5)?",
+    "gold_answer": "0",
+    "gold_answer_aliases": [
+      "0",
+      "zero"
+    ],
+    "grading_rule": "alias_plus_normalization",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "The default convention is to compute C(n,k) using the factorial formula C(n,k) = n! / (k! (n-k)!), which for k>n involves factorial of negative numbers (e.g., (-2)!), leading to an undefined expression. However, in standard combinatorics, C(n,k) is defined as 0 for k>n.",
+    "provenance": "hand_authored",
+    "draft_status": "reject",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "0\n\n(You cannot choose 5 items from 3, so the binomial coefficient C(3,5) = 0.)",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "0",
+      "status": "correct"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "correct",
+    "response": "In standard combinatorial mathematics, C(n, k) = 0 when k > n (since you cannot choose more items than are available).\n\nTherefore, **C(3, 5) = 0**."
+  }
+}

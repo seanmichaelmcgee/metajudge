@@ -1,0 +1,147 @@
+{
+  "mechanism_target": "Python modular arithmetic on negatives: What does -7 % 3 return in Python 3? The mathematical convention gives remainder -1, but Python always returns a non-negative result (2). Models trained on math will apply the wrong convention. The question should be concrete: 'What is the output of print(-7 % 3) in Python 3?'",
+  "subfamily": "C1",
+  "item_slot": 14,
+  "timestamp": "2026-03-31T14:44:07.356214+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "What is the output of print(-7 % 3) in Python 3?",
+            "gold_answer": "2",
+            "gold_answer_aliases": [
+              "2",
+              "2.0"
+            ],
+            "predicted_wrong_answer": "-1",
+            "mechanism": "Python's % operator returns a non-negative remainder when the divisor is positive, following a = b * floor(a / b) + r. In contrast, the mathematical remainder convention often taught in schools yields a remainder with the same sign as the dividend, leading to -1 for -7 % 3.",
+            "cot_reinforcement": "Chain-of-thought reasoning typically recalls the definition a = b*q + r, where r is often taken to have the same sign as a. If the model uses this sign-of-dividend convention, it will derive -1 step by step (e.g., -7 = 3*(-2) - 1), reinforcing the error rather than catching it.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "code"
+          },
+          "latency_ms": 60528
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very well-known Python gotcha: negative modulo behavior is widely documented and frequently used in quizzes/interview-style questions. Frontier models are likely to have seen it many times and answer correctly (so it\u2019s not really \u201chard\u201d in practice). The provided CoT-reinforcement argument is also weak: step-by-step reasoning often *helps* here because it can recall/derive Python\u2019s invariant (result has sign of divisor; use floor division), which corrects the common school-math mistake. Grading is clear (2), though allowing \u201c2.0\u201d is slightly mismatched with actual `print(-7 % 3)` output type (int), and could mask type-sensitive errors if the benchmark cares about exact outputs.\n\nSuggestions to improve hardness/novelty while keeping grading crisp:\n- Use a less-memorized edge: negative *divisor* (`-7 % -3`), or combine with `//` (`-7 // 3`) and require both outputs.\n- Use a mixed-type case that changes type/behavior (`-7 % 3.0`, `Decimal`, `Fraction`) if you want to test deeper semantic understanding.\n- Use a context where memorized \u201cnon-negative remainder\u201d fails: e.g., show the identity with `divmod` and ask for tuple output, or ask for `a == (a//b)*b + (a%b)` verification with specific numbers.\n- If keeping this item, reclassify difficulty to \u201ceasy/medium\u201d and mark as a common trap rather than \u201chard.\u201d"
+          },
+          "passes_criteria": false,
+          "latency_ms": 11355
+        }
+      },
+      "adversary_critique": "This is a very well-known Python gotcha: negative modulo behavior is widely documented and frequently used in quizzes/interview-style questions. Frontier models are likely to have seen it many times and answer correctly (so it\u2019s not really \u201chard\u201d in practice). The provided CoT-reinforcement argument is also weak: step-by-step reasoning often *helps* here because it can recall/derive Python\u2019s invariant (result has sign of divisor; use floor division), which corrects the common school-math mistake. Grading is clear (2), though allowing \u201c2.0\u201d is slightly mismatched with actual `print(-7 % 3)` output type (int), and could mask type-sensitive errors if the benchmark cares about exact outputs.\n\nSuggestions to improve hardness/novelty while keeping grading crisp:\n- Use a less-memorized edge: negative *divisor* (`-7 % -3`), or combine with `//` (`-7 // 3`) and require both outputs.\n- Use a mixed-type case that changes type/behavior (`-7 % 3.0`, `Decimal`, `Fraction`) if you want to test deeper semantic understanding.\n- Use a context where memorized \u201cnon-negative remainder\u201d fails: e.g., show the identity with `divmod` and ask for tuple output, or ask for `a == (a//b)*b + (a%b)` verification with specific numbers.\n- If keeping this item, reclassify difficulty to \u201ceasy/medium\u201d and mark as a common trap rather than \u201chard.\u201d",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very well-known Python gotcha: negative modulo behavior is widely documented and frequently used in quizzes/interview-style questions. Frontier models are likely to have seen it many times and answer correctly (so it\u2019s not really \u201chard\u201d in practice). The provided CoT-reinforcement argument is also weak: step-by-step reasoning often *helps* here because it can recall/derive Python\u2019s invariant (result has sign of divisor; use floor division), which corrects the common school-math mistake. Grading is clear (2), though allowing \u201c2.0\u201d is slightly mismatched with actual `print(-7 % 3)` output type (int), and could mask type-sensitive errors if the benchmark cares about exact outputs.\n\nSuggestions to improve hardness/novelty while keeping grading crisp:\n- Use a less-memorized edge: negative *divisor* (`-7 % -3`), or combine with `//` (`-7 // 3`) and require both outputs.\n- Use a mixed-type case that changes type/behavior (`-7 % 3.0`, `Decimal`, `Fraction`) if you want to test deeper semantic understanding.\n- Use a context where memorized \u201cnon-negative remainder\u201d fails: e.g., show the identity with `divmod` and ask for tuple output, or ask for `a == (a//b)*b + (a%b)` verification with specific numbers.\n- If keeping this item, reclassify difficulty to \u201ceasy/medium\u201d and mark as a common trap rather than \u201chard.\u201d"
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "What is the output of print(-7 % -3) in Python 3?",
+            "gold_answer": "-1",
+            "gold_answer_aliases": [
+              "-1"
+            ],
+            "predicted_wrong_answer": "2",
+            "mechanism": "Python's modulo operator % returns a result with the same sign as the divisor, which for -7 % -3 yields -1. The default mathematical convention of non-negative remainder (0 \u2264 r < |b|) would give 2.",
+            "cot_reinforcement": "In chain-of-thought reasoning, models typically recall that remainders should be non-negative and derive -7 = (-3)*3 + 2, reinforcing the incorrect answer 2 without considering Python's sign rule.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "code"
+          },
+          "latency_ms": 202945
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very well-known Python gotcha (negative modulo follows floor-division semantics; remainder has the sign of the divisor). Frontier models frequently memorize this exact rule and/or have seen this exact example family, so it\u2019s not reliably hard.\n\nCoT resistance is also weaker than claimed: a careful chain-of-thought that explicitly uses Python\u2019s identity a == (a//b)*b + (a%b) with // as floor will typically correct the \u201cnon-negative remainder\u201d intuition. In other words, CoT tends to fix the error rather than reinforce it.\n\nGrading is crystal clear (unique numeric output), and self-correction on review is very plausible.\n\nSuggestions to improve (less famous / more CoT-resistant):\n- Use a less-memorized corner: interplay with floats or Decimal (e.g., -7.0 % -3.0), or with fractions, or with numpy arrays (numpy differs in edge cases), while keeping a single unambiguous output.\n- Hide the sign rule behind intermediate expressions that make \u201cjust recall the rule\u201d harder (e.g., compute b from another expression, mix in // and % together, or use divmod and index one component).\n- Consider a language/library where remainder conventions are less memorized than Python\u2019s, while still being precisely spec-defined."
+          },
+          "passes_criteria": false,
+          "latency_ms": 12711
+        }
+      },
+      "adversary_critique": "This is a very well-known Python gotcha (negative modulo follows floor-division semantics; remainder has the sign of the divisor). Frontier models frequently memorize this exact rule and/or have seen this exact example family, so it\u2019s not reliably hard.\n\nCoT resistance is also weaker than claimed: a careful chain-of-thought that explicitly uses Python\u2019s identity a == (a//b)*b + (a%b) with // as floor will typically correct the \u201cnon-negative remainder\u201d intuition. In other words, CoT tends to fix the error rather than reinforce it.\n\nGrading is crystal clear (unique numeric output), and self-correction on review is very plausible.\n\nSuggestions to improve (less famous / more CoT-resistant):\n- Use a less-memorized corner: interplay with floats or Decimal (e.g., -7.0 % -3.0), or with fractions, or with numpy arrays (numpy differs in edge cases), while keeping a single unambiguous output.\n- Hide the sign rule behind intermediate expressions that make \u201cjust recall the rule\u201d harder (e.g., compute b from another expression, mix in // and % together, or use divmod and index one component).\n- Consider a language/library where remainder conventions are less memorized than Python\u2019s, while still being precisely spec-defined.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very well-known Python gotcha (negative modulo follows floor-division semantics; remainder has the sign of the divisor). Frontier models frequently memorize this exact rule and/or have seen this exact example family, so it\u2019s not reliably hard.\n\nCoT resistance is also weaker than claimed: a careful chain-of-thought that explicitly uses Python\u2019s identity a == (a//b)*b + (a%b) with // as floor will typically correct the \u201cnon-negative remainder\u201d intuition. In other words, CoT tends to fix the error rather than reinforce it.\n\nGrading is crystal clear (unique numeric output), and self-correction on review is very plausible.\n\nSuggestions to improve (less famous / more CoT-resistant):\n- Use a less-memorized corner: interplay with floats or Decimal (e.g., -7.0 % -3.0), or with fractions, or with numpy arrays (numpy differs in edge cases), while keeping a single unambiguous output.\n- Hide the sign rule behind intermediate expressions that make \u201cjust recall the rule\u201d harder (e.g., compute b from another expression, mix in // and % together, or use divmod and index one component).\n- Consider a language/library where remainder conventions are less memorized than Python\u2019s, while still being precisely spec-defined."
+      }
+    }
+  ],
+  "final_status": "accept",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_014",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "What is the output of print(-7 % -3) in Python 3?",
+    "gold_answer": "-1",
+    "gold_answer_aliases": [
+      "-1"
+    ],
+    "grading_rule": "alias_plus_normalization",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "code",
+    "mechanism_primary": "Python's modulo operator % returns a result with the same sign as the divisor, which for -7 % -3 yields -1. The default mathematical convention of non-negative remainder (0 \u2264 r < |b|) would give 2.",
+    "provenance": "hand_authored",
+    "draft_status": "draft",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): wrong. Adversary scores: tef=2, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "-1\n\n(Explanation: -7 = (-3)*2 + (-1), and Python's % gives a remainder with the divisor's sign.)",
+      "status": "wrong"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "-1",
+      "status": "correct"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "wrong",
+    "response": "In Python 3, `print(-7 % -3)` outputs:\n\n**-1**\n\n**Explanation:** In Python, the modulo result takes the sign of the **divisor**. Since both numbers are negative, the result is negative. `-7 = (-3 \u00d7 3) + 2`... actually: `-7 = (-3 \u00d7 2) + (-1)`, so `-7 % -3 = **-1**`."
+  }
+}

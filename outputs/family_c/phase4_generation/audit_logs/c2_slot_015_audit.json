@@ -1,0 +1,155 @@
+{
+  "mechanism_target": "Proof by cases with overlooked case: 'Does every continuous function on [0,1] that equals 0 at both endpoints have a maximum in the interior?' Actually this is guaranteed by extreme value theorem + boundary conditions. Bad example \u2014 too advanced. BETTER: 'A store gives 20% off, then an additional 15% off the reduced price. What is the total percentage discount?' Most say 35% but it's 32% (multiplicative not additive). C2 evidence: 'When applying successive percentage discounts, the second discount applies to the already-reduced price, not the original.'",
+  "subfamily": "C2",
+  "item_slot": 15,
+  "timestamp": "2026-03-31T14:33:49.247158+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "A number is increased by 50% and then decreased by 50%. What is the overall percentage change? (Express your answer as a single percentage, with positive meaning increase and negative meaning decrease.)",
+            "gold_answer": "-25%",
+            "gold_answer_aliases": [
+              "25% decrease",
+              "decrease of 25%",
+              "-25 percent",
+              "-25"
+            ],
+            "predicted_wrong_answer": "0%",
+            "mechanism": "The error arises from assuming that successive percentage changes are additive, so that a 50% increase and a 50% decrease cancel out to 0% change. However, percentage changes are multiplicative: the correct net change is found by multiplying the factors (1.5 and 0.5) to get 0.75, corresponding to a 25% decrease.",
+            "cot_reinforcement": "Chain-of-thought reasoning may explicitly state '50% increase and 50% decrease cancel out, resulting in 0% change' without performing the multiplication. Even if the model carefully computes each step, it might still apply the additive convention, reinforcing the error.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "arithmetic"
+          },
+          "latency_ms": 208149
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 1,
+            "cot_resistant": 2,
+            "famous_trap": 5,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is an extremely well-known percent-change trap (increase 50% then decrease 50% \u2260 0), so it\u2019s unlikely to fool frontier models; many will immediately do 1.5\u00d70.5=0.75. It\u2019s also not very CoT-resistant: even minimal step-by-step reasoning tends to correct the additive misconception by switching to multiplicative factors. Grading is clear, but your alias list includes \"-25\" which is mildly risky: without a percent sign it could be interpreted as a raw change, and some normalizers may accept it even if the model didn\u2019t express a percentage as requested. Suggestions: make the trap less famous by using less canonical numbers (e.g., +37% then \u221237%), add an extra step (e.g., +50%, \u221250%, +50% and ask net), or embed in a realistic context (price changes with different bases). Tighten aliases to require an explicit percent (e.g., disallow bare \"-25\" unless you\u2019re confident normalization enforces the unit)."
+          },
+          "passes_criteria": false,
+          "latency_ms": 18783
+        }
+      },
+      "adversary_critique": "This is an extremely well-known percent-change trap (increase 50% then decrease 50% \u2260 0), so it\u2019s unlikely to fool frontier models; many will immediately do 1.5\u00d70.5=0.75. It\u2019s also not very CoT-resistant: even minimal step-by-step reasoning tends to correct the additive misconception by switching to multiplicative factors. Grading is clear, but your alias list includes \"-25\" which is mildly risky: without a percent sign it could be interpreted as a raw change, and some normalizers may accept it even if the model didn\u2019t express a percentage as requested. Suggestions: make the trap less famous by using less canonical numbers (e.g., +37% then \u221237%), add an extra step (e.g., +50%, \u221250%, +50% and ask net), or embed in a realistic context (price changes with different bases). Tighten aliases to require an explicit percent (e.g., disallow bare \"-25\" unless you\u2019re confident normalization enforces the unit).",
+      "adversary_scores": {
+        "too_easy_frontier": 1,
+        "cot_resistant": 2,
+        "famous_trap": 5,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is an extremely well-known percent-change trap (increase 50% then decrease 50% \u2260 0), so it\u2019s unlikely to fool frontier models; many will immediately do 1.5\u00d70.5=0.75. It\u2019s also not very CoT-resistant: even minimal step-by-step reasoning tends to correct the additive misconception by switching to multiplicative factors. Grading is clear, but your alias list includes \"-25\" which is mildly risky: without a percent sign it could be interpreted as a raw change, and some normalizers may accept it even if the model didn\u2019t express a percentage as requested. Suggestions: make the trap less famous by using less canonical numbers (e.g., +37% then \u221237%), add an extra step (e.g., +50%, \u221250%, +50% and ask net), or embed in a realistic context (price changes with different bases). Tighten aliases to require an explicit percent (e.g., disallow bare \"-25\" unless you\u2019re confident normalization enforces the unit)."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "Two fair six-sided dice are rolled. What is the probability that the sum is even, given that at least one die shows a 6?",
+            "gold_answer": "5/11",
+            "gold_answer_aliases": [
+              "5/11",
+              "0.454545...",
+              "0.4545",
+              "approximately 0.4545"
+            ],
+            "predicted_wrong_answer": "1/2",
+            "mechanism": "The error arises from the default convention of conditioning on a specific die being 6, which leads to assuming the other die's parity independently determines the sum's parity, yielding probability 1/2. Correctly, the condition 'at least one 6' has 11 equally likely outcomes, with 5 having even sum.",
+            "cot_reinforcement": "In chain-of-thought reasoning, models often step through: 'Since one die is 6, the sum is even if the other die is even, which has probability 3/6 = 1/2.' This reinforces the error because it applies the wrong conditioning convention (fixing one die) without considering the full conditional sample space of 11 outcomes.",
+            "grading_rule": "fraction_or_decimal",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 171962
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 1,
+            "cot_resistant": 2,
+            "famous_trap": 3,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "Main weakness: this is too easy for frontier models. Most will either (a) explicitly count the 11 conditional outcomes, or (b) remember the standard \u201cat least one 6\u201d conditional-sample-space pattern, quickly yielding 5/11.\n\nThe proposed failure mode (\u201cmodels condition as if a specific die is 6, so P=1/2\u201d) is real but not robust under chain-of-thought: a minimal sanity check (\u201care outcomes equally likely under \u2018at least one 6\u2019?\u201d) or quick enumeration immediately fixes it. So CoT tends to correct rather than reinforce the error (cot_resistant too low).\n\nIt\u2019s also a fairly well-known conditional-probability trap variant (similar to \u2018at least one is a 6/boy\u2019 problems), making it more \u2018famous\u2019 than desired.\n\nSuggestions to strengthen:\n- Reduce \u2018famousness\u2019 by avoiding the classic \u201cat least one is X\u201d conditioning; instead specify an observation protocol (e.g., \u201ca randomly chosen die is revealed to be 6\u201d) so the conditioning is subtle and not just 11 outcomes.\n- Make the misleading shortcut survive more careful reasoning (e.g., introduce asymmetry/selection bias: a die is rerolled unless it shows 6; or a die is chosen conditional on showing 6).\n- If you keep \u2018at least one 6\u2019, add an additional condition that breaks simple parity reasoning and makes enumeration easier to botch (but still gradeable), e.g., constraints involving max/min, ordering, or partial information revealed by an observer."
+          },
+          "passes_criteria": false,
+          "latency_ms": 17463
+        }
+      },
+      "adversary_critique": "Main weakness: this is too easy for frontier models. Most will either (a) explicitly count the 11 conditional outcomes, or (b) remember the standard \u201cat least one 6\u201d conditional-sample-space pattern, quickly yielding 5/11.\n\nThe proposed failure mode (\u201cmodels condition as if a specific die is 6, so P=1/2\u201d) is real but not robust under chain-of-thought: a minimal sanity check (\u201care outcomes equally likely under \u2018at least one 6\u2019?\u201d) or quick enumeration immediately fixes it. So CoT tends to correct rather than reinforce the error (cot_resistant too low).\n\nIt\u2019s also a fairly well-known conditional-probability trap variant (similar to \u2018at least one is a 6/boy\u2019 problems), making it more \u2018famous\u2019 than desired.\n\nSuggestions to strengthen:\n- Reduce \u2018famousness\u2019 by avoiding the classic \u201cat least one is X\u201d conditioning; instead specify an observation protocol (e.g., \u201ca randomly chosen die is revealed to be 6\u201d) so the conditioning is subtle and not just 11 outcomes.\n- Make the misleading shortcut survive more careful reasoning (e.g., introduce asymmetry/selection bias: a die is rerolled unless it shows 6; or a die is chosen conditional on showing 6).\n- If you keep \u2018at least one 6\u2019, add an additional condition that breaks simple parity reasoning and makes enumeration easier to botch (but still gradeable), e.g., constraints involving max/min, ordering, or partial information revealed by an observer.",
+      "adversary_scores": {
+        "too_easy_frontier": 1,
+        "cot_resistant": 2,
+        "famous_trap": 3,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "Main weakness: this is too easy for frontier models. Most will either (a) explicitly count the 11 conditional outcomes, or (b) remember the standard \u201cat least one 6\u201d conditional-sample-space pattern, quickly yielding 5/11.\n\nThe proposed failure mode (\u201cmodels condition as if a specific die is 6, so P=1/2\u201d) is real but not robust under chain-of-thought: a minimal sanity check (\u201care outcomes equally likely under \u2018at least one 6\u2019?\u201d) or quick enumeration immediately fixes it. So CoT tends to correct rather than reinforce the error (cot_resistant too low).\n\nIt\u2019s also a fairly well-known conditional-probability trap variant (similar to \u2018at least one is a 6/boy\u2019 problems), making it more \u2018famous\u2019 than desired.\n\nSuggestions to strengthen:\n- Reduce \u2018famousness\u2019 by avoiding the classic \u201cat least one is X\u201d conditioning; instead specify an observation protocol (e.g., \u201ca randomly chosen die is revealed to be 6\u201d) so the conditioning is subtle and not just 11 outcomes.\n- Make the misleading shortcut survive more careful reasoning (e.g., introduce asymmetry/selection bias: a die is rerolled unless it shows 6; or a die is chosen conditional on showing 6).\n- If you keep \u2018at least one 6\u2019, add an additional condition that breaks simple parity reasoning and makes enumeration easier to botch (but still gradeable), e.g., constraints involving max/min, ordering, or partial information revealed by an observer."
+      }
+    }
+  ],
+  "final_status": "accept",
+  "item_bundle": {
+    "item_id": "sc_c2_wr_015",
+    "family": "C",
+    "subfamily": "C2",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "Two fair six-sided dice are rolled. What is the probability that the sum is even, given that at least one die shows a 6?",
+    "gold_answer": "5/11",
+    "gold_answer_aliases": [
+      "5/11",
+      "0.454545...",
+      "0.4545",
+      "approximately 0.4545"
+    ],
+    "grading_rule": "fraction_or_decimal",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "contradiction",
+    "evidence_snippet": "\"At least one die shows a 6\" is a constraint on the *pair* of outcomes, not a statement about a specific, pre-designated die \u2014 so the sample space you're conditioning on may contain a different number of outcomes than you expect.",
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "The error arises from the default convention of conditioning on a specific die being 6, which leads to assuming the other die's parity independently determines the sum's parity, yielding probability 1/2. Correctly, the condition 'at least one 6' has 11 equally likely outcomes, with 5 having even sum.",
+    "provenance": "hand_authored",
+    "draft_status": "draft",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): unclear. Adversary scores: tef=1, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "5/11\n\nReason: 11 outcomes have at least one 6 (36 total minus 25 with no 6). Of these, the even-sum outcomes are (6,2),(6,4),(6,6),(2,6),(4,6) = 5, so 5/11.",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "Let $D_1$ and $D_2$ be the outcomes of the two dice.\nThe total number of possible outcomes is $6 \\times 6 = 36$.\n\nLet $A$ be the event that the sum is even.\nThe sum $D_1 + D_2$ is even if both $D_1$ and $D_2$ are even, or if both $D_1$ and $D_2$ are odd.\nNumber of even outcomes for a single die: $\\{",
+      "status": "unclear"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "unclear",
+    "response": "## Setting Up the Problem\n\nI need P(sum is even | at least one die shows 6).\n\n**Using conditional probability:** P(A|B) = P(A\u2229B) / P(B)\n\n## Finding P(at least one die shows 6)\n\nTotal outcomes: 36\n\nOutcomes with at least one 6:\n- Die 1 shows 6: 6 outcomes\n- Die 2 shows 6: 6 outcomes  \n- Both show 6: 1 outcome\n\nCount = 6 + 6 - 1 = **11 outcomes**\n\n## Finding P(sum is even AND at least one die shows 6)\n\nSum is even when both dice are even or both are odd.\n\nSince 6 is even, the other die must also b"
+  }
+}

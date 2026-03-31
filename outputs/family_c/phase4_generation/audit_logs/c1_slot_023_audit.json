@@ -1,0 +1,151 @@
+{
+  "mechanism_target": "Base conversion with leading zeros: 'Convert the decimal number 7 to binary. How many bits are needed to represent it?' 7 in binary is 111, which requires 3 bits. But the trap version: 'Convert 8 to binary. How many bits?' 8 = 1000, which is 4 bits. The convention trap: does 'represent' mean the minimum bits, or a standard byte (8 bits)? Design the question to exploit this ambiguity.",
+  "subfamily": "C1",
+  "item_slot": 23,
+  "timestamp": "2026-03-31T14:33:47.256484+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "Convert the decimal number 7 to binary for a digital system that uses 4-bit words. How many bits are in the binary representation?",
+            "gold_answer": "4 bits",
+            "gold_answer_aliases": [
+              "4",
+              "four",
+              "four bits",
+              "4 bits"
+            ],
+            "predicted_wrong_answer": "3 bits",
+            "mechanism": "The default convention for binary conversion is to use the minimum number of bits (e.g., 7 in binary is 111, requiring 3 bits), but this problem specifies a system with 4-bit words, so leading zeros must be added (0111), requiring 4 bits.",
+            "cot_reinforcement": "In chain-of-thought reasoning, the model will typically compute 7 in binary as 111, count the bits as 3, and conclude 3 bits, reinforcing the error by not reconsidering the context of fixed 4-bit words after the initial conversion.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 110736
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 3,
+            "grading_clarity": 4,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "Main weakness: this is not hard for frontier models. The prompt explicitly says \u201cuses 4-bit words,\u201d which strongly cues zero-padding to 0111 and \u201c4 bits.\u201d Most competent models will not ignore that constraint.\n\nCoT-resistance is also weak: step-by-step reasoning typically *helps* here because a careful chain will (a) compute 7 -> 111, then (b) recall the 4-bit word constraint and pad to 0111, yielding 4. The failure mode \u201ccompute then forget the word size\u201d is possible but not robust against deliberation.\n\nIt\u2019s also a fairly well-known trap in introductory digital logic (minimum bits vs fixed word width), making it closer to a common gotcha than a novel self-correction test.\n\nSuggestions to strengthen:\n- Make the word-width constraint easier to miss without being unfair, e.g., place it in a preceding sentence or earlier context, or embed it in a longer spec.\n- Increase ambiguity pressure: ask for both \u201cbinary value\u201d and \u201cnumber of bits transmitted/stored,\u201d or include signed/unsigned mention (two\u2019s complement) plus fixed width.\n- Add distractors that make \u2018minimum bits\u2019 feel more justified (e.g., mention \u201cstandard binary conversion\u201d elsewhere) while still clearly requiring fixed width.\n- Ensure grading expects exactly the bit-count under the specified representation (and consider requiring the actual 4-bit string \u20180111\u2019 to reduce answers like just \u201c4\u201d)."
+          },
+          "passes_criteria": false,
+          "latency_ms": 9346
+        }
+      },
+      "adversary_critique": "Main weakness: this is not hard for frontier models. The prompt explicitly says \u201cuses 4-bit words,\u201d which strongly cues zero-padding to 0111 and \u201c4 bits.\u201d Most competent models will not ignore that constraint.\n\nCoT-resistance is also weak: step-by-step reasoning typically *helps* here because a careful chain will (a) compute 7 -> 111, then (b) recall the 4-bit word constraint and pad to 0111, yielding 4. The failure mode \u201ccompute then forget the word size\u201d is possible but not robust against deliberation.\n\nIt\u2019s also a fairly well-known trap in introductory digital logic (minimum bits vs fixed word width), making it closer to a common gotcha than a novel self-correction test.\n\nSuggestions to strengthen:\n- Make the word-width constraint easier to miss without being unfair, e.g., place it in a preceding sentence or earlier context, or embed it in a longer spec.\n- Increase ambiguity pressure: ask for both \u201cbinary value\u201d and \u201cnumber of bits transmitted/stored,\u201d or include signed/unsigned mention (two\u2019s complement) plus fixed width.\n- Add distractors that make \u2018minimum bits\u2019 feel more justified (e.g., mention \u201cstandard binary conversion\u201d elsewhere) while still clearly requiring fixed width.\n- Ensure grading expects exactly the bit-count under the specified representation (and consider requiring the actual 4-bit string \u20180111\u2019 to reduce answers like just \u201c4\u201d).",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 3,
+        "grading_clarity": 4,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "Main weakness: this is not hard for frontier models. The prompt explicitly says \u201cuses 4-bit words,\u201d which strongly cues zero-padding to 0111 and \u201c4 bits.\u201d Most competent models will not ignore that constraint.\n\nCoT-resistance is also weak: step-by-step reasoning typically *helps* here because a careful chain will (a) compute 7 -> 111, then (b) recall the 4-bit word constraint and pad to 0111, yielding 4. The failure mode \u201ccompute then forget the word size\u201d is possible but not robust against deliberation.\n\nIt\u2019s also a fairly well-known trap in introductory digital logic (minimum bits vs fixed word width), making it closer to a common gotcha than a novel self-correction test.\n\nSuggestions to strengthen:\n- Make the word-width constraint easier to miss without being unfair, e.g., place it in a preceding sentence or earlier context, or embed it in a longer spec.\n- Increase ambiguity pressure: ask for both \u201cbinary value\u201d and \u201cnumber of bits transmitted/stored,\u201d or include signed/unsigned mention (two\u2019s complement) plus fixed width.\n- Add distractors that make \u2018minimum bits\u2019 feel more justified (e.g., mention \u201cstandard binary conversion\u201d elsewhere) while still clearly requiring fixed width.\n- Ensure grading expects exactly the bit-count under the specified representation (and consider requiring the actual 4-bit string \u20180111\u2019 to reduce answers like just \u201c4\u201d)."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "What is the value of (-1)^(2/6) in the real numbers? Simplify the expression to a single real number.",
+            "gold_answer": "-1",
+            "gold_answer_aliases": [
+              "-1",
+              "negative one"
+            ],
+            "predicted_wrong_answer": "1",
+            "mechanism": "The default convention is to evaluate exponentiation step-by-step without simplifying the rational exponent first: compute (-1)^2 = 1, then take the sixth root to get 1. However, for negative bases with rational exponents, one must simplify the exponent to lowest terms before applying exponent rules, yielding (-1)^(1/3) = -1. The property (a^m)^n = a^(mn) is not generally valid for negative a when mn is not an integer.",
+            "cot_reinforcement": "Chain-of-thought reasoning that follows the typical order of operations without simplifying the exponent will compute (-1)^2 = 1, then 1^(1/6) = 1. Each step appears mathematically sound individually, reinforcing the error because the critical step of simplifying the exponent is overlooked.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 341224
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 3,
+            "cot_resistant": 3,
+            "famous_trap": 2,
+            "grading_clarity": 4,
+            "revision_plausibility": 5,
+            "accept": true,
+            "critique": "Core math: In the reals, (-1)^(2/6) should be interpreted by first reducing 2/6 -> 1/3; since the reduced denominator is odd, (-1)^(1/3) = -1. The proposed wrong path (compute (-1)^2 then take a 6th root) is a realistic algebra-law misuse, and step-by-step reasoning can indeed entrench it.\n\nWeaknesses / risks:\n- Definition ambiguity: Some solvers will say (-1)^(2/6) is undefined in R because the \u201c6th root\u201d framing suggests an even root of a negative (even though (-1)^(2/6) is not actually that once reduced). Others will default to complex principal value via exp((2/6)Log(-1)), yielding a non-real result. Your prompt says \u201cin the real numbers\u201d and \u201csimplify,\u201d which mostly resolves this, but it still leaves room for debate about whether the expression is well-formed before simplification.\n- Slightly common pitfall: The negative-base rational-exponent caveat is a known algebra/analysis subtlety (not ultra-famous, but not novel). A careful frontier model might immediately reduce 2/6 and answer -1, making it borderline on \u2018hard\u2019.\n\nSuggestions to tighten grading clarity and reduce escape hatches:\n- Add an explicit convention: \u201cInterpret a^(p/q) for rational p/q in lowest terms, with q>0, as the real q-th root when it exists.\u201d\n- Or rephrase: \u201cReduce the exponent to lowest terms first, then evaluate in R.\u201d\n- Consider adding a distractor about complex values to head off \u2018principal value\u2019 answers (or explicitly disallow complex logarithm interpretations).\n\nOverall: Acceptable item; the gold is defensible and the error mechanism is plausible, but you should lock down the exponentiation convention to eliminate \u2018undefined/complex\u2019 arguments."
+          },
+          "passes_criteria": true,
+          "latency_ms": 22031
+        }
+      },
+      "adversary_critique": "Core math: In the reals, (-1)^(2/6) should be interpreted by first reducing 2/6 -> 1/3; since the reduced denominator is odd, (-1)^(1/3) = -1. The proposed wrong path (compute (-1)^2 then take a 6th root) is a realistic algebra-law misuse, and step-by-step reasoning can indeed entrench it.\n\nWeaknesses / risks:\n- Definition ambiguity: Some solvers will say (-1)^(2/6) is undefined in R because the \u201c6th root\u201d framing suggests an even root of a negative (even though (-1)^(2/6) is not actually that once reduced). Others will default to complex principal value via exp((2/6)Log(-1)), yielding a non-real result. Your prompt says \u201cin the real numbers\u201d and \u201csimplify,\u201d which mostly resolves this, but it still leaves room for debate about whether the expression is well-formed before simplification.\n- Slightly common pitfall: The negative-base rational-exponent caveat is a known algebra/analysis subtlety (not ultra-famous, but not novel). A careful frontier model might immediately reduce 2/6 and answer -1, making it borderline on \u2018hard\u2019.\n\nSuggestions to tighten grading clarity and reduce escape hatches:\n- Add an explicit convention: \u201cInterpret a^(p/q) for rational p/q in lowest terms, with q>0, as the real q-th root when it exists.\u201d\n- Or rephrase: \u201cReduce the exponent to lowest terms first, then evaluate in R.\u201d\n- Consider adding a distractor about complex values to head off \u2018principal value\u2019 answers (or explicitly disallow complex logarithm interpretations).\n\nOverall: Acceptable item; the gold is defensible and the error mechanism is plausible, but you should lock down the exponentiation convention to eliminate \u2018undefined/complex\u2019 arguments.",
+      "adversary_scores": {
+        "too_easy_frontier": 3,
+        "cot_resistant": 3,
+        "famous_trap": 2,
+        "grading_clarity": 4,
+        "revision_plausibility": 5,
+        "accept": true,
+        "critique": "Core math: In the reals, (-1)^(2/6) should be interpreted by first reducing 2/6 -> 1/3; since the reduced denominator is odd, (-1)^(1/3) = -1. The proposed wrong path (compute (-1)^2 then take a 6th root) is a realistic algebra-law misuse, and step-by-step reasoning can indeed entrench it.\n\nWeaknesses / risks:\n- Definition ambiguity: Some solvers will say (-1)^(2/6) is undefined in R because the \u201c6th root\u201d framing suggests an even root of a negative (even though (-1)^(2/6) is not actually that once reduced). Others will default to complex principal value via exp((2/6)Log(-1)), yielding a non-real result. Your prompt says \u201cin the real numbers\u201d and \u201csimplify,\u201d which mostly resolves this, but it still leaves room for debate about whether the expression is well-formed before simplification.\n- Slightly common pitfall: The negative-base rational-exponent caveat is a known algebra/analysis subtlety (not ultra-famous, but not novel). A careful frontier model might immediately reduce 2/6 and answer -1, making it borderline on \u2018hard\u2019.\n\nSuggestions to tighten grading clarity and reduce escape hatches:\n- Add an explicit convention: \u201cInterpret a^(p/q) for rational p/q in lowest terms, with q>0, as the real q-th root when it exists.\u201d\n- Or rephrase: \u201cReduce the exponent to lowest terms first, then evaluate in R.\u201d\n- Consider adding a distractor about complex values to head off \u2018principal value\u2019 answers (or explicitly disallow complex logarithm interpretations).\n\nOverall: Acceptable item; the gold is defensible and the error mechanism is plausible, but you should lock down the exponentiation convention to eliminate \u2018undefined/complex\u2019 arguments."
+      }
+    }
+  ],
+  "final_status": "accept",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_023",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "What is the value of (-1)^(2/6) in the real numbers? Simplify the expression to a single real number.",
+    "gold_answer": "-1",
+    "gold_answer_aliases": [
+      "-1",
+      "negative one"
+    ],
+    "grading_rule": "alias_plus_normalization",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "The default convention is to evaluate exponentiation step-by-step without simplifying the rational exponent first: compute (-1)^2 = 1, then take the sixth root to get 1. However, for negative bases with rational exponents, one must simplify the exponent to lowest terms before applying exponent rules, yielding (-1)^(1/3) = -1. The property (a^m)^n = a^(mn) is not generally valid for negative a when mn is not an integer.",
+    "provenance": "hand_authored",
+    "draft_status": "draft",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 0/2. Frontier (anthropic/claude-sonnet-4.6): wrong. Adversary scores: tef=3, cr=3",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "-1\n\nReason: 2/6 = 1/3, so (-1)^(2/6) = (-1)^(1/3) = the real cube root of -1 = -1.",
+      "status": "wrong"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "The expression $(-1)^{2/6}$ can be simplified as follows:\n\nFirst, simplify the exponent:\n$2/6 = 1/3$\n\nSo the expression becomes:\n$(-1)^{1/3}$\n\nThis represents the cube root of -1.\nThe cube root of -1 is -1, because $(-1) \\times (-1) \\times (-1) = 1 \\times (-1) = -1$.\n\nTherefore, the value of $(-1)^{",
+      "status": "wrong"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "wrong",
+    "response": "## Simplifying (-1)^(2/6)\n\nFirst, simplify the exponent:\n\n$$(-1)^{2/6} = (-1)^{1/3}$$\n\nThe cube root of -1 in the real numbers is:\n\n$$(-1)^{1/3} = \\sqrt[3]{-1} = \\boxed{-1}$$"
+  }
+}

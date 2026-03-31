@@ -1,0 +1,157 @@
+{
+  "mechanism_target": "pH logarithmic scale: 'If solution A has pH 3 and solution B has pH 6, how many times more acidic is solution A than solution B?' The answer is 1000\u00d7 (each pH unit is 10\u00d7, so 3 units = 10^3 = 1000). Models may answer 3\u00d7 (additive) or 2\u00d7 (ratio of pH values). The C2 evidence should hint about the logarithmic nature: 'Remember that the pH scale is logarithmic, not linear.'",
+  "subfamily": "C2",
+  "item_slot": 13,
+  "timestamp": "2026-03-31T14:33:48.248288+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "Sound intensity level is measured in decibels (dB). A quiet library has a sound intensity level of 30 dB. A normal conversation measures 60 dB. How many times more intense is the sound of normal conversation compared to the quiet library?",
+            "gold_answer": "1000",
+            "gold_answer_aliases": [
+              "1000 times",
+              "10^3",
+              "a thousand",
+              "1000x"
+            ],
+            "predicted_wrong_answer": "2",
+            "mechanism": "Treating decibels as linear units (e.g., taking the ratio 60/30 = 2), while decibels are logarithmic: each 10 dB increase corresponds to a factor of 10 in intensity, so a 30 dB difference gives 10^(30/10) = 1000.",
+            "cot_reinforcement": "Chain-of-thought reasoning may explicitly compute the arithmetic ratio or difference of the dB values (60/30=2 or 60-30=30) and conclude a linear relationship, reinforcing the error. Even if the model recalls decibels are logarithmic, it might misremember the conversion factor (e.g., using base 2).",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "science"
+          },
+          "latency_ms": 131613
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 4,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This item is a very standard decibel-to-intensity-ratio question (30 dB difference -> 10^(3) = 1000). Frontier models are likely to recall the canonical rule-of-thumb (10 dB = 10\u00d7 intensity), making it too easy. It\u2019s also a well-known classroom trap, so it violates the \u201cnot famous\u201d criterion.\n\nThe claimed failure mode (\u201cCoT reinforces linear reasoning\u201d) is not very convincing here: chain-of-thought typically helps by prompting the model to recall/derive the logarithmic definition (L = 10 log10(I/I0)), which directly corrects the linear mistake, so the item is not CoT-resistant.\n\nWhat\u2019s good: grading is crystal clear (single numeric ratio; aliases cover common formats), and self-correction is very plausible.\n\nSuggestions to strengthen (make it harder/less famous and more CoT-resistant):\n- Avoid the canonical 30 dB gap; use non-round differences (e.g., 37 dB vs 62 dB) requiring 10^((\u0394)/10) with a non-integer exponent and a specified rounding rule.\n- Introduce the common confusion between intensity level (10 log10) vs pressure/amplitude level (20 log10). For example: \u201csound pressure level\u201d vs \u201cintensity level,\u201d and ask for pressure amplitude ratio vs intensity ratio.\n- Add realistic context that forces careful interpretation (e.g., two sources at different distances; inverse-square law + dB addition), which can create subtler, less memorized pitfalls.\n- Specify rounding/format requirements if the answer won\u2019t be an integer, to preserve grading clarity."
+          },
+          "passes_criteria": false,
+          "latency_ms": 12727
+        }
+      },
+      "adversary_critique": "This item is a very standard decibel-to-intensity-ratio question (30 dB difference -> 10^(3) = 1000). Frontier models are likely to recall the canonical rule-of-thumb (10 dB = 10\u00d7 intensity), making it too easy. It\u2019s also a well-known classroom trap, so it violates the \u201cnot famous\u201d criterion.\n\nThe claimed failure mode (\u201cCoT reinforces linear reasoning\u201d) is not very convincing here: chain-of-thought typically helps by prompting the model to recall/derive the logarithmic definition (L = 10 log10(I/I0)), which directly corrects the linear mistake, so the item is not CoT-resistant.\n\nWhat\u2019s good: grading is crystal clear (single numeric ratio; aliases cover common formats), and self-correction is very plausible.\n\nSuggestions to strengthen (make it harder/less famous and more CoT-resistant):\n- Avoid the canonical 30 dB gap; use non-round differences (e.g., 37 dB vs 62 dB) requiring 10^((\u0394)/10) with a non-integer exponent and a specified rounding rule.\n- Introduce the common confusion between intensity level (10 log10) vs pressure/amplitude level (20 log10). For example: \u201csound pressure level\u201d vs \u201cintensity level,\u201d and ask for pressure amplitude ratio vs intensity ratio.\n- Add realistic context that forces careful interpretation (e.g., two sources at different distances; inverse-square law + dB addition), which can create subtler, less memorized pitfalls.\n- Specify rounding/format requirements if the answer won\u2019t be an integer, to preserve grading clarity.",
+      "adversary_scores": {
+        "too_easy_frontier": 4,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This item is a very standard decibel-to-intensity-ratio question (30 dB difference -> 10^(3) = 1000). Frontier models are likely to recall the canonical rule-of-thumb (10 dB = 10\u00d7 intensity), making it too easy. It\u2019s also a well-known classroom trap, so it violates the \u201cnot famous\u201d criterion.\n\nThe claimed failure mode (\u201cCoT reinforces linear reasoning\u201d) is not very convincing here: chain-of-thought typically helps by prompting the model to recall/derive the logarithmic definition (L = 10 log10(I/I0)), which directly corrects the linear mistake, so the item is not CoT-resistant.\n\nWhat\u2019s good: grading is crystal clear (single numeric ratio; aliases cover common formats), and self-correction is very plausible.\n\nSuggestions to strengthen (make it harder/less famous and more CoT-resistant):\n- Avoid the canonical 30 dB gap; use non-round differences (e.g., 37 dB vs 62 dB) requiring 10^((\u0394)/10) with a non-integer exponent and a specified rounding rule.\n- Introduce the common confusion between intensity level (10 log10) vs pressure/amplitude level (20 log10). For example: \u201csound pressure level\u201d vs \u201cintensity level,\u201d and ask for pressure amplitude ratio vs intensity ratio.\n- Add realistic context that forces careful interpretation (e.g., two sources at different distances; inverse-square law + dB addition), which can create subtler, less memorized pitfalls.\n- Specify rounding/format requirements if the answer won\u2019t be an integer, to preserve grading clarity."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "An investment grows by 100% in the first year and by 50% in the second year. What is the average annual growth rate over the two years? Express your answer as a decimal.",
+            "gold_answer": "0.7320508075688772",
+            "gold_answer_aliases": [
+              "\u221a3 - 1",
+              "0.732",
+              "0.73205",
+              "0.732051",
+              "0.7320508"
+            ],
+            "predicted_wrong_answer": "0.75",
+            "mechanism": "The default convention is to compute the arithmetic mean of the percentage growth rates ( (100% + 50%)/2 = 75% ), but because growth compounds multiplicatively, the correct average is the geometric mean of the growth factors minus one ( \u221a(2 \u00d7 1.5) - 1 = \u221a3 - 1 \u2248 0.732 ).",
+            "cot_reinforcement": "In chain-of-thought reasoning, models often list the growth rates and then average them arithmetically step by step, reinforcing the error without considering the compounding effect or deriving from first principles using growth factors.",
+            "grading_rule": "approx_numeric_small",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 292206
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very standard CAGR vs arithmetic-mean-returns question. Frontier models commonly recognize \u201caverage annual growth rate\u201d as CAGR and compute sqrt(2*1.5)-1 correctly, so it\u2019s likely too easy to fool them (too_easy_frontier=2). Also, chain-of-thought typically *helps* here: if the model writes down initial value 1 \u2192 2 \u2192 3 and then solves (1+r)^2=3, it self-corrects naturally; the described CoT failure mode (blindly averaging 100% and 50%) is more typical of shallow reasoning, not robust CoT (cot_resistant=2). The trap is well-known in finance/math pedagogy (famous_trap=4), so it violates the \u201cnot well-known\u201d criterion.\n\nWhat works well: the gold answer is unambiguous and grading is clear (CAGR has a single value; approx_numeric_small is appropriate). Revision/self-correction is very plausible: re-deriving from first principles quickly fixes it.\n\nSuggestions to strengthen: make it less canonical and more CoT-resistant by adding a twist that breaks pattern-matching while still having a single crisp CAGR (e.g., include an intermediate cash flow/withdrawal but ask for time-weighted vs money-weighted return explicitly; or use three years with a negative return and ask for the constant annual rate matching final value; or phrase it as \u201caverage annual percentage change\u201d while providing an explicit definition to avoid ambiguity)."
+          },
+          "passes_criteria": false,
+          "latency_ms": 9389
+        }
+      },
+      "adversary_critique": "This is a very standard CAGR vs arithmetic-mean-returns question. Frontier models commonly recognize \u201caverage annual growth rate\u201d as CAGR and compute sqrt(2*1.5)-1 correctly, so it\u2019s likely too easy to fool them (too_easy_frontier=2). Also, chain-of-thought typically *helps* here: if the model writes down initial value 1 \u2192 2 \u2192 3 and then solves (1+r)^2=3, it self-corrects naturally; the described CoT failure mode (blindly averaging 100% and 50%) is more typical of shallow reasoning, not robust CoT (cot_resistant=2). The trap is well-known in finance/math pedagogy (famous_trap=4), so it violates the \u201cnot well-known\u201d criterion.\n\nWhat works well: the gold answer is unambiguous and grading is clear (CAGR has a single value; approx_numeric_small is appropriate). Revision/self-correction is very plausible: re-deriving from first principles quickly fixes it.\n\nSuggestions to strengthen: make it less canonical and more CoT-resistant by adding a twist that breaks pattern-matching while still having a single crisp CAGR (e.g., include an intermediate cash flow/withdrawal but ask for time-weighted vs money-weighted return explicitly; or use three years with a negative return and ask for the constant annual rate matching final value; or phrase it as \u201caverage annual percentage change\u201d while providing an explicit definition to avoid ambiguity).",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very standard CAGR vs arithmetic-mean-returns question. Frontier models commonly recognize \u201caverage annual growth rate\u201d as CAGR and compute sqrt(2*1.5)-1 correctly, so it\u2019s likely too easy to fool them (too_easy_frontier=2). Also, chain-of-thought typically *helps* here: if the model writes down initial value 1 \u2192 2 \u2192 3 and then solves (1+r)^2=3, it self-corrects naturally; the described CoT failure mode (blindly averaging 100% and 50%) is more typical of shallow reasoning, not robust CoT (cot_resistant=2). The trap is well-known in finance/math pedagogy (famous_trap=4), so it violates the \u201cnot well-known\u201d criterion.\n\nWhat works well: the gold answer is unambiguous and grading is clear (CAGR has a single value; approx_numeric_small is appropriate). Revision/self-correction is very plausible: re-deriving from first principles quickly fixes it.\n\nSuggestions to strengthen: make it less canonical and more CoT-resistant by adding a twist that breaks pattern-matching while still having a single crisp CAGR (e.g., include an intermediate cash flow/withdrawal but ask for time-weighted vs money-weighted return explicitly; or use three years with a negative return and ask for the constant annual rate matching final value; or phrase it as \u201caverage annual percentage change\u201d while providing an explicit definition to avoid ambiguity)."
+      }
+    }
+  ],
+  "final_status": "accept",
+  "item_bundle": {
+    "item_id": "sc_c2_wr_013",
+    "family": "C",
+    "subfamily": "C2",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "An investment grows by 100% in the first year and by 50% in the second year. What is the average annual growth rate over the two years? Express your answer as a decimal.",
+    "gold_answer": "0.7320508075688772",
+    "gold_answer_aliases": [
+      "\u221a3 - 1",
+      "0.732",
+      "0.73205",
+      "0.732051",
+      "0.7320508"
+    ],
+    "grading_rule": "approx_numeric_small",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "contradiction",
+    "evidence_snippet": "When combining rates that apply sequentially over time, the operation that correctly \"undoes\" compounding is not addition but rather multiplication of the growth factors.",
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "The default convention is to compute the arithmetic mean of the percentage growth rates ( (100% + 50%)/2 = 75% ), but because growth compounds multiplicatively, the correct average is the geometric mean of the growth factors minus one ( \u221a(2 \u00d7 1.5) - 1 = \u221a3 - 1 \u2248 0.732 ).",
+    "provenance": "hand_authored",
+    "draft_status": "draft",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 0/2. Frontier (anthropic/claude-sonnet-4.6): unclear. Adversary scores: tef=2, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "0.7320508076",
+      "status": "unclear"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "Let the initial investment be $P$.\n\nAfter the first year, the investment grows by 100%, so it becomes:\n$P_1 = P + 1.00P = 2P$\n\nAfter the second year, the investment grows by 50% from $P_1$, so it becomes:\n$P_2 = P_1 + 0.50P_1 = 1.50P_1 = 1.50(2P) = 3P$\n\nThe total growth over two years is from $P$ to",
+      "status": "unclear"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "unclear",
+    "response": "## Setting Up the Problem\n\nI need to find the average annual growth rate that would produce the same result as 100% growth followed by 50% growth.\n\n## Calculating Total Growth\n\n- After year 1: investment \u00d7 2.0 (100% growth)\n- After year 2: investment \u00d7 2.0 \u00d7 1.5 = investment \u00d7 3.0\n\nSo the investment triples over 2 years.\n\n## Finding Average Annual Rate\n\nThe geometric mean gives the equivalent annual rate:\n\n$$r = \\sqrt{2.0 \\times 1.5} = \\sqrt{3} \\approx 1.7321$$\n\nThis means the average annual **g"
+  }
+}

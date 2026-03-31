@@ -1,0 +1,150 @@
+{
+  "mechanism_target": "Leap year century rule: 'Is the year 1900 a leap year? Answer yes or no.' The answer is NO \u2014 1900 is divisible by 100 but NOT by 400, so it fails the century exception. Most models know the 4-year rule but many forget or misapply the 100/400 exception. The CoT trap: the model checks divisibility by 4 (yes), maybe checks by 100 (yes), but then may incorrectly conclude it IS a leap year because it 'passes' both checks, forgetting the 100 rule EXCLUDES unless also divisible by 400.",
+  "subfamily": "C1",
+  "item_slot": 17,
+  "timestamp": "2026-03-31T14:33:44.242373+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "What is the sample standard deviation of the numbers 1, 2, 3?",
+            "gold_answer": "1",
+            "gold_answer_aliases": [
+              "1.0",
+              "1.00",
+              "1.000"
+            ],
+            "predicted_wrong_answer": "0.8165",
+            "mechanism": "The default convention for calculating standard deviation is the population formula (dividing by N). For a sample, the correct convention requires Bessel's correction (dividing by N-1). Many models automatically apply the population formula even when 'sample' is explicitly stated.",
+            "cot_reinforcement": "A step-by-step chain-of-thought will compute the mean (2), then squared deviations (1, 0, 1), then average them (dividing by N=3, yielding 2/3), then take the square root (~0.8165). This reinforces the error because it follows the familiar arithmetic procedure without recalling the specific convention for sample standard deviation.",
+            "grading_rule": "approx_numeric_small",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 180960
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 3,
+            "cot_resistant": 3,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "Main issue: this is an extremely well-known textbook trap (population vs sample SD / Bessel correction). Many frontier models have memorized that \u201csample standard deviation\u201d implies dividing by n\u22121, so it\u2019s not novel and may not reliably fool strong models. The CoT claim is only partially true: a careful step-by-step solution often explicitly checks whether to use n or n\u22121, so CoT can just as easily fix the mistake as reinforce it.\n\nStrengths: the gold answer is unambiguous (s = 1) and grading is clear.\n\nSuggestions to improve (reduce \u2018famous trap\u2019 while keeping clarity):\n- Make the target concept less stock by using a scenario where the default denominator is genuinely confusing but still well-defined (e.g., \u201ccompute the unbiased estimator of the population standard deviation from this sample\u201d vs \u201cstandard deviation of these observations as a population\u201d).\n- Introduce a less-memorized convention clash: e.g., weighted sample SD (with reliability weights) or the difference between RMS deviation and sample SD, while explicitly stating the intended definition in the prompt to keep grading crisp.\n- If you want to keep Bessel\u2019s correction, embed it in a context that forces attention to definition rather than the keyword \u201csample\u201d (e.g., ask for the output of a specific function/library version with clearly specified semantics)."
+          },
+          "passes_criteria": false,
+          "latency_ms": 17081
+        }
+      },
+      "adversary_critique": "Main issue: this is an extremely well-known textbook trap (population vs sample SD / Bessel correction). Many frontier models have memorized that \u201csample standard deviation\u201d implies dividing by n\u22121, so it\u2019s not novel and may not reliably fool strong models. The CoT claim is only partially true: a careful step-by-step solution often explicitly checks whether to use n or n\u22121, so CoT can just as easily fix the mistake as reinforce it.\n\nStrengths: the gold answer is unambiguous (s = 1) and grading is clear.\n\nSuggestions to improve (reduce \u2018famous trap\u2019 while keeping clarity):\n- Make the target concept less stock by using a scenario where the default denominator is genuinely confusing but still well-defined (e.g., \u201ccompute the unbiased estimator of the population standard deviation from this sample\u201d vs \u201cstandard deviation of these observations as a population\u201d).\n- Introduce a less-memorized convention clash: e.g., weighted sample SD (with reliability weights) or the difference between RMS deviation and sample SD, while explicitly stating the intended definition in the prompt to keep grading crisp.\n- If you want to keep Bessel\u2019s correction, embed it in a context that forces attention to definition rather than the keyword \u201csample\u201d (e.g., ask for the output of a specific function/library version with clearly specified semantics).",
+      "adversary_scores": {
+        "too_easy_frontier": 3,
+        "cot_resistant": 3,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "Main issue: this is an extremely well-known textbook trap (population vs sample SD / Bessel correction). Many frontier models have memorized that \u201csample standard deviation\u201d implies dividing by n\u22121, so it\u2019s not novel and may not reliably fool strong models. The CoT claim is only partially true: a careful step-by-step solution often explicitly checks whether to use n or n\u22121, so CoT can just as easily fix the mistake as reinforce it.\n\nStrengths: the gold answer is unambiguous (s = 1) and grading is clear.\n\nSuggestions to improve (reduce \u2018famous trap\u2019 while keeping clarity):\n- Make the target concept less stock by using a scenario where the default denominator is genuinely confusing but still well-defined (e.g., \u201ccompute the unbiased estimator of the population standard deviation from this sample\u201d vs \u201cstandard deviation of these observations as a population\u201d).\n- Introduce a less-memorized convention clash: e.g., weighted sample SD (with reliability weights) or the difference between RMS deviation and sample SD, while explicitly stating the intended definition in the prompt to keep grading crisp.\n- If you want to keep Bessel\u2019s correction, embed it in a context that forces attention to definition rather than the keyword \u201csample\u201d (e.g., ask for the output of a specific function/library version with clearly specified semantics)."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "What is the value of the expression 2^3^2^0? (Here, ^ denotes exponentiation.)",
+            "gold_answer": "8",
+            "gold_answer_aliases": [
+              "8",
+              "8.0"
+            ],
+            "predicted_wrong_answer": "1",
+            "mechanism": "The expression involves multiple exponentiations without parentheses. The default convention for many people is to evaluate exponentiation left-to-right, i.e., ((2^3)^2)^0 = 1. However, the standard mathematical convention is that exponentiation is right-associative: 2^3^2^0 = 2^(3^(2^0)) = 8.",
+            "cot_reinforcement": "When using chain-of-thought, the model will naturally compute step by step in the order the expression is written: first compute 2^3=8, then 8^2=64, then 64^0=1. This stepwise left-to-right reasoning solidifies the incorrect left-associative interpretation, making it less likely to consider the correct right-associative rule.",
+            "grading_rule": "approx_numeric_small",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 371505
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very standard exponentiation-associativity gotcha. Many frontier models (and lots of non-model solvers) explicitly know that exponentiation is right-associative in standard math notation, so it\u2019s not reliably hard. The proposed CoT failure mode (mechanically computing left-to-right) is also weak: CoT often *helps* here because it prompts the model to recall/verify the associativity rule before evaluating. The trap itself is well-known (similar to 2^3^2, 2^3^2^1, etc.), so it violates the \u2018not a famous puzzle\u2019 constraint.\n\nSuggestions to strengthen it:\n- Make the ambiguity less canonical and more domain-specific (e.g., specify a particular language/context where associativity differs, or mix with an operator whose precedence differs across conventions).\n- Use a less-familiar composition that still has a single unambiguous gold under a stated convention (e.g., include parentheses plus a subtle precedence interaction elsewhere), so the error is less \u201ctextbook associativity.\u201d\n- If you keep associativity, wrap it in a larger expression where right-associativity is necessary but not obviously the point, to reduce recognition-by-pattern."
+          },
+          "passes_criteria": false,
+          "latency_ms": 9710
+        }
+      },
+      "adversary_critique": "This is a very standard exponentiation-associativity gotcha. Many frontier models (and lots of non-model solvers) explicitly know that exponentiation is right-associative in standard math notation, so it\u2019s not reliably hard. The proposed CoT failure mode (mechanically computing left-to-right) is also weak: CoT often *helps* here because it prompts the model to recall/verify the associativity rule before evaluating. The trap itself is well-known (similar to 2^3^2, 2^3^2^1, etc.), so it violates the \u2018not a famous puzzle\u2019 constraint.\n\nSuggestions to strengthen it:\n- Make the ambiguity less canonical and more domain-specific (e.g., specify a particular language/context where associativity differs, or mix with an operator whose precedence differs across conventions).\n- Use a less-familiar composition that still has a single unambiguous gold under a stated convention (e.g., include parentheses plus a subtle precedence interaction elsewhere), so the error is less \u201ctextbook associativity.\u201d\n- If you keep associativity, wrap it in a larger expression where right-associativity is necessary but not obviously the point, to reduce recognition-by-pattern.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very standard exponentiation-associativity gotcha. Many frontier models (and lots of non-model solvers) explicitly know that exponentiation is right-associative in standard math notation, so it\u2019s not reliably hard. The proposed CoT failure mode (mechanically computing left-to-right) is also weak: CoT often *helps* here because it prompts the model to recall/verify the associativity rule before evaluating. The trap itself is well-known (similar to 2^3^2, 2^3^2^1, etc.), so it violates the \u2018not a famous puzzle\u2019 constraint.\n\nSuggestions to strengthen it:\n- Make the ambiguity less canonical and more domain-specific (e.g., specify a particular language/context where associativity differs, or mix with an operator whose precedence differs across conventions).\n- Use a less-familiar composition that still has a single unambiguous gold under a stated convention (e.g., include parentheses plus a subtle precedence interaction elsewhere), so the error is less \u201ctextbook associativity.\u201d\n- If you keep associativity, wrap it in a larger expression where right-associativity is necessary but not obviously the point, to reduce recognition-by-pattern."
+      }
+    }
+  ],
+  "final_status": "accept",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_017",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "What is the value of the expression 2^3^2^0? (Here, ^ denotes exponentiation.)",
+    "gold_answer": "8",
+    "gold_answer_aliases": [
+      "8",
+      "8.0"
+    ],
+    "grading_rule": "approx_numeric_small",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "The expression involves multiple exponentiations without parentheses. The default convention for many people is to evaluate exponentiation left-to-right, i.e., ((2^3)^2)^0 = 1. However, the standard mathematical convention is that exponentiation is right-associative: 2^3^2^0 = 2^(3^(2^0)) = 8.",
+    "provenance": "hand_authored",
+    "draft_status": "draft",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 0/2. Frontier (anthropic/claude-sonnet-4.6): wrong. Adversary scores: tef=2, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "8\n\n(Interpreting exponentiation as right-associative: 2^(3^(2^0)) = 2^(3^1) = 2^3 = 8.)",
+      "status": "wrong"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "The value of the the expression $2^{3^{2^0}}$ is 24.\n\nHere's how to evaluate it:\n\n1. **Innermost exponent:** $2^0 = 1$\n2. **Next exponent:** $3^1 = 3$\n3. **Final exponent:** $2^3 = 8$\n\nTherefore, $2^{3^{2^0}} = 2^3 = 8$.\n\nThe final answer is $\\boxed{8}$",
+      "status": "wrong"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "wrong",
+    "response": "I need to evaluate 2^3^2^0 with right-to-left associativity (standard for exponentiation).\n\nEvaluating right to left:\n- 2^0 = 1\n- 3^1 = 3\n- 2^3 = 8\n\nThe value is **8**."
+  }
+}

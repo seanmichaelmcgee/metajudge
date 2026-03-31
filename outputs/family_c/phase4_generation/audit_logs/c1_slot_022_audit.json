@@ -1,0 +1,156 @@
+{
+  "mechanism_target": "Combinations with repetition formula: 'From a set of 3 flavors (vanilla, chocolate, strawberry), how many ways can you choose 2 scoops if repetition is allowed?' The answer is C(3+2-1, 2) = C(4,2) = 6, NOT C(3,2) = 3 (without repetition) and NOT 3^2 = 9 (ordered with repetition). Models often apply the wrong formula. The trap is that 'choose' implies combinations, but 'with repetition' changes the formula.",
+  "subfamily": "C1",
+  "item_slot": 22,
+  "timestamp": "2026-03-31T14:33:46.746302+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "You have a set of 4 distinct colors: red, blue, green, and yellow. How many different combinations of 3 colored marbles can you have if you are allowed to have multiple marbles of the same color and the order in which the marbles are drawn does not matter?",
+            "gold_answer": "20",
+            "gold_answer_aliases": [
+              "20",
+              "twenty",
+              "C(6,3)"
+            ],
+            "predicted_wrong_answer": "4",
+            "mechanism": "The trap is that the phrase 'combinations' typically triggers the default convention of using the standard combination formula C(n,k) without repetition, but when repetition is allowed, the correct formula is combinations with repetition: C(n+k-1, k).",
+            "cot_reinforcement": "In chain-of-thought reasoning, models often start by noting that order doesn't matter, so they apply combinations, and then compute C(4,3) step by step without adjusting for repetition, thus reinforcing the error instead of catching it.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 68062
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 1,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This item is unlikely to fool frontier models: \u201callowed to have multiple marbles of the same color\u201d is an explicit cue for stars-and-bars, so many models will jump directly to C(n+k-1,k)=C(6,3)=20. As a trap, \u201ccombinations vs combinations-with-repetition\u201d is very common in basic counting problems, making it a well-known gotcha (high famous_trap). It\u2019s also not very CoT-resistant: writing out reasoning (\u201corder doesn\u2019t matter, repetition allowed\u201d) tends to push the model toward the correct formula, not reinforce the wrong C(4,3) path.\n\nSuggestions to strengthen it:\n- Reduce the salience of the repetition cue (or embed it in a more complex context) so models are more likely to default to C(n,k). E.g., a story problem where replacement is implied but not stated upfront, or where \u201cat least one color repeats\u201d/\u201cno color repeats\u201d constraints appear later.\n- Add an additional constraint that interacts with repetition (e.g., \u201cexactly two colors used\u201d, \u201cat most two of any color\u201d, \u201cat least one red\u201d) to create more room for subtle counting mistakes that CoT can amplify rather than correct.\n- Avoid the canonical \u201c4 colors choose 3 with repetition\u201d template; use less standard numbers/wording and include distractor structure (e.g., multiple stages, conditional cases) to lower famous_trap and increase cot_resistant."
+          },
+          "passes_criteria": false,
+          "latency_ms": 14674
+        }
+      },
+      "adversary_critique": "This item is unlikely to fool frontier models: \u201callowed to have multiple marbles of the same color\u201d is an explicit cue for stars-and-bars, so many models will jump directly to C(n+k-1,k)=C(6,3)=20. As a trap, \u201ccombinations vs combinations-with-repetition\u201d is very common in basic counting problems, making it a well-known gotcha (high famous_trap). It\u2019s also not very CoT-resistant: writing out reasoning (\u201corder doesn\u2019t matter, repetition allowed\u201d) tends to push the model toward the correct formula, not reinforce the wrong C(4,3) path.\n\nSuggestions to strengthen it:\n- Reduce the salience of the repetition cue (or embed it in a more complex context) so models are more likely to default to C(n,k). E.g., a story problem where replacement is implied but not stated upfront, or where \u201cat least one color repeats\u201d/\u201cno color repeats\u201d constraints appear later.\n- Add an additional constraint that interacts with repetition (e.g., \u201cexactly two colors used\u201d, \u201cat most two of any color\u201d, \u201cat least one red\u201d) to create more room for subtle counting mistakes that CoT can amplify rather than correct.\n- Avoid the canonical \u201c4 colors choose 3 with repetition\u201d template; use less standard numbers/wording and include distractor structure (e.g., multiple stages, conditional cases) to lower famous_trap and increase cot_resistant.",
+      "adversary_scores": {
+        "too_easy_frontier": 1,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This item is unlikely to fool frontier models: \u201callowed to have multiple marbles of the same color\u201d is an explicit cue for stars-and-bars, so many models will jump directly to C(n+k-1,k)=C(6,3)=20. As a trap, \u201ccombinations vs combinations-with-repetition\u201d is very common in basic counting problems, making it a well-known gotcha (high famous_trap). It\u2019s also not very CoT-resistant: writing out reasoning (\u201corder doesn\u2019t matter, repetition allowed\u201d) tends to push the model toward the correct formula, not reinforce the wrong C(4,3) path.\n\nSuggestions to strengthen it:\n- Reduce the salience of the repetition cue (or embed it in a more complex context) so models are more likely to default to C(n,k). E.g., a story problem where replacement is implied but not stated upfront, or where \u201cat least one color repeats\u201d/\u201cno color repeats\u201d constraints appear later.\n- Add an additional constraint that interacts with repetition (e.g., \u201cexactly two colors used\u201d, \u201cat most two of any color\u201d, \u201cat least one red\u201d) to create more room for subtle counting mistakes that CoT can amplify rather than correct.\n- Avoid the canonical \u201c4 colors choose 3 with repetition\u201d template; use less standard numbers/wording and include distractor structure (e.g., multiple stages, conditional cases) to lower famous_trap and increase cot_resistant."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "From a bag containing 6 distinct types of fruit, you randomly select 4 fruits with replacement (i.e., after each selection, the fruit is returned to the bag). How many different unordered sets of 4 fruits can you obtain? (Two selections are considered the same if they have the same multiset of fruit types, regardless of the order in which they were drawn.)",
+            "gold_answer": "126",
+            "gold_answer_aliases": [
+              "126",
+              "C(9,4)",
+              "9 choose 4",
+              "126 ways",
+              "one hundred twenty-six"
+            ],
+            "predicted_wrong_answer": "15",
+            "mechanism": "The default convention is that 'unordered sets' imply combinations without repetition (C(n,k)), but with replacement allowed, the correct count is for combinations with repetition (multisets), using C(n+k-1,k).",
+            "cot_reinforcement": "In chain-of-thought reasoning, models may correctly note that order doesn't matter but then implicitly assume 'unordered' means without repetition, leading them to compute C(6,4)=15 without incorporating the effect of replacement, and the step-by-step logic reinforces this oversight.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 281589
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 1,
+            "cot_resistant": 2,
+            "famous_trap": 3,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is essentially a textbook \u201ccombinations with repetition / stars-and-bars\u201d question. The prompt explicitly says \u201cwith replacement\u201d and then defines equality as \u201csame multiset,\u201d which strongly cues the correct C(n+k\u22121,k) move; frontier models usually retrieve this immediately, especially with chain-of-thought. As a result, it\u2019s not very CoT-resistant: step-by-step reasoning tends to *fix* the oversight (it naturally asks \u201crepetitions allowed?\u201d and sees the with-replacement clause). It\u2019s also moderately \u2018famous\u2019 as a standard formula application, so the trap isn\u2019t novel.\n\nSuggestions to strengthen the item:\n- Reduce formula-cueing language: avoid explicitly saying \u201cmultiset\u201d and instead describe equivalence indirectly.\n- Add a distractor constraint that makes naive C(6,4) tempting even after noticing replacement (e.g., \u201cexactly 4 fruits drawn, but at most 2 of any type,\u201d or \u201cat least one apple,\u201d or \u201cexactly 3 distinct types appear\u201d), which requires more careful counting and is harder to autopilot.\n- Alternatively, ask for something slightly less canonical (e.g., number of possible *frequency vectors* under an additional constraint, or conditional on observing exactly r distinct types), which increases difficulty and reduces \u2018formula recall\u2019 solving."
+          },
+          "passes_criteria": false,
+          "latency_ms": 14395
+        }
+      },
+      "adversary_critique": "This is essentially a textbook \u201ccombinations with repetition / stars-and-bars\u201d question. The prompt explicitly says \u201cwith replacement\u201d and then defines equality as \u201csame multiset,\u201d which strongly cues the correct C(n+k\u22121,k) move; frontier models usually retrieve this immediately, especially with chain-of-thought. As a result, it\u2019s not very CoT-resistant: step-by-step reasoning tends to *fix* the oversight (it naturally asks \u201crepetitions allowed?\u201d and sees the with-replacement clause). It\u2019s also moderately \u2018famous\u2019 as a standard formula application, so the trap isn\u2019t novel.\n\nSuggestions to strengthen the item:\n- Reduce formula-cueing language: avoid explicitly saying \u201cmultiset\u201d and instead describe equivalence indirectly.\n- Add a distractor constraint that makes naive C(6,4) tempting even after noticing replacement (e.g., \u201cexactly 4 fruits drawn, but at most 2 of any type,\u201d or \u201cat least one apple,\u201d or \u201cexactly 3 distinct types appear\u201d), which requires more careful counting and is harder to autopilot.\n- Alternatively, ask for something slightly less canonical (e.g., number of possible *frequency vectors* under an additional constraint, or conditional on observing exactly r distinct types), which increases difficulty and reduces \u2018formula recall\u2019 solving.",
+      "adversary_scores": {
+        "too_easy_frontier": 1,
+        "cot_resistant": 2,
+        "famous_trap": 3,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is essentially a textbook \u201ccombinations with repetition / stars-and-bars\u201d question. The prompt explicitly says \u201cwith replacement\u201d and then defines equality as \u201csame multiset,\u201d which strongly cues the correct C(n+k\u22121,k) move; frontier models usually retrieve this immediately, especially with chain-of-thought. As a result, it\u2019s not very CoT-resistant: step-by-step reasoning tends to *fix* the oversight (it naturally asks \u201crepetitions allowed?\u201d and sees the with-replacement clause). It\u2019s also moderately \u2018famous\u2019 as a standard formula application, so the trap isn\u2019t novel.\n\nSuggestions to strengthen the item:\n- Reduce formula-cueing language: avoid explicitly saying \u201cmultiset\u201d and instead describe equivalence indirectly.\n- Add a distractor constraint that makes naive C(6,4) tempting even after noticing replacement (e.g., \u201cexactly 4 fruits drawn, but at most 2 of any type,\u201d or \u201cat least one apple,\u201d or \u201cexactly 3 distinct types appear\u201d), which requires more careful counting and is harder to autopilot.\n- Alternatively, ask for something slightly less canonical (e.g., number of possible *frequency vectors* under an additional constraint, or conditional on observing exactly r distinct types), which increases difficulty and reduces \u2018formula recall\u2019 solving."
+      }
+    }
+  ],
+  "final_status": "reject",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_022",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "From a bag containing 6 distinct types of fruit, you randomly select 4 fruits with replacement (i.e., after each selection, the fruit is returned to the bag). How many different unordered sets of 4 fruits can you obtain? (Two selections are considered the same if they have the same multiset of fruit types, regardless of the order in which they were drawn.)",
+    "gold_answer": "126",
+    "gold_answer_aliases": [
+      "126",
+      "C(9,4)",
+      "9 choose 4",
+      "126 ways",
+      "one hundred twenty-six"
+    ],
+    "grading_rule": "alias_plus_normalization",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "The default convention is that 'unordered sets' imply combinations without repetition (C(n,k)), but with replacement allowed, the correct count is for combinations with repetition (multisets), using C(n+k-1,k).",
+    "provenance": "hand_authored",
+    "draft_status": "reject",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=1, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "Using stars-and-bars: the number of multisets of size 4 from 6 types is C(6+4-1,4) = C(9,4) = 126.",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "The problem asks for the number of different unordered sets of 4 fruits that can be obtained when selecting from 6 distinct types of fruit with replacement. This is a stars and bars problem, which can be solved using the combination with repetition formula.\n\nThe formula for combinations with repetit",
+      "status": "correct"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "correct",
+    "response": "This is a combinations with repetition problem. We need to find the number of multisets of size 4 chosen from 6 types.\n\nThe formula is C(n + r - 1, r) where n = 6 types and r = 4 selections.\n\nC(6 + 4 - 1, 4) = C(9, 4) = 126\n\n**126**"
+  }
+}

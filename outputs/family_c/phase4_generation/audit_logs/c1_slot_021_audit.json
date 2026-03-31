@@ -1,0 +1,155 @@
+{
+  "mechanism_target": "Inclusive vs exclusive day counting: 'A project starts on March 1 and ends on March 10. How many days does the project last?' The answer depends on convention: inclusive counting gives 10 days (count both endpoints), exclusive gives 9 days (subtract dates). Different domains use different conventions. The question should specify enough context that one convention is clearly correct \u2014 for instance, if someone 'works from March 1 through March 10 inclusive, how many working days is that?' (assuming no weekends for simplicity) = 10.",
+  "subfamily": "C1",
+  "item_slot": 21,
+  "timestamp": "2026-03-31T14:33:46.262140+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "A theater production runs from October 15 through October 25, with performances every day including both the opening and closing dates. How many total performances are there?",
+            "gold_answer": "11",
+            "gold_answer_aliases": [
+              "11 performances",
+              "11 days",
+              "11 total",
+              "eleven"
+            ],
+            "predicted_wrong_answer": "10",
+            "mechanism": "The default convention is exclusive date subtraction (25-15=10), but the problem explicitly requires inclusive counting (\"including both... dates\") making 25-15+1=11 correct.",
+            "cot_reinforcement": "Chain-of-thought naturally decomposes into date arithmetic, reinforcing the standard subtraction approach 25-15=10 without questioning whether the inclusive wording modifies the counting convention.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "arithmetic"
+          },
+          "latency_ms": 77210
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 1,
+            "cot_resistant": 1,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is an extremely standard inclusive-counting check, and the prompt explicitly flags the intended convention (\u201cincluding both the opening and closing dates\u201d). Frontier models reliably handle this, so it\u2019s not \u201chard\u201d in practice. The claimed failure mode (\u201cCoT reinforces 25-15=10 without questioning inclusivity\u201d) is unlikely: a basic step-by-step solution typically *does* notice inclusive wording and adds +1, so CoT helps rather than hurts (low CoT resistance). It\u2019s also a well-known trap (inclusive vs exclusive interval counting), so it violates the \u2018not a famous puzzle\u2019 criterion.\n\nSuggestions to strengthen the item:\n- Make the inclusivity subtle or conflicting (e.g., \u201cruns from Oct 15 to Oct 25\u201d plus a later sentence about \u201ca 10-day run\u201d or a rehearsal blackout) so models must reconcile cues.\n- Add real-world schedule complications (e.g., \u201cdark Mondays,\u201d matinee-only weekends, two shows on Saturdays, no show on Oct 20), which increases difficulty without relying on the famous +1 trap.\n- Avoid directly stating \u201cincluding both dates\u201d; instead, encode it indirectly (e.g., \u201copening night is Oct 15; closing night is Oct 25; they perform nightly\u201d), then test whether the model infers inclusivity.\n- If you keep this structure, at least reduce predictability by using cross-month ranges (e.g., Oct 28 through Nov 3) where date subtraction is less automatic and errors are less purely \u2018+1\u2019 clich\u00e9."
+          },
+          "passes_criteria": false,
+          "latency_ms": 9063
+        }
+      },
+      "adversary_critique": "This is an extremely standard inclusive-counting check, and the prompt explicitly flags the intended convention (\u201cincluding both the opening and closing dates\u201d). Frontier models reliably handle this, so it\u2019s not \u201chard\u201d in practice. The claimed failure mode (\u201cCoT reinforces 25-15=10 without questioning inclusivity\u201d) is unlikely: a basic step-by-step solution typically *does* notice inclusive wording and adds +1, so CoT helps rather than hurts (low CoT resistance). It\u2019s also a well-known trap (inclusive vs exclusive interval counting), so it violates the \u2018not a famous puzzle\u2019 criterion.\n\nSuggestions to strengthen the item:\n- Make the inclusivity subtle or conflicting (e.g., \u201cruns from Oct 15 to Oct 25\u201d plus a later sentence about \u201ca 10-day run\u201d or a rehearsal blackout) so models must reconcile cues.\n- Add real-world schedule complications (e.g., \u201cdark Mondays,\u201d matinee-only weekends, two shows on Saturdays, no show on Oct 20), which increases difficulty without relying on the famous +1 trap.\n- Avoid directly stating \u201cincluding both dates\u201d; instead, encode it indirectly (e.g., \u201copening night is Oct 15; closing night is Oct 25; they perform nightly\u201d), then test whether the model infers inclusivity.\n- If you keep this structure, at least reduce predictability by using cross-month ranges (e.g., Oct 28 through Nov 3) where date subtraction is less automatic and errors are less purely \u2018+1\u2019 clich\u00e9.",
+      "adversary_scores": {
+        "too_easy_frontier": 1,
+        "cot_resistant": 1,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is an extremely standard inclusive-counting check, and the prompt explicitly flags the intended convention (\u201cincluding both the opening and closing dates\u201d). Frontier models reliably handle this, so it\u2019s not \u201chard\u201d in practice. The claimed failure mode (\u201cCoT reinforces 25-15=10 without questioning inclusivity\u201d) is unlikely: a basic step-by-step solution typically *does* notice inclusive wording and adds +1, so CoT helps rather than hurts (low CoT resistance). It\u2019s also a well-known trap (inclusive vs exclusive interval counting), so it violates the \u2018not a famous puzzle\u2019 criterion.\n\nSuggestions to strengthen the item:\n- Make the inclusivity subtle or conflicting (e.g., \u201cruns from Oct 15 to Oct 25\u201d plus a later sentence about \u201ca 10-day run\u201d or a rehearsal blackout) so models must reconcile cues.\n- Add real-world schedule complications (e.g., \u201cdark Mondays,\u201d matinee-only weekends, two shows on Saturdays, no show on Oct 20), which increases difficulty without relying on the famous +1 trap.\n- Avoid directly stating \u201cincluding both dates\u201d; instead, encode it indirectly (e.g., \u201copening night is Oct 15; closing night is Oct 25; they perform nightly\u201d), then test whether the model infers inclusivity.\n- If you keep this structure, at least reduce predictability by using cross-month ranges (e.g., Oct 28 through Nov 3) where date subtraction is less automatic and errors are less purely \u2018+1\u2019 clich\u00e9."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "A scientist is rounding measurements to the nearest tenth using the 'round half to even' rule. She has three measurements: 2.45, 2.55, and 2.65. After rounding each measurement individually, what is the sum of the rounded values?",
+            "gold_answer": "7.6",
+            "gold_answer_aliases": [
+              "7.6",
+              "7.60",
+              "38/5",
+              "7.600"
+            ],
+            "predicted_wrong_answer": "7.8",
+            "mechanism": "The default rounding convention in many contexts is 'round half up', where numbers exactly halfway between rounding points are rounded up. Here, 'round half to even' is specified, which rounds to the nearest even digit, leading to different rounded values for these measurements.",
+            "cot_reinforcement": "In chain-of-thought reasoning, models typically apply rounding step by step using the familiar 'round half up' rule without consistently checking the specified rule, leading to incorrect intermediate rounded values (e.g., 2.45 \u2192 2.5, 2.55 \u2192 2.6, 2.65 \u2192 2.7) and thus the wrong sum.",
+            "grading_rule": "fraction_or_decimal",
+            "difficulty": "hard",
+            "category": "arithmetic"
+          },
+          "latency_ms": 232306
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 3,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "Main issue: this is not very CoT-resistant. If a model does explicit step-by-step rounding while attending to the stated rule, it will usually correct itself: 2.45\u21922.4 (even tenth), 2.55\u21922.6, 2.65\u21922.6, sum 7.6. So chain-of-thought tends to HELP, not reinforce the error, making cot_resistant closer to 2.\n\nSecond issue: it\u2019s a fairly well-known \u201cbanker\u2019s rounding\u201d gotcha. Many benchmark-tuned models have seen exactly this kind of example; it\u2019s closer to a common trap than a novel failure mode (famous_trap\u22483), violating the \u22642 criterion.\n\nWhat works well: grading is crystal clear (single numeric target; fraction/decimal rule fine) and revision is very plausible (wrong answers are easy to fix by rereading the rounding rule).\n\nSuggestions to improve acceptance:\n- Reduce \u2018famous trap\u2019 feel by avoiding the canonical .45/.55/.65 pattern; use less stereotyped values (including negatives) and/or a mix of ties and non-ties.\n- Increase CoT resistance by adding an additional subtlety that step-by-step reasoning can mishandle (e.g., trailing-zero tie detection like 1.2500 to the nearest hundredth, or a two-stage rounding where a naive CoT applies half-even at the wrong digit).\n- Keep unambiguous grading by ensuring all numbers are exact decimal ties (avoid floats that could be interpreted as measurement uncertainty)."
+          },
+          "passes_criteria": false,
+          "latency_ms": 20001
+        }
+      },
+      "adversary_critique": "Main issue: this is not very CoT-resistant. If a model does explicit step-by-step rounding while attending to the stated rule, it will usually correct itself: 2.45\u21922.4 (even tenth), 2.55\u21922.6, 2.65\u21922.6, sum 7.6. So chain-of-thought tends to HELP, not reinforce the error, making cot_resistant closer to 2.\n\nSecond issue: it\u2019s a fairly well-known \u201cbanker\u2019s rounding\u201d gotcha. Many benchmark-tuned models have seen exactly this kind of example; it\u2019s closer to a common trap than a novel failure mode (famous_trap\u22483), violating the \u22642 criterion.\n\nWhat works well: grading is crystal clear (single numeric target; fraction/decimal rule fine) and revision is very plausible (wrong answers are easy to fix by rereading the rounding rule).\n\nSuggestions to improve acceptance:\n- Reduce \u2018famous trap\u2019 feel by avoiding the canonical .45/.55/.65 pattern; use less stereotyped values (including negatives) and/or a mix of ties and non-ties.\n- Increase CoT resistance by adding an additional subtlety that step-by-step reasoning can mishandle (e.g., trailing-zero tie detection like 1.2500 to the nearest hundredth, or a two-stage rounding where a naive CoT applies half-even at the wrong digit).\n- Keep unambiguous grading by ensuring all numbers are exact decimal ties (avoid floats that could be interpreted as measurement uncertainty).",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 3,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "Main issue: this is not very CoT-resistant. If a model does explicit step-by-step rounding while attending to the stated rule, it will usually correct itself: 2.45\u21922.4 (even tenth), 2.55\u21922.6, 2.65\u21922.6, sum 7.6. So chain-of-thought tends to HELP, not reinforce the error, making cot_resistant closer to 2.\n\nSecond issue: it\u2019s a fairly well-known \u201cbanker\u2019s rounding\u201d gotcha. Many benchmark-tuned models have seen exactly this kind of example; it\u2019s closer to a common trap than a novel failure mode (famous_trap\u22483), violating the \u22642 criterion.\n\nWhat works well: grading is crystal clear (single numeric target; fraction/decimal rule fine) and revision is very plausible (wrong answers are easy to fix by rereading the rounding rule).\n\nSuggestions to improve acceptance:\n- Reduce \u2018famous trap\u2019 feel by avoiding the canonical .45/.55/.65 pattern; use less stereotyped values (including negatives) and/or a mix of ties and non-ties.\n- Increase CoT resistance by adding an additional subtlety that step-by-step reasoning can mishandle (e.g., trailing-zero tie detection like 1.2500 to the nearest hundredth, or a two-stage rounding where a naive CoT applies half-even at the wrong digit).\n- Keep unambiguous grading by ensuring all numbers are exact decimal ties (avoid floats that could be interpreted as measurement uncertainty)."
+      }
+    }
+  ],
+  "final_status": "reject",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_021",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "A scientist is rounding measurements to the nearest tenth using the 'round half to even' rule. She has three measurements: 2.45, 2.55, and 2.65. After rounding each measurement individually, what is the sum of the rounded values?",
+    "gold_answer": "7.6",
+    "gold_answer_aliases": [
+      "7.6",
+      "7.60",
+      "38/5",
+      "7.600"
+    ],
+    "grading_rule": "fraction_or_decimal",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "arithmetic",
+    "mechanism_primary": "The default rounding convention in many contexts is 'round half up', where numbers exactly halfway between rounding points are rounded up. Here, 'round half to even' is specified, which rounds to the nearest even digit, leading to different rounded values for these measurements.",
+    "provenance": "hand_authored",
+    "draft_status": "reject",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "2.4 + 2.6 + 2.6 = 7.6",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "7.6",
+      "status": "correct"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "correct",
+    "response": "## Applying Round Half to Even\n\n**2.45** \u2192 digit before 5 is 4 (even), so round down \u2192 **2.4**\n\n**2.55** \u2192 digit before 5 is 5 (odd), so round up \u2192 **2.6**\n\n**2.65** \u2192 digit before 5 is 6 (even), so round down \u2192 **2.6**\n\n## Sum\n\n2.4 + 2.6 + 2.6 = **7.6**"
+  }
+}

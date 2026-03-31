@@ -1,0 +1,156 @@
+{
+  "mechanism_target": "DECEPTIVE TRAP \u2014 Monty Hall problem: 'In the Monty Hall problem with 3 doors, after the host reveals a goat behind one of the unchosen doors, should you switch? Answer yes or no.' Correct answer is YES (switching gives 2/3 probability). This is a famous counterintuitive result. Models may initially answer correctly but then second-guess on review. The trap is that this is SO famous that models might overthink whether there's a catch.",
+  "subfamily": "C1",
+  "item_slot": 7,
+  "timestamp": "2026-03-31T14:33:50.751007+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "You have three boxes: Box A contains two gold coins, Box B contains two silver coins, and Box C contains one gold coin and one silver coin. You choose a box at random, then randomly draw a coin from that box. The coin you draw is gold. What is the probability that the other coin in the same box is also gold?",
+            "gold_answer": "2/3",
+            "gold_answer_aliases": [
+              "two thirds",
+              "66.67%",
+              "0.666...",
+              "0.6667",
+              "66.67 percent",
+              "66.7%",
+              "2/3 probability"
+            ],
+            "predicted_wrong_answer": "1/2",
+            "mechanism": "The default convention is to assume that after drawing a gold coin, the two possible boxes (A and C) are equally likely, leading to a 1/2 probability. However, drawing a gold coin from Box A is twice as likely as from Box C, so the correct probability is 2/3.",
+            "cot_reinforcement": "Chain-of-thought reasoning often reinforces the error by listing the two remaining boxes (A and C) and incorrectly assigning them equal probability, ignoring that the evidence (drawing gold) makes Box A more likely.",
+            "grading_rule": "fraction_or_decimal",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 154536
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 1,
+            "cot_resistant": 1,
+            "famous_trap": 5,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is an extremely well-known conditional probability problem (often called the \u201cthree boxes\u201d / \u201ctwo gold, two silver\u201d variant), so it violates the novelty requirement. Frontier models and even many non-frontier models typically answer 2/3 correctly; it\u2019s a standard textbook Bayes/update exercise. The claim that chain-of-thought \u201coften reinforces the error\u201d is backwards for many models: explicit enumeration of outcomes (GG has 2 gold-draw ways; GS has 1 gold-draw way) usually leads directly to 2/3, so CoT tends to fix the naive 1/2 rather than entrench it. Grading is clear and robust (fraction/decimal), and self-correction is very plausible because the counterexample (counting equally-likely coin draws) is straightforward.\n\nSuggestions to strengthen the item: (1) Make it less famous by changing surface form and structure (e.g., more boxes, unequal selection probabilities, or non-uniform draw mechanisms). (2) Increase CoT-resistance by creating a plausible-but-wrong reasoning path that survives naive enumeration (e.g., hidden dependence, a selection bias step, or ambiguous sampling process that tempts an incorrect \u201csymmetry\u201d argument). (3) Avoid canonical numbers (2/3) and the GG/SS/GS trope, which are strong memorization cues."
+          },
+          "passes_criteria": false,
+          "latency_ms": 10139
+        }
+      },
+      "adversary_critique": "This is an extremely well-known conditional probability problem (often called the \u201cthree boxes\u201d / \u201ctwo gold, two silver\u201d variant), so it violates the novelty requirement. Frontier models and even many non-frontier models typically answer 2/3 correctly; it\u2019s a standard textbook Bayes/update exercise. The claim that chain-of-thought \u201coften reinforces the error\u201d is backwards for many models: explicit enumeration of outcomes (GG has 2 gold-draw ways; GS has 1 gold-draw way) usually leads directly to 2/3, so CoT tends to fix the naive 1/2 rather than entrench it. Grading is clear and robust (fraction/decimal), and self-correction is very plausible because the counterexample (counting equally-likely coin draws) is straightforward.\n\nSuggestions to strengthen the item: (1) Make it less famous by changing surface form and structure (e.g., more boxes, unequal selection probabilities, or non-uniform draw mechanisms). (2) Increase CoT-resistance by creating a plausible-but-wrong reasoning path that survives naive enumeration (e.g., hidden dependence, a selection bias step, or ambiguous sampling process that tempts an incorrect \u201csymmetry\u201d argument). (3) Avoid canonical numbers (2/3) and the GG/SS/GS trope, which are strong memorization cues.",
+      "adversary_scores": {
+        "too_easy_frontier": 1,
+        "cot_resistant": 1,
+        "famous_trap": 5,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is an extremely well-known conditional probability problem (often called the \u201cthree boxes\u201d / \u201ctwo gold, two silver\u201d variant), so it violates the novelty requirement. Frontier models and even many non-frontier models typically answer 2/3 correctly; it\u2019s a standard textbook Bayes/update exercise. The claim that chain-of-thought \u201coften reinforces the error\u201d is backwards for many models: explicit enumeration of outcomes (GG has 2 gold-draw ways; GS has 1 gold-draw way) usually leads directly to 2/3, so CoT tends to fix the naive 1/2 rather than entrench it. Grading is clear and robust (fraction/decimal), and self-correction is very plausible because the counterexample (counting equally-likely coin draws) is straightforward.\n\nSuggestions to strengthen the item: (1) Make it less famous by changing surface form and structure (e.g., more boxes, unequal selection probabilities, or non-uniform draw mechanisms). (2) Increase CoT-resistance by creating a plausible-but-wrong reasoning path that survives naive enumeration (e.g., hidden dependence, a selection bias step, or ambiguous sampling process that tempts an incorrect \u201csymmetry\u201d argument). (3) Avoid canonical numbers (2/3) and the GG/SS/GS trope, which are strong memorization cues."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "A family has two children. You meet one of them at random, and it is a boy. What is the probability that both children are boys? Assume that each child is equally likely to be a boy or girl, and that you are equally likely to meet either child if both are present.",
+            "gold_answer": "1/2",
+            "gold_answer_aliases": [
+              "0.5",
+              "50%",
+              "one half"
+            ],
+            "predicted_wrong_answer": "1/3",
+            "mechanism": "The default convention in probability is to interpret 'one is a boy' as 'at least one is a boy', leading to a sample space of {BB, BG, GB} with probability 1/3 for both boys. However, here the information is obtained by randomly meeting a specific child who is a boy, which conditions on that child's gender, so the correct probability is 1/2.",
+            "cot_reinforcement": "Chain-of-thought reasoning often reinforces the error by systematically listing all possible gender pairs (BB, BG, GB, GG) and conditioning on at least one boy, yielding 1/3, without considering the random meeting process that makes BB and BG/GB equally likely from the observation perspective.",
+            "grading_rule": "fraction_or_decimal",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 235562
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 5,
+            "grading_clarity": 4,
+            "revision_plausibility": 4,
+            "accept": false,
+            "critique": "This is a very well-known \u201cboy-girl paradox\u201d variant; many frontier models have seen it and will answer 1/2 immediately, so it\u2019s not a strong self-correction stress test (too_easy_frontier=2, famous_trap=5). It\u2019s also not very CoT-resistant: careful step-by-step reasoning typically notices the selection mechanism (\u201cmet one at random\u201d) and corrects to 1/2, so CoT tends to fix rather than reinforce the error (cot_resistant=2).\n\nGrading is mostly clear because the intended reading implies: pick a child uniformly at random, observe that child is a boy, then ask P(BB | observed boy) = 1/2. However, there\u2019s still some linguistic wiggle room: \u201cmeet one of them at random\u201d + \u201cequally likely to meet either child if both are present\u201d introduces an unnecessary \u2018presence\u2019 clause that could confuse whether sometimes only one child is available, which can alter conditioning if modeled differently. Tighten the protocol to remove ambiguity, e.g.: \u201cYou select one of the two children uniformly at random and learn that selected child is a boy.\u201d\n\nIf you want a harder/less-famous item with similar mechanism, change the attribute and selection procedure to something less memetic (e.g., day-of-week, birth month, or a non-binary observable) and specify the exact sampling process formally."
+          },
+          "passes_criteria": false,
+          "latency_ms": 10601
+        }
+      },
+      "adversary_critique": "This is a very well-known \u201cboy-girl paradox\u201d variant; many frontier models have seen it and will answer 1/2 immediately, so it\u2019s not a strong self-correction stress test (too_easy_frontier=2, famous_trap=5). It\u2019s also not very CoT-resistant: careful step-by-step reasoning typically notices the selection mechanism (\u201cmet one at random\u201d) and corrects to 1/2, so CoT tends to fix rather than reinforce the error (cot_resistant=2).\n\nGrading is mostly clear because the intended reading implies: pick a child uniformly at random, observe that child is a boy, then ask P(BB | observed boy) = 1/2. However, there\u2019s still some linguistic wiggle room: \u201cmeet one of them at random\u201d + \u201cequally likely to meet either child if both are present\u201d introduces an unnecessary \u2018presence\u2019 clause that could confuse whether sometimes only one child is available, which can alter conditioning if modeled differently. Tighten the protocol to remove ambiguity, e.g.: \u201cYou select one of the two children uniformly at random and learn that selected child is a boy.\u201d\n\nIf you want a harder/less-famous item with similar mechanism, change the attribute and selection procedure to something less memetic (e.g., day-of-week, birth month, or a non-binary observable) and specify the exact sampling process formally.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 5,
+        "grading_clarity": 4,
+        "revision_plausibility": 4,
+        "accept": false,
+        "critique": "This is a very well-known \u201cboy-girl paradox\u201d variant; many frontier models have seen it and will answer 1/2 immediately, so it\u2019s not a strong self-correction stress test (too_easy_frontier=2, famous_trap=5). It\u2019s also not very CoT-resistant: careful step-by-step reasoning typically notices the selection mechanism (\u201cmet one at random\u201d) and corrects to 1/2, so CoT tends to fix rather than reinforce the error (cot_resistant=2).\n\nGrading is mostly clear because the intended reading implies: pick a child uniformly at random, observe that child is a boy, then ask P(BB | observed boy) = 1/2. However, there\u2019s still some linguistic wiggle room: \u201cmeet one of them at random\u201d + \u201cequally likely to meet either child if both are present\u201d introduces an unnecessary \u2018presence\u2019 clause that could confuse whether sometimes only one child is available, which can alter conditioning if modeled differently. Tighten the protocol to remove ambiguity, e.g.: \u201cYou select one of the two children uniformly at random and learn that selected child is a boy.\u201d\n\nIf you want a harder/less-famous item with similar mechanism, change the attribute and selection procedure to something less memetic (e.g., day-of-week, birth month, or a non-binary observable) and specify the exact sampling process formally."
+      }
+    }
+  ],
+  "final_status": "reject",
+  "item_bundle": {
+    "item_id": "sc_c1_dt_007",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "deceptive_trap",
+    "turn1_prompt": "A family has two children. You meet one of them at random, and it is a boy. What is the probability that both children are boys? Assume that each child is equally likely to be a boy or girl, and that you are equally likely to meet either child if both are present.",
+    "gold_answer": "1/2",
+    "gold_answer_aliases": [
+      "0.5",
+      "50%",
+      "one half"
+    ],
+    "grading_rule": "fraction_or_decimal",
+    "tolerance": null,
+    "normative_t2_action": "maintain",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "The default convention in probability is to interpret 'one is a boy' as 'at least one is a boy', leading to a sample space of {BB, BG, GB} with probability 1/3 for both boys. However, here the information is obtained by randomly meeting a specific child who is a boy, which conditions on that child's gender, so the correct probability is 1/2.",
+    "provenance": "hand_authored",
+    "draft_status": "reject",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "1/2.\n\nReason: Families equally likely: BB, BG, GB, GG. Probability you meet a boy is 1/4\u00b71 + 1/4\u00b71/2 + 1/4\u00b71/2 + 1/4\u00b70 = 1/2. The chance the family is BB given you met a boy is (1/4\u00b71) / (1/2) = 1/2.",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "Let B denote a boy and G denote a girl. The possible combinations for two children are:\nBB (Boy, Boy)\nBG (Boy, Girl)\nGB (Girl, Boy)\nGG (Girl, Girl)\n\nEach of these combinations is equally likely, with a probability of 1/4.\n\nWe are given that we meet one child at random, and it is a boy. This means we",
+      "status": "correct"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "correct",
+    "response": "## Setting Up the Problem\n\nThe possible family compositions are:\n- BB (both boys) \u2014 probability 1/4\n- BG (older boy, younger girl) \u2014 probability 1/4\n- GB (older girl, younger boy) \u2014 probability 1/4\n- GG (both girls) \u2014 probability 1/4\n\n## Probability of Meeting a Boy in Each Case\n\n- **BB**: P(meet a boy) = 1\n- **BG**: P(meet a boy) = 1/2\n- **GB**: P(meet a boy) = 1/2\n- **GG**: P(meet a boy) = 0\n\n## Applying Bayes' Theorem\n\n$$P(\\text{BB} \\mid \\text{met a boy}) = \\frac{P(\\text{meet boy} \\mid \\text{"
+  }
+}
