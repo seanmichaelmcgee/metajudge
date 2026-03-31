@@ -1,0 +1,38 @@
+{
+  "batch_id": "batch1",
+  "timestamp": "2026-03-30T19:11:57.824549+00:00",
+  "author_model": "anthropic/claude-sonnet-4.6",
+  "adversary_model": "x-ai/grok-4.1-fast",
+  "auditor_model": "openai/gpt-5.2",
+  "canary_models": [
+    "google/gemini-2.5-flash-lite",
+    "x-ai/grok-3-mini",
+    "openai/gpt-5-mini"
+  ],
+  "items": [
+    {
+      "item_num": 1,
+      "subfamily": "C1",
+      "verdict": "ERROR",
+      "iterations": 5,
+      "mechanism": "?",
+      "gold_answer": "?"
+    },
+    {
+      "item_num": 2,
+      "subfamily": "C1",
+      "verdict": "ACCEPT",
+      "iterations": 1,
+      "mechanism": "multi-constraint enumeration \u2014 upper-bound constraint omitted in inclusion-exclusion",
+      "gold_answer": "31"
+    },
+    {
+      "item_num": 3,
+      "subfamily": "C2",
+      "verdict": "ERROR",
+      "iterations": 2,
+      "mechanism": "?",
+      "gold_answer": "?"
+    }
+  ]
+}

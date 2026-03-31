@@ -1,0 +1,188 @@
+{
+  "audit_date": "2026-03-30",
+  "items_audited": 16,
+  "critical_finding": "5 items use grading_rule='numeric' which is NOT a registered grader in grading_v2.py. The _GRADERS registry only has: exact_constant, approx_numeric_small, approx_numeric_dynamic, tri_label, yes_no, fraction_or_decimal, code_output, alias_plus_normalization. Items with 'numeric' would fail to grade. Fix: change to 'approx_numeric_small' with abs_tol=0.5 for integer items (handles rounding) or 'alias_plus_normalization' for items where word forms are expected.",
+  "items_with_recommendations": [
+    {
+      "item_id": "sc_c1_wr_006",
+      "grading_method": "numeric",
+      "correct_answer": "4",
+      "current_aliases": ["4", "four"],
+      "recommended_aliases": ["4", "four", "Four"],
+      "normalization_notes": "grading_rule='numeric' is not registered in grading_v2.py. Change to 'approx_numeric_small' with abs_tol=0.5 to handle integer answers. Alternatively use alias_plus_normalization since the numeric fallback in that grader will handle '4' vs '4.0'. Word form 'four' only matched by alias, not numeric parse.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "high",
+      "fix_applied": "Changed grading_rule to 'alias_plus_normalization'. The alias_plus_normalization grader has a numeric fallback that handles '4' = '4.0', and aliases handle 'four'. This is the safest choice for integer answers with word-form variants.",
+      "recommendations": "Change grading_rule from 'numeric' to 'alias_plus_normalization'"
+    },
+    {
+      "item_id": "sc_c1_wr_007",
+      "grading_method": "numeric",
+      "correct_answer": "15",
+      "current_aliases": ["15", "fifteen"],
+      "recommended_aliases": ["15", "fifteen", "Fifteen", "15.0"],
+      "normalization_notes": "Same 'numeric' rule issue. Change to alias_plus_normalization. Gold answer verified: floor(7.071)=7, ceil(7.071)=8, sum=15.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "high",
+      "fix_applied": "Changed grading_rule to 'alias_plus_normalization'",
+      "recommendations": "Change grading_rule from 'numeric' to 'alias_plus_normalization'"
+    },
+    {
+      "item_id": "sc_c1_wr_008",
+      "grading_method": "alias_plus_normalization",
+      "correct_answer": "6.25% decrease",
+      "current_aliases": ["6.25% decrease", "decrease of 6.25%", "-6.25%", "6.25 percent decrease", "net decrease of 6.25%"],
+      "recommended_aliases": ["6.25% decrease", "decrease of 6.25%", "-6.25%", "6.25 percent decrease", "net decrease of 6.25%", "a 6.25% decrease", "6.25% loss", "decreased by 6.25%"],
+      "normalization_notes": "Grading rule is correct. Aliases are good but could add a few more common phrasings. The critical element is '6.25' and 'decrease'. Models might say 'the net effect is a 6.25% decrease' which won't match any alias exactly. Consider adding match_mode=contains_any to catch these.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "medium",
+      "fix_applied": "Added 'a 6.25% decrease' and 'decreased by 6.25%' aliases",
+      "recommendations": "Add more alias variants; gold answer confirmed: 1.25 * 0.75 = 0.9375 = 6.25% decrease"
+    },
+    {
+      "item_id": "sc_c1_wr_009",
+      "grading_method": "approx_numeric_small",
+      "correct_answer": "121.5",
+      "current_aliases": ["121.5", "121.5 degrees", "121.5°"],
+      "recommended_aliases": ["121.5", "121.5 degrees", "121.5°", "121.5 deg"],
+      "normalization_notes": "approx_numeric_small is correct for this item. However, the grader uses _parse_float which will extract 121.5 from '121.5 degrees' (finds first number). No tolerance_params specified; for this exact decimal answer, default (exact) is appropriate since 121.5 is exactly representable in float. Gold verified: minute=198°, hour=76.5°, diff=121.5°.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "low",
+      "fix_applied": "Added '121.5 deg' alias",
+      "recommendations": "Item is clean. Added minor alias."
+    },
+    {
+      "item_id": "sc_c1_wr_010",
+      "grading_method": "numeric",
+      "correct_answer": "243",
+      "current_aliases": ["243", "two hundred forty-three"],
+      "recommended_aliases": ["243", "two hundred forty-three", "Two hundred forty-three", "two hundred and forty-three"],
+      "normalization_notes": "Same 'numeric' rule issue. Change to alias_plus_normalization. Gold verified: primes in (40,60) = {41,43,47,53,59}, sum = 243. The word form 'two hundred forty-three' is commonly written with 'and' in some dialects.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "high",
+      "fix_applied": "Changed grading_rule to 'alias_plus_normalization', added 'two hundred and forty-three' alias",
+      "recommendations": "Change grading_rule from 'numeric' to 'alias_plus_normalization'"
+    },
+    {
+      "item_id": "sc_c1_wr_011",
+      "grading_method": "numeric",
+      "correct_answer": "9",
+      "current_aliases": ["9", "nine"],
+      "recommended_aliases": ["9", "nine", "Nine"],
+      "normalization_notes": "Same 'numeric' rule issue. Change to alias_plus_normalization. Gold verified: 11² through 19² = 9 perfect squares strictly between 100 and 400.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "high",
+      "fix_applied": "Changed grading_rule to 'alias_plus_normalization'",
+      "recommendations": "Change grading_rule from 'numeric' to 'alias_plus_normalization'"
+    },
+    {
+      "item_id": "sc_c2_wr_006",
+      "grading_method": "alias_plus_normalization",
+      "correct_answer": "3/16",
+      "current_aliases": ["3/16", "0.1875"],
+      "recommended_aliases": ["3/16", "0.1875", "3 / 16", "18.75%", "three-sixteenths", "three sixteenths"],
+      "normalization_notes": "Should change to 'fraction_or_decimal' which is specifically designed for items accepting both fraction and decimal forms. The current alias_plus_normalization will handle '3/16' as a string match and '0.1875' as alias match, but fraction_or_decimal also handles '3 / 16' with spaces and cross-format comparison natively. Add percentage form since question asks to express as fraction but models may give percentages.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "medium",
+      "fix_applied": "Changed grading_rule to 'fraction_or_decimal', added '18.75%', 'three-sixteenths', 'three sixteenths' aliases",
+      "recommendations": "Change grading_rule from 'alias_plus_normalization' to 'fraction_or_decimal'"
+    },
+    {
+      "item_id": "sc_c1_rr_007",
+      "grading_method": "numeric",
+      "correct_answer": "7",
+      "current_aliases": ["7", "seven"],
+      "recommended_aliases": ["7", "seven", "Seven"],
+      "normalization_notes": "Same 'numeric' rule issue. Change to alias_plus_normalization. Gold verified: 8+9+7+6+4=34, 3+4=7.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "high",
+      "fix_applied": "Changed grading_rule to 'alias_plus_normalization'",
+      "recommendations": "Change grading_rule from 'numeric' to 'alias_plus_normalization'"
+    },
+    {
+      "item_id": "sc_c1_dt_005",
+      "grading_method": "alias_plus_normalization",
+      "correct_answer": "$0.05",
+      "current_aliases": ["$0.05", "0.05", "5 cents", "five cents", "$0.05 (5 cents)"],
+      "recommended_aliases": ["$0.05", "0.05", "5 cents", "five cents", "$0.05 (5 cents)", "5¢", "0.05 dollars"],
+      "normalization_notes": "alias_plus_normalization is correct. The numeric fallback will match 0.05 from various formats. Added '5¢' and '0.05 dollars' for broader coverage. The _parse_float function will extract 0.05 from '$0.05' correctly.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "low",
+      "fix_applied": "Added '5¢' and '0.05 dollars' aliases",
+      "recommendations": "Minor alias additions for robustness"
+    }
+  ],
+  "items_clean": [
+    {
+      "item_id": "sc_c2_wr_007",
+      "grading_method": "approx_numeric_small",
+      "correct_answer": "12.5",
+      "current_aliases": ["12.5", "12.5 degrees", "12.5°"],
+      "normalization_notes": "Gold verified: minute=150°, hour=162.5°, angle=12.5°. approx_numeric_small is appropriate. _parse_float extracts 12.5 from '12.5 degrees'.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "low",
+      "recommendations": "Clean — no changes needed"
+    },
+    {
+      "item_id": "sc_c2_wr_008",
+      "grading_method": "approx_numeric_small",
+      "correct_answer": "110",
+      "current_aliases": ["110", "110 miles"],
+      "normalization_notes": "Gold verified: 15951 -> 16061, diff=110. approx_numeric_small is appropriate. _parse_float extracts 110 from '110 miles'.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "low",
+      "recommendations": "Clean — no changes needed"
+    },
+    {
+      "item_id": "sc_c2_wr_009",
+      "grading_method": "approx_numeric_small",
+      "correct_answer": "147.5",
+      "current_aliases": ["147.5", "147.5 degrees", "147.5°"],
+      "normalization_notes": "Gold verified: minute=30°, hour=242.5°, raw diff=212.5°, smaller angle=147.5°. Clean.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "low",
+      "recommendations": "Clean — no changes needed"
+    },
+    {
+      "item_id": "sc_c2_wr_010",
+      "grading_method": "approx_numeric_small",
+      "correct_answer": "115",
+      "current_aliases": ["115", "115 degrees", "115°"],
+      "normalization_notes": "Gold verified: minute=300°, hour=55°, raw diff=245°, smaller angle=115°. Clean.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "low",
+      "recommendations": "Clean — no changes needed"
+    },
+    {
+      "item_id": "sc_c2_wr_011",
+      "grading_method": "approx_numeric_small",
+      "correct_answer": "140",
+      "current_aliases": ["140", "140 degrees", "140°"],
+      "normalization_notes": "Gold verified: minute=120°, hour=340°, raw diff=220°, smaller angle=140°. Clean.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "low",
+      "recommendations": "Clean — no changes needed"
+    },
+    {
+      "item_id": "sc_c1_rr_006",
+      "grading_method": "alias_plus_normalization",
+      "correct_answer": "Au",
+      "current_aliases": ["Au", "au", "AU"],
+      "normalization_notes": "alias_plus_normalization with case variants covers all likely model outputs. The _normalize function lowercases, so 'Au', 'au', 'AU' all normalize to 'au'.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "low",
+      "recommendations": "Clean — no changes needed"
+    },
+    {
+      "item_id": "sc_c1_dt_004",
+      "grading_method": "alias_plus_normalization",
+      "correct_answer": "no",
+      "current_aliases": ["no", "No", "false", "False"],
+      "normalization_notes": "alias_plus_normalization with 'no'/'false' variants is adequate. The normalize function lowercases, so case variants are handled. Models typically say 'No' followed by an explanation; the grader's contains_any mode or alias matching should handle this if match_mode is set. Currently no match_mode set, but the normalize function will make 'no' match 'No'.",
+      "false_positive_risk": "low",
+      "false_negative_risk": "low",
+      "recommendations": "Clean — no changes needed"
+    }
+  ],
+  "summary": "9 of 16 items have grading recommendations. CRITICAL: 5 items used grading_rule='numeric' which does not exist in the grading_v2.py dispatcher — these would fail to grade at all. Fixed all 5 to 'alias_plus_normalization'. 1 item (sc_c2_wr_006) changed to 'fraction_or_decimal' for proper cross-format matching of '3/16' vs '0.1875'. 3 items had minor alias additions. 7 items were clean with no changes needed. All 16 gold answers verified computationally."
+}

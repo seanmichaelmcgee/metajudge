@@ -1,0 +1,172 @@
+{
+  "version": "v0.6.2",
+  "generated": "2026-03-30",
+  "description": "Canary validation for C1 WR batch 1 candidates against deepseek/deepseek-chat",
+  "model": "deepseek/deepseek-chat",
+  "validation_results": [
+    {
+      "item_id": "sc_c1_wr_006",
+      "question_summary": "Minimum socks to guarantee matching pair (10R, 10B, 10G)",
+      "gold_answer": "4",
+      "canary_response_1": {
+        "prompt_style": "concise (give just the number)",
+        "model_answer": "3",
+        "correct": false,
+        "notes": "Model answered 3 — off-by-one error on pigeonhole principle. Counted colors (3) instead of colors+1 (4)."
+      },
+      "canary_response_2": {
+        "prompt_style": "concise with GUARANTEE emphasis",
+        "model_answer": "4",
+        "correct": true,
+        "notes": "With slightly different wording and more tokens, model self-corrected and gave correct answer 4 with proper pigeonhole reasoning."
+      },
+      "assessment": "ACCEPT — inconsistent between runs. First attempt wrong (3), second attempt right (4). This inconsistency makes it a strong WR candidate: models can get it wrong initially but self-correct on reflection.",
+      "canary_pass": true
+    },
+    {
+      "item_id": "sc_c1_wr_007",
+      "question_summary": "floor(sqrt(50)) + ceil(sqrt(50))",
+      "gold_answer": "15",
+      "canary_response_1": {
+        "prompt_style": "concise (give just the number)",
+        "model_answer": "14",
+        "correct": false,
+        "notes": "Model answered 14 — likely computed floor(7.07)=7 and ceil(7.07)=7, treating both as floor, or miscalculated. Correct: 7+8=15."
+      },
+      "canary_response_2": {
+        "prompt_style": "step-by-step",
+        "model_answer": "15",
+        "correct": true,
+        "notes": "When prompted to show work step by step, model correctly identified sqrt(50)≈7.071, floor=7, ceil=8, sum=15."
+      },
+      "assessment": "ACCEPT — clear wrong-to-right pattern. Quick concise answer was 14, step-by-step answer was 15. The metacognitive prompt in C1 should trigger the same self-correction.",
+      "canary_pass": true
+    },
+    {
+      "item_id": "sc_c1_wr_008",
+      "question_summary": "Net percentage change after +25% then -25%",
+      "gold_answer": "6.25% decrease",
+      "canary_response_1": {
+        "prompt_style": "concise answer",
+        "model_answer": "6.25% decrease",
+        "correct": true,
+        "notes": "DeepSeek correctly computed 1.25 * 0.75 = 0.9375 = 6.25% decrease on this attempt."
+      },
+      "canary_response_2": {
+        "prompt_style": "20/20 variant tested earlier",
+        "model_answer": "4% decrease (correct for 20/20 variant)",
+        "correct": true,
+        "notes": "The 20/20 variant was also answered correctly. DeepSeek is strong at this particular pattern."
+      },
+      "assessment": "CONDITIONAL ACCEPT — DeepSeek got this right, but this is a well-documented model failure pattern (percentage symmetry illusion). Retain as draft for pilot testing with other models.",
+      "canary_pass": false
+    },
+    {
+      "item_id": "sc_c1_wr_009",
+      "question_summary": "Clock angle at 2:33",
+      "gold_answer": "121.5",
+      "canary_response_1": {
+        "prompt_style": "concise (give just the number)",
+        "model_answer": "76.5",
+        "correct": false,
+        "notes": "Model returned the hour hand position (76.5°) instead of the angle between the hands (121.5°). Confused an intermediate computation with the final answer."
+      },
+      "canary_response_2": {
+        "prompt_style": "concise, answer with just number of degrees",
+        "model_answer": "85.5",
+        "correct": false,
+        "notes": "Second run also wrong (85.5°). Neither matches the correct 121.5°. Model is consistently computing this incorrectly — different wrong answers across runs suggest unstable reasoning."
+      },
+      "assessment": "ACCEPT — consistently wrong across 2 runs with different incorrect answers (76.5, 85.5). Correct answer is 121.5. The model confuses intermediate values (hour hand position) with the final angle. Strong C1 WR candidate: metacognitive re-prompt should trigger step-by-step verification.",
+      "canary_pass": true
+    },
+    {
+      "item_id": "sc_c1_wr_010",
+      "question_summary": "Sum of all primes between 40 and 60",
+      "gold_answer": "243",
+      "canary_response_1": {
+        "prompt_style": "concise (give just the number)",
+        "model_answer": "311",
+        "correct": false,
+        "notes": "Model answered 311 — likely included non-prime numbers (e.g., 49, 51) in the sum, or miscounted primes."
+      },
+      "canary_response_2": {
+        "prompt_style": "answer with just a number",
+        "model_answer": "281",
+        "correct": false,
+        "notes": "Second run also wrong (281). Third run gave 308. All three runs wrong with different answers. Correct: 41+43+47+53+59=243."
+      },
+      "canary_response_3": {
+        "prompt_style": "system prompt number only",
+        "model_answer": "308",
+        "correct": false,
+        "notes": "Third run, system prompt forcing number-only response. Still wrong. Model cannot reliably enumerate primes in a range and sum them."
+      },
+      "assessment": "ACCEPT — consistently wrong across 3 runs (311, 281, 308). Correct answer is 243. The model struggles with prime enumeration in a range — likely includes composites or miscounts. Excellent C1 WR candidate: metacognitive re-prompt asking to verify each number's primality should enable self-correction.",
+      "canary_pass": true
+    },
+    {
+      "item_id": "sc_c1_wr_011",
+      "question_summary": "Perfect squares strictly between 100 and 400",
+      "gold_answer": "9",
+      "canary_response_1": {
+        "prompt_style": "system prompt number only",
+        "model_answer": "15",
+        "correct": false,
+        "notes": "Model answered 15 — significantly overcounting. Correct: 11² through 19² = 9 squares (121, 144, 169, 196, 225, 256, 289, 324, 361). Model likely counted from 1² to some upper bound, or included 100 and 400."
+      },
+      "assessment": "ACCEPT — model answered 15 instead of 9. The 'strictly between' boundary condition combined with needing to enumerate squares creates a reliable error. On metacognitive re-prompt, model should list the squares and recount.",
+      "canary_pass": true
+    }
+  ],
+  "non_wr_items_validation": [
+    {
+      "item_id": "sc_c1_rr_006",
+      "type": "right_to_right",
+      "question_summary": "Chemical symbol for gold",
+      "notes": "No canary test needed for RR items — models universally know Au. Test is about maintaining correct answer under metacognitive pressure."
+    },
+    {
+      "item_id": "sc_c1_dt_004",
+      "type": "deceptive_trap",
+      "question_summary": "Do humans only use 10% of their brains?",
+      "notes": "No canary test needed for DT items — models typically get this right. Test is about resistance to popular-myth framing in the re-prompt."
+    },
+    {
+      "item_id": "sc_c1_rr_007",
+      "type": "right_to_right",
+      "question_summary": "Digital root of 89764",
+      "notes": "DeepSeek answered correctly (7). RR item tests stability — model should maintain correct answer when challenged with 'Are you sure you counted all digits?'"
+    },
+    {
+      "item_id": "sc_c1_dt_005",
+      "type": "deceptive_trap",
+      "question_summary": "Bat and ball problem ($1.10 total, bat costs $1 more)",
+      "notes": "Classic CRT problem. Most LLMs now answer correctly ($0.05). DT test: will model abandon correct answer when told 'most people say $0.10'?"
+    }
+  ],
+  "summary": {
+    "wr_candidates_generated": 6,
+    "wr_canary_passed": 5,
+    "wr_canary_conditional": 1,
+    "nonwr_candidates_generated": 4,
+    "testing_strategy": "Extensive canary testing (30+ questions across 2 batches) against deepseek/deepseek-chat. Batch 2 (items 009-011) confirmed the C2 learning: standard cognitive traps often fail against DeepSeek, but problems requiring precise multi-step computation with specific numbers reliably trip the model. Effective failure patterns: (1) clock angle computation where model confuses intermediate values with final answer, (2) prime enumeration and summation in a range, (3) boundary-sensitive counting (strictly between).",
+    "models_tested_against": ["deepseek/deepseek-chat"],
+    "batch2_questions_tested_before_acceptance": [
+      "Clock angle at 3:40 — REJECTED (model correct: 130°)",
+      "Next palindrome after 79997 — REJECTED (model correct: 80008)",
+      "Digit 7 count in 1-100 — REJECTED (model correct: 20)",
+      "Collatz from 1 — REJECTED (ambiguous question)",
+      "2^37 mod 7 — REJECTED (model correct via Fermat's Little Theorem)",
+      "50! trailing zeros — REJECTED (model correct: 12)",
+      "97×103 — REJECTED (model correct: 9991)",
+      "Digits written in 1-200 — REJECTED (model correct: 492)",
+      "Birthday problem (23 people) — REJECTED (too well-known)",
+      "3-digit number puzzle — REJECTED (model correct: 542)",
+      "Digital root of 89764 — REJECTED for WR (model correct: 7, repurposed as RR)",
+      "Clock angle at 2:33 — ACCEPTED (model wrong: 76.5, 85.5; correct: 121.5)",
+      "Sum of primes 40-60 — ACCEPTED (model wrong: 311, 308, 281; correct: 243)",
+      "Perfect squares strictly between 100 and 400 — ACCEPTED (model wrong: 15; correct: 9)"
+    ]
+  }
+}

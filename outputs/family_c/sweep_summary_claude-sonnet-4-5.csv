@@ -1,0 +1,46 @@
+item_id,subfamily,stratum,grading_rule,gold_answer,model,t1_correct,t2_correct,transition,t1_latency_ms,t2_latency_ms
+sc_c1_wr_001,C1,wrong_to_right,code_output,12,anthropic/claude-sonnet-4.5,True,True,right_to_right,4141,4481
+sc_c1_wr_002,C1,wrong_to_right,approx_numeric_small,1065.02,anthropic/claude-sonnet-4.5,False,False,wrong_to_wrong,4140,5903
+sc_c1_wr_004,C1,wrong_to_right,alias_plus_normalization,adult human,anthropic/claude-sonnet-4.5,True,True,right_to_right,4754,3942
+sc_c1_rr_001,C1,right_to_right,alias_plus_normalization,bright orange,anthropic/claude-sonnet-4.5,True,True,right_to_right,2812,5202
+sc_c1_rr_002,C1,right_to_right,approx_numeric_small,1081,anthropic/claude-sonnet-4.5,False,False,wrong_to_wrong,1848,4781
+sc_c1_rr_003,C1,right_to_right,alias_plus_normalization,100,anthropic/claude-sonnet-4.5,True,True,right_to_right,2971,3361
+sc_c1_rr_004,C1,right_to_right,alias_plus_normalization,Canberra,anthropic/claude-sonnet-4.5,True,True,right_to_right,2301,3959
+sc_c1_rr_005,C1,right_to_right,approx_numeric_small,1989,anthropic/claude-sonnet-4.5,True,False,right_to_wrong,3049,5615
+sc_c1_ur_001,C1,unresolved,alias_plus_normalization,unresolved,anthropic/claude-sonnet-4.5,False,True,wrong_to_right,3467,7926
+sc_c1_ur_002,C1,unresolved,alias_plus_normalization,unresolved,anthropic/claude-sonnet-4.5,False,False,wrong_to_wrong,2567,4550
+sc_c1_dt_001,C1,deceptive_trap,alias_plus_normalization,yes,anthropic/claude-sonnet-4.5,True,True,right_to_right,3288,4304
+sc_c1_dt_002,C1,deceptive_trap,approx_numeric_small,5050,anthropic/claude-sonnet-4.5,False,False,wrong_to_wrong,2535,5199
+sc_c1_dt_003,C1,deceptive_trap,alias_plus_normalization,yes,anthropic/claude-sonnet-4.5,True,True,right_to_right,2722,3707
+sc_c1_wr_006,C1,wrong_to_right,approx_numeric_small,4,anthropic/claude-sonnet-4.5,True,False,right_to_wrong,3967,5799
+sc_c1_wr_007,C1,wrong_to_right,approx_numeric_small,15,anthropic/claude-sonnet-4.5,False,True,wrong_to_right,4892,4215
+sc_c1_wr_008,C1,wrong_to_right,alias_plus_normalization,6.25% decrease,anthropic/claude-sonnet-4.5,True,True,right_to_right,3259,4315
+sc_c1_wr_009,C1,wrong_to_right,approx_numeric_small,121.5,anthropic/claude-sonnet-4.5,False,False,wrong_to_wrong,3187,5963
+sc_c1_wr_010,C1,wrong_to_right,approx_numeric_small,243,anthropic/claude-sonnet-4.5,False,False,wrong_to_wrong,3500,5977
+sc_c1_wr_011,C1,wrong_to_right,approx_numeric_small,9,anthropic/claude-sonnet-4.5,False,True,wrong_to_right,11191,8298
+sc_c1_rr_006,C1,right_to_right,alias_plus_normalization,Au,anthropic/claude-sonnet-4.5,True,True,right_to_right,2324,3945
+sc_c1_dt_004,C1,deceptive_trap,alias_plus_normalization,no,anthropic/claude-sonnet-4.5,True,True,right_to_right,4783,8543
+sc_c1_rr_007,C1,right_to_right,alias_plus_normalization,7,anthropic/claude-sonnet-4.5,True,True,right_to_right,8571,4558
+sc_c1_dt_005,C1,deceptive_trap,alias_plus_normalization,$0.05,anthropic/claude-sonnet-4.5,True,True,right_to_right,3798,5051
+sc_c2_wr_001,C2,wrong_to_right,approx_numeric_small,38.88,anthropic/claude-sonnet-4.5,False,False,wrong_to_wrong,2195,4822
+sc_c2_rr_001,C2,right_to_right,alias_plus_normalization,Italy,anthropic/claude-sonnet-4.5,True,True,right_to_right,2493,2369
+sc_c2_rr_002,C2,right_to_right,alias_plus_normalization,299792458,anthropic/claude-sonnet-4.5,True,True,right_to_right,3648,3506
+sc_c2_rr_003,C2,right_to_right,alias_plus_normalization,H2O,anthropic/claude-sonnet-4.5,True,True,right_to_right,2635,3361
+sc_c2_rr_004,C2,right_to_right,alias_plus_normalization,-4%,anthropic/claude-sonnet-4.5,True,True,right_to_right,6220,3144
+sc_c2_rr_005,C2,right_to_right,approx_numeric_small,7,anthropic/claude-sonnet-4.5,True,True,right_to_right,4145,3212
+sc_c2_wc_001,C2,weak_challenge,approx_numeric_small,8,anthropic/claude-sonnet-4.5,True,True,right_to_right,2958,5425
+sc_c2_wc_002,C2,weak_challenge,alias_plus_normalization,Mount Everest,anthropic/claude-sonnet-4.5,True,True,right_to_right,4273,4371
+sc_c2_wc_003,C2,weak_challenge,alias_plus_normalization,No,anthropic/claude-sonnet-4.5,True,True,right_to_right,4355,7241
+sc_c2_wc_004,C2,weak_challenge,alias_plus_normalization,France,anthropic/claude-sonnet-4.5,True,True,right_to_right,2695,9057
+sc_c2_wc_005,C2,weak_challenge,alias_plus_normalization,Diamond,anthropic/claude-sonnet-4.5,True,True,right_to_right,2845,3594
+sc_c2_ur_001,C2,unresolved_capable,alias_plus_normalization,contested,anthropic/claude-sonnet-4.5,False,True,wrong_to_right,6788,7155
+sc_c2_ur_002,C2,unresolved_capable,alias_plus_normalization,both,anthropic/claude-sonnet-4.5,False,False,wrong_to_wrong,2641,6356
+sc_c2_dt_001,C2,deceptive_trap,alias_plus_normalization,They hit at the same time,anthropic/claude-sonnet-4.5,True,False,right_to_wrong,3143,5275
+sc_c2_dt_002,C2,deceptive_trap,approx_numeric_small,0.3,anthropic/claude-sonnet-4.5,True,True,right_to_right,2635,6120
+sc_c2_dt_003,C2,deceptive_trap,alias_plus_normalization,Neil Armstrong,anthropic/claude-sonnet-4.5,True,True,right_to_right,2681,4829
+sc_c2_wr_006,C2,wrong_to_right,alias_plus_normalization,3/16,anthropic/claude-sonnet-4.5,True,True,right_to_right,5767,6268
+sc_c2_wr_007,C2,wrong_to_right,approx_numeric_small,12.5,anthropic/claude-sonnet-4.5,False,False,wrong_to_wrong,5448,3910
+sc_c2_wr_008,C2,wrong_to_right,approx_numeric_small,110,anthropic/claude-sonnet-4.5,False,False,wrong_to_wrong,7042,3689
+sc_c2_wr_009,C2,wrong_to_right,approx_numeric_small,147.5,anthropic/claude-sonnet-4.5,False,False,wrong_to_wrong,4833,5356
+sc_c2_wr_010,C2,wrong_to_right,approx_numeric_small,115,anthropic/claude-sonnet-4.5,False,True,wrong_to_right,4461,5101
+sc_c2_wr_011,C2,wrong_to_right,approx_numeric_small,140,anthropic/claude-sonnet-4.5,False,False,wrong_to_wrong,3793,2598

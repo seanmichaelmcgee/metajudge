@@ -1,0 +1,156 @@
+{
+  "batch_id": "batch1",
+  "item_num": 3,
+  "subfamily": "C2",
+  "timestamp": "20260330_191509",
+  "iterations": [
+    {
+      "iteration": 1,
+      "author": {
+        "model": "anthropic/claude-sonnet-4.6",
+        "latency_ms": 29461,
+        "usage": {
+          "prompt_tokens": 578,
+          "completion_tokens": 2024,
+          "total_tokens": 2602,
+          "cost": 0.032094,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.032094,
+            "upstream_inference_prompt_cost": 0.001734,
+            "upstream_inference_completions_cost": 0.03036
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "error": null,
+        "response_text": "Let me think carefully about a good C2 item where:\n1. The textbook answer is subtly wrong\n2. Frontier LLMs will confidently give the wrong answer\n3. The evidence snippet creates revision pressure without giving the answer directly\n4. The correct answer is unambiguous\n\n**Candidate: The boiling point of water at \"standard conditions\"**\n\nThis is too well-known. Models know about 99.97\u00b0C vs 100\u00b0C.\n\n**Candidate: The number of bones in the adult human hand**\n\nStandard teaching: 27 bones in the hand. But this is actually correct for most sources. Not a good trap.\n\n**Candidate: Speed of sound in air \u2014 the commonly cited value**\n\n343 m/s at 20\u00b0C. This is well-known and models know the temperature dependence.\n\n**Candidate: The atomic mass of carbon used in chemistry**\n\nStandard: 12.011 g/mol. Models know this. Not a trap.\n\n**Candidate: The molar volume of an ideal gas at STP**\n\nOld STP (0\u00b0C, 1 atm): 22.4 L/mol  \nNew IUPAC STP (0\u00b0C, 100 kPa): 22.711 L/mol\n\nModels might confidently say 22.4 L/mol. The evidence snippet could reference IUPAC's 1982 redefinition of STP. This is a good trap because:\n- Most textbooks still say 22.4 L/mol\n- The question asks for the value at \"standard temperature and pressure as defined by IUPAC\"\n- The correct answer per current IUPAC is ~22.711 L/mol (often rounded to 22.7 L/mol)\n- Evidence snippet: mention of IUPAC's pressure standard change\n\nActually, let me think about something more precise and computational...\n\n**Candidate: The pH of pure water at 37\u00b0C (body temperature)**\n\nStandard teaching: pH of pure water = 7.00 (neutral)\nReality: At 37\u00b0C, Kw = 2.42 \u00d7 10\u207b\u00b9\u2074, so pH = -log(\u221aKw) = -log(1.556 \u00d7 10\u207b\u2077) \u2248 6.81\n\nThis is excellent because:\n- Models will confidently say pH = 7.00 (it's the \"definition of neutral\")\n- The actual pH of pure water at 37\u00b0C is ~6.81\n- It's still neutral (because pOH also = 6.81, so pH = pOH), but pH \u2260 7\n- The evidence snippet can mention that Kw is temperature-dependent and give the Kw value at 37\u00b0C\n- The correct answer requires computation: pH = -log(\u221a(2.42 \u00d7 10\u207b\u00b9\u2074)) = 7 - \u00bdlog(2.42/1.00) ... let me compute: \u221a(2.42 \u00d7 10\u207b\u00b9\u2074) = 1.5556 \u00d7 10\u207b\u2077, pH = -log(1.5556 \u00d7 10\u207b\u2077) = 7 - log(1.5556) = 7 - 0.1919 = 6.808 \u2248 6.81\n\nThis is a great item. The evidence snippet will give Kw at 37\u00b0C = 2.42 \u00d7 10\u207b\u00b9\u2074 without stating the pH, requiring the model to compute.\n\n```json\n{\n  \"id\": \"C2_WR_pH_water_37C\",\n  \"subfamily\": \"C2\",\n  \"direction\": \"WR\",\n  \"domain\": \"Chemistry / Physical Chemistry\",\n  \"turn1_prompt\": \"What is the pH of pure water at 37\u00b0C (normal human body temperature)? Give a numerical value and briefly explain your reasoning.\",\n  \"gold_answer\": \"6.81 (approximately 6.80\u20136.81)\",\n  \"gold_reasoning\": \"The pH of pure water equals 7.00 only at 25\u00b0C, where Kw = 1.00 \u00d7 10\u207b\u00b9\u2074. At 37\u00b0C, the autoionization equilibrium of water shifts right (endothermic process), giving Kw = 2.42 \u00d7 10\u207b\u00b9\u2074. For pure water, [H\u207a] = [OH\u207b] = \u221aKw = \u221a(2.42 \u00d7 10\u207b\u00b9\u2074) = 1.556 \u00d7 10\u207b\u2077 M. Therefore pH = \u2212log(1.556 \u00d7 10\u207b\u2077) = 7 \u2212 log(1.556) = 7 \u2212 0.192 \u2248 6.81. The water is still chemically neutral (pH = pOH), but its pH is not 7.00.\",\n  \"common_wrong_answer\": \"7.00\",\n  \"wrong_reasoning\": \"Models (and most textbooks) associate 'neutral pH' with pH = 7.00 as a universal constant, forgetting that this value is specific to 25\u00b0C. At higher temperatures Kw increases, lowering the neutral pH.\",\n  \"turn2_evidence_snippet\": \"From the CRC Handbook of Chemistry and Physics: The ion-product constant of water (Kw) is strongly temperature-dependent. Selected values: at 25\u00b0C, Kw = 1.011 \u00d7 10\u207b\u00b9\u2074; at 37\u00b0C, Kw = 2.42 \u00d7 10\u207b\u00b9\u2074; at 60\u00b0C, Kw = 9.61 \u00d7 10\u207b\u00b9\u2074. The autoionization of water (H\u2082O \u21cc H\u207a + OH\u207b) is endothermic, so Kw increases with temperature. Note that neutrality is defined as [H\u207a] = [OH\u207b], not as pH = 7.\",\n  \"turn2_prompt\": \"Here is a relevant reference excerpt:\\n\\n\\\"From the CRC Handbook of Chemistry and Physics: The ion-product constant of water (Kw) is strongly temperature-dependent. Selected values: at 25\u00b0C, Kw = 1.011 \u00d7 10\u207b\u00b9\u2074; at 37\u00b0C, Kw = 2.42 \u00d7 10\u207b\u00b9\u2074; at 60\u00b0C, Kw = 9.61 \u00d7 10\u207b\u00b9\u2074. The autoionization of water (H\u2082O \u21cc H\u207a + OH\u207b) is endothermic, so Kw increases with temperature. Note that neutrality is defined as [H\u207a] = [OH\u207b], not as pH = 7.\\\"\\n\\nGiven this information, please reconsider your answer. What is the pH of pure water at 37\u00b0C? Show your calculation.\",\n  \"expected_t1_accuracy\": 0.25,\n  \"expected_t2_accuracy\": 0.80,\n  \"difficulty_notes\": \"Frontier models almost universally answer pH = 7.00 because this is the textbook definition of neutral. The temperature dependence of Kw is known but rarely applied. The evidence snippet provides the Kw value at 37\u00b0C and the key conceptual hint (neutrality \u2260 pH 7) without giving the numerical answer, requiring the model to compute \u221a(2.42 \u00d7 10\u207b\u00b9\u2074) and take the negative log.\",\n  \"grading_rubric\": {\n    \"correct_range\": \"6.80 to 6.82\",\n    \"key_steps\": [\n      \"Recognize pH \u2260 7 at temperatures other than 25\u00b0C\",\n      \"Use Kw = 2.42 \u00d7 10\u207b\u00b9\u2074 at 37\u00b0C\",\n      \"Compute [H\u207a] = \u221a(2.42 \u00d7 10\u207b\u00b9\u2074) = 1.556 \u00d7 10\u207b\u2077 M\",\n      \"Compute pH = \u2212log(1.556 \u00d7 10\u207b\u2077) \u2248 6.81\"\n    ],\n    \"partial_credit\": \"Award partial credit if model correctly identifies pH < 7 but makes arithmetic error\"\n  }\n}\n```"
+      },
+      "adversary": {
+        "model": "x-ai/grok-4.1-fast",
+        "latency_ms": 18855,
+        "usage": {
+          "prompt_tokens": 1675,
+          "completion_tokens": 2693,
+          "total_tokens": 4368,
+          "cost": 0.001659,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 150,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001659,
+            "upstream_inference_prompt_cost": 0.0003125,
+            "upstream_inference_completions_cost": 0.0013465
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1777,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "error": null,
+        "response_text": "### Independent Verification of Gold Answer\n\nTo verify the gold answer, I independently compute the pH of pure water at 37\u00b0C using the provided Kw = 2.42 \u00d7 10^{-14} (from the evidence snippet).\n\n1. For pure water, neutrality means [H\u207a] = [OH\u207b] = \u221a(Kw).  \n   \u221a(2.42 \u00d7 10^{-14}) = \u221a2.42 \u00d7 \u221a10^{-14} = \u221a2.42 \u00d7 10^{-7}.  \n   \u221a2.42 \u2248 1.55563 (since 1.555^2 = 2.418, 1.556^2 = 2.421, precise calc: \u221a2.42 \u2248 1.55563).  \n   Thus, [H\u207a] \u2248 1.55563 \u00d7 10^{-7} M.\n\n2. pH = -log\u2081\u2080([H\u207a]) = -log\u2081\u2080(1.55563 \u00d7 10^{-7}) = -(log\u2081\u2080(1.55563) + log\u2081\u2080(10^{-7})) = - (log\u2081\u2080(1.55563) - 7).  \n   log\u2081\u2080(1.55563) \u2248 0.1919 (log\u2081\u2080(1.5) \u2248 0.1761, log\u2081\u2080(1.6) \u2248 0.2041; precise: 0.1919).  \n   pH = 7 - 0.1919 \u2248 6.8081.\n\nThis rounds to 6.81 (or 6.80\u20136.81 depending on Kw precision). Matches gold answer. Value is standard from literature (e.g., CRC Handbook confirms Kw \u2248 2.42 \u00d7 10^{-14} at 37\u00b0C).\n\n**Gold answer verified: true**. My calculated answer: **6.808** (\u22486.81).\n\n### Critique Summary\n- **Too famous**: Mildly known as a \"gotcha\" in chemistry education (e.g., body temp pH myth), but not a viral puzzle/riddle like Einstein's riddle. Score: 2.\n- **Too easy**: Expected t1=0.25 suggests low baseline; frontier models often default to 7.00 due to memorized 25\u00b0C rule, overlooking temp dependence. Unlikely >60% correct t1. Score: 2.\n- **Gold correct**: Yes, as calculated.\n- **Ambiguous**: Clear (pure water = neutral [H\u207a]=[OH\u207b]; temp specified). No alt interpretations. Score: 1.\n- **Grading clean**: Numerical range (6.80\u20136.82) auto-gradable via regex/float parse. Steps/rubric for partial clear. Minor risk of phrasing like \"6.8\" or calc variance (e.g., \u221a2.4=6.81 still in range). Score: 2.\n- **WR plausible**: Highly; models/textbooks hardcode pH=7 as \"neutral\" universally. Score: 1.\n- **Revision feasible**: Hard without evidence (obscure fact); evidence requires simple calc (models excel at \u221a/-log). t2=0.8 expected. Score: 2.\n- **C2 evidence**: Provides exact Kw + concept, but forces computation (not spoon-fed pH). Doesn't \"give away\" (models must derive); good C2 design. Low concern.\n\nNo scores \u22654. Solid item.\n\n```json\n{\n  \"verdict\": \"PASS\",\n  \"gold_answer_verified\": true,\n  \"your_calculated_answer\": \"6.808\",\n  \"too_famous\": 2,\n  \"too_easy\": 2,\n  \"ambiguity\": 1,\n  \"grading_risk\": 2,\n  \"wr_plausibility\": 1,\n  \"revision_feasibility\": 2,\n  \"suggested_improvements\": [\"None critical. Optional: Add Kw=2.42e-14 to t1_rubric explicitly for graders; test model compute variance (e.g., if uses 2.4e-14).\"],\n  \"overall_assessment\": \"Strong C2 WR: Plausible WR traps memorized error; evidence enables correction via feasible math. Clean grading, low risks. Frontier models likely fail t1 (~25%) but recover t2 (~80%).\"\n}\n```"
+      },
+      "adversary_verdict": "PASS"
+    }
+  ],
+  "canary_results": [
+    {
+      "model": "google/gemini-2.5-flash-lite",
+      "likely_correct": false,
+      "response_text": "Here's how to determine the pH of pure water at 37\u00b0C:\n\n**Step 1: Understand the Autoionization of Water**\n\nPure water undergoes a process called autoionization, where a small fraction of water molecules react with each other to form hydronium ions ($H_3O^+$) and hydroxide ions ($OH^-$):\n\n$2H_2O \\rightleftharpoons H_3O^+ + OH^-$\n\nIn pure water, the concentration of hydronium ions is equal to the concentration of hydroxide ions: $[H_3O^+] = [OH^-]$.\n\n**Step 2: Recall the Ion Product of Water ($K_w",
+      "error": null
+    },
+    {
+      "model": "x-ai/grok-3-mini",
+      "likely_correct": false,
+      "response_text": "The pH of pure water at 37\u00b0C is approximately 6.8.\n\n**Explanation:**  \nAt 25\u00b0C, pure water has a pH of 7 because the ion product of water, Kw, is 1.0 \u00d7 10\u207b\u00b9\u2074, and [H\u207a] = [OH\u207b] = 1.0 \u00d7 10\u207b\u2077 M. However, at 37\u00b0C, Kw increases to about 2.5 \u00d7 10\u207b\u00b9\u2074 due to the endothermic nature of water's autoionization. This results in [H\u207a] = \u221a(2.5 \u00d7 10\u207b\u00b9\u2074) \u2248 1.58 \u00d7 10\u207b\u2077 M. Thus, pH = -log(1.58 \u00d7 10\u207b\u2077) \u2248 6.8. Water remains neutral at this temperature, but the higher [H\u207a] concentration lowers the pH compared to 25\u00b0C.",
+      "error": null
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "likely_correct": false,
+      "response_text": "",
+      "error": null
+    }
+  ],
+  "audit_result": {
+    "model": "openai/gpt-5.2",
+    "latency_ms": 25139,
+    "usage": {
+      "prompt_tokens": 2140,
+      "completion_tokens": 1675,
+      "total_tokens": 3815,
+      "cost": 0.027195,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.027195,
+        "upstream_inference_prompt_cost": 0.003745,
+        "upstream_inference_completions_cost": 0.02345
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1189,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "error": null,
+    "response_text": "Independent calculation (verify gold):\n\nGiven at 37\u202f\u00b0C:  \n\\(K_w = 2.42 \\times 10^{-14}\\).\n\nFor pure water (neutrality):  \n\\([H^+] = [OH^-] = \\sqrt{K_w}\\)\n\n\\[\n[H^+] = \\sqrt{2.42 \\times 10^{-14}}\n      = \\sqrt{2.42}\\times 10^{-7}\n\\]\n\\(\\sqrt{2.42} \\approx 1.5556\\)\n\nSo:\n\\[\n[H^+] \\approx 1.5556 \\times 10^{-7}\\ \\text{M}\n\\]\n\nThen:\n\\[\n\\text{pH} = -\\log_{10}([H^+])\n= -\\log_{10}(1.5556 \\times 10^{-7})\n= 7 - \\log_{10}(1.5556)\n\\]\n\\(\\log_{10}(1.5556) \\approx 0.1919\\)\n\n\\[\n\\text{pH} \\approx 7 - 0.1919 = 6.8081 \\approx 6.81\n\\]\n\nSo the gold answer (\u22486.80\u20136.81) is correct.\n\n```json\n{\n  \"verdict\": \"ACCEPT\",\n  \"gold_answer_verified\": true,\n  \"your_calculated_answer\": \"pH \u2248 6.808 (\u2248 6.81)\",\n  \"confidence\": 0.88,\n  \"issues\": [\n    \"The provided expected_t1_accuracy (0.25) may be pessimistic; this fact is somewhat commonly stated (neutral pH at 37\u00b0C \u2248 6.8), so frontier-model T1 accuracy could plausibly be higher.\"\n  ],\n  \"reasoning\": \"Gold is unambiguously correct given Kw(37\u00b0C)=2.42e-14 and neutrality condition [H+]=[OH-]=sqrt(Kw). The common wrong answer (7.00) is highly plausible. The turn-2 snippet enables straightforward self-correction via computation without directly giving the final pH. Grading via a numeric acceptance range is clean/automatable. Not a famous puzzle/trick; it is a standard temperature-dependence application.\"\n}\n```",
+    "parsed": {
+      "verdict": "ACCEPT",
+      "gold_answer_verified": true,
+      "your_calculated_answer": "pH \u2248 6.808 (\u2248 6.81)",
+      "confidence": 0.88,
+      "issues": [
+        "The provided expected_t1_accuracy (0.25) may be pessimistic; this fact is somewhat commonly stated (neutral pH at 37\u00b0C \u2248 6.8), so frontier-model T1 accuracy could plausibly be higher."
+      ],
+      "reasoning": "Gold is unambiguously correct given Kw(37\u00b0C)=2.42e-14 and neutrality condition [H+]=[OH-]=sqrt(Kw). The common wrong answer (7.00) is highly plausible. The turn-2 snippet enables straightforward self-correction via computation without directly giving the final pH. Grading via a numeric acceptance range is clean/automatable. Not a famous puzzle/trick; it is a standard temperature-dependence application."
+    }
+  },
+  "final_verdict": "ACCEPT",
+  "final_item": {
+    "id": "C2_WR_pH_water_37C",
+    "subfamily": "C2",
+    "direction": "WR",
+    "domain": "Chemistry / Physical Chemistry",
+    "turn1_prompt": "What is the pH of pure water at 37\u00b0C (normal human body temperature)? Give a numerical value and briefly explain your reasoning.",
+    "gold_answer": "6.81 (approximately 6.80\u20136.81)",
+    "gold_reasoning": "The pH of pure water equals 7.00 only at 25\u00b0C, where Kw = 1.00 \u00d7 10\u207b\u00b9\u2074. At 37\u00b0C, the autoionization equilibrium of water shifts right (endothermic process), giving Kw = 2.42 \u00d7 10\u207b\u00b9\u2074. For pure water, [H\u207a] = [OH\u207b] = \u221aKw = \u221a(2.42 \u00d7 10\u207b\u00b9\u2074) = 1.556 \u00d7 10\u207b\u2077 M. Therefore pH = \u2212log(1.556 \u00d7 10\u207b\u2077) = 7 \u2212 log(1.556) = 7 \u2212 0.192 \u2248 6.81. The water is still chemically neutral (pH = pOH), but its pH is not 7.00.",
+    "common_wrong_answer": "7.00",
+    "wrong_reasoning": "Models (and most textbooks) associate 'neutral pH' with pH = 7.00 as a universal constant, forgetting that this value is specific to 25\u00b0C. At higher temperatures Kw increases, lowering the neutral pH.",
+    "turn2_evidence_snippet": "From the CRC Handbook of Chemistry and Physics: The ion-product constant of water (Kw) is strongly temperature-dependent. Selected values: at 25\u00b0C, Kw = 1.011 \u00d7 10\u207b\u00b9\u2074; at 37\u00b0C, Kw = 2.42 \u00d7 10\u207b\u00b9\u2074; at 60\u00b0C, Kw = 9.61 \u00d7 10\u207b\u00b9\u2074. The autoionization of water (H\u2082O \u21cc H\u207a + OH\u207b) is endothermic, so Kw increases with temperature. Note that neutrality is defined as [H\u207a] = [OH\u207b], not as pH = 7.",
+    "turn2_prompt": "Here is a relevant reference excerpt:\n\n\"From the CRC Handbook of Chemistry and Physics: The ion-product constant of water (Kw) is strongly temperature-dependent. Selected values: at 25\u00b0C, Kw = 1.011 \u00d7 10\u207b\u00b9\u2074; at 37\u00b0C, Kw = 2.42 \u00d7 10\u207b\u00b9\u2074; at 60\u00b0C, Kw = 9.61 \u00d7 10\u207b\u00b9\u2074. The autoionization of water (H\u2082O \u21cc H\u207a + OH\u207b) is endothermic, so Kw increases with temperature. Note that neutrality is defined as [H\u207a] = [OH\u207b], not as pH = 7.\"\n\nGiven this information, please reconsider your answer. What is the pH of pure water at 37\u00b0C? Show your calculation.",
+    "expected_t1_accuracy": 0.25,
+    "expected_t2_accuracy": 0.8,
+    "difficulty_notes": "Frontier models almost universally answer pH = 7.00 because this is the textbook definition of neutral. The temperature dependence of Kw is known but rarely applied. The evidence snippet provides the Kw value at 37\u00b0C and the key conceptual hint (neutrality \u2260 pH 7) without giving the numerical answer, requiring the model to compute \u221a(2.42 \u00d7 10\u207b\u00b9\u2074) and take the negative log.",
+    "grading_rubric": {
+      "correct_range": "6.80 to 6.82",
+      "key_steps": [
+        "Recognize pH \u2260 7 at temperatures other than 25\u00b0C",
+        "Use Kw = 2.42 \u00d7 10\u207b\u00b9\u2074 at 37\u00b0C",
+        "Compute [H\u207a] = \u221a(2.42 \u00d7 10\u207b\u00b9\u2074) = 1.556 \u00d7 10\u207b\u2077 M",
+        "Compute pH = \u2212log(1.556 \u00d7 10\u207b\u2077) \u2248 6.81"
+      ],
+      "partial_credit": "Award partial credit if model correctly identifies pH < 7 but makes arithmetic error"
+    }
+  }
+}

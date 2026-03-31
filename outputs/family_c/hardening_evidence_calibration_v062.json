@@ -1,0 +1,90 @@
+{
+  "calibration_date": "2026-03-30",
+  "items_calibrated": 6,
+  "methodology": "Each C2 WR evidence snippet evaluated on 4 dimensions: (1) provides enough info to correct the mistake, (2) not too direct (doesn't state the answer), (3) not too vague (specific enough to help), (4) matches the likely error pattern from canary testing.",
+  "ratings": [
+    {
+      "item_id": "sc_c2_wr_006",
+      "rating": "well_calibrated",
+      "evidence_snippet_preview": "When computing probabilities with multiple constraints (exact count AND arrangement pattern), enumerate all valid outcomes explicitly...",
+      "analysis": {
+        "sufficient_info": true,
+        "too_direct": false,
+        "too_vague": false,
+        "matches_error_pattern": true
+      },
+      "notes": "The snippet correctly identifies the multi-constraint enumeration approach without giving the answer. It says 'list all 16 outcomes and check each one against BOTH constraints simultaneously' which guides the model to the right method without revealing HHTT, THHT, TTHH. The canary error was including sequences with wrong head count (like HHTH with 3 heads), and the snippet directly addresses checking both constraints simultaneously."
+    },
+    {
+      "item_id": "sc_c2_wr_007",
+      "rating": "well_calibrated",
+      "evidence_snippet_preview": "On an analog clock, the minute hand moves 6 degrees per minute and the hour hand moves 0.5 degrees per minute...",
+      "analysis": {
+        "sufficient_info": true,
+        "too_direct": false,
+        "too_vague": false,
+        "matches_error_pattern": true
+      },
+      "notes": "Provides the exact formulas (M*6 for minute hand, H*30+M*0.5 for hour hand) without computing the answer. The canary error was 47.5° (likely from incorrect hour hand calculation), and the formula clearly shows H*30+M*0.5=5*30+25*0.5=162.5. The reflex angle note (subtract from 360° if >180°) is appropriate. Well-calibrated: gives method, not answer."
+    },
+    {
+      "item_id": "sc_c2_wr_008",
+      "rating": "needs_refinement",
+      "evidence_snippet_preview": "For a 5-digit palindrome ABCBA, the next palindrome is found by incrementing the middle part...",
+      "analysis": {
+        "sufficient_info": true,
+        "too_direct": false,
+        "too_vague": false,
+        "matches_error_pattern": true
+      },
+      "notes": "The snippet is good but slightly too specific in revealing the carry mechanism (A(B+1)0(B+1)A). This is essentially the complete algorithm — the model only needs to substitute values. The canary error was claiming 15961 is a palindrome (it's not), so the hint about C=9 requiring carry is correct. However, the explicit formula A(B+1)0(B+1)A makes it nearly trivial to compute 1-6-0-6-1=16061. Recommend slightly more general phrasing.",
+      "revised_snippet": "For a 5-digit palindrome ABCBA, the next palindrome is found by incrementing the middle part (C). However, if C is already at its maximum (9), you cannot simply add 1 — a carry propagation occurs that affects the adjacent digits. To verify your answer is correct, check that it reads the same forwards and backwards."
+    },
+    {
+      "item_id": "sc_c2_wr_009",
+      "rating": "well_calibrated",
+      "evidence_snippet_preview": "On an analog clock, the minute hand moves 6 degrees per minute and the hour hand moves 0.5 degrees per minute...",
+      "analysis": {
+        "sufficient_info": true,
+        "too_direct": false,
+        "too_vague": false,
+        "matches_error_pattern": true
+      },
+      "notes": "Same clock formula snippet as sc_c2_wr_007. Appropriate for this item since the canary error (152.5°) suggests miscalculation of hand positions. The snippet provides the method without computing 8:05 specifically. The reflex angle conversion note is critical here since the raw diff is 212.5° > 180°."
+    },
+    {
+      "item_id": "sc_c2_wr_010",
+      "rating": "well_calibrated",
+      "evidence_snippet_preview": "On an analog clock, the minute hand moves 6 degrees per minute and the hour hand moves 0.5 degrees per minute...",
+      "analysis": {
+        "sufficient_info": true,
+        "too_direct": false,
+        "too_vague": false,
+        "matches_error_pattern": true
+      },
+      "notes": "Same clock formula snippet. Canary error was 95° (vs correct 115°). The snippet gives the method without the specific computation. The reflex angle step is critical here since raw diff is 245° > 180°."
+    },
+    {
+      "item_id": "sc_c2_wr_011",
+      "rating": "well_calibrated",
+      "evidence_snippet_preview": "On an analog clock, the minute hand moves 6 degrees per minute and the hour hand moves 0.5 degrees per minute...",
+      "analysis": {
+        "sufficient_info": true,
+        "too_direct": false,
+        "too_vague": false,
+        "matches_error_pattern": true
+      },
+      "notes": "Same clock formula snippet. Canary error was 70° (exactly half of 140°), suggesting the model forgot the reflex angle conversion or only computed partial movement. The snippet's explicit mention of 'subtract from 360°' directly addresses this error pattern."
+    }
+  ],
+  "revised_snippets": [
+    {
+      "item_id": "sc_c2_wr_008",
+      "original": "For a 5-digit palindrome ABCBA, the next palindrome is found by incrementing the middle part. If C is 9 (maxed out), you cannot simply increment C — you must carry over: increment B by 1 and reset C to 0, giving the form A(B+1)0(B+1)A. Compute the difference between this new palindrome and the original to find the gap.",
+      "revised": "For a 5-digit palindrome ABCBA, the next palindrome is found by incrementing the middle part (C). However, if C is already at its maximum (9), you cannot simply add 1 — a carry propagation occurs that affects the adjacent digits. To verify your answer is correct, check that it reads the same forwards and backwards.",
+      "rationale": "Original snippet was slightly too direct — it gave the explicit formula A(B+1)0(B+1)A which makes computing the answer nearly trivial. The revised version keeps the key insight (C=9 forces a carry) but removes the explicit template, requiring the model to work through the carry logic itself."
+    }
+  ],
+  "cross_item_observation": "4 of 6 C2 WR items (sc_c2_wr_007, _009, _010, _011) use the identical clock-angle evidence snippet. This is appropriate since all four test the same mechanism (continuous position computation error) with different times, and the snippet provides a general method rather than time-specific computation. The repetition does not create a calibration concern because each item tests a different clock time requiring different intermediate calculations.",
+  "summary": "5 of 6 evidence snippets rated well_calibrated. 1 snippet (sc_c2_wr_008, palindrome carry) rated needs_refinement — it was slightly too direct in providing the explicit formula A(B+1)0(B+1)A. Revised to keep the carry insight but remove the template. The clock-angle snippets are consistently well-calibrated, providing formulas without computing specific answers."
+}

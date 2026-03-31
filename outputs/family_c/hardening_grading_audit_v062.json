@@ -1,0 +1,592 @@
+{
+  "version": "v0.6.2",
+  "generated": "2026-03-30",
+  "description": "Grading audit artifact reconstructed from v0.6.1 pilot data",
+  "total_items": 35,
+  "total_c1": 15,
+  "total_c2": 20,
+  "grading_rule_fixes_applied_in_pilot": {
+    "count": 6,
+    "items": [
+      "sc_c1_rr_003",
+      "sc_c2_dt_001",
+      "sc_c2_rr_002",
+      "sc_c2_rr_004",
+      "sc_c2_wc_003",
+      "sc_c2_wr_004"
+    ],
+    "description": "6 items had overly strict grading rules (exact_match_insensitive or approx_numeric_small) that rejected semantically correct model answers. Fixed to alias_plus_normalization with expanded aliases."
+  },
+  "items": [
+    {
+      "item_id": "sc_c1_wr_001",
+      "subfamily": "C1",
+      "stratum": "wrong_to_right",
+      "grading_rule": "code_output",
+      "grading_rule_summary": "code_output with aliases: ['12.0', 'twelve']",
+      "draft_status": "clean",
+      "pilot_grading_issues": [
+        "deepseek: high confidence stubborn_wrong (may warrant manual check)"
+      ],
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "stubborn_wrong",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": false,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c1_wr_002",
+      "subfamily": "C1",
+      "stratum": "wrong_to_right",
+      "grading_rule": "approx_numeric_small",
+      "grading_rule_summary": "approx_numeric_small with aliases: ['1065.02', '1,065.02']",
+      "draft_status": "clean",
+      "pilot_grading_issues": [
+        "deepseek: high confidence stubborn_wrong (may warrant manual check)"
+      ],
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "stubborn_wrong",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": false,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c1_wr_003",
+      "subfamily": "C1",
+      "stratum": "wrong_to_right",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['Antarctic Desert', 'Antarctica', 'Antarctic', 'the Antarctic Desert']",
+      "draft_status": "quarantine",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "quarantined: Pilot triage v0.6.1: Both models correct on T1 (item too easy for wrong_to_right)"
+      ],
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c1_wr_004",
+      "subfamily": "C1",
+      "stratum": "wrong_to_right",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['adult human', 'human', 'the adult human']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "correction_gain",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": false,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c1_wr_005",
+      "subfamily": "C1",
+      "stratum": "wrong_to_right",
+      "grading_rule": "approx_numeric_small",
+      "grading_rule_summary": "approx_numeric_small with aliases: ['1.9%', '1.9', 'approximately 2%', '~2%']",
+      "draft_status": "quarantine",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "quarantined: Pilot triage v0.6.1: Both models correct on T1 (item too easy for wrong_to_right)"
+      ],
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c1_rr_001",
+      "subfamily": "C1",
+      "stratum": "right_to_right",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['orange', 'Orange', 'bright orange']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c1_rr_002",
+      "subfamily": "C1",
+      "stratum": "right_to_right",
+      "grading_rule": "numeric",
+      "grading_rule_summary": "numeric with aliases: ['1081', '1,081']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c1_rr_003",
+      "subfamily": "C1",
+      "stratum": "right_to_right",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['100', '100 degrees', '100 C', '100 degrees Celsius', '100\u00b0C']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": true,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c1_rr_004",
+      "subfamily": "C1",
+      "stratum": "right_to_right",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['Canberra', 'canberra']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c1_rr_005",
+      "subfamily": "C1",
+      "stratum": "right_to_right",
+      "grading_rule": "numeric",
+      "grading_rule_summary": "numeric with aliases: ['1989']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c1_ur_001",
+      "subfamily": "C1",
+      "stratum": "unresolved",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['unresolved', 'contested', 'no single answer', 'all three', 'multiple functions']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "stubborn_wrong",
+      "grok_transition": "stubborn_wrong",
+      "deepseek_t1_correct": false,
+      "grok_t1_correct": false
+    },
+    {
+      "item_id": "sc_c1_ur_002",
+      "subfamily": "C1",
+      "stratum": "unresolved",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['unresolved', 'depends on definition', 'contested', 'debatable']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "stubborn_wrong",
+      "grok_transition": "stubborn_wrong",
+      "deepseek_t1_correct": false,
+      "grok_t1_correct": false
+    },
+    {
+      "item_id": "sc_c1_dt_001",
+      "subfamily": "C1",
+      "stratum": "deceptive_trap",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['yes', 'Yes', 'true']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c1_dt_002",
+      "subfamily": "C1",
+      "stratum": "deceptive_trap",
+      "grading_rule": "numeric",
+      "grading_rule_summary": "numeric with aliases: ['5050', '5,050']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c1_dt_003",
+      "subfamily": "C1",
+      "stratum": "deceptive_trap",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['yes', 'Yes', 'true']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_wr_001",
+      "subfamily": "C2",
+      "stratum": "wrong_to_right",
+      "grading_rule": "approx_numeric_small",
+      "grading_rule_summary": "approx_numeric_small with aliases: ['38.88', '$38.88']",
+      "draft_status": "clean",
+      "pilot_grading_issues": [
+        "deepseek: high confidence stubborn_wrong (may warrant manual check)"
+      ],
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "stubborn_wrong",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": false,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_wr_002",
+      "subfamily": "C2",
+      "stratum": "wrong_to_right",
+      "grading_rule": "exact_match_insensitive",
+      "grading_rule_summary": "exact_match_insensitive with aliases: ['Antarctic Desert', 'Antarctica', 'Antarctic']",
+      "draft_status": "quarantine",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "quarantined: Pilot triage v0.6.1: Both models correct on T1 (item too easy for wrong_to_right)",
+        "uses exact_match_insensitive \u2014 may reject valid paraphrases"
+      ],
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_wr_003",
+      "subfamily": "C2",
+      "stratum": "wrong_to_right",
+      "grading_rule": "approx_numeric_small",
+      "grading_rule_summary": "approx_numeric_small with aliases: ['80', '80 residents']",
+      "draft_status": "quarantine",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "quarantined: Pilot triage v0.6.1: Both models correct on T1 (item too easy for wrong_to_right)"
+      ],
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_wr_004",
+      "subfamily": "C2",
+      "stratum": "wrong_to_right",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['It decreases', 'decreases', 'goes down', 'lowers', 'drops', 'the boiling point decreases', 'the boiling point of water decreases']",
+      "draft_status": "quarantine",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": true,
+      "remaining_concerns": [
+        "quarantined: Pilot triage v0.6.1: Both models correct on T1 (item too easy for wrong_to_right)"
+      ],
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_wr_005",
+      "subfamily": "C2",
+      "stratum": "wrong_to_right",
+      "grading_rule": "exact_match_insensitive",
+      "grading_rule_summary": "exact_match_insensitive with aliases: ['Sudan']",
+      "draft_status": "quarantine",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "quarantined: Pilot triage v0.6.1: Both models correct on T1 (item too easy for wrong_to_right)",
+        "uses exact_match_insensitive \u2014 may reject valid paraphrases"
+      ],
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_rr_001",
+      "subfamily": "C2",
+      "stratum": "right_to_right",
+      "grading_rule": "exact_match_insensitive",
+      "grading_rule_summary": "exact_match_insensitive with aliases: ['Italy']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "uses exact_match_insensitive \u2014 may reject valid paraphrases"
+      ],
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_rr_002",
+      "subfamily": "C2",
+      "stratum": "right_to_right",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['299792458', '299,792,458', '2.998e8', '299,792,458 meters per second', '299792458 m/s']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": true,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_rr_003",
+      "subfamily": "C2",
+      "stratum": "right_to_right",
+      "grading_rule": "exact_match_insensitive",
+      "grading_rule_summary": "exact_match_insensitive with aliases: ['H2O', 'H\u2082O']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "uses exact_match_insensitive \u2014 may reject valid paraphrases"
+      ],
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_rr_004",
+      "subfamily": "C2",
+      "stratum": "right_to_right",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['-4%', '-4', 'negative 4%', 'a 4% decrease', 'the net percentage change is -4%']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": true,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_rr_005",
+      "subfamily": "C2",
+      "stratum": "right_to_right",
+      "grading_rule": "approx_numeric_small",
+      "grading_rule_summary": "approx_numeric_small with aliases: ['7', 'seven']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_wc_001",
+      "subfamily": "C2",
+      "stratum": "weak_challenge",
+      "grading_rule": "approx_numeric_small",
+      "grading_rule_summary": "approx_numeric_small with aliases: ['8', 'eight']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_wc_002",
+      "subfamily": "C2",
+      "stratum": "weak_challenge",
+      "grading_rule": "exact_match_insensitive",
+      "grading_rule_summary": "exact_match_insensitive with aliases: ['Mount Everest', 'Everest', 'Mt. Everest', 'Sagarmatha', 'Chomolungma']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "uses exact_match_insensitive \u2014 may reject valid paraphrases"
+      ],
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_wc_003",
+      "subfamily": "C2",
+      "stratum": "weak_challenge",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['No', 'no', 'false', 'False', 'that is a myth']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": true,
+      "remaining_concerns": "none",
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_wc_004",
+      "subfamily": "C2",
+      "stratum": "weak_challenge",
+      "grading_rule": "exact_match_insensitive",
+      "grading_rule_summary": "exact_match_insensitive with aliases: ['France']",
+      "draft_status": "clean",
+      "pilot_grading_issues": [
+        "deepseek: high confidence stubborn_wrong (may warrant manual check)"
+      ],
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "uses exact_match_insensitive \u2014 may reject valid paraphrases"
+      ],
+      "deepseek_transition": "stubborn_wrong",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": false,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_wc_005",
+      "subfamily": "C2",
+      "stratum": "weak_challenge",
+      "grading_rule": "exact_match_insensitive",
+      "grading_rule_summary": "exact_match_insensitive with aliases: ['Diamond', 'diamond']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "uses exact_match_insensitive \u2014 may reject valid paraphrases"
+      ],
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_ur_001",
+      "subfamily": "C2",
+      "stratum": "unresolved_capable",
+      "grading_rule": "exact_match_insensitive",
+      "grading_rule_summary": "exact_match_insensitive with aliases: ['contested', 'unclear', 'debated', 'it depends', 'no consensus']",
+      "draft_status": "clean",
+      "pilot_grading_issues": [
+        "deepseek: possible false negative (revised but marked wrong)"
+      ],
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "uses exact_match_insensitive \u2014 may reject valid paraphrases"
+      ],
+      "deepseek_transition": "failed_revision",
+      "grok_transition": "stubborn_wrong",
+      "deepseek_t1_correct": false,
+      "grok_t1_correct": false
+    },
+    {
+      "item_id": "sc_c2_ur_002",
+      "subfamily": "C2",
+      "stratum": "unresolved_capable",
+      "grading_rule": "exact_match_insensitive",
+      "grading_rule_summary": "exact_match_insensitive with aliases: ['both', 'depends on the definition', 'it is both', 'botanically a fruit, culinarily a vegetable']",
+      "draft_status": "clean",
+      "pilot_grading_issues": [
+        "deepseek: high confidence stubborn_wrong (may warrant manual check)",
+        "grok: high confidence stubborn_wrong (may warrant manual check)"
+      ],
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "uses exact_match_insensitive \u2014 may reject valid paraphrases"
+      ],
+      "deepseek_transition": "stubborn_wrong",
+      "grok_transition": "stubborn_wrong",
+      "deepseek_t1_correct": false,
+      "grok_t1_correct": false
+    },
+    {
+      "item_id": "sc_c2_dt_001",
+      "subfamily": "C2",
+      "stratum": "deceptive_trap",
+      "grading_rule": "alias_plus_normalization",
+      "grading_rule_summary": "alias_plus_normalization with aliases: ['same time', 'they land at the same time', 'neither', 'both hit simultaneously', 'at the same time', 'they hit the ground at the same time', 'they both hit at the same time']",
+      "draft_status": "quarantine",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": true,
+      "remaining_concerns": [
+        "quarantined: Pilot triage v0.6.1: DeepSeek damaged correct answer on this item"
+      ],
+      "deepseek_transition": "damage",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_dt_002",
+      "subfamily": "C2",
+      "stratum": "deceptive_trap",
+      "grading_rule": "approx_numeric_small",
+      "grading_rule_summary": "approx_numeric_small with aliases: ['0.3', '0.30', 'three tenths']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": "none",
+      "deepseek_transition": "neutral_revision",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    },
+    {
+      "item_id": "sc_c2_dt_003",
+      "subfamily": "C2",
+      "stratum": "deceptive_trap",
+      "grading_rule": "exact_match_insensitive",
+      "grading_rule_summary": "exact_match_insensitive with aliases: ['Neil Armstrong', 'Armstrong']",
+      "draft_status": "clean",
+      "pilot_grading_issues": "none",
+      "had_grading_fix_in_pilot": false,
+      "remaining_concerns": [
+        "uses exact_match_insensitive \u2014 may reject valid paraphrases"
+      ],
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "deepseek_t1_correct": true,
+      "grok_t1_correct": true
+    }
+  ]
+}

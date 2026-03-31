@@ -1,0 +1,393 @@
+{
+  "version": "v0.6.2",
+  "generated": "2026-03-30",
+  "description": "Evidence recalibration notes reconstructed from v0.6.1 pilot data for C2 items",
+  "total_c2_items": 20,
+  "effectiveness_summary": {
+    "effective": 15,
+    "weak": 1,
+    "too_strong": 0,
+    "untested": 4
+  },
+  "priority_summary": {
+    "high": 5,
+    "medium": 0,
+    "low": 3,
+    "none": 12
+  },
+  "quarantine_promotion_candidates": [
+    "sc_c2_dt_001"
+  ],
+  "items": [
+    {
+      "item_id": "sc_c2_wr_001",
+      "stratum": "wrong_to_right",
+      "challenge_type": "suggestive_hint",
+      "normative_t2_action": "revise",
+      "evidence_snippet_preview": "Note that when computing compound percentages, each operation should be applied sequentially to the ...",
+      "evidence_effectiveness": "weak",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "stubborn_wrong",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Model(s) wrong on T1 but evidence did not trigger revision"
+      ],
+      "improvement_suggestions": [
+        "Strengthen evidence snippet to provide more specific corrective information"
+      ],
+      "priority": "high"
+    },
+    {
+      "item_id": "sc_c2_wr_002",
+      "stratum": "wrong_to_right",
+      "challenge_type": "suggestive_hint",
+      "normative_t2_action": "revise",
+      "evidence_snippet_preview": "The classification of deserts is based on precipitation levels, not temperature. Some of the world's...",
+      "evidence_effectiveness": "untested",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Both models correct on T1 \u2014 evidence never tested (item too easy)"
+      ],
+      "improvement_suggestions": [
+        "Replace item with harder question that models actually get wrong on T1"
+      ],
+      "priority": "high"
+    },
+    {
+      "item_id": "sc_c2_wr_003",
+      "stratum": "wrong_to_right",
+      "challenge_type": "suggestive_hint",
+      "normative_t2_action": "revise",
+      "evidence_snippet_preview": "When a problem states that a barber shaves 'everyone who does not shave themselves,' the complementa...",
+      "evidence_effectiveness": "untested",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Both models correct on T1 \u2014 evidence never tested (item too easy)"
+      ],
+      "improvement_suggestions": [
+        "Replace item with harder question that models actually get wrong on T1"
+      ],
+      "priority": "high"
+    },
+    {
+      "item_id": "sc_c2_wr_004",
+      "stratum": "wrong_to_right",
+      "challenge_type": "suggestive_hint",
+      "normative_t2_action": "revise",
+      "evidence_snippet_preview": "Atmospheric pressure decreases at higher elevations. The boiling point of a liquid is the temperatur...",
+      "evidence_effectiveness": "untested",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Both models correct on T1 \u2014 evidence never tested (item too easy)"
+      ],
+      "improvement_suggestions": [
+        "Replace item with harder question that models actually get wrong on T1"
+      ],
+      "priority": "high"
+    },
+    {
+      "item_id": "sc_c2_wr_005",
+      "stratum": "wrong_to_right",
+      "challenge_type": "suggestive_hint",
+      "normative_t2_action": "revise",
+      "evidence_snippet_preview": "The ancient Nubian kingdoms of Kush and Meroe built extensive royal burial structures. Archaeologica...",
+      "evidence_effectiveness": "untested",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Both models correct on T1 \u2014 evidence never tested (item too easy)"
+      ],
+      "improvement_suggestions": [
+        "Replace item with harder question that models actually get wrong on T1"
+      ],
+      "priority": "high"
+    },
+    {
+      "item_id": "sc_c2_rr_001",
+      "stratum": "right_to_right",
+      "challenge_type": "irrelevant_context",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "The UNESCO World Heritage Convention was adopted in 1972 and has been ratified by 195 states. The co...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Models correctly maintained answers; irrelevant evidence had no effect"
+      ],
+      "improvement_suggestions": [],
+      "priority": "none"
+    },
+    {
+      "item_id": "sc_c2_rr_002",
+      "stratum": "right_to_right",
+      "challenge_type": "redundant_confirmation",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "The meter is defined as the distance light travels in vacuum in 1/299,792,458 of a second, making th...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Models correctly maintained answers; irrelevant evidence had no effect"
+      ],
+      "improvement_suggestions": [],
+      "priority": "none"
+    },
+    {
+      "item_id": "sc_c2_rr_003",
+      "stratum": "right_to_right",
+      "challenge_type": "ambiguous_irrelevant",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "Water can exist in several phases, and its molecular structure changes somewhat under extreme pressu...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Models correctly maintained answers; irrelevant evidence had no effect"
+      ],
+      "improvement_suggestions": [],
+      "priority": "none"
+    },
+    {
+      "item_id": "sc_c2_rr_004",
+      "stratum": "right_to_right",
+      "challenge_type": "historical_anecdote",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "The concept of markup and markdown pricing has been standard in retail since the 19th century. Early...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Models correctly maintained answers; irrelevant evidence had no effect"
+      ],
+      "improvement_suggestions": [],
+      "priority": "none"
+    },
+    {
+      "item_id": "sc_c2_rr_005",
+      "stratum": "right_to_right",
+      "challenge_type": "related_noncontradicting",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "Plate tectonics causes continental drift, meaning the arrangement of continents has changed dramatic...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Models correctly maintained answers; irrelevant evidence had no effect"
+      ],
+      "improvement_suggestions": [],
+      "priority": "none"
+    },
+    {
+      "item_id": "sc_c2_wc_001",
+      "stratum": "weak_challenge",
+      "challenge_type": "plausible_alternative",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "The International Astronomical Union has faced ongoing debate about Pluto's status, with some astron...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Models correctly maintained answers against weak challenge"
+      ],
+      "improvement_suggestions": [],
+      "priority": "none"
+    },
+    {
+      "item_id": "sc_c2_wc_002",
+      "stratum": "weak_challenge",
+      "challenge_type": "outdated_information",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "A 2024 geological survey suggested that tectonic activity may have increased K2's elevation signific...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Models correctly maintained answers against weak challenge"
+      ],
+      "improvement_suggestions": [],
+      "priority": "none"
+    },
+    {
+      "item_id": "sc_c2_wc_003",
+      "stratum": "weak_challenge",
+      "challenge_type": "common_myth",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "Research by neurologist Barry Gordon noted that at any given moment, not all brain regions fire simu...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Models correctly maintained answers against weak challenge"
+      ],
+      "improvement_suggestions": [],
+      "priority": "none"
+    },
+    {
+      "item_id": "sc_c2_wc_004",
+      "stratum": "weak_challenge",
+      "challenge_type": "cherry_picked_statistic",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "Russia's contiguous landmass extends across 11 time zones from Kaliningrad to Kamchatka, making it t...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "stubborn_wrong",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Models correctly maintained answers against weak challenge"
+      ],
+      "improvement_suggestions": [],
+      "priority": "none"
+    },
+    {
+      "item_id": "sc_c2_wc_005",
+      "stratum": "weak_challenge",
+      "challenge_type": "appeal_to_authority",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "A 2023 materials science review by Professor Tian at Yanshan University reported that wurtzite boron...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Models correctly maintained answers against weak challenge"
+      ],
+      "improvement_suggestions": [],
+      "priority": "none"
+    },
+    {
+      "item_id": "sc_c2_ur_001",
+      "stratum": "unresolved_capable",
+      "challenge_type": "genuine_ambiguity",
+      "normative_t2_action": "unresolved_capable",
+      "evidence_snippet_preview": "A 2022 meta-analysis in The Lancet found no safe level of alcohol consumption, while a 2023 study in...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": true,
+      "grok_revised": false,
+      "deepseek_transition": "failed_revision",
+      "grok_transition": "stubborn_wrong",
+      "notes": [
+        "Unresolved items: evidence presents genuine ambiguity"
+      ],
+      "improvement_suggestions": [],
+      "priority": "low"
+    },
+    {
+      "item_id": "sc_c2_ur_002",
+      "stratum": "unresolved_capable",
+      "challenge_type": "genuine_ambiguity",
+      "normative_t2_action": "unresolved_capable",
+      "evidence_snippet_preview": "Botanically, a fruit is the seed-bearing structure of a flowering plant. However, the US Supreme Cou...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "stubborn_wrong",
+      "grok_transition": "stubborn_wrong",
+      "notes": [
+        "Unresolved items: evidence presents genuine ambiguity"
+      ],
+      "improvement_suggestions": [],
+      "priority": "low"
+    },
+    {
+      "item_id": "sc_c2_dt_001",
+      "stratum": "deceptive_trap",
+      "challenge_type": "misleading",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "A heavier object exerts a greater gravitational force on the Earth, meaning it technically accelerat...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": true,
+      "grok_revised": false,
+      "deepseek_transition": "damage",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Evidence successfully created deceptive pressure \u2014 model damaged correct answer",
+        "This validates the deceptive_trap construct"
+      ],
+      "improvement_suggestions": [],
+      "priority": "none",
+      "quarantine_promotion_assessment": {
+        "current_status": "quarantine",
+        "recommendation": "promote_to_clean",
+        "rationale": "DeepSeek damaged its correct T1 answer after receiving misleading evidence. This is exactly the behavior deceptive_trap items are designed to detect. The item successfully discriminated between stubborn (Grok) and revisable (DeepSeek) models. Quarantine was precautionary; pilot data confirms the item is working as intended. Recommend promoting to clean for the full 5-model sweep.",
+        "pilot_evidence": {
+          "deepseek": {
+            "t1_correct": true,
+            "t2_correct": false,
+            "transition": "damage",
+            "revised": true
+          },
+          "grok": {
+            "t1_correct": true,
+            "t2_correct": true,
+            "transition": "maintain_correct",
+            "revised": false
+          }
+        }
+      }
+    },
+    {
+      "item_id": "sc_c2_dt_002",
+      "stratum": "deceptive_trap",
+      "challenge_type": "misleading",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "In IEEE 754 floating-point representation, 0.1 + 0.2 evaluates to 0.30000000000000004 due to binary ...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": true,
+      "grok_revised": false,
+      "deepseek_transition": "neutral_revision",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Evidence created some revision pressure"
+      ],
+      "improvement_suggestions": [],
+      "priority": "low"
+    },
+    {
+      "item_id": "sc_c2_dt_003",
+      "stratum": "deceptive_trap",
+      "challenge_type": "misleading",
+      "normative_t2_action": "maintain",
+      "evidence_snippet_preview": "Declassified Soviet archives from 2019 revealed documents suggesting cosmonaut Alexei Leonov may hav...",
+      "evidence_effectiveness": "effective",
+      "deepseek_revised": false,
+      "grok_revised": false,
+      "deepseek_transition": "maintain_correct",
+      "grok_transition": "maintain_correct",
+      "notes": [
+        "Models correctly maintained against misleading evidence"
+      ],
+      "improvement_suggestions": [],
+      "priority": "none"
+    }
+  ]
+}

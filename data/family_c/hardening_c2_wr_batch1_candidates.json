@@ -1,0 +1,182 @@
+[
+  {
+    "item_id": "sc_c2_wr_006",
+    "family": "C",
+    "subfamily": "C2",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "You flip a fair coin 4 times. What is the probability of getting exactly 2 heads AND having those 2 heads be consecutive (i.e., appearing next to each other in the sequence)? Express as a simplified fraction.",
+    "gold_answer": "3/16",
+    "gold_answer_aliases": [
+      "3/16",
+      "0.1875"
+    ],
+    "grading_rule": "alias_plus_normalization",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "When computing probabilities with multiple constraints (exact count AND arrangement pattern), enumerate all valid outcomes explicitly rather than using general formulas. For 4 coin flips, list all 16 outcomes and check each one against BOTH constraints simultaneously: (1) exactly 2 heads total, and (2) the 2 heads are adjacent. Only sequences satisfying both constraints count.",
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "multi_constraint_enumeration_error",
+    "provenance": "hand_authored",
+    "draft_status": "clean",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Hardening v0.6.2 batch 1. Canary model (deepseek-chat) answers 1/4 or 1/8 on T1, failing to properly enumerate sequences meeting both constraints. Correct enumeration: HHTT, THHT, TTHH = 3 out of 16. The model typically includes sequences like HHTH (3 heads, not 2) in its count. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  {
+    "item_id": "sc_c2_wr_007",
+    "family": "C",
+    "subfamily": "C2",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "A standard analog clock reads 5:25. What is the exact angle in degrees between the hour hand and the minute hand?",
+    "gold_answer": "12.5",
+    "gold_answer_aliases": [
+      "12.5",
+      "12.5 degrees",
+      "12.5°"
+    ],
+    "grading_rule": "approx_numeric_small",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "On an analog clock, the minute hand moves 6 degrees per minute and the hour hand moves 0.5 degrees per minute. At H:M, the minute hand is at M×6 degrees and the hour hand is at H×30 + M×0.5 degrees. The angle between them is the absolute difference. If the difference exceeds 180°, subtract from 360° to get the smaller angle.",
+    "difficulty": "medium",
+    "category": "arithmetic",
+    "mechanism_primary": "continuous_position_computation_error",
+    "provenance": "hand_authored",
+    "draft_status": "clean",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Hardening v0.6.2 batch 1. At 5:25: minute hand=150°, hour hand=162.5°, angle=12.5°. Canary model answers 47.5° on T1, likely computing the hour hand position incorrectly or confusing which direction to measure. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
+    "three_turn_probe": false,
+    "three_turn_purpose": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_wr_008",
+    "family": "C",
+    "subfamily": "C2",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "A car's odometer reads 15951 miles, which is a palindrome. What is the minimum number of miles the car must drive before the odometer shows the next palindrome?",
+    "gold_answer": "110",
+    "gold_answer_aliases": [
+      "110",
+      "110 miles"
+    ],
+    "grading_rule": "approx_numeric_small",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "For a 5-digit palindrome ABCBA, the next palindrome is found by incrementing the middle part. If C is 9 (maxed out), you cannot simply increment C — you must carry over: increment B by 1 and reset C to 0, giving the form A(B+1)0(B+1)A. Compute the difference between this new palindrome and the original to find the gap.",
+    "difficulty": "medium",
+    "category": "arithmetic",
+    "mechanism_primary": "palindrome_carry_propagation_error",
+    "provenance": "hand_authored",
+    "draft_status": "clean",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Hardening v0.6.2 batch 1. 15951 (1-5-9-5-1) -> next palindrome is 16061 (1-6-0-6-1), gap=110. Canary model answered 10 on T1 (claiming 15961 is the next palindrome, but 15961 reversed is 16951, not a palindrome). The key is that c=9 forces a carry to b. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
+    "three_turn_probe": false,
+    "three_turn_purpose": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_wr_009",
+    "family": "C",
+    "subfamily": "C2",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "A standard analog clock reads 8:05. What is the exact angle in degrees between the hour hand and the minute hand?",
+    "gold_answer": "147.5",
+    "gold_answer_aliases": [
+      "147.5",
+      "147.5 degrees",
+      "147.5°"
+    ],
+    "grading_rule": "approx_numeric_small",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "Clock-angle problems require computing two positions and then checking whether the raw difference exceeds 180°. A common error is reporting the reflex angle (the long way around) instead of the shorter arc. After computing |hour_pos − minute_pos|, always compare to 180° and subtract from 360° if needed to obtain the smaller angle.",
+    "difficulty": "medium",
+    "category": "arithmetic",
+    "mechanism_primary": "continuous_position_computation_error",
+    "provenance": "hand_authored",
+    "draft_status": "clean",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Hardening v0.6.2 batch 1. At 8:05: minute hand=30°, hour hand=242.5°, raw diff=212.5°, smaller angle=147.5°. Canary model answered 152.5° on T1. The error likely comes from miscalculating the hour hand position or the reflex angle conversion. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
+    "three_turn_probe": false,
+    "three_turn_purpose": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_wr_010",
+    "family": "C",
+    "subfamily": "C2",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "A standard analog clock reads 1:50. What is the exact angle in degrees between the hour hand and the minute hand?",
+    "gold_answer": "115",
+    "gold_answer_aliases": [
+      "115",
+      "115 degrees",
+      "115°"
+    ],
+    "grading_rule": "approx_numeric_small",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "Worked example: at 4:20, the minute hand sits at 20×6 = 120° and the hour hand at 4×30 + 20×0.5 = 130°. The difference is |130 − 120| = 10°. Apply the same two-step method — compute each hand's position from 12 o'clock, take the absolute difference, and reduce past 180° — to any clock-angle problem.",
+    "difficulty": "medium",
+    "category": "arithmetic",
+    "mechanism_primary": "continuous_position_computation_error",
+    "provenance": "hand_authored",
+    "draft_status": "clean",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Hardening v0.6.2 batch 1. At 1:50: minute hand=300°, hour hand=55°, raw diff=245°, smaller angle=115°. Canary model answered 95° on T1, likely miscalculating the hour or minute hand position. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
+    "three_turn_probe": false,
+    "three_turn_purpose": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_wr_011",
+    "family": "C",
+    "subfamily": "C2",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "A standard analog clock reads 11:20. What is the exact angle in degrees between the hour hand and the minute hand?",
+    "gold_answer": "140",
+    "gold_answer_aliases": [
+      "140",
+      "140 degrees",
+      "140°"
+    ],
+    "grading_rule": "approx_numeric_small",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "Start with the minute hand: its position in degrees equals the number of minutes past the hour multiplied by 6. Then find the hour hand: it sits at H×30 plus an additional 0.5 degrees for every minute elapsed. The angle between the hands is the absolute difference of these two positions, reduced to the acute or obtuse angle (≤ 180°).",
+    "difficulty": "medium",
+    "category": "arithmetic",
+    "mechanism_primary": "continuous_position_computation_error",
+    "provenance": "hand_authored",
+    "draft_status": "clean",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Hardening v0.6.2 batch 1. At 11:20: minute hand=120°, hour hand=340°, raw diff=220°, smaller angle=140°. Canary model answered 70° on T1, which is exactly half the correct answer — suggesting the model forgot the reflex angle conversion or computed only the hour hand's fractional movement. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean.",
+    "three_turn_probe": false,
+    "three_turn_purpose": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  }
+]
