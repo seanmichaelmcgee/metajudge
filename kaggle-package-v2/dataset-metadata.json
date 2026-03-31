@@ -1,0 +1,7 @@
+{
+  "title": "MetaJudge Package v2 (Post-Audit)",
+  "id": "seanmcgee2025/metajudge-package-v2",
+  "licenses": [{"name": "CC-BY-4.0"}],
+  "description": "Post-audit v2 of the MetaJudge scoring package. Changes from v1: grading_v2.py adds contains_any numeric fallback in _grade_approx_numeric_small(), enabling correct adjudication of verbose Family B answers with multiple embedded numbers. Import via sys.path.insert(0, '/kaggle/input/metajudge-package-v2').",
+  "keywords": ["metacognition", "llm-evaluation", "python-package", "post-audit"]
+}

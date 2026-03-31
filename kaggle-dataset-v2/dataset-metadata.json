@@ -1,0 +1,7 @@
+{
+  "title": "MetaJudge Benchmark Data v2 (Post-Audit)",
+  "id": "seanmcgee2025/metajudge-data-v2",
+  "licenses": [{"name": "CC-BY-4.0"}],
+  "description": "Post-audit v2 of MetaJudge benchmark data. Changes from v1: adjudication registry adds match_mode 'contains_any' to all 15 abs_* Family B entries, fixing 49 false-negative verbose-answer adjudications. Data files: calibration items (Family A, 117 items), selective abstention items (Family B, 84 items), adjudication registry, and clean subset manifest.",
+  "keywords": ["metacognition", "llm-evaluation", "calibration", "benchmark", "post-audit"]
+}
