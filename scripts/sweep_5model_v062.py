@@ -58,9 +58,40 @@ C2_T2_TEMPLATE = (
 # Grading functions
 # ---------------------------------------------------------------------------
 
+WORD_NUMBERS = {
+    'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4,
+    'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9,
+    'ten': 10, 'eleven': 11, 'twelve': 12,
+}
+
+
+def strip_markdown(text: str) -> str:
+    """Remove markdown formatting."""
+    text = re.sub(r'\*\*(.+?)\*\*', r'\1', text)
+    text = re.sub(r'\*(.+?)\*', r'\1', text)
+    text = re.sub(r'__(.+?)__', r'\1', text)
+    text = re.sub(r'_(.+?)_', r'\1', text)
+    return text
+
+
 def extract_first_number(text: str) -> float | None:
-    """Extract the first number from text, handling commas and negatives."""
-    text = text.replace(",", "")
+    """Extract the first number from text, handling commas, negatives,
+    word-numbers (zero-twelve), and LaTeX \\frac{a}{b}."""
+    text = strip_markdown(text)
+
+    # Check for word numbers first
+    text_lower = text.lower()
+    for word, val in WORD_NUMBERS.items():
+        if re.search(r'\b' + word + r'\b', text_lower):
+            return float(val)
+
+    # Check for LaTeX \frac{a}{b} (including \boxed{\frac{a}{b}})
+    m = re.search(r'\\frac\{(\d+)\}\{(\d+)\}', text)
+    if m:
+        return float(m.group(1)) / float(m.group(2))
+
+    # Handle commas in numbers: "1,081" → "1081"
+    text = re.sub(r'(\d),(\d)', r'\1\2', text)
     m = re.search(r'-?\d+\.?\d*', text)
     if m:
         try:
@@ -68,6 +99,60 @@ def extract_first_number(text: str) -> float | None:
         except ValueError:
             return None
     return None
+
+
+def extract_final_answer_number(text: str, gold_num: float) -> float | None:
+    """Extract number from 'final answer' patterns, or best-match number.
+
+    Prioritizes 'final answer' patterns over first-number extraction.
+    """
+    clean = strip_markdown(text)
+
+    # Priority 1: "final answer" patterns (common in T2)
+    final_patterns = [
+        r'(?:my\s+)?final\s+answer\s*(?:is|:)\s*[^\d]*(-?\d[\d,]*\.?\d*)',
+        r'(?:the\s+)?answer\s+(?:is|remains|=)\s*[^\d]*(-?\d[\d,]*\.?\d*)',
+        r'(?:so|therefore|thus)[,:]?\s*[^\d]*(-?\d[\d,]*\.?\d*)',
+        r'=\s*[^\d]*(-?\d[\d,]*\.?\d*)\s*$',
+    ]
+    for pattern in final_patterns:
+        m = re.search(pattern, clean, re.IGNORECASE | re.MULTILINE)
+        if m:
+            num_str = m.group(1).replace(',', '')
+            try:
+                return float(num_str)
+            except ValueError:
+                pass
+
+    # Priority 2: last number in bold/emphasis
+    bold_nums = re.findall(r'\*\*(-?\d[\d,]*\.?\d*)\*\*', text)
+    if bold_nums:
+        try:
+            return float(bold_nums[-1].replace(',', ''))
+        except ValueError:
+            pass
+
+    # Priority 3: extract all numbers and pick best match
+    # Handle commas in numbers
+    all_text = re.sub(r'(\d),(\d)', r'\1\2', clean)
+    matches = re.finditer(r'-?\d+\.?\d*', all_text)
+    all_nums = []
+    for m in matches:
+        try:
+            all_nums.append(float(m.group()))
+        except ValueError:
+            pass
+
+    if not all_nums:
+        return None
+
+    # If gold is in the list, return it
+    for n in all_nums:
+        if abs(n - gold_num) < 0.001:
+            return n
+
+    # Return the last number (most likely the conclusion)
+    return all_nums[-1]
 
 
 def grade_alias_plus_normalization(response: str, gold: str, aliases: list[str]) -> bool:
@@ -90,14 +175,10 @@ def grade_alias_plus_normalization(response: str, gold: str, aliases: list[str])
 
 
 def grade_approx_numeric_small(response: str, gold: str, tolerance: dict | None) -> bool:
-    """Extract first number and check within tolerance."""
+    """Extract number using final-answer heuristics and check within tolerance."""
     try:
         gold_num = float(gold.replace(",", ""))
     except (ValueError, TypeError):
-        return False
-
-    resp_num = extract_first_number(response)
-    if resp_num is None:
         return False
 
     abs_tol = 0.5
@@ -106,10 +187,22 @@ def grade_approx_numeric_small(response: str, gold: str, tolerance: dict | None)
         abs_tol = tolerance.get("abs_tol", abs_tol)
         rel_tol = tolerance.get("rel_tol", rel_tol)
 
-    if abs(resp_num - gold_num) <= abs_tol:
-        return True
-    if gold_num != 0 and abs(resp_num - gold_num) / abs(gold_num) <= rel_tol:
-        return True
+    # Primary path: extract_final_answer_number (prioritizes final answer patterns)
+    resp_num = extract_final_answer_number(response, gold_num)
+    if resp_num is not None:
+        if abs(resp_num - gold_num) <= abs_tol:
+            return True
+        if gold_num != 0 and abs(resp_num - gold_num) / abs(gold_num) <= rel_tol:
+            return True
+
+    # Fallback: extract_first_number (word numbers, LaTeX, etc.)
+    resp_num = extract_first_number(response)
+    if resp_num is not None:
+        if abs(resp_num - gold_num) <= abs_tol:
+            return True
+        if gold_num != 0 and abs(resp_num - gold_num) / abs(gold_num) <= rel_tol:
+            return True
+
     return False
 
 
@@ -119,18 +212,32 @@ def grade_code_output(response: str, gold: str, aliases: list[str]) -> bool:
 
 
 def grade_fraction_or_decimal(response: str, gold: str, aliases: list[str]) -> bool:
-    """Check fraction or decimal equivalence."""
+    """Check fraction or decimal equivalence, including LaTeX \\frac{}{}."""
     # First try alias matching
     if grade_alias_plus_normalization(response, gold, aliases):
         return True
-    # Try numeric equivalence
+    # Try numeric equivalence via final-answer extraction
     try:
         gold_num = float(gold.replace(",", ""))
+        resp_num = extract_final_answer_number(response, gold_num)
+        if resp_num is not None and abs(resp_num - gold_num) < 0.01:
+            return True
+        # Fallback to extract_first_number (handles LaTeX \frac)
         resp_num = extract_first_number(response)
         if resp_num is not None and abs(resp_num - gold_num) < 0.01:
             return True
     except (ValueError, TypeError):
         pass
+    # Also check LaTeX fractions explicitly
+    m = re.search(r'\\frac\{(\d+)\}\{(\d+)\}', response)
+    if m:
+        try:
+            gold_num = float(gold.replace(",", ""))
+            frac_val = float(m.group(1)) / float(m.group(2))
+            if abs(frac_val - gold_num) < 0.01:
+                return True
+        except (ValueError, TypeError, ZeroDivisionError):
+            pass
     return False
 
 

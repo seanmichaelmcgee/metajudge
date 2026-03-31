@@ -1,0 +1,156 @@
+{
+  "mechanism_target": "Calendar month length in date arithmetic: 'What date is 60 days after January 15, 2025?' Jan has 31 days, so 16 days left in Jan + 28 in Feb (2025 is not a leap year) + 16 in March = March 16. The trap: models may use 30-day months or forget February has 28 days in non-leap years. C2 evidence: 'Be careful about month lengths \u2014 not all months have the same number of days, and 2025 is not a leap year.'",
+  "subfamily": "C2",
+  "item_slot": 16,
+  "timestamp": "2026-03-31T14:33:49.751545+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "What date is 75 days after February 10, 2024?",
+            "gold_answer": "April 25, 2024",
+            "gold_answer_aliases": [
+              "April 25, 2024",
+              "25 April 2024",
+              "4/25/2024",
+              "2024-04-25",
+              "April 25th, 2024"
+            ],
+            "predicted_wrong_answer": "April 26, 2024",
+            "mechanism": "The trap is that models often assume February has 28 days by default, forgetting to check for leap years. 2024 is a leap year, so February has 29 days. Using 28 days for February leads to an off-by-one error in the calculation.",
+            "cot_reinforcement": "Chain-of-thought reasoning will break down the calculation into steps: days remaining in February, then days in March, then days in April. If the model incorrectly assumes February has 28 days, each step will seem correct and the final answer will be computed consistently, reinforcing the error.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "arithmetic"
+          },
+          "latency_ms": 171691
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 3,
+            "famous_trap": 3,
+            "grading_clarity": 3,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "Main issue: grading clarity is weaker than it looks because \u201c75 days after Feb 10, 2024\u201d can be interpreted inclusively vs. exclusively. Standard date arithmetic (add 75 days, excluding the start date) gives 2024-04-25, but an inclusive interpretation yields 2024-04-24. If you want crystal-clear grading, specify \u201cnot counting Feb 10\u201d or \u201cadd 75 days to 2024-02-10 (i.e., Feb 11 is day 1).\u201d\n\nSecond issue: the mechanism is a fairly well-known/common trap (leap-year February off-by-one). Many frontier models will explicitly check leap years when prompted for a concrete date calculation, so this is likely not \u201chard\u201d in practice. Consider a less-famous calendar edge case (e.g., century years like 1900 vs 2000, or adding across DST boundaries but explicitly saying \u201cdate in UTC\u201d to avoid timezone ambiguity), while still keeping an unambiguous gold.\n\nCoT resistance is only moderate: step-by-step reasoning can just as easily trigger the leap-year check as it can reinforce the 28-day assumption. To increase CoT-resistance, you\u2019d need wording/context that nudges the wrong default more strongly without introducing ambiguity."
+          },
+          "passes_criteria": false,
+          "latency_ms": 19596
+        }
+      },
+      "adversary_critique": "Main issue: grading clarity is weaker than it looks because \u201c75 days after Feb 10, 2024\u201d can be interpreted inclusively vs. exclusively. Standard date arithmetic (add 75 days, excluding the start date) gives 2024-04-25, but an inclusive interpretation yields 2024-04-24. If you want crystal-clear grading, specify \u201cnot counting Feb 10\u201d or \u201cadd 75 days to 2024-02-10 (i.e., Feb 11 is day 1).\u201d\n\nSecond issue: the mechanism is a fairly well-known/common trap (leap-year February off-by-one). Many frontier models will explicitly check leap years when prompted for a concrete date calculation, so this is likely not \u201chard\u201d in practice. Consider a less-famous calendar edge case (e.g., century years like 1900 vs 2000, or adding across DST boundaries but explicitly saying \u201cdate in UTC\u201d to avoid timezone ambiguity), while still keeping an unambiguous gold.\n\nCoT resistance is only moderate: step-by-step reasoning can just as easily trigger the leap-year check as it can reinforce the 28-day assumption. To increase CoT-resistance, you\u2019d need wording/context that nudges the wrong default more strongly without introducing ambiguity.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 3,
+        "famous_trap": 3,
+        "grading_clarity": 3,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "Main issue: grading clarity is weaker than it looks because \u201c75 days after Feb 10, 2024\u201d can be interpreted inclusively vs. exclusively. Standard date arithmetic (add 75 days, excluding the start date) gives 2024-04-25, but an inclusive interpretation yields 2024-04-24. If you want crystal-clear grading, specify \u201cnot counting Feb 10\u201d or \u201cadd 75 days to 2024-02-10 (i.e., Feb 11 is day 1).\u201d\n\nSecond issue: the mechanism is a fairly well-known/common trap (leap-year February off-by-one). Many frontier models will explicitly check leap years when prompted for a concrete date calculation, so this is likely not \u201chard\u201d in practice. Consider a less-famous calendar edge case (e.g., century years like 1900 vs 2000, or adding across DST boundaries but explicitly saying \u201cdate in UTC\u201d to avoid timezone ambiguity), while still keeping an unambiguous gold.\n\nCoT resistance is only moderate: step-by-step reasoning can just as easily trigger the leap-year check as it can reinforce the 28-day assumption. To increase CoT-resistance, you\u2019d need wording/context that nudges the wrong default more strongly without introducing ambiguity."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "In a certain country, they define 1 mile as equal to 1.5 kilometers. If a car travels 60 miles per hour, what is its speed in kilometers per hour?",
+            "gold_answer": "90 kilometers per hour",
+            "gold_answer_aliases": [
+              "90",
+              "90 km/h",
+              "90 kmph",
+              "90 kph"
+            ],
+            "predicted_wrong_answer": "96 kilometers per hour",
+            "mechanism": "The default convention for mile-to-kilometer conversion is 1 mile \u2248 1.609 km, often approximated as 1.6, but here it is explicitly defined as 1.5.",
+            "cot_reinforcement": "When using chain-of-thought, models will likely recall the standard conversion factor step by step without referencing the given definition, computing 60 * 1.6 = 96, thus reinforcing the error due to strong prior knowledge.",
+            "grading_rule": "approx_numeric_small",
+            "difficulty": "hard",
+            "category": "science"
+          },
+          "latency_ms": 261249
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 1,
+            "cot_resistant": 2,
+            "famous_trap": 3,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This item is extremely easy for frontier models because the prompt explicitly overrides the usual mile\u2013km conversion: 1 mile = 1.5 km, so 60 mph = 90 km/h by direct multiplication. A minimally careful read resolves it instantly; it doesn\u2019t require multi-step reasoning or hidden constraints.\n\nThe claimed CoT failure mode (model \u201crecalls\u201d 1.6 and ignores the definition) is plausible for weaker models, but standard chain-of-thought that begins by restating the given definition would usually prevent the mistake, so cot_resistant is low.\n\nIt\u2019s also a fairly common/recognizable trap pattern: \u201cuse the custom-defined conversion, not the real-world one.\u201d That makes it closer to a known gotcha than a novel adversarial example.\n\nGrading is clear (90 exactly) and self-correction is plausible (a reviewer would notice the given 1.5 factor).\n\nSuggestions: Make the override subtler and embed it among distracting but relevant numerical details; or use a less canonical prior than mile\u2192km (e.g., a fictional unit with a custom definition introduced earlier, then tested later). Alternatively, create a setting where both 1.5 and ~1.6 appear and only one applies (e.g., \u201croad miles\u201d vs \u201csurvey miles\u201d), to increase cot_resistance without becoming ambiguous."
+          },
+          "passes_criteria": false,
+          "latency_ms": 9109
+        }
+      },
+      "adversary_critique": "This item is extremely easy for frontier models because the prompt explicitly overrides the usual mile\u2013km conversion: 1 mile = 1.5 km, so 60 mph = 90 km/h by direct multiplication. A minimally careful read resolves it instantly; it doesn\u2019t require multi-step reasoning or hidden constraints.\n\nThe claimed CoT failure mode (model \u201crecalls\u201d 1.6 and ignores the definition) is plausible for weaker models, but standard chain-of-thought that begins by restating the given definition would usually prevent the mistake, so cot_resistant is low.\n\nIt\u2019s also a fairly common/recognizable trap pattern: \u201cuse the custom-defined conversion, not the real-world one.\u201d That makes it closer to a known gotcha than a novel adversarial example.\n\nGrading is clear (90 exactly) and self-correction is plausible (a reviewer would notice the given 1.5 factor).\n\nSuggestions: Make the override subtler and embed it among distracting but relevant numerical details; or use a less canonical prior than mile\u2192km (e.g., a fictional unit with a custom definition introduced earlier, then tested later). Alternatively, create a setting where both 1.5 and ~1.6 appear and only one applies (e.g., \u201croad miles\u201d vs \u201csurvey miles\u201d), to increase cot_resistance without becoming ambiguous.",
+      "adversary_scores": {
+        "too_easy_frontier": 1,
+        "cot_resistant": 2,
+        "famous_trap": 3,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This item is extremely easy for frontier models because the prompt explicitly overrides the usual mile\u2013km conversion: 1 mile = 1.5 km, so 60 mph = 90 km/h by direct multiplication. A minimally careful read resolves it instantly; it doesn\u2019t require multi-step reasoning or hidden constraints.\n\nThe claimed CoT failure mode (model \u201crecalls\u201d 1.6 and ignores the definition) is plausible for weaker models, but standard chain-of-thought that begins by restating the given definition would usually prevent the mistake, so cot_resistant is low.\n\nIt\u2019s also a fairly common/recognizable trap pattern: \u201cuse the custom-defined conversion, not the real-world one.\u201d That makes it closer to a known gotcha than a novel adversarial example.\n\nGrading is clear (90 exactly) and self-correction is plausible (a reviewer would notice the given 1.5 factor).\n\nSuggestions: Make the override subtler and embed it among distracting but relevant numerical details; or use a less canonical prior than mile\u2192km (e.g., a fictional unit with a custom definition introduced earlier, then tested later). Alternatively, create a setting where both 1.5 and ~1.6 appear and only one applies (e.g., \u201croad miles\u201d vs \u201csurvey miles\u201d), to increase cot_resistance without becoming ambiguous."
+      }
+    }
+  ],
+  "final_status": "accept",
+  "item_bundle": {
+    "item_id": "sc_c2_wr_016",
+    "family": "C",
+    "subfamily": "C2",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "In a certain country, they define 1 mile as equal to 1.5 kilometers. If a car travels 60 miles per hour, what is its speed in kilometers per hour?",
+    "gold_answer": "90 kilometers per hour",
+    "gold_answer_aliases": [
+      "90",
+      "90 km/h",
+      "90 kmph",
+      "90 kph"
+    ],
+    "grading_rule": "approx_numeric_small",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "contradiction",
+    "evidence_snippet": "\"Be careful not to import any real-world conversion factors \u2014 this problem takes place in a country with its own explicitly defined unit system.\"",
+    "difficulty": "hard",
+    "category": "science",
+    "mechanism_primary": "The default convention for mile-to-kilometer conversion is 1 mile \u2248 1.609 km, often approximated as 1.6, but here it is explicitly defined as 1.5.",
+    "provenance": "hand_authored",
+    "draft_status": "draft",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): unclear. Adversary scores: tef=1, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "90 kilometers per hour.",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "90 km/h",
+      "status": "unclear"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "unclear",
+    "response": "## Converting Miles per Hour to Kilometers per Hour\n\nGiven that 1 mile = 1.5 kilometers:\n\n$$60 \\text{ miles/hour} \\times 1.5 \\text{ km/mile} = \\boxed{90} \\text{ km/hour}$$"
+  }
+}

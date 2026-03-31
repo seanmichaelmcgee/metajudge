@@ -1,0 +1,148 @@
+{
+  "mechanism_target": "Python integer division on negatives: 'What is the output of print(-7 // 2) in Python 3?' Python uses FLOOR division, so -7//2 = -4 (rounds toward negative infinity). The math convention truncation gives -3. Models often apply truncation-toward-zero. This is a sister item to the mod item but tests a different aspect of the same convention.",
+  "subfamily": "C1",
+  "item_slot": 19,
+  "timestamp": "2026-03-31T14:33:45.239482+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "What is the output of print(-13 // 5) in Python 3?",
+            "gold_answer": "-3",
+            "gold_answer_aliases": [
+              "-3"
+            ],
+            "predicted_wrong_answer": "-2",
+            "mechanism": "Python's integer division uses floor division (rounding towards negative infinity), but many models default to truncation toward zero (common in other languages and human intuition). Applying truncation yields -2.",
+            "cot_reinforcement": "Step-by-step reasoning often computes -13 / 5 = -2.6, then incorrectly truncates the decimal part to get -2, reinforcing the wrong convention.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "code"
+          },
+          "latency_ms": 70061
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 3,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very common Python gotcha (floor division with negatives). Many frontier models already memorize that -13 // 5 == -3, so it\u2019s not hard enough to reliably fool them (too_easy_frontier=2). It\u2019s also close to a well-known trick question / interview-style factoid (famous_trap=4), violating the novelty requirement.\n\nCoT-resistance is only moderate: if the model remembers \u201c// is floor,\u201d CoT will correct it immediately; if it doesn\u2019t, CoT can indeed reinforce the truncation-to-zero mistake, but the presence of an explicit operator (//) makes it easy for models to recall the correct rule.\n\nSuggestions to strengthen: (1) Reduce memorization by embedding the concept in a less canonical context, e.g., combine // with %, verify invariant a == (a//b)*b + (a%b) and ask for both results, or use multiple operations where one wrong convention cascades. (2) Use mixed numeric types where behavior differs and is less memorized, e.g., (-13.0 // 5) vs (-13 // 5.0) and the resulting type/value, or Decimal/Fraction. (3) Add a subtlety about precedence/parentheses or intermediate values so the model can\u2019t answer from a cached factoid alone.\n\nGrading is crystal clear (single integer output), and self-correction on review is plausible because the correct rule is standard and easily checkable."
+          },
+          "passes_criteria": false,
+          "latency_ms": 11708
+        }
+      },
+      "adversary_critique": "This is a very common Python gotcha (floor division with negatives). Many frontier models already memorize that -13 // 5 == -3, so it\u2019s not hard enough to reliably fool them (too_easy_frontier=2). It\u2019s also close to a well-known trick question / interview-style factoid (famous_trap=4), violating the novelty requirement.\n\nCoT-resistance is only moderate: if the model remembers \u201c// is floor,\u201d CoT will correct it immediately; if it doesn\u2019t, CoT can indeed reinforce the truncation-to-zero mistake, but the presence of an explicit operator (//) makes it easy for models to recall the correct rule.\n\nSuggestions to strengthen: (1) Reduce memorization by embedding the concept in a less canonical context, e.g., combine // with %, verify invariant a == (a//b)*b + (a%b) and ask for both results, or use multiple operations where one wrong convention cascades. (2) Use mixed numeric types where behavior differs and is less memorized, e.g., (-13.0 // 5) vs (-13 // 5.0) and the resulting type/value, or Decimal/Fraction. (3) Add a subtlety about precedence/parentheses or intermediate values so the model can\u2019t answer from a cached factoid alone.\n\nGrading is crystal clear (single integer output), and self-correction on review is plausible because the correct rule is standard and easily checkable.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 3,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very common Python gotcha (floor division with negatives). Many frontier models already memorize that -13 // 5 == -3, so it\u2019s not hard enough to reliably fool them (too_easy_frontier=2). It\u2019s also close to a well-known trick question / interview-style factoid (famous_trap=4), violating the novelty requirement.\n\nCoT-resistance is only moderate: if the model remembers \u201c// is floor,\u201d CoT will correct it immediately; if it doesn\u2019t, CoT can indeed reinforce the truncation-to-zero mistake, but the presence of an explicit operator (//) makes it easy for models to recall the correct rule.\n\nSuggestions to strengthen: (1) Reduce memorization by embedding the concept in a less canonical context, e.g., combine // with %, verify invariant a == (a//b)*b + (a%b) and ask for both results, or use multiple operations where one wrong convention cascades. (2) Use mixed numeric types where behavior differs and is less memorized, e.g., (-13.0 // 5) vs (-13 // 5.0) and the resulting type/value, or Decimal/Fraction. (3) Add a subtlety about precedence/parentheses or intermediate values so the model can\u2019t answer from a cached factoid alone.\n\nGrading is crystal clear (single integer output), and self-correction on review is plausible because the correct rule is standard and easily checkable."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "What is the output of print(int(-2.5)) in Python 3?",
+            "gold_answer": "-2",
+            "gold_answer_aliases": [
+              "-2",
+              "negative two"
+            ],
+            "predicted_wrong_answer": "-3",
+            "mechanism": "The int() function for floats in Python truncates toward zero (rounds toward zero), while the common default assumption is that it floors (rounds toward negative infinity).",
+            "cot_reinforcement": "Chain-of-thought reasoning will typically apply the default 'round down' intuition: since -2.5 has a fractional part, int() should round down to the next lower integer, which is -3. This step-by-step application of the wrong convention reinforces the error.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "code"
+          },
+          "latency_ms": 317097
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 4,
+            "cot_resistant": 2,
+            "famous_trap": 3,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very common Python gotcha and is likely already memorized by frontier models (int() truncates toward zero). A model doing even shallow verification will often recall the rule and override the naive \u201cfloor\u201d intuition, so CoT tends to FIX the error rather than reinforce it (low CoT resistance). It\u2019s also fairly well-known as an FAQ-style trap (not novel), which hurts famous_trap.\n\nWhat works: grading is crystal clear (single deterministic output), and self-correction on review is very plausible.\n\nSuggestions to strengthen: use a less-memorized corner of numeric conversion where naive reasoning and even CoT can confidently go wrong. Examples:\n- Interactions with float specials: int(float('nan')) or int(float('inf')) (raises ValueError/OverflowError) but phrase the question to allow \u201cexception\u201d as the correct outcome.\n- Subtle float representation: a value that prints as \u201c-2.5\u201d but is actually slightly different due to binary float, combined with a comparison or formatting step before int().\n- Use a custom class with __int__ / __index__ to bait assumptions about int(x) behavior.\nKeep the item single-step and unambiguous with an exact Python 3 version if exceptions/edge cases are involved."
+          },
+          "passes_criteria": false,
+          "latency_ms": 10816
+        }
+      },
+      "adversary_critique": "This is a very common Python gotcha and is likely already memorized by frontier models (int() truncates toward zero). A model doing even shallow verification will often recall the rule and override the naive \u201cfloor\u201d intuition, so CoT tends to FIX the error rather than reinforce it (low CoT resistance). It\u2019s also fairly well-known as an FAQ-style trap (not novel), which hurts famous_trap.\n\nWhat works: grading is crystal clear (single deterministic output), and self-correction on review is very plausible.\n\nSuggestions to strengthen: use a less-memorized corner of numeric conversion where naive reasoning and even CoT can confidently go wrong. Examples:\n- Interactions with float specials: int(float('nan')) or int(float('inf')) (raises ValueError/OverflowError) but phrase the question to allow \u201cexception\u201d as the correct outcome.\n- Subtle float representation: a value that prints as \u201c-2.5\u201d but is actually slightly different due to binary float, combined with a comparison or formatting step before int().\n- Use a custom class with __int__ / __index__ to bait assumptions about int(x) behavior.\nKeep the item single-step and unambiguous with an exact Python 3 version if exceptions/edge cases are involved.",
+      "adversary_scores": {
+        "too_easy_frontier": 4,
+        "cot_resistant": 2,
+        "famous_trap": 3,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very common Python gotcha and is likely already memorized by frontier models (int() truncates toward zero). A model doing even shallow verification will often recall the rule and override the naive \u201cfloor\u201d intuition, so CoT tends to FIX the error rather than reinforce it (low CoT resistance). It\u2019s also fairly well-known as an FAQ-style trap (not novel), which hurts famous_trap.\n\nWhat works: grading is crystal clear (single deterministic output), and self-correction on review is very plausible.\n\nSuggestions to strengthen: use a less-memorized corner of numeric conversion where naive reasoning and even CoT can confidently go wrong. Examples:\n- Interactions with float specials: int(float('nan')) or int(float('inf')) (raises ValueError/OverflowError) but phrase the question to allow \u201cexception\u201d as the correct outcome.\n- Subtle float representation: a value that prints as \u201c-2.5\u201d but is actually slightly different due to binary float, combined with a comparison or formatting step before int().\n- Use a custom class with __int__ / __index__ to bait assumptions about int(x) behavior.\nKeep the item single-step and unambiguous with an exact Python 3 version if exceptions/edge cases are involved."
+      }
+    }
+  ],
+  "final_status": "reject",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_019",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "What is the output of print(int(-2.5)) in Python 3?",
+    "gold_answer": "-2",
+    "gold_answer_aliases": [
+      "-2",
+      "negative two"
+    ],
+    "grading_rule": "alias_plus_normalization",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "code",
+    "mechanism_primary": "The int() function for floats in Python truncates toward zero (rounds toward zero), while the common default assumption is that it floors (rounds toward negative infinity).",
+    "provenance": "hand_authored",
+    "draft_status": "reject",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=4, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "-2\n\n(int() truncates toward zero, so int(-2.5) yields -2.)",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "-2",
+      "status": "correct"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "correct",
+    "response": "The output is **`-2`**.\n\nIn Python 3, `int()` truncates toward zero, so `int(-2.5)` removes the decimal part and returns `-2`."
+  }
+}

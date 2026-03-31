@@ -1,0 +1,153 @@
+{
+  "mechanism_target": "Matrix dimensions: A is 2x3, B is 3x2. AB is 2x2, BA is 3x3. Both products exist but different dimensions, so they cannot be equal.",
+  "subfamily": "C1",
+  "item_slot": 31,
+  "timestamp": "2026-03-31T16:02:03.681418+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "Let A = [[1, 0, 0], [0, 0, 0]] and B = [[0, 0], [0, 0], [0, 0]]. Is AB equal to BA?",
+            "gold_answer": "No",
+            "gold_answer_aliases": [
+              "No, they are not equal.",
+              "No.",
+              "They are not equal.",
+              "False"
+            ],
+            "predicted_wrong_answer": "Yes",
+            "mechanism": "The model assumes that two zero matrices are always equal, but matrix equality requires identical dimensions. Here, AB is a 2x2 zero matrix and BA is a 3x3 zero matrix, so they cannot be equal despite both being zero.",
+            "cot_reinforcement": "Chain-of-thought will correctly compute AB as [[0,0],[0,0]] and BA as [[0,0,0],[0,0,0],[0,0,0]], then reinforce the error by concluding 'both are zero matrices, so they are equal' without checking that the dimensions differ.",
+            "grading_rule": "yes_no",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 198854
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 3,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is likely too easy for frontier models because the shapes are explicit: A is 2x3 and B is 3x2, so AB is 2x2 while BA is 3x3. Many models will explicitly track dimensions and immediately answer 'No' (or 'not comparable') without being tempted by the 'both zero' shortcut. The stated CoT failure mode is also not very CoT-resistant: standard dimension-check reasoning is exactly what CoT tends to surface, so CoT is more likely to FIX the error than reinforce it. Finally, this is a fairly common linear-algebra trap (zero matrices of different sizes), so it\u2019s not very novel.\n\nSuggestions to strengthen the item: (1) make the dimensional mismatch less visually obvious (e.g., hide dimensions in a word problem or use block matrices); (2) avoid the well-known 'zero matrices different sizes' trope by making one product nonzero but still triggering a commutativity/equality fallacy; (3) if you want the intended failure to be 'ignoring dimensions', consider phrasing/grading around 'Is AB = BA (as matrices with the same dimensions)?' or include distractors that encourage skipping shape-checks while still keeping a clear gold."
+          },
+          "passes_criteria": false,
+          "latency_ms": 12897
+        }
+      },
+      "adversary_critique": "This is likely too easy for frontier models because the shapes are explicit: A is 2x3 and B is 3x2, so AB is 2x2 while BA is 3x3. Many models will explicitly track dimensions and immediately answer 'No' (or 'not comparable') without being tempted by the 'both zero' shortcut. The stated CoT failure mode is also not very CoT-resistant: standard dimension-check reasoning is exactly what CoT tends to surface, so CoT is more likely to FIX the error than reinforce it. Finally, this is a fairly common linear-algebra trap (zero matrices of different sizes), so it\u2019s not very novel.\n\nSuggestions to strengthen the item: (1) make the dimensional mismatch less visually obvious (e.g., hide dimensions in a word problem or use block matrices); (2) avoid the well-known 'zero matrices different sizes' trope by making one product nonzero but still triggering a commutativity/equality fallacy; (3) if you want the intended failure to be 'ignoring dimensions', consider phrasing/grading around 'Is AB = BA (as matrices with the same dimensions)?' or include distractors that encourage skipping shape-checks while still keeping a clear gold.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 3,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is likely too easy for frontier models because the shapes are explicit: A is 2x3 and B is 3x2, so AB is 2x2 while BA is 3x3. Many models will explicitly track dimensions and immediately answer 'No' (or 'not comparable') without being tempted by the 'both zero' shortcut. The stated CoT failure mode is also not very CoT-resistant: standard dimension-check reasoning is exactly what CoT tends to surface, so CoT is more likely to FIX the error than reinforce it. Finally, this is a fairly common linear-algebra trap (zero matrices of different sizes), so it\u2019s not very novel.\n\nSuggestions to strengthen the item: (1) make the dimensional mismatch less visually obvious (e.g., hide dimensions in a word problem or use block matrices); (2) avoid the well-known 'zero matrices different sizes' trope by making one product nonzero but still triggering a commutativity/equality fallacy; (3) if you want the intended failure to be 'ignoring dimensions', consider phrasing/grading around 'Is AB = BA (as matrices with the same dimensions)?' or include distractors that encourage skipping shape-checks while still keeping a clear gold."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "What is the value of 2^3^2? (Note: ^ denotes exponentiation, and no parentheses are used. Assume standard mathematical conventions for evaluation.)",
+            "gold_answer": "512",
+            "gold_answer_aliases": [
+              "512",
+              "2^9",
+              "five hundred twelve"
+            ],
+            "predicted_wrong_answer": "64",
+            "mechanism": "The default convention for evaluating exponentiation without parentheses is to associate from the left (left-associativity), but in standard mathematics, exponentiation is right-associative, so 2^3^2 should be evaluated as 2^(3^2) = 512, not (2^3)^2 = 64.",
+            "cot_reinforcement": "When using chain-of-thought reasoning, models often evaluate expressions sequentially from left to right, computing 2^3=8 first, then 8^2=64, without pausing to consider the right-associativity of exponentiation. This step-by-step approach reinforces the incorrect left-associative evaluation, making the error harder to catch.",
+            "grading_rule": "approx_numeric_small",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 255658
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 1,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very common precedence/associativity gotcha (right-associativity of exponentiation) and is widely memorized; many frontier models will answer 512 immediately. It is also not particularly CoT-resistant: a minimal check (\u201cexponentiation is right-associative\u201d) corrects the left-to-right mistake, and explicit step-by-step reasoning often *improves* accuracy here rather than reinforcing the error. The item is therefore both too familiar and too easy to self-correct.\n\nSuggestions to strengthen it:\n- Make the trap less famous/rote by embedding it in a more realistic context with competing conventions (e.g., specify a particular language/parser where ^ is XOR vs exponentiation, or where exponentiation is ** and is right-associative).\n- Use a less canonical structure than 2^3^2, e.g., include negatives/fractions or mixed operators where precedence vs associativity is subtler: -2^2^3, 4^1/2^2, 2^3^2 mod 7, or 2^(3^2) vs (2^3)^2 with a distractor explanation.\n- Ensure the prompt\u2019s \u201cstandard mathematical conventions\u201d doesn\u2019t make it trivially checkable; consider asking for an interpretation under a stated but nonstandard evaluation rule to create genuine ambiguity (then adjust grading accordingly)."
+          },
+          "passes_criteria": false,
+          "latency_ms": 15657
+        }
+      },
+      "adversary_critique": "This is a very common precedence/associativity gotcha (right-associativity of exponentiation) and is widely memorized; many frontier models will answer 512 immediately. It is also not particularly CoT-resistant: a minimal check (\u201cexponentiation is right-associative\u201d) corrects the left-to-right mistake, and explicit step-by-step reasoning often *improves* accuracy here rather than reinforcing the error. The item is therefore both too familiar and too easy to self-correct.\n\nSuggestions to strengthen it:\n- Make the trap less famous/rote by embedding it in a more realistic context with competing conventions (e.g., specify a particular language/parser where ^ is XOR vs exponentiation, or where exponentiation is ** and is right-associative).\n- Use a less canonical structure than 2^3^2, e.g., include negatives/fractions or mixed operators where precedence vs associativity is subtler: -2^2^3, 4^1/2^2, 2^3^2 mod 7, or 2^(3^2) vs (2^3)^2 with a distractor explanation.\n- Ensure the prompt\u2019s \u201cstandard mathematical conventions\u201d doesn\u2019t make it trivially checkable; consider asking for an interpretation under a stated but nonstandard evaluation rule to create genuine ambiguity (then adjust grading accordingly).",
+      "adversary_scores": {
+        "too_easy_frontier": 1,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very common precedence/associativity gotcha (right-associativity of exponentiation) and is widely memorized; many frontier models will answer 512 immediately. It is also not particularly CoT-resistant: a minimal check (\u201cexponentiation is right-associative\u201d) corrects the left-to-right mistake, and explicit step-by-step reasoning often *improves* accuracy here rather than reinforcing the error. The item is therefore both too familiar and too easy to self-correct.\n\nSuggestions to strengthen it:\n- Make the trap less famous/rote by embedding it in a more realistic context with competing conventions (e.g., specify a particular language/parser where ^ is XOR vs exponentiation, or where exponentiation is ** and is right-associative).\n- Use a less canonical structure than 2^3^2, e.g., include negatives/fractions or mixed operators where precedence vs associativity is subtler: -2^2^3, 4^1/2^2, 2^3^2 mod 7, or 2^(3^2) vs (2^3)^2 with a distractor explanation.\n- Ensure the prompt\u2019s \u201cstandard mathematical conventions\u201d doesn\u2019t make it trivially checkable; consider asking for an interpretation under a stated but nonstandard evaluation rule to create genuine ambiguity (then adjust grading accordingly)."
+      }
+    }
+  ],
+  "final_status": "reject",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_031",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "What is the value of 2^3^2? (Note: ^ denotes exponentiation, and no parentheses are used. Assume standard mathematical conventions for evaluation.)",
+    "gold_answer": "512",
+    "gold_answer_aliases": [
+      "512",
+      "2^9",
+      "five hundred twelve"
+    ],
+    "grading_rule": "approx_numeric_small",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "The default convention for evaluating exponentiation without parentheses is to associate from the left (left-associativity), but in standard mathematics, exponentiation is right-associative, so 2^3^2 should be evaluated as 2^(3^2) = 512, not (2^3)^2 = 64.",
+    "provenance": "hand_authored",
+    "draft_status": "reject",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=1, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "512\n\nExplanation: exponentiation is evaluated right-to-left, so 2^3^2 = 2^(3^2) = 2^9 = 512.",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "The value of $2^{3^2}$ is $2^{3^2} = 2^9 = 512$.\n\nThe final answer is $\\boxed{512}$.",
+      "status": "correct"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "correct",
+    "response": "## Evaluating 2^3^2\n\nWith repeated exponentiation and no parentheses, the standard mathematical convention is **right-to-left associativity**.\n\nSo: 2^3^2 = 2^(3^2) = 2^9 = **512**"
+  }
+}

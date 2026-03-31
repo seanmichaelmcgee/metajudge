@@ -1,0 +1,28 @@
+{
+  "item_id": "sc_c1_wr_031",
+  "family": "C",
+  "subfamily": "C1",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "What is the value of 2^3^2? (Note: ^ denotes exponentiation, and no parentheses are used. Assume standard mathematical conventions for evaluation.)",
+  "gold_answer": "512",
+  "gold_answer_aliases": [
+    "512",
+    "2^9",
+    "five hundred twelve"
+  ],
+  "grading_rule": "approx_numeric_small",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "metacognitive",
+  "evidence_snippet": null,
+  "difficulty": "hard",
+  "category": "mathematics",
+  "mechanism_primary": "The default convention for evaluating exponentiation without parentheses is to associate from the left (left-associativity), but in standard mathematics, exponentiation is right-associative, so 2^3^2 should be evaluated as 2^(3^2) = 512, not (2^3)^2 = 64.",
+  "provenance": "hand_authored",
+  "draft_status": "reject",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=1, cr=2",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}

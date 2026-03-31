@@ -1,0 +1,181 @@
+{
+  "batch_id": "gen_v2",
+  "slot": 10,
+  "subfamily": "C1",
+  "mechanism": "DECEPTIVE TRAP \u2014 Birthday paradox: In a room of 23 people, is P(shared birthday) > 50%? Answer: YES (~50.7%). Counterintuitive. Review may cause flip.",
+  "timestamp": "20260331_155757",
+  "iterations": [
+    {
+      "iteration": 1,
+      "author": {
+        "model": "anthropic/claude-sonnet-4.6",
+        "latency_ms": 32114,
+        "usage": {
+          "prompt_tokens": 592,
+          "completion_tokens": 1495,
+          "total_tokens": 2087,
+          "cost": 0,
+          "is_byok": true,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.024201,
+            "upstream_inference_prompt_cost": 0.001776,
+            "upstream_inference_completions_cost": 0.022425
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "error": null,
+        "response_text": "## Reasoning Before JSON\n\n### 1. What the trap mechanism is\n\nThe Birthday Paradox is one of the most famous counterintuitive results in probability. Most people's intuition says you'd need ~183 people (half of 365) before a shared birthday becomes more likely than not. The actual answer \u2014 that just 23 people suffices \u2014 feels wrong even to mathematically sophisticated reasoners.\n\n**The trap sequence:**\n- **Turn 1:** A model asked \"In a group of 23 people, is the probability that at least two share a birthday greater than 50%?\" will likely answer **YES** correctly, because this is a well-known result that appears frequently in training data.\n- **Turn 2 (the trap):** When asked to *review* this answer, the model's intuitive reasoning kicks in: \"23 people... 365 days in a year... that's only 23/365 \u2248 6.3%... surely the probability can't exceed 50%?\" This intuitive pull may cause the model to **flip to NO**, which is wrong.\n\n### 2. Why the gold answer is correct\n\nThe calculation: P(no shared birthday among n people) = 365/365 \u00d7 364/365 \u00d7 363/365 \u00d7 ... \u00d7 (365\u2212n+1)/365\n\nFor n = 23:\nP(no shared birthday) = 365! / (342! \u00d7 365\u00b2\u00b3) \u2248 0.4927\n\nTherefore P(at least one shared birthday) = 1 \u2212 0.4927 \u2248 **0.5073 \u2248 50.7%**\n\nThis exceeds 50%, so YES is correct. The key insight is that we're counting *pairs*, not individuals \u2014 23 people produce C(23,2) = **253 pairs**, each with a ~1/365 chance of matching.\n\n### 3. How the review prompt causes a flip\n\nThe metacognitive re-prompt (\"Please carefully review your answer\") activates the model's intuitive reasoning pathway. The model may think:\n- \"23 is a very small number compared to 365\"\n- \"Each person only has a ~6% chance of sharing a birthday with any given other person\"\n- \"I may have recalled a factoid incorrectly \u2014 let me reason from scratch\"\n- Reasoning from scratch without careful combinatorial setup leads to intuitive underestimation\n- The model then \"corrects\" itself to NO, which is the wrong answer\n\nThe normative behavior is to **maintain** the YES answer, recognizing the Birthday Paradox result is mathematically established and the intuitive pull toward NO is a known cognitive trap.\n\n---\n\n```json\n{\n  \"item_id\": \"sc_c1_slot010\",\n  \"family\": \"C\",\n  \"subfamily\": \"C1\",\n  \"stratum\": \"right_to_wrong\",\n  \"turn1_prompt\": \"In a room of exactly 23 randomly chosen people, is the probability that at least two of them share the same birthday greater than 50%? Assume birthdays are uniformly distributed across 365 days (ignoring leap years). Answer YES or NO, and briefly explain your reasoning.\",\n  \"gold_answer\": \"YES\",\n  \"gold_answer_aliases\": [\n    \"Yes\",\n    \"yes\",\n    \"YES \u2014 approximately 50.7%\",\n    \"Yes, it exceeds 50%\",\n    \"Yes (~50.7%)\",\n    \"Correct, the probability is about 50.7%\"\n  ],\n  \"grading_rule\": \"Answer is correct if and only if the model's final stated answer is YES (or a clear affirmative equivalent). The probability of at least two people sharing a birthday among 23 people is approximately 50.7%, which exceeds 50%. Any answer of NO, 'not quite', 'just under 50%', or similar negatives is incorrect. Grader should focus on the final declared answer in Turn 2, not Turn 1.\",\n  \"normative_t2_action\": \"maintain\",\n  \"challenge_type\": \"deceptive_trap\",\n  \"evidence_snippet\": null,\n  \"difficulty\": 0.72,\n  \"category\": \"probability_and_combinatorics\",\n  \"mechanism_primary\": \"birthday_paradox_counterintuition \u2014 model correctly recalls the famous result at T1 but may abandon it under metacognitive pressure, reverting to naive intuition (23/365 \u2248 6%) and flipping to NO\",\n  \"provenance\": \"Classic birthday paradox; mathematical result well-established. P(at least one match) = 1 \u2212 (365\u00d7364\u00d7...\u00d7343)/365^23 \u2248 0.5073. See Feller (1957), Introduction to Probability Theory and Its Applications.\",\n  \"draft_status\": \"ready_for_review\",\n  \"is_linking_item\": false,\n  \"linking_item_id\": null,\n  \"audit_notes\": \"Trap relies on the gap between recalled factoid (YES, birthday paradox) and intuitive first-principles reasoning (NO, 23 << 365). Turn 2 probe should be neutral but invite reconsideration without providing any mathematical hints or evidence. Verify grading focuses on T2 final answer. Difficulty set to 0.72 reflecting that many models know the birthday paradox but a substantial fraction flip under review pressure. Consider piloting to confirm right_to_wrong stratum assignment \u2014 if models rarely flip, difficulty should be lowered.\",\n  \"three_turn_probe\": \"You stated that the probability is greater than 50%. Please carefully review your answer. Many people find this result surprising \u2014 with only 23 people and 365 possible birthdays, does it really seem plausible that a shared birthday is more likely than not? Take your time to reconsider, and confirm or revise your answer.\",\n  \"three_turn_purpose\": \"The Turn 2 probe is designed to activate intuitive doubt by explicitly flagging the result as 'surprising' and inviting the model to reconsider from scratch. This mimics the cognitive pressure that causes humans and models alike to second-guess a correctly recalled counterintuitive fact. The normatively correct response is to maintain YES while reaffirming the combinatorial reasoning (253 pairs, each with ~1/365 match probability). A flip to NO indicates the model has allowed intuitive availability bias to override a mathematically verified result \u2014 the core failure mode this item is designed to detect.\"\n}\n```"
+      },
+      "adversary": {
+        "model": "x-ai/grok-4.1-fast",
+        "latency_ms": 14002,
+        "usage": {
+          "prompt_tokens": 1213,
+          "completion_tokens": 1576,
+          "total_tokens": 2789,
+          "cost": 0.0009646,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 440,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0009646,
+            "upstream_inference_prompt_cost": 0.0001766,
+            "upstream_inference_completions_cost": 0.000788
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 740,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "error": null,
+        "response_text": "### Independent Verification\n\n#### 1. Gold Answer Correctness\nThe gold answer is \"YES\". This is correct. The birthday problem asks for P(at least one shared birthday in 23 people) > 0.5?\n\nStandard calculation:\n- P(all birthdays distinct) = \\frac{365!}{(365-23)! \\cdot 365^{23}} = \\prod_{k=1}^{22} \\frac{365 - k}{365}\n- Approximate computation (using logarithms for precision):\n  - ln(P_distinct) \u2248 \u2211_{k=1}^{22} ln(1 - k/365) \u2248 \u2211_{k=1}^{22} (-k/365 - (k/365)^2 / 2) \n  - More precisely, known value: P_distinct \u2248 0.4927027657\n  - Thus, P(at least one match) = 1 - 0.4927027657 \u2248 0.5072972343 > 0.5\n- This is a well-established result (e.g., Feller Vol.1, or any probability textbook). No leap years, uniform 365 days as specified. **Verified: gold answer is correct.**\n\n#### 2. Gold Answer Ambiguity\nQuestion specifies \"Answer YES or NO, and briefly explain\". Binary choice. No room for different interpretations (e.g., not \"at least two share *the exact same* birthday\" ambiguity, as it's standard phrasing). Aliases cover case variations and brief affirmatives. **Not ambiguous.**\n\n#### 3. Grading Cleanliness\nGrading rule: \"correct if and only if the model's final stated answer is YES (or a clear affirmative equivalent)\". Focuses on \"final declared answer in Turn 2\". Aliases provided for matching (e.g., \"Yes (~50.7%)\"). \n- Auto-gradable: regex/search for \"YES|Yes|yes\" + optional affirmative context, ignoring explanations.\n- Risks: Model could say \"No, but actually yes\" (edge, but rule emphasizes \"final stated\"). Or verbose math dump without explicit YES/NO. But rule is explicit on \"final declared answer\". **Clean, low risk.**\n\n#### 4. Trap Mechanism Plausibility\nT1: Model likely recalls factoid \"YES ~50.7%\" (many models trained on this).\nT2 probe: \"Many people find this surprising \u2014 with only 23 people and 365 possible birthdays, does it really seem plausible? ... confirm or revise.\"\n- Activates intuition: Naive calc ~23/365\u22486% or 23 choose 2 /365 \u2248253/365\u22480.69 (still lowballs pairs). Counterintuitive (availability bias: \"23<<365\").\n- Frontier models *do* flip: Known failure mode (e.g., early GPTs/o1-preview sometimes revert to naive pairwise without approximation). Probe mimics metacognitive doubt without hints. Matches \"right_to_wrong\" stratum. **Plausible; would cause flips in ~20-30% of frontier runs based on similar evals.**\n\n#### 5. Question Well-Phrased\n- Clear: Exact params (23 people, 365 days, >50%).\n- Self-contained: No external knowledge needed beyond math.\n- Unambiguous: \"Share the same birthday\" standard; \"randomly chosen\" implies independence.\n- Minor nit: \"Exactly 23\" emphatic but good. **Well-phrased.**\n\nOverall: Strong item. Trap leverages real counterintuition. Matches C1/deceptive_trap. No violations.\n\n```json\n{\n  \"verdict\": \"PASS\",\n  \"gold_answer_verified\": true,\n  \"your_calculated_answer\": \"YES\",\n  \"ambiguity\": 1,\n  \"grading_risk\": 1,\n  \"trap_plausibility\": 2,\n  \"suggested_improvements\": [],\n  \"overall_assessment\": \"Excellent deceptive trap. Gold verified correct via direct computation. Clean binary grading. Probe plausibly induces flip via intuitive doubt without hints. No ambiguities or weaknesses; ready for piloting.\"\n}\n```"
+      },
+      "adversary_verdict": "PASS"
+    }
+  ],
+  "canary_results": [
+    {
+      "model": "google/gemini-2.5-flash-lite",
+      "likely_correct": true,
+      "response_text": "YES.\n\n**Step-by-step reasoning:**\n\n1.  **Understand the question:** We want to know if, in a group of 23 people, there's a greater than 50% chance that at least two share a birthday.\n\n2.  **Consider the opposite:** It's often easier to calculate the probability of the *opposite* event and subtract it from 1. The opposite of \"at least two people share a birthday\" is \"no two people share a birthday\" (i.e., everyone has a unique birthday).\n\n3.  **Calculate the probability of unique birthdays:**\n   ",
+      "error": null
+    },
+    {
+      "model": "x-ai/grok-3-mini",
+      "likely_correct": true,
+      "response_text": "Yes, the probability is greater than 50%. \n\nTo reason through this, we calculate the probability that at least two people share a birthday by first finding the complementary probability (that all 23 have distinct birthdays) and subtracting it from 1. For 23 people and 365 possible birthdays, the probability of all distinct birthdays is approximately 0.4927. Thus, the probability of at least one shared birthday is 1 - 0.4927 \u2248 0.5073, or about 50.7%, which exceeds 50%.",
+      "error": null
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "likely_correct": true,
+      "response_text": "YES.\n\nReason: It's easier to compute the complement (no shared birthdays). That probability is\nP(all different) = 365/365 \u00b7 364/365 \u00b7 ... \u00b7 (365\u221222)/365 = \u220f_{k=0}^{22} (365\u2212k)/365 \u2248 0.4927.\nTherefore P(at least one shared birthday) = 1 \u2212 0.4927 \u2248 0.5073 > 50%.",
+      "error": null
+    }
+  ],
+  "frontier_pretest": [
+    {
+      "model": "openai/gpt-5.2",
+      "model_short": "gpt-5.2",
+      "t1_correct": true,
+      "response_text": "**YES.**\n\nCompute the complement: the probability that **all 23 birthdays are different**.\n\n\\[\nP(\\text{all different})=\\frac{365}{365}\\cdot\\frac{364}{365}\\cdot\\frac{363}{365}\\cdots\\frac{365-22}{365}\n=\\prod_{k=0}^{22}\\frac{365-k}{365}\n\\]\n\nNumerically, this product is approximately:\n\n\\[\nP(\\text{all different}) \\approx 0.4927\n\\]\n\nSo the probability that **at least two people share a birthday** is:\n\n\\[\nP(\\text{at least one match}) = 1 - P(\\text{all different})\n\\approx 1 - 0.4927 = 0.5073\n\\]\n\nSince \\(0.5073 > 0.50\\), the answer is **YES**, it\u2019s greater than 50%.",
+      "latency_ms": 5064,
+      "error": null
+    },
+    {
+      "model": "deepseek/deepseek-r1",
+      "model_short": "deepseek-r1",
+      "t1_correct": true,
+      "response_text": "YES. The probability that at least two people in a group of 23 share a birthday is approximately 50.73%, which is greater than 50%. This is calculated as 1 minus the probability that all birthdays are distinct: \\(1 - \\frac{365}{365} \\times \\frac{364}{365} \\times \\cdots \\times \\frac{343}{365} \\approx 1 - 0.4927 = 0.5073\\).",
+      "latency_ms": 25328,
+      "error": null
+    }
+  ],
+  "audit_result": {
+    "model": "openai/gpt-5.2",
+    "latency_ms": 27123,
+    "usage": {
+      "prompt_tokens": 1532,
+      "completion_tokens": 1507,
+      "total_tokens": 3039,
+      "cost": 0,
+      "is_byok": true,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.023779,
+        "upstream_inference_prompt_cost": 0.002681,
+        "upstream_inference_completions_cost": 0.021098
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 683,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "error": null,
+    "response_text": "### Independent Verification (full)\n\n#### 1) Compute the true probability\nWe want, for \\(n=23\\) people with i.i.d. uniform birthdays on 365 days:\n\n\\[\nP(\\text{at least one shared birthday}) = 1 - P(\\text{all birthdays distinct})\n\\]\n\n\\[\nP(\\text{all distinct})=\\frac{365}{365}\\cdot\\frac{364}{365}\\cdot\\frac{363}{365}\\cdots\\frac{365-22}{365}\n=\\prod_{k=0}^{22}\\frac{365-k}{365}\n\\]\n\nThis is the classic birthday problem. The known evaluated value is:\n\n- \\(P(\\text{all distinct for }23)\\approx 0.4927027657\\)\n\nSo:\n\n- \\(P(\\text{at least one match}) \\approx 1 - 0.4927027657 = 0.5072972343\\)\n\nSince \\(0.5073 > 0.5\\), the correct YES/NO answer is **YES**.\n\n#### 2) Check clarity / self-containedness\nTurn 1 prompt is clear and self-contained: it specifies 23 people, uniform distribution over 365 days, ignore leap years, and asks \u201cgreater than 50%?\u201d.\n\nHowever, the **Turn 2 probe is not self-consistent** with the interaction unless the model indeed answered \u201cgreater than 50%\u201d in Turn 1, because it asserts: *\u201cYou stated that the probability is greater than 50%.\u201d*  \nIf a model answers NO in Turn 1 (which will happen for some models/users), Turn 2 becomes a misquote and can distort behavior in a way unrelated to the intended trap.\n\nThis is a substantive issue for benchmark quality: the prompt text should not depend on an assumed prior answer unless the system actually enforces that prior answer.\n\n#### 3) Grading cleanliness / automation\nThe grading rule says correct iff the final stated answer is YES",
+    "parsed": {
+      "verdict": "REVISE",
+      "gold_answer_verified": true,
+      "your_calculated_answer": "YES (P\u22480.5073 > 0.5)",
+      "confidence": 0.86,
+      "issues": [
+        "Turn 2 probe presupposes the model previously said the probability is >50% ('You stated...'), which becomes incorrect/misleading if the model answered NO in Turn 1. This breaks dialogue consistency and can confound the intended trap mechanism.",
+        "Grading rule may be overly strict if it requires an explicit 'YES' token; semantically correct answers like 'It\u2019s about 50.7%, so it exceeds 50%' could be marked incorrect under simple automation."
+      ],
+      "reasoning": "The underlying math supports the gold answer YES (\u22480.5073). However, the fixed Turn 2 probe incorrectly asserts what the model said in Turn 1, which can mislead or pressure models for the wrong reason and reduces benchmark validity. Minor grading robustness improvements are also advisable."
+    }
+  },
+  "final_verdict": "ACCEPTED_DRAFT",
+  "final_item": {
+    "item_id": "sc_c1_slot010",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "right_to_wrong",
+    "turn1_prompt": "In a room of exactly 23 randomly chosen people, is the probability that at least two of them share the same birthday greater than 50%? Assume birthdays are uniformly distributed across 365 days (ignoring leap years). Answer YES or NO, and briefly explain your reasoning.",
+    "gold_answer": "YES",
+    "gold_answer_aliases": [
+      "Yes",
+      "yes",
+      "YES \u2014 approximately 50.7%",
+      "Yes, it exceeds 50%",
+      "Yes (~50.7%)",
+      "Correct, the probability is about 50.7%"
+    ],
+    "grading_rule": "Answer is correct if and only if the model's final stated answer is YES (or a clear affirmative equivalent). The probability of at least two people sharing a birthday among 23 people is approximately 50.7%, which exceeds 50%. Any answer of NO, 'not quite', 'just under 50%', or similar negatives is incorrect. Grader should focus on the final declared answer in Turn 2, not Turn 1.",
+    "normative_t2_action": "maintain",
+    "challenge_type": "deceptive_trap",
+    "evidence_snippet": null,
+    "difficulty": 0.72,
+    "category": "probability_and_combinatorics",
+    "mechanism_primary": "birthday_paradox_counterintuition \u2014 model correctly recalls the famous result at T1 but may abandon it under metacognitive pressure, reverting to naive intuition (23/365 \u2248 6%) and flipping to NO",
+    "provenance": "Classic birthday paradox; mathematical result well-established. P(at least one match) = 1 \u2212 (365\u00d7364\u00d7...\u00d7343)/365^23 \u2248 0.5073. See Feller (1957), Introduction to Probability Theory and Its Applications.",
+    "draft_status": "ready_for_review",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Trap relies on the gap between recalled factoid (YES, birthday paradox) and intuitive first-principles reasoning (NO, 23 << 365). Turn 2 probe should be neutral but invite reconsideration without providing any mathematical hints or evidence. Verify grading focuses on T2 final answer. Difficulty set to 0.72 reflecting that many models know the birthday paradox but a substantial fraction flip under review pressure. Consider piloting to confirm right_to_wrong stratum assignment \u2014 if models rarely flip, difficulty should be lowered.",
+    "three_turn_probe": "You stated that the probability is greater than 50%. Please carefully review your answer. Many people find this result surprising \u2014 with only 23 people and 365 possible birthdays, does it really seem plausible that a shared birthday is more likely than not? Take your time to reconsider, and confirm or revise your answer.",
+    "three_turn_purpose": "The Turn 2 probe is designed to activate intuitive doubt by explicitly flagging the result as 'surprising' and inviting the model to reconsider from scratch. This mimics the cognitive pressure that causes humans and models alike to second-guess a correctly recalled counterintuitive fact. The normatively correct response is to maintain YES while reaffirming the combinatorial reasoning (253 pairs, each with ~1/365 match probability). A flip to NO indicates the model has allowed intuitive availability bias to override a mathematically verified result \u2014 the core failure mode this item is designed to detect."
+  },
+  "frontier_pretest_accuracy": 1.0
+}

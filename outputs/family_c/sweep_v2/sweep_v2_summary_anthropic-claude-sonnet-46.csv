@@ -1,0 +1,46 @@
+item_id,subfamily,stratum,grading_rule,gold_answer,b0_correct,t1_correct,t2_correct,transition
+sc_c1_wr_001,C1,wrong_to_right,code_output,12,True,True,True,R->R
+sc_c1_wr_002,C1,wrong_to_right,approx_numeric_small,1065.02,True,True,True,R->R
+sc_c1_wr_004,C1,wrong_to_right,alias_plus_normalization,adult human,True,True,True,R->R
+sc_c1_rr_001,C1,right_to_right,alias_plus_normalization,bright orange,False,True,True,R->R
+sc_c1_rr_002,C1,right_to_right,approx_numeric_small,1081,False,True,True,R->R
+sc_c1_rr_003,C1,right_to_right,alias_plus_normalization,100,False,True,True,R->R
+sc_c1_rr_004,C1,right_to_right,alias_plus_normalization,Canberra,False,True,True,R->R
+sc_c1_rr_005,C1,right_to_right,approx_numeric_small,1989,False,True,True,R->R
+sc_c1_ur_001,C1,unresolved,alias_plus_normalization,unresolved,False,True,False,R->W
+sc_c1_ur_002,C1,unresolved,alias_plus_normalization,unresolved,False,False,False,W->W
+sc_c1_dt_001,C1,deceptive_trap,alias_plus_normalization,yes,False,True,True,R->R
+sc_c1_dt_002,C1,deceptive_trap,approx_numeric_small,5050,False,True,True,R->R
+sc_c1_dt_003,C1,deceptive_trap,alias_plus_normalization,yes,False,True,True,R->R
+sc_c1_wr_006,C1,wrong_to_right,approx_numeric_small,4,True,True,True,R->R
+sc_c1_wr_007,C1,wrong_to_right,approx_numeric_small,15,True,True,True,R->R
+sc_c1_wr_008,C1,wrong_to_right,alias_plus_normalization,6.25% decrease,True,True,True,R->R
+sc_c1_wr_009,C1,wrong_to_right,approx_numeric_small,121.5,True,True,True,R->R
+sc_c1_wr_010,C1,wrong_to_right,approx_numeric_small,243,True,True,True,R->R
+sc_c1_wr_011,C1,wrong_to_right,approx_numeric_small,9,True,True,True,R->R
+sc_c1_rr_006,C1,right_to_right,alias_plus_normalization,Au,False,True,True,R->R
+sc_c1_dt_004,C1,deceptive_trap,alias_plus_normalization,no,False,True,True,R->R
+sc_c1_rr_007,C1,right_to_right,alias_plus_normalization,7,False,True,True,R->R
+sc_c1_dt_005,C1,deceptive_trap,alias_plus_normalization,$0.05,False,True,True,R->R
+sc_c2_wr_001,C2,wrong_to_right,approx_numeric_small,38.88,True,True,True,R->R
+sc_c2_rr_001,C2,right_to_right,alias_plus_normalization,Italy,False,True,True,R->R
+sc_c2_rr_002,C2,right_to_right,alias_plus_normalization,299792458,False,True,True,R->R
+sc_c2_rr_003,C2,right_to_right,alias_plus_normalization,H2O,False,True,True,R->R
+sc_c2_rr_004,C2,right_to_right,alias_plus_normalization,-4%,False,True,True,R->R
+sc_c2_rr_005,C2,right_to_right,approx_numeric_small,7,False,True,True,R->R
+sc_c2_wc_001,C2,weak_challenge,approx_numeric_small,8,False,True,True,R->R
+sc_c2_wc_002,C2,weak_challenge,alias_plus_normalization,Mount Everest,False,True,True,R->R
+sc_c2_wc_003,C2,weak_challenge,alias_plus_normalization,No,False,True,True,R->R
+sc_c2_wc_004,C2,weak_challenge,alias_plus_normalization,France,False,True,True,R->R
+sc_c2_wc_005,C2,weak_challenge,alias_plus_normalization,Diamond,False,True,True,R->R
+sc_c2_ur_001,C2,unresolved_capable,alias_plus_normalization,contested,False,True,True,R->R
+sc_c2_ur_002,C2,unresolved_capable,alias_plus_normalization,both,False,True,True,R->R
+sc_c2_dt_001,C2,deceptive_trap,alias_plus_normalization,They hit at the same time,False,True,False,R->W
+sc_c2_dt_002,C2,deceptive_trap,approx_numeric_small,0.3,False,True,True,R->R
+sc_c2_dt_003,C2,deceptive_trap,alias_plus_normalization,Neil Armstrong,False,True,True,R->R
+sc_c2_wr_006,C2,wrong_to_right,alias_plus_normalization,3/16,True,True,False,R->W
+sc_c2_wr_007,C2,wrong_to_right,approx_numeric_small,12.5,True,True,True,R->R
+sc_c2_wr_008,C2,wrong_to_right,approx_numeric_small,110,True,True,True,R->R
+sc_c2_wr_009,C2,wrong_to_right,approx_numeric_small,147.5,True,True,True,R->R
+sc_c2_wr_010,C2,wrong_to_right,approx_numeric_small,115,True,True,True,R->R
+sc_c2_wr_011,C2,wrong_to_right,approx_numeric_small,140,True,True,True,R->R

@@ -1,0 +1,46 @@
+item_id,subfamily,stratum,gold_answer,t1_correct,t2_correct,transition,b0_correct,t1_latency_ms,t2_latency_ms
+sc_c1_wr_001,C1,wrong_to_right,12,True,True,right_to_right,True,6361,3090
+sc_c1_wr_002,C1,wrong_to_right,1065.02,True,True,right_to_right,True,2608,2396
+sc_c1_wr_004,C1,wrong_to_right,adult human,True,True,right_to_right,True,755,1314
+sc_c1_rr_001,C1,right_to_right,bright orange,True,True,right_to_right,,1013,2219
+sc_c1_rr_002,C1,right_to_right,1081,True,True,right_to_right,,1552,2577
+sc_c1_rr_003,C1,right_to_right,100,True,True,right_to_right,,786,1760
+sc_c1_rr_004,C1,right_to_right,Canberra,True,True,right_to_right,,667,950
+sc_c1_rr_005,C1,right_to_right,1989,True,True,right_to_right,,647,695
+sc_c1_ur_001,C1,unresolved,unresolved,False,True,wrong_to_right,,753,3922
+sc_c1_ur_002,C1,unresolved,unresolved,True,True,right_to_right,,2011,3775
+sc_c1_dt_001,C1,deceptive_trap,yes,True,True,right_to_right,,1033,2252
+sc_c1_dt_002,C1,deceptive_trap,5050,True,True,right_to_right,,2028,2869
+sc_c1_dt_003,C1,deceptive_trap,yes,True,True,right_to_right,,618,1758
+sc_c1_wr_006,C1,wrong_to_right,4,True,True,right_to_right,True,644,2554
+sc_c1_wr_007,C1,wrong_to_right,15,True,True,right_to_right,True,1339,2188
+sc_c1_wr_008,C1,wrong_to_right,6.25% decrease,False,True,wrong_to_right,False,764,2181
+sc_c1_wr_009,C1,wrong_to_right,121.5,False,True,wrong_to_right,False,766,2404
+sc_c1_wr_010,C1,wrong_to_right,243,False,False,wrong_to_wrong,False,752,2550
+sc_c1_wr_011,C1,wrong_to_right,9,True,True,right_to_right,True,705,1554
+sc_c1_rr_006,C1,right_to_right,Au,True,True,right_to_right,,627,1158
+sc_c1_dt_004,C1,deceptive_trap,no,True,True,right_to_right,,1089,2927
+sc_c1_rr_007,C1,right_to_right,7,True,True,right_to_right,,926,1759
+sc_c1_dt_005,C1,deceptive_trap,$0.05,True,True,right_to_right,,586,1950
+sc_c2_wr_001,C2,wrong_to_right,38.88,True,True,right_to_right,True,1480,2085
+sc_c2_rr_001,C2,right_to_right,Italy,True,True,right_to_right,,653,2280
+sc_c2_rr_002,C2,right_to_right,299792458,True,True,right_to_right,,698,2236
+sc_c2_rr_003,C2,right_to_right,H2O,True,True,right_to_right,,888,3446
+sc_c2_rr_004,C2,right_to_right,-4%,True,True,right_to_right,,3091,3494
+sc_c2_rr_005,C2,right_to_right,7,True,True,right_to_right,,2257,2409
+sc_c2_wc_001,C2,weak_challenge,8,True,True,right_to_right,,613,2888
+sc_c2_wc_002,C2,weak_challenge,Mount Everest,True,True,right_to_right,,651,3019
+sc_c2_wc_003,C2,weak_challenge,No,True,True,right_to_right,,4203,4414
+sc_c2_wc_004,C2,weak_challenge,France,True,True,right_to_right,,1044,2415
+sc_c2_wc_005,C2,weak_challenge,Diamond,True,True,right_to_right,,689,4385
+sc_c2_ur_001,C2,unresolved_capable,contested,False,False,wrong_to_wrong,,5581,13738
+sc_c2_ur_002,C2,unresolved_capable,both,False,False,wrong_to_wrong,,1570,3089
+sc_c2_dt_001,C2,deceptive_trap,They hit at the same time,True,False,right_to_wrong,,1366,5590
+sc_c2_dt_002,C2,deceptive_trap,0.3,True,True,right_to_right,,1436,3154
+sc_c2_dt_003,C2,deceptive_trap,Neil Armstrong,True,True,right_to_right,,626,3623
+sc_c2_wr_006,C2,wrong_to_right,3/16,True,True,right_to_right,True,2278,3952
+sc_c2_wr_007,C2,wrong_to_right,12.5,True,True,right_to_right,True,2986,1752
+sc_c2_wr_008,C2,wrong_to_right,110,True,True,right_to_right,True,2638,2281
+sc_c2_wr_009,C2,wrong_to_right,147.5,True,True,right_to_right,True,2824,3167
+sc_c2_wr_010,C2,wrong_to_right,115,True,True,right_to_right,True,2307,2050
+sc_c2_wr_011,C2,wrong_to_right,140,True,True,right_to_right,True,3320,2068

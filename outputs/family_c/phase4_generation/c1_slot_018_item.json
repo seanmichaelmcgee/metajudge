@@ -1,0 +1,29 @@
+{
+  "item_id": "sc_c1_wr_018",
+  "family": "C",
+  "subfamily": "C1",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "Two salt solutions are mixed. Solution A has a concentration of 20% salt by mass and a mass of 50g. Solution B has a concentration of 10% salt by mass and a mass of 150g. What is the overall percentage concentration of salt in the mixture?",
+  "gold_answer": "12.5%",
+  "gold_answer_aliases": [
+    "0.125",
+    "1/8",
+    "12.5 percent",
+    "12.5%"
+  ],
+  "grading_rule": "fraction_or_decimal",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "metacognitive",
+  "evidence_snippet": null,
+  "difficulty": "hard",
+  "category": "science",
+  "mechanism_primary": "The default convention is to average percentages using the arithmetic mean, but for concentrations in mixtures, the correct overall percentage must be weighted by the masses of the solutions.",
+  "provenance": "hand_authored",
+  "draft_status": "reject",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=1, cr=1",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}

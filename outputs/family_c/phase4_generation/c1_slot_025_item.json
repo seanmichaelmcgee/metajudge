@@ -1,0 +1,26 @@
+{
+  "item_id": "sc_c1_wr_025",
+  "family": "C",
+  "subfamily": "C1",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "Compute (2.50 \u00d7 4.1) \u00f7 2.0 and express the result with the correct number of significant figures.",
+  "gold_answer": "5.1",
+  "gold_answer_aliases": [
+    "5.1"
+  ],
+  "grading_rule": "fraction_or_decimal",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "metacognitive",
+  "evidence_snippet": null,
+  "difficulty": "hard",
+  "category": "mathematics",
+  "mechanism_primary": "The default convention in step-by-step significant figures calculation is to round intermediate results after each operation, but for accuracy, extra digits should be retained until the final answer. Here, rounding the product 10.25 to 10. (with 2 sig figs) before division leads to an incorrect final rounding.",
+  "provenance": "hand_authored",
+  "draft_status": "draft",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=2",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}

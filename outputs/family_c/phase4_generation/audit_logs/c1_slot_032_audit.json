@@ -1,0 +1,150 @@
+{
+  "mechanism_target": "Negation precedence: -3^2 = -(3^2) = -9 in standard math notation. NOT (-3)^2 = 9. Unary minus has lower precedence than exponentiation.",
+  "subfamily": "C1",
+  "item_slot": 32,
+  "timestamp": "2026-03-31T16:10:30.030501+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "What is the value of -3^2 + (-3)^2?",
+            "gold_answer": "0",
+            "gold_answer_aliases": [
+              "0",
+              "0.0",
+              "zero"
+            ],
+            "predicted_wrong_answer": "18",
+            "mechanism": "The unary minus has lower precedence than exponentiation in standard mathematical notation, so -3^2 equals -(3^2) = -9, not (-3)^2 = 9. However, many incorrectly apply the 'default' convention of reading -3^2 as squaring negative three, especially when paired with an explicit (-3)^2 term.",
+            "cot_reinforcement": "Chain-of-thought reasoning often explicitly computes -3^2 as 'negative three squared' and squares the negative to get 9, then computes (-3)^2 as 9, and adds them to get 18. Each step seems logical and reinforces the misinterpretation because the reasoning explicitly treats the wrong convention as correct without questioning precedence.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 131982
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 3,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very common operator-precedence trick (-3^2 vs (-3)^2). Many frontier models have been trained on (or explicitly warned about) this exact example and will answer 0 correctly, so it\u2019s not strongly diagnostic of self-correction. It also fails the \u201cnot a well-known puzzle\u201d requirement: it\u2019s a canonical classroom/online trap. CoT resistance is only moderate: a careful chain-of-thought that recalls exponentiation binds tighter than unary minus will immediately fix the error, so CoT can help rather than hinder. Grading is crystal clear and the correction is plausible on review.\n\nSuggestions to improve: (1) Use a less-famous precedence/associativity pitfall (e.g., nested exponentiation a^b^c associativity; implicit multiplication vs exponent; or mixing factorial/negation: -3! + (-3)! etc.). (2) Reduce recognizability by embedding the expression inside a word problem or a longer algebraic simplification where the precedence issue is not the headline. (3) Include distractors that make the wrong parse more \"locally\" consistent without being the well-known -3^2 meme."
+          },
+          "passes_criteria": false,
+          "latency_ms": 12948
+        }
+      },
+      "adversary_critique": "This is a very common operator-precedence trick (-3^2 vs (-3)^2). Many frontier models have been trained on (or explicitly warned about) this exact example and will answer 0 correctly, so it\u2019s not strongly diagnostic of self-correction. It also fails the \u201cnot a well-known puzzle\u201d requirement: it\u2019s a canonical classroom/online trap. CoT resistance is only moderate: a careful chain-of-thought that recalls exponentiation binds tighter than unary minus will immediately fix the error, so CoT can help rather than hinder. Grading is crystal clear and the correction is plausible on review.\n\nSuggestions to improve: (1) Use a less-famous precedence/associativity pitfall (e.g., nested exponentiation a^b^c associativity; implicit multiplication vs exponent; or mixing factorial/negation: -3! + (-3)! etc.). (2) Reduce recognizability by embedding the expression inside a word problem or a longer algebraic simplification where the precedence issue is not the headline. (3) Include distractors that make the wrong parse more \"locally\" consistent without being the well-known -3^2 meme.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 3,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very common operator-precedence trick (-3^2 vs (-3)^2). Many frontier models have been trained on (or explicitly warned about) this exact example and will answer 0 correctly, so it\u2019s not strongly diagnostic of self-correction. It also fails the \u201cnot a well-known puzzle\u201d requirement: it\u2019s a canonical classroom/online trap. CoT resistance is only moderate: a careful chain-of-thought that recalls exponentiation binds tighter than unary minus will immediately fix the error, so CoT can help rather than hinder. Grading is crystal clear and the correction is plausible on review.\n\nSuggestions to improve: (1) Use a less-famous precedence/associativity pitfall (e.g., nested exponentiation a^b^c associativity; implicit multiplication vs exponent; or mixing factorial/negation: -3! + (-3)! etc.). (2) Reduce recognizability by embedding the expression inside a word problem or a longer algebraic simplification where the precedence issue is not the headline. (3) Include distractors that make the wrong parse more \"locally\" consistent without being the well-known -3^2 meme."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "Evaluate the expression 2^2^3.",
+            "gold_answer": "256",
+            "gold_answer_aliases": [
+              "2^8",
+              "two hundred fifty-six"
+            ],
+            "predicted_wrong_answer": "64",
+            "mechanism": "In standard mathematical notation, exponentiation is right-associative, so 2^2^3 = 2^(2^3) = 2^8 = 256. However, many people and models default to left-associativity for exponentiation, computing (2^2)^3 = 4^3 = 64.",
+            "cot_reinforcement": "Chain-of-thought reasoning reinforces the error by naturally breaking down the expression step-by-step in a left-to-right manner: first compute 2^2 = 4, then compute 4^3 = 64. This sequential processing solidifies the incorrect associativity assumption without triggering a check against the standard convention.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 190853
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This item is unlikely to seriously challenge frontier models and fails the benchmark\u2019s \u201cnovel/non-famous\u201d and \u201cCoT-resistant\u201d requirements.\n\n- too_easy_frontier (2): Most strong models have seen (and often explicitly state) the convention that exponentiation is right-associative; many will answer 256 immediately. The predicted wrong answer (64) is common for humans, but less so for frontier models trained on math/programming conventions.\n\n- cot_resistant (2): Chain-of-thought does not reliably reinforce the error here. A typical CoT for a capable model includes the associativity rule (\"evaluate top exponent first\"), which directly fixes the mistake. CoT is more likely to correct than to entrench.\n\n- famous_trap (4): This is a well-known precedence/associativity \u201cgotcha\u201d (common in programming language discussions and math puzzles). It\u2019s exactly the kind of trick many models have memorized.\n\n- grading_clarity (5): Gold answer is unambiguous under standard mathematical convention; aliases are fine.\n\n- revision_plausibility (5): If the model initially outputs 64, it can easily self-correct upon review by recalling/looking up the associativity convention.\n\nSuggestions to strengthen the item:\n1) Reduce \u201cfamous gotcha\u201d feel by embedding the exponent tower in a less canonical form (still unambiguous), e.g., with additional operations that make left-to-right decomposition more compelling but where a single precedence slip causes a subtle error.\n2) If you want an associativity trap, consider a less-memorized operator/convention than plain exponent towers (since ^-towers are heavily overrepresented in training data).\n3) Ensure CoT truly reinforces the wrong path by designing a multi-step computation where the incorrect assumption is repeatedly reused and locally \u201cvalidated\u201d (rather than a single associativity fact that easily flips the answer)."
+          },
+          "passes_criteria": false,
+          "latency_ms": 18032
+        }
+      },
+      "adversary_critique": "This item is unlikely to seriously challenge frontier models and fails the benchmark\u2019s \u201cnovel/non-famous\u201d and \u201cCoT-resistant\u201d requirements.\n\n- too_easy_frontier (2): Most strong models have seen (and often explicitly state) the convention that exponentiation is right-associative; many will answer 256 immediately. The predicted wrong answer (64) is common for humans, but less so for frontier models trained on math/programming conventions.\n\n- cot_resistant (2): Chain-of-thought does not reliably reinforce the error here. A typical CoT for a capable model includes the associativity rule (\"evaluate top exponent first\"), which directly fixes the mistake. CoT is more likely to correct than to entrench.\n\n- famous_trap (4): This is a well-known precedence/associativity \u201cgotcha\u201d (common in programming language discussions and math puzzles). It\u2019s exactly the kind of trick many models have memorized.\n\n- grading_clarity (5): Gold answer is unambiguous under standard mathematical convention; aliases are fine.\n\n- revision_plausibility (5): If the model initially outputs 64, it can easily self-correct upon review by recalling/looking up the associativity convention.\n\nSuggestions to strengthen the item:\n1) Reduce \u201cfamous gotcha\u201d feel by embedding the exponent tower in a less canonical form (still unambiguous), e.g., with additional operations that make left-to-right decomposition more compelling but where a single precedence slip causes a subtle error.\n2) If you want an associativity trap, consider a less-memorized operator/convention than plain exponent towers (since ^-towers are heavily overrepresented in training data).\n3) Ensure CoT truly reinforces the wrong path by designing a multi-step computation where the incorrect assumption is repeatedly reused and locally \u201cvalidated\u201d (rather than a single associativity fact that easily flips the answer).",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This item is unlikely to seriously challenge frontier models and fails the benchmark\u2019s \u201cnovel/non-famous\u201d and \u201cCoT-resistant\u201d requirements.\n\n- too_easy_frontier (2): Most strong models have seen (and often explicitly state) the convention that exponentiation is right-associative; many will answer 256 immediately. The predicted wrong answer (64) is common for humans, but less so for frontier models trained on math/programming conventions.\n\n- cot_resistant (2): Chain-of-thought does not reliably reinforce the error here. A typical CoT for a capable model includes the associativity rule (\"evaluate top exponent first\"), which directly fixes the mistake. CoT is more likely to correct than to entrench.\n\n- famous_trap (4): This is a well-known precedence/associativity \u201cgotcha\u201d (common in programming language discussions and math puzzles). It\u2019s exactly the kind of trick many models have memorized.\n\n- grading_clarity (5): Gold answer is unambiguous under standard mathematical convention; aliases are fine.\n\n- revision_plausibility (5): If the model initially outputs 64, it can easily self-correct upon review by recalling/looking up the associativity convention.\n\nSuggestions to strengthen the item:\n1) Reduce \u201cfamous gotcha\u201d feel by embedding the exponent tower in a less canonical form (still unambiguous), e.g., with additional operations that make left-to-right decomposition more compelling but where a single precedence slip causes a subtle error.\n2) If you want an associativity trap, consider a less-memorized operator/convention than plain exponent towers (since ^-towers are heavily overrepresented in training data).\n3) Ensure CoT truly reinforces the wrong path by designing a multi-step computation where the incorrect assumption is repeatedly reused and locally \u201cvalidated\u201d (rather than a single associativity fact that easily flips the answer)."
+      }
+    }
+  ],
+  "final_status": "reject",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_032",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "Evaluate the expression 2^2^3.",
+    "gold_answer": "256",
+    "gold_answer_aliases": [
+      "2^8",
+      "two hundred fifty-six"
+    ],
+    "grading_rule": "alias_plus_normalization",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "In standard mathematical notation, exponentiation is right-associative, so 2^2^3 = 2^(2^3) = 2^8 = 256. However, many people and models default to left-associativity for exponentiation, computing (2^2)^3 = 4^3 = 64.",
+    "provenance": "hand_authored",
+    "draft_status": "reject",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "256\n\n(Interpreting exponentiation as right-associative: 2^(2^3) = 2^8 = 256.)",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "To evaluate $2^{2^3}$, we start from the innermost exponent:\n\n1.  $2^3 = 8$\n2.  $2^8 = 256$\n\nTherefore, $2^{2^3} = 256$.",
+      "status": "correct"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "correct",
+    "response": "## Evaluating 2^2^3\n\nBy convention, exponentiation is **right-associative**, so:\n\n2^2^3 = 2^(2^3) = 2^8 = **256**"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "mechanism_target": "Empty product convention: 'What is 0! (zero factorial)?' The answer is 1 by convention (empty product). BUT the real trap should be more subtle. Better: 'How many ways can you arrange 0 objects?' = 1 (the empty arrangement). Or: 'What is the product of all positive integers less than 1?' = 1 (empty product). Design a version where the empty-product convention isn't the obvious framing.",
+  "subfamily": "C1",
+  "item_slot": 20,
+  "timestamp": "2026-03-31T14:33:45.740993+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "Define a sequence by a_0 = 0 and a_n = n * a_{n-1} for n \u2265 1. What is a_5?",
+            "gold_answer": "0",
+            "gold_answer_aliases": [
+              "0",
+              "zero"
+            ],
+            "predicted_wrong_answer": "120",
+            "mechanism": "The recurrence a_n = n * a_{n-1} with a_0 = 1 defines the factorial function, where a_0 = 1 is the empty product convention. The problem explicitly sets a_0 = 0, overriding this default. Models applying the default convention will compute a_5 as 5! = 120.",
+            "cot_reinforcement": "Chain-of-thought reasoning typically unfolds as: a_5 = 5 * a_4, a_4 = 4 * a_3, ..., a_1 = 1 * a_0. The strong prior for factorial leads to assuming a_0 = 1 without verifying the given initial condition, thus reinforcing the error by step-by-step calculation to 120.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 246939
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very well-known \u201cfactorial-with-wrong-base-case\u201d trap. Frontier models often explicitly check the given initial condition, and even a minimal step-by-step expansion (a1 = 1*a0 = 0, hence all later terms 0) tends to immediately reveal the correct answer, so it\u2019s not very CoT-resistant. The error mechanism relies on a strong factorial prior, but the contradiction is blatant (a0 is explicitly 0), making it more of an attention check than a subtle reasoning failure. Grading is crystal clear and correction on review is very plausible.\n\nSuggestions to strengthen: (1) Make the misleading prior less famous by embedding the recurrence in a less canonical form (e.g., define b_n = (n+1)b_{n-1} with b_1 = 0, ask for b_6) or via an equivalent product definition where the zero factor is easy to miss. (2) Add an extra transformation step so that \u201czero propagation\u201d is not immediate (e.g., define c_n = n*c_{n-1} + f(n) with c_0 = 0, where f(n) cancels unless carefully tracked). (3) Avoid the exact factorial template (a_n = n a_{n-1}) which is a memorized pattern and thus a common benchmark trope."
+          },
+          "passes_criteria": false,
+          "latency_ms": 10279
+        }
+      },
+      "adversary_critique": "This is a very well-known \u201cfactorial-with-wrong-base-case\u201d trap. Frontier models often explicitly check the given initial condition, and even a minimal step-by-step expansion (a1 = 1*a0 = 0, hence all later terms 0) tends to immediately reveal the correct answer, so it\u2019s not very CoT-resistant. The error mechanism relies on a strong factorial prior, but the contradiction is blatant (a0 is explicitly 0), making it more of an attention check than a subtle reasoning failure. Grading is crystal clear and correction on review is very plausible.\n\nSuggestions to strengthen: (1) Make the misleading prior less famous by embedding the recurrence in a less canonical form (e.g., define b_n = (n+1)b_{n-1} with b_1 = 0, ask for b_6) or via an equivalent product definition where the zero factor is easy to miss. (2) Add an extra transformation step so that \u201czero propagation\u201d is not immediate (e.g., define c_n = n*c_{n-1} + f(n) with c_0 = 0, where f(n) cancels unless carefully tracked). (3) Avoid the exact factorial template (a_n = n a_{n-1}) which is a memorized pattern and thus a common benchmark trope.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very well-known \u201cfactorial-with-wrong-base-case\u201d trap. Frontier models often explicitly check the given initial condition, and even a minimal step-by-step expansion (a1 = 1*a0 = 0, hence all later terms 0) tends to immediately reveal the correct answer, so it\u2019s not very CoT-resistant. The error mechanism relies on a strong factorial prior, but the contradiction is blatant (a0 is explicitly 0), making it more of an attention check than a subtle reasoning failure. Grading is crystal clear and correction on review is very plausible.\n\nSuggestions to strengthen: (1) Make the misleading prior less famous by embedding the recurrence in a less canonical form (e.g., define b_n = (n+1)b_{n-1} with b_1 = 0, ask for b_6) or via an equivalent product definition where the zero factor is easy to miss. (2) Add an extra transformation step so that \u201czero propagation\u201d is not immediate (e.g., define c_n = n*c_{n-1} + f(n) with c_0 = 0, where f(n) cancels unless carefully tracked). (3) Avoid the exact factorial template (a_n = n a_{n-1}) which is a memorized pattern and thus a common benchmark trope."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "In set theory, what is the number of distinct functions from the empty set to the empty set? Provide a single integer answer.",
+            "gold_answer": "1",
+            "gold_answer_aliases": [
+              "1",
+              "one",
+              "1.0"
+            ],
+            "predicted_wrong_answer": "0",
+            "mechanism": "The default convention for many is that a function requires at least one element in the domain to map, so for empty sets, it seems like there should be no functions. However, in set theory, the empty function (a function with an empty domain) is valid and unique, so the correct number is 1.",
+            "cot_reinforcement": "When using chain-of-thought, models may reason step by step: 'A function from set A to set B requires assigning each element of A to an element of B. Since A is empty, there are no elements to assign, so no assignments are needed.' This can lead to the incorrect conclusion that there are no functions, as the vacuous truth of the empty function is overlooked. The step-by-step reasoning reinforces the misconception by focusing on the absence of elements rather than the formal definition.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 266325
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 1,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This item is a very well-known set-theory fact (the unique empty function), so it\u2019s unlikely to fool frontier models; many will answer \u201c1\u201d immediately. It\u2019s also not CoT-resistant: step-by-step reasoning typically *helps* here because restating the formal definition (\u201ca function is a set of ordered pairs with\u2026\u201d) quickly leads to the unique empty relation satisfying the function criteria. The proposed failure mode (\u201cno assignments needed \u2192 no functions\u201d) is more of a novice misconception than a CoT-reinforced trap. Grading is clear and revision is plausible, but it fails the benchmark goals mainly due to being famous and too easily repaired by explicit reasoning.\n\nSuggestions to strengthen: (1) introduce a less-standard definition or context where \u201cfunction\u201d is overloaded (e.g., require a *nonempty codomain image*, or specify \u201csurjective/injective/bijection,\u201d or \u201ctotal function in a typed setting\u201d vs \u201cset-theoretic function\u201d), but ensure the gold is still unambiguous; (2) add a second constraint that makes naive vacuous reasoning go the wrong way (e.g., count functions satisfying an additional property that interacts subtly with emptiness); (3) avoid canonical textbook trivia by embedding in a more complex counting problem where the empty-domain case is one subcase that models often mishandle."
+          },
+          "passes_criteria": false,
+          "latency_ms": 11255
+        }
+      },
+      "adversary_critique": "This item is a very well-known set-theory fact (the unique empty function), so it\u2019s unlikely to fool frontier models; many will answer \u201c1\u201d immediately. It\u2019s also not CoT-resistant: step-by-step reasoning typically *helps* here because restating the formal definition (\u201ca function is a set of ordered pairs with\u2026\u201d) quickly leads to the unique empty relation satisfying the function criteria. The proposed failure mode (\u201cno assignments needed \u2192 no functions\u201d) is more of a novice misconception than a CoT-reinforced trap. Grading is clear and revision is plausible, but it fails the benchmark goals mainly due to being famous and too easily repaired by explicit reasoning.\n\nSuggestions to strengthen: (1) introduce a less-standard definition or context where \u201cfunction\u201d is overloaded (e.g., require a *nonempty codomain image*, or specify \u201csurjective/injective/bijection,\u201d or \u201ctotal function in a typed setting\u201d vs \u201cset-theoretic function\u201d), but ensure the gold is still unambiguous; (2) add a second constraint that makes naive vacuous reasoning go the wrong way (e.g., count functions satisfying an additional property that interacts subtly with emptiness); (3) avoid canonical textbook trivia by embedding in a more complex counting problem where the empty-domain case is one subcase that models often mishandle.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 1,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This item is a very well-known set-theory fact (the unique empty function), so it\u2019s unlikely to fool frontier models; many will answer \u201c1\u201d immediately. It\u2019s also not CoT-resistant: step-by-step reasoning typically *helps* here because restating the formal definition (\u201ca function is a set of ordered pairs with\u2026\u201d) quickly leads to the unique empty relation satisfying the function criteria. The proposed failure mode (\u201cno assignments needed \u2192 no functions\u201d) is more of a novice misconception than a CoT-reinforced trap. Grading is clear and revision is plausible, but it fails the benchmark goals mainly due to being famous and too easily repaired by explicit reasoning.\n\nSuggestions to strengthen: (1) introduce a less-standard definition or context where \u201cfunction\u201d is overloaded (e.g., require a *nonempty codomain image*, or specify \u201csurjective/injective/bijection,\u201d or \u201ctotal function in a typed setting\u201d vs \u201cset-theoretic function\u201d), but ensure the gold is still unambiguous; (2) add a second constraint that makes naive vacuous reasoning go the wrong way (e.g., count functions satisfying an additional property that interacts subtly with emptiness); (3) avoid canonical textbook trivia by embedding in a more complex counting problem where the empty-domain case is one subcase that models often mishandle."
+      }
+    }
+  ],
+  "final_status": "reject",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_020",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "In set theory, what is the number of distinct functions from the empty set to the empty set? Provide a single integer answer.",
+    "gold_answer": "1",
+    "gold_answer_aliases": [
+      "1",
+      "one",
+      "1.0"
+    ],
+    "grading_rule": "alias_plus_normalization",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "The default convention for many is that a function requires at least one element in the domain to map, so for empty sets, it seems like there should be no functions. However, in set theory, the empty function (a function with an empty domain) is valid and unique, so the correct number is 1.",
+    "provenance": "hand_authored",
+    "draft_status": "reject",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=1",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "1",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "1",
+      "status": "correct"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "correct",
+    "response": "1"
+  }
+}

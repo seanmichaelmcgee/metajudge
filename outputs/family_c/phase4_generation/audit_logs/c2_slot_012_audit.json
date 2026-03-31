@@ -1,0 +1,162 @@
+{
+  "mechanism_target": "Troy ounce vs avoirdupois ounce: 'A gold bar weighs 10 ounces. Convert this to grams.' The trap: gold is measured in troy ounces (31.1035g each), not avoirdupois ounces (28.3495g). So 10 troy oz = 311.03g, not 283.50g. The C2 evidence should hint that precious metals use a different unit system without stating the answer. Level 2 hint: 'Precious metals are traditionally weighed using a different ounce standard than everyday objects.'",
+  "subfamily": "C2",
+  "item_slot": 12,
+  "timestamp": "2026-03-31T14:33:47.749709+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "Precious metals are traditionally weighed using a different ounce standard than everyday objects. A gold bar weighs 10 ounces. Convert this to grams.",
+            "gold_answer": "311.03 g",
+            "gold_answer_aliases": [
+              "311.03 grams",
+              "311.03g",
+              "311.04 g",
+              "311.04 grams",
+              "311.0 g",
+              "311 g",
+              "311"
+            ],
+            "predicted_wrong_answer": "283.50 g",
+            "mechanism": "The error arises from applying the default avoirdupois ounce conversion (28.3495 g/oz) used for most everyday weights, rather than the troy ounce conversion (31.1035 g/oz) that is specifically used for precious metals like gold.",
+            "cot_reinforcement": "Chain-of-thought reasoning will typically recall the standard conversion factor (1 oz = 28.3495 g), perform the multiplication step-by-step (10 \u00d7 28.3495 = 283.495), and round confidently to 283.50 g. This reinforces the error because the computation is correct given the wrong initial assumption, and the hint about 'different ounce standard' is often overlooked or assumed to be irrelevant to the numeric conversion.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "arithmetic"
+          },
+          "latency_ms": 85694
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 3,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "Main weakness: this is a very standard unit-conversion gotcha (troy vs avoirdupois). The prompt even explicitly flags the distinction (\"Precious metals are traditionally weighed using a different ounce standard\"), so careful models will correctly switch to 31.1035 g/oz. That makes it too easy for frontier models and not CoT-resistant\u2014step-by-step reasoning is more likely to notice and apply the hint than to \"forget\" it.\n\nSpecific issues:\n- CoT resistance is weak: a typical careful chain will restate the key premise (different ounce standard) and select troy ounce, preventing the intended error.\n- Famous trap risk: troy-ounce conversion for gold is a common trivia/conversion fact and appears frequently in puzzles and QA datasets.\n\nSuggestions to improve hardness / novelty while keeping grading clear:\n- Make the distinction subtler (don\u2019t explicitly say \u201cdifferent ounce standard\u201d); instead embed it in realistic context (e.g., an assay report listing \u201cozt\u201d once, or a receipt using \u201coz t\u201d).\n- Increase ambiguity pressure while still resolvable: include both \u201coz\u201d and \u201cozt\u201d in different lines and ask for the gold mass only.\n- Use a less-common precious-metals unit (pennyweight dwt, grains, tola, tael) and require a multi-step conversion; ensure the correct factor is uniquely implied in-text.\n- Add plausible but wrong rounding/precision traps (e.g., 10.00 ozt vs 10 oz av) while keeping the gold answer unambiguous via explicit notation.\n\nAs written, grading is clear and aliases are reasonable, but the item likely won\u2019t reliably fool strong models and CoT will often correct it."
+          },
+          "passes_criteria": false,
+          "latency_ms": 13446
+        }
+      },
+      "adversary_critique": "Main weakness: this is a very standard unit-conversion gotcha (troy vs avoirdupois). The prompt even explicitly flags the distinction (\"Precious metals are traditionally weighed using a different ounce standard\"), so careful models will correctly switch to 31.1035 g/oz. That makes it too easy for frontier models and not CoT-resistant\u2014step-by-step reasoning is more likely to notice and apply the hint than to \"forget\" it.\n\nSpecific issues:\n- CoT resistance is weak: a typical careful chain will restate the key premise (different ounce standard) and select troy ounce, preventing the intended error.\n- Famous trap risk: troy-ounce conversion for gold is a common trivia/conversion fact and appears frequently in puzzles and QA datasets.\n\nSuggestions to improve hardness / novelty while keeping grading clear:\n- Make the distinction subtler (don\u2019t explicitly say \u201cdifferent ounce standard\u201d); instead embed it in realistic context (e.g., an assay report listing \u201cozt\u201d once, or a receipt using \u201coz t\u201d).\n- Increase ambiguity pressure while still resolvable: include both \u201coz\u201d and \u201cozt\u201d in different lines and ask for the gold mass only.\n- Use a less-common precious-metals unit (pennyweight dwt, grains, tola, tael) and require a multi-step conversion; ensure the correct factor is uniquely implied in-text.\n- Add plausible but wrong rounding/precision traps (e.g., 10.00 ozt vs 10 oz av) while keeping the gold answer unambiguous via explicit notation.\n\nAs written, grading is clear and aliases are reasonable, but the item likely won\u2019t reliably fool strong models and CoT will often correct it.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 3,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "Main weakness: this is a very standard unit-conversion gotcha (troy vs avoirdupois). The prompt even explicitly flags the distinction (\"Precious metals are traditionally weighed using a different ounce standard\"), so careful models will correctly switch to 31.1035 g/oz. That makes it too easy for frontier models and not CoT-resistant\u2014step-by-step reasoning is more likely to notice and apply the hint than to \"forget\" it.\n\nSpecific issues:\n- CoT resistance is weak: a typical careful chain will restate the key premise (different ounce standard) and select troy ounce, preventing the intended error.\n- Famous trap risk: troy-ounce conversion for gold is a common trivia/conversion fact and appears frequently in puzzles and QA datasets.\n\nSuggestions to improve hardness / novelty while keeping grading clear:\n- Make the distinction subtler (don\u2019t explicitly say \u201cdifferent ounce standard\u201d); instead embed it in realistic context (e.g., an assay report listing \u201cozt\u201d once, or a receipt using \u201coz t\u201d).\n- Increase ambiguity pressure while still resolvable: include both \u201coz\u201d and \u201cozt\u201d in different lines and ask for the gold mass only.\n- Use a less-common precious-metals unit (pennyweight dwt, grains, tola, tael) and require a multi-step conversion; ensure the correct factor is uniquely implied in-text.\n- Add plausible but wrong rounding/precision traps (e.g., 10.00 ozt vs 10 oz av) while keeping the gold answer unambiguous via explicit notation.\n\nAs written, grading is clear and aliases are reasonable, but the item likely won\u2019t reliably fool strong models and CoT will often correct it."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "An investment grows at an average rate of 10% per year over two years. If it grew by 16% in the first year, what was its growth rate in the second year? Assume the average is calculated appropriately for growth rates.",
+            "gold_answer": "4.31%",
+            "gold_answer_aliases": [
+              "4.31%",
+              "4.3%",
+              "4.3103%",
+              "0.0431",
+              "4.31 percent",
+              "approximately 4.31%"
+            ],
+            "predicted_wrong_answer": "4%",
+            "mechanism": "The default convention for 'average' is arithmetic mean, but for growth rates, the appropriate average is geometric mean of growth factors. The problem hints at this with 'appropriately for growth rates', but models may overlook it and apply arithmetic mean.",
+            "cot_reinforcement": "Chain-of-thought reasoning may reinforce the error by setting up an equation for arithmetic mean, e.g., (16% + x%)/2 = 10%, solving to x=4%, without considering the compounding effect or the need for geometric mean.",
+            "grading_rule": "approx_numeric_small",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 218102
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 3,
+            "grading_clarity": 3,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "Main weakness: the prompt heavily telegraphs the intended interpretation (geometric/CAGR) with \u201cAssume the average is calculated appropriately for growth rates.\u201d Frontier models are very likely to recognize this as a CAGR/geometric-mean setup and compute (1.16)(1+r2)=1.1^2, so it\u2019s not hard enough.\n\nCoT resistance is weak: even if a model starts with the arithmetic-mean mistake ( (0.16+r2)/2=0.10 ), a standard chain-of-thought often triggers a compounding sanity check (\u201cdoes 16% then 4% actually yield 10% average?\u201d) and corrects to geometric.\n\nThis is also a fairly well-known/standard trap (arithmetic vs geometric mean for returns), so it violates the \u201cnot a famous trick\u201d requirement.\n\nGrading clarity is not great because \u201caverage rate of 10% per year over two years\u201d is genuinely ambiguous in ordinary English: many contexts do mean arithmetic average of annual rates. Your added hint resolves it, but that simultaneously makes the item easier and reveals the trick. If you remove the hint to increase difficulty, grading becomes even more ambiguous unless you explicitly define CAGR/geometric mean.\n\nSuggestions: (1) Explicitly define the average as CAGR/geometric mean (e.g., \u201cthe constant annual rate that would produce the same 2-year growth\u201d), and then introduce a different, less-famous failure mode; or (2) keep an ambiguous phrasing but then the gold must accept both interpretations (4% and 4.31%), which undermines the benchmark\u2019s purpose; or (3) change the mechanism to something less canonical than arithmetic-vs-geometric mean."
+          },
+          "passes_criteria": false,
+          "latency_ms": 16853
+        }
+      },
+      "adversary_critique": "Main weakness: the prompt heavily telegraphs the intended interpretation (geometric/CAGR) with \u201cAssume the average is calculated appropriately for growth rates.\u201d Frontier models are very likely to recognize this as a CAGR/geometric-mean setup and compute (1.16)(1+r2)=1.1^2, so it\u2019s not hard enough.\n\nCoT resistance is weak: even if a model starts with the arithmetic-mean mistake ( (0.16+r2)/2=0.10 ), a standard chain-of-thought often triggers a compounding sanity check (\u201cdoes 16% then 4% actually yield 10% average?\u201d) and corrects to geometric.\n\nThis is also a fairly well-known/standard trap (arithmetic vs geometric mean for returns), so it violates the \u201cnot a famous trick\u201d requirement.\n\nGrading clarity is not great because \u201caverage rate of 10% per year over two years\u201d is genuinely ambiguous in ordinary English: many contexts do mean arithmetic average of annual rates. Your added hint resolves it, but that simultaneously makes the item easier and reveals the trick. If you remove the hint to increase difficulty, grading becomes even more ambiguous unless you explicitly define CAGR/geometric mean.\n\nSuggestions: (1) Explicitly define the average as CAGR/geometric mean (e.g., \u201cthe constant annual rate that would produce the same 2-year growth\u201d), and then introduce a different, less-famous failure mode; or (2) keep an ambiguous phrasing but then the gold must accept both interpretations (4% and 4.31%), which undermines the benchmark\u2019s purpose; or (3) change the mechanism to something less canonical than arithmetic-vs-geometric mean.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 3,
+        "grading_clarity": 3,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "Main weakness: the prompt heavily telegraphs the intended interpretation (geometric/CAGR) with \u201cAssume the average is calculated appropriately for growth rates.\u201d Frontier models are very likely to recognize this as a CAGR/geometric-mean setup and compute (1.16)(1+r2)=1.1^2, so it\u2019s not hard enough.\n\nCoT resistance is weak: even if a model starts with the arithmetic-mean mistake ( (0.16+r2)/2=0.10 ), a standard chain-of-thought often triggers a compounding sanity check (\u201cdoes 16% then 4% actually yield 10% average?\u201d) and corrects to geometric.\n\nThis is also a fairly well-known/standard trap (arithmetic vs geometric mean for returns), so it violates the \u201cnot a famous trick\u201d requirement.\n\nGrading clarity is not great because \u201caverage rate of 10% per year over two years\u201d is genuinely ambiguous in ordinary English: many contexts do mean arithmetic average of annual rates. Your added hint resolves it, but that simultaneously makes the item easier and reveals the trick. If you remove the hint to increase difficulty, grading becomes even more ambiguous unless you explicitly define CAGR/geometric mean.\n\nSuggestions: (1) Explicitly define the average as CAGR/geometric mean (e.g., \u201cthe constant annual rate that would produce the same 2-year growth\u201d), and then introduce a different, less-famous failure mode; or (2) keep an ambiguous phrasing but then the gold must accept both interpretations (4% and 4.31%), which undermines the benchmark\u2019s purpose; or (3) change the mechanism to something less canonical than arithmetic-vs-geometric mean."
+      }
+    }
+  ],
+  "final_status": "reject",
+  "item_bundle": {
+    "item_id": "sc_c2_wr_012",
+    "family": "C",
+    "subfamily": "C2",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "An investment grows at an average rate of 10% per year over two years. If it grew by 16% in the first year, what was its growth rate in the second year? Assume the average is calculated appropriately for growth rates.",
+    "gold_answer": "4.31%",
+    "gold_answer_aliases": [
+      "4.31%",
+      "4.3%",
+      "4.3103%",
+      "0.0431",
+      "4.31 percent",
+      "approximately 4.31%"
+    ],
+    "grading_rule": "approx_numeric_small",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "contradiction",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "The default convention for 'average' is arithmetic mean, but for growth rates, the appropriate average is geometric mean of growth factors. The problem hints at this with 'appropriately for growth rates', but models may overlook it and apply arithmetic mean.",
+    "provenance": "hand_authored",
+    "draft_status": "reject",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "Let g2 be the second-year rate. With CAGR 10% over 2 years: (1.10)^2 = 1.21 = 1.16(1+g2). So 1+g2 = 1.21/1.16 = 121/116 and g2 = 5/116 \u2248 4.31%.",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "Let $r_1$ be the growth rate in the first year and $r_2$ be the growth rate in the second year.\nThe average growth rate over two years is given by the geometric mean:\n$(1 + \\text{average rate})^2 = (1 + r_1)(1 + r_2)$\n\nGiven:\nAverage rate = 10% = 0.10\n$r_1$ = 16% = 0.16\n\nSubstitute the given values ",
+      "status": "correct"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "correct",
+    "response": "## Setting Up the Problem\n\nFor growth rates, the appropriate average is the **geometric mean**.\n\nIf the average growth rate is 10% per year over two years:\n\n$$\\sqrt{(1 + r_1)(1 + r_2)} = 1.10$$\n\n## Solving\n\n$$(1 + r_1)(1 + r_2) = 1.10^2 = 1.21$$\n\nWith $r_1 = 16\\%$:\n\n$$1.16 \\times (1 + r_2) = 1.21$$\n\n$$1 + r_2 = \\frac{1.21}{1.16} \\approx 1.04310$$\n\n$$r_2 \\approx 4.31\\%$$\n\n## Answer\n\nThe growth rate in the second year was approximately **4.31%**."
+  }
+}

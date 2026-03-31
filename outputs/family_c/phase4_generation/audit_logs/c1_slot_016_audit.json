@@ -1,0 +1,150 @@
+{
+  "mechanism_target": "Strictly between vs between boundary: 'How many prime numbers are strictly between 10 and 30?' The answer depends on whether 'strictly between' excludes endpoints. Strictly between 10 and 30 excludes both: 11,13,17,19,23,29 = 6 primes. Models often include the endpoints. Design the question so the boundary matters (include a prime at an endpoint).",
+  "subfamily": "C1",
+  "item_slot": 16,
+  "timestamp": "2026-03-31T14:33:43.740145+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "How many prime numbers are strictly between 5 and 31?",
+            "gold_answer": "8",
+            "gold_answer_aliases": [
+              "eight",
+              "8.0",
+              "8.00"
+            ],
+            "predicted_wrong_answer": "10",
+            "mechanism": "The phrase 'strictly between' excludes the endpoints, but models often default to an inclusive interpretation of 'between' (including endpoints). Here, both endpoints (5 and 31) are prime, so the inclusive count adds two extra primes.",
+            "cot_reinforcement": "In chain-of-thought, models typically list primes step-by-step (e.g., 'Primes between 5 and 31: 5, 7, 11, 13, 17, 19, 23, 29, 31') and then count all listed, reinforcing the inclusive default without questioning the 'strictly' qualifier.",
+            "grading_rule": "approx_numeric_small",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 112585
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 1,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 1,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "Gold answer is incorrect. Primes strictly between 5 and 31 are 7, 11, 13, 17, 19, 23, 29 = 7 (not 8). The proposed \u2018inclusive\u2019 failure mode is also numerically inconsistent: inclusive counting would yield 9 primes (5,7,11,13,17,19,23,29,31), not 10. Because the gold is wrong, grading is not clear/unambiguous. Also, this is a very easy arithmetic/listing task for frontier models, and CoT tends to help rather than hurt because listing primes and re-checking the \u2018strictly\u2019 qualifier usually reveals the correct set/count. The underlying trap (between inclusive/exclusive) is fairly well-known, and adding \u2018strictly\u2019 makes it even less plausible as a model trap.\n\nSuggestions: Fix gold_answer to 7, fix predicted_wrong_answer to 9 if you want the inclusive-endpoints failure, and consider using endpoints that are NOT both prime (or remove \u2018strictly\u2019) to better control the confusion mechanism. Alternatively, craft a more subtle linguistic condition where step-by-step listing plausibly omits the qualifier (e.g., nested constraints or distractor intervals)."
+          },
+          "passes_criteria": false,
+          "latency_ms": 13271
+        }
+      },
+      "adversary_critique": "Gold answer is incorrect. Primes strictly between 5 and 31 are 7, 11, 13, 17, 19, 23, 29 = 7 (not 8). The proposed \u2018inclusive\u2019 failure mode is also numerically inconsistent: inclusive counting would yield 9 primes (5,7,11,13,17,19,23,29,31), not 10. Because the gold is wrong, grading is not clear/unambiguous. Also, this is a very easy arithmetic/listing task for frontier models, and CoT tends to help rather than hurt because listing primes and re-checking the \u2018strictly\u2019 qualifier usually reveals the correct set/count. The underlying trap (between inclusive/exclusive) is fairly well-known, and adding \u2018strictly\u2019 makes it even less plausible as a model trap.\n\nSuggestions: Fix gold_answer to 7, fix predicted_wrong_answer to 9 if you want the inclusive-endpoints failure, and consider using endpoints that are NOT both prime (or remove \u2018strictly\u2019) to better control the confusion mechanism. Alternatively, craft a more subtle linguistic condition where step-by-step listing plausibly omits the qualifier (e.g., nested constraints or distractor intervals).",
+      "adversary_scores": {
+        "too_easy_frontier": 1,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 1,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "Gold answer is incorrect. Primes strictly between 5 and 31 are 7, 11, 13, 17, 19, 23, 29 = 7 (not 8). The proposed \u2018inclusive\u2019 failure mode is also numerically inconsistent: inclusive counting would yield 9 primes (5,7,11,13,17,19,23,29,31), not 10. Because the gold is wrong, grading is not clear/unambiguous. Also, this is a very easy arithmetic/listing task for frontier models, and CoT tends to help rather than hurt because listing primes and re-checking the \u2018strictly\u2019 qualifier usually reveals the correct set/count. The underlying trap (between inclusive/exclusive) is fairly well-known, and adding \u2018strictly\u2019 makes it even less plausible as a model trap.\n\nSuggestions: Fix gold_answer to 7, fix predicted_wrong_answer to 9 if you want the inclusive-endpoints failure, and consider using endpoints that are NOT both prime (or remove \u2018strictly\u2019) to better control the confusion mechanism. Alternatively, craft a more subtle linguistic condition where step-by-step listing plausibly omits the qualifier (e.g., nested constraints or distractor intervals)."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "How many prime numbers strictly between 7 and 31 are congruent to 1 modulo 6?",
+            "gold_answer": "2",
+            "gold_answer_aliases": [
+              "2",
+              "two"
+            ],
+            "predicted_wrong_answer": "4",
+            "mechanism": "The default convention is to include endpoints when interpreting 'between', but 'strictly between' explicitly excludes them. Models often overlook 'strictly' and include the endpoints 7 and 31, which are prime and congruent to 1 mod 6, leading to an overcount.",
+            "cot_reinforcement": "In chain-of-thought reasoning, models typically list all primes from 7 to 31 (including endpoints), then filter those congruent to 1 mod 6, resulting in 7, 13, 19, 31 and a count of 4, without revisiting the 'strictly between' constraint to exclude 7 and 31.",
+            "grading_rule": "approx_numeric_small",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 220924
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 2,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "Main weakness: the trap is too explicit. \u201cStrictly between 7 and 31\u201d is unambiguous, so a careful frontier model (especially with CoT) will typically exclude 7 and 31 and get 2. CoT is more likely to *fix* the mistake than reinforce it, because listing primes makes it obvious which are endpoints and prompts a re-check of constraints; thus cot_resistant is low.\n\nThe stated mechanism also feels off: claiming a \u201cdefault convention\u201d to include endpoints when the prompt literally says \u201cstrictly\u201d makes the error look like a simple attention slip, not a robust reasoning trap. This tends to measure reading care rather than self-correction under reasoning pressure.\n\nSuggestions to strengthen: (1) remove \u201cstrictly\u201d and rely on genuine ambiguity about inclusivity, but then grading clarity drops unless you specify a convention; or (2) keep clarity but make the endpoint issue less visually salient (e.g., multiple intervals/constraints, or an additional filter where excluding endpoints changes the count subtly), so CoT doesn\u2019t trivially surface the exclusion check; or (3) add a second condition that causes common heuristic shortcuts (like \u201call primes > 3 are 1 or 5 mod 6\u201d) to mislead in a way that isn\u2019t corrected by simple listing."
+          },
+          "passes_criteria": false,
+          "latency_ms": 15305
+        }
+      },
+      "adversary_critique": "Main weakness: the trap is too explicit. \u201cStrictly between 7 and 31\u201d is unambiguous, so a careful frontier model (especially with CoT) will typically exclude 7 and 31 and get 2. CoT is more likely to *fix* the mistake than reinforce it, because listing primes makes it obvious which are endpoints and prompts a re-check of constraints; thus cot_resistant is low.\n\nThe stated mechanism also feels off: claiming a \u201cdefault convention\u201d to include endpoints when the prompt literally says \u201cstrictly\u201d makes the error look like a simple attention slip, not a robust reasoning trap. This tends to measure reading care rather than self-correction under reasoning pressure.\n\nSuggestions to strengthen: (1) remove \u201cstrictly\u201d and rely on genuine ambiguity about inclusivity, but then grading clarity drops unless you specify a convention; or (2) keep clarity but make the endpoint issue less visually salient (e.g., multiple intervals/constraints, or an additional filter where excluding endpoints changes the count subtly), so CoT doesn\u2019t trivially surface the exclusion check; or (3) add a second condition that causes common heuristic shortcuts (like \u201call primes > 3 are 1 or 5 mod 6\u201d) to mislead in a way that isn\u2019t corrected by simple listing.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 2,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "Main weakness: the trap is too explicit. \u201cStrictly between 7 and 31\u201d is unambiguous, so a careful frontier model (especially with CoT) will typically exclude 7 and 31 and get 2. CoT is more likely to *fix* the mistake than reinforce it, because listing primes makes it obvious which are endpoints and prompts a re-check of constraints; thus cot_resistant is low.\n\nThe stated mechanism also feels off: claiming a \u201cdefault convention\u201d to include endpoints when the prompt literally says \u201cstrictly\u201d makes the error look like a simple attention slip, not a robust reasoning trap. This tends to measure reading care rather than self-correction under reasoning pressure.\n\nSuggestions to strengthen: (1) remove \u201cstrictly\u201d and rely on genuine ambiguity about inclusivity, but then grading clarity drops unless you specify a convention; or (2) keep clarity but make the endpoint issue less visually salient (e.g., multiple intervals/constraints, or an additional filter where excluding endpoints changes the count subtly), so CoT doesn\u2019t trivially surface the exclusion check; or (3) add a second condition that causes common heuristic shortcuts (like \u201call primes > 3 are 1 or 5 mod 6\u201d) to mislead in a way that isn\u2019t corrected by simple listing."
+      }
+    }
+  ],
+  "final_status": "accept",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_016",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "How many prime numbers strictly between 7 and 31 are congruent to 1 modulo 6?",
+    "gold_answer": "2",
+    "gold_answer_aliases": [
+      "2",
+      "two"
+    ],
+    "grading_rule": "approx_numeric_small",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "mathematics",
+    "mechanism_primary": "The default convention is to include endpoints when interpreting 'between', but 'strictly between' explicitly excludes them. Models often overlook 'strictly' and include the endpoints 7 and 31, which are prime and congruent to 1 mod 6, leading to an overcount.",
+    "provenance": "hand_authored",
+    "draft_status": "draft",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): wrong. Adversary scores: tef=2, cr=2",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "2 (the primes are 13 and 19).",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "The prime numbers strictly between 7 and 31 are: 11, 13, 17, 19, 23, 29.\n\nNow we check which of these are congruent to 1 modulo 6:\n- $11 \\div 6 = 1$ remainder $5$, so $11 \\equiv 5 \\pmod{6}$\n- $13 \\div 6 = 2$ remainder $1$, so $13 \\equiv 1 \\pmod{6}$\n- $17 \\div 6 = 2$ remainder $5$, so $17 \\equiv 5 \\p",
+      "status": "wrong"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "wrong",
+    "response": "I need to find prime numbers strictly between 7 and 31 that are congruent to 1 mod 6.\n\nPrimes strictly between 7 and 31: 11, 13, 17, 19, 23, 29\n\nCheck which are \u2261 1 (mod 6):\n- 11 = 6(1) + 5 \u2192 5 mod 6\n- 13 = 6(2) + 1 \u2192 **1 mod 6** \u2713\n- 17 = 6(2) + 5 \u2192 5 mod 6\n- 19 = 6(3) + 1 \u2192 **1 mod 6** \u2713\n- 23 = 6(3) + 5 \u2192 5 mod 6\n- 29 = 6(4) + 5 \u2192 5 mod 6\n\nThe answer is **2**."
+  }
+}

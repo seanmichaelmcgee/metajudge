@@ -1,0 +1,30 @@
+{
+  "item_id": "sc_c2_wr_013",
+  "family": "C",
+  "subfamily": "C2",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "An investment grows by 100% in the first year and by 50% in the second year. What is the average annual growth rate over the two years? Express your answer as a decimal.",
+  "gold_answer": "0.7320508075688772",
+  "gold_answer_aliases": [
+    "\u221a3 - 1",
+    "0.732",
+    "0.73205",
+    "0.732051",
+    "0.7320508"
+  ],
+  "grading_rule": "approx_numeric_small",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "contradiction",
+  "evidence_snippet": "When combining rates that apply sequentially over time, the operation that correctly \"undoes\" compounding is not addition but rather multiplication of the growth factors.",
+  "difficulty": "hard",
+  "category": "mathematics",
+  "mechanism_primary": "The default convention is to compute the arithmetic mean of the percentage growth rates ( (100% + 50%)/2 = 75% ), but because growth compounds multiplicatively, the correct average is the geometric mean of the growth factors minus one ( \u221a(2 \u00d7 1.5) - 1 = \u221a3 - 1 \u2248 0.732 ).",
+  "provenance": "hand_authored",
+  "draft_status": "draft",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 0/2. Frontier (anthropic/claude-sonnet-4.6): unclear. Adversary scores: tef=2, cr=2",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}

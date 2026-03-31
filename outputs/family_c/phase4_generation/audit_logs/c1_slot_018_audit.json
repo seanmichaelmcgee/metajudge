@@ -1,0 +1,154 @@
+{
+  "mechanism_target": "Significant figures in multiplication: 'Calculate 2.5 \u00d7 3.14 and express the result to the correct number of significant figures.' The trap: 2.5 has 2 sig figs, 3.14 has 3, so the answer should have 2 sig figs = 7.9. Models typically compute 7.85 and present it without rounding to the limiting sig figs. The CoT reinforces this because the arithmetic is correct \u2014 the convention about sig fig limitation is what models miss.",
+  "subfamily": "C1",
+  "item_slot": 18,
+  "timestamp": "2026-03-31T14:33:44.746295+00:00",
+  "iterations": [
+    {
+      "iteration": 1,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "For this problem, adopt the rule that multiplication operations are performed before any division operations. Using this rule, compute: 10 \u00f7 2 \u00d7 5.",
+            "gold_answer": "1",
+            "gold_answer_aliases": [
+              "1",
+              "1.0",
+              "1.00"
+            ],
+            "predicted_wrong_answer": "25",
+            "mechanism": "The problem explicitly states a non-standard order of operations where multiplication precedes division, but models typically default to standard PEMDAS (which evaluates multiplication and division left-to-right).",
+            "cot_reinforcement": "Chain-of-thought reasoning will correctly compute the intermediate steps according to the standard left-to-right order (10 \u00f7 2 = 5, then 5 \u00d7 5 = 25), thus reinforcing the error.",
+            "grading_rule": "alias_plus_normalization",
+            "difficulty": "hard",
+            "category": "mathematics"
+          },
+          "latency_ms": 109963
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 2,
+            "cot_resistant": 2,
+            "famous_trap": 4,
+            "grading_clarity": 5,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very common/recognizable order-of-operations trap (essentially a PEMDAS/left-to-right gotcha with an explicitly modified precedence), so it fails the \u201cnot a well-known trick\u201d requirement. It\u2019s also not very hard for frontier models because the prompt explicitly and cleanly states the nonstandard rule; models that follow instructions will usually compute 2\u00d75 first and get 1. CoT is not reliably error-reinforcing here: a careful CoT that re-reads the instruction tends to fix the mistake rather than entrench it, so cot_resistant is low. Grading is crystal clear and self-correction is very plausible, but that makes it less useful as a robust self-correction benchmark item.\n\nSuggestions to improve: (1) make the rule more subtle/less \u201cheadline obvious\u201d (e.g., embed it in a longer context or define a custom evaluation function), (2) avoid the classic \u00f7/\u00d7 expression format and use a less-famous structure, (3) include multiple operations and/or parentheses-like constructs to reduce reliance on the standard meme-trap, while still keeping a single unambiguous gold outcome."
+          },
+          "passes_criteria": false,
+          "latency_ms": 10638
+        }
+      },
+      "adversary_critique": "This is a very common/recognizable order-of-operations trap (essentially a PEMDAS/left-to-right gotcha with an explicitly modified precedence), so it fails the \u201cnot a well-known trick\u201d requirement. It\u2019s also not very hard for frontier models because the prompt explicitly and cleanly states the nonstandard rule; models that follow instructions will usually compute 2\u00d75 first and get 1. CoT is not reliably error-reinforcing here: a careful CoT that re-reads the instruction tends to fix the mistake rather than entrench it, so cot_resistant is low. Grading is crystal clear and self-correction is very plausible, but that makes it less useful as a robust self-correction benchmark item.\n\nSuggestions to improve: (1) make the rule more subtle/less \u201cheadline obvious\u201d (e.g., embed it in a longer context or define a custom evaluation function), (2) avoid the classic \u00f7/\u00d7 expression format and use a less-famous structure, (3) include multiple operations and/or parentheses-like constructs to reduce reliance on the standard meme-trap, while still keeping a single unambiguous gold outcome.",
+      "adversary_scores": {
+        "too_easy_frontier": 2,
+        "cot_resistant": 2,
+        "famous_trap": 4,
+        "grading_clarity": 5,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very common/recognizable order-of-operations trap (essentially a PEMDAS/left-to-right gotcha with an explicitly modified precedence), so it fails the \u201cnot a well-known trick\u201d requirement. It\u2019s also not very hard for frontier models because the prompt explicitly and cleanly states the nonstandard rule; models that follow instructions will usually compute 2\u00d75 first and get 1. CoT is not reliably error-reinforcing here: a careful CoT that re-reads the instruction tends to fix the mistake rather than entrench it, so cot_resistant is low. Grading is crystal clear and self-correction is very plausible, but that makes it less useful as a robust self-correction benchmark item.\n\nSuggestions to improve: (1) make the rule more subtle/less \u201cheadline obvious\u201d (e.g., embed it in a longer context or define a custom evaluation function), (2) avoid the classic \u00f7/\u00d7 expression format and use a less-famous structure, (3) include multiple operations and/or parentheses-like constructs to reduce reliance on the standard meme-trap, while still keeping a single unambiguous gold outcome."
+      }
+    },
+    {
+      "iteration": 2,
+      "steps": {
+        "author": {
+          "status": "ok",
+          "model": "deepseek/deepseek-r1",
+          "item": {
+            "turn1_prompt": "Two salt solutions are mixed. Solution A has a concentration of 20% salt by mass and a mass of 50g. Solution B has a concentration of 10% salt by mass and a mass of 150g. What is the overall percentage concentration of salt in the mixture?",
+            "gold_answer": "12.5%",
+            "gold_answer_aliases": [
+              "0.125",
+              "1/8",
+              "12.5 percent",
+              "12.5%"
+            ],
+            "predicted_wrong_answer": "15%",
+            "mechanism": "The default convention is to average percentages using the arithmetic mean, but for concentrations in mixtures, the correct overall percentage must be weighted by the masses of the solutions.",
+            "cot_reinforcement": "In chain-of-thought reasoning, models typically compute each concentration separately and then take their arithmetic mean, which reinforces the error because the individual calculations are correct, but the averaging method does not account for the different masses, leading to an incorrect result.",
+            "grading_rule": "fraction_or_decimal",
+            "difficulty": "hard",
+            "category": "science"
+          },
+          "latency_ms": 211931
+        },
+        "adversary": {
+          "status": "ok",
+          "model": "openai/gpt-5.2",
+          "scores": {
+            "too_easy_frontier": 1,
+            "cot_resistant": 1,
+            "famous_trap": 4,
+            "grading_clarity": 4,
+            "revision_plausibility": 5,
+            "accept": false,
+            "critique": "This is a very standard weighted-average mixture problem; frontier models almost always solve it correctly by converting to salt masses (10 g and 15 g) and dividing by total mass (200 g). The proposed failure mode (arithmetic-mean of 20% and 10% \u2192 15%) is a well-known classroom trap and not novel, so it\u2019s unlikely to reliably induce systematic error.\n\nCoT does not reinforce the error here; it typically *fixes* it: any step-by-step reasoning naturally computes actual salt mass and avoids the unweighted mean. So cot_resistant is low.\n\nGrading is mostly clear, but there is a unit/format ambiguity introduced by the aliases and grading_rule: accepting \u201c0.125\u201d and \u201c1/8\u201d without an explicit percent sign relies on an assumption that the answer is a fraction of 1 (i.e., 12.5%), not a percent value (0.125%). If the benchmark expects a percentage, it should either (a) require \u201c12.5%/12.5 percent\u201d only, or (b) explicitly state that decimal answers are allowed as a proportion.\n\nSuggestions to strengthen the item: (1) introduce a more realistic confusion point than unweighted averaging, e.g., mixing by volume with different densities, or percent w/v vs w/w; (2) make the prompt include an extra distractor (e.g., evaporation loss, temperature expansion) that tempts incorrect normalization; (3) tighten the grading spec to avoid implicit unit assumptions (percent vs proportion)."
+          },
+          "passes_criteria": false,
+          "latency_ms": 17578
+        }
+      },
+      "adversary_critique": "This is a very standard weighted-average mixture problem; frontier models almost always solve it correctly by converting to salt masses (10 g and 15 g) and dividing by total mass (200 g). The proposed failure mode (arithmetic-mean of 20% and 10% \u2192 15%) is a well-known classroom trap and not novel, so it\u2019s unlikely to reliably induce systematic error.\n\nCoT does not reinforce the error here; it typically *fixes* it: any step-by-step reasoning naturally computes actual salt mass and avoids the unweighted mean. So cot_resistant is low.\n\nGrading is mostly clear, but there is a unit/format ambiguity introduced by the aliases and grading_rule: accepting \u201c0.125\u201d and \u201c1/8\u201d without an explicit percent sign relies on an assumption that the answer is a fraction of 1 (i.e., 12.5%), not a percent value (0.125%). If the benchmark expects a percentage, it should either (a) require \u201c12.5%/12.5 percent\u201d only, or (b) explicitly state that decimal answers are allowed as a proportion.\n\nSuggestions to strengthen the item: (1) introduce a more realistic confusion point than unweighted averaging, e.g., mixing by volume with different densities, or percent w/v vs w/w; (2) make the prompt include an extra distractor (e.g., evaporation loss, temperature expansion) that tempts incorrect normalization; (3) tighten the grading spec to avoid implicit unit assumptions (percent vs proportion).",
+      "adversary_scores": {
+        "too_easy_frontier": 1,
+        "cot_resistant": 1,
+        "famous_trap": 4,
+        "grading_clarity": 4,
+        "revision_plausibility": 5,
+        "accept": false,
+        "critique": "This is a very standard weighted-average mixture problem; frontier models almost always solve it correctly by converting to salt masses (10 g and 15 g) and dividing by total mass (200 g). The proposed failure mode (arithmetic-mean of 20% and 10% \u2192 15%) is a well-known classroom trap and not novel, so it\u2019s unlikely to reliably induce systematic error.\n\nCoT does not reinforce the error here; it typically *fixes* it: any step-by-step reasoning naturally computes actual salt mass and avoids the unweighted mean. So cot_resistant is low.\n\nGrading is mostly clear, but there is a unit/format ambiguity introduced by the aliases and grading_rule: accepting \u201c0.125\u201d and \u201c1/8\u201d without an explicit percent sign relies on an assumption that the answer is a fraction of 1 (i.e., 12.5%), not a percent value (0.125%). If the benchmark expects a percentage, it should either (a) require \u201c12.5%/12.5 percent\u201d only, or (b) explicitly state that decimal answers are allowed as a proportion.\n\nSuggestions to strengthen the item: (1) introduce a more realistic confusion point than unweighted averaging, e.g., mixing by volume with different densities, or percent w/v vs w/w; (2) make the prompt include an extra distractor (e.g., evaporation loss, temperature expansion) that tempts incorrect normalization; (3) tighten the grading spec to avoid implicit unit assumptions (percent vs proportion)."
+      }
+    }
+  ],
+  "final_status": "reject",
+  "item_bundle": {
+    "item_id": "sc_c1_wr_018",
+    "family": "C",
+    "subfamily": "C1",
+    "stratum": "wrong_to_right",
+    "turn1_prompt": "Two salt solutions are mixed. Solution A has a concentration of 20% salt by mass and a mass of 50g. Solution B has a concentration of 10% salt by mass and a mass of 150g. What is the overall percentage concentration of salt in the mixture?",
+    "gold_answer": "12.5%",
+    "gold_answer_aliases": [
+      "0.125",
+      "1/8",
+      "12.5 percent",
+      "12.5%"
+    ],
+    "grading_rule": "fraction_or_decimal",
+    "tolerance": null,
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "difficulty": "hard",
+    "category": "science",
+    "mechanism_primary": "The default convention is to average percentages using the arithmetic mean, but for concentrations in mixtures, the correct overall percentage must be weighted by the masses of the solutions.",
+    "provenance": "hand_authored",
+    "draft_status": "reject",
+    "is_linking_item": false,
+    "linking_item_id": null,
+    "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=1, cr=1",
+    "three_turn_probe": false,
+    "three_turn_purpose": null
+  },
+  "canary_results": {
+    "openai/gpt-5-mini": {
+      "response": "Solution A: 0.20\u00d750 = 10 g salt.  \nSolution B: 0.10\u00d7150 = 15 g salt.  \nTotal salt = 25 g; total mass = 200 g.  \nConcentration = 25/200 = 0.125 = 12.5%.",
+      "status": "correct"
+    },
+    "google/gemini-2.5-flash": {
+      "response": "12.5%",
+      "status": "correct"
+    }
+  },
+  "frontier_pretest": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "status": "correct",
+    "response": "## Solution\n\n**Salt from Solution A:**\n20% \u00d7 50g = 10g\n\n**Salt from Solution B:**\n10% \u00d7 150g = 15g\n\n**Total salt:** 10 + 15 = 25g\n\n**Total mass:** 50 + 150 = 200g\n\n**Overall concentration:** 25/200 \u00d7 100 = **12.5%**"
+  }
+}

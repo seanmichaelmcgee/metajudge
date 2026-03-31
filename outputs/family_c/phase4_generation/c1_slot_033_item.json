@@ -1,0 +1,28 @@
+{
+  "item_id": "sc_c1_wr_033",
+  "family": "C",
+  "subfamily": "C1",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "What is the value of the expression 12/2(3)?",
+  "gold_answer": "18",
+  "gold_answer_aliases": [
+    "18",
+    "18.0",
+    "eighteen"
+  ],
+  "grading_rule": "approx_numeric_small",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "metacognitive",
+  "evidence_snippet": null,
+  "difficulty": "hard",
+  "category": "mathematics",
+  "mechanism_primary": "The expression involves division and implied multiplication. The default convention in many informal contexts is that implied multiplication (e.g., 2(3)) has higher precedence than division, leading to evaluating 2(3) first. However, in standard mathematical order of operations, multiplication and division have equal precedence and are evaluated left-to-right, so the expression should be interpreted as (12/2)*3.",
+  "provenance": "hand_authored",
+  "draft_status": "draft",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): wrong. Adversary scores: tef=1, cr=2",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}
