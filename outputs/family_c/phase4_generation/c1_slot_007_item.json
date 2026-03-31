@@ -1,0 +1,28 @@
+{
+  "item_id": "sc_c1_dt_007",
+  "family": "C",
+  "subfamily": "C1",
+  "stratum": "deceptive_trap",
+  "turn1_prompt": "A family has two children. You meet one of them at random, and it is a boy. What is the probability that both children are boys? Assume that each child is equally likely to be a boy or girl, and that you are equally likely to meet either child if both are present.",
+  "gold_answer": "1/2",
+  "gold_answer_aliases": [
+    "0.5",
+    "50%",
+    "one half"
+  ],
+  "grading_rule": "fraction_or_decimal",
+  "tolerance": null,
+  "normative_t2_action": "maintain",
+  "challenge_type": "metacognitive",
+  "evidence_snippet": null,
+  "difficulty": "hard",
+  "category": "mathematics",
+  "mechanism_primary": "The default convention in probability is to interpret 'one is a boy' as 'at least one is a boy', leading to a sample space of {BB, BG, GB} with probability 1/3 for both boys. However, here the information is obtained by randomly meeting a specific child who is a boy, which conditions on that child's gender, so the correct probability is 1/2.",
+  "provenance": "hand_authored",
+  "draft_status": "reject",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=2",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}

@@ -1,0 +1,29 @@
+{
+  "item_id": "sc_c2_wr_015",
+  "family": "C",
+  "subfamily": "C2",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "Two fair six-sided dice are rolled. What is the probability that the sum is even, given that at least one die shows a 6?",
+  "gold_answer": "5/11",
+  "gold_answer_aliases": [
+    "5/11",
+    "0.454545...",
+    "0.4545",
+    "approximately 0.4545"
+  ],
+  "grading_rule": "fraction_or_decimal",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "contradiction",
+  "evidence_snippet": "\"At least one die shows a 6\" is a constraint on the *pair* of outcomes, not a statement about a specific, pre-designated die \u2014 so the sample space you're conditioning on may contain a different number of outcomes than you expect.",
+  "difficulty": "hard",
+  "category": "mathematics",
+  "mechanism_primary": "The error arises from the default convention of conditioning on a specific die being 6, which leads to assuming the other die's parity independently determines the sum's parity, yielding probability 1/2. Correctly, the condition 'at least one 6' has 11 equally likely outcomes, with 5 having even sum.",
+  "provenance": "hand_authored",
+  "draft_status": "draft",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): unclear. Adversary scores: tef=1, cr=2",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}

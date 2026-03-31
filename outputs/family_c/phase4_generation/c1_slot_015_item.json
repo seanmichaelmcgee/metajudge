@@ -1,0 +1,28 @@
+{
+  "item_id": "sc_c1_wr_015",
+  "family": "C",
+  "subfamily": "C1",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "A recipe calls for 1/3 cup of oil. You double the recipe, then triple the entire doubled amount. You have a measuring cup that shows tenths of a cup. How many cups of oil do you need, rounded to the nearest tenth of a cup?",
+  "gold_answer": "2.0",
+  "gold_answer_aliases": [
+    "2",
+    "2.0",
+    "2.00"
+  ],
+  "grading_rule": "alias_plus_normalization",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "metacognitive",
+  "evidence_snippet": null,
+  "difficulty": "hard",
+  "category": "arithmetic",
+  "mechanism_primary": "The model rounds 1/3 to 0.3 (nearest tenth) at the start, then doubles to 0.6, then triples to 1.8, and rounds to 1.8. But the exact calculation (1/3 * 2 * 3 = 2) rounds to 2.0.",
+  "provenance": "hand_authored",
+  "draft_status": "reject",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=3",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}

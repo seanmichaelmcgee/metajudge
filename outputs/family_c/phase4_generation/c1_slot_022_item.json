@@ -1,0 +1,30 @@
+{
+  "item_id": "sc_c1_wr_022",
+  "family": "C",
+  "subfamily": "C1",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "From a bag containing 6 distinct types of fruit, you randomly select 4 fruits with replacement (i.e., after each selection, the fruit is returned to the bag). How many different unordered sets of 4 fruits can you obtain? (Two selections are considered the same if they have the same multiset of fruit types, regardless of the order in which they were drawn.)",
+  "gold_answer": "126",
+  "gold_answer_aliases": [
+    "126",
+    "C(9,4)",
+    "9 choose 4",
+    "126 ways",
+    "one hundred twenty-six"
+  ],
+  "grading_rule": "alias_plus_normalization",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "metacognitive",
+  "evidence_snippet": null,
+  "difficulty": "hard",
+  "category": "mathematics",
+  "mechanism_primary": "The default convention is that 'unordered sets' imply combinations without repetition (C(n,k)), but with replacement allowed, the correct count is for combinations with repetition (multisets), using C(n+k-1,k).",
+  "provenance": "hand_authored",
+  "draft_status": "reject",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=1, cr=2",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}

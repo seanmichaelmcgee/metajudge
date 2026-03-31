@@ -1,0 +1,28 @@
+{
+  "item_id": "sc_c1_wr_020",
+  "family": "C",
+  "subfamily": "C1",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "In set theory, what is the number of distinct functions from the empty set to the empty set? Provide a single integer answer.",
+  "gold_answer": "1",
+  "gold_answer_aliases": [
+    "1",
+    "one",
+    "1.0"
+  ],
+  "grading_rule": "alias_plus_normalization",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "metacognitive",
+  "evidence_snippet": null,
+  "difficulty": "hard",
+  "category": "mathematics",
+  "mechanism_primary": "The default convention for many is that a function requires at least one element in the domain to map, so for empty sets, it seems like there should be no functions. However, in set theory, the empty function (a function with an empty domain) is valid and unique, so the correct number is 1.",
+  "provenance": "hand_authored",
+  "draft_status": "reject",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=1",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}

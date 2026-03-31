@@ -1,0 +1,31 @@
+{
+  "item_id": "sc_c2_wr_012",
+  "family": "C",
+  "subfamily": "C2",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "An investment grows at an average rate of 10% per year over two years. If it grew by 16% in the first year, what was its growth rate in the second year? Assume the average is calculated appropriately for growth rates.",
+  "gold_answer": "4.31%",
+  "gold_answer_aliases": [
+    "4.31%",
+    "4.3%",
+    "4.3103%",
+    "0.0431",
+    "4.31 percent",
+    "approximately 4.31%"
+  ],
+  "grading_rule": "approx_numeric_small",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "contradiction",
+  "evidence_snippet": null,
+  "difficulty": "hard",
+  "category": "mathematics",
+  "mechanism_primary": "The default convention for 'average' is arithmetic mean, but for growth rates, the appropriate average is geometric mean of growth factors. The problem hints at this with 'appropriately for growth rates', but models may overlook it and apply arithmetic mean.",
+  "provenance": "hand_authored",
+  "draft_status": "reject",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=2",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}
