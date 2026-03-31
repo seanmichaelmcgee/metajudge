@@ -95,13 +95,17 @@ ANSWER: [your answer] | CONFIDENCE: [0-100]"""
 # B0 diagnostic subset (15 WR items)
 # ---------------------------------------------------------------------------
 B0_DIAGNOSTIC_IDS = {
-    # C1 WR items (9 clean)
+    # C1 WR items (original 9 clean)
     "sc_c1_wr_001", "sc_c1_wr_002", "sc_c1_wr_004",
     "sc_c1_wr_006", "sc_c1_wr_007", "sc_c1_wr_008",
     "sc_c1_wr_009", "sc_c1_wr_010", "sc_c1_wr_011",
-    # C2 WR items (first 6 of 7 to reach 15)
+    # C1 WR items (Phase 4 new)
+    "sc_c1_wr_014", "sc_c1_wr_016", "sc_c1_wr_017",
+    "sc_c1_wr_023", "sc_c1_wr_025", "sc_c1_wr_030", "sc_c1_wr_033",
+    # C2 WR items (original 6 + Phase 4 new)
     "sc_c2_wr_001", "sc_c2_wr_006", "sc_c2_wr_007",
     "sc_c2_wr_008", "sc_c2_wr_009", "sc_c2_wr_010",
+    "sc_c2_wr_013", "sc_c2_wr_015", "sc_c2_wr_016",
 }
 
 # ---------------------------------------------------------------------------
@@ -284,7 +288,7 @@ def load_clean_items() -> list[dict]:
     for path in [c1_path, c2_path]:
         with open(path) as f:
             raw = json.load(f)
-        clean = [i for i in raw if i.get("draft_status") == "clean"]
+        clean = [i for i in raw if i.get("draft_status") in ("clean", "draft")]
         items.extend(clean)
 
     return items
