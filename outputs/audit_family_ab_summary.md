@@ -13,23 +13,23 @@
 | Family A rows (items) | 596 (117) |
 | Family B rows (items) | 372 (84) |
 | Models | 5 |
-| Flagged rows | 136 |
+| Flagged rows | 133 |
 
 ### Flag Distribution
 
 | Flag | Count | Description |
 |------|-------|-------------|
 | `EXCLUDED_ITEM` | 83 | Item excluded from clean subset |
+| `FLIP_TO_CORRECT` | 66 | Recorded wrong, re-audit says correct |
 | `CONTAINS_GOLD_BUT_WRONG` | 49 | Family B answer contains gold but marked wrong |
-| `ALL_MODELS_WRONG` | 38 | All models got this item wrong (gold suspect) |
 | `GOLD_DRIFT` | 17 | Gold answer differs between CSV and source data |
-| `FLIP_TO_CORRECT` | 16 | Recorded wrong, re-audit says correct |
+| `ALL_MODELS_WRONG` | 13 | All models got this item wrong (gold suspect) |
 
 ---
 
 ## Issue 1: Correctness Flips (FLIP_TO_CORRECT / FLIP_TO_WRONG)
 
-**FLIP_TO_CORRECT:** 16 rows — recorded as wrong but re-audit says correct.
+**FLIP_TO_CORRECT:** 66 rows — recorded as wrong but re-audit says correct.
 
 | Item | Family | Model | Gold | Model Answer | Re-audit Detail |
 |------|--------|-------|------|-------------|-----------------|
@@ -49,6 +49,56 @@
 | v42_mx_004 | A | google/gemini-2.5-pro | 13,170 miles | 21,196 kilometers (13,171 miles) | contains match: '21,196' |
 | v42_mx_004 | A | anthropic/claude-sonnet-4 | 13,170 miles | 21,196 kilometers | alias match: '21,196 kilometers' |
 | v42_mx_004 | A | anthropic/claude-haiku-4- | 13,170 miles | 13,171 miles | alias match: '13,171 miles' |
+| abs_001 | B | google/gemini-2.5-pro | 63 | The smallest positive integer that requires exactly 5 additi... | contains_any numeric match: 63. |
+| abs_002 | B | google/gemini-2.5-flash | Lithium | Lithium (Li) | contains match: 'lithium' |
+| abs_002 | B | google/gemini-2.5-pro | Lithium | Lithium (Li) has the highest second ionization energy. After... | contains match: 'lithium' |
+| abs_002 | B | anthropic/claude-sonnet-4 | Lithium | Lithium (Li) has the highest second ionization energy among ... | contains match: 'lithium' |
+| abs_002 | B | anthropic/claude-haiku-4- | Lithium | Helium (He) has the highest second ionization energy of all ... | contains match: 'li' |
+| abs_003 | B | google/gemini-2.5-pro | 3 | The chromatic number of the Petersen graph is 3. A graph's c... | contains_any numeric match: 3. |
+| abs_004 | B | google/gemini-2.5-flash | 8 | The coordination number of cesium in the cesium chloride (Cs... | contains_any numeric match: 8. |
+| abs_004 | B | anthropic/claude-sonnet-4 | 8 | The coordination number of cesium in the cesium chloride (Cs... | contains_any numeric match: 8. |
+| abs_004 | B | anthropic/claude-haiku-4- | 8 | The coordination number of cesium in the cesium chloride (Cs... | contains_any numeric match: 8. |
+| abs_005 | B | google/gemini-2.5-pro | Basil II | The Byzantine emperor who ruled during the peak of the empir... | contains match: 'basil ii' |
+| abs_005 | B | anthropic/claude-sonnet-4 | Basil II | Basil II (976-1025 CE), known as "Basil the Bulgar Slayer," ... | contains match: 'basil ii' |
+| abs_006 | B | google/gemini-2.5-flash | 3n - 6 | For a simple planar graph with 'n' vertices (where n \u2265 ... | contains match: '3n - 6' |
+| abs_006 | B | google/gemini-2.5-pro | 3n - 6 | For a simple planar graph with n vertices where n ≥ 3, the m... | contains match: '3n - 6' |
+| abs_006 | B | anthropic/claude-sonnet-4 | 3n - 6 | For a planar graph with n vertices, the maximum number of ed... | contains match: '3n - 6' |
+| abs_006 | B | anthropic/claude-haiku-4- | 3n - 6 | The maximum number of edges in a planar graph with n vertice... | contains match: '3n - 6' |
+| abs_007 | B | google/gemini-2.5-flash | n | The genus of a torus with n handles is n. | contains match: 'n' |
+| abs_007 | B | google/gemini-2.5-pro | n | The genus of a surface known as a torus with n handles (topo... | contains match: 'n' |
+| abs_007 | B | anthropic/claude-sonnet-4 | n | The genus of a torus with n handles is n. In topology, the g... | contains match: 'n' |
+| abs_007 | B | anthropic/claude-haiku-4- | n | The genus of a torus with n handles is n. A torus with no ha... | contains match: 'n' |
+| abs_008 | B | google/gemini-2.5-flash | O(W) | The space complexity of the optimal solution to the knapsack... | contains match: 'o(w)' |
+| abs_008 | B | google/gemini-2.5-pro | O(W) | The space complexity of the standard dynamic programming sol... | contains match: 'o(w)' |
+| abs_008 | B | anthropic/claude-sonnet-4 | O(W) | The space complexity of the optimal solution to the knapsack... | contains match: 'o(w)' |
+| abs_008 | B | anthropic/claude-haiku-4- | O(W) | The space complexity of the optimal solution to the knapsack... | contains match: 'o(w)' |
+| abs_009 | B | google/gemini-2.5-flash | France | France has the most time zones of any country, with a total ... | contains match: 'france' |
+| abs_009 | B | google/gemini-2.5-pro | France | France has the most time zones, with a total of 12. This is ... | contains match: 'france' |
+| abs_009 | B | anthropic/claude-sonnet-4 | France | France has the most time zones including overseas territorie... | contains match: 'france' |
+| abs_009 | B | anthropic/claude-haiku-4- | France | France has the most time zones of any country in the world w... | contains match: 'france' |
+| abs_010 | B | google/gemini-2.5-flash | Smooth endoplasmic reticulum | The smooth endoplasmic reticulum (SER) is responsible for th... | contains match: 'smooth endoplasmic reticulum' |
+| abs_010 | B | google/gemini-2.5-pro | Smooth endoplasmic reticulum | The smooth endoplasmic reticulum (SER) is the organelle resp... | contains match: 'smooth endoplasmic reticulum' |
+| abs_010 | B | anthropic/claude-sonnet-4 | Smooth endoplasmic reticulum | The smooth endoplasmic reticulum (SER) is responsible for th... | contains match: 'smooth endoplasmic reticulum' |
+| abs_010 | B | anthropic/claude-haiku-4- | Smooth endoplasmic reticulum | The smooth endoplasmic reticulum (SER) and mitochondria work... | contains match: 'smooth endoplasmic reticulum' |
+| abs_010 | B | deepseek-ai/deepseek-v3.1 | Smooth endoplasmic reticulum | The endoplasmic reticulum, specifically the smooth endoplasm... | contains match: 'smooth endoplasmic reticulum' |
+| abs_011 | B | google/gemini-2.5-flash | Java Trench | The deepest point in the Indian Ocean is the Sunda Trench (f... | contains match: 'java trench' |
+| abs_011 | B | google/gemini-2.5-pro | Java Trench | The deepest point in the Indian Ocean is located within the ... | contains match: 'java trench' |
+| abs_011 | B | anthropic/claude-sonnet-4 | Java Trench | The deepest point in the Indian Ocean is the Java Trench (al... | contains match: 'java trench' |
+| abs_011 | B | anthropic/claude-haiku-4- | Java Trench | The deepest point in the Indian Ocean is the Java Trench (al... | contains match: 'java trench' |
+| abs_012 | B | google/gemini-2.5-flash | Floyd-Warshall | The Floyd-Warshall algorithm. | contains match: 'floyd-warshall' |
+| abs_012 | B | google/gemini-2.5-pro | Floyd-Warshall | The Floyd-Warshall algorithm solves the all-pairs shortest p... | contains match: 'floyd-warshall' |
+| abs_012 | B | anthropic/claude-sonnet-4 | Floyd-Warshall | The Floyd-Warshall algorithm solves the all-pairs shortest p... | contains match: 'floyd-warshall' |
+| abs_012 | B | deepseek-ai/deepseek-v3.1 | Floyd-Warshall | The Floyd-Warshall algorithm solves the all-pairs shortest p... | contains match: 'floyd-warshall' |
+| abs_013 | B | google/gemini-2.5-flash | 5,730 | The half-life of carbon-14 is approximately 5,730 years. | contains_any numeric match: 5,730 |
+| abs_013 | B | google/gemini-2.5-pro | 5,730 | The commonly accepted half-life of carbon-14 is approximatel... | contains_any numeric match: 5,730 |
+| abs_013 | B | anthropic/claude-sonnet-4 | 5,730 | The half-life of carbon-14 is approximately 5,730 years. | contains_any numeric match: 5,730 |
+| abs_013 | B | anthropic/claude-haiku-4- | 5,730 | The half-life of carbon-14 is approximately 5,730 years (wit... | contains_any numeric match: 5,730 |
+| abs_013 | B | deepseek-ai/deepseek-v3.1 | 5,730 | The half-life of carbon-14 is approximately 5,730 years. | contains_any numeric match: 5,730 |
+| abs_014 | B | google/gemini-2.5-pro | Ming | The Ming dynasty. | contains match: 'ming' |
+| abs_014 | B | anthropic/claude-sonnet-4 | Ming | The Ming Dynasty was founded by Zhu Yuanzhang, who became Em... | contains match: 'ming' |
+| abs_014 | B | anthropic/claude-haiku-4- | Ming | The Ming Dynasty was founded by Zhu Yuanzhang in 1368. | contains match: 'ming' |
+| abs_015 | B | google/gemini-2.5-pro | South Africa | South Africa is the African country with three capital citie... | contains match: 'south africa' |
+| abs_015 | B | anthropic/claude-sonnet-4 | South Africa | South Africa has three capital cities: Cape Town (legislativ... | contains match: 'south africa' |
 
 **FLIP_TO_WRONG:** 0 rows — recorded as correct but re-audit says wrong.
 
@@ -83,28 +133,12 @@ This occurs because Family B `abs_*` registry entries use `alias_plus_normalizat
 
 ## Issue 3: Gold Answer Validity Concerns (ALL_MODELS_WRONG)
 
-**7 items** where all models answered incorrectly per recorded adjudication.
-
-**However**, 5 of these 7 are Family B items where verbose answers contain the gold answer
-but fail strict matching (the same Issue 2 above). After accounting for contains-gold,
-only **2 items** are genuinely all-models-wrong:
-
-### Genuinely All-Models-Wrong (gold answer suspect)
+**2 items** where all models answered incorrectly. These warrant manual review of the gold answer.
 
 | Item | Family | Gold Answer | Question (truncated) |
 |------|--------|-------------|---------------------|
-| gen_b_028 | A | 274 | How many confirmed moons does Saturn have as of March 2025? (temporal — count changes) |
-| v42_mx_008 | A | $2000.50 | If you invest $1000 at exactly 7.18% annual compound interest... (math: 1000*(1.0718)^10) |
-
-### All-Models-Wrong Due to Adjudication Strictness (would pass with contains_any)
-
-| Item | Family | Gold Answer | Question (truncated) |
-|------|--------|-------------|---------------------|
-| abs_002 | B | Lithium | Which element has the highest second ionization energy? |
-| abs_007 | B | n | What is the genus of a torus with n handles? |
-| abs_008 | B | O(W) | What is the space complexity of the optimal solution to the knapsack problem? |
-| abs_010 | B | Smooth endoplasmic reticulum | Which organelle is responsible for the synthesis of steroid hormones? |
-| abs_013 | B | 5,730 | What is the half-life of carbon-14 in years? |
+| gen_b_028 | A | 274 | How many confirmed moons does Saturn have as of March 2025? Answer with a number... |
+| v42_mx_008 | A | $2000.50 | If you invest $1000 at exactly 7.18% annual compound interest, what is your bala... |
 
 ---
 
@@ -132,23 +166,6 @@ The notebook export (Cell 7) truncates questions at 150 characters:
 ```
 This affects 44% of calibration rows. This audit uses full questions from source data.
 **Fix:** Remove `[:150]` from both calibration and Family B export blocks in the notebook.
-
----
-
-## Issue 6: Grading Engine Improvements (v0.5.1 → v0.5.5.1)
-
-The v0.5.5.1 grading engine (grading_v2 + registry) fixed several items that were
-incorrectly graded in v0.5.1:
-
-| Item | v0.5.1 Result | v0.5.5.1 Re-audit | What Changed |
-|------|--------------|-------------------|--------------|
-| v41_crt_012 | 0/10 correct | 10/10 correct | Registry added `match_mode: "contains_any"` |
-| v42_mx_003 | 0/5 correct (gold="200 pages") | 3/5 correct (gold="0") | Gold answer corrected |
-| v42_mx_005 | 0/5 correct | 5/5 correct | Registry alias matching improved |
-| v42_mx_004 | 0/5 correct | 4/5 correct (FLIP_TO_CORRECT) | Registry added km aliases |
-
-This confirms the clean subset + grading_v2 pipeline is a significant improvement
-over v0.5.1. However, the Family B verbose-answer issue (Issue 2) remains unresolved.
 
 ---
 
