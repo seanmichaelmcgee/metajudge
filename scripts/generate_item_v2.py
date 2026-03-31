@@ -171,10 +171,10 @@ def run_pipeline(mechanism_desc, subfamily, item_slot, max_iterations=3):
     }
 
     # Determine models based on subfamily
-    author_model = "deepseek/deepseek-r1"
+    author_model = "anthropic/claude-sonnet-4.6"
     adversary_model = "openai/gpt-5.2"
     canary_models = ["openai/gpt-5-mini", "google/gemini-2.5-flash"]
-    frontier_model = "anthropic/claude-sonnet-4.6"
+    frontier_model = "deepseek/deepseek-r1"
 
     print(f"\n{'='*60}")
     print(f"Generating: {subfamily} WR item #{item_slot}")

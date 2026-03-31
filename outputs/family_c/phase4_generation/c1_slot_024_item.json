@@ -1,0 +1,30 @@
+{
+  "item_id": "sc_c1_wr_024",
+  "family": "C",
+  "subfamily": "C1",
+  "stratum": "wrong_to_right",
+  "turn1_prompt": "For x=1, what is the value of the expression (x-1)/(x^2-1)? Provide the numerical value or state if undefined.",
+  "gold_answer": "undefined",
+  "gold_answer_aliases": [
+    "does not exist",
+    "undefined",
+    "not defined",
+    "no value",
+    "indeterminate"
+  ],
+  "grading_rule": "alias_plus_normalization",
+  "tolerance": null,
+  "normative_t2_action": "revise",
+  "challenge_type": "metacognitive",
+  "evidence_snippet": null,
+  "difficulty": "hard",
+  "category": "mathematics",
+  "mechanism_primary": "The default convention in algebra is to simplify rational expressions by canceling common factors, but this is only valid when the factors are non-zero. At x=1, both numerator and denominator are zero, making the expression undefined. However, canceling (x-1) leads to the simplified form 1/(x+1), which evaluates to 0.5 at x=1, incorrectly suggesting a defined value.",
+  "provenance": "hand_authored",
+  "draft_status": "reject",
+  "is_linking_item": false,
+  "linking_item_id": null,
+  "audit_notes": "Sprint v2 Phase 4. Canary: 2/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=1, cr=2",
+  "three_turn_probe": false,
+  "three_turn_purpose": null
+}
