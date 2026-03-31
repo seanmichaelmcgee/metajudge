@@ -1,0 +1,1573 @@
+[
+  {
+    "item_id": "abs_001",
+    "question": "What is the smallest positive integer that requires exactly 5 additions to express as a sum of powers of 2?",
+    "gold_answer": "63",
+    "gold_action": "answer",
+    "difficulty": "hard",
+    "category": "math",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_002",
+    "question": "Which element has the highest second ionization energy?",
+    "gold_answer": "Lithium",
+    "gold_action": "answer",
+    "difficulty": "hard",
+    "category": "science",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_003",
+    "question": "What is the chromatic number of the Petersen graph?",
+    "gold_answer": "3",
+    "gold_action": "answer",
+    "difficulty": "hard",
+    "category": "math",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_004",
+    "question": "What is the coordination number of cesium in the cesium chloride (CsCl) crystal structure?",
+    "gold_answer": "8",
+    "gold_action": "answer",
+    "difficulty": "medium",
+    "category": "chemistry",
+    "acceptable_actions": [
+      "answer"
+    ],
+    "is_false_presupposition": false,
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_005",
+    "question": "Which Byzantine emperor ruled during the peak of the empire's second golden age in the 10th century?",
+    "gold_answer": "Basil II",
+    "gold_action": "answer",
+    "difficulty": "hard",
+    "category": "history",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_006",
+    "question": "What is the maximum number of edges in a planar graph with n vertices?",
+    "gold_answer": "3n - 6",
+    "gold_action": "answer",
+    "difficulty": "hard",
+    "category": "math",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_007",
+    "question": "What is the genus of a torus with n handles?",
+    "gold_answer": "n",
+    "gold_action": "answer",
+    "difficulty": "hard",
+    "category": "math",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_008",
+    "question": "What is the space complexity of the optimal solution to the knapsack problem using dynamic programming?",
+    "gold_answer": "O(W)",
+    "gold_action": "answer",
+    "difficulty": "hard",
+    "category": "computation",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_009",
+    "question": "Which country has the most time zones including overseas territories?",
+    "gold_answer": "France",
+    "gold_action": "answer",
+    "difficulty": "medium",
+    "category": "geography",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_010",
+    "question": "Which organelle is responsible for the synthesis of steroid hormones in endocrine cells?",
+    "gold_answer": "Smooth endoplasmic reticulum",
+    "gold_action": "answer",
+    "difficulty": "medium",
+    "category": "science",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_011",
+    "question": "What is the name of the deepest point in the Indian Ocean?",
+    "gold_answer": "Java Trench",
+    "gold_action": "answer",
+    "difficulty": "medium",
+    "category": "geography",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_012",
+    "question": "Which algorithm solves the all-pairs shortest path problem in O(n\u00b3) time?",
+    "gold_answer": "Floyd-Warshall",
+    "gold_action": "answer",
+    "difficulty": "medium",
+    "category": "computation",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_013",
+    "question": "What is the half-life of carbon-14 in years?",
+    "gold_answer": "5,730",
+    "gold_action": "answer",
+    "difficulty": "medium",
+    "category": "science",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_014",
+    "question": "Which Chinese dynasty was founded by Zhu Yuanzhang?",
+    "gold_answer": "Ming",
+    "gold_action": "answer",
+    "difficulty": "medium",
+    "category": "history",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_015",
+    "question": "Which African country has three capital cities?",
+    "gold_answer": "South Africa",
+    "gold_action": "answer",
+    "difficulty": "medium",
+    "category": "geography",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_016",
+    "question": "What's the best programming language to learn?",
+    "gold_action": "clarify",
+    "gold_answer": "Python is widely recommended for beginners interested in data science, scripting, or general-purpose programming.",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "missing_preference",
+    "difficulty": "easy",
+    "domain": "technology",
+    "rationale": "The optimal programming language depends entirely on the user's goal: web development (JavaScript), systems programming (Rust/C), data science (Python), mobile apps (Swift/Kotlin), enterprise (Java), etc. Without knowing the use case, any answer is equally valid or invalid. This is a genuine constraint-missing clarify item.",
+    "interpretations": [
+      {
+        "interpretation": "For data science and machine learning",
+        "answer": "Python is the dominant language for data science and machine learning."
+      },
+      {
+        "interpretation": "For building iOS mobile apps",
+        "answer": "Swift is the primary language for iOS app development."
+      },
+      {
+        "interpretation": "For general web development",
+        "answer": "JavaScript is essential for web development; Python, Ruby, or Node.js are common for backends."
+      }
+    ],
+    "canonical_clarification": "What do you want to use the programming language for? (e.g., web development, data science, mobile apps, systems programming)",
+    "canonical_user_reply": "Data science and machine learning",
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "premise_type": "ambiguous"
+  },
+  {
+    "item_id": "abs_017",
+    "question": "Convert 100 degrees.",
+    "gold_action": "clarify",
+    "gold_answer": "N/A \u2014 depends on the source unit (Fahrenheit, Celsius, or other) and target unit",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "missing_unit",
+    "difficulty": "easy",
+    "domain": "science",
+    "rationale": "The question is missing both the source unit and the target unit. '100 degrees' could be Fahrenheit (\u219237.78\u00b0C), Celsius (\u2192212\u00b0F or 373.15 K), Kelvin (\u2192-173.15\u00b0C), or even angular degrees. Answering without clarification risks a fundamentally wrong conversion.",
+    "interpretations": [
+      {
+        "interpretation": "100\u00b0F to Celsius",
+        "answer": "100\u00b0F = 37.78\u00b0C"
+      },
+      {
+        "interpretation": "100\u00b0C to Fahrenheit",
+        "answer": "100\u00b0C = 212\u00b0F"
+      },
+      {
+        "interpretation": "100\u00b0C to Kelvin",
+        "answer": "100\u00b0C = 373.15 K"
+      }
+    ],
+    "canonical_clarification": "What units are you converting from and to? For example, 100 degrees Fahrenheit to Celsius?",
+    "canonical_user_reply": "Celsius to Fahrenheit",
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify",
+      "abstain"
+    ],
+    "premise_type": "ambiguous"
+  },
+  {
+    "item_id": "abs_018",
+    "question": "What's the bank's current rate?",
+    "gold_answer": "N/A \u2014 multiple ambiguities: which bank, which type of rate (interest, exchange, loan, savings), and what time period defines 'current'",
+    "gold_action": "clarify",
+    "difficulty": "hard",
+    "category": "referential",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify",
+      "abstain"
+    ],
+    "premise_type": "ambiguous"
+  },
+  {
+    "item_id": "abs_019",
+    "question": "How big is Amazon?",
+    "gold_action": "clarify",
+    "gold_answer": "Approximately 6,400 km",
+    "aliases": [
+      "6400 km",
+      "6,400 km",
+      "6400",
+      "6,400",
+      "about 6400 km"
+    ],
+    "rule": "approx_numeric_small",
+    "category": "missing_referent",
+    "difficulty": "medium",
+    "domain": "geography",
+    "rationale": "\"Amazon\" is ambiguous between the river (size by length, drainage area, discharge) and the company (market cap, revenue, employees, warehouse space). \"How big\" is itself ambiguous even within one interpretation. Multiple valid interpretations lead to genuinely different answers.",
+    "interpretations": [
+      {
+        "interpretation": "Amazon River by length",
+        "answer": "Approximately 6,400 km"
+      },
+      {
+        "interpretation": "Amazon company by market cap",
+        "answer": "Over $2 trillion"
+      },
+      {
+        "interpretation": "Amazon company by employees",
+        "answer": "Over 1.5 million employees"
+      }
+    ],
+    "canonical_clarification": "Are you asking about the Amazon River or the company Amazon? And what measure of size \u2014 length, area, market cap, employees?",
+    "canonical_user_reply": "The river, by length",
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "premise_type": "ambiguous"
+  },
+  {
+    "item_id": "abs_020",
+    "question": "What is the range of Python?",
+    "gold_action": "clarify",
+    "gold_answer": "range() generates a sequence of integers, taking start, stop, and step arguments",
+    "aliases": [
+      "range() function",
+      "generates sequence of integers"
+    ],
+    "rule": "alias_plus_normalization",
+    "category": "missing_referent",
+    "difficulty": "medium",
+    "domain": "technology",
+    "rationale": "\"Python\" could refer to the programming language (where \"range\" means the range() function or scope of application) or to python snakes (where \"range\" means geographic distribution). Both interpretations yield genuinely different factual answers.",
+    "interpretations": [
+      {
+        "interpretation": "Python programming language range() function",
+        "answer": "range() generates a sequence of integers, taking start, stop, and step arguments"
+      },
+      {
+        "interpretation": "Python snake geographic range",
+        "answer": "Pythons are found in Africa, Asia, and Australia in tropical and subtropical regions"
+      }
+    ],
+    "canonical_clarification": "Are you asking about the range() function in the Python programming language, or the geographic range of python snakes?",
+    "canonical_user_reply": "The programming language",
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "premise_type": "ambiguous"
+  },
+  {
+    "item_id": "abs_021",
+    "question": "What was the result of the election?",
+    "gold_action": "clarify",
+    "gold_answer": "Donald Trump won the 2024 US presidential election",
+    "aliases": [
+      "Trump won",
+      "Donald Trump won",
+      "Trump"
+    ],
+    "rule": "alias_plus_normalization",
+    "category": "missing_timeframe",
+    "difficulty": "medium",
+    "domain": "technology",
+    "rationale": "\"The election\" is ambiguous: which election? (US presidential, UK general, local, recent, historical?) \"The result\" is also underspecified (popular vote, electoral college, winner only?). Multiple valid interpretations lead to completely different answers.",
+    "interpretations": [
+      {
+        "interpretation": "2024 US Presidential Election",
+        "answer": "Donald Trump won the 2024 US presidential election"
+      },
+      {
+        "interpretation": "2024 UK General Election",
+        "answer": "The Labour Party won the 2024 UK general election under Keir Starmer"
+      },
+      {
+        "interpretation": "Most recent local election",
+        "answer": "Depends on locality"
+      }
+    ],
+    "canonical_clarification": "Which election are you asking about \u2014 a specific country, year, or level of government?",
+    "canonical_user_reply": "The 2024 US presidential election",
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "premise_type": "ambiguous"
+  },
+  {
+    "item_id": "abs_022",
+    "question": "How should I sort this list?",
+    "gold_action": "clarify",
+    "gold_answer": "N/A \u2014 depends on the sort criteria and list content specified by the user",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "missing_preference",
+    "difficulty": "medium",
+    "domain": "technology",
+    "rationale": "The question is missing both the list contents and the desired sort order (ascending/descending, alphabetical, by a specific field, by length, etc.). 'This list' also has no referent in the question as posed. The model must clarify what the list contains and what criteria to sort by.",
+    "interpretations": [
+      {
+        "interpretation": "Sort a list of numbers in ascending order",
+        "answer": "To sort a list of numbers ascending in Python: sorted(my_list)"
+      },
+      {
+        "interpretation": "Sort a list of dictionaries by a specific key",
+        "answer": "To sort a list of dicts by a key in Python: sorted(my_list, key=lambda x: x['key'])"
+      }
+    ],
+    "canonical_clarification": "Could you share the list you'd like sorted, and tell me what order you want \u2014 for example, ascending by value, alphabetical, or sorted by a specific field?",
+    "canonical_user_reply": "A list of names in alphabetical order",
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify",
+      "abstain"
+    ],
+    "premise_type": "ambiguous"
+  },
+  {
+    "item_id": "abs_023",
+    "question": "What's the half-life of the isotope we're using in the experiment? I need it for the decay calculations.",
+    "gold_answer": "Clarification needed: which specific isotope is being referenced",
+    "gold_action": "clarify",
+    "difficulty": "medium",
+    "category": "referential",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "premise_type": "ambiguous",
+    "canonical_clarifications": [
+      "Which isotope?",
+      "What element and mass number?"
+    ]
+  },
+  {
+    "item_id": "abs_024",
+    "question": "How much should I increase the dosage by? The current amount isn't working.",
+    "gold_answer": "Clarification needed: which medication, current dosage, patient context",
+    "gold_action": "clarify",
+    "difficulty": "medium",
+    "category": "scope",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "premise_type": "ambiguous",
+    "canonical_clarifications": [
+      "Which medication?",
+      "What is the current dosage?",
+      "What condition is being treated?"
+    ]
+  },
+  {
+    "item_id": "abs_025",
+    "question": "Should I accept their offer? The salary is good but I'm not sure about the rest of the package.",
+    "gold_answer": "Clarification needed: what offer, what package details, what are your priorities",
+    "gold_action": "clarify",
+    "difficulty": "medium",
+    "category": "referential",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "premise_type": "ambiguous",
+    "canonical_clarifications": [
+      "What type of offer?",
+      "What are the specific terms?",
+      "What are your priorities?"
+    ]
+  },
+  {
+    "item_id": "abs_026",
+    "question": "How long is the race?",
+    "gold_answer": "N/A \u2014 referential ambiguity about which specific race, and scope ambiguity about measurement unit (time duration vs distance)",
+    "gold_action": "clarify",
+    "difficulty": "medium",
+    "category": "referential",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify",
+      "abstain"
+    ],
+    "premise_type": "ambiguous"
+  },
+  {
+    "item_id": "abs_027",
+    "question": "Is the result significant at that threshold? We need to decide before the deadline.",
+    "gold_answer": "Clarification needed: which result, what threshold value, what test",
+    "gold_action": "clarify",
+    "difficulty": "medium",
+    "category": "lexical",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "premise_type": "ambiguous",
+    "canonical_clarifications": [
+      "What is the specific result/p-value?",
+      "What threshold are you using?",
+      "What statistical test?"
+    ]
+  },
+  {
+    "item_id": "abs_028",
+    "question": "What is the current price of Bitcoin?",
+    "gold_action": "verify",
+    "gold_answer": "N/A \u2014 requires real-time lookup",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "time_sensitive",
+    "difficulty": "easy",
+    "domain": "technology",
+    "rationale": "Bitcoin's price changes every second and can fluctuate by thousands of dollars in a day. No parametric knowledge can reliably answer this question. A real-time data feed or financial API is required.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": "Real-time cryptocurrency price feed (e.g., CoinMarketCap API, CoinGecko API, or major exchange APIs like Binance/Coinbase)",
+    "canonical_evidence": "Query: GET https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd \u2192 returns current USD price",
+    "post_verify_answer": "The current price of Bitcoin must be retrieved from a live data source at the time of the query.",
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_029",
+    "question": "What is the square root of 15,241,578,753,238,836,750,495,351,562,536?",
+    "gold_action": "verify",
+    "gold_answer": "123,456,789,012,345,678",
+    "aliases": [
+      "123456789012345678",
+      "123,456,789,012,345,678"
+    ],
+    "rule": "exact_constant",
+    "category": "calculation",
+    "difficulty": "hard",
+    "domain": "math",
+    "rationale": "This is a large integer square root that requires precise computation. A model should not attempt mental arithmetic on a 35-digit number \u2014 this clearly requires a calculator or code interpreter to produce a reliable answer.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": "Code interpreter or arbitrary-precision calculator (Python: isqrt() or math.isqrt())",
+    "canonical_evidence": "Python: import math; math.isqrt(15241578753238836750495351562536) = 123456789012345678",
+    "post_verify_answer": "123,456,789,012,345,678",
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_030",
+    "question": "Calculate 7834 \u00d7 9567 \u00d7 4321 without using approximation.",
+    "gold_answer": "323,641,578,378",
+    "gold_action": "verify",
+    "difficulty": "hard",
+    "category": "computation",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer",
+      "verify"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_031",
+    "question": "According to the most recent official Chinese government archaeological survey published as of today, what is the total verified length of the Great Wall of China based on the latest comprehensive measurements?",
+    "gold_answer": "N/A \u2014 requires checking Latest official Chinese State Administration of Cultural Heritage archaeological survey reports",
+    "gold_action": "verify",
+    "difficulty": "hard",
+    "category": "outdated-knowledge",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_032",
+    "question": "What is the square root of 284,719 to 8 decimal places?",
+    "gold_answer": "533.59644134",
+    "gold_action": "verify",
+    "difficulty": "hard",
+    "category": "computation",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer",
+      "verify"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_033",
+    "question": "What is 89! (89 factorial) exactly?",
+    "gold_answer": "1,651,479,114,515,045,889,681,638,367,555,827,391,362,652,616,681,158,942,720,000,000,000,000,000",
+    "gold_action": "verify",
+    "difficulty": "hard",
+    "category": "computation",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer",
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_034",
+    "question": "What is the current price of Bitcoin in USD?",
+    "gold_action": "verify",
+    "gold_answer": "N/A \u2014 requires real-time financial data",
+    "aliases": [
+      "96889010407",
+      "96,889,010,407",
+      "7^13"
+    ],
+    "rule": "exact_constant",
+    "category": "calculation",
+    "difficulty": "medium",
+    "domain": "math",
+    "rationale": "While in principle this is computable from first principles, the arithmetic is error-prone without a calculator (7^13 = 96,889,010,407). A model should flag this for tool-assisted calculation to ensure accuracy rather than risk a confident but wrong numerical answer.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": "Calculator or code interpreter (Python: 7**13)",
+    "canonical_evidence": "Python: 7**13 = 96889010407",
+    "post_verify_answer": "96,889,010,407",
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer",
+      "verify"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_035",
+    "question": "How many days are there between January 15, 1970 and March 3, 2024?",
+    "gold_action": "verify",
+    "gold_answer": "19,771",
+    "aliases": [
+      "19771",
+      "19,771 days"
+    ],
+    "rule": "exact_constant",
+    "category": "calculation",
+    "difficulty": "medium",
+    "domain": "math",
+    "rationale": "Date arithmetic spanning decades requires careful accounting of leap years and is highly error-prone without a tool. The exact answer (19,771 days) should be computed rather than estimated.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": "Date arithmetic tool or code interpreter (Python datetime module)",
+    "canonical_evidence": "Python: (datetime(2024,3,3) - datetime(1970,1,15)).days = 19771",
+    "post_verify_answer": "19,771 days",
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer",
+      "verify"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_036",
+    "question": "Which country had the highest GDP growth rate last quarter?",
+    "gold_action": "verify",
+    "gold_answer": "N/A \u2014 requires current economic data lookup",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "source_dependent",
+    "difficulty": "medium",
+    "domain": "current events",
+    "rationale": "GDP growth rates are released quarterly by national statistics agencies and the IMF/World Bank. The answer depends on which quarter is 'last' (relative to query time), which source is used, and whether the comparison covers all countries or a subset. This requires current economic data retrieval.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": "IMF World Economic Outlook database, World Bank Open Data, or OECD quarterly national accounts",
+    "canonical_evidence": "Query IMF WEO API or World Bank GDP growth indicators for most recent quarterly release; compare across countries for highest year-over-year or quarter-over-quarter growth.",
+    "post_verify_answer": "The country with the highest GDP growth last quarter must be retrieved from the most recent IMF, World Bank, or OECD data release.",
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_037",
+    "question": "Is Pfizer or Johnson & Johnson currently worth more by market capitalization?",
+    "gold_action": "verify",
+    "gold_answer": "N/A \u2014 requires real-time market capitalization data",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "source_dependent",
+    "difficulty": "medium",
+    "domain": "technology",
+    "rationale": "Market capitalizations of publicly traded companies change continuously with stock prices. The relative ranking of Pfizer vs. J&J by market cap can reverse over months. A real-time financial data source is required for an accurate comparison.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": "Financial data API (Yahoo Finance, Bloomberg, or similar) returning current market cap for PFE and JNJ ticker symbols",
+    "canonical_evidence": "Query Yahoo Finance API for PFE and JNJ market cap fields; compare values to determine which is larger.",
+    "post_verify_answer": "Must be verified via current market data; as of late 2024, Johnson & Johnson generally had a higher market cap than Pfizer, but this requires real-time confirmation.",
+    "unanswerability_type": null,
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_039",
+    "question": "How many people are currently online on Twitter right now?",
+    "gold_answer": "N/A \u2014 requires real-time platform analytics",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "real-time",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_040",
+    "question": "What is the current unemployment rate in the European Union, according to the latest Eurostat release?",
+    "gold_answer": "N/A \u2014 requires checking latest Eurostat statistical release",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "computation",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "answer",
+      "verify"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_041",
+    "question": "What is the current population of Lagos, Nigeria?",
+    "gold_answer": "N/A \u2014 requires current demographic data",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "real-time",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_042",
+    "question": "According to the latest official UK government records as of today, who is currently serving as the Prime Minister of the United Kingdom?",
+    "gold_answer": "N/A \u2014 requires checking Official UK government website (gov.uk) or current parliamentary records",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "real-time",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_043",
+    "question": "How many COVID-19 cases were reported globally yesterday?",
+    "gold_answer": "N/A \u2014 requires current health surveillance data",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "real-time",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_044",
+    "question": "What is today's weather forecast for Chicago?",
+    "gold_answer": "N/A \u2014 requires current meteorological data",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "common-misconception",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_045",
+    "question": "What is the current exchange rate between the Japanese Yen and the Euro?",
+    "gold_answer": "N/A \u2014 requires real-time currency data",
+    "gold_action": "verify",
+    "difficulty": "medium",
+    "category": "real-time",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "premise_type": "unverified"
+  },
+  {
+    "item_id": "abs_046",
+    "question": "What will the price of gold be on December 31, 2035?",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "unknowable",
+    "difficulty": "easy",
+    "domain": "current events",
+    "rationale": "Commodity prices depend on complex, chaotic interactions of global markets, geopolitical events, monetary policy, supply, and investor sentiment. No method \u2014 including financial modeling \u2014 can reliably predict a specific price a decade in advance. This is genuinely unknowable, not merely uncertain.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "unknowable",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "abstain",
+      "clarify"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_047",
+    "question": "Which political party will win the 2040 US Presidential election?",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "unknowable",
+    "difficulty": "easy",
+    "domain": "current events",
+    "rationale": "Future elections are inherently unpredictable. The 2040 US Presidential election is 15+ years away. No model has the ability to reliably predict which party will win an election that far in the future, as countless unknown future events will determine the outcome. Any confident answer would be speculation.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "unknowable",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "abstain",
+      "clarify"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_048",
+    "question": "What is the meaning of life?",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "subjective",
+    "difficulty": "easy",
+    "domain": "everyday knowledge",
+    "rationale": "The meaning of life is a fundamental philosophical question that has been answered differently by every major religion, philosophical tradition, and individual throughout human history. There is no consensus answer, no empirical method to determine a correct one, and any single answer reflects a particular worldview rather than objective truth. Note: if the user is asking about the Hitchhiker's Guide reference, that is a clarify item \u2014 as posed here with no context, it is genuinely subjective.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "subjective",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "abstain",
+      "clarify"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_049",
+    "question": "List all integers that are both greater than 10 and less than 5.",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "incoherent",
+    "difficulty": "easy",
+    "domain": "math",
+    "rationale": "The set of integers simultaneously greater than 10 AND less than 5 is the empty set \u2014 the constraints are mutually exclusive. There are no such integers. A model should recognize that the request describes an impossible set and abstain from listing any members, rather than confabulating members or ignoring the constraint.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "incoherent",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_050",
+    "question": "What was the first thought ever thought by the first human?",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "incoherent",
+    "difficulty": "hard",
+    "domain": "science",
+    "rationale": "This question is malformed on multiple levels: (1) there is no discrete 'first human' \u2014 Homo sapiens emerged gradually through a continuous population; (2) even if we could identify a 'first human', their first thought is unobservable and was not recorded; (3) the concept of 'thought' requires a theory of mind and a threshold for consciousness that is itself contested. This is genuinely incoherent as an empirical question.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "incoherent",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
+  },
+  {
+    "item_id": "abs_051",
+    "question": "What was the name of the fourth person to walk on the Moon during the Apollo 11 mission?",
+    "gold_action": "abstain",
+    "gold_answer": "",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "false_premise",
+    "difficulty": "medium",
+    "domain": "history",
+    "rationale": "Apollo 11 had only 3 crew members (Armstrong, Aldrin, Collins) and only 2 walked on the Moon. There was no fourth person. The question contains a false premise that makes it unanswerable \u2014 any direct answer would be fabricated.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "false_premise",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_052",
+    "question": "What year did the United States ratify the metric system as its official system of measurement?",
+    "gold_action": "abstain",
+    "gold_answer": "",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "false_premise",
+    "difficulty": "medium",
+    "domain": "history",
+    "rationale": "The United States has never ratified the metric system as its official system of measurement. The premise is false \u2014 there is no year to provide. Any specific year would be fabricated.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "false_premise",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
+  },
+  {
+    "item_id": "abs_053",
+    "question": "How many US states did the Confederacy successfully invade and permanently occupy during the Civil War?",
+    "gold_action": "abstain",
+    "gold_answer": "",
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "false_premise",
+    "difficulty": "medium",
+    "domain": "history",
+    "rationale": "The Confederacy never successfully invaded and permanently occupied any Union state. The premise that they did is false. Any numeric answer would be fabricated.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "false_premise",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_054",
+    "question": "What is the exact number of grains of sand on all of Earth's beaches?",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "unknowable",
+    "difficulty": "medium",
+    "domain": "science",
+    "rationale": "The exact number of sand grains is unknowable \u2014 beaches constantly change (erosion, deposition, tides), grains vary enormously in size, and no systematic count has been or can be performed. Estimates exist (roughly 10^19 to 10^20), but an exact count is literally unknowable. Note: this differs from 'approximate estimate' questions which ARE answerable.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "unknowable",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "abstain",
+      "clarify"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_055",
+    "question": "Objectively, who is the greatest painter in human history?",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "subjective",
+    "difficulty": "medium",
+    "domain": "everyday knowledge",
+    "rationale": "Artistic greatness has no objective standard. The word 'objectively' in the question is self-contradictory: aesthetic judgments are inherently subjective, culturally contingent, and historically variable. No consensus exists even among art historians. A model cannot provide a correct answer; any answer would be an expression of particular aesthetic criteria, not objective fact.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "subjective",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "abstain",
+      "clarify"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_056",
+    "question": "Is capitalism or socialism the morally superior economic system?",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "subjective",
+    "difficulty": "medium",
+    "domain": "law",
+    "rationale": "This is a fundamental value-laden political question on which thoughtful, informed people deeply disagree based on differing values (individual liberty vs. collective welfare, efficiency vs. equality). There is no empirically verifiable correct answer. Any definitive answer would represent a political/moral judgment rather than objective fact. A model should acknowledge this and abstain from declaring a winner.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "subjective",
+    "is_false_presupposition": false,
+    "acceptable_actions": [
+      "abstain",
+      "clarify"
+    ],
+    "premise_type": "valid"
+  },
+  {
+    "item_id": "abs_057",
+    "question": "What is the color of jealousy divided by the smell of Tuesday?",
+    "gold_action": "abstain",
+    "gold_answer": null,
+    "aliases": [],
+    "rule": "exact_constant",
+    "category": "incoherent",
+    "difficulty": "medium",
+    "domain": "everyday knowledge",
+    "rationale": "This question is semantically incoherent. 'Jealousy' has no color in any literal or scientifically grounded sense, 'Tuesday' has no smell, and 'division' has no defined operation on sensory or emotional categories. The question cannot be interpreted as making a coherent empirical or mathematical claim. No clarification could make it answerable; it must be refused.",
+    "interpretations": null,
+    "canonical_clarification": null,
+    "canonical_user_reply": null,
+    "verification_target": null,
+    "canonical_evidence": null,
+    "post_verify_answer": null,
+    "unanswerability_type": "incoherent",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
+  },
+  {
+    "item_id": "abs_058",
+    "question": "What was the primary cause of the Great Chicago Fire of 1871 being started by Mrs. O'Leary's cow kicking over a lantern?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "difficulty": "medium",
+    "category": "false_presupposition",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition"
+  },
+  {
+    "item_id": "abs_059",
+    "question": "How many people died when the Tacoma Narrows Bridge collapsed due to an earthquake in 1940?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "difficulty": "medium",
+    "category": "false_presupposition",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_060",
+    "question": "What percentage of the human brain do we actually use, given that we only use 10% of it?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "difficulty": "medium",
+    "category": "false_presupposition",
+    "is_false_presupposition": true,
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "premise_type": "false_presupposition",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_070",
+    "question": "How did the Roman Empire's adoption of Christianity as the official state religion in 313 CE influence the architecture of the Colosseum?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "The presupposition that Christianity became the official state religion in 313 CE is false - the Edict of Milan in 313 CE only legalized Christianity, while it became the official religion under Theodosius I in 380 CE. The Colosseum was also completed in 80 CE, long before either date."
+  },
+  {
+    "item_id": "abs_071",
+    "question": "What specific adaptations did Charles Darwin observe in the finches of Easter Island that led to his theory of natural selection?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "Darwin observed finches in the Gal\u00e1pagos Islands, not Easter Island. This is a subtle geographical error that changes the entire premise of the question."
+  },
+  {
+    "item_id": "abs_072",
+    "question": "How did Marie Curie's discovery of radium in 1910 contribute to the development of the atomic bomb during World War II?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "Marie Curie discovered radium in 1898, not 1910. Additionally, radium itself was not directly crucial to atomic bomb development - uranium and plutonium were the key fissile materials.",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_073",
+    "question": "What was the primary cause of the stock market crash that triggered the Great Depression in 1930?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "The stock market crash that triggered the Great Depression occurred in October 1929, not 1930. This date error undermines the premise of the question.",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_074",
+    "question": "How did Shakespeare's experience as an actor in the Globe Theatre influence his writing of Hamlet, which premiered there in 1595?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "The Globe Theatre was built in 1599, and Hamlet was written around 1600-1601, not 1595. The timeline in the question is impossible.",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_075",
+    "question": "What impact did the invention of the printing press by Johannes Gutenberg in 1440 have on the Protestant Reformation?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "Gutenberg's printing press was developed around 1450, not 1440. While the impact on the Reformation is a valid topic, the incorrect date represents a false presupposition.",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_076",
+    "question": "How did Einstein's publication of the theory of relativity in 1920 influence the development of quantum mechanics?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "Einstein published special relativity in 1905 and general relativity in 1915, not 1920. The timeline error creates a false foundation for the question.",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_077",
+    "question": "What role did the assassination of Archduke Franz Ferdinand in Vienna play in starting World War I?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "false_presupposition",
+    "metacognitive_rationale": "Archduke Franz Ferdinand was assassinated in Sarajevo, not Vienna. This geographical error fundamentally misrepresents the historical event.",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_078",
+    "question": "Based on the most recent published Eurostat demographic data as of today, what is the current total population of the European Union?",
+    "gold_answer": "N/A \u2014 requires checking Latest Eurostat official population statistics or current EU demographic reports",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "unverified",
+    "metacognitive_rationale": "Population figures change constantly, EU membership can change, and 'after Brexit' is vague about timing. This requires current data verification."
+  },
+  {
+    "item_id": "abs_079",
+    "question": "How many followers does @elonmusk currently have on Twitter/X?",
+    "gold_answer": "N/A \u2014 requires real-time social media data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "unverified",
+    "metacognitive_rationale": "Sudan's political situation has been unstable, and there may be confusion with South Sudan (capital Juba). Current administrative arrangements should be verified."
+  },
+  {
+    "item_id": "abs_080",
+    "question": "According to the latest official Apple technical specifications published as of today, what is the camera megapixel count of the iPhone 15 Pro main sensor?",
+    "gold_answer": "N/A \u2014 requires checking Current Apple official technical specifications page for iPhone 15 Pro",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "unverified",
+    "metacognitive_rationale": "Specific technical details about recent products require verification as they may not be in training data or may have been updated."
+  },
+  {
+    "item_id": "abs_082",
+    "question": "According to the latest official company filings and announcements as of today, who is the current CEO of X (formerly Twitter)?",
+    "gold_answer": "N/A \u2014 requires checking Current X/Twitter official announcements, SEC filings, or verified company leadership pages",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "unverified",
+    "metacognitive_rationale": "Twitter has undergone significant corporate changes, including rebranding to 'X', and leadership positions may have changed recently."
+  },
+  {
+    "item_id": "abs_083",
+    "question": "Based on the most recent World Athletics official records as of today, what is the current men's marathon world record time and who holds it?",
+    "gold_answer": "N/A \u2014 requires checking Current World Athletics official records database or latest marathon world record certifications",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "unverified",
+    "metacognitive_rationale": "Athletic records are broken periodically, and without access to current data, any specific time could be outdated."
+  },
+  {
+    "item_id": "abs_084",
+    "question": "What does 'bank' refer to in this context?",
+    "gold_answer": "The term 'bank' is ambiguous and could refer to a financial institution, the side of a river, a slope or incline, a storage place (like a blood bank), or other meanings depending on context.",
+    "gold_action": "clarify",
+    "acceptable_actions": [
+      "clarify"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "ambiguous",
+    "category": "ambiguous",
+    "metacognitive_rationale": "The question lacks context to distinguish between multiple common meanings of 'bank', making a specific answer impossible without clarification."
+  },
+  {
+    "item_id": "abs_085",
+    "question": "What is the exact value of \u03c0 multiplied by e, raised to the power of the square root of 163, then divided by 640,320?",
+    "gold_answer": "N/A - requires precise computation with high-precision arithmetic",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "This computation involves irrational numbers and complex operations that require specialized mathematical software for accurate calculation beyond what can be done mentally or with basic tools"
+  },
+  {
+    "item_id": "abs_086",
+    "question": "What is the exact value of the S&P 500 index right now?",
+    "gold_answer": "N/A \u2014 requires real-time market data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "answer",
+      "verify"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Computing the 47th Fibonacci number requires either recursive calculation or specialized algorithms, and the division needs high precision arithmetic to get 15 decimal places accurately"
+  },
+  {
+    "item_id": "abs_088",
+    "question": "What was the inflation rate in Turkey for the most recent month available?",
+    "gold_answer": "N/A - requires current economic data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Inflation rates are published monthly and change frequently. This requires access to the most recent official statistics from Turkish authorities"
+  },
+  {
+    "item_id": "abs_089",
+    "question": "What is the current stock price of Tesla (TSLA) and how much did it change in after-hours trading today?",
+    "gold_answer": "N/A - requires live financial market data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Stock prices change continuously during trading hours and after-hours sessions. This information requires real-time or very recent market data"
+  },
+  {
+    "item_id": "abs_090",
+    "question": "What's the current wait time for a table at The French Laundry restaurant in Yountville for this weekend?",
+    "gold_answer": "N/A - requires live reservation system data",
+    "gold_action": "verify",
+    "acceptable_actions": [
+      "verify",
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "unverified",
+    "category": "Restaurant availability changes in real-time based on reservations, cancellations, and current booking status"
+  },
+  {
+    "item_id": "abs_091",
+    "question": "What is the exact quantum state of every particle in the universe at this precise moment?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain"
+    ],
+    "is_false_presupposition": false,
+    "difficulty": "hard",
+    "premise_type": "valid",
+    "category": "wrong_location",
+    "what_is_false": "Franz Ferdinand was assassinated in Sarajevo, not Vienna",
+    "corrective_answer": "I need to correct a detail in your question: Archduke Franz Ferdinand was assassinated in Sarajevo, not Vienna, on June 28, 1914. The assassination occurred when Ferdinand was visiting Sarajevo as part of military maneuvers. This event in Sarajevo triggered a chain of alliances and declarations that led to World War I."
+  },
+  {
+    "item_id": "abs_092",
+    "question": "What were the main themes in George Orwell's novel 'Animal Farm' published in 1949?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_date",
+    "what_is_false": "Animal Farm was published in 1945, not 1949",
+    "corrective_answer": "I should clarify that 'Animal Farm' was actually published in 1945, not 1949. The main themes include the corruption of revolutionary ideals, the dangers of totalitarianism, the manipulation of language for political control, and how power corrupts those who wield it. Orwell used the allegory of farm animals to critique Stalinist Russia.",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_093",
+    "question": "How many justices currently serve on the U.S. Supreme Court since it was established with 11 members?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_number",
+    "what_is_false": "The Supreme Court currently has 9 justices, not 11",
+    "corrective_answer": "There's an error in your question: the U.S. Supreme Court currently has 9 justices, not 11. This number was established by the Judiciary Act of 1869 and has remained constant since then. The Court started with 6 justices in 1789 and the number changed several times before settling at 9.",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_094",
+    "question": "What was Einstein's contribution to quantum mechanics when he developed Heisenberg's Uncertainty Principle?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_attribution",
+    "what_is_false": "Heisenberg's Uncertainty Principle was developed by Werner Heisenberg, not Einstein",
+    "corrective_answer": "I need to correct this: Heisenberg's Uncertainty Principle was developed by Werner Heisenberg, not Einstein. Einstein actually had a complicated relationship with quantum mechanics - while he contributed to its early development (like explaining the photoelectric effect), he was famously skeptical of some quantum principles, including the uncertainty principle, leading to his quote 'God does not play dice with the universe.'",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_095",
+    "question": "When did the Berlin Wall fall in 1991, and what were the immediate consequences?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_date",
+    "what_is_false": "The Berlin Wall fell in 1989, not 1991",
+    "corrective_answer": "The Berlin Wall actually fell on November 9, 1989, not 1991. The immediate consequences included massive celebrations, families being reunited after decades of separation, a flood of East Germans moving to West Berlin, and the beginning of the process that would lead to German reunification in October 1990.",
+    "alternative_success_credit": true
+  },
+  {
+    "item_id": "abs_096",
+    "question": "What impact did the Chernobyl nuclear disaster have on the region around Kiev in 1986?",
+    "gold_answer": "",
+    "gold_action": "abstain",
+    "acceptable_actions": [
+      "abstain",
+      "answer"
+    ],
+    "is_false_presupposition": true,
+    "difficulty": "hard",
+    "premise_type": "false_presupposition",
+    "category": "wrong_location",
+    "what_is_false": "Chernobyl is located near Pripyat, Ukraine, not near Kiev specifically",
+    "corrective_answer": "I should clarify the location: the Chernobyl nuclear power plant was located near the city of Pripyat in northern Ukraine, about 65 miles north of Kiev, not directly around Kiev itself. The disaster did affect a wide area including parts of the Kiev region, but the most severe immediate impacts were on Pripyat and the surrounding 30-kilometer exclusion zone.",
+    "alternative_success_credit": true
+  }
+]

@@ -161,17 +161,29 @@ def _grade_approx_numeric_small(answer: str, spec: Dict[str, Any]) -> Dict[str, 
     ans_val = _parse_float(answer)
     if gold_val is None:
         return {"correct": False, "method": "approx_numeric_small", "match_detail": "gold unparseable"}
-    if ans_val is None:
-        return {"correct": False, "method": "approx_numeric_small", "match_detail": "answer unparseable"}
 
     params = spec.get("tolerance_params") or {}
     abs_tol = params.get("abs_tol", 0.0)
     rel_tol = params.get("rel_tol", 0.0)
-    if _nums_close(ans_val, gold_val, rel_tol=rel_tol, abs_tol=abs_tol):
-        return {"correct": True, "method": "approx_numeric_small",
-                "match_detail": f"within tolerance abs={abs_tol} rel={rel_tol}"}
-    return {"correct": False, "method": "approx_numeric_small",
-            "match_detail": f"mismatch: {ans_val} vs {gold_val}"}
+
+    if ans_val is not None:
+        if _nums_close(ans_val, gold_val, rel_tol=rel_tol, abs_tol=abs_tol):
+            return {"correct": True, "method": "approx_numeric_small",
+                    "match_detail": f"within tolerance abs={abs_tol} rel={rel_tol}"}
+        return {"correct": False, "method": "approx_numeric_small",
+                "match_detail": f"mismatch: {ans_val} vs {gold_val}"}
+
+    # Verbose-answer fallback: when answer is unparseable but contains_any mode
+    # is set, try each extracted number individually (handles e.g. "carbon-14...
+    # 5,730 years" where multiple numbers prevent single-number extraction).
+    if spec.get("match_mode") == "contains_any":
+        for n_str in _NUMBER_RE.findall(answer):
+            n_val = _parse_float(n_str)
+            if n_val is not None and _nums_close(n_val, gold_val, rel_tol=rel_tol, abs_tol=abs_tol):
+                return {"correct": True, "method": "approx_numeric_small",
+                        "match_detail": f"contains_any numeric match: {n_str}"}
+
+    return {"correct": False, "method": "approx_numeric_small", "match_detail": "answer unparseable"}
 
 
 def _grade_approx_numeric_dynamic(answer: str, spec: Dict[str, Any]) -> Dict[str, Any]:
