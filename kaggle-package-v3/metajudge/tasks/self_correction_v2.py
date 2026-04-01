@@ -99,6 +99,64 @@ def parse_answer_confidence(text: str) -> Tuple[str, Optional[float]]:
 
 
 # ---------------------------------------------------------------------------
+# Confirmation-without-restatement detection
+# ---------------------------------------------------------------------------
+
+_CONFIRMATION_PHRASES = [
+    "my original answer remains",
+    "my original answer is confirmed",
+    "my original answer stands",
+    "i confirm my previous answer",
+    "i confirm the original answer",
+    "the analysis is sound",
+    "no error found",
+    "no error in the previous",
+    "original answer remains correct",
+    "answer is confirmed",
+    "i have found no error",
+    "confirm my answer",
+]
+
+
+def is_confirmation_without_restatement(t2_answer: str, gold_answer: str) -> bool:
+    """Detect if T2 answer is a confirmation that doesn't restate the answer.
+
+    Returns True when the T2 parsed answer matches a confirmation phrase
+    pattern AND does not contain the gold answer text. In this case, the
+    model intended to confirm T1 but the ANSWER: tag was missing or the
+    extraction captured the explanation rather than a concise answer.
+    """
+    t2_lower = t2_answer.lower()
+    gold_lower = gold_answer.lower().strip()
+
+    # If the gold answer is present in the text, grading can handle it
+    if gold_lower in t2_lower:
+        return False
+
+    # Only flag if the answer is long (>50 chars) — short answers are
+    # unlikely to be verbose confirmations
+    if len(t2_answer) <= 50:
+        return False
+
+    return any(phrase in t2_lower for phrase in _CONFIRMATION_PHRASES)
+
+
+def resolve_t2_answer(
+    t2_answer: str,
+    t1_answer: str,
+    gold_answer: str,
+) -> str:
+    """Return the effective T2 answer for grading.
+
+    If T2 is a confirmation-without-restatement, inherit T1's parsed answer
+    (since the model intended to confirm it). Otherwise return T2 as-is.
+    """
+    if is_confirmation_without_restatement(t2_answer, gold_answer):
+        return t1_answer
+    return t2_answer
+
+
+# ---------------------------------------------------------------------------
 # Edit-distance computation
 # ---------------------------------------------------------------------------
 

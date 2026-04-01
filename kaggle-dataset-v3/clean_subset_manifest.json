@@ -121,19 +121,23 @@
     }
   },
   "warnings": [
-    "RLHF mechanism reduced to 2 items (from 3) \u2014 treat as exploratory only",
-    "Family B 'verify' action reduced to 56% retention \u2014 still adequate but monitor",
+    "RLHF mechanism reduced to 2 items (from 3) — treat as exploratory only",
+    "Family B 'verify' action reduced to 56% retention — still adequate but monitor",
     "Full dataset must be retained for sensitivity analysis"
   ],
   "sensitivity_note": "All primary analyses should also be run on the full 117/84 item sets as sensitivity checks. The clean subset is for primary reporting; full set results belong in appendix/sensitivity sections.",
   "family_c": {
     "total_items": 65,
     "excluded_items": [
+      "sc_c1_ur_001",
+      "sc_c1_ur_002",
       "sc_c1_wr_003",
       "sc_c1_wr_005",
       "sc_c1_wr_012",
       "sc_c1_wr_013",
       "sc_c1_wr_033",
+      "sc_c2_ur_001",
+      "sc_c2_ur_002",
       "sc_c2_wr_002",
       "sc_c2_wr_003",
       "sc_c2_wr_004",
@@ -178,6 +182,12 @@
         "clean": 20,
         "pct": 0.667
       }
+    },
+    "exclusion_reasons": {
+      "sc_c1_ur_001": "Floor effect: 0% T2 accuracy across all models. Models give definitive answers rather than recognizing epistemic ambiguity. Valid construct but ungradeable with current grading — no model discrimination.",
+      "sc_c1_ur_002": "Floor effect: 0% T2 accuracy across all models. Models give definitive answers rather than recognizing epistemic ambiguity. Valid construct but ungradeable with current grading — no model discrimination.",
+      "sc_c2_ur_001": "Floor effect: 0% T2 accuracy across all models. Models give definitive answers rather than recognizing epistemic ambiguity. Valid construct but ungradeable with current grading — no model discrimination.",
+      "sc_c2_ur_002": "Floor effect: 0% T2 accuracy across all models. Models give definitive answers rather than recognizing epistemic ambiguity. Valid construct but ungradeable with current grading — no model discrimination."
     }
   }
 }
