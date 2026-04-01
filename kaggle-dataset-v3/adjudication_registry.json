@@ -407,10 +407,10 @@
     "accepted_forms": [
       "1.6726219260e-27",
       "1.672621926e-27",
-      "1.672621926\u00d710\u207b\u00b2\u2077",
-      "1.6726219260\u00d710\u207b\u00b2\u2077",
-      "1.672621926 \u00d7 10\u207b\u00b2\u2077",
-      "1.6726219260 \u00d7 10\u207b\u00b2\u2077",
+      "1.672621926×10⁻²⁷",
+      "1.6726219260×10⁻²⁷",
+      "1.672621926 × 10⁻²⁷",
+      "1.6726219260 × 10⁻²⁷",
       "1.67262192595e-27"
     ],
     "tolerance_class": "rel_1e6",
@@ -430,9 +430,9 @@
     "gold_answer": "99.61",
     "accepted_forms": [
       "99.61",
-      "99.61\u00b0C",
+      "99.61°C",
       "99.61 C",
-      "99.61\u00b0c"
+      "99.61°c"
     ],
     "tolerance_class": "rel_1e6",
     "tolerance_params": {
@@ -669,7 +669,7 @@
     "accepted_forms": [
       "France",
       "the French Republic",
-      "R\u00e9publique fran\u00e7aise"
+      "République française"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -689,7 +689,7 @@
       "299,792,458",
       "299792458 m/s",
       "299,792,458 m/s",
-      "2.99792458 \u00d7 10^8 m/s"
+      "2.99792458 × 10^8 m/s"
     ],
     "tolerance_class": "rel_1e6",
     "tolerance_params": {
@@ -732,10 +732,10 @@
     "gold_answer": "6.02214076e23",
     "accepted_forms": [
       "6.02214076e23",
-      "6.02214076\u00d710^23",
-      "6.02214076 \u00d7 10^23 mol^-1",
-      "6.02214076\u00d710\u00b2\u00b3",
-      "6.02214076 \u00d7 10\u00b2\u00b3 mol\u207b\u00b9"
+      "6.02214076×10^23",
+      "6.02214076 × 10^23 mol^-1",
+      "6.02214076×10²³",
+      "6.02214076 × 10²³ mol⁻¹"
     ],
     "tolerance_class": "rel_1e6",
     "tolerance_params": {
@@ -777,10 +777,10 @@
     "gold_answer": "6.62607015e-34",
     "accepted_forms": [
       "6.62607015e-34",
-      "6.62607015\u00d710\u207b\u00b3\u2074",
-      "6.62607015 \u00d7 10\u207b\u00b3\u2074 J\u00b7s",
-      "6.62607015\u00d710^-34 J\u00b7s",
-      "6.626 070 15 \u00d7 10\u207b\u00b3\u2074"
+      "6.62607015×10⁻³⁴",
+      "6.62607015 × 10⁻³⁴ J·s",
+      "6.62607015×10^-34 J·s",
+      "6.626 070 15 × 10⁻³⁴"
     ],
     "tolerance_class": "rel_1e6",
     "tolerance_params": {
@@ -1492,7 +1492,7 @@
       "rel_tol": 0.01
     },
     "time_anchor": "March 2025",
-    "source_anchor": "March 2025 IAU Minor Planet Center announcement; (274-146)/274 = 128/274 \u2248 0.4672 = 46.7% \u2248 47%",
+    "source_anchor": "March 2025 IAU Minor Planet Center announcement; (274-146)/274 = 128/274 ≈ 0.4672 = 46.7% ≈ 47%",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1505,15 +1505,15 @@
     "accepted_forms": [
       "160",
       "160 million",
-      "\u20ac160 million",
+      "€160 million",
       "160M"
     ],
     "tolerance_class": "abs_01",
     "tolerance_params": {
       "abs_tol": 0.01
     },
-    "time_anchor": "June 2024 \u2013 June 2025",
-    "source_anchor": "ECB rate cutting cycle June 2024 to June 2025, 4.00% to 2.00%; \u20ac8B \u00d7 2.00% = \u20ac160M annual decrease",
+    "time_anchor": "June 2024 – June 2025",
+    "source_anchor": "ECB rate cutting cycle June 2024 to June 2025, 4.00% to 2.00%; €8B × 2.00% = €160M annual decrease",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1533,7 +1533,7 @@
       "rel_tol": 0.02
     },
     "time_anchor": "December 2025",
-    "source_anchor": "India GDP Dec 2025 ~$4.18T per government statement; India after 1yr: 4.18\u00d71.065=$4.4517T; Japan after 1yr: 4.07\u00d71.01=$4.1107T; gap: $4.4517T-$4.1107T=$0.3410T\u2248$341B",
+    "source_anchor": "India GDP Dec 2025 ~$4.18T per government statement; India after 1yr: 4.18×1.065=$4.4517T; Japan after 1yr: 4.07×1.01=$4.1107T; gap: $4.4517T-$4.1107T=$0.3410T≈$341B",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1552,7 +1552,7 @@
       "rel_tol": 0.02
     },
     "time_anchor": "February 2026",
-    "source_anchor": "UN World Population Prospects and Worldometer 2025 data; 70,000,000 / 365 \u2248 191,781 \u2248 192,000",
+    "source_anchor": "UN World Population Prospects and Worldometer 2025 data; 70,000,000 / 365 ≈ 191,781 ≈ 192,000",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1572,7 +1572,7 @@
       "rel_tol": 0.02
     },
     "time_anchor": "January 2025",
-    "source_anchor": "U.S. Treasury and Census data January 2025; $36.2T / 340M = $36,200,000M / 340M \u2248 $106,471 \u2248 $106,000",
+    "source_anchor": "U.S. Treasury and Census data January 2025; $36.2T / 340M = $36,200,000M / 340M ≈ $106,471 ≈ $106,000",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1593,7 +1593,7 @@
       "abs_tol": 0.01
     },
     "time_anchor": "Q2 FY2025-26",
-    "source_anchor": "Given figures: $1.05T + $1.02T = $2.07T. Growth rates are distractors \u2014 the question asks for the combined GDP in that quarter, which is simply the sum of the given figures.",
+    "source_anchor": "Given figures: $1.05T + $1.02T = $2.07T. Growth rates are distractors — the question asks for the combined GDP in that quarter, which is simply the sum of the given figures.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1611,8 +1611,8 @@
     "tolerance_params": {
       "rel_tol": 0.01
     },
-    "time_anchor": "June 2024 \u2013 June 2025",
-    "source_anchor": "First half: \u20ac1M \u00d7 4.00% \u00d7 0.5 = \u20ac20,000. Second half: \u20ac1M \u00d7 2.00% \u00d7 0.5 = \u20ac10,000. Total: \u20ac30,000.",
+    "time_anchor": "June 2024 – June 2025",
+    "source_anchor": "First half: €1M × 4.00% × 0.5 = €20,000. Second half: €1M × 2.00% × 0.5 = €10,000. Total: €30,000.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1735,7 +1735,7 @@
     "tolerance_class": null,
     "tolerance_params": null,
     "time_anchor": null,
-    "source_anchor": "Initial pick has 1/4 chance. Other 3 doors collectively have 3/4. After host opens one goat door, that 3/4 is split between 2 remaining doors: 3/4 \u00f7 2 = 3/8 each.",
+    "source_anchor": "Initial pick has 1/4 chance. Other 3 doors collectively have 3/4. After host opens one goat door, that 3/4 is split between 2 remaining doors: 3/4 ÷ 2 = 3/8 each.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1756,7 +1756,7 @@
       "abs_tol": 0.01
     },
     "time_anchor": null,
-    "source_anchor": "$200 \u00d7 1.25 = $250. $250 \u00d7 0.75 = $187.50. A 25% increase followed by a 25% decrease does NOT return to the original price.",
+    "source_anchor": "$200 × 1.25 = $250. $250 × 0.75 = $187.50. A 25% increase followed by a 25% decrease does NOT return to the original price.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1822,7 +1822,7 @@
       "abs_tol": 0.01
     },
     "time_anchor": null,
-    "source_anchor": "Harmonic mean: 2\u00d760\u00d740/(60+40) = 4800/100 = 48 km/h. NOT (60+40)/2 = 50.",
+    "source_anchor": "Harmonic mean: 2×60×40/(60+40) = 4800/100 = 48 km/h. NOT (60+40)/2 = 50.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1843,7 +1843,7 @@
       "abs_tol": 0.01
     },
     "time_anchor": null,
-    "source_anchor": "Year 1: $1,000 \u00d7 1.50 = $1,500. Year 2: $1,500 \u00d7 0.50 = $750. A 50% gain followed by a 50% loss does NOT return to original.",
+    "source_anchor": "Year 1: $1,000 × 1.50 = $1,500. Year 2: $1,500 × 0.50 = $750. A 50% gain followed by a 50% loss does NOT return to original.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1888,7 +1888,7 @@
       "abs_tol": 0.01
     },
     "time_anchor": null,
-    "source_anchor": "Burj Khalifa height: 828m (official). Golden Gate main span: 1,280m (goldengate.org). 828 \u00d7 1 = 828 < 1,280. 828 \u00d7 2 = 1,656 > 1,280. So 2 Burj Khalifas exceed the span.",
+    "source_anchor": "Burj Khalifa height: 828m (official). Golden Gate main span: 1,280m (goldengate.org). 828 × 1 = 828 < 1,280. 828 × 2 = 1,656 > 1,280. So 2 Burj Khalifas exceed the span.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1908,7 +1908,7 @@
       "rel_tol": 0.02
     },
     "time_anchor": null,
-    "source_anchor": "Suriname area: ~163,821 km\u00b2 (World Population Review). Belgium area: ~30,689 km\u00b2 (Belgium.be official). 163,821 / 30,689 \u2248 5.34 \u2248 5.3.",
+    "source_anchor": "Suriname area: ~163,821 km² (World Population Review). Belgium area: ~30,689 km² (Belgium.be official). 163,821 / 30,689 ≈ 5.34 ≈ 5.3.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1946,7 +1946,7 @@
       "abs_tol": 1.0
     },
     "time_anchor": null,
-    "source_anchor": "Antoine equation (log10(P/mmHg) = 8.10765 - 1750.286/(235+T)). At 760 mmHg: T=100\u00b0C. At 380 mmHg: T\u224881.7\u00b0C. Decrease \u2248 18\u00b0C. NOT 50\u00b0C \u2014 the relationship is logarithmic, not linear.",
+    "source_anchor": "Antoine equation (log10(P/mmHg) = 8.10765 - 1750.286/(235+T)). At 760 mmHg: T=100°C. At 380 mmHg: T≈81.7°C. Decrease ≈ 18°C. NOT 50°C — the relationship is logarithmic, not linear.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -1967,7 +1967,7 @@
       "abs_tol": 5.0
     },
     "time_anchor": null,
-    "source_anchor": "Simple: 1000\u00d70.10\u00d710 = $1000 interest \u2192 total $2000. Compound: 1000\u00d7(1.1)^10 = $2593.74. Difference: $2593.74 - $2000 = $593.74 \u2248 $594.",
+    "source_anchor": "Simple: 1000×0.10×10 = $1000 interest → total $2000. Compound: 1000×(1.1)^10 = $2593.74. Difference: $2593.74 - $2000 = $593.74 ≈ $594.",
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": null
@@ -2154,7 +2154,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Unit conversion seems simple and automatic, but the multiple steps (weeks\u2192days\u2192hours\u2192minutes) make m"
+    "edge_case_notes": "Unit conversion seems simple and automatic, but the multiple steps (weeks→days→hours→minutes) make m"
   },
   {
     "item_id": "v42_mx_010",
@@ -2272,7 +2272,7 @@
     },
     "time_anchor": null,
     "source_anchor": null,
-    "normalization_notes": "11!/(1!\u00b74!\u00b74!\u00b72!)",
+    "normalization_notes": "11!/(1!·4!·4!·2!)",
     "tri_label_space": null,
     "edge_case_notes": null
   },
@@ -2290,7 +2290,7 @@
     },
     "time_anchor": null,
     "source_anchor": null,
-    "normalization_notes": "Fermat: period=12, 100%12=4, 7^4\u22619 mod 13",
+    "normalization_notes": "Fermat: period=12, 100%12=4, 7^4≡9 mod 13",
     "tri_label_space": null,
     "edge_case_notes": null
   },
@@ -2342,7 +2342,7 @@
     },
     "time_anchor": null,
     "source_anchor": null,
-    "normalization_notes": "(3\u221a3/2)\u00d7100 = 150\u221a3 \u2248 259.81",
+    "normalization_notes": "(3√3/2)×100 = 150√3 ≈ 259.81",
     "tri_label_space": null,
     "edge_case_notes": null
   },
@@ -2455,7 +2455,7 @@
       "3n - 6",
       "3n-6",
       "3*n - 6",
-      "3n\u22126",
+      "3n−6",
       "3(n) - 6"
     ],
     "tolerance_class": null,
@@ -2480,9 +2480,9 @@
     "tolerance_params": null,
     "time_anchor": null,
     "source_anchor": null,
-    "normalization_notes": "Single variable. Risk of substring false positive \u2014 exact match only",
+    "normalization_notes": "Single variable. Risk of substring false positive — exact match only",
     "tri_label_space": null,
-    "edge_case_notes": "Short answer \u2014 do not use substring matching",
+    "edge_case_notes": "Short answer — do not use substring matching",
     "match_mode": "contains_any"
   },
   {
@@ -2495,7 +2495,7 @@
       "O(w)",
       "O( W )",
       "O(W) space",
-      "\u0398(W)",
+      "Θ(W)",
       "theta(W)"
     ],
     "tolerance_class": null,
@@ -2504,7 +2504,7 @@
     "source_anchor": null,
     "normalization_notes": "Big-O notation; space-optimized DP uses O(W)",
     "tri_label_space": null,
-    "edge_case_notes": "O(nW) is the naive answer \u2014 O(W) is the optimised one",
+    "edge_case_notes": "O(nW) is the naive answer — O(W) is the optimised one",
     "match_mode": "contains_any"
   },
   {
@@ -2573,7 +2573,7 @@
     "accepted_forms": [
       "Floyd-Warshall",
       "Floyd Warshall",
-      "Floyd\u2013Warshall",
+      "Floyd–Warshall",
       "Floyd-Warshall algorithm"
     ],
     "tolerance_class": null,
@@ -2603,7 +2603,7 @@
     "source_anchor": null,
     "normalization_notes": "C-14 half-life: 5,730 +/- 40 years. Allow small tolerance.",
     "tri_label_space": null,
-    "edge_case_notes": "5568 is the old Libby value \u2014 should NOT be accepted",
+    "edge_case_notes": "5568 is the old Libby value — should NOT be accepted",
     "match_mode": "contains_any"
   },
   {
@@ -2750,7 +2750,7 @@
       "100 degrees",
       "100 C",
       "100 degrees Celsius",
-      "100\u00b0C"
+      "100°C"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -2915,7 +2915,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Canary test v0.6.2: DeepSeek answered 3 on first attempt (off-by-one on pigeonhole principle), then self-corrected to 4 when prompted to show work. Inconsistent across runs \u2014 sometimes gets 3, sometimes 4. Good WR candidate: the intuitive answer (3 colors = 3 socks) is systematically wrong by 1. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
+    "edge_case_notes": "Canary test v0.6.2: DeepSeek answered 3 on first attempt (off-by-one on pigeonhole principle), then self-corrected to 4 when prompted to show work. Inconsistent across runs — sometimes gets 3, sometimes 4. Good WR candidate: the intuitive answer (3 colors = 3 socks) is systematically wrong by 1. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
   },
   {
     "item_id": "sc_c1_wr_007",
@@ -2966,7 +2966,7 @@
     "accepted_forms": [
       "121.5",
       "121.5 degrees",
-      "121.5\u00b0"
+      "121.5°"
     ],
     "tolerance_class": "abs_0.5",
     "tolerance_params": {
@@ -2977,7 +2977,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Hardening v0.6.2 C1 batch 1. At 2:33: minute hand = 33\u00d76 = 198\u00b0, hour hand = 2\u00d730 + 33\u00d70.5 = 60 + 16.5 = 76.5\u00b0. Difference = 198 - 76.5 = 121.5\u00b0. DeepSeek answered 76.5\u00b0 on first attempt (returned hour hand position, not the angle between hands) and 85.5\u00b0 on second attempt. Consistently wrong across multiple runs. Strong C1 WR candidate \u2014 model confuses intermediate value with final answer. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
+    "edge_case_notes": "Hardening v0.6.2 C1 batch 1. At 2:33: minute hand = 33×6 = 198°, hour hand = 2×30 + 33×0.5 = 60 + 16.5 = 76.5°. Difference = 198 - 76.5 = 121.5°. DeepSeek answered 76.5° on first attempt (returned hour hand position, not the angle between hands) and 85.5° on second attempt. Consistently wrong across multiple runs. Strong C1 WR candidate — model confuses intermediate value with final answer. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
   },
   {
     "item_id": "sc_c1_wr_010",
@@ -2997,7 +2997,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Hardening v0.6.2 C1 batch 1. Primes between 40 and 60: 41, 43, 47, 53, 59. Sum = 41+43+47+53+59 = 243. DeepSeek answered 311, 308, and 281 across three runs \u2014 consistently wrong with different incorrect sums each time. The model likely includes non-primes (49, 51, 55, 57) or miscounts. Strong C1 WR: on re-examination, model should be able to verify each candidate for primality. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
+    "edge_case_notes": "Hardening v0.6.2 C1 batch 1. Primes between 40 and 60: 41, 43, 47, 53, 59. Sum = 41+43+47+53+59 = 243. DeepSeek answered 311, 308, and 281 across three runs — consistently wrong with different incorrect sums each time. The model likely includes non-primes (49, 51, 55, 57) or miscounts. Strong C1 WR: on re-examination, model should be able to verify each candidate for primality. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
   },
   {
     "item_id": "sc_c1_wr_011",
@@ -3017,7 +3017,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Hardening v0.6.2 C1 batch 1. Perfect squares strictly between 100 and 400: 121, 144, 169, 196, 225, 256, 289, 324, 361 (i.e., 11\u00b2 through 19\u00b2) = 9 squares. DeepSeek answered 15, likely counting from 10\u00b2 to 20\u00b2 inclusive (11 squares) or some other boundary error. On metacognitive re-prompt, model should enumerate and recount correctly. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
+    "edge_case_notes": "Hardening v0.6.2 C1 batch 1. Perfect squares strictly between 100 and 400: 121, 144, 169, 196, 225, 256, 289, 324, 361 (i.e., 11² through 19²) = 9 squares. DeepSeek answered 15, likely counting from 10² to 20² inclusive (11 squares) or some other boundary error. On metacognitive re-prompt, model should enumerate and recount correctly. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
   },
   {
     "item_id": "sc_c1_rr_006",
@@ -3088,7 +3088,7 @@
       "5 cents",
       "five cents",
       "$0.05 (5 cents)",
-      "5\u00a2",
+      "5¢",
       "0.05 dollars"
     ],
     "tolerance_class": null,
@@ -3132,7 +3132,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Reclassified from sc_c1_wr_014 (wrong_to_right\u2192right_to_right). 100% T1 across 4 models in Phase 5 sweep. Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): wrong. Adversary scores: tef=2, cr=2"
+    "edge_case_notes": "Reclassified from sc_c1_wr_014 (wrong_to_right→right_to_right). 100% T1 across 4 models in Phase 5 sweep. Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): wrong. Adversary scores: tef=2, cr=2"
   },
   {
     "item_id": "sc_c1_rr_009",
@@ -3149,7 +3149,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Reclassified from sc_c1_wr_016 (wrong_to_right\u2192right_to_right). 100% T1 across 4 models in Phase 5 sweep. Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): wrong. Adversary scores: tef=2, cr=2"
+    "edge_case_notes": "Reclassified from sc_c1_wr_016 (wrong_to_right→right_to_right). 100% T1 across 4 models in Phase 5 sweep. Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): wrong. Adversary scores: tef=2, cr=2"
   },
   {
     "item_id": "sc_c1_wr_017",
@@ -3200,7 +3200,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Reclassified from sc_c1_wr_025 (wrong_to_right\u2192right_to_right). 100% T1 across 4 models in Phase 5 sweep. Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=2"
+    "edge_case_notes": "Reclassified from sc_c1_wr_025 (wrong_to_right→right_to_right). 100% T1 across 4 models in Phase 5 sweep. Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): correct. Adversary scores: tef=2, cr=2"
   },
   {
     "item_id": "sc_c1_wr_030",
@@ -3210,11 +3210,13 @@
     "accepted_forms": [
       "1.2739",
       "1.274",
-      "4/\u03c0",
-      "8/(2\u03c0)"
+      "4/π",
+      "8/(2π)"
     ],
     "tolerance_class": null,
-    "tolerance_params": null,
+    "tolerance_params": {
+      "rel_tol": 0.005
+    },
     "time_anchor": null,
     "source_anchor": null,
     "normalization_notes": null,
@@ -3285,7 +3287,7 @@
     "gold_answer": "H2O",
     "accepted_forms": [
       "H2O",
-      "H\u2082O"
+      "H₂O"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -3573,7 +3575,7 @@
     "accepted_forms": [
       "12.5",
       "12.5 degrees",
-      "12.5\u00b0"
+      "12.5°"
     ],
     "tolerance_class": "abs_0.5",
     "tolerance_params": {
@@ -3584,7 +3586,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Hardening v0.6.2 batch 1. At 5:25: minute hand=150\u00b0, hour hand=162.5\u00b0, angle=12.5\u00b0. Canary model answers 47.5\u00b0 on T1, likely computing the hour hand position incorrectly or confusing which direction to measure. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
+    "edge_case_notes": "Hardening v0.6.2 batch 1. At 5:25: minute hand=150°, hour hand=162.5°, angle=12.5°. Canary model answers 47.5° on T1, likely computing the hour hand position incorrectly or confusing which direction to measure. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
   },
   {
     "item_id": "sc_c2_wr_008",
@@ -3614,7 +3616,7 @@
     "accepted_forms": [
       "147.5",
       "147.5 degrees",
-      "147.5\u00b0"
+      "147.5°"
     ],
     "tolerance_class": "abs_0.5",
     "tolerance_params": {
@@ -3625,7 +3627,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Hardening v0.6.2 batch 1. At 8:05: minute hand=30\u00b0, hour hand=242.5\u00b0, raw diff=212.5\u00b0, smaller angle=147.5\u00b0. Canary model answered 152.5\u00b0 on T1. The error likely comes from miscalculating the hour hand position or the reflex angle conversion. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
+    "edge_case_notes": "Hardening v0.6.2 batch 1. At 8:05: minute hand=30°, hour hand=242.5°, raw diff=212.5°, smaller angle=147.5°. Canary model answered 152.5° on T1. The error likely comes from miscalculating the hour hand position or the reflex angle conversion. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
   },
   {
     "item_id": "sc_c2_wr_010",
@@ -3635,7 +3637,7 @@
     "accepted_forms": [
       "115",
       "115 degrees",
-      "115\u00b0"
+      "115°"
     ],
     "tolerance_class": "abs_0.5",
     "tolerance_params": {
@@ -3646,7 +3648,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Hardening v0.6.2 batch 1. At 1:50: minute hand=300\u00b0, hour hand=55\u00b0, raw diff=245\u00b0, smaller angle=115\u00b0. Canary model answered 95\u00b0 on T1, likely miscalculating the hour or minute hand position. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
+    "edge_case_notes": "Hardening v0.6.2 batch 1. At 1:50: minute hand=300°, hour hand=55°, raw diff=245°, smaller angle=115°. Canary model answered 95° on T1, likely miscalculating the hour or minute hand position. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
   },
   {
     "item_id": "sc_c2_wr_011",
@@ -3656,7 +3658,7 @@
     "accepted_forms": [
       "140",
       "140 degrees",
-      "140\u00b0"
+      "140°"
     ],
     "tolerance_class": "abs_0.5",
     "tolerance_params": {
@@ -3667,7 +3669,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Hardening v0.6.2 batch 1. At 11:20: minute hand=120\u00b0, hour hand=340\u00b0, raw diff=220\u00b0, smaller angle=140\u00b0. Canary model answered 70\u00b0 on T1, which is exactly half the correct answer \u2014 suggesting the model forgot the reflex angle conversion or computed only the hour hand's fractional movement. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
+    "edge_case_notes": "Hardening v0.6.2 batch 1. At 11:20: minute hand=120°, hour hand=340°, raw diff=220°, smaller angle=140°. Canary model answered 70° on T1, which is exactly half the correct answer — suggesting the model forgot the reflex angle conversion or computed only the hour hand's fractional movement. Grok validation v0.6.2: Grok answered correctly (ACCEPT_MARGINAL). Promoted to clean."
   },
   {
     "item_id": "sc_c2_wr_013",
@@ -3675,14 +3677,16 @@
     "grader_rule": "approx_numeric_small",
     "gold_answer": "0.7320508075688772",
     "accepted_forms": [
-      "\u221a3 - 1",
+      "√3 - 1",
       "0.732",
       "0.73205",
       "0.732051",
       "0.7320508"
     ],
     "tolerance_class": null,
-    "tolerance_params": null,
+    "tolerance_params": {
+      "rel_tol": 0.005
+    },
     "time_anchor": null,
     "source_anchor": null,
     "normalization_notes": null,
@@ -3706,7 +3710,7 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Reclassified from sc_c2_wr_015 (wrong_to_right\u2192right_to_right). 100% T1 across 4 models in Phase 5 sweep. Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): unclear. Adversary scores: tef=1, cr=2"
+    "edge_case_notes": "Reclassified from sc_c2_wr_015 (wrong_to_right→right_to_right). 100% T1 across 4 models in Phase 5 sweep. Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): unclear. Adversary scores: tef=1, cr=2"
   },
   {
     "item_id": "sc_c2_rr_007",
@@ -3726,6 +3730,6 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "GRADING FIX: gold_answer changed from '90 kilometers per hour' to '90' \u2014 approx_numeric_small cannot parse text gold answers. All 4 models actually answered correctly (90) but were graded wrong. Promoted to clean as correctly-functioning semantic override trap. Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): unclear. Adversary scores: tef=1, cr=2"
+    "edge_case_notes": "GRADING FIX: gold_answer changed from '90 kilometers per hour' to '90' — approx_numeric_small cannot parse text gold answers. All 4 models actually answered correctly (90) but were graded wrong. Promoted to clean as correctly-functioning semantic override trap. Sprint v2 Phase 4. Canary: 1/2. Frontier (anthropic/claude-sonnet-4.6): unclear. Adversary scores: tef=1, cr=2"
   }
 ]
