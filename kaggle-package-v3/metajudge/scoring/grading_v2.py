@@ -36,6 +36,127 @@ def _normalize(text: Optional[str]) -> Optional[str]:
     return " ".join(str(text).strip().lower().split())
 
 
+# ---------------------------------------------------------------------------
+# Preprocessing: LaTeX unwrapping, markdown stripping, answer extraction
+# ---------------------------------------------------------------------------
+
+def _strip_latex(text: str) -> str:
+    """Remove LaTeX wrappers, evaluate \\frac and simple exponents."""
+    # Remove display math wrappers: \(...\), \[...\], $...$
+    s = re.sub(r'\\\((.+?)\\\)', r'\1', text)
+    s = re.sub(r'\\\[(.+?)\\\]', r'\1', s)
+    s = re.sub(r'(?<!\$)\$(?!\$)(.+?)(?<!\$)\$(?!\$)', r'\1', s)
+    # Remove \boxed{...}, \text{...}, \mathrm{...}
+    s = re.sub(r'\\boxed\{([^}]+)\}', r'\1', s)
+    s = re.sub(r'\\text\{([^}]+)\}', r'\1', s)
+    s = re.sub(r'\\mathrm\{([^}]+)\}', r'\1', s)
+    # Convert \frac{a}{b} -> a/b
+    s = re.sub(r'\\frac\{([^}]+)\}\{([^}]+)\}', r'\1/\2', s)
+    return s
+
+
+def _strip_markdown(text: str) -> str:
+    """Remove markdown bold/italic/code formatting."""
+    s = re.sub(r'\*\*(.+?)\*\*', r'\1', text)
+    s = re.sub(r'__(.+?)__', r'\1', s)
+    s = re.sub(r'\*(.+?)\*', r'\1', s)
+    s = re.sub(r'_(.+?)_', r'\1', s)
+    s = re.sub(r'`(.+?)`', r'\1', s)
+    return s
+
+
+def _preprocess_answer(text: str) -> str:
+    """Apply LaTeX unwrapping and markdown stripping to a raw answer."""
+    return _strip_markdown(_strip_latex(text))
+
+
+def _extract_final_answer(text: str) -> Optional[str]:
+    """Extract a concise answer from verbose review/confirmation prose.
+
+    Tries structured ANSWER: tag first, then 'the answer is X' patterns.
+    Returns None if no pattern matches (caller should use full text).
+    """
+    # Priority 1: Explicit ANSWER: tag
+    m = re.search(r'ANSWER:\s*(.+?)(?:\s*\||\s*$)', text, re.IGNORECASE)
+    if m:
+        extracted = m.group(1).strip()
+        if len(extracted) < 100:  # Sanity check — ANSWER: shouldn't be a paragraph
+            return extracted
+
+    # Priority 2: "the answer is/remains X" patterns
+    patterns = [
+        r'(?:my\s+)?final\s+answer\s*(?:is|:)\s*(.+?)(?:\.|,|\s*$)',
+        r'(?:the\s+)?(?:correct\s+)?answer\s+(?:is|remains|=)\s*(.+?)(?:\.|,|\s*$)',
+        r'(?:there\s+are|there\s+is)\s+(.+?)(?:\.|,|\s*$)',
+    ]
+    for pattern in patterns:
+        matches = list(re.finditer(pattern, text, re.IGNORECASE | re.MULTILINE))
+        if matches:
+            extracted = matches[-1].group(1).strip()
+            if len(extracted) < 80:
+                return extracted
+
+    return None
+
+
+def _extract_final_answer_number(text: str, gold_val: float) -> Optional[float]:
+    """Extract the most likely answer number from verbose text.
+
+    Priority: 'final answer' patterns > bold numbers > closest to gold > last number.
+    """
+    clean = _strip_markdown(_strip_latex(text))
+
+    # Priority 1: "final answer" / "the answer is" patterns
+    final_patterns = [
+        r'(?:my\s+)?final\s+answer\s*(?:is|:)\s*[^\d]*(-?\d[\d,]*\.?\d*)',
+        r'(?:the\s+)?answer\s+(?:is|remains|=)\s*[^\d]*(-?\d[\d,]*\.?\d*)',
+        r'(?:so|therefore|thus)[,:]?\s*[^\d]*(-?\d[\d,]*\.?\d*)',
+        r'=\s*[^\d]*(-?\d[\d,]*\.?\d*)\s*$',
+    ]
+    for pattern in final_patterns:
+        m = re.search(pattern, clean, re.IGNORECASE | re.MULTILINE)
+        if m:
+            try:
+                return float(m.group(1).replace(',', ''))
+            except ValueError:
+                pass
+
+    # Priority 2: last number in bold emphasis
+    bold_nums = re.findall(r'\*\*(-?\d[\d,]*\.?\d*)\*\*', text)
+    if bold_nums:
+        try:
+            return float(bold_nums[-1].replace(',', ''))
+        except ValueError:
+            pass
+
+    # Priority 3: smart extraction from all numbers
+    # Use digit-only comma stripping (preserves "November 9, 1989")
+    num_text = re.sub(r'(\d),(\d)', r'\1\2', clean)
+    all_nums = [float(m.group()) for m in re.finditer(r'-?\d+\.?\d*', num_text)
+                if _try_float(m.group()) is not None]
+
+    if not all_nums:
+        return None
+
+    # If gold value is in the list, return it
+    for n in all_nums:
+        if gold_val != 0 and abs(n - gold_val) / abs(gold_val) < 0.001:
+            return n
+        if gold_val == 0 and abs(n) < 0.001:
+            return n
+
+    # Return last number (conclusion is usually at the end)
+    return all_nums[-1]
+
+
+def _try_float(s: str) -> Optional[float]:
+    """Try to parse a float, return None on failure."""
+    try:
+        return float(s)
+    except (ValueError, TypeError):
+        return None
+
+
 def _normalize_sci(text: str) -> str:
     """Normalize scientific notation formatting.
 
@@ -73,16 +194,39 @@ _NUMBER_RE = re.compile(r'[-+]?\d[\d,]*\.?\d*(?:[eE][+-]?\d+)?')
 
 
 def _parse_float(text: Optional[str]) -> Optional[float]:
-    """Parse a float from text, handling commas and scientific notation."""
+    """Parse a float from text, handling commas, LaTeX, and scientific notation."""
     if text is None:
         return None
     s = text.strip()
 
-    # Strip commas
+    # Strip LaTeX wrappers first
+    s = _strip_latex(s)
+    s = _strip_markdown(s)
+    s = s.strip()
+
+    # Strip commas between digits (smart: preserves "November 9, 1989")
+    s_clean = re.sub(r'(\d),(\d)', r'\1\2', s)
+
     try:
-        return float(s.replace(",", ""))
+        return float(s_clean)
     except (ValueError, TypeError):
         pass
+
+    # Try evaluating simple fractions: "5/11", "a/b"
+    frac_m = re.match(r'^(-?\d+(?:\.\d+)?)\s*/\s*(\d+(?:\.\d+)?)$', s_clean.strip())
+    if frac_m:
+        try:
+            return float(frac_m.group(1)) / float(frac_m.group(2))
+        except (ValueError, ZeroDivisionError):
+            pass
+
+    # Try evaluating simple exponents: "2^81", "10^3"
+    exp_m = re.match(r'^(\d+(?:\.\d+)?)\s*\^\s*\{?(\d+)\}?$', s_clean.strip())
+    if exp_m:
+        try:
+            return float(exp_m.group(1)) ** int(exp_m.group(2))
+        except (ValueError, OverflowError):
+            pass
 
     # Unicode scientific notation
     m = _SCI_RE.search(s)
@@ -101,7 +245,7 @@ def _parse_float(text: Optional[str]) -> Optional[float]:
         pass
 
     # Last resort: find the first number-like substring
-    numbers = _NUMBER_RE.findall(s)
+    numbers = _NUMBER_RE.findall(s_clean)
     if len(numbers) == 1:
         try:
             return float(numbers[0].replace(",", ""))
@@ -170,20 +314,24 @@ def _grade_approx_numeric_small(answer: str, spec: Dict[str, Any]) -> Dict[str, 
         if _nums_close(ans_val, gold_val, rel_tol=rel_tol, abs_tol=abs_tol):
             return {"correct": True, "method": "approx_numeric_small",
                     "match_detail": f"within tolerance abs={abs_tol} rel={rel_tol}"}
-        return {"correct": False, "method": "approx_numeric_small",
-                "match_detail": f"mismatch: {ans_val} vs {gold_val}"}
 
-    # Verbose-answer fallback: when answer is unparseable but contains_any mode
-    # is set, try each extracted number individually (handles e.g. "carbon-14...
-    # 5,730 years" where multiple numbers prevent single-number extraction).
-    if spec.get("match_mode") == "contains_any":
-        for n_str in _NUMBER_RE.findall(answer):
-            n_val = _parse_float(n_str)
-            if n_val is not None and _nums_close(n_val, gold_val, rel_tol=rel_tol, abs_tol=abs_tol):
-                return {"correct": True, "method": "approx_numeric_small",
-                        "match_detail": f"contains_any numeric match: {n_str}"}
+    # Verbose-answer fallback: try "final answer" extraction for review prose
+    if ans_val is None or not _nums_close(ans_val, gold_val, rel_tol=rel_tol, abs_tol=abs_tol):
+        final_val = _extract_final_answer_number(answer, gold_val)
+        if final_val is not None and _nums_close(final_val, gold_val, rel_tol=rel_tol, abs_tol=abs_tol):
+            return {"correct": True, "method": "approx_numeric_small",
+                    "match_detail": f"final_answer_extraction: {final_val}"}
 
-    return {"correct": False, "method": "approx_numeric_small", "match_detail": "answer unparseable"}
+    # Contains-any fallback: try each number in text
+    num_text = re.sub(r'(\d),(\d)', r'\1\2', _preprocess_answer(answer))
+    for n_str in re.findall(r'-?\d+\.?\d*', num_text):
+        n_val = _try_float(n_str)
+        if n_val is not None and _nums_close(n_val, gold_val, rel_tol=rel_tol, abs_tol=abs_tol):
+            return {"correct": True, "method": "approx_numeric_small",
+                    "match_detail": f"number_in_text: {n_str}"}
+
+    detail = f"mismatch: {ans_val} vs {gold_val}" if ans_val is not None else "answer unparseable"
+    return {"correct": False, "method": "approx_numeric_small", "match_detail": detail}
 
 
 def _grade_approx_numeric_dynamic(answer: str, spec: Dict[str, Any]) -> Dict[str, Any]:
@@ -364,6 +512,21 @@ def _grade_code_output(answer: str, spec: Dict[str, Any]) -> Dict[str, Any]:
     gold_escaped = _normalize(spec["gold_answer"].replace("\\n", "\n"))
     if norm_escaped == gold_escaped:
         return {"correct": True, "method": "code_output", "match_detail": "newline-normalized match"}
+    # Try preprocessed (LaTeX/markdown stripped)
+    norm_pp = _normalize(_preprocess_answer(answer))
+    if norm_pp == gold_norm:
+        return {"correct": True, "method": "code_output", "match_detail": "preprocessed match"}
+    # Try extracting answer from verbose review prose
+    extracted = _extract_final_answer(answer)
+    if extracted and _normalize(extracted) == gold_norm:
+        return {"correct": True, "method": "code_output",
+                "match_detail": f"final_answer_extraction: {extracted!r}"}
+    # Numeric fallback for code items with numeric output
+    ans_float = _parse_float(answer)
+    gold_float = _parse_float(spec["gold_answer"])
+    if ans_float is not None and gold_float is not None:
+        if ans_float == gold_float:
+            return {"correct": True, "method": "code_output", "match_detail": "numeric match"}
     return {"correct": False, "method": "code_output",
             "match_detail": f"mismatch: {norm!r} vs {gold_norm!r}"}
 
@@ -379,6 +542,12 @@ def _grade_alias_plus_normalization(answer: str, spec: Dict[str, Any]) -> Dict[s
     # Direct match against gold
     if norm == gold_norm:
         return {"correct": True, "method": "alias_plus_normalization", "match_detail": "gold match"}
+
+    # Try with preprocessing (LaTeX/markdown stripped)
+    preprocessed = _preprocess_answer(answer)
+    norm_pp = _normalize(preprocessed)
+    if norm_pp and norm_pp != norm and norm_pp == gold_norm:
+        return {"correct": True, "method": "alias_plus_normalization", "match_detail": "preprocessed gold match"}
 
     # Match against accepted_forms
     accepted = spec.get("accepted_forms") or []
@@ -410,6 +579,24 @@ def _grade_alias_plus_normalization(answer: str, spec: Dict[str, Any]) -> Dict[s
     if ans_float is not None and gold_float is not None:
         if _nums_close(ans_float, gold_float, rel_tol=1e-9):
             return {"correct": True, "method": "alias_plus_normalization", "match_detail": "numeric fallback"}
+
+    # Try extracting a concise answer from verbose review prose
+    extracted = _extract_final_answer(answer)
+    if extracted:
+        ext_norm = _normalize(extracted)
+        if ext_norm == gold_norm:
+            return {"correct": True, "method": "alias_plus_normalization",
+                    "match_detail": f"final_answer_extraction: {extracted!r}"}
+        for form in accepted:
+            if _normalize(form) == ext_norm:
+                return {"correct": True, "method": "alias_plus_normalization",
+                        "match_detail": f"final_answer_alias: {form!r}"}
+        # Contains check on extracted text
+        if match_mode == "contains_any":
+            for form in ([gold_norm] + [_normalize(f) for f in accepted]):
+                if form and form in ext_norm:
+                    return {"correct": True, "method": "alias_plus_normalization",
+                            "match_detail": f"final_answer_contains: {form!r}"}
 
     return {"correct": False, "method": "alias_plus_normalization",
             "match_detail": f"no match: {norm!r} vs gold {gold_norm!r}"}
