@@ -1,7 +1,17 @@
 {
-  "title": "MetaJudge Package v2 (Post-Audit)",
-  "id": "seanmcgee2025/metajudge-package-v2",
-  "licenses": [{"name": "CC-BY-4.0"}],
-  "description": "Post-audit v2 of the MetaJudge scoring package. Changes from v1: grading_v2.py adds contains_any numeric fallback in _grade_approx_numeric_small(), enabling correct adjudication of verbose Family B answers with multiple embedded numbers. Import via sys.path.insert(0, '/kaggle/input/metajudge-package-v2').",
-  "keywords": ["metacognition", "llm-evaluation", "python-package", "post-audit"]
+  "title": "MetaJudge Package v3.1 (Families A+B+C, post-audit)",
+  "id": "seanmcgee2025/metajudge-package-v3",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0"
+    }
+  ],
+  "description": "MetaJudge scoring package v3.1. Adds Family C self-correction scoring (self_correction_v2.py), v2 task runner with confirmation-without-restatement detection (resolve_t2_answer), and updated grading engine. Import via sys.path.insert(0, '/kaggle/input/metajudge-package-v3').",
+  "keywords": [
+    "metacognition",
+    "llm-evaluation",
+    "python-package",
+    "families-abc",
+    "post-audit"
+  ]
 }
