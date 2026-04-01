@@ -2,7 +2,7 @@
 
 A behavioral benchmark for metacognitive monitoring and control in frontier language models, built for the [Kaggle Measuring Progress Toward AGI — Cognitive Abilities](https://www.kaggle.com/competitions/kaggle-measuring-agi) hackathon (Metacognition track).
 
-**Current version:** v0.7.1 (v3.1 post-audit — 51 clean FC items, tolerance + parsing fixes)
+**Current version:** v0.7.2 (v3.2 — equal-weight z-score composite, upgraded grading engine)
 **Deadline:** April 16, 2026
 **Submission:** Kaggle Community Benchmark + Writeup (1,500 words)
 
@@ -40,21 +40,19 @@ MetaJudge evaluates whether language models can **track the reliability of their
 - Config-driven scoring via `config/family_c_scoring.yaml`
 - Grounded in Huang et al. (ICLR 2024): intrinsic self-correction fails without external evidence
 
-**Status:** v3.1 post-audit. Kaggle v3.1 packaging done. Audit fixes: numeric tolerance for 2 items, confirmation-without-restatement detection for T2 parsing, 4 unresolved items excluded. See `outputs/audit_family_c_summary.md` for full audit.
+**Status:** v3.2. Grading engine upgraded (LaTeX unwrapping, final-answer extraction, smart number parsing). Family C reliability α ≈ 0.35 — included in composite but no standalone subscore value (Haberman PRMSE test). See `outputs/audit_family_c_summary.md` for audit and `docs/stats/composite_construction_step2.md` for composite methodology.
 
 ### Composite MetaScore
 
-**Current (Families A+B+C):** `compute_composite_score()` with auto-renormalized default weights:
+**MetaScore = mean(z_A, z_B, z_C)** — equal-weight z-score composite.
 
-```python
-# Effective weights with A+B+C active (D+E absent, auto-excluded):
-# Calibration (A):        40.0%
-# Abstention (B):         26.7%
-# Intrinsic SC (C1):      13.3%
-# Evidence SC (C2):       20.0%
-```
+Each family is z-standardized independently (population SD, ddof=0), then averaged with equal weights (1/3 each). Equal weighting is optimal at n=5 models per Dawes (1979) and Davis-Stober (2011): any data-derived differential weighting will overfit and yield higher expected error.
 
-Weight optimization is a separate pending task — see `docs/stats/stats_review_prompt.md`.
+**Family C caveat:** Reliability α ≈ 0.35, below the 0.55 Haberman threshold for standalone subscore value. A+B composite predicts true C better than C's observed score. Family C is included in the composite for profile information but should not be reported as a standalone axis.
+
+**Uncertainty:** Dirichlet stability analysis (10k weight perturbations) shows Flash (rank 1, P=86%) and Haiku (rank 5, P=59%) are robust. Pro, Sonnet, and DeepSeek (ranks 2-4) are statistically interchangeable. Friedman test p=0.376 — with only 3 families, model separation is not statistically significant. The benchmark's value is in the capability **profile**, not the single-number ranking.
+
+See `docs/stats/composite_construction_step2.md` for full methodology and `docs/stats/Composite Rankings...Methods Survey.md` for theoretical foundations.
 
 ---
 
@@ -91,7 +89,7 @@ config/
 
 notebooks/
   metajudge_benchmark_v3.ipynb    #   Official benchmark v3.1 (A+B+C, post-audit)
-  metajudge_narrative_v3.ipynb    #   Narrative analysis v3.1 (A+B+C, post-audit)
+  metajudge_narrative_v3.ipynb    #   Narrative analysis v3.2 (A+B+C, z-score composite)
   metajudge_benchmark_v2.ipynb    #   V2 benchmark (A+B only, archived)
   metajudge_narrative_v2.ipynb    #   V2 narrative (A+B only, archived)
   metajudge_benchmark.ipynb       #   V1 benchmark (archived)
@@ -120,7 +118,7 @@ outputs/                          #   Run artifacts (audit CSVs, figures)
     sweep_v2/                     #       V2 validation sweep (5 models x 45 items)
     sweep_v2_phase5/              #       Phase 5+6 integrated sweep (56 items x 4 models)
 docs/                             #   Scientific documentation
-  stats/                          #     Statistical backgrounders + power analysis
+  stats/                          #     Statistical backgrounders, composite methodology, power analysis
 planning/                         #   Architecture and sprint plans
   family_c_sprint/                #     Sprint planning docs + v2 checkpoint
 ```
@@ -146,12 +144,15 @@ The official Kaggle submission (v3.1 post-audit). Runs all three axes against on
 **Architecture:** Brier formula inlined for judge transparency. Family B utility scoring, Family C transition scoring, and composite weighting use the metajudge package. T2 answers processed through `resolve_t2_answer()` for confirmation-without-restatement handling.
 
 ### Narrative Notebook (`metajudge_narrative_v3.ipynb`)
-The full multi-model analysis (v3.1 post-audit). Runs all models across all three families, produces figures and statistical tests.
+The full multi-model analysis (v3.2). Runs all models across all three families, produces figures, statistical tests, and composite analysis.
 
 **Produces:**
-- Audit CSVs for all three families (across all models)
+- Audit CSVs for all three families (across all models) + `composite_analysis.csv`
 - 6 figures: reliability diagram, action distribution, Brier forest plot, mechanism heatmap, FC delta bar chart, FC stratum heatmap
-- Leaderboards for each family, composite MetaScore, bootstrap CIs with Holm correction, Spearman bridge analysis
+- Per-family leaderboards, C1/C2 split analysis, damage rate ranking
+- Equal-weight z-score MetaScore with rank shift analysis (A+B → A+B+C)
+- Composite uncertainty: Haberman PRMSE test, Dirichlet pairwise stability (10k samples), Hasse partial order + linear extensions, Kemeny-Young consensus ranking, Friedman + Nemenyi CD
+- Cross-family ranking table with rank divergence
 
 ### Lean Submission Notebook (`metajudge_submission_lean.ipynb`)
 Minimal submission notebook — scoring logic lives in the metajudge package.
@@ -174,7 +175,7 @@ Acceptable alternative actions receive at least +0.3 partial credit.
 Transition-based scoring classifies each item into one of six outcomes: `correction_gain`, `maintain_correct`, `neutral_revision`, `damage`, `stubborn_wrong`, `failed_revision`. Base scores differ between C1 (harsh on damage: -0.40) and C2 (more forgiving: -0.25, but -0.40 for misleading evidence). Confidence adjustment in [-0.15, +0.10] applied per transition. Raw scores rescaled from [-0.55, 0.30] to [0, 1]. V2 protocol uses third-person framing for C1 and reviewer's note framing for C2, with B0 re-answering baseline to separate genuine correction from re-sampling. See `planning/family_c_sprint/03_scoring_blueprint.md` for worked examples.
 
 ### Composite
-`compute_composite_score()` with auto-renormalized default weights over available families. With A+B+C: Calibration 40%, Abstention 27%, C1 13%, C2 20%. Weight optimization pending — see `docs/stats/stats_review_prompt.md`.
+`MetaScore = mean(z_A, z_B, z_C)` — equal-weight z-score (Dawes 1979). Each family z-standardized independently. Equal weights optimal at n=5 (Davis-Stober 2011). Uncertainty quantified via Dirichlet stability, Hasse partial order, and Friedman test. See `docs/stats/composite_construction_step2.md`.
 
 ---
 
@@ -229,9 +230,9 @@ Transition-based scoring classifies each item into one of six outcomes: `correct
 ### For day-to-day work
 1. **`SOUL.md`** — Governing principles, constraints, non-negotiables
 2. **`CLAUDE.md`** — Development instructions and hard rules
-3. **`outputs/audit_family_c_summary.md`** — Family C validity audit (v0.7.1)
-4. **`outputs/audit_family_ab_summary.md`** — Family A/B validity audit
-5. **`docs/stats/stats_review_prompt.md`** — Statistical review + weight optimization prompt
+3. **`docs/stats/composite_construction_step2.md`** — Composite methodology (z-score, Dirichlet, Hasse, Haberman)
+4. **`outputs/audit_family_c_summary.md`** — Family C validity audit
+5. **`outputs/audit_family_ab_summary.md`** — Family A/B validity audit
 6. **`config/family_c_scoring.yaml`** — Scoring weights and thresholds
 
 ### For theoretical background (not needed for task execution)
@@ -257,6 +258,10 @@ MetaJudge is grounded in the distinction between metacognitive monitoring and co
 - **Burnell et al. (2026)** — DeepMind cognitive taxonomy identifying metacognition as a key evaluation gap
 - **Brier (1950)** — Strictly proper scoring rule for probabilistic forecasts
 - **Gneiting & Raftery (2007)** — Theory of strictly proper scoring rules
+- **Dawes (1979)** — Equal weights outperform optimized weights in small-n composites
+- **Davis-Stober (2011)** — Formal proof: equal weights minimize MSE when p ≥ n
+- **Haberman (2008)** — PRMSE framework for subscore added value
+- **OECD/JRC (2008)** — Composite indicator handbook (10-step framework)
 
 For the full bibliography, see `docs/metacognition_literature_report.md`.
 
