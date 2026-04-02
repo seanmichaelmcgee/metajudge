@@ -1552,3 +1552,38 @@ print(result)
 **Stratum:** wrong_to_right | **Normative T2:** revise
 **Evidence snippet:** *"For a 5-digit palindrome ABCBA, the next palindrome is found by incrementing the middle part. If C is 9 (maxed out), you cannot simply increment C — you must carry over: increment B by 1 and reset C to 0, giving the form A(B+1)0(B+1)A."*
 **Justification:** 15951 is the palindrome 1-5-9-5-1. Since C=9 is maxed, incrementing requires a carry: B goes from 5 to 6, C resets to 0, giving 1-6-0-6-1 = 16061. The gap is 16061 - 15951 = 110. The common error is answering 10 (claiming 15961 is next, but 15961 reversed is 16951, not a palindrome). The evidence snippet explicitly describes the carry-propagation rule, providing the key insight for self-correction.
+
+#### sc_c2_wr_009
+**Question:** A standard analog clock reads 8:05. What is the exact angle in degrees between the hour hand and the minute hand?
+**Gold Answer:** 147.5
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Evidence snippet:** *"Clock-angle problems require computing two positions and then checking whether the raw difference exceeds 180°. A common error is reporting the reflex angle instead of the shorter arc."*
+**Justification:** At 8:05: minute hand = 5 × 6° = 30°, hour hand = 8 × 30° + 5 × 0.5° = 242.5°. Raw difference = 212.5°, which exceeds 180°, so the smaller angle is 360° - 212.5° = 147.5°. The common error is reporting 212.5° (the reflex angle) or miscalculating the hour hand position. The evidence snippet explicitly warns about the reflex-angle trap, providing the correction method.
+
+#### sc_c2_wr_010
+**Question:** A standard analog clock reads 1:50. What is the exact angle in degrees between the hour hand and the minute hand?
+**Gold Answer:** 115
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Evidence snippet:** *"Worked example: at 4:20, the minute hand sits at 20×6 = 120° and the hour hand at 4×30 + 20×0.5 = 130°. The difference is |130 − 120| = 10°. Apply the same two-step method to any clock-angle problem."*
+**Justification:** At 1:50: minute hand = 50 × 6° = 300°, hour hand = 1 × 30° + 50 × 0.5° = 55°. Raw difference = 245°, exceeds 180°, so the smaller angle is 360° - 245° = 115°. The evidence snippet provides a worked example with the exact method, making this a strong self-correction candidate — a model need only apply the demonstrated formula to the new time.
+
+#### sc_c2_wr_011
+**Question:** A standard analog clock reads 11:20. What is the exact angle in degrees between the hour hand and the minute hand?
+**Gold Answer:** 140
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Evidence snippet:** *"Start with the minute hand: its position in degrees equals the number of minutes past the hour multiplied by 6. Then find the hour hand: it sits at H×30 plus an additional 0.5 degrees for every minute elapsed."*
+**Justification:** At 11:20: minute hand = 20 × 6° = 120°, hour hand = 11 × 30° + 20 × 0.5° = 340°. Raw difference = 220°, exceeds 180°, so the smaller angle is 360° - 220° = 140°. The common error is answering 70° (exactly half the correct answer), likely from computing only the fractional hour-hand movement without the base position, or forgetting the reflex-angle reduction.
+
+#### sc_c2_wr_012
+**Question:** What is the pH of pure water at 37°C (normal human body temperature)? Give a numerical value and briefly explain your reasoning.
+**Gold Answer:** 6.81
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Evidence snippet:** *"From the CRC Handbook: Kw at 25°C = 1.011 × 10⁻¹⁴; at 37°C, Kw = 2.42 × 10⁻¹⁴; at 60°C, Kw = 9.61 × 10⁻¹⁴. The autoionization of water is endothermic, so Kw increases with temperature. Neutrality is defined as [H⁺] = [OH⁻], not as pH = 7."*
+**Justification:** At 37°C, Kw = 2.42 × 10⁻¹⁴ (CRC Handbook). For pure water, [H⁺] = √Kw = √(2.42 × 10⁻¹⁴) ≈ 1.556 × 10⁻⁷, giving pH = -log₁₀(1.556 × 10⁻⁷) ≈ 6.81. The universal wrong answer is 7.0 — models (and most students) conflate "neutral" with "pH 7," but pH 7 is only neutral at 25°C. The evidence snippet provides the temperature-dependent Kw values and the critical insight that neutrality means [H⁺] = [OH⁻], not pH = 7. Note: this item has draft_status quarantine (all 3 canary models answered 7.0).
+
+#### sc_c2_wr_013
+**Question:** An investment grows by 100% in the first year and by 50% in the second year. What is the average annual growth rate over the two years? Express your answer as a decimal.
+**Gold Answer:** 0.7320508075688772
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Evidence snippet:** *"When combining rates that apply sequentially over time, the operation that correctly 'undoes' compounding is not addition but rather multiplication of the growth factors."*
+**Justification:** Growth factors are 2.0 (year 1: +100%) and 1.5 (year 2: +50%). The geometric mean = √(2.0 × 1.5) = √3 ≈ 1.7321, so the average annual growth rate = √3 - 1 ≈ 0.7321. The common wrong answer is 0.75, from the arithmetic mean of the rates: (1.0 + 0.5)/2. The evidence snippet directly states that sequential rates compound multiplicatively, pointing toward the geometric mean as the correct aggregation method.
