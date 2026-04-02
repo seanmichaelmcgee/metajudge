@@ -1301,3 +1301,33 @@ print(result)
 **Gold Answer:** 15
 **Stratum:** wrong_to_right | **Normative T2:** revise
 **Justification:** √50 ≈ 7.071, so floor(7.071) = 7 and ceil(7.071) = 8, giving 7 + 8 = 15. The common error is answering 14, either by treating floor and ceil as identical (both 7) or by miscalculating √50. Since 50 is not a perfect square, floor and ceil necessarily differ by 1 — a fact that should become apparent on re-examination.
+
+#### sc_c1_wr_008
+**Question:** A store raises all its prices by 25%, and then later offers a 25% discount on all items. Compared to the original price, what is the net percentage change? Give a concise answer with the direction (increase or decrease) and the percentage.
+**Gold Answer:** 6.25% decrease
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** A 25% increase followed by a 25% decrease applies multiplicatively: 1.25 × 0.75 = 0.9375, a net 6.25% decrease. The intuitive but wrong answer is "no change" or "0%," since +25% and -25% appear to cancel — but the discount applies to the already-raised price, not the original. This percentage asymmetry trap reliably catches models on first pass; the self-correction prompt should trigger the multiplicative calculation.
+
+#### sc_c1_wr_009
+**Question:** A standard analog clock shows 2:33. What is the exact angle in degrees between the hour hand and the minute hand? Give a concise answer.
+**Gold Answer:** 121.5
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** At 2:33, the minute hand is at 33 × 6° = 198°, and the hour hand is at 2 × 30° + 33 × 0.5° = 76.5°. The angle between them is 198° - 76.5° = 121.5°. The common error is returning the hour hand position (76.5°) or forgetting the 0.5°/minute continuous drift of the hour hand (giving 85.5° or similar). Models that confuse an intermediate value with the final answer should self-correct on re-examination.
+
+#### sc_c1_wr_010
+**Question:** What is the sum of all prime numbers between 40 and 60? Give a concise answer.
+**Gold Answer:** 243
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** The primes between 40 and 60 are {41, 43, 47, 53, 59}, summing to 243. The enumeration trap is that many candidates look prime but aren't — 49 = 7², 51 = 3×17, 55 = 5×11, 57 = 3×19. Models frequently include one or more of these non-primes, producing sums like 281, 308, or 311 depending on which composites slip through. A re-prompt should trigger systematic primality checking of each candidate.
+
+#### sc_c1_wr_011
+**Question:** How many perfect squares are there strictly between 100 and 400? (Do not count 100 or 400 themselves.) Give a concise answer.
+**Gold Answer:** 9
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** The perfect squares strictly between 100 and 400 are 11² through 19²: {121, 144, 169, 196, 225, 256, 289, 324, 361} — exactly 9. The boundary-inclusion error is counting 10² = 100 or 20² = 400, or miscounting the range endpoints (e.g., answering 11 by including both boundaries). The explicit "strictly between" and "do not count" phrasing should resolve the ambiguity on re-examination.
+
+#### sc_c1_wr_012
+**Question:** A 4-digit positive integer N has the property that reversing its digits produces a number that is exactly 3267 larger than N. How many such 4-digit integers N exist? Work through this carefully and give your final answer as a single integer.
+**Gold Answer:** 42
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** Writing N = 1000a + 100b + 10c + d and reverse(N) - N = 999(d-a) + 90(c-b) = 3267. Dividing: 999 × 3 = 2997, remainder 270 = 90 × 3, so d-a = 3 and c-b = 3. Valid ranges: a ∈ {1,...,6} (since d = a+3 ≤ 9) gives 6 choices; b ∈ {0,...,6} (since c = b+3 ≤ 9) gives 7 choices. Total: 6 × 7 = 42. The common error is restricting b to {1,...,6} (excluding b=0 for interior digits), yielding 36 instead of 42. Note: this item has draft_status quarantine (too easy for wrong-to-right in frontier validation).
