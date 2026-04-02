@@ -203,7 +203,435 @@ def infer_model_name(run_meta, responses_json):
     return "unknown"
 
 
-# ── Main (scaffold — docx generation added in later phases) ──────────────
+# ── Docx helpers ──────────────────────────────────────────────────────────
+
+from docx import Document
+from docx.shared import Inches, Pt, RGBColor, Cm
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.enum.table import WD_TABLE_ALIGNMENT
+from docx.oxml.ns import qn, nsdecls
+from docx.oxml import parse_xml
+
+# Colors
+HEADER_BG = "1F4E79"
+HEADER_FG = RGBColor(0xFF, 0xFF, 0xFF)
+LIGHT_BLUE_BG = "D6E4F0"
+LIGHT_GRAY_BG = "F2F2F2"
+GREEN_BG = "C6EFCE"
+RED_BG = "FFC7CE"
+GREEN_TEXT = RGBColor(0x00, 0x6B, 0x3C)
+RED_TEXT = RGBColor(0xCC, 0x00, 0x00)
+
+
+def _set_cell_bg(cell, color_hex):
+    """Set cell background color."""
+    shading = parse_xml(f'<w:shd {nsdecls("w")} w:fill="{color_hex}"/>')
+    cell._tc.get_or_add_tcPr().append(shading)
+
+
+def _set_cell_text(cell, text, size=10, bold=False, color=None, align=None):
+    """Set cell text with formatting."""
+    cell.text = ""
+    p = cell.paragraphs[0]
+    if align:
+        p.alignment = align
+    run = p.add_run(str(text))
+    run.font.name = "Arial"
+    run.font.size = Pt(size)
+    run.font.bold = bold
+    if color:
+        run.font.color.rgb = color
+
+
+def _add_table(doc, headers, rows, col_widths=None):
+    """Add a formatted table with header row and alternating shading."""
+    table = doc.add_table(rows=1 + len(rows), cols=len(headers))
+    table.alignment = WD_TABLE_ALIGNMENT.LEFT
+    table.autofit = True
+
+    # Header row
+    for i, h in enumerate(headers):
+        cell = table.rows[0].cells[i]
+        _set_cell_text(cell, h, size=10, bold=True, color=HEADER_FG)
+        _set_cell_bg(cell, HEADER_BG)
+
+    # Data rows
+    for r_idx, row_data in enumerate(rows):
+        for c_idx, val in enumerate(row_data):
+            cell = table.rows[r_idx + 1].cells[c_idx]
+            _set_cell_text(cell, val, size=10)
+            if r_idx % 2 == 1:
+                _set_cell_bg(cell, LIGHT_GRAY_BG)
+
+    return table
+
+
+def _add_kv_table(doc, pairs):
+    """Add a 2-column metric/value table."""
+    return _add_table(doc, ["Metric", "Value"],
+                      [[k, v] for k, v in pairs])
+
+
+def _safe_float(val, default=0.0):
+    """Safely parse a float from a string."""
+    try:
+        return float(val)
+    except (ValueError, TypeError):
+        return default
+
+
+def _safe_bool(val):
+    """Parse a boolean from string/bool."""
+    if isinstance(val, bool):
+        return val
+    return str(val).strip().lower() in ("true", "1", "yes")
+
+
+# ── Summary page builders ────────────────────────────────────────────────
+
+def build_header_block(doc, task, model_name, item_count, run_meta):
+    """Add title and header metadata."""
+    title = doc.add_heading(
+        f"MetaJudge v5.1 — {TASK_DISPLAY[task]} Audit Report", level=1)
+    for run in title.runs:
+        run.font.name = "Arial"
+        run.font.size = Pt(16)
+
+    meta_lines = [
+        f"Model: {model_name}",
+        f"Date: {run_meta['end_time'][:10] if run_meta and run_meta.get('end_time') else datetime.utcnow().strftime('%Y-%m-%d')}",
+        f"Benchmark version: v5.1 | Grading engine: grading_v2",
+        f"Items: {item_count} clean",
+    ]
+    for line in meta_lines:
+        p = doc.add_paragraph(line)
+        for run in p.runs:
+            run.font.name = "Arial"
+            run.font.size = Pt(11)
+    doc.add_paragraph("")
+
+
+def build_calibration_summary(doc, merged):
+    """Performance summary for calibration task."""
+    doc.add_heading("Performance Summary", level=2)
+    n = len(merged)
+    correct = sum(1 for m in merged if _safe_bool(m.get("is_correct")))
+    brier_scores = [_safe_float(m.get("brier_score")) for m in merged]
+    mean_brier = sum(brier_scores) / n if n else 0
+    confs = [_safe_float(m.get("confidence")) for m in merged]
+    mean_conf = sum(confs) / n if n else 0
+    overconf_wrong = sum(1 for m in merged
+                         if not _safe_bool(m.get("is_correct"))
+                         and _safe_float(m.get("confidence")) >= 0.9)
+
+    FLOOR, CEIL = 0.75, 1.00
+    normalized = max(0.0, min(1.0, (mean_brier - FLOOR) / (CEIL - FLOOR)))
+
+    _add_kv_table(doc, [
+        ("Accuracy", f"{correct}/{n} ({correct/n:.1%})"),
+        ("Mean 1-Brier", f"{mean_brier:.4f}"),
+        ("Normalized score", f"{normalized:.3f}"),
+        ("Mean confidence", f"{mean_conf:.3f}"),
+        ("Overconfident wrong (conf ≥ 0.9, incorrect)", str(overconf_wrong)),
+    ])
+    doc.add_paragraph("")
+
+
+def build_abstention_summary(doc, merged):
+    """Performance summary for abstention task."""
+    doc.add_heading("Performance Summary", level=2)
+    n = len(merged)
+    utilities = [_safe_float(m.get("utility")) for m in merged]
+    mean_util = sum(utilities) / n if n else 0
+    uwaa = (mean_util + 1) / 2
+    FLOOR, CEIL = 0.60, 1.00
+    normalized = max(0.0, min(1.0, (uwaa - FLOOR) / (CEIL - FLOOR)))
+    act_correct = sum(1 for m in merged
+                      if m.get("model_decision") == m.get("gold_action"))
+    neg_util = sum(1 for u in utilities if u < 0)
+
+    _add_kv_table(doc, [
+        ("UWAA", f"{uwaa:.4f}"),
+        ("Normalized score", f"{normalized:.3f}"),
+        ("Action accuracy", f"{act_correct}/{n} ({act_correct/n:.1%})"),
+        ("Negative utility items", str(neg_util)),
+    ])
+    doc.add_paragraph("")
+
+    # Action cross-table
+    doc.add_heading("Action Distribution", level=3)
+    actions = ["answer", "clarify", "verify", "abstain"]
+    matrix = {(ma, ga): 0 for ma in actions for ga in actions}
+    for m in merged:
+        md = m.get("model_decision", "").lower()
+        ga = m.get("gold_action", "").lower()
+        if (md, ga) in matrix:
+            matrix[(md, ga)] += 1
+
+    headers = [""] + [f"Gold: {a}" for a in actions]
+    rows = []
+    for ma in actions:
+        row = [f"Model: {ma}"] + [str(matrix.get((ma, ga), 0)) for ga in actions]
+        rows.append(row)
+    _add_table(doc, headers, rows)
+    doc.add_paragraph("")
+
+
+def build_sc_summary(doc, merged, task):
+    """Performance summary for C1/C2 tasks."""
+    doc.add_heading("Performance Summary", level=2)
+    n = len(merged)
+    t1c = sum(1 for m in merged if _safe_bool(m.get("t1_correct")))
+    t2c = sum(1 for m in merged if _safe_bool(m.get("t2_correct")))
+    delta = (t2c - t1c) / n if n else 0
+
+    if task == "sc_c1":
+        FLOOR, CEIL = -0.10, 0.15
+    else:
+        FLOOR, CEIL = -0.20, 0.20
+    normalized = max(0.0, min(1.0, (delta - FLOOR) / (CEIL - FLOOR)))
+
+    damage = sum(1 for m in merged
+                 if _safe_bool(m.get("t1_correct"))
+                 and not _safe_bool(m.get("t2_correct")))
+    corrections = sum(1 for m in merged
+                      if not _safe_bool(m.get("t1_correct"))
+                      and _safe_bool(m.get("t2_correct")))
+
+    _add_kv_table(doc, [
+        ("T1 accuracy", f"{t1c}/{n} ({t1c/n:.1%})"),
+        ("T2 accuracy", f"{t2c}/{n} ({t2c/n:.1%})"),
+        ("T2-T1 delta", f"{delta:+.4f}"),
+        ("Normalized score", f"{normalized:.3f}"),
+        ("Damage events", str(damage)),
+        ("Correction gains", str(corrections)),
+    ])
+    doc.add_paragraph("")
+
+    # Transition summary
+    doc.add_heading("Transition Summary", level=3)
+    from collections import Counter
+    transitions = Counter(m.get("transition", "unknown") for m in merged)
+    trans_items = {}
+    for m in merged:
+        t = m.get("transition", "unknown")
+        trans_items.setdefault(t, []).append(m["item_id"])
+
+    headers = ["Transition", "Count", "Items"]
+    rows = []
+    for trans in ["maintain_correct", "correction_gain", "neutral_revision",
+                  "damage", "stubborn_wrong", "failed_revision"]:
+        count = transitions.get(trans, 0)
+        if count == 0:
+            items_str = "—"
+        else:
+            ids = trans_items.get(trans, [])
+            if len(ids) <= 5:
+                items_str = ", ".join(ids)
+            else:
+                items_str = ", ".join(ids[:5]) + f" and {len(ids)-5} more"
+        rows.append([trans, str(count), items_str])
+    _add_table(doc, headers, rows)
+    doc.add_paragraph("")
+
+
+def build_stochasticity_block(doc, merged, responses_r2, items_lookup,
+                              registry_lookup, justifications, task):
+    """Stochasticity comparison block (B, C1, C2 only)."""
+    if not responses_r2:
+        return
+
+    doc.add_heading("Stochasticity (Dual-Run Comparison)", level=2)
+
+    # Build Run 2 merged data
+    audit_r2 = []
+    for iid, resp in responses_r2.items():
+        audit_r2.append(resp)
+
+    if task == "abstention":
+        # Run 1 metrics
+        utils_1 = [_safe_float(m.get("utility")) for m in merged]
+        uwaa_1 = (sum(utils_1) / len(utils_1) + 1) / 2 if utils_1 else 0.5
+        FLOOR, CEIL = 0.60, 1.00
+        norm_1 = max(0.0, min(1.0, (uwaa_1 - FLOOR) / (CEIL - FLOOR)))
+
+        # Run 2 metrics — compute utility from responses
+        # (simplified: just report if we have the data)
+        utils_2 = [_safe_float(r.get("utility", 0)) for r in audit_r2]
+        uwaa_2 = (sum(utils_2) / len(utils_2) + 1) / 2 if utils_2 else 0.5
+        norm_2 = max(0.0, min(1.0, (uwaa_2 - FLOOR) / (CEIL - FLOOR)))
+
+        _add_table(doc, ["Metric", "Run 1", "Run 2"], [
+            ["UWAA", f"{uwaa_1:.4f}", f"{uwaa_2:.4f}"],
+            ["Normalized score", f"{norm_1:.3f}", f"{norm_2:.3f}"],
+        ])
+
+        # Action stability
+        r1_by_id = {m["item_id"]: m for m in merged}
+        diffs = []
+        stable = 0
+        for iid, r2 in responses_r2.items():
+            r1 = r1_by_id.get(iid)
+            if r1:
+                if r1.get("model_decision") == r2.get("model_decision"):
+                    stable += 1
+                else:
+                    diffs.append((iid,
+                                  r1.get("model_decision", "?"),
+                                  r2.get("model_decision", "?")))
+        total = len(responses_r2)
+        doc.add_paragraph("")
+        _add_kv_table(doc, [
+            ("Items with identical actions", f"{stable}/{total} ({stable/total:.0%})"),
+            ("Score range across runs", f"{min(norm_1, norm_2):.2f} – {max(norm_1, norm_2):.2f}"),
+        ])
+
+    elif task in ("sc_c1", "sc_c2"):
+        n = len(merged)
+        t1c_1 = sum(1 for m in merged if _safe_bool(m.get("t1_correct")))
+        t2c_1 = sum(1 for m in merged if _safe_bool(m.get("t2_correct")))
+        delta_1 = (t2c_1 - t1c_1) / n if n else 0
+        dmg_1 = sum(1 for m in merged
+                    if _safe_bool(m.get("t1_correct"))
+                    and not _safe_bool(m.get("t2_correct")))
+
+        FLOOR = -0.10 if task == "sc_c1" else -0.20
+        CEIL = 0.15 if task == "sc_c1" else 0.20
+        norm_1 = max(0.0, min(1.0, (delta_1 - FLOOR) / (CEIL - FLOOR)))
+
+        # Run 2
+        t1c_2 = sum(1 for r in audit_r2 if _safe_bool(r.get("t1_correct")))
+        t2c_2 = sum(1 for r in audit_r2 if _safe_bool(r.get("t2_correct")))
+        n2 = len(audit_r2)
+        delta_2 = (t2c_2 - t1c_2) / n2 if n2 else 0
+        norm_2 = max(0.0, min(1.0, (delta_2 - FLOOR) / (CEIL - FLOOR)))
+        dmg_2 = sum(1 for r in audit_r2
+                    if _safe_bool(r.get("t1_correct"))
+                    and not _safe_bool(r.get("t2_correct")))
+
+        _add_table(doc, ["Metric", "Run 1", "Run 2"], [
+            ["Delta", f"{delta_1:+.4f}", f"{delta_2:+.4f}"],
+            ["Normalized score", f"{norm_1:.3f}", f"{norm_2:.3f}"],
+            ["Damage events", str(dmg_1), str(dmg_2)],
+        ])
+
+        # Transition stability
+        r1_by_id = {m["item_id"]: m for m in merged}
+        diffs = []
+        stable = 0
+        for iid, r2 in responses_r2.items():
+            r1 = r1_by_id.get(iid)
+            if r1:
+                if r1.get("transition") == r2.get("transition"):
+                    stable += 1
+                else:
+                    diffs.append((iid,
+                                  r1.get("transition", "?"),
+                                  r2.get("transition", "?")))
+        total = len(responses_r2)
+        doc.add_paragraph("")
+        _add_kv_table(doc, [
+            ("Items with identical transitions", f"{stable}/{total} ({stable/total:.0%})"),
+            ("Score range across runs", f"{min(norm_1, norm_2):.2f} – {max(norm_1, norm_2):.2f}"),
+            ("Interpretation", f"{len(diffs)} items changed between independent runs"),
+        ])
+
+        if diffs:
+            doc.add_paragraph("")
+            doc.add_heading("Changed Items", level=3)
+            _add_table(doc, ["Item", "Run 1 transition", "Run 2 transition"],
+                       [[iid, t1, t2] for iid, t1, t2 in diffs])
+
+    doc.add_paragraph("")
+
+
+def build_runtime_block(doc, run_meta):
+    """Runtime and cost block from run.json."""
+    if not run_meta:
+        return
+
+    doc.add_heading("Runtime and Cost", level=2)
+
+    # Wall clock
+    wall = "N/A"
+    if run_meta.get("start_time") and run_meta.get("end_time"):
+        try:
+            fmt = "%Y-%m-%dT%H:%M:%S"
+            start = run_meta["start_time"][:19]
+            end = run_meta["end_time"][:19]
+            t0 = datetime.strptime(start, fmt)
+            t1 = datetime.strptime(end, fmt)
+            secs = (t1 - t0).total_seconds()
+            wall = f"{int(secs // 60)}m {int(secs % 60)}s"
+        except (ValueError, TypeError):
+            pass
+
+    in_tok = run_meta.get("input_tokens", 0)
+    out_tok = run_meta.get("output_tokens", 0)
+    in_cost = run_meta.get("input_cost", 0)
+    out_cost = run_meta.get("output_cost", 0)
+    total_cost = in_cost + out_cost
+
+    _add_kv_table(doc, [
+        ("Wall clock", wall),
+        ("Input tokens", f"{in_tok:,}" if in_tok else "N/A"),
+        ("Output tokens", f"{out_tok:,}" if out_tok else "N/A"),
+        ("Input cost", f"${in_cost:.4f}" if in_cost else "N/A"),
+        ("Output cost", f"${out_cost:.4f}" if out_cost else "N/A"),
+        ("Total cost", f"${total_cost:.4f}" if total_cost else "N/A"),
+    ])
+    doc.add_paragraph("")
+
+
+# ── Document assembly ────────────────────────────────────────────────────
+
+def create_document(task, model_name, merged, responses_r2, items_lookup,
+                    registry_lookup, justifications, run_meta):
+    """Build the full docx document."""
+    doc = Document()
+
+    # Page setup
+    section = doc.sections[0]
+    section.page_width = Inches(8.5)
+    section.page_height = Inches(11)
+    section.top_margin = Inches(1)
+    section.bottom_margin = Inches(1)
+    section.left_margin = Inches(1)
+    section.right_margin = Inches(1)
+
+    # Set default font
+    style = doc.styles["Normal"]
+    style.font.name = "Arial"
+    style.font.size = Pt(11)
+
+    # Summary page
+    build_header_block(doc, task, model_name, len(merged), run_meta)
+
+    if task == "calibration":
+        build_calibration_summary(doc, merged)
+    elif task == "abstention":
+        build_abstention_summary(doc, merged)
+    elif task in ("sc_c1", "sc_c2"):
+        build_sc_summary(doc, merged, task)
+
+    # Stochasticity (B, C1, C2 only)
+    if task != "calibration":
+        build_stochasticity_block(doc, merged, responses_r2, items_lookup,
+                                  registry_lookup, justifications, task)
+
+    build_runtime_block(doc, run_meta)
+
+    # Page break before item details (Phase C-D)
+    doc.add_page_break()
+
+    # TODO: Item-by-item detail (Phases C-D)
+    doc.add_heading("Item-by-Item Detail", level=1)
+    doc.add_paragraph(f"[{len(merged)} items — detail generation pending]")
+
+    return doc
+
+
+# ── Main ──────────────────────────────────────────────────────────────────
 
 def main():
     args = parse_args()
@@ -233,9 +661,11 @@ def main():
     print(f"  Justifications matched: {sum(1 for m in merged if m['justification'])}/{len(merged)}")
     print(f"  Run 2 data: {'yes' if responses_r2 else 'no'}")
 
-    # TODO: Generate docx (Phases B-D)
-    print(f"\n[Scaffold only — docx generation not yet implemented]")
-    print(f"Output would be: {args.output}")
+    # Generate docx
+    doc = create_document(args.task, model_name, merged, responses_r2,
+                          items_lookup, registry_lookup, justifications, run_meta)
+    doc.save(args.output)
+    print(f"\nSaved: {args.output}")
 
 
 if __name__ == "__main__":
