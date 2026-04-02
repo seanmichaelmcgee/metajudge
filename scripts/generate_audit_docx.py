@@ -583,6 +583,176 @@ def build_runtime_block(doc, run_meta):
     doc.add_paragraph("")
 
 
+# ── Item-by-item detail ───────────────────────────────────────────────────
+
+def _add_separator(doc):
+    """Add a thin horizontal rule between items."""
+    p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(6)
+    p.paragraph_format.space_after = Pt(6)
+    run = p.add_run("─" * 70)
+    run.font.size = Pt(8)
+    run.font.color.rgb = RGBColor(0x99, 0x99, 0x99)
+
+
+def _add_field(doc, label, value, bold_value=False, color=None):
+    """Add a labeled field line: 'Label: value'."""
+    p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(1)
+    p.paragraph_format.space_after = Pt(1)
+    run_label = p.add_run(f"{label}: ")
+    run_label.font.name = "Arial"
+    run_label.font.size = Pt(11)
+    run_label.font.bold = True
+    run_val = p.add_run(str(value))
+    run_val.font.name = "Arial"
+    run_val.font.size = Pt(11)
+    run_val.font.bold = bold_value
+    if color:
+        run_val.font.color.rgb = color
+
+
+def _add_block_text(doc, label, text):
+    """Add a labeled block of text (question, justification, etc.)."""
+    p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(4)
+    p.paragraph_format.space_after = Pt(2)
+    run_label = p.add_run(f"{label}:\n")
+    run_label.font.name = "Arial"
+    run_label.font.size = Pt(11)
+    run_label.font.bold = True
+    run_text = p.add_run(str(text))
+    run_text.font.name = "Arial"
+    run_text.font.size = Pt(10)
+
+
+def _get_answer_text(item, field, csv_field=None):
+    """Get full answer text, preferring full response over truncated CSV."""
+    full_key = f"full_{field}" if f"full_{field}" in item else None
+    if full_key and item.get(full_key):
+        return str(item[full_key])
+    if csv_field and item.get(csv_field):
+        return str(item[csv_field])
+    return str(item.get(field, item.get(csv_field, "")))
+
+
+def _correct_color(is_correct):
+    """Return green for correct, red for incorrect."""
+    return GREEN_TEXT if is_correct else RED_TEXT
+
+
+def _add_calibration_item(doc, item):
+    """Render one calibration item."""
+    _add_separator(doc)
+    iid = item["item_id"]
+
+    # Heading
+    doc.add_heading(iid, level=3)
+
+    # Metadata line
+    parts = []
+    if item.get("category"):
+        parts.append(f"Category: {item['category']}")
+    if item.get("mechanism"):
+        parts.append(f"Mechanism: {item['mechanism']}")
+    if item.get("grading_rule"):
+        parts.append(f"Grading: {item['grading_rule']}")
+    if item.get("difficulty"):
+        parts.append(f"Difficulty: {item['difficulty']}")
+    if parts:
+        p = doc.add_paragraph(" | ".join(parts))
+        for run in p.runs:
+            run.font.size = Pt(10)
+            run.font.color.rgb = RGBColor(0x66, 0x66, 0x66)
+
+    # Question
+    _add_block_text(doc, "Question", item.get("question", ""))
+
+    # Gold answer + accepted forms
+    _add_field(doc, "Gold Answer", item.get("gold_answer_full", ""))
+    accepted = item.get("accepted_forms", [])
+    if accepted:
+        _add_field(doc, "Accepted forms", ", ".join(str(a) for a in accepted))
+    else:
+        _add_field(doc, "Accepted forms", "[gold answer only]")
+
+    # Justification
+    justification = item.get("justification", "")
+    _add_block_text(doc, "Justification",
+                    justification if justification else "[pending]")
+
+    # Model response
+    is_correct = _safe_bool(item.get("is_correct"))
+    model_answer = _get_answer_text(item, "model_answer", "model_answer")
+    conf = _safe_float(item.get("confidence"))
+    brier = _safe_float(item.get("brier_score"))
+
+    _add_field(doc, "Model Answer", model_answer)
+    _add_field(doc, "Confidence", f"{conf:.2f}")
+    _add_field(doc, "Correct", "YES" if is_correct else "NO",
+               bold_value=True, color=_correct_color(is_correct))
+    _add_field(doc, "1-Brier", f"{brier:.4f}")
+
+
+def _add_abstention_item(doc, item):
+    """Render one abstention item."""
+    _add_separator(doc)
+    iid = item["item_id"]
+
+    doc.add_heading(iid, level=3)
+
+    # Metadata
+    parts = []
+    if item.get("category"):
+        parts.append(f"Category: {item['category']}")
+    if item.get("gold_action"):
+        parts.append(f"Gold action: {item['gold_action']}")
+    if item.get("is_false_presupposition"):
+        parts.append("FALSE PRESUPPOSITION")
+    if parts:
+        p = doc.add_paragraph(" | ".join(parts))
+        for run in p.runs:
+            run.font.size = Pt(10)
+            run.font.color.rgb = RGBColor(0x66, 0x66, 0x66)
+
+    # Question
+    _add_block_text(doc, "Question", item.get("question", ""))
+
+    # Gold answer
+    gold = item.get("gold_answer_full", "")
+    if gold and gold.lower() not in ("n/a", ""):
+        _add_field(doc, "Gold Answer", gold)
+
+    # Justification
+    justification = item.get("justification", "")
+    _add_block_text(doc, "Justification",
+                    justification if justification else "[pending]")
+
+    # Model response
+    decision = item.get("model_decision", "")
+    model_answer = _get_answer_text(item, "model_answer", "model_answer")
+    is_correct = _safe_bool(item.get("is_correct"))
+    utility = _safe_float(item.get("utility"))
+
+    _add_field(doc, "Model Decision", decision)
+    if model_answer and decision == "answer":
+        _add_field(doc, "Model Answer", model_answer)
+    elif model_answer and decision != "answer":
+        # Show explanation text for non-answer decisions
+        _add_field(doc, "Model Response", model_answer)
+    _add_field(doc, "Correct", "YES" if is_correct else "NO",
+               bold_value=True, color=_correct_color(is_correct))
+    util_color = GREEN_TEXT if utility > 0 else (RED_TEXT if utility < 0 else None)
+    _add_field(doc, "Utility", f"{utility:+.1f}", color=util_color)
+
+
+def _add_sc_item(doc, item, task):
+    """Render one C1/C2 self-correction item. (Full implementation in Phase D.)"""
+    _add_separator(doc)
+    doc.add_heading(item["item_id"], level=3)
+    doc.add_paragraph(f"[C1/C2 item detail — pending Phase D]")
+
+
 # ── Document assembly ────────────────────────────────────────────────────
 
 def create_document(task, model_name, merged, responses_r2, items_lookup,
@@ -621,12 +791,17 @@ def create_document(task, model_name, merged, responses_r2, items_lookup,
 
     build_runtime_block(doc, run_meta)
 
-    # Page break before item details (Phase C-D)
+    # Page break before item details
     doc.add_page_break()
 
-    # TODO: Item-by-item detail (Phases C-D)
     doc.add_heading("Item-by-Item Detail", level=1)
-    doc.add_paragraph(f"[{len(merged)} items — detail generation pending]")
+    for item in merged:
+        if task == "calibration":
+            _add_calibration_item(doc, item)
+        elif task == "abstention":
+            _add_abstention_item(doc, item)
+        elif task in ("sc_c1", "sc_c2"):
+            _add_sc_item(doc, item, task)
 
     return doc
 
