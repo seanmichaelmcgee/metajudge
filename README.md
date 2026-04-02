@@ -88,7 +88,8 @@ config/
   family_c_scoring.yaml           #   Family C base scores, damage penalties, ranges
 
 notebooks/
-  metajudge_benchmark_v3.ipynb    #   Official benchmark v3.1 (A+B+C, post-audit)
+  metajudge_benchmark_v3_2.ipynb  #   Official benchmark v3.2 (anchor-normalized, two-axis)
+  metajudge_benchmark_v3.ipynb    #   Benchmark v3.1 (A+B+C, post-audit, archived)
   metajudge_narrative_v3.ipynb    #   Narrative analysis v3.2 (A+B+C, z-score composite)
   metajudge_benchmark_v2.ipynb    #   V2 benchmark (A+B only, archived)
   metajudge_narrative_v2.ipynb    #   V2 narrative (A+B only, archived)
@@ -97,6 +98,8 @@ notebooks/
   metajudge_submission_lean.ipynb #   Lean submission notebook
 
 scripts/
+  audit_benchmark_v32.py          #   Unified benchmark audit (re-grade + composite validation)
+  extract_wrong_for_llm_audit.py  #   Extract wrong-graded items for LLM semantic audit
   pilot_family_c.py               #   Family C model sweep runner (v0.6.x)
   sweep_v2.py                     #   V2 sweep protocol (C1/C2/B0/confidence/edit-distance)
   sweep_v2_single_model.py        #   Single-model sweep helper for parallel execution
@@ -118,6 +121,8 @@ outputs/                          #   Run artifacts (audit CSVs, figures)
     sweep_v2/                     #       V2 validation sweep (5 models x 45 items)
     sweep_v2_phase5/              #       Phase 5+6 integrated sweep (56 items x 4 models)
 docs/                             #   Scientific documentation
+  audit/                          #     Audit framework (two-layer: automated + LLM semantic)
+  benchmark/                      #     Benchmark design docs (v3.2 anchor normalization, LLM audit prompt)
   stats/                          #     Statistical backgrounders, composite methodology, power analysis
 planning/                         #   Architecture and sprint plans
   family_c_sprint/                #     Sprint planning docs + v2 checkpoint
@@ -176,6 +181,18 @@ Transition-based scoring classifies each item into one of six outcomes: `correct
 
 ### Composite
 `MetaScore = mean(z_A, z_B, z_C)` — equal-weight z-score (Dawes 1979). Each family z-standardized independently. Equal weights optimal at n=5 (Davis-Stober 2011). Uncertainty quantified via Dirichlet stability, Hasse partial order, and Friedman test. See `docs/stats/composite_construction_step2.md`.
+
+---
+
+## Audit Framework
+
+MetaJudge uses a **two-layer audit** to ensure grading accuracy before submission. See `docs/audit/README.md` for the full framework.
+
+**Layer 1 — Automated re-grading** (`scripts/audit_benchmark_v32.py`): Re-grades every item using the production grading engine and flags correctness flips, validates anchor normalization math, checks file completeness. Catches mechanical errors.
+
+**Layer 2 — LLM semantic audit** (`docs/benchmark/llm_grading_audit_prompt.md` + `scripts/extract_wrong_for_llm_audit.py`): A long-context LLM reviews all ~117 items marked wrong and evaluates whether the model's answer is semantically correct despite failing the automated grader. Catches alias gaps, phrasing variants, and gold answer errors.
+
+Seven known grading failure patterns have been identified and fixed across prior audits (verbose answers, confirmation-without-restatement, numeric tolerance, LaTeX notation, first-number extraction, smart comma handling, markdown formatting).
 
 ---
 
