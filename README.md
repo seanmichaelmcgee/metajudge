@@ -2,7 +2,7 @@
 
 A behavioral benchmark for metacognitive monitoring and control in frontier language models, built for the [Kaggle Measuring Progress Toward AGI — Cognitive Abilities](https://www.kaggle.com/competitions/kaggle-measuring-agi) hackathon (Metacognition track).
 
-**Current version:** v0.7.2 (v3.2 — equal-weight z-score composite, upgraded grading engine)
+**Current version:** v4.1 (4-task Kaggle Benchmark, anchor-normalized, upgraded grading engine)
 **Deadline:** April 16, 2026
 **Submission:** Kaggle Community Benchmark + Writeup (1,500 words)
 
@@ -40,13 +40,13 @@ MetaJudge evaluates whether language models can **track the reliability of their
 - Config-driven scoring via `config/family_c_scoring.yaml`
 - Grounded in Huang et al. (ICLR 2024): intrinsic self-correction fails without external evidence
 
-**Status:** v3.2. Grading engine upgraded (LaTeX unwrapping, final-answer extraction, smart number parsing). Family C reliability α ≈ 0.35 — included in composite but no standalone subscore value (Haberman PRMSE test). See `outputs/audit_family_c_summary.md` for audit and `docs/stats/composite_construction_step2.md` for composite methodology.
+**Status:** v4.1. Grading engine upgraded (LaTeX unwrapping, final-answer extraction, smart number parsing, quote normalization, number-word conversion, signed percentage handling). Family C reliability α ≈ 0.35 — included in composite but no standalone subscore value (Haberman PRMSE test). See `outputs/audit_family_c_summary.md` for audit and `docs/stats/composite_construction_step2.md` for composite methodology.
 
 ### Composite MetaScore
 
-**MetaScore = mean(z_A, z_B, z_C)** — equal-weight z-score composite.
+**MetaScore = mean(norm_A, norm_B, norm_C1, norm_C2) / 4** — platform-averaged anchor-normalized scores.
 
-Each family is z-standardized independently (population SD, ddof=0), then averaged with equal weights (1/3 each). Equal weighting is optimal at n=5 models per Dawes (1979) and Davis-Stober (2011): any data-derived differential weighting will overfit and yield higher expected error.
+v4.1 uses a 4-task architecture: each family is a separate Kaggle Benchmark task notebook returning one anchor-normalized float. The Kaggle platform averages the 4 task scores into the leaderboard MetaScore. This is mathematically equivalent to an equal-weight composite, justified by Dawes (1979) and Davis-Stober (2011).
 
 **Family C caveat:** Reliability α ≈ 0.35, below the 0.55 Haberman threshold for standalone subscore value. A+B composite predicts true C better than C's observed score. Family C is included in the composite for profile information but should not be reported as a standalone axis.
 
@@ -62,19 +62,19 @@ See `docs/stats/composite_construction_step2.md` for full methodology and `docs/
 SOUL.md                           # Governing principles (read first)
 CLAUDE.md                         # Development instructions
 
-metajudge/                        # Python package — scoring, grading, schemas
+metajudge/                        # Python package — 7 modules, clean
+  __init__.py                     #   Package root, version 4.1
   scoring/
+    __init__.py
     grading_v2.py                 #   8-rule deterministic adjudication engine
-    calibration_metrics.py        #   Brier, ECE, overconfidence rate
     abstention_metrics.py         #   UWAA, utility matrix, score_family_b_item_v2
     self_correction_v2.py         #   Family C transition scoring, confidence adjustment
-    statistics.py                 #   Bootstrap CIs, Holm, McNemar, Spearman
-  schemas/                        #   Response dataclasses
   tasks/
+    __init__.py
     self_correction_v2.py         #   Family C task definitions (C1/C2 prompts, grading)
 
 data/                             # Production datasets
-  metajudge_benchmark_v1.json     #   117-item calibration set (V4.2)
+  metajudge_benchmark_v1.json     #   117-item calibration set
   family_b_pilot_v2.json          #   84-item Family B set
   adjudication_registry.json      #   132 grading rules (117 cal + 15 FB)
   clean_subset_manifest.json      #   Exclusion lists for clean subset
@@ -87,15 +87,13 @@ config/
   benchmark_config.yaml           #   Overall benchmark weights
   family_c_scoring.yaml           #   Family C base scores, damage penalties, ranges
 
-notebooks/
-  metajudge_benchmark_v3_2.ipynb  #   Official benchmark v3.2 (anchor-normalized, two-axis)
-  metajudge_benchmark_v3.ipynb    #   Benchmark v3.1 (A+B+C, post-audit, archived)
-  metajudge_narrative_v3.ipynb    #   Narrative analysis v3.2 (A+B+C, z-score composite)
-  metajudge_benchmark_v2.ipynb    #   V2 benchmark (A+B only, archived)
-  metajudge_narrative_v2.ipynb    #   V2 narrative (A+B only, archived)
-  metajudge_benchmark.ipynb       #   V1 benchmark (archived)
-  metajudge_narrative.ipynb       #   V1 narrative (archived)
-  metajudge_submission_lean.ipynb #   Lean submission notebook
+notebooks/                        #   v4.1 task notebooks (Kaggle Benchmark)
+  metajudge_calibration.ipynb     #   Task 1: Family A — returns anchor-normalized Brier
+  metajudge_abstention.ipynb      #   Task 2: Family B — returns anchor-normalized UWAA
+  metajudge_sc_c1.ipynb           #   Task 3: Family C1 — returns anchor-normalized SC delta
+  metajudge_sc_c2.ipynb           #   Task 4: Family C2 — returns anchor-normalized SC delta
+  metajudge_narrative_v3.ipynb    #   Multi-model analysis (v3.2, z-score composite)
+  archive/                        #   Prior notebook versions (v1–v3.2)
 
 scripts/
   audit_benchmark_v32.py          #   Unified benchmark audit (re-grade + composite validation)
@@ -110,8 +108,8 @@ scripts/
   power_analysis_v062.py          #   Statistical power analysis for Family C
   openrouter/client.py            #   OpenRouter API client for multi-model execution
 
-kaggle-dataset-v3/                #   -> Upload as Kaggle Dataset "metajudge-data" (v3.1 post-audit)
-kaggle-package-v3/                #   -> Upload as Kaggle Dataset "metajudge-package" (v3.1 post-audit)
+kaggle-dataset-v3/                #   -> Upload as Kaggle Dataset "metajudge-data-v3"
+kaggle-package-v3/                #   -> Upload as Kaggle Dataset "metajudge-package-v3" (7 modules + metadata)
 
 tests/                            #   Unit and integration tests
 outputs/                          #   Run artifacts (audit CSVs, figures)
@@ -122,7 +120,7 @@ outputs/                          #   Run artifacts (audit CSVs, figures)
     sweep_v2_phase5/              #       Phase 5+6 integrated sweep (56 items x 4 models)
 docs/                             #   Scientific documentation
   audit/                          #     Audit framework (two-layer: automated + LLM semantic)
-  benchmark/                      #     Benchmark design docs (v3.2 anchor normalization, LLM audit prompt)
+  benchmark/                      #     Benchmark design docs (v4.1 build prompt, LLM audit prompt)
   stats/                          #     Statistical backgrounders, composite methodology, power analysis
 planning/                         #   Architecture and sprint plans
   family_c_sprint/                #     Sprint planning docs + v2 checkpoint
@@ -132,35 +130,32 @@ planning/                         #   Architecture and sprint plans
 
 ## Notebooks
 
-### Benchmark Notebook (`metajudge_benchmark_v3.ipynb`)
-The official Kaggle submission (v3.1 post-audit). Runs all three axes against one model via the Benchmarks SDK.
+### v4.1 Task Notebooks (Kaggle Benchmark)
+
+4 independent task notebooks. Each evaluates one model via `kbench.llm` and returns one anchor-normalized `float`. The Kaggle platform averages the 4 scores into the leaderboard MetaScore.
+
+| # | Notebook | Task | Family | Items | Returns |
+|---|----------|------|--------|-------|---------|
+| 1 | `metajudge_calibration.ipynb` | `metajudge_calibration` | A | 105 | normalized 1-Brier |
+| 2 | `metajudge_abstention.ipynb` | `metajudge_abstention` | B | 72 | normalized UWAA |
+| 3 | `metajudge_sc_c1.ipynb` | `metajudge_sc_c1` | C1 | 28 | normalized SC delta |
+| 4 | `metajudge_sc_c2.ipynb` | `metajudge_sc_c2` | C2 | 23 | normalized SC delta |
 
 **Requires two Kaggle Dataset inputs:**
-- `metajudge-data-v3` — benchmark items, Family C items, registry (187 entries), clean manifest (from `kaggle-dataset-v3/`)
-- `metajudge-package-v3` — metajudge Python package with Family C scoring + confirmation detection (from `kaggle-package-v3/`)
+- `metajudge-data-v3` — benchmark items, Family C items, registry, clean manifest (from `kaggle-dataset-v3/`)
+- `metajudge-package-v3` — clean 7-module scoring package (from `kaggle-package-v3/`)
 
-**Produces:**
-- `MetaScore` (float) -> Kaggle leaderboard via `%choose metajudge_metacognition_v1`
-- `calibration_item_audit.csv` — per-item: model_answer, confidence, is_correct, brier_score
-- `family_b_item_audit.csv` — per-item: model_decision, model_answer, is_correct, utility
-- `family_c_item_audit.csv` — per-item: t1/t2 answers, correctness, transition, edit similarity
-- `benchmark_run_summary.json` — aggregate metrics + per-axis breakdown
+**Each notebook produces:**
+- Per-item audit CSV (model answers, correctness, scores)
+- One `float` score → Kaggle leaderboard
 
-**Architecture:** Brier formula inlined for judge transparency. Family B utility scoring, Family C transition scoring, and composite weighting use the metajudge package. T2 answers processed through `resolve_t2_answer()` for confirmation-without-restatement handling.
+**Architecture:** Each notebook runs independently per model — no shared filesystem between tasks. Brier formula inlined for judge transparency. Family B utility scoring, Family C transition scoring use the metajudge package. T2 answers processed through `resolve_t2_answer()` for confirmation-without-restatement handling.
 
 ### Narrative Notebook (`metajudge_narrative_v3.ipynb`)
-The full multi-model analysis (v3.2). Runs all models across all three families, produces figures, statistical tests, and composite analysis.
+Full multi-model analysis (v3.2). Runs all models across all three families, produces figures, statistical tests, and composite analysis. Not part of the Kaggle submission pipeline.
 
-**Produces:**
-- Audit CSVs for all three families (across all models) + `composite_analysis.csv`
-- 6 figures: reliability diagram, action distribution, Brier forest plot, mechanism heatmap, FC delta bar chart, FC stratum heatmap
-- Per-family leaderboards, C1/C2 split analysis, damage rate ranking
-- Equal-weight z-score MetaScore with rank shift analysis (A+B → A+B+C)
-- Composite uncertainty: Haberman PRMSE test, Dirichlet pairwise stability (10k samples), Hasse partial order + linear extensions, Kemeny-Young consensus ranking, Friedman + Nemenyi CD
-- Cross-family ranking table with rank divergence
-
-### Lean Submission Notebook (`metajudge_submission_lean.ipynb`)
-Minimal submission notebook — scoring logic lives in the metajudge package.
+### Archived Notebooks (`notebooks/archive/`)
+Prior versions (v1–v3.2 benchmark and narrative notebooks, lean submission). Kept for historical reference.
 
 ---
 
@@ -180,7 +175,7 @@ Acceptable alternative actions receive at least +0.3 partial credit.
 Transition-based scoring classifies each item into one of six outcomes: `correction_gain`, `maintain_correct`, `neutral_revision`, `damage`, `stubborn_wrong`, `failed_revision`. Base scores differ between C1 (harsh on damage: -0.40) and C2 (more forgiving: -0.25, but -0.40 for misleading evidence). Confidence adjustment in [-0.15, +0.10] applied per transition. Raw scores rescaled from [-0.55, 0.30] to [0, 1]. V2 protocol uses third-person framing for C1 and reviewer's note framing for C2, with B0 re-answering baseline to separate genuine correction from re-sampling. See `planning/family_c_sprint/03_scoring_blueprint.md` for worked examples.
 
 ### Composite
-`MetaScore = mean(z_A, z_B, z_C)` — equal-weight z-score (Dawes 1979). Each family z-standardized independently. Equal weights optimal at n=5 (Davis-Stober 2011). Uncertainty quantified via Dirichlet stability, Hasse partial order, and Friedman test. See `docs/stats/composite_construction_step2.md`.
+`MetaScore = mean(norm_A, norm_B, norm_C1, norm_C2)` — platform-averaged anchor-normalized scores. Each task notebook returns one float; the Kaggle platform averages all 4. Equal weighting justified by Dawes (1979) and Davis-Stober (2011). Uncertainty quantified via Dirichlet stability, Hasse partial order, and Friedman test. See `docs/stats/composite_construction_step2.md`.
 
 ---
 
