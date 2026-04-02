@@ -65,9 +65,30 @@ def _strip_markdown(text: str) -> str:
     return s
 
 
+_NUMBER_WORDS = {
+    "zero": "0", "one": "1", "two": "2", "three": "3", "four": "4",
+    "five": "5", "six": "6", "seven": "7", "eight": "8", "nine": "9",
+    "ten": "10", "eleven": "11", "twelve": "12", "thirteen": "13",
+    "fourteen": "14", "fifteen": "15", "sixteen": "16", "seventeen": "17",
+    "eighteen": "18", "nineteen": "19", "twenty": "20",
+}
+
+
+def _normalize_number_words(text: str) -> str:
+    """Replace leading English number word with digit equivalent."""
+    words = text.strip().split()
+    if not words:
+        return text
+    first_lower = words[0].lower()
+    if first_lower in _NUMBER_WORDS:
+        words[0] = _NUMBER_WORDS[first_lower]
+        return " ".join(words)
+    return text
+
+
 def _preprocess_answer(text: str) -> str:
-    """Apply LaTeX unwrapping and markdown stripping to a raw answer."""
-    return _strip_markdown(_strip_latex(text))
+    """Apply LaTeX unwrapping, markdown stripping, and number-word normalization."""
+    return _normalize_number_words(_strip_markdown(_strip_latex(text)))
 
 
 def _extract_final_answer(text: str) -> Optional[str]:
@@ -155,6 +176,39 @@ def _try_float(s: str) -> Optional[float]:
         return float(s)
     except (ValueError, TypeError):
         return None
+
+
+def _normalize_sign_language(text: str) -> Optional[str]:
+    """Convert 'N% decrease/decline/drop' to '-N%' and 'N% increase/rise' to '+N%'."""
+    t = text.lower()
+    # "N% decrease" or "N decrease"
+    m = re.search(
+        r'(\d+(?:\.\d+)?)\s*%?\s*(?:decrease|decline|drop|reduction|less|lower)',
+        t
+    )
+    if m:
+        return f"-{m.group(1)}%"
+    # "decrease of N%" or "decrease by N%" or "decreases by N%"
+    m = re.search(
+        r'(?:decrease[sd]?|decline[sd]?|drop[sp]?|reduction)\s+(?:of|by)\s+(\d+(?:\.\d+)?)\s*%',
+        t
+    )
+    if m:
+        return f"-{m.group(1)}%"
+    # "N% increase" or "increase of/by N%"
+    m = re.search(
+        r'(\d+(?:\.\d+)?)\s*%?\s*(?:increase|gain|rise|more|higher)',
+        t
+    )
+    if m:
+        return f"+{m.group(1)}%"
+    m = re.search(
+        r'(?:increase[sd]?|gain[sd]?|rise[sd]?)\s+(?:of|by)\s+(\d+(?:\.\d+)?)\s*%',
+        t
+    )
+    if m:
+        return f"+{m.group(1)}%"
+    return None
 
 
 def _normalize_sci(text: str) -> str:
@@ -329,6 +383,14 @@ def _grade_approx_numeric_small(answer: str, spec: Dict[str, Any]) -> Dict[str, 
         if n_val is not None and _nums_close(n_val, gold_val, rel_tol=rel_tol, abs_tol=abs_tol):
             return {"correct": True, "method": "approx_numeric_small",
                     "match_detail": f"number_in_text: {n_str}"}
+
+    # Sign-language normalization: "4% decrease" → "-4%"
+    sign_norm = _normalize_sign_language(answer)
+    if sign_norm is not None:
+        sign_val = _try_float(sign_norm.replace('%', ''))
+        if sign_val is not None and _nums_close(sign_val, gold_val, rel_tol=rel_tol, abs_tol=abs_tol):
+            return {"correct": True, "method": "approx_numeric_small",
+                    "match_detail": f"sign_language_normalization: {sign_norm}"}
 
     detail = f"mismatch: {ans_val} vs {gold_val}" if ans_val is not None else "answer unparseable"
     return {"correct": False, "method": "approx_numeric_small", "match_detail": detail}
@@ -507,6 +569,11 @@ def _grade_code_output(answer: str, spec: Dict[str, Any]) -> Dict[str, Any]:
     gold_norm = _normalize(spec["gold_answer"])
     if norm == gold_norm:
         return {"correct": True, "method": "code_output", "match_detail": "exact match"}
+    # Quote-style normalization: treat single and double quotes as equivalent
+    norm_q = norm.replace('"', "'") if norm else norm
+    gold_q = gold_norm.replace('"', "'") if gold_norm else gold_norm
+    if norm_q and norm_q == gold_q:
+        return {"correct": True, "method": "code_output", "match_detail": "quote-normalized match"}
     # Also try replacing literal \n with actual newlines before normalizing
     norm_escaped = _normalize(answer.replace("\\n", "\n"))
     gold_escaped = _normalize(spec["gold_answer"].replace("\\n", "\n"))
@@ -597,6 +664,30 @@ def _grade_alias_plus_normalization(answer: str, spec: Dict[str, Any]) -> Dict[s
                 if form and form in ext_norm:
                     return {"correct": True, "method": "alias_plus_normalization",
                             "match_detail": f"final_answer_contains: {form!r}"}
+
+    # Sign-language normalization: "4% decrease" → "-4%"
+    sign_norm = _normalize_sign_language(answer)
+    if sign_norm is not None:
+        sign_normalized = _normalize(sign_norm)
+        if sign_normalized == gold_norm:
+            return {"correct": True, "method": "alias_plus_normalization",
+                    "match_detail": f"sign_language_match: {sign_norm}"}
+        for form in accepted:
+            if _normalize(form) == sign_normalized:
+                return {"correct": True, "method": "alias_plus_normalization",
+                        "match_detail": f"sign_language_alias: {form!r}"}
+
+    # Leading-token match: if gold is short (≤3 words), accept if answer starts with it
+    if gold_norm:
+        gold_words = gold_norm.split()
+        if len(gold_words) <= 3 and norm and norm.startswith(gold_norm):
+            return {"correct": True, "method": "alias_plus_normalization",
+                    "match_detail": f"leading_token_match: answer starts with '{gold_norm}'"}
+        for form in accepted:
+            form_norm = _normalize(form)
+            if form_norm and len(form_norm.split()) <= 3 and norm and norm.startswith(form_norm):
+                return {"correct": True, "method": "alias_plus_normalization",
+                        "match_detail": f"leading_token_match: answer starts with alias '{form_norm}'"}
 
     return {"correct": False, "method": "alias_plus_normalization",
             "match_detail": f"no match: {norm!r} vs gold {gold_norm!r}"}
