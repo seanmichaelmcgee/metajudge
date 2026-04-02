@@ -31,6 +31,7 @@ sys.path.insert(0, str(REPO_ROOT / "kaggle-package-v3"))
 
 from metajudge.scoring.grading_v2 import grade_item, load_registry
 from metajudge.scoring.abstention_metrics import score_family_b_item_v2, compute_uwaa
+from metajudge.tasks.self_correction_v2 import resolve_t2_answer
 
 # ---------------------------------------------------------------------------
 # Anchor constants (must match benchmark notebook Cell 2)
@@ -174,9 +175,11 @@ def audit_family_c(results_dir, registry):
         t1_result = grade_item(iid, row["t1_answer"], registry)
         t1_reaudit = t1_result.get("correct", False)
 
-        # Re-grade T2
+        # Re-grade T2 (with confirmation-without-restatement resolution)
         t2_recorded = row["t2_correct"] == "True"
-        t2_result = grade_item(iid, row["t2_answer"], registry)
+        gold = registry.get(iid, {}).get("gold_answer", "")
+        t2_resolved = resolve_t2_answer(row["t2_answer"], row["t1_answer"], gold)
+        t2_result = grade_item(iid, t2_resolved, registry)
         t2_reaudit = t2_result.get("correct", False)
 
         if t1_recorded != t1_reaudit:
