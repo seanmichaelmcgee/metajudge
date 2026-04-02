@@ -746,11 +746,102 @@ def _add_abstention_item(doc, item):
     _add_field(doc, "Utility", f"{utility:+.1f}", color=util_color)
 
 
+TRANSITION_STYLE = {
+    "correction_gain":   {"label": "CORRECTION_GAIN",   "color": GREEN_TEXT, "bold": True},
+    "maintain_correct":  {"label": "MAINTAIN_CORRECT",  "color": None,       "bold": False},
+    "neutral_revision":  {"label": "NEUTRAL_REVISION",  "color": None,       "bold": False},
+    "damage":            {"label": "DAMAGE",            "color": RED_TEXT,   "bold": True},
+    "stubborn_wrong":    {"label": "STUBBORN_WRONG",    "color": RED_TEXT,   "bold": False},
+    "failed_revision":   {"label": "FAILED_REVISION",   "color": RED_TEXT,   "bold": False},
+}
+
+
 def _add_sc_item(doc, item, task):
-    """Render one C1/C2 self-correction item. (Full implementation in Phase D.)"""
+    """Render one C1/C2 self-correction item."""
     _add_separator(doc)
-    doc.add_heading(item["item_id"], level=3)
-    doc.add_paragraph(f"[C1/C2 item detail — pending Phase D]")
+    iid = item["item_id"]
+    subfamily = item.get("subfamily", task.upper().replace("SC_", ""))
+
+    doc.add_heading(f"{iid} ({subfamily})", level=3)
+
+    # Metadata
+    parts = []
+    if item.get("stratum"):
+        parts.append(f"Stratum: {item['stratum']}")
+    elif item.get("category"):
+        parts.append(f"Category: {item['category']}")
+    if item.get("normative_t2_action"):
+        parts.append(f"Normative T2: {item['normative_t2_action']}")
+    if item.get("difficulty"):
+        parts.append(f"Difficulty: {item['difficulty']}")
+    if parts:
+        p = doc.add_paragraph(" | ".join(parts))
+        for run in p.runs:
+            run.font.size = Pt(10)
+            run.font.color.rgb = RGBColor(0x66, 0x66, 0x66)
+
+    # Question
+    _add_block_text(doc, "Question", item.get("question", ""))
+
+    # Gold answer
+    _add_field(doc, "Gold Answer", item.get("gold_answer_full", ""))
+
+    # Evidence snippet (C2 only)
+    evidence = item.get("evidence_snippet", "")
+    if evidence and evidence.lower() not in ("none", ""):
+        _add_block_text(doc, "Evidence Snippet", evidence)
+
+    # Justification
+    justification = item.get("justification", "")
+    _add_block_text(doc, "Justification",
+                    justification if justification else "[pending]")
+
+    # Turn 1
+    t1_correct = _safe_bool(item.get("t1_correct"))
+    t1_answer = _get_answer_text(item, "t1_answer", "t1_answer")
+    t1_conf = item.get("t1_confidence")
+    t1_conf_str = f"{_safe_float(t1_conf):.2f}" if t1_conf not in (None, "", "None") else "—"
+
+    p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(6)
+    run = p.add_run("Turn 1:")
+    run.font.name = "Arial"
+    run.font.size = Pt(11)
+    run.font.bold = True
+
+    _add_field(doc, "  Answer", t1_answer)
+    _add_field(doc, "  Confidence", t1_conf_str)
+    _add_field(doc, "  Correct", "YES" if t1_correct else "NO",
+               bold_value=True, color=_correct_color(t1_correct))
+
+    # Turn 2
+    t2_correct = _safe_bool(item.get("t2_correct"))
+    t2_answer = _get_answer_text(item, "t2_answer", "t2_answer")
+    t2_conf = item.get("t2_confidence")
+    t2_conf_str = f"{_safe_float(t2_conf):.2f}" if t2_conf not in (None, "", "None") else "—"
+
+    p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(6)
+    run = p.add_run("Turn 2:")
+    run.font.name = "Arial"
+    run.font.size = Pt(11)
+    run.font.bold = True
+
+    _add_field(doc, "  Answer", t2_answer)
+    _add_field(doc, "  Confidence", t2_conf_str)
+    _add_field(doc, "  Correct", "YES" if t2_correct else "NO",
+               bold_value=True, color=_correct_color(t2_correct))
+
+    # Transition
+    transition = item.get("transition", "unknown")
+    style = TRANSITION_STYLE.get(transition, {"label": transition.upper(), "color": None, "bold": False})
+    _add_field(doc, "Transition", style["label"],
+               bold_value=style["bold"], color=style["color"])
+
+    # Edit similarity
+    sim = item.get("t1_t2_similarity")
+    if sim not in (None, "", "None"):
+        _add_field(doc, "T1→T2 similarity", f"{_safe_float(sim):.3f}")
 
 
 # ── Document assembly ────────────────────────────────────────────────────
