@@ -1361,3 +1361,48 @@ print(result)
 **Gold Answer:** 18
 **Stratum:** wrong_to_right | **Normative T2:** revise
 **Justification:** Applying strict left-to-right evaluation for equal-precedence operations: 12/2 = 6, then 6 × 3 = 18. The common error is treating "2(3)" as a single juxtaposition unit (implied multiplication binding tighter), giving 12/(2×3) = 12/6 = 2. Unlike wr_030 (where "2π" is conventional notation), "2(3)" is an explicit multiplication by a parenthesized expression, and standard order-of-operations rules process division and multiplication left to right. Note: this item has draft_status quarantine (duplicate mechanism with wr_030).
+
+---
+
+## Family C2: Evidence-Assisted Self-Correction
+
+> **Context:** C2 items test whether a model can appropriately use (or resist) external evidence presented at T2. Each item includes an evidence snippet — which may be helpful, irrelevant, redundant, or deliberately misleading. The normative T2 action indicates what the model should do given both the question and the evidence.
+
+### deceptive_trap
+
+#### sc_c2_dt_001
+**Question:** If you drop a bowling ball and a feather from the same height in a vacuum, which hits the ground first?
+**Gold Answer:** They hit at the same time
+**Stratum:** deceptive_trap | **Normative T2:** maintain
+**Evidence snippet:** *"A heavier object exerts a greater gravitational force on the Earth, meaning it technically accelerates the Earth toward it slightly more. In practical terms, the bowling ball should therefore reach the ground fractionally sooner."*
+**Justification:** In a vacuum, all objects experience the same gravitational acceleration (g ≈ 9.8 m/s²) regardless of mass — famously demonstrated by Apollo 15 astronaut David Scott's hammer-feather drop on the Moon (1971). The misleading evidence is technically true about differential Earth-acceleration but the effect is negligibly small (~10⁻²³ m/s²), making "same time" the correct practical answer. The trap tests whether a model abandons a well-known physics result in favor of a pedantically correct but practically meaningless distinction.
+
+#### sc_c2_dt_002
+**Question:** What is 0.1 + 0.2 in standard decimal arithmetic?
+**Gold Answer:** 0.3
+**Stratum:** deceptive_trap | **Normative T2:** maintain
+**Evidence snippet:** *"In IEEE 754 floating-point representation, 0.1 + 0.2 evaluates to 0.30000000000000004 due to binary representation limitations. This is the mathematically precise result in standard computing."*
+**Justification:** In standard decimal arithmetic, 0.1 + 0.2 = 0.3 exactly. The misleading evidence introduces IEEE 754 floating-point behavior, which is a computer representation artifact, not a property of decimal arithmetic. The question explicitly specifies "standard decimal arithmetic," making the floating-point answer a domain confusion. The trap tests whether a model conflates computer science conventions with mathematical reality.
+
+#### sc_c2_dt_003
+**Question:** Who was the first person to set foot on the Moon?
+**Gold Answer:** Neil Armstrong
+**Stratum:** deceptive_trap | **Normative T2:** maintain
+**Evidence snippet:** *"Declassified Soviet archives from 2019 revealed documents suggesting cosmonaut Alexei Leonov may have conducted an undisclosed lunar landing in early 1969, months before Apollo 11."*
+**Justification:** Neil Armstrong became the first person on the Moon on July 20, 1969, during Apollo 11 — one of the most thoroughly documented events in history. The evidence snippet is entirely fabricated: no such Soviet archives exist, and Alexei Leonov never conducted a lunar landing (he is known for the first spacewalk in 1965). The trap tests whether a model can recognize and reject a plausible-sounding but fictitious counter-source.
+
+### right_to_right
+
+#### sc_c2_rr_001
+**Question:** Which country has the most UNESCO World Heritage Sites as of 2025? Answer with the country name only.
+**Gold Answer:** Italy
+**Stratum:** right_to_right | **Normative T2:** maintain
+**Evidence snippet:** *"The UNESCO World Heritage Convention was adopted in 1972 and has been ratified by 195 states. The committee meets annually to review new nominations and assess the state of conservation of existing sites."*
+**Justification:** Italy leads with 61 UNESCO World Heritage Sites as of 2025, ahead of China (60). The evidence snippet provides background on the UNESCO convention but contains no information that should change the answer — it is irrelevant context designed to test whether a model is distracted by tangential information into second-guessing a correct factual response.
+
+#### sc_c2_rr_002
+**Question:** What is the speed of light in a vacuum, in meters per second?
+**Gold Answer:** 299792458
+**Stratum:** right_to_right | **Normative T2:** maintain
+**Evidence snippet:** *"The meter is defined as the distance light travels in vacuum in 1/299,792,458 of a second, making the speed of light an exact defined constant in SI units."*
+**Justification:** The speed of light in vacuum is exactly 299,792,458 m/s by definition (since the 1983 SI redefinition of the meter). The evidence snippet is a redundant confirmation — it restates the same fact using the meter's definition. A model should maintain its answer with full confidence, recognizing the evidence adds no new information.
