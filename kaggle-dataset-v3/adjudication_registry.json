@@ -1804,7 +1804,8 @@
     "source_anchor": "After the transfer, both jars have 10L. Whatever wine is missing from Jar A has been replaced by an equal amount of water, and vice versa. So wine in B = water in A.",
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": null
+    "edge_case_notes": null,
+    "match_mode": "contains_any"
   },
   {
     "item_id": "v41_crt_010",
