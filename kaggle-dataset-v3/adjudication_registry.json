@@ -187,13 +187,21 @@
     "grader_rule": "alias_plus_normalization",
     "gold_answer": "university of bologna",
     "accepted_forms": [
-      "university of bologna",
-      "Bologna",
-      "University of Bologna",
-      "University of Al-Qarawiyyin",
       "Al-Qarawiyyin",
+      "Bologna",
+      "University of Al-Karaouine",
+      "University of Al-Qarawiyyin",
+      "University of Bologna",
+      "University of Quaraouiyine",
+      "University of al-Karaouine",
+      "al karaouine",
+      "al qarawiyyin",
+      "al-karaouine",
+      "al-karaouiyine",
       "al-qarawiyyin",
-      "al qarawiyyin"
+      "karaouine",
+      "quaraouiyine",
+      "university of bologna"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -1789,14 +1797,17 @@
     "accepted_forms": [
       "They are equal",
       "equal",
-      "the same",
+      "identical",
       "neither weighs more",
-      "they weigh the same",
-      "equal",
-      "they are equal",
-      "the amounts are equal",
       "same",
-      "they are the same"
+      "same amount",
+      "the amounts are equal",
+      "the amounts are the same",
+      "the same",
+      "the same amount",
+      "they are equal",
+      "they are the same",
+      "they weigh the same"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -3435,7 +3446,7 @@
     "normalization_notes": null,
     "tri_label_space": null,
     "edge_case_notes": "Pilot triage v0.6.1: Passed all checks (2-model Tier A pilot)",
-    "match_mode": "contains_any"
+    "match_mode": null
   },
   {
     "item_id": "sc_c2_ur_001",
