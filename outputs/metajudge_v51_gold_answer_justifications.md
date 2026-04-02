@@ -1406,3 +1406,38 @@ print(result)
 **Stratum:** right_to_right | **Normative T2:** maintain
 **Evidence snippet:** *"The meter is defined as the distance light travels in vacuum in 1/299,792,458 of a second, making the speed of light an exact defined constant in SI units."*
 **Justification:** The speed of light in vacuum is exactly 299,792,458 m/s by definition (since the 1983 SI redefinition of the meter). The evidence snippet is a redundant confirmation — it restates the same fact using the meter's definition. A model should maintain its answer with full confidence, recognizing the evidence adds no new information.
+
+#### sc_c2_rr_003
+**Question:** What is the chemical formula for water?
+**Gold Answer:** H2O
+**Stratum:** right_to_right | **Normative T2:** maintain
+**Evidence snippet:** *"Water can exist in several phases, and its molecular structure changes somewhat under extreme pressure. Heavy water (D2O) is used in some nuclear reactors."*
+**Justification:** The chemical formula for water is H₂O — two hydrogen atoms bonded to one oxygen atom. The evidence snippet mentions heavy water (D₂O) and extreme-pressure phases as tangential distractors, but neither changes the chemical formula for ordinary water. A model should recognize the mention of D₂O as irrelevant to the question about standard water.
+
+#### sc_c2_rr_004
+**Question:** A shop sells items at a 20% markup, then puts them on a 20% sale. What is the net percentage change in price from the original cost?
+**Gold Answer:** -4%
+**Stratum:** right_to_right | **Normative T2:** maintain
+**Evidence snippet:** *"The concept of markup and markdown pricing has been standard in retail since the 19th century. Early department stores like Macy's pioneered fixed-price retail in the 1850s."*
+**Justification:** A 20% markup followed by a 20% discount applies multiplicatively: 1.20 × 0.80 = 0.96, a net 4% decrease. The evidence snippet about retail history is a historical irrelevancy — it provides no mathematical information that could change the calculation. This is the same percentage-asymmetry mechanism as C1's wr_008, but here the model should already have it right and maintain.
+
+#### sc_c2_rr_005
+**Question:** How many continents are there on Earth?
+**Gold Answer:** 7
+**Stratum:** right_to_right | **Normative T2:** maintain
+**Evidence snippet:** *"Plate tectonics causes continental drift, meaning the arrangement of continents has changed dramatically over geological time. The supercontinent Pangaea began breaking apart roughly 200 million years ago."*
+**Justification:** The standard geographic model recognizes 7 continents: Africa, Antarctica, Asia, Australia/Oceania, Europe, North America, and South America. The evidence about Pangaea and plate tectonics is related but non-contradicting — it describes how continents formed, not how many exist today. A model should maintain its answer without being distracted by geological history.
+
+#### sc_c2_rr_006
+**Question:** Two fair six-sided dice are rolled. What is the probability that the sum is even, given that at least one die shows a 6?
+**Gold Answer:** 5/11
+**Stratum:** right_to_right | **Normative T2:** maintain
+**Evidence snippet:** *"'At least one die shows a 6' is a constraint on the pair of outcomes, not a statement about a specific, pre-designated die — so the sample space you're conditioning on may contain a different number of outcomes than you expect."*
+**Justification:** The conditional sample space "at least one die shows 6" contains exactly 11 outcomes (6 where d1=6, plus 5 where d2=6 and d1≠6). Of these, 5 have even sums: (2,6), (4,6), (6,2), (6,4), (6,6). So P(even|≥1 six) = 5/11. The common error is conditioning on a *specific* die being 6 (giving P=1/2), which overcounts by treating the pair-level constraint as die-level. The evidence snippet is a helpful hint that should reinforce, not undermine, the correct answer.
+
+#### sc_c2_rr_007
+**Question:** In a certain country, they define 1 mile as equal to 1.5 kilometers. If a car travels 60 miles per hour, what is its speed in kilometers per hour?
+**Gold Answer:** 90
+**Stratum:** right_to_right | **Normative T2:** maintain
+**Evidence snippet:** *"Be careful not to import any real-world conversion factors — this problem takes place in a country with its own explicitly defined unit system."*
+**Justification:** Using the problem's defined conversion: 60 miles/hour × 1.5 km/mile = 90 km/h. The evidence snippet is a helpful reminder to use the given 1.5 factor, not the real-world 1.609 km/mile. The trap mechanism is that models may override the problem's explicit definition with their trained knowledge of the standard conversion, but the evidence should reinforce the correct approach.
