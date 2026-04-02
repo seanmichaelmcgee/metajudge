@@ -1271,3 +1271,33 @@ print(result)
 **Gold Answer:** 1065.02
 **Stratum:** wrong_to_right | **Normative T2:** revise
 **Justification:** 1000 × (1.05)³ = 1000 × 1.157625 = $1,157.625, then $1,157.625 × 0.92 = €1,065.015, which rounds to €1,065.02. The multi-step nature (compound interest then currency conversion) creates opportunities for error — common mistakes include using simple interest (giving $1,150 × 0.92 = €1,058.00) or misapplying the exchange rate. Models that err on T1 should correct when prompted to reconsider the compounding.
+
+#### sc_c1_wr_003
+**Question:** What is the largest desert on Earth by total area?
+**Gold Answer:** Antarctic Desert
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** Antarctica is the largest desert at 14.2 million km², nearly double the Sahara's 9.2 million km². Deserts are defined by precipitation (<250 mm/year), not temperature — Antarctica's interior receives <50 mm/year, qualifying it as a polar desert (Britannica, National Geographic). The common wrong answer "Sahara" reflects the popular but incorrect association of deserts with heat. Note: this item has draft_status quarantine (both pilot models answered correctly on T1, making it potentially too easy for wrong-to-right).
+
+#### sc_c1_wr_004
+**Question:** Which has more bones: an adult human or an adult giraffe's neck? Answer with 'adult human' or 'giraffe neck' and state the number of bones for each.
+**Gold Answer:** adult human
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** An adult human has approximately 206 bones, while a giraffe's neck contains only 7 cervical vertebrae — the same count as humans and nearly all mammals. Giraffes achieved their 6-foot necks by elongating individual vertebrae (up to 10 inches each), not by adding more. The counterintuitive comparison is the trap: models may assume the giraffe's dramatically longer neck requires more bones.
+
+#### sc_c1_wr_005
+**Question:** A disease affects 1 in 1,000 people. A test for the disease has a 99% true positive rate and a 5% false positive rate. If a randomly selected person tests positive, what is the probability they actually have the disease? Express as a percentage rounded to one decimal place.
+**Gold Answer:** 1.9%
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** By Bayes' theorem: P(disease|+) = (0.99 × 0.001) / [(0.99 × 0.001) + (0.05 × 0.999)] = 0.00099 / 0.05094 ≈ 1.94%, which rounds to 1.9%. The base rate neglect trap is classic — models (and humans) often anchor on the 99% sensitivity and answer ~95%, ignoring that the 5% false positive rate applied to 999 healthy people generates far more false positives than the 1 true case generates true positives. Note: this item has draft_status quarantine (both pilot models answered correctly on T1).
+
+#### sc_c1_wr_006
+**Question:** A drawer has 10 red socks, 10 blue socks, and 10 green socks, all mixed up. You pull socks out one at a time in complete darkness. What is the minimum number of socks you must pull out to guarantee you have at least one matching pair? Give just the number.
+**Gold Answer:** 4
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** By the pigeonhole principle: with 3 colors, the worst case after 3 draws is one sock of each color (no pair). The 4th sock must match one of the three colors, guaranteeing a pair. The common off-by-one error is answering 3, confusing "3 colors means 3 socks" with the guarantee threshold. Models that make this error on T1 should self-correct when prompted to consider the worst case.
+
+#### sc_c1_wr_007
+**Question:** What is the value of floor(sqrt(50)) + ceil(sqrt(50))? Give just the number.
+**Gold Answer:** 15
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** √50 ≈ 7.071, so floor(7.071) = 7 and ceil(7.071) = 8, giving 7 + 8 = 15. The common error is answering 14, either by treating floor and ceil as identical (both 7) or by miscalculating √50. Since 50 is not a perfect square, floor and ceil necessarily differ by 1 — a fact that should become apparent on re-examination.
