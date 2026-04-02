@@ -19,25 +19,30 @@ reliability of its own outputs and act on that information.
 ## Package structure
 
 ```
-metajudge/       # Core Python package — scoring, schemas, task definitions
+metajudge/                  # Core Python package — 7 modules, clean
+  __init__.py               # Package root, version 4.1
   scoring/
-    self_correction_v2.py  # Family C scoring (USE THIS, not self_correction_metrics.py)
+    __init__.py
+    grading_v2.py           # 8-rule deterministic adjudication engine
+    abstention_metrics.py   # UWAA, utility matrix (Family B)
+    self_correction_v2.py   # Transition scoring, confidence adjustment (Family C)
   tasks/
-    self_correction_v2.py  # Family C task defs (USE THIS, not self_correction.py)
-tests/           # pytest unit and integration tests
-notebooks/       # Kaggle submission notebook (thin — logic lives in metajudge/)
-data/            # Benchmark datasets
-  family_c/      # Family C item bundles (C1 + C2 candidates, SCHEMA.md)
-config/          # Benchmark configuration (weights, thresholds)
-  family_c_scoring.yaml  # Family C base scores, damage penalties, ranges
-docs/            # Design documents (see docs/README.md for index)
-planning/        # Architecture and sprint plans (see planning/README.md for index)
-  family_c_sprint/  # Current sprint — 17 planning docs for Family C
-scripts/         # Runners and utilities
-  pilot_family_c.py  # Family C model sweep runner
-  openrouter/    # OpenRouter API client
-outputs/         # Run artifacts, audit CSVs, figures
-  family_c/      # Family C pilot outputs
+    __init__.py
+    self_correction_v2.py   # C1/C2 task definitions, prompts, grading
+tests/                      # pytest unit and integration tests
+notebooks/                  # v4.1 task notebooks (4 Kaggle Benchmark tasks)
+data/                       # Benchmark datasets
+  family_c/                 # Family C item bundles (C1 + C2 candidates, SCHEMA.md)
+config/                     # Benchmark configuration (weights, thresholds)
+  family_c_scoring.yaml     # Family C base scores, damage penalties, ranges
+docs/                       # Design documents (see docs/README.md for index)
+planning/                   # Architecture and sprint plans (see planning/README.md for index)
+  family_c_sprint/          # Family C sprint planning docs
+scripts/                    # Runners and utilities
+  pilot_family_c.py         # Family C model sweep runner
+  openrouter/               # OpenRouter API client
+outputs/                    # Run artifacts, audit CSVs, figures
+  family_c/                 # Family C pilot outputs
 ```
 
 ---
@@ -53,15 +58,13 @@ outputs/         # Run artifacts, audit CSVs, figures
 
 ---
 
-## The five families (do not add others without updating SOUL.md)
+## The three shipped families
 
 | ID | Family | Axis | Status |
 |----|--------|------|--------|
-| A  | Confidence Calibration | Monitoring | **Complete** — 105 clean items, grading_v2, lean notebook live |
-| B  | Selective Abstention / Verification | Monitoring | **Complete** — 72 clean items, UWAA scoring |
-| C  | Self-Correction | Control | **Current sprint** — v0.6.1 pilot, 28 clean items, 5-model sweep pending |
-| D  | Grounding Sensitivity | Monitoring | V2 |
-| E  | Control-Policy Adaptation | Control | V2 |
+| A  | Confidence Calibration | Monitoring | **Complete** — 105 clean items, grading_v2, v4.1 notebook live |
+| B  | Selective Abstention / Verification | Monitoring | **Complete** — 72 clean items, UWAA scoring, v4.1 notebook live |
+| C  | Self-Correction | Control | **Complete** — 51 clean items (28 C1 + 23 C2), transition scoring, v4.1 notebooks live |
 
 ---
 
