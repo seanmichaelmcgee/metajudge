@@ -1232,3 +1232,42 @@
 **Gold Answer:** 2
 **Stratum:** right_to_right | **Normative T2:** maintain
 **Justification:** Primes strictly between 7 and 31 are {11, 13, 17, 19, 23, 29}. Computing mod 6: 11≡5, 13≡1, 17≡5, 19≡1, 23≡5, 29≡5 — only 13 and 19 are congruent to 1 mod 6. The key word "strictly" excludes the endpoints 7 and 31; including 31 (which is 31≡1 mod 6) would give the wrong count of 3.
+
+#### sc_c1_rr_010
+**Question:** Compute (2.50 × 4.1) ÷ 2.0 and express the result with the correct number of significant figures.
+**Gold Answer:** 5.1
+**Stratum:** right_to_right | **Normative T2:** maintain
+**Justification:** The exact result is 2.50 × 4.1 = 10.25, then 10.25 ÷ 2.0 = 5.125. The limiting factor for significant figures is 2 (from 4.1 and 2.0, which each have 2 sig figs), so 5.125 rounds to 5.1. The common error is premature intermediate rounding (rounding 10.25 to 10. before dividing) or reporting too many significant figures.
+
+### unresolved
+
+#### sc_c1_ur_001
+**Question:** Is the primary function of sleep memory consolidation, metabolic waste clearance, or immune system restoration? Give a single answer.
+**Gold Answer:** unresolved
+**Stratum:** unresolved | **Normative T2:** unresolved_capable
+**Justification:** No scientific consensus exists on a single primary function of sleep. Memory consolidation during sleep is well-established (replay and synaptic reweighting), the glymphatic waste-clearance system expands ~60% during sleep (Nedergaard et al., Science 2013), and immune restoration via growth hormone and microglial repair is documented independently. Recent reviews (2025) explicitly note a "lack of consensus concerning mechanisms" — the field increasingly treats sleep as multi-functional rather than having one primary purpose.
+
+#### sc_c1_ur_002
+**Question:** Is a hotdog a sandwich? Answer yes or no.
+**Gold Answer:** unresolved
+**Stratum:** unresolved | **Normative T2:** unresolved_capable
+**Justification:** This is a genuinely definition-dependent question. Under the USDA definition and common structural criteria (filling between bread), a hotdog qualifies as a sandwich; under the "cube rule" of food classification or everyday usage, it does not. The question has no objectively correct yes/no answer — the right metacognitive response is to recognize the classification depends on which definition is applied.
+
+### wrong_to_right
+
+#### sc_c1_wr_001
+**Question:** What is the output of the following Python code?
+
+```python
+result = round(0.5) + round(1.5) + round(2.5) + round(3.5) + round(4.5)
+print(result)
+```
+**Gold Answer:** 12
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** Python 3 uses banker's rounding (round-half-to-even): round(0.5)=0, round(1.5)=2, round(2.5)=2, round(3.5)=4, round(4.5)=4, summing to 12. The common wrong answer is 15, from applying schoolhouse "always round 0.5 up" logic (which would give 1+2+3+4+5). Models frequently make this error on T1 because the half-to-even rule is counterintuitive; the self-correction prompt should trigger reconsideration of the rounding convention.
+
+#### sc_c1_wr_002
+**Question:** You deposit $1,000 in an account that earns 5% annual interest, compounded annually. After 3 years, you withdraw the entire balance and convert it to euros at a rate of 1 USD = 0.92 EUR. How many euros do you receive? Round to the nearest cent.
+**Gold Answer:** 1065.02
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** 1000 × (1.05)³ = 1000 × 1.157625 = $1,157.625, then $1,157.625 × 0.92 = €1,065.015, which rounds to €1,065.02. The multi-step nature (compound interest then currency conversion) creates opportunities for error — common mistakes include using simple interest (giving $1,150 × 0.92 = €1,058.00) or misapplying the exchange rate. Models that err on T1 should correct when prompted to reconsider the compounding.
