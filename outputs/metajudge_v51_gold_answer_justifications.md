@@ -1331,3 +1331,33 @@ print(result)
 **Gold Answer:** 42
 **Stratum:** wrong_to_right | **Normative T2:** revise
 **Justification:** Writing N = 1000a + 100b + 10c + d and reverse(N) - N = 999(d-a) + 90(c-b) = 3267. Dividing: 999 × 3 = 2997, remainder 270 = 90 × 3, so d-a = 3 and c-b = 3. Valid ranges: a ∈ {1,...,6} (since d = a+3 ≤ 9) gives 6 choices; b ∈ {0,...,6} (since c = b+3 ≤ 9) gives 7 choices. Total: 6 × 7 = 42. The common error is restricting b to {1,...,6} (excluding b=0 for interior digits), yielding 36 instead of 42. Note: this item has draft_status quarantine (too easy for wrong-to-right in frontier validation).
+
+#### sc_c1_wr_013
+**Question:** A teacher wants to distribute 12 identical stickers among 4 students so that each student receives at least 2 stickers and no student receives more than 5 stickers. In how many ways can this distribution be done? Give your final answer as a single integer.
+**Gold Answer:** 31
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** Substituting yi = xi - 2 reduces to distributing 4 identical items among 4 students with 0 ≤ yi ≤ 3. Stars-and-bars gives C(7,3) = 35 unrestricted solutions. By inclusion-exclusion, subtract cases where any yi ≥ 4: since the total is only 4, at most one variable can reach 4 (with the rest all 0), giving exactly 4 invalid solutions. Result: 35 - 4 = 31. The common error is applying stars-and-bars without the upper-bound correction, answering 35. Note: this item has draft_status quarantine (too easy for wrong-to-right in frontier validation).
+
+#### sc_c1_wr_017
+**Question:** What is the value of the expression 2^3^2^0? (Here, ^ denotes exponentiation.)
+**Gold Answer:** 8
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** Right-associative evaluation: 2^3^2^0 = 2^(3^(2^0)) = 2^(3^1) = 2^3 = 8. The common errors are left-associative evaluation — ((2^3)^2)^0 = 64^0 = 1 — or partial right-association giving 2^(3^(0)) = 2^1 = 2. The nested chain of three exponentiations reliably confuses models on first pass; a re-prompt should trigger careful right-to-left parsing.
+
+#### sc_c1_wr_023
+**Question:** What is the value of (-1)^(2/6) in the real numbers? Simplify the expression to a single real number.
+**Gold Answer:** -1
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** The exponent 2/6 must be simplified to 1/3 before evaluation: (-1)^(1/3) = -1 (the real cube root of -1). The common error is computing (-1)^2 = 1 first, then taking the sixth root to get 1 — but this applies the rule (a^m)^n = a^(mn) which is not valid for negative bases when the intermediate exponent produces a non-integer. The prompt specifies "in the real numbers," confirming the real-valued principal root convention.
+
+#### sc_c1_wr_030
+**Question:** Using π = 3.14, evaluate the expression 8 / 2π. Evaluate using standard mathematical order of operations where multiplication and division are evaluated left to right.
+**Gold Answer:** 1.273885
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** In standard mathematical notation, juxtaposition (implied multiplication as in "2π") binds tighter than the division operator, so 8 / 2π = 8 / (2 × 3.14) = 8 / 6.28 ≈ 1.2739. The common error is strict left-to-right evaluation: (8/2) × π = 4 × 3.14 = 12.56, which ignores the conventional higher precedence of juxtaposition over the division sign. This is a well-known ambiguity in mathematical notation that reliably trips models into the wrong interpretation.
+
+#### sc_c1_wr_033
+**Question:** What is the value of the expression 12/2(3)?
+**Gold Answer:** 18
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Justification:** Applying strict left-to-right evaluation for equal-precedence operations: 12/2 = 6, then 6 × 3 = 18. The common error is treating "2(3)" as a single juxtaposition unit (implied multiplication binding tighter), giving 12/(2×3) = 12/6 = 2. Unlike wr_030 (where "2π" is conventional notation), "2(3)" is an explicit multiplication by a parenthesized expression, and standard order-of-operations rules process division and multiplication left to right. Note: this item has draft_status quarantine (duplicate mechanism with wr_030).
