@@ -1517,3 +1517,38 @@ print(result)
 **Stratum:** wrong_to_right | **Normative T2:** revise
 **Evidence snippet:** *"When a problem states that a barber shaves 'everyone who does not shave themselves,' the complementary group is those who do shave themselves. Be careful not to double-count or conflate these groups."*
 **Justification:** If 60% of 200 residents go to the barber (i.e., don't shave themselves), then the remaining 40% = 80 residents shave themselves. The problem deliberately evokes the Barber Paradox but is actually a straightforward complement calculation. The common error is getting tangled in paradox-thinking rather than reading the numbers at face value. The evidence snippet clarifies the complement relationship, which should help on re-examination. Note: this item has draft_status quarantine (both pilot models answered correctly on T1).
+
+#### sc_c2_wr_004
+**Question:** What happens to the boiling point of water as altitude increases?
+**Gold Answer:** It decreases
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Evidence snippet:** *"Atmospheric pressure decreases at higher elevations. The boiling point of a liquid is the temperature at which its vapor pressure equals the surrounding atmospheric pressure."*
+**Justification:** At higher altitudes, atmospheric pressure is lower, so water's vapor pressure equals the surrounding pressure at a lower temperature — the boiling point decreases (e.g., ~95°C at 1,500m, ~70°C on Everest). The evidence snippet provides the mechanistic explanation: boiling occurs when vapor pressure equals atmospheric pressure. A model that answered incorrectly on T1 should recognize the causal chain from the hint. Note: this item has draft_status quarantine (both pilot models correct on T1).
+
+#### sc_c2_wr_005
+**Question:** Which country has the most pyramids in the world by total count?
+**Gold Answer:** Sudan
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Evidence snippet:** *"The ancient Nubian kingdoms of Kush and Meroe built extensive royal burial structures. Archaeological surveys have catalogued over 200 such structures in the Nile Valley south of Egypt."*
+**Justification:** Sudan has approximately 200–255 pyramids (primarily Nubian pyramids at Meroe, Nuri, and El-Kurru), exceeding Egypt's roughly 118–138 known pyramids. The evidence snippet hints at the answer by referencing Nubian kingdoms and "over 200 structures in the Nile Valley south of Egypt" — i.e., in Sudan. The prototype violation is the strong cultural association between "pyramids" and Egypt. Note: this item has draft_status quarantine (both pilot models correct on T1).
+
+#### sc_c2_wr_006
+**Question:** You flip a fair coin 4 times. What is the probability of getting exactly 2 heads AND having those 2 heads be consecutive? Express as a simplified fraction.
+**Gold Answer:** 3/16
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Evidence snippet:** *"When computing probabilities with multiple constraints (exact count AND arrangement pattern), enumerate all valid outcomes explicitly rather than using general formulas. For 4 coin flips, list all 16 outcomes and check each one against BOTH constraints simultaneously."*
+**Justification:** Enumerating all 16 outcomes: only HHTT, THHT, and TTHH have exactly 2 heads with both heads consecutive — giving P = 3/16. The common error is including sequences like HTHH (3 heads) or HTHT (non-consecutive), or using C(4,2) = 6 for "2 heads" then incorrectly adjusting for adjacency. The evidence snippet correctly advises explicit enumeration over formula shortcuts, which should guide self-correction.
+
+#### sc_c2_wr_007
+**Question:** A standard analog clock reads 5:25. What is the exact angle in degrees between the hour hand and the minute hand?
+**Gold Answer:** 12.5
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Evidence snippet:** *"On an analog clock, the minute hand moves 6 degrees per minute and the hour hand moves 0.5 degrees per minute. At H:M, the minute hand is at M×6 degrees and the hour hand is at H×30 + M×0.5 degrees."*
+**Justification:** At 5:25: minute hand = 25 × 6° = 150°, hour hand = 5 × 30° + 25 × 0.5° = 162.5°, angle = |162.5° - 150°| = 12.5°. The common error is computing 47.5° (forgetting the hour hand's continuous drift) or confusing measurement direction. The evidence snippet provides the exact formulas, making this a strong self-correction candidate — a model that erred on T1 has all the information needed to recompute correctly.
+
+#### sc_c2_wr_008
+**Question:** A car's odometer reads 15951 miles, which is a palindrome. What is the minimum number of miles the car must drive before the odometer shows the next palindrome?
+**Gold Answer:** 110
+**Stratum:** wrong_to_right | **Normative T2:** revise
+**Evidence snippet:** *"For a 5-digit palindrome ABCBA, the next palindrome is found by incrementing the middle part. If C is 9 (maxed out), you cannot simply increment C — you must carry over: increment B by 1 and reset C to 0, giving the form A(B+1)0(B+1)A."*
+**Justification:** 15951 is the palindrome 1-5-9-5-1. Since C=9 is maxed, incrementing requires a carry: B goes from 5 to 6, C resets to 0, giving 1-6-0-6-1 = 16061. The gap is 16061 - 15951 = 110. The common error is answering 10 (claiming 15961 is next, but 15961 reversed is 16951, not a palindrome). The evidence snippet explicitly describes the carry-propagation rule, providing the key insight for self-correction.
