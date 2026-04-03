@@ -1,12 +1,12 @@
 {
-  "title": "MetaJudge Package v5.1 (Families A+B+C, clean 7-module package)",
+  "title": "MetaJudge Package v6.1 (Families A+B+C, clean 7-module package)",
   "id": "seanmcgee2025/metajudge-package-v3",
   "licenses": [
     {
       "name": "CC-BY-4.0"
     }
   ],
-  "description": "MetaJudge scoring package v5.1. Clean 7-module package: grading_v2 (8-rule engine), abstention_metrics (UWAA), self_correction_v2 (transition scoring), and task definitions. Import via sys.path.insert(0, '/kaggle/input/metajudge-package-v3').",
+  "description": "MetaJudge scoring package v6.1. Clean 7-module package: grading_v2 (8-rule engine), abstention_metrics (UWAA), self_correction_v2 (transition scoring), and task definitions. Import via sys.path.insert(0, '/kaggle/input/metajudge-package-v6-1').",
   "keywords": [
     "metacognition",
     "llm-evaluation",

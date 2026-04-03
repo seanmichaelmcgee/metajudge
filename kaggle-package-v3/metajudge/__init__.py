@@ -11,5 +11,5 @@ Tasks:
 - Evidence-Assisted Self-Correction C2 (Control)
 """
 
-__version__ = "5.1"
-__benchmark_name__ = "metacognition_behavioral_suite_v5"
+__version__ = "6.1"
+__benchmark_name__ = "metacognition_behavioral_suite_v6"
