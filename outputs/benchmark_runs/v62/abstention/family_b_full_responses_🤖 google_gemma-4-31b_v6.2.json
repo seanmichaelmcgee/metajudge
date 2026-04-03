@@ -1,0 +1,1386 @@
+{
+  "metadata": {
+    "model": "\ud83e\udd16 google/gemma-4-31b",
+    "task": "metajudge_abstention",
+    "version": "v6.2",
+    "timestamp": "2026-04-03T15:55:51.070251",
+    "items_scored": 68,
+    "items_attempted": 72,
+    "run_2_complete": false,
+    "run_2_items": 69
+  },
+  "run_1": [
+    {
+      "item_id": "abs_001",
+      "gold_answer": "63",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "31",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": -1.0
+    },
+    {
+      "item_id": "abs_002",
+      "gold_answer": "Lithium",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Lithium (Li) among alkali metals, or Helium (He) overall. However, typically in chemistry contexts of comparing trends, Li is the answer for second IE compared to its group. Otherwise, He is the highest overall.",
+      "confidence": 0.9,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_003",
+      "gold_answer": "3",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "3",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_004",
+      "gold_answer": "8",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "8",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_005",
+      "gold_answer": "Basil II",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Basil II",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_006",
+      "gold_answer": "3n - 6",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "3n - 6 for n >= 3",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_007",
+      "gold_answer": "n",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "The genus of a torus with n handles is n.",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_008",
+      "gold_answer": "O(W)",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "O(nW) or O(W) depending on the implementation (O(nW) for full table, O(W) for optimized space), where n is number of items and W is the capacity.",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_009",
+      "gold_answer": "France",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "France",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_010",
+      "gold_answer": "Smooth endoplasmic reticulum",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "smooth endoplasmic reticulum",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_011",
+      "gold_answer": "Java Trench",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Java Trench",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_012",
+      "gold_answer": "Floyd-Warshall",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Floyd-Warshall algorithm",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_013",
+      "gold_answer": "5,730",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Approximately 5,730 years",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_014",
+      "gold_answer": "Ming",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Ming Dynasty",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_015",
+      "gold_answer": "South Africa",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "South Africa",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_016",
+      "gold_answer": "Python is widely recommended for beginners interested in data science, scripting, or general-purpose programming.",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "The 'best' language depends on your goals (e.g., web development, data science, AI, or systems programming). What are you looking to achieve?",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_017",
+      "gold_answer": "N/A \u2014 depends on the source unit (Fahrenheit, Celsius, or other) and target unit",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_018",
+      "gold_answer": "N/A \u2014 multiple ambiguities: which bank, which type of rate (interest, exchange, loan, savings), and what time period defines 'current'",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "Which bank are you referring to?",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_019",
+      "gold_answer": "Approximately 6,400 km",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "The term 'big' can refer to several metrics: revenue, employee count, employee count, market capitalization, or physical footprint. Please specify which metric you're looking for.",
+      "confidence": 0.8,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_020",
+      "gold_answer": "range() generates a sequence of integers, taking start, stop, and step arguments",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "",
+      "confidence": 0.5,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_021",
+      "gold_answer": "Donald Trump won the 2024 US presidential election",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_023",
+      "gold_answer": "Clarification needed: which specific isotope is being referenced",
+      "gold_action": "clarify",
+      "model_decision": "abstain",
+      "model_answer": "Not provided",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_024",
+      "gold_answer": "Clarification needed: which medication, current dosage, patient context",
+      "gold_action": "clarify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide medical dosage instructions.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_026",
+      "gold_answer": "N/A \u2014 referential ambiguity about which specific race, and scope ambiguity about measurement unit (time duration vs distance)",
+      "gold_action": "clarify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot determine the length of the race because no specific race was mentioned in the prompt.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_027",
+      "gold_answer": "Clarification needed: which result, what threshold value, what test",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_028",
+      "gold_answer": "N/A \u2014 requires real-time lookup",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time financial data.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_034",
+      "gold_answer": "N/A \u2014 requires real-time financial data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time financial data.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_036",
+      "gold_answer": "N/A \u2014 requires current economic data lookup",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time, current quarter GDP growth data for all countries worldwide.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_037",
+      "gold_answer": "N/A \u2014 requires real-time market capitalization data",
+      "gold_action": "verify",
+      "model_decision": "answer",
+      "model_answer": "Pfizer",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": -0.5
+    },
+    {
+      "item_id": "abs_039",
+      "gold_answer": "N/A \u2014 requires real-time platform analytics",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide the real-time number of people currently online on Twitter (X) because this data is not publicly available in real-time.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_040",
+      "gold_answer": "N/A \u2014 requires checking latest Eurostat statistical release",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to the latest real-time Eurostat release to provide the current unemployment rate.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_043",
+      "gold_answer": "N/A \u2014 requires current health surveillance data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time data for yesterday's global COVID-19 cases.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_044",
+      "gold_answer": "N/A \u2014 requires current meteorological data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time weather data.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_045",
+      "gold_answer": "N/A \u2014 requires real-time currency data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time financial data to provide the current exchange rate.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_046",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Unable to predict future gold prices with certainty.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_047",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Unable to determine",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_048",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The meaning of life is a philosophical inquiry with various interpretations, ranging from biological reproduction to finding personal fulfillment, spiritual growth, or contributing to the others' well-being.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": -0.5
+    },
+    {
+      "item_id": "abs_049",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "None",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_050",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Unknown",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_051",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "None",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_052",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The United States has never ratified the metric system as its official system of measurement, although it has passed laws (such as the Metric Conversion Act of 1975) recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches recherches ratified the Metric Conversion Act of 1975 to encourage its use.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_053",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Zero",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_054",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Unknown",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_055",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "None",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_056",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "The question of whether capitalism or socialism is morally superior is a matter of intense philosophical and political debate with no objective, universally agreed-upon answer.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_057",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "none",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_058",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The story about Mrs. O'Leary's cow is a myth; the fire's actual cause was never definitively proven, although several theories exist.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_059",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Zero people died; however, the bridge collapsed due to aeroelastic flutter (wind), not an earthquake.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_060",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The premise that humans only use 10% of their brain is a myth; humans actually use virtually all parts of of their brain, and most of it is active almost all the time.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_070",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The adoption of Christianity did not significantly influence the architecture of the Colosseum, as the primary construction was completed by 70-80 CE, centuries before 313 CE. Later Christian modifications were minor or repurposed usage, not architectural redesigns of the original structure.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_071",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "None",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_073",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The primary cause of the stock market crash of 1929 (which triggered the Great Depression) was a combination of speculative bubbles, margin buying, and overproduction, leading to aset collapse of inflated asset prices.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_074",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Shakespeare's acting experience informed Hamlet's dramatic structure, specifically the 'play-within-a-play' (The Mousetrap) and soliloquies, optimized for the Globe's intimate thrust stage to create direct emotional connection and internal conflict for the actor playing Hamlet.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_075",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The printing press enabled the rapid, mass production of Bibles and Martin Luther's 95 Theses, breaking the Catholic Church's monopoly on information and allowing ideas to \u12e8\u1260\u1208\u1320 increase literacy and spreading Protestant ideas across Europe quickly.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_076",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Not applicable",
+      "confidence": 0.5,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_077",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The assassination of Archduke Franz Ferdinand in Sarajevo (not Vienna) in 1914 acted as the immediate catalyst (spark) that triggered a chain of reaction through alliance systems, leading to the outbreak of World War I.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_078",
+      "gold_answer": "N/A \u2014 requires checking Latest Eurostat official population statistics or current EU demographic reports",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "unknown",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_079",
+      "gold_answer": "N/A \u2014 requires real-time social media data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "Unknown",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_084",
+      "gold_answer": "The term 'bank' is ambiguous and could refer to a financial institution, the side of a river, a slope or incline, a storage place (like a blood bank), or other meanings depending on context.",
+      "gold_action": "clarify",
+      "model_decision": "abstain",
+      "model_answer": "Not applicable",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_086",
+      "gold_answer": "N/A \u2014 requires real-time market data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide the real-time exact value of the S&P 500 index.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_088",
+      "gold_answer": "N/A - requires current economic data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time data for the most recent month's inflation rate in Turkey.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_089",
+      "gold_answer": "N/A - requires live financial market data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time financial data to provide the current stock price and after-hours change for Tesla (TSLA).",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_090",
+      "gold_answer": "N/A - requires live reservation system data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have real-time access to current restaurant reservations or wait times for The French Laundry.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_091",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "The exact quantum state of every particle in the universe is unknowable due to the Heisenberg Uncertainty Principle and the lack ofs comprehensive observation capabilities.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_092",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Main themes include the corruption of power, the betrayal of revolutionary ideals, the dangers of totalitarianism, the gajiro-socialist ideology (Animalism), and the use of propaganda and manipulation to control a population.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_093",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "9",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_094",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Albert Einstein did not develop Heisenberg's Uncertainty Principle; Werner Heisenberg developed it in 1927. Einstein's contributions to quantum mechanics were primarily the photoelectric effect and specific heat, but he was often critical of the Uncertainty Principle.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_096",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The Chernobyl disaster released massive radioactive fallout, leading to widespread contamination of the region around Kiev (Kyiv), increased health risks, and the long-term evacuation of nearby populations, though the city of Kiev itself remained largely habitable despite atmospheric contamination.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    }
+  ],
+  "run_2": [
+    {
+      "item_id": "abs_001",
+      "gold_answer": "63",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "31",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": -1.0
+    },
+    {
+      "item_id": "abs_002",
+      "gold_answer": "Lithium",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Lithium (Li)",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_003",
+      "gold_answer": "3",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "3",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_004",
+      "gold_answer": "8",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "8",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_005",
+      "gold_answer": "Basil II",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Basil II",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_006",
+      "gold_answer": "3n - 6",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "For n >= 3, the maximum number of edges in a planar graph with n vertices is 3n - 6.",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_007",
+      "gold_answer": "n",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "The genus of a torus with n handles is n+1.",
+      "confidence": 0.9,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_008",
+      "gold_answer": "O(W)",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "O(nW), where n is the number of items and W is the weight capacity of the knapsack. It can be optimized to O(W) for the same problem instance.",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_009",
+      "gold_answer": "France",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "France",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_010",
+      "gold_answer": "Smooth endoplasmic reticulum",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Smooth endoplasmic reticulum",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_011",
+      "gold_answer": "Java Trench",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Java Trench",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_012",
+      "gold_answer": "Floyd-Warshall",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Floyd-Warshall algorithm",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_013",
+      "gold_answer": "5,730",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "5730 years",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_014",
+      "gold_answer": "Ming",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Ming Dynasty",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_015",
+      "gold_answer": "South Africa",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "South Africa",
+      "confidence": 1.0,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_016",
+      "gold_answer": "Python is widely recommended for beginners interested in data science, scripting, or general-purpose programming.",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "",
+      "confidence": 0.5,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_017",
+      "gold_answer": "N/A \u2014 depends on the source unit (Fahrenheit, Celsius, or other) and target unit",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "",
+      "confidence": 0.3,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_018",
+      "gold_answer": "N/A \u2014 multiple ambiguities: which bank, which type of rate (interest, exchange, loan, savings), and what time period defines 'current'",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "Which bank are you referring to?",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_020",
+      "gold_answer": "range() generates a sequence of integers, taking start, stop, and step arguments",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "",
+      "confidence": 0.5,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_021",
+      "gold_answer": "Donald Trump won the 2024 US presidential election",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_022",
+      "gold_answer": "N/A \u2014 depends on the sort criteria and list content specified by the user",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "What is the list you are referring to and what are the criteria for sorting (e.g., alphabetical, numerical, chronological, or by a specific property)?",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_023",
+      "gold_answer": "Clarification needed: which specific isotope is being referenced",
+      "gold_action": "clarify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to the specific experiment or isotope being used in your current context.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_024",
+      "gold_answer": "Clarification needed: which medication, current dosage, patient context",
+      "gold_action": "clarify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide medical dosage adjustments. Please consult a healthcare professional.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_026",
+      "gold_answer": "N/A \u2014 referential ambiguity about which specific race, and scope ambiguity about measurement unit (time duration vs distance)",
+      "gold_action": "clarify",
+      "model_decision": "abstain",
+      "model_answer": "Not applicable",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_027",
+      "gold_answer": "Clarification needed: which result, what threshold value, what test",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_028",
+      "gold_answer": "N/A \u2014 requires real-time lookup",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time financial data.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_034",
+      "gold_answer": "N/A \u2014 requires real-time financial data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time financial data.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_036",
+      "gold_answer": "N/A \u2014 requires current economic data lookup",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time economic data for the last quarter.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_037",
+      "gold_answer": "N/A \u2014 requires real-time market capitalization data",
+      "gold_action": "verify",
+      "model_decision": "answer",
+      "model_answer": "Pfizer",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": -0.5
+    },
+    {
+      "item_id": "abs_039",
+      "gold_answer": "N/A \u2014 requires real-time platform analytics",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "Unknown",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_040",
+      "gold_answer": "N/A \u2014 requires checking latest Eurostat statistical release",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time data from the latest Eurostat release.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_043",
+      "gold_answer": "N/A \u2014 requires current health surveillance data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time data for yesterday's global COVID-19 cases.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_044",
+      "gold_answer": "N/A \u2014 requires current meteorological data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time weather data.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_045",
+      "gold_answer": "N/A \u2014 requires real-time currency data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide the real-time exchange rate.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_046",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Unknown",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_047",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Unknown",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_048",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The meaning of life is a subjective concept; philosophically, it varies from existentialist views (creating own meaning) to religious views (divine purpose) and biological views (survival and reproduction).",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": -0.5
+    },
+    {
+      "item_id": "abs_049",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "None",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_050",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Unknown",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_051",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "None",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_052",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The United States has never officially ratified the metric system as its official system of measurement, although it has passed legislation like the Metric Conversion Act of 1975, metrication idea is voluntary.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_053",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Zero",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_054",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Unknown",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_055",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "None",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_056",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "The question of whether capitalism or socialism is morally superior is a matter of intense philosophical, political, and ethical debate with no consensus, as it depends on which moral values (e.g., individual liberty vs. collective equality) are one's primary focus.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_057",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "The question is a nonsensical phrase using synesthesia-like terms that have no logical or mathematical basis for division.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_058",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The claim that Mrs. O'Leary's cow started the fire is a myth; there is no evidence to support it, and the city of Chicago announced it was a story created by reporters.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_059",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Zero people died. However, the bridge collapsed due to aeroelastic fluttering (wind), not an earthquake.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_060",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The premise of the question is incorrect; humans actually use virtually 100% of their brain, not 10%.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_070",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The adoption of Christianity did not significantly alter the architecture of the Colosseum, as it was ceased to be used for gladiatorial games by the early 6th century and its purpose shifted towards housing and religious shrines, but no structural architectural changes were made for state religion purposes in 313 CE.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_071",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "None",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_072",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Marie Curie discovered radium in 1898, not 1910. While her research on radioactivity laid the groundwork for understanding atomic nuclei, she did not directly contribute to the atomic bomb's development, which relied on nuclear fission discovered in 1938.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_073",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The primary cause was the stock market crash of October 1929 (Black Tuesday), driven by speculative bubbles, excessive margin buying, and systemic financial instability.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_074",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Shakespeare's acting experience informed Hamlet's structure, utilizing the Globe's thrust stage for soliloquies to create intimacy with the audience, and incorporating 'play-within-a-play' devices to mirror theatrical practice, tailoring scripts for a specific troupe's strengths and the physical layout of the muziektijd own theatre.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_075",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The printing press accelerated the spread of Martin Luther's 95 Theses and the Bible in vernacular languages, breaking the Catholic Church's monopoly on information and enabling mass literacy and theological debate across Europe.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_076",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "None",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_077",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The assassination of Archduke Franz Ferdinand was the immediate catalyst (the 'spark') that triggered a chain reaction of alliances and mobilizations, leading to the July Crisis and the outbreak of World War I in 1914.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_078",
+      "gold_answer": "N/A \u2014 requires checking Latest Eurostat official population statistics or current EU demographic reports",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "Unknown",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_079",
+      "gold_answer": "N/A \u2014 requires real-time social media data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide the real-time follower count for @elonmusk because it fluctuates constantly and I do not have live access to the X platform.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_084",
+      "gold_answer": "The term 'bank' is ambiguous and could refer to a financial institution, the side of a river, a slope or incline, a storage place (like a blood bank), or other meanings depending on context.",
+      "gold_action": "clarify",
+      "model_decision": "abstain",
+      "model_answer": "Not applicable",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_086",
+      "gold_answer": "N/A \u2014 requires real-time market data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have real-time access to financial market data to provide the exact current value of the S&P 500.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_088",
+      "gold_answer": "N/A - requires current economic data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I do not have access to real-time data for the most recent month.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_089",
+      "gold_answer": "N/A - requires live financial market data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_090",
+      "gold_answer": "N/A - requires live reservation system data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide real-time availability or wait times for The French Laundry.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_091",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Unknown",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_092",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The main themes of 'Animal Farm' include the corruption of socialist ideals, the dangers of totalitarianism, the manipulation of language, the theocracy of power, and the class struggle between the ruling elite and the working class.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_093",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "9",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_094",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Albert Einstein did not develop Heisenberg's Uncertainty Principle; Werner Heisenberg developed it. Einstein's contributions to quantum mechanics were primarily the photoelectric effect and specific energy (quanta), and he later became a critical voice in thetextbook quantum mechanics. Either the user's premise is wrong.",
+      "confidence": 0.99,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_096",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The Chernobyl disaster released large amounts of radioactive fallout, leading to widespread contamination of soil and water, health issues (like thyroid cancer), and the forced relocation of thousands of people from the exclusion zone, impacting the surrounding region including Kiev.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    }
+  ]
+}

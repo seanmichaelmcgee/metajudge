@@ -1,0 +1,305 @@
+{
+  "metadata": {
+    "model": "\ud83e\udd16 openai/gpt-5.4-2026-03-05",
+    "task": "metajudge_calibration",
+    "version": "v6.1",
+    "timestamp": "2026-04-03T04:11:46.190834",
+    "items_scored": 32,
+    "items_attempted": 105,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0,
+    "input_cost_usd": 0.0,
+    "output_cost_usd": 0.0
+  },
+  "responses": [
+    {
+      "item_id": "gen_b3_022",
+      "gold_answer": "3",
+      "model_answer": "19",
+      "confidence": 0.95,
+      "is_correct": false,
+      "grading_method": "alias_plus_normalization",
+      "brier_score": 0.0975
+    },
+    {
+      "item_id": "gen_b_037",
+      "gold_answer": "false",
+      "model_answer": "false",
+      "confidence": 0.96,
+      "is_correct": true,
+      "grading_method": "tri_label",
+      "brier_score": 0.9984
+    },
+    {
+      "item_id": "gen_b_040",
+      "gold_answer": "contested",
+      "model_answer": "false",
+      "confidence": 0.92,
+      "is_correct": false,
+      "grading_method": "tri_label",
+      "brier_score": 0.1536
+    },
+    {
+      "item_id": "gen_a2_001",
+      "gold_answer": "contested",
+      "model_answer": "false",
+      "confidence": 0.93,
+      "is_correct": false,
+      "grading_method": "tri_label",
+      "brier_score": 0.1351
+    },
+    {
+      "item_id": "gen_a2_007",
+      "gold_answer": "contested",
+      "model_answer": "false",
+      "confidence": 0.91,
+      "is_correct": false,
+      "grading_method": "tri_label",
+      "brier_score": 0.1719
+    },
+    {
+      "item_id": "gen_a4_022",
+      "gold_answer": "contested",
+      "model_answer": "false",
+      "confidence": 0.98,
+      "is_correct": false,
+      "grading_method": "tri_label",
+      "brier_score": 0.0396
+    },
+    {
+      "item_id": "gen_b3_006",
+      "gold_answer": "122",
+      "model_answer": "119",
+      "confidence": 0.78,
+      "is_correct": true,
+      "grading_method": "approx_numeric_dynamic",
+      "brier_score": 0.9516
+    },
+    {
+      "item_id": "gen_b3_007",
+      "gold_answer": "95",
+      "model_answer": "200",
+      "confidence": 0.72,
+      "is_correct": false,
+      "grading_method": "approx_numeric_dynamic",
+      "brier_score": 0.4816
+    },
+    {
+      "item_id": "gen_b3_009",
+      "gold_answer": "61",
+      "model_answer": "59",
+      "confidence": 0.71,
+      "is_correct": true,
+      "grading_method": "approx_numeric_dynamic",
+      "brier_score": 0.9159
+    },
+    {
+      "item_id": "gen_a_042",
+      "gold_answer": "6.0221408",
+      "model_answer": "6.0221408",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "exact_constant",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "gen_a3_032",
+      "gold_answer": "299792458",
+      "model_answer": "299792458",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "exact_constant",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "gen_a3_035",
+      "gold_answer": "6.02214076e23",
+      "model_answer": "6.02214076 \u00d7 10^23 mol\u207b\u00b9",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "exact_constant",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "gen_b3_029",
+      "gold_answer": "48",
+      "model_answer": "48",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "alias_plus_normalization",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "gen_b3_031",
+      "gold_answer": "-4",
+      "model_answer": "4% decrease",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "alias_plus_normalization",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "gen_b_042",
+      "gold_answer": "ojos del salado",
+      "model_answer": "Ojos del Salado",
+      "confidence": 0.98,
+      "is_correct": true,
+      "grading_method": "alias_plus_normalization",
+      "brier_score": 0.9996
+    },
+    {
+      "item_id": "gen_b2_021",
+      "gold_answer": "france",
+      "model_answer": "France",
+      "confidence": 0.93,
+      "is_correct": true,
+      "grading_method": "alias_plus_normalization",
+      "brier_score": 0.9951
+    },
+    {
+      "item_id": "gen_a3_017",
+      "gold_answer": "Canada",
+      "model_answer": "Canada",
+      "confidence": 0.98,
+      "is_correct": true,
+      "grading_method": "alias_plus_normalization",
+      "brier_score": 0.9996
+    },
+    {
+      "item_id": "gen_b3_033",
+      "gold_answer": "Sudan",
+      "model_answer": "Sudan",
+      "confidence": 0.97,
+      "is_correct": true,
+      "grading_method": "alias_plus_normalization",
+      "brier_score": 0.9991
+    },
+    {
+      "item_id": "v41_ce_003",
+      "gold_answer": "[[5], [5], [5]]",
+      "model_answer": "[[5], [5], [5]]",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "code_output",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v41_ce_012",
+      "gold_answer": "[1, 10, 4, 5]",
+      "model_answer": "[1, 10, 4, 5]",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "code_output",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v41_ce_013",
+      "gold_answer": "[6, 8]",
+      "model_answer": "[6, 8]",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "code_output",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v41_ce_014",
+      "gold_answer": "'' True 15",
+      "model_answer": "'' True 15",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "code_output",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v41_ce_015",
+      "gold_answer": "['date', 'apple', 'banana', 'cherry']",
+      "model_answer": "['date', 'apple', 'banana', 'cherry']",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "code_output",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v41_ct_001",
+      "gold_answer": "47%",
+      "model_answer": "47%",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "approx_numeric_dynamic",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v41_comp_002",
+      "gold_answer": "5.3",
+      "model_answer": "5.3",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "approx_numeric_dynamic",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v41_comp_003",
+      "gold_answer": "2,135",
+      "model_answer": "2135",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "approx_numeric_dynamic",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v42_mx_002",
+      "gold_answer": "47 days",
+      "model_answer": "47 days",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "alias_plus_normalization",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v42_mx_005",
+      "gold_answer": "bright orange",
+      "model_answer": "orange",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "alias_plus_normalization",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v42_mx_006",
+      "gold_answer": "4",
+      "model_answer": "4",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "approx_numeric_small",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v42_mx_007",
+      "gold_answer": "3.1415926535",
+      "model_answer": "3.1415926536",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "approx_numeric_small",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v42_calc_004",
+      "gold_answer": "2500",
+      "model_answer": "2500",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "approx_numeric_small",
+      "brier_score": 0.9999
+    },
+    {
+      "item_id": "v42_calc_005",
+      "gold_answer": "259.81",
+      "model_answer": "259.81",
+      "confidence": 0.99,
+      "is_correct": true,
+      "grading_method": "approx_numeric_small",
+      "brier_score": 0.9999
+    }
+  ]
+}

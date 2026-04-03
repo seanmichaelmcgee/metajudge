@@ -1,0 +1,18 @@
+[{"stream_name":"stdout","time":14.236131749,"data":"Scoring: transition-based (package), anchor C2=[-0.2, 0.2]\n"}
+,{"stream_name":"stdout","time":105.175133905,"data":"C2: Δ=+0.0000 Norm=0.500 Dmg=0.0% [23 items]\n"}
+,{"stream_name":"stdout","time":105.175201322,"data":"  Stochasticity: Run 1 Δ=+0.0000, Run 2 Δ=+0.0000 (23/23 items matched)\n"}
+,{"stream_name":"stdout","time":105.175211105,"data":"  Transition stability: 18/23 items stable (78%)\n"}
+,{"stream_name":"stdout","time":105.175217074,"data":"  → Score ranges from 0.50 to 0.50 across independent runs\n"}
+,{"stream_name":"stdout","time":105.175222747,"data":"Audit report: /kaggle/working/MetaJudge_SC_C2_🤖 anthropic_claude-sonnet-4@20250514_v6.2.md\n"}
+,{"stream_name":"stdout","time":105.17522854,"data":"Kept: metajudge_sc_c2_v62-run_id_Run_1_anthropic_claude-sonnet-420250514.run.json\n"}
+,{"stream_name":"stdout","time":105.175234047,"data":"Kept: metajudge_sc_c2_v62.task.json\n"}
+,{"stream_name":"stdout","time":105.202891025,"data":"Cost data appended: in=18,528 out=15,884 cost=$0.2938\n"}
+,{"stream_name":"stderr","time":110.790570457,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":110.790664487,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":110.812368345,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":111.261280453,"data":"[NbConvertApp] Writing 90510 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":114.32068866,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":114.320792168,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":114.344194658,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":116.034663175,"data":"[NbConvertApp] Writing 408296 bytes to __results__.html\n"}
+]

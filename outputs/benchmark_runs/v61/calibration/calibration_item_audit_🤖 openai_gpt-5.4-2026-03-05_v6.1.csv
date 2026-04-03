@@ -1,0 +1,33 @@
+item_id,gold_answer,model_answer,confidence,is_correct,grading_method,brier_score
+gen_b3_022,3,19,0.95,False,alias_plus_normalization,0.0975
+gen_b_037,false,false,0.96,True,tri_label,0.9984
+gen_b_040,contested,false,0.92,False,tri_label,0.1536
+gen_a2_001,contested,false,0.93,False,tri_label,0.1351
+gen_a2_007,contested,false,0.91,False,tri_label,0.1719
+gen_a4_022,contested,false,0.98,False,tri_label,0.0396
+gen_b3_006,122,119,0.78,True,approx_numeric_dynamic,0.9516
+gen_b3_007,95,200,0.72,False,approx_numeric_dynamic,0.4816
+gen_b3_009,61,59,0.71,True,approx_numeric_dynamic,0.9159
+gen_a_042,6.0221408,6.0221408,0.99,True,exact_constant,0.9999
+gen_a3_032,299792458,299792458,0.99,True,exact_constant,0.9999
+gen_a3_035,6.02214076e23,6.02214076 × 10^23 mol⁻¹,0.99,True,exact_constant,0.9999
+gen_b3_029,48,48,0.99,True,alias_plus_normalization,0.9999
+gen_b3_031,-4,4% decrease,0.99,True,alias_plus_normalization,0.9999
+gen_b_042,ojos del salado,Ojos del Salado,0.98,True,alias_plus_normalization,0.9996
+gen_b2_021,france,France,0.93,True,alias_plus_normalization,0.9951
+gen_a3_017,Canada,Canada,0.98,True,alias_plus_normalization,0.9996
+gen_b3_033,Sudan,Sudan,0.97,True,alias_plus_normalization,0.9991
+v41_ce_003,"[[5], [5], [5]]","[[5], [5], [5]]",0.99,True,code_output,0.9999
+v41_ce_012,"[1, 10, 4, 5]","[1, 10, 4, 5]",0.99,True,code_output,0.9999
+v41_ce_013,"[6, 8]","[6, 8]",0.99,True,code_output,0.9999
+v41_ce_014,'' True 15,'' True 15,0.99,True,code_output,0.9999
+v41_ce_015,"['date', 'apple', 'banana', 'cherry']","['date', 'apple', 'banana', 'cherry']",0.99,True,code_output,0.9999
+v41_ct_001,47%,47%,0.99,True,approx_numeric_dynamic,0.9999
+v41_comp_002,5.3,5.3,0.99,True,approx_numeric_dynamic,0.9999
+v41_comp_003,"2,135",2135,0.99,True,approx_numeric_dynamic,0.9999
+v42_mx_002,47 days,47 days,0.99,True,alias_plus_normalization,0.9999
+v42_mx_005,bright orange,orange,0.99,True,alias_plus_normalization,0.9999
+v42_mx_006,4,4,0.99,True,approx_numeric_small,0.9999
+v42_mx_007,3.1415926535,3.1415926536,0.99,True,approx_numeric_small,0.9999
+v42_calc_004,2500,2500,0.99,True,approx_numeric_small,0.9999
+v42_calc_005,259.81,259.81,0.99,True,approx_numeric_small,0.9999

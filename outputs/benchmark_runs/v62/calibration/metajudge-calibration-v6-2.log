@@ -1,0 +1,15 @@
+[{"stream_name":"stdout","time":12.102636481,"data":"Scoring: brier_item_score (inline), anchor A=[0.75, 1.0]\n"}
+,{"stream_name":"stdout","time":48.475819444,"data":"Calibration: 1-Brier=0.9005 Acc=89.5% Normalized=0.602 [105 items]\n"}
+,{"stream_name":"stdout","time":48.475857934,"data":"Audit report: /kaggle/working/MetaJudge_Calibration_🤖 anthropic_claude-sonnet-4@20250514_v6.2.md\n"}
+,{"stream_name":"stdout","time":48.475866124,"data":"Kept: metajudge_calibration_v62-run_id_Run_1_anthropic_claude-sonnet-420250514.run.json\n"}
+,{"stream_name":"stdout","time":48.475870974,"data":"Kept: metajudge_calibration_v62.task.json\n"}
+,{"stream_name":"stdout","time":48.498378305,"data":"Cost data appended: in=76,453 out=13,313 cost=$0.4291\n"}
+,{"stream_name":"stderr","time":52.75774892,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":52.75779539,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":52.775216781,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":53.065020973,"data":"[NbConvertApp] Writing 82908 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":55.509728724,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":55.509775924,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":55.529090405,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":56.559029417,"data":"[NbConvertApp] Writing 369202 bytes to __results__.html\n"}
+]

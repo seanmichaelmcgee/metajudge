@@ -1,0 +1,18 @@
+[{"stream_name":"stdout","time":13.622508287,"data":"Scoring: transition-based (package), anchor C1=[-0.1, 0.15]\n"}
+,{"stream_name":"stdout","time":1218.902728275,"data":"C1: Δ=+0.0000 Norm=0.400 Dmg=0.0% [28 items]\n"}
+,{"stream_name":"stdout","time":1218.902820328,"data":"  Stochasticity: Run 1 Δ=+0.0000, Run 2 Δ=-0.0357 (28/28 items matched)\n"}
+,{"stream_name":"stdout","time":1218.902825513,"data":"  Transition stability: 27/28 items stable (96%)\n"}
+,{"stream_name":"stdout","time":1218.902828993,"data":"  → Score ranges from 0.26 to 0.40 across independent runs\n"}
+,{"stream_name":"stdout","time":1218.902832501,"data":"  Usage: run.json not found, cost data unavailable\n"}
+,{"stream_name":"stdout","time":1218.902836586,"data":"Audit report: /kaggle/working/MetaJudge_SC_C1_🤖 google_gemma-4-26b-a4b_v6.1.md\n"}
+,{"stream_name":"stdout","time":1218.902840338,"data":"Kept: metajudge_sc_c1_v61-run_id_Run_1_google_gemma-4-26b-a4b.run.json\n"}
+,{"stream_name":"stdout","time":1218.902843787,"data":"Kept: metajudge_sc_c1_v61.task.json\n"}
+,{"stream_name":"stderr","time":1223.281749557,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":1223.281831415,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":1223.305145833,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":1223.726232793,"data":"[NbConvertApp] Writing 86794 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":1226.64315942,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":1226.643214815,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":1226.667842787,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1228.114499448,"data":"[NbConvertApp] Writing 388928 bytes to __results__.html\n"}
+]
