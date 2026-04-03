@@ -1,55 +1,19 @@
-[{"stream_name":"stdout","time":10.931674714,"data":"Scoring: score_family_b_item_v2 (package), anchor B=[0.6, 1.0]\n"}
-,{"stream_name":"stderr","time":17.766342319,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stderr","time":17.766394928,"data":"\n"}
-,{"stream_name":"stderr","time":17.766400228,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stdout","time":17.967796425,"data":"  ITEM FAILED: abs_022: ValidationError: 1 validation error for AbstentionResponse\n"}
-,{"stream_name":"stdout","time":17.967830795,"data":"  Invalid JSON: trailing characters at line 7 column 1 [type=json_invalid, inp\n"}
-,{"stream_name":"stderr","time":19.868538744,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stderr","time":19.868576294,"data":"\n"}
-,{"stream_name":"stderr","time":19.868580274,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stdout","time":20.06965626,"data":"  ITEM FAILED: abs_025: ValidationError: 1 validation error for AbstentionResponse\n"}
-,{"stream_name":"stdout","time":20.06969563,"data":"  Invalid JSON: trailing characters at line 7 column 1 [type=json_invalid, inp\n"}
-,{"stream_name":"stderr","time":29.100064566,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stderr","time":29.100093046,"data":"\n"}
-,{"stream_name":"stderr","time":29.100097616,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stdout","time":29.299004775,"data":"  ITEM FAILED: abs_072: ValidationError: 1 validation error for AbstentionResponse\n"}
-,{"stream_name":"stdout","time":29.299035485,"data":"  Invalid JSON: trailing characters at line 7 column 1 [type=json_invalid, inp\n"}
-,{"stream_name":"stderr","time":66.570742759,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stderr","time":66.570801579,"data":"\n"}
-,{"stream_name":"stderr","time":66.570808199,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stdout","time":66.765701916,"data":"  ITEM FAILED: abs_095: ValidationError: 1 validation error for AbstentionResponse\n"}
-,{"stream_name":"stdout","time":66.765740407,"data":"  Invalid JSON: trailing characters at line 7 column 1 [type=json_invalid, inp\n"}
-,{"stream_name":"stdout","time":618.506304732,"data":"  WARNING: 4/72 items failed in Run 1. Score based on 68 items.\n"}
-,{"stream_name":"stderr","time":623.641730654,"data":"WARNING:kaggle_benchmarks.tasks:Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stderr","time":623.641799483,"data":"\n"}
-,{"stream_name":"stderr","time":623.641812194,"data":"WARNING:kaggle_benchmarks.tasks:Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stdout","time":623.835113924,"data":"  ITEM FAILED: abs_019: ValidationError: 1 validation error for AbstentionResponse\n"}
-,{"stream_name":"stdout","time":623.835150334,"data":"  Invalid JSON: trailing characters at line 7 column 1 [type=json_invalid, inp\n"}
-,{"stream_name":"stderr","time":625.522523084,"data":"WARNING:kaggle_benchmarks.tasks:Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stderr","time":625.522563424,"data":"\n"}
-,{"stream_name":"stderr","time":625.522567904,"data":"WARNING:kaggle_benchmarks.tasks:Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stdout","time":625.723999804,"data":"  ITEM FAILED: abs_025: ValidationError: 1 validation error for AbstentionResponse\n"}
-,{"stream_name":"stdout","time":625.724028984,"data":"  Invalid JSON: trailing characters at line 7 column 1 [type=json_invalid, inp\n"}
-,{"stream_name":"stderr","time":639.158157711,"data":"WARNING:kaggle_benchmarks.tasks:Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stderr","time":639.158199021,"data":"\n"}
-,{"stream_name":"stderr","time":639.158202611,"data":"WARNING:kaggle_benchmarks.tasks:Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
-,{"stream_name":"stdout","time":639.36841822,"data":"  ITEM FAILED: abs_095: ValidationError: 1 validation error for AbstentionResponse\n"}
-,{"stream_name":"stdout","time":639.36845902,"data":"  Invalid JSON: trailing characters at line 7 column 1 [type=json_invalid, inp\n"}
-,{"stream_name":"stdout","time":639.36846428,"data":"Abstention: UWAA=0.8051 Act Acc=48.5% Normalized=0.513 [68 items]\n"}
-,{"stream_name":"stdout","time":639.36846775,"data":"  Actions: {'answer': 32, 'clarify': 7, 'abstain': 29}\n"}
-,{"stream_name":"stdout","time":639.368471,"data":"  Stochasticity: Run 1 UWAA=0.8051, Run 2 UWAA=0.8022 (67/68 items matched)\n"}
-,{"stream_name":"stdout","time":639.36847437,"data":"  Action stability: 67/67 items stable (100%)\n"}
-,{"stream_name":"stdout","time":639.3684778,"data":"  → Score ranges from 0.51 to 0.51 across independent runs\n"}
-,{"stream_name":"stdout","time":639.36848198,"data":"Audit report: /kaggle/working/MetaJudge_Abstention_🤖 google_gemma-4-31b_v6.2.md\n"}
-,{"stream_name":"stdout","time":639.457998861,"data":"Kept: metajudge_abstention_v62-run_id_Run_1_google_gemma-4-31b.run.json\n"}
-,{"stream_name":"stdout","time":639.458036661,"data":"Kept: metajudge_abstention_v62.task.json\n"}
-,{"stream_name":"stdout","time":639.484844748,"data":"Cost data appended: in=17,969 out=9,035 cost=$0.0041\n"}
-,{"stream_name":"stderr","time":643.380631824,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
-,{"stream_name":"stderr","time":643.380677194,"data":"  warn(\n"}
-,{"stream_name":"stderr","time":643.398178763,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
-,{"stream_name":"stderr","time":643.689617069,"data":"[NbConvertApp] Writing 92586 bytes to __notebook__.ipynb\n"}
-,{"stream_name":"stderr","time":646.050044614,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
-,{"stream_name":"stderr","time":646.050084014,"data":"  warn(\n"}
-,{"stream_name":"stderr","time":646.068323273,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
-,{"stream_name":"stderr","time":647.187311629,"data":"[NbConvertApp] Writing 399319 bytes to __results__.html\n"}
+[{"stream_name":"stdout","time":13.163842921,"data":"Scoring: score_family_b_item_v2 (package), anchor B=[0.6, 1.0]\n"}
+,{"stream_name":"stdout","time":340.974682112,"data":"Abstention: UWAA=0.7042 Act Acc=38.9% Normalized=0.260 [72 items]\n"}
+,{"stream_name":"stdout","time":340.974736378,"data":"  Actions: {'answer': 53, 'clarify': 3, 'abstain': 11, 'verify': 5}\n"}
+,{"stream_name":"stdout","time":340.974743793,"data":"  Stochasticity: Run 1 UWAA=0.7042, Run 2 UWAA=0.6778 (72/72 items matched)\n"}
+,{"stream_name":"stdout","time":340.974749972,"data":"  Action stability: 60/72 items stable (83%)\n"}
+,{"stream_name":"stdout","time":340.974761303,"data":"  → Score ranges from 0.19 to 0.26 across independent runs\n"}
+,{"stream_name":"stdout","time":340.97476663,"data":"Audit report: /kaggle/working/MetaJudge_Abstention_🤖 google_gemini-2.5-pro_v6.2.md\n"}
+,{"stream_name":"stdout","time":341.196859462,"data":"Kept: metajudge_abstention_v62-run_id_Run_1_google_gemini-2.5-pro.run.json\n"}
+,{"stream_name":"stdout","time":341.196915656,"data":"Kept: metajudge_abstention_v62.task.json\n"}
+,{"stream_name":"stdout","time":341.234336684,"data":"Cost data appended: in=23,508 out=14,154 cost=$2.5107\n"}
+,{"stream_name":"stderr","time":346.058315666,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":346.058410257,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":346.080024426,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":346.491125668,"data":"[NbConvertApp] Writing 89053 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":349.513912331,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":349.513953113,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":349.536024916,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":351.085810218,"data":"[NbConvertApp] Writing 395090 bytes to __results__.html\n"}
 ]
