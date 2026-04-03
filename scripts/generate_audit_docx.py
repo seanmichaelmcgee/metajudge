@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Generate a per-model .docx audit report from MetaJudge v5.1 notebook outputs.
+"""Generate a per-model .docx audit report from MetaJudge v6.1 notebook outputs.
 
 Usage:
     python scripts/generate_audit_docx.py \
       --task calibration \
-      --audit-csv /path/to/calibration_item_audit_flash2.5_v5.1.csv \
-      --responses-json /path/to/calibration_full_responses_flash2.5_v5.1.json \
+      --audit-csv /path/to/calibration_item_audit_flash2.5_v6.1.csv \
+      --responses-json /path/to/calibration_full_responses_flash2.5_v6.1.json \
       --items-json /path/to/metajudge_benchmark_v1.json \
       --registry-json /path/to/adjudication_registry.json \
       --output MetaJudge_Calibration_Flash2.5.docx \
@@ -27,7 +27,7 @@ from pathlib import Path
 # ── CLI ───────────────────────────────────────────────────────────────────
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Generate MetaJudge v5.1 audit .docx")
+    p = argparse.ArgumentParser(description="Generate MetaJudge v6.1 audit .docx")
     p.add_argument("--task", required=True,
                    choices=["calibration", "abstention", "sc_c1", "sc_c2"],
                    help="Task type")
@@ -142,15 +142,26 @@ def extract_responses_lookup(responses_json, task):
 
 def merge_item_data(audit_rows, items_lookup, registry_lookup,
                     responses_r1, justifications):
-    """Merge all data sources into a list of enriched item dicts."""
+    """Merge all data sources into a list of enriched item dicts.
+
+    Iterates over the full items list so that items missing from the audit
+    CSV (evaluation failures) still appear in the report.
+    """
+    audit_by_id = {row["item_id"]: row for row in audit_rows}
     merged = []
-    for row in audit_rows:
-        iid = row["item_id"]
+
+    # Include all items from the items JSON (not just audit CSV)
+    all_ids = set(items_lookup.keys()) | set(audit_by_id.keys())
+
+    for iid in sorted(all_ids):
+        row = audit_by_id.get(iid, {})
         item = items_lookup.get(iid, {})
         reg = registry_lookup.get(iid, {})
         resp = responses_r1.get(iid, {})
 
-        entry = {**row}  # Start with audit CSV fields
+        entry = {**row}  # Start with audit CSV fields (empty dict if failed)
+        entry["item_id"] = iid
+        entry["eval_failed"] = iid not in audit_by_id
         # Add item metadata
         entry["question"] = item.get("question", item.get("turn1_prompt", ""))
         entry["gold_answer_full"] = item.get("gold_answer", row.get("gold_answer", ""))
@@ -181,7 +192,7 @@ def merge_item_data(audit_rows, items_lookup, registry_lookup,
 
         merged.append(entry)
 
-    return sorted(merged, key=lambda x: x["item_id"])
+    return merged
 
 
 # ── Report metadata ──────────────────────────────────────────────────────
@@ -289,19 +300,26 @@ def _safe_bool(val):
 
 # ── Summary page builders ────────────────────────────────────────────────
 
-def build_header_block(doc, task, model_name, item_count, run_meta):
+def build_header_block(doc, task, model_name, merged, run_meta):
     """Add title and header metadata."""
     title = doc.add_heading(
-        f"MetaJudge v5.1 — {TASK_DISPLAY[task]} Audit Report", level=1)
+        f"MetaJudge v6.1 — {TASK_DISPLAY[task]} Audit Report", level=1)
     for run in title.runs:
         run.font.name = "Arial"
         run.font.size = Pt(16)
 
+    n_scored = sum(1 for m in merged if not m.get("eval_failed"))
+    n_total = len(merged)
+    n_failed = n_total - n_scored
+    items_line = f"Items: {n_scored}/{n_total} scored"
+    if n_failed:
+        items_line += f" ({n_failed} evaluation failure{'s' if n_failed > 1 else ''})"
+
     meta_lines = [
         f"Model: {model_name}",
         f"Date: {run_meta['end_time'][:10] if run_meta and run_meta.get('end_time') else datetime.utcnow().strftime('%Y-%m-%d')}",
-        f"Benchmark version: v5.1 | Grading engine: grading_v2",
-        f"Items: {item_count} clean",
+        f"Benchmark version: v6.1 | Grading engine: grading_v2",
+        items_line,
     ]
     for line in meta_lines:
         p = doc.add_paragraph(line)
@@ -314,6 +332,7 @@ def build_header_block(doc, task, model_name, item_count, run_meta):
 def build_calibration_summary(doc, merged):
     """Performance summary for calibration task."""
     doc.add_heading("Performance Summary", level=2)
+    merged = [m for m in merged if not m.get("eval_failed")]
     n = len(merged)
     correct = sum(1 for m in merged if _safe_bool(m.get("is_correct")))
     brier_scores = [_safe_float(m.get("brier_score")) for m in merged]
@@ -340,6 +359,7 @@ def build_calibration_summary(doc, merged):
 def build_abstention_summary(doc, merged):
     """Performance summary for abstention task."""
     doc.add_heading("Performance Summary", level=2)
+    merged = [m for m in merged if not m.get("eval_failed")]
     n = len(merged)
     utilities = [_safe_float(m.get("utility")) for m in merged]
     mean_util = sum(utilities) / n if n else 0
@@ -380,6 +400,7 @@ def build_abstention_summary(doc, merged):
 def build_sc_summary(doc, merged, task):
     """Performance summary for C1/C2 tasks."""
     doc.add_heading("Performance Summary", level=2)
+    merged = [m for m in merged if not m.get("eval_failed")]
     n = len(merged)
     t1c = sum(1 for m in merged if _safe_bool(m.get("t1_correct")))
     t2c = sum(1 for m in merged if _safe_bool(m.get("t2_correct")))
@@ -641,8 +662,35 @@ def _correct_color(is_correct):
     return GREEN_TEXT if is_correct else RED_TEXT
 
 
+def _add_failed_item(doc, item, task):
+    """Render a failed item (present in items JSON, absent from audit CSV)."""
+    _add_separator(doc)
+    doc.add_heading(item["item_id"], level=3)
+
+    _add_block_text(doc, "Question", item.get("question", ""))
+    _add_field(doc, "Gold Answer", item.get("gold_answer_full", ""))
+
+    justification = item.get("justification", "")
+    _add_block_text(doc, "Justification",
+                    justification if justification else "[pending]")
+
+    p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(6)
+    run = p.add_run("Model Answer: [EVALUATION FAILED — no response captured]")
+    run.font.name = "Arial"
+    run.font.size = Pt(11)
+    run.font.bold = True
+    run.font.color.rgb = RED_TEXT
+
+    _add_field(doc, "Correct", "—")
+    _add_field(doc, "Score", "—")
+
+
 def _add_calibration_item(doc, item):
     """Render one calibration item."""
+    if item.get("eval_failed"):
+        return _add_failed_item(doc, item, "calibration")
+
     _add_separator(doc)
     iid = item["item_id"]
 
@@ -696,6 +744,9 @@ def _add_calibration_item(doc, item):
 
 def _add_abstention_item(doc, item):
     """Render one abstention item."""
+    if item.get("eval_failed"):
+        return _add_failed_item(doc, item, "abstention")
+
     _add_separator(doc)
     iid = item["item_id"]
 
@@ -758,6 +809,9 @@ TRANSITION_STYLE = {
 
 def _add_sc_item(doc, item, task):
     """Render one C1/C2 self-correction item."""
+    if item.get("eval_failed"):
+        return _add_failed_item(doc, item, task)
+
     _add_separator(doc)
     iid = item["item_id"]
     subfamily = item.get("subfamily", task.upper().replace("SC_", ""))
@@ -866,7 +920,7 @@ def create_document(task, model_name, merged, responses_r2, items_lookup,
     style.font.size = Pt(11)
 
     # Summary page
-    build_header_block(doc, task, model_name, len(merged), run_meta)
+    build_header_block(doc, task, model_name, merged, run_meta)
 
     if task == "calibration":
         build_calibration_summary(doc, merged)
