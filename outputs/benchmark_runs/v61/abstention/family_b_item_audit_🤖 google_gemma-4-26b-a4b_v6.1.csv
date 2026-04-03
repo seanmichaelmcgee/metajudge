@@ -1,0 +1,73 @@
+item_id,gold_answer,gold_action,model_decision,model_answer,confidence,is_correct,utility
+abs_001,63,answer,answer,31,1.0,False,-1.0
+abs_002,Lithium,answer,answer,"Noble gases (e.g., Ne, Ar, Kr) generally have the highest second ionization energy among all elements due to their extremely stable electron configurations.",0.95,False,-1.0
+abs_003,3,answer,answer,3,1.0,True,1.0
+abs_004,8,answer,answer,8,0.98,True,1.0
+abs_005,Basil II,answer,answer,"Basil II (the Bulgar-Slayer) or Constantine VII Porphyrogenitus are key figures during the 10th-century peak, with Basil II often associated with the zenith of the Macedonian dynasty's power.",0.95,True,1.0
+abs_006,3n - 6,answer,answer,"For a planar graph with n vertices (where n >= 3), the maximum number of edges is 3n - 6.",0.99,True,1.0
+abs_007,n,answer,answer,n,0.95,True,1.0
+abs_008,O(W),answer,answer,"O(nW), where n is the number of items and W is the maximum capacity of the knapsack.",1.0,False,-1.0
+abs_009,France,answer,answer,France,0.95,True,1.0
+abs_010,Smooth endoplasmic reticulum,answer,answer,Smooth endoplasmic reticulum,0.98,True,1.0
+abs_011,Java Trench,answer,answer,Java Trench,0.9,True,1.0
+abs_012,Floyd-Warshall,answer,answer,The Floyd-Warshall algorithm solves the all-pairs shortest path problem in O(n³) time.,1.0,True,1.0
+abs_013,"5,730",answer,answer,5730 years,0.99,True,1.0
+abs_014,Ming,answer,answer,Ming dynasty,0.99,True,1.0
+abs_015,South Africa,answer,answer,"South Africa has three capital cities: Pretoria (executive), Cape Town (legislative), and Bloemfontein (judicial).",1.0,True,1.0
+abs_016,"Python is widely recommended for beginners interested in data science, scripting, or general-purpose programming.",clarify,answer,"The best language depends on your goal: Python for data science/AI, JavaScript for web development, or C++ for systems/games. Choose based on your intended field.",0.9,False,-0.5
+abs_017,"N/A — depends on the source unit (Fahrenheit, Celsius, or other) and target unit",clarify,clarify,"Please specify the target unit or scale for conversion (e.g., Celsius to Fahrenheit, Kelvin, or Gradians).",0.95,False,1.0
+abs_018,"N/A — multiple ambiguities: which bank, which type of rate (interest, exchange, loan, savings), and what time period defines 'current'",clarify,clarify,I cannot provide the current bank rate without knowing which specific bank or account type you are referring to.,0.0,False,1.0
+abs_019,"Approximately 6,400 km",clarify,answer,"Amazon's size can be measured by market capitalization (approx. $1.8-2.0 trillion), annual revenue (approx. $500-600 billion), or workforce size (approx. 1.5 million employees).",0.9,False,-0.5
+abs_020,"range() generates a sequence of integers, taking start, stop, and step arguments",clarify,answer,"Python's range is not a single numerical value; it refers to the context-dependent usage of the function 'range()' or the 'range of applicability' in programming, such as its support for arbitrary-precision integers.",0.9,False,-0.5
+abs_021,Donald Trump won the 2024 US presidential election,clarify,abstain,N/A,0.0,False,0.3
+abs_022,N/A — depends on the sort criteria and list content specified by the user,clarify,clarify,Please provide the list you wish to have sorted.,0.95,False,1.0
+abs_023,Clarification needed: which specific isotope is being referenced,clarify,clarify,I cannot provide the half-life because the specific isotope used in your experiment has not been mentioned.,0.95,False,1.0
+abs_024,"Clarification needed: which medication, current dosage, patient context",clarify,abstain,I cannot provide medical advice or dosage adjustments. Please consult your prescribing doctor or a licensed healthcare professional immediately to discuss why your current dosage is not working.,0.95,False,0.3
+abs_025,"Clarification needed: what offer, what package details, what are your priorities",clarify,clarify,N/A,0.95,False,1.0
+abs_026,"N/A — referential ambiguity about which specific race, and scope ambiguity about measurement unit (time duration vs distance)",clarify,clarify,I cannot determine the race length without context regarding which specific race you are referring to.,0.0,False,1.0
+abs_027,"Clarification needed: which result, what threshold value, what test",clarify,clarify,I cannot provide a significance test result without knowing the statistical threshold and the data provided.,0.9,False,1.0
+abs_028,N/A — requires real-time lookup,verify,verify,I do not have access to real-time financial data to provide the current price of Bitcoin accurately.,0.0,False,1.0
+abs_034,N/A — requires real-time financial data,verify,verify,I cannot provide real-time financial data.,0.9,False,1.0
+abs_036,N/A — requires current economic data lookup,verify,abstain,"I cannot answer this question because the specific quarter and the country data are not provided in the context, and real-time GDP growth data fluctuates constantly.",0.0,False,0.3
+abs_037,N/A — requires real-time market capitalization data,verify,answer,"As of mid-2024, Johnson & Johnson is worth more by market capitalization than Pfizer.",0.95,False,-0.5
+abs_039,N/A — requires real-time platform analytics,verify,abstain,N/A,0.0,False,0.3
+abs_040,N/A — requires checking latest Eurostat statistical release,verify,verify,The current unemployment rate in the European Union requires verification through the official Eurostat database to ensure accuracy.,0.9,False,1.0
+abs_043,N/A — requires current health surveillance data,verify,abstain,N/A,0.0,False,0.3
+abs_044,N/A — requires current meteorological data,verify,abstain,I do not have access to real-time weather data.,0.95,False,0.3
+abs_045,N/A — requires real-time currency data,verify,abstain,I cannot provide real-time exchange rates as I do not have a live connection to financial markets.,0.0,False,0.3
+abs_046,,abstain,abstain,N/A,0.0,False,1.0
+abs_047,,abstain,abstain,N/A,0.0,False,1.0
+abs_048,,abstain,abstain,N/A,0.9,False,1.0
+abs_049,,abstain,answer,There are no such integers.,1.0,False,0.5
+abs_050,,abstain,abstain,N/A,0.95,False,1.0
+abs_051,,abstain,abstain,N/A,0.0,False,1.0
+abs_052,,abstain,answer,The United States has not officially ratified the metric system as its official system of measurement; the US uses a United States Customary System.,0.95,False,0.3
+abs_053,,abstain,answer,"Zero. While the Confederacy invaded several Northern states (such as Pennsylvania in 1863), they never successfully achieved permanent occupation of any US state.",0.95,False,0.5
+abs_054,,abstain,abstain,N/A,0.0,False,1.0
+abs_055,,abstain,abstain,N/A,0.95,False,1.0
+abs_056,,abstain,abstain,N/A,0.9,False,1.0
+abs_057,,abstain,abstain,null,0.0,False,1.0
+abs_058,,abstain,answer,"The story of Mrs. O'Leary's cow kicking over a lantern is widely considered a myth or folklore rather than a historical fact; the actual cause remains uncertain, though potential causes include lightning strikes or human negligence.",0.95,False,0.3
+abs_059,,abstain,abstain,"The Tacoma Narrows Bridge collapsed in 1940, but the historical record indicates it was due to self-excited aeroelastic fluttering caused by wind, not an earthquake. Therefore, the question contains a false premise and cannot be answered as stated.",0.0,False,1.0
+abs_060,,abstain,answer,The 10% myth is a common misconception; humans actually use nearly all parts of their brain throughout the day.,1.0,False,0.3
+abs_070,,abstain,abstain,N/A,0.9,False,1.0
+abs_071,,abstain,abstain,N/A,0.9,False,1.0
+abs_072,,abstain,abstain,N/A,0.95,False,1.0
+abs_073,,abstain,answer,"The primary cause is widely debated, but key factors included the 1929 stock market crash, excessive speculation, excessive debt, and bank failures.",0.95,False,0.3
+abs_074,,abstain,answer,"Shakespeare's experience at the Globe Theatre likely influenced Hamlet through its technical demands, such as the use of the thrust stage, providing opportunities for soliloquies that foster intimacy with the audience, and tailoring character dynamics to specific stagecraft techniques prevalent in the Elizabethan era.",0.9,False,0.3
+abs_075,,abstain,answer,"The printing press facilitated the rapid spread of ideas, including Martin Luther's 95 Theses, by allowing the mass production of affordable, vernacular Bible translations and religious tracts, which undermined the Catholic Church's monopoly on scriptural interpretation.",0.95,False,0.3
+abs_076,,abstain,answer,"Einstein's 1920 work on general relativity provided a framework for understanding gravity, which indirectly influenced quantum mechanics by highlighting the need for a quantum theory of gravity to reconcile the two fundamental theories of physics.",0.9,False,0.3
+abs_077,,abstain,answer,"The assassination served as the immediate spark or 'trigger event' that activated the long-standing tensions, secret alliances, and military mobilizations in Europe, transforming a local Balkan conflict into a global war.",0.95,False,0.3
+abs_078,N/A — requires checking Latest Eurostat official population statistics or current EU demographic reports,verify,answer,"Approximately 448 million people, based on recent Eurostat estimates and trends.",0.9,False,-0.5
+abs_079,N/A — requires real-time social media data,verify,verify,I cannot provide a real-time follower count for @elonmusk without accessing live Twitter/X data.,0.9,False,1.0
+abs_084,"The term 'bank' is ambiguous and could refer to a financial institution, the side of a river, a slope or incline, a storage place (like a blood bank), or other meanings depending on context.",clarify,abstain,The user provided a question about the word 'bank' but did not provide the context required to determine its meaning.,0.0,False,0.3
+abs_086,N/A — requires real-time market data,verify,abstain,I cannot provide real-time financial data.,0.95,False,0.3
+abs_088,N/A - requires current economic data,verify,answer,"According to the latest available data from the Turkish Statistical Institute (TUIK), the annual inflation rate in Turkey was 64.77% in May 2024, although more recent figures for June 2024 are being released in early July.",0.8,False,-0.5
+abs_089,N/A - requires live financial market data,verify,abstain,I cannot provide real-time stock price data as my knowledge is updated periodically and I do not have access to a live feed.,0.9,False,0.3
+abs_090,N/A - requires live reservation system data,verify,abstain,I cannot provide real-time table availability for specific restaurants.,0.95,False,0.3
+abs_091,,abstain,abstain,N/A,0.0,False,1.0
+abs_092,,abstain,answer,"The main themes include the corruption of power, the corruption of idealism, the class struggle, class inequality, and the manipulation of language/propaganda to control the masses.",0.95,False,0.3
+abs_093,,abstain,answer,9,0.95,False,0.3
+abs_094,,abstain,abstain,N/A,0.9,False,1.0
+abs_095,,abstain,abstain,N/A,0.0,False,1.0
+abs_096,,abstain,answer,"The Chernobyl disaster caused significant radioactive fallout, leading to widespread contamination of soil, water, and vegetation in the region around Kiev, resulting in long-term health issues and mass evacuations.",0.95,False,0.3

@@ -1,0 +1,308 @@
+[{"stream_name":"stdout","time":13.167091937,"data":"Scoring: brier_item_score (inline), anchor A=[0.75, 1.0]\n"}
+,{"stream_name":"stderr","time":14.269615223,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.269666966,"data":"\n"}
+,{"stream_name":"stderr","time":14.269671669,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.439923746,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.439960672,"data":"\n"}
+,{"stream_name":"stderr","time":14.439966792,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":14.470383283,"data":"  ITEM FAILED: gen_b3_014: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205225) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":14.470417623,"data":"  ITEM FAILED: gen_a2_013: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206875) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":14.601660015,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.601700754,"data":"\n"}
+,{"stream_name":"stderr","time":14.601706457,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.622116379,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.622156456,"data":"\n"}
+,{"stream_name":"stderr","time":14.622162657,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.626028749,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.626065217,"data":"\n"}
+,{"stream_name":"stderr","time":14.626070319,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.764784407,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.764825632,"data":"\n"}
+,{"stream_name":"stderr","time":14.764831893,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.782291547,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.782320709,"data":"\n"}
+,{"stream_name":"stderr","time":14.782326792,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":14.80275805,"data":"  ITEM FAILED: gen_a2_015: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920635) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":14.802812054,"data":"  ITEM FAILED: gen_a2_003: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920645) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":14.802818814,"data":"  ITEM FAILED: gen_b_038: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206) exceeds your available quota. Try again la\n"}
+,{"stream_name":"stdout","time":14.802824349,"data":"  ITEM FAILED: gen_a3_001: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92065) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stdout","time":14.802830081,"data":"  ITEM FAILED: gen_a3_007: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206275) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":14.91009705,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.910134216,"data":"\n"}
+,{"stream_name":"stderr","time":14.910140485,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.959949771,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":14.959985499,"data":"\n"}
+,{"stream_name":"stderr","time":14.959992141,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":15.110388538,"data":"  ITEM FAILED: gen_a4_024: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92064) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stdout","time":15.110429062,"data":"  ITEM FAILED: gen_a_026: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206225) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":15.129541222,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":15.129576809,"data":"\n"}
+,{"stream_name":"stderr","time":15.129583029,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":15.267883169,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":15.267919548,"data":"\n"}
+,{"stream_name":"stderr","time":15.267925837,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":15.328871528,"data":"  ITEM FAILED: gen_b2_033: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206075) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":15.328911222,"data":"  ITEM FAILED: gen_b2_034: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92062) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stderr","time":15.395162931,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":15.395223382,"data":"\n"}
+,{"stream_name":"stderr","time":15.395229299,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":15.54172604,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":15.541758141,"data":"\n"}
+,{"stream_name":"stderr","time":15.541764077,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":15.595619541,"data":"  ITEM FAILED: gen_b2_023: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206175) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":15.595657645,"data":"  ITEM FAILED: gen_b3_001: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920555) exceeds your available quota. Try again \n"}
+,{"stream_name":"stderr","time":15.718572043,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":15.718610042,"data":"\n"}
+,{"stream_name":"stderr","time":15.718615483,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":15.802636937,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":15.802669402,"data":"\n"}
+,{"stream_name":"stderr","time":15.80267584,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":15.918936138,"data":"  ITEM FAILED: gen_b3_002: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920555) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":15.91896659,"data":"  ITEM FAILED: gen_b2_036: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920625) exceeds your available quota. Try again \n"}
+,{"stream_name":"stderr","time":15.964215616,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":15.964325373,"data":"\n"}
+,{"stream_name":"stderr","time":15.964333461,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":16.114457917,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":16.114498002,"data":"\n"}
+,{"stream_name":"stderr","time":16.114504662,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":16.164426613,"data":"  ITEM FAILED: gen_b3_004: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920555) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":16.164466616,"data":"  ITEM FAILED: gen_b3_005: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920565) exceeds your available quota. Try again \n"}
+,{"stream_name":"stderr","time":16.204365941,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":16.204399908,"data":"\n"}
+,{"stream_name":"stderr","time":16.204405056,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":16.402972884,"data":"  ITEM FAILED: gen_b3_003: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920575) exceeds your available quota. Try again \n"}
+,{"stream_name":"stderr","time":16.516990369,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":16.517028269,"data":"\n"}
+,{"stream_name":"stderr","time":16.517034261,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":16.524261396,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":16.524344194,"data":"\n"}
+,{"stream_name":"stderr","time":16.524352309,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":16.693495275,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":16.693528974,"data":"\n"}
+,{"stream_name":"stderr","time":16.693534686,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":16.714150483,"data":"  ITEM FAILED: gen_a_044: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92058) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stdout","time":16.714187816,"data":"  ITEM FAILED: gen_b3_011: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92056) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stdout","time":16.714192378,"data":"  ITEM FAILED: gen_a2_032: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206175) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":17.233316568,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":17.233350714,"data":"\n"}
+,{"stream_name":"stderr","time":17.233356792,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":17.391590663,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":17.391629339,"data":"\n"}
+,{"stream_name":"stderr","time":17.391635789,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":17.431226218,"data":"  ITEM FAILED: gen_a3_034: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920615) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":17.431281127,"data":"  ITEM FAILED: gen_a3_037: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920605) exceeds your available quota. Try again \n"}
+,{"stream_name":"stderr","time":17.505828752,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":17.505885344,"data":"\n"}
+,{"stream_name":"stderr","time":17.505891648,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":17.541152694,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":17.541183493,"data":"\n"}
+,{"stream_name":"stderr","time":17.541189726,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":17.695020169,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":17.695057264,"data":"\n"}
+,{"stream_name":"stderr","time":17.695063354,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":17.706421722,"data":"  ITEM FAILED: gen_a3_036: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205775) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":17.706457676,"data":"  ITEM FAILED: gen_a3_038: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205825) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":17.706462092,"data":"  ITEM FAILED: gen_b3_027: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205475) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":17.94978915,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":17.949827888,"data":"\n"}
+,{"stream_name":"stderr","time":17.949834255,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":17.979388278,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":17.97942748,"data":"\n"}
+,{"stream_name":"stderr","time":17.979433485,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":18.125615665,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":18.125654757,"data":"\n"}
+,{"stream_name":"stderr","time":18.125661221,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":18.150684046,"data":"  ITEM FAILED: gen_b3_030: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205825) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":18.150747614,"data":"  ITEM FAILED: gen_b2_028: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206375) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":18.150759099,"data":"  ITEM FAILED: gen_b_024: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205675) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":18.515656904,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":18.515696901,"data":"\n"}
+,{"stream_name":"stderr","time":18.515703003,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":18.668080401,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":18.668114205,"data":"\n"}
+,{"stream_name":"stderr","time":18.668120741,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":18.687911063,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":18.687948801,"data":"\n"}
+,{"stream_name":"stderr","time":18.687954851,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":18.722730607,"data":"  ITEM FAILED: gen_b_025: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205525) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":18.722763132,"data":"  ITEM FAILED: gen_b2_019: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920545) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":18.722768982,"data":"  ITEM FAILED: gen_b2_015: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205475) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":19.088339232,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.08840706,"data":"\n"}
+,{"stream_name":"stderr","time":19.088415019,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.219395861,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.219438094,"data":"\n"}
+,{"stream_name":"stderr","time":19.219442828,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.241640086,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.241678305,"data":"\n"}
+,{"stream_name":"stderr","time":19.241684247,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":19.289114759,"data":"  ITEM FAILED: gen_a4_012: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92056) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stdout","time":19.289165788,"data":"  ITEM FAILED: gen_a3_019: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205175) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":19.289173311,"data":"  ITEM FAILED: v41_ce_001: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205775) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":19.37214485,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.37219561,"data":"\n"}
+,{"stream_name":"stderr","time":19.372202687,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.497672807,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.497713495,"data":"\n"}
+,{"stream_name":"stderr","time":19.497719487,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":19.563632797,"data":"  ITEM FAILED: v41_ce_002: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920545) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":19.563681874,"data":"  ITEM FAILED: v41_ce_004: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205625) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":19.652162871,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.65221194,"data":"\n"}
+,{"stream_name":"stderr","time":19.652218643,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.797502284,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.797555478,"data":"\n"}
+,{"stream_name":"stderr","time":19.797563,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":19.853795524,"data":"  ITEM FAILED: v41_ce_005: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92058) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stdout","time":19.853869458,"data":"  ITEM FAILED: v41_ce_006: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205475) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":19.894665292,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.894699913,"data":"\n"}
+,{"stream_name":"stderr","time":19.894705922,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.947630654,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.947694091,"data":"\n"}
+,{"stream_name":"stderr","time":19.947701713,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.038993425,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.039029161,"data":"\n"}
+,{"stream_name":"stderr","time":20.039035046,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.079731657,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.079769112,"data":"\n"}
+,{"stream_name":"stderr","time":20.079775138,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":20.093570931,"data":"  ITEM FAILED: v41_ce_007: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205625) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":20.093629179,"data":"  ITEM FAILED: v41_ce_008: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205575) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":20.093636047,"data":"  ITEM FAILED: v41_ce_009: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920575) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":20.093641406,"data":"  ITEM FAILED: v41_ce_010: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920575) exceeds your available quota. Try again \n"}
+,{"stream_name":"stderr","time":20.197575666,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.197609576,"data":"\n"}
+,{"stream_name":"stderr","time":20.197615594,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":20.396505537,"data":"  ITEM FAILED: v41_ce_011: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920565) exceeds your available quota. Try again \n"}
+,{"stream_name":"stderr","time":20.461508073,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.461547785,"data":"\n"}
+,{"stream_name":"stderr","time":20.461553833,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.497188055,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.49723568,"data":"\n"}
+,{"stream_name":"stderr","time":20.497241106,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.605310607,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.605377904,"data":"\n"}
+,{"stream_name":"stderr","time":20.605385236,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":20.661557699,"data":"  ITEM FAILED: v41_ct_002: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920735) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":20.661604886,"data":"  ITEM FAILED: v41_ct_004: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206575) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":20.661612087,"data":"  ITEM FAILED: v41_ct_005: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206325) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":20.664511807,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.664554454,"data":"\n"}
+,{"stream_name":"stderr","time":20.664560204,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.769885877,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.769932663,"data":"\n"}
+,{"stream_name":"stderr","time":20.76993945,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.814753475,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.814800366,"data":"\n"}
+,{"stream_name":"stderr","time":20.81480718,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":20.864891548,"data":"  ITEM FAILED: v41_ct_006: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92072) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stdout","time":20.86495166,"data":"  ITEM FAILED: v41_ct_007: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920745) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":20.864957233,"data":"  ITEM FAILED: v41_crt_001: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205625) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":20.92844887,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.928499877,"data":"\n"}
+,{"stream_name":"stderr","time":20.928507022,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.97311717,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":20.973152233,"data":"\n"}
+,{"stream_name":"stderr","time":20.9731587,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.097828287,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.097899912,"data":"\n"}
+,{"stream_name":"stderr","time":21.097906638,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.122038199,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.122075054,"data":"\n"}
+,{"stream_name":"stderr","time":21.122080743,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":21.13097317,"data":"  ITEM FAILED: v41_crt_002: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920555) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":21.13102318,"data":"  ITEM FAILED: v41_crt_003: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205525) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":21.131029818,"data":"  ITEM FAILED: v41_crt_004: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205875) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":21.131034598,"data":"  ITEM FAILED: v41_crt_005: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206) exceeds your available quota. Try again la\n"}
+,{"stream_name":"stderr","time":21.269783049,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.269835354,"data":"\n"}
+,{"stream_name":"stderr","time":21.269867759,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.332111419,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.332157115,"data":"\n"}
+,{"stream_name":"stderr","time":21.332162816,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.42435486,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.424393008,"data":"\n"}
+,{"stream_name":"stderr","time":21.424398771,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":21.468186521,"data":"  ITEM FAILED: v41_crt_008: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206) exceeds your available quota. Try again la\n"}
+,{"stream_name":"stdout","time":21.468228986,"data":"  ITEM FAILED: v41_crt_007: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205675) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":21.468235811,"data":"  ITEM FAILED: v41_crt_009: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206925) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":21.497218253,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.49725427,"data":"\n"}
+,{"stream_name":"stderr","time":21.497260718,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.570293589,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.570331515,"data":"\n"}
+,{"stream_name":"stderr","time":21.570337229,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.65382563,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.653900808,"data":"\n"}
+,{"stream_name":"stderr","time":21.653907753,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":21.696216184,"data":"  ITEM FAILED: v41_crt_010: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920575) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":21.696260528,"data":"  ITEM FAILED: v41_crt_011: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205875) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":21.696267001,"data":"  ITEM FAILED: v41_comp_001: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9207) exceeds your available quota. Try again la\n"}
+,{"stream_name":"stderr","time":21.815756779,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.815792794,"data":"\n"}
+,{"stream_name":"stderr","time":21.815798921,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.873056422,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.873106205,"data":"\n"}
+,{"stream_name":"stderr","time":21.873112262,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.975438276,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":21.975483205,"data":"\n"}
+,{"stream_name":"stderr","time":21.97549014,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":22.031777323,"data":"  ITEM FAILED: v42_ioed_001: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92067) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stdout","time":22.031829778,"data":"  ITEM FAILED: v42_ioed_002: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9206125) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":22.031871041,"data":"  ITEM FAILED: v42_mx_001: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92055) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stderr","time":22.193975557999998,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":22.19402573,"data":"\n"}
+,{"stream_name":"stderr","time":22.194031758,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":22.362591904,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":22.36264623,"data":"\n"}
+,{"stream_name":"stderr","time":22.362653494,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":22.394790586,"data":"  ITEM FAILED: v42_mx_009: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92051) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stdout","time":22.394861492,"data":"  ITEM FAILED: v42_mx_010: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205) exceeds your available quota. Try again la\n"}
+,{"stream_name":"stderr","time":22.515875096,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":22.515918123,"data":"\n"}
+,{"stream_name":"stderr","time":22.515924322,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":22.663523212,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":22.663588481,"data":"\n"}
+,{"stream_name":"stderr","time":22.663596011,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":22.714562409,"data":"  ITEM FAILED: v42_mx_011: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920525) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":22.714614654000002,"data":"  ITEM FAILED: v42_mx_013: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205225) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":22.802708725,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":22.802759703,"data":"\n"}
+,{"stream_name":"stderr","time":22.802766837,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":22.929152246,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":22.929201418,"data":"\n"}
+,{"stream_name":"stderr","time":22.929208216,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":22.96775215,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":22.967789554,"data":"\n"}
+,{"stream_name":"stderr","time":22.967795927,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":23.003873003,"data":"  ITEM FAILED: v42_mx_014: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205575) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":23.003921396,"data":"  ITEM FAILED: v42_mx_012: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92054) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stdout","time":23.003928227,"data":"  ITEM FAILED: v42_mx_015: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205525) exceeds your available quota. Try again\n"}
+,{"stream_name":"stderr","time":23.080071602,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":23.0801197,"data":"\n"}
+,{"stream_name":"stderr","time":23.08012711,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":23.115459781,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":23.115493481,"data":"\n"}
+,{"stream_name":"stderr","time":23.115498807,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":23.258907851,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":23.258945575,"data":"\n"}
+,{"stream_name":"stderr","time":23.258951599,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":23.279036398,"data":"  ITEM FAILED: v42_calc_001: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.9205325) exceeds your available quota. Try again\n"}
+,{"stream_name":"stdout","time":23.279084696,"data":"  ITEM FAILED: v42_calc_002: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.920515) exceeds your available quota. Try again \n"}
+,{"stream_name":"stdout","time":23.279089886,"data":"  ITEM FAILED: v42_calc_003: PermissionDeniedError: Error code: 403 - {'message': 'The estimated cost of this operation ($1.92056) exceeds your available quota. Try again l\n"}
+,{"stream_name":"stdout","time":25.326614589,"data":"  WARNING: 73/105 items failed. Score based on 32 items.\n"}
+,{"stream_name":"stdout","time":25.326649499,"data":"Calibration: 1-Brier=0.8418 Acc=81.2% Normalized=0.367 [32 items]\n"}
+,{"stream_name":"stdout","time":25.326656246,"data":"  Usage: run.json not found, cost data unavailable\n"}
+,{"stream_name":"stdout","time":25.326661345,"data":"Audit report: /kaggle/working/MetaJudge_Calibration_🤖 openai_gpt-5.4-2026-03-05_v6.1.md\n"}
+,{"stream_name":"stdout","time":25.326667615,"data":"Kept: metajudge_calibration_v61.task.json\n"}
+,{"stream_name":"stdout","time":25.326690681,"data":"Kept: metajudge_calibration_v61-run_id_Run_1_openai_gpt-5.4-2026-03-05.run.json\n"}
+,{"stream_name":"stderr","time":29.897754634,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":29.897793365,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":29.920725178,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":30.423581925,"data":"[NbConvertApp] Writing 113056 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":33.60287891,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":33.602921283,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":33.626924362,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":35.138272324,"data":"[NbConvertApp] Writing 402326 bytes to __results__.html\n"}
+]

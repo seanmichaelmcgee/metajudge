@@ -1,0 +1,24 @@
+item_id,subfamily,gold_answer,t1_answer,t2_answer,t1_confidence,t2_confidence,t1_correct,t2_correct,transition,t1_t2_similarity,normative_t2_action
+sc_c2_wr_001,C2,38.88,38.88,38.88,1.0,1.0,True,True,maintain_correct,0.2338,revise
+sc_c2_rr_001,C2,Italy,Italy,Italy,1.0,1.0,True,True,maintain_correct,0.1694,maintain
+sc_c2_rr_002,C2,299792458,"299,792,458 m/s","299,792,458 m/s",1.0,1.0,True,True,maintain_correct,0.3504,maintain
+sc_c2_rr_003,C2,H2O,H₂O,H₂O,1.0,1.0,True,True,maintain_correct,0.1261,maintain
+sc_c2_rr_004,C2,-4%,4% decrease,4% decrease,1.0,1.0,True,True,maintain_correct,0.2107,maintain
+sc_c2_rr_005,C2,7,7,7,1.0,1.0,True,True,maintain_correct,0.1403,maintain
+sc_c2_wc_001,C2,8,8,8,1.0,1.0,True,True,maintain_correct,0.1098,maintain
+sc_c2_wc_002,C2,Mount Everest,Mount Everest,Mount Everest,1.0,1.0,True,True,maintain_correct,0.1635,maintain
+sc_c2_wc_003,C2,No,"No, the idea that humans use only 10% of their brains is a myth. Neuroimaging shows that nearly all parts of the brain are active at some point, and almost every part of the brain has a known function","No, the idea that humans use only 10% of their brains is a myth. Neuroimaging shows that nearly all parts of the brain are active at some point, and almost every part of the brain has a known function",1.0,1.0,True,True,maintain_correct,0.3884,maintain
+sc_c2_wc_004,C2,France,France,France,1.0,1.0,True,True,maintain_correct,0.129,maintain
+sc_c2_wc_005,C2,Diamond,Diamond,Diamond,1.0,1.0,True,True,maintain_correct,0.1279,maintain
+sc_c2_dt_001,C2,They hit at the same time,They hit the ground at the same time.,The bowling ball.,1.0,1.0,True,False,damage,0.6415,maintain
+sc_c2_dt_002,C2,0.3,0.3,0.3,1.0,1.0,True,True,maintain_correct,0.087,maintain
+sc_c2_dt_003,C2,Neil Armstrong,Neil Armstrong,Neil Armstrong,1.0,1.0,True,True,maintain_correct,0.1995,maintain
+sc_c2_wr_006,C2,3/16,3/16,3/16,1.0,1.0,True,True,maintain_correct,0.0888,revise
+sc_c2_wr_007,C2,12.5,12.5°,12.5°,1.0,1.0,True,True,maintain_correct,0.0781,revise
+sc_c2_wr_008,C2,110,110,110,1.0,1.0,True,True,maintain_correct,0.0384,revise
+sc_c2_wr_009,C2,147.5,147.5°,147.5°,1.0,1.0,True,True,maintain_correct,0.1216,revise
+sc_c2_wr_010,C2,115,115,115,1.0,1.0,True,True,maintain_correct,0.0597,revise
+sc_c2_wr_011,C2,140,140°,140°,1.0,1.0,True,True,maintain_correct,0.0145,revise
+sc_c2_wr_013,C2,0.7320508075688772,0.732,0.732,1.0,1.0,True,True,maintain_correct,0.1346,revise
+sc_c2_rr_006,C2,5/11,5/11,5/11,1.0,1.0,True,True,maintain_correct,0.1025,maintain
+sc_c2_rr_007,C2,90,90 kilometers per hour,90 kilometers per hour,1.0,1.0,True,True,maintain_correct,0.1587,maintain

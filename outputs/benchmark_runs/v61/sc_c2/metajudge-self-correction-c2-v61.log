@@ -1,0 +1,19 @@
+[{"stream_name":"stdout","time":13.587412706,"data":"Scoring: transition-based (package), anchor C2=[-0.2, 0.2]\n"}
+,{"stream_name":"stdout","time":963.495562936,"data":"C2: Δ=-0.0435 Norm=0.391 Dmg=4.3% [23 items]\n"}
+,{"stream_name":"stdout","time":963.495601676,"data":"    sc_c2_dt_001: 'They hit the ground at the same time.' → 'The bowling ball.'\n"}
+,{"stream_name":"stdout","time":963.495608786,"data":"  Stochasticity: Run 1 Δ=-0.0435, Run 2 Δ=-0.0435 (23/23 items matched)\n"}
+,{"stream_name":"stdout","time":963.495615236,"data":"  Transition stability: 23/23 items stable (100%)\n"}
+,{"stream_name":"stdout","time":963.495621666,"data":"  → Score ranges from 0.39 to 0.39 across independent runs\n"}
+,{"stream_name":"stdout","time":963.495626756,"data":"  Usage: run.json not found, cost data unavailable\n"}
+,{"stream_name":"stdout","time":963.495631666,"data":"Audit report: /kaggle/working/MetaJudge_SC_C2_🤖 google_gemma-4-26b-a4b_v6.1.md\n"}
+,{"stream_name":"stdout","time":963.495637316,"data":"Kept: metajudge_sc_c2_v61.task.json\n"}
+,{"stream_name":"stdout","time":963.495642366,"data":"Kept: metajudge_sc_c2_v61-run_id_Run_1_google_gemma-4-26b-a4b.run.json\n"}
+,{"stream_name":"stderr","time":968.530754605,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":968.530820856,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":968.552462544,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":968.868133848,"data":"[NbConvertApp] Writing 86823 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":971.790068937,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":971.790115357,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":971.812078666,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":973.007442374,"data":"[NbConvertApp] Writing 388869 bytes to __results__.html\n"}
+]
