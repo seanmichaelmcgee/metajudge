@@ -69,7 +69,41 @@ Add:
 
 Group by transition type. Each item: item_id, question (truncated), gold, T1 answer, T2 answer, justification.
 
-### WS3: Fix cost data extraction
+### WS3: Scoring explainability + submission readiness
+
+**Problem:** The current notebook methodology markdowns are terse (5-8 lines) and don't clearly explain how raw metrics become normalized scores, how the composite MetaScore is formed, or what the numbers actually mean. The theoretical backgrounder covers the framework but not the step-by-step scoring logic a judge needs to interpret results. The Kaggle benchmark description (visible to all judges) needs a clear introduction and scoring methodology summary.
+
+**Deliverables:**
+
+#### 3a. Scoring overview document — `docs/scoring_overview.md`
+
+A single reference document that explains scoring end-to-end. NOT a duplicate of the backgrounder — this is the *how*, not the *why*. Structure:
+
+1. **How a raw score becomes a normalized score** — the anchor normalization formula, what the anchors are, where they came from (pilot sweep), worked example per task.
+
+2. **Calibration scoring explained** — Brier rule formula, what 1-Brier means intuitively (1.0 = perfect, 0.75 = random guessing at 50%), how the 8-rule grading engine determines correctness, what "overconfident wrong" means.
+
+3. **Abstention scoring explained** — The 5×4 payoff matrix (full table), what each cell means, how corrective answers on false-presupposition items get +0.5, how acceptable alternatives work, what UWAA is and why it's normalized to [0,1]. This is the hardest scoring to explain clearly.
+
+4. **Self-correction scoring explained** — The six transition types with definitions, the damage:gain asymmetry with the actual config values, how confidence adjustment works, how C1 and C2 differ in their anchor ranges and why.
+
+5. **Composite MetaScore** — How the platform averages the 4 task scores, why equal weights, what the final number means.
+
+#### 3b. Improved notebook methodology markdowns
+
+Expand the current 5-8 line methodology cells to ~10-15 lines each. Add:
+- One sentence explaining what the normalized score means intuitively
+- The anchor values and what they represent
+- A pointer to `docs/scoring_overview.md` for full details
+
+#### 3c. Benchmark description text
+
+Short text for the Kaggle benchmark description field (visible to judges on the benchmark page):
+- Three-sentence introduction: what MetaJudge measures, the two-process framework, why behavioral evidence matters
+- Five bullet points on scoring methodology: one per task + composite
+- This will be drafted after we have clean v6.2 runs to confirm the methodology is final
+
+### WS4: Fix cost data extraction (was WS3)
 
 **Problem:** run.json glob `*calibration*.run.json` doesn't match filenames like:
 `metajudge_calibration_v61-run_id_Run_1_anthropic_claude-haiku-4-520251001.run.json`
@@ -82,35 +116,52 @@ The emoji `🤖` in the model slug may also be an issue, though the Haiku filena
 
 ## Execution phases
 
-### Phase 0: Archive v6.1 notebooks, bump version refs to v6.2
+### Phase 0: Archive v6.1 notebooks, bump version refs to v6.2 ✅ DONE
 
-### Phase 1: Fix try/except — re-raise quota/permission errors
+### Phase 1: Fix try/except — re-raise quota/permission errors (WS1)
 - All 4 helper tasks
 - Keep try/except for LengthFinishReasonError, TypeError, parsing errors
+- Re-raise if "403", "quota", or "permission" in error message
 - **Commit, stop, wait**
 
-### Phase 2: Fix run.json glob pattern
+### Phase 2: Fix run.json glob pattern (WS4)
 - Change from `*calibration*` / `*abstention*` / `*sc_c1*` / `*sc_c2*` to `*.run.json`
 - All 4 notebooks
 - **Commit, stop, wait**
 
-### Phase 3: Add question text to flagged items
-- Build item_id→question lookup in each notebook
-- Add question to wrong items (cal), action errors + negative utility (abs), all transition detail (C1/C2)
-- **Commit, stop, wait** (may split into sub-phases per notebook)
-
-### Phase 4: Abstention — action errors section
-- New section: items where model_decision != gold_action
-- Each item: question, gold_action, model_decision, answer, utility, justification
+### Phase 3: Calibration report — add question text to wrong items (WS2a)
+- Build `_questions` lookup from `all_cal_items`
+- Add question to each wrong item in the markdown report
 - **Commit, stop, wait**
 
-### Phase 5: C1/C2 — full transition breakdown
+### Phase 4: Abstention report — action errors section + question text (WS2a + WS2b)
+- Build `_questions` lookup from `all_fb_items`
+- New section: "Action Errors" (model_decision != gold_action)
+- Add question to action errors + negative utility items
+- **Commit, stop, wait**
+
+### Phase 5: C1/C2 reports — full transition breakdown (WS2c)
 - Add correction_gain and stubborn_wrong sections
-- Each section: items with question, T1/T2 answers, justification
+- Add question text to all flagged items (damage, corrections, stubborn)
+- **Commit, stop, wait** (may split C1 and C2)
+
+### Phase 6: Write scoring overview document (WS3a)
+- `docs/scoring_overview.md` — end-to-end scoring explainer
+- Anchor normalization, Brier, UWAA payoff matrix, transition types, composite
 - **Commit, stop, wait**
 
-### Phase 6: Sync to submission branch
-- Copy updated notebooks to submission/v6.1 (or create submission/v6.2)
+### Phase 7: Improve notebook methodology markdowns (WS3b)
+- Expand from 5-8 lines to 10-15 lines per notebook
+- Add intuitive score interpretation, anchor values, pointer to scoring_overview.md
+- **Commit, stop, wait**
+
+### Phase 8: Benchmark description text (WS3c)
+- Draft after clean v6.2 runs available
+- 3-sentence intro + 5 scoring bullets for Kaggle benchmark page
+- **Commit, stop, wait**
+
+### Phase 9: Sync to submission branch
+- Copy updated notebooks + new docs to submission/v6.2
 - **Commit, stop, wait**
 
 ## What NOT to change
