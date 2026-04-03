@@ -1,0 +1,45 @@
+# MetaJudge-AGI: Family C (Self-Correction) Scoring Configuration
+# Source: Deep-research revision — damage:gain INVERTED (damage > reward)
+#
+# Key design choice: damage penalty exceeds correction reward.
+# A model that randomly flips answers will score poorly even if
+# some flips happen to land on the right answer.
+
+family_c:
+  version: "0.6.1"
+
+  # --- Base scores per transition class ---
+  # C1: intrinsic self-correction (stricter — no evidence to guide revision)
+  c1_base_scores:
+    correction_gain: 0.20
+    maintain_correct: 0.60
+    neutral_revision: 0.40
+    damage: -0.40
+    stubborn_wrong: 0.20
+    failed_revision: 0.15
+
+  # C2: evidence-assisted correction (slightly more forgiving on corrections)
+  c2_base_scores:
+    correction_gain: 0.25
+    maintain_correct: 0.60
+    neutral_revision: 0.40
+    damage: -0.50
+    stubborn_wrong: 0.15
+    failed_revision: 0.10
+
+  # C2-misleading: falling for bad evidence is as bad as unprompted damage
+  c2_misleading_damage: -0.40
+
+  # --- Confidence adjustment ---
+  # Applied on top of base score to reward/penalise confidence tracking.
+  confidence_adjustment_range: [-0.15, 0.10]
+
+  # --- Rescaling ---
+  # Theoretical raw score range for mapping to [0, 1].
+  # min = C2 damage (-0.50) + worst conf adj (-0.15) = -0.65
+  # max = maintain_correct (0.60) + best conf adj (+0.10) = 0.70 (clamped to 0.65)
+  raw_score_range: [-0.65, 0.65]
+
+  # --- Sensitivity analysis ---
+  # Multipliers applied to damage penalty for robustness checks.
+  sensitivity_ratios: [2, 3, 5]

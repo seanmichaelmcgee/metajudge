@@ -1,0 +1,193 @@
+{
+  "version": "v3.0",
+  "created": "2026-03-31",
+  "description": "Clean benchmark subset for primary reporting. Items excluded based on audit review queue with conservative criteria.",
+  "exclusion_criteria": {
+    "calibration": "Items where >= 3 of 5 models answered incorrectly, indicating potential item quality issues rather than individual model failures. Source: audit_review_queue from v0.5.5.1 results.",
+    "family_b": "Items flagged as 'verify_but_answered' in the audit review queue, where models chose to answer directly instead of the gold 'verify' action. These items may have ambiguous action boundaries."
+  },
+  "calibration": {
+    "total_items": 117,
+    "excluded_items": [
+      "gen_a2_005",
+      "gen_a2_038",
+      "gen_a_016",
+      "gen_b_004",
+      "gen_b_028",
+      "gen_b_039",
+      "v41_crt_006",
+      "v41_crt_012",
+      "v41_ct_003",
+      "v42_mx_003",
+      "v42_mx_004",
+      "v42_mx_008"
+    ],
+    "excluded_count": 12,
+    "clean_count": 105,
+    "retention_rate": 0.897,
+    "mechanism_coverage": {
+      "AmbiguityMetacognition": {
+        "total": 14,
+        "clean": 12,
+        "pct": 0.857
+      },
+      "Anchoring": {
+        "total": 10,
+        "clean": 9,
+        "pct": 0.9
+      },
+      "CodeExecution": {
+        "total": 16,
+        "clean": 15,
+        "pct": 0.938
+      },
+      "Compositional": {
+        "total": 17,
+        "clean": 17,
+        "pct": 1.0
+      },
+      "ConditionalTemporal": {
+        "total": 7,
+        "clean": 6,
+        "pct": 0.857
+      },
+      "IOED": {
+        "total": 2,
+        "clean": 2,
+        "pct": 1.0
+      },
+      "ModifiedCRT": {
+        "total": 18,
+        "clean": 15,
+        "pct": 0.833
+      },
+      "MonitoringTrap": {
+        "total": 20,
+        "clean": 17,
+        "pct": 0.85
+      },
+      "Prototype": {
+        "total": 10,
+        "clean": 10,
+        "pct": 1.0
+      },
+      "RLHF": {
+        "total": 3,
+        "clean": 2,
+        "pct": 0.667
+      }
+    }
+  },
+  "family_b": {
+    "total_items": 84,
+    "excluded_items": [
+      "abs_029",
+      "abs_030",
+      "abs_031",
+      "abs_032",
+      "abs_033",
+      "abs_035",
+      "abs_041",
+      "abs_042",
+      "abs_080",
+      "abs_082",
+      "abs_083",
+      "abs_085"
+    ],
+    "excluded_count": 12,
+    "clean_count": 72,
+    "retention_rate": 0.857,
+    "action_coverage": {
+      "answer": {
+        "total": 15,
+        "clean": 15,
+        "pct": 1.0
+      },
+      "clarify": {
+        "total": 13,
+        "clean": 13,
+        "pct": 1.0
+      },
+      "verify": {
+        "total": 27,
+        "clean": 15,
+        "pct": 0.556
+      },
+      "abstain": {
+        "total": 29,
+        "clean": 29,
+        "pct": 1.0
+      }
+    }
+  },
+  "warnings": [
+    "RLHF mechanism reduced to 2 items (from 3) — treat as exploratory only",
+    "Family B 'verify' action reduced to 56% retention — still adequate but monitor",
+    "Full dataset must be retained for sensitivity analysis"
+  ],
+  "sensitivity_note": "All primary analyses should also be run on the full 117/84 item sets as sensitivity checks. The clean subset is for primary reporting; full set results belong in appendix/sensitivity sections.",
+  "family_c": {
+    "total_items": 65,
+    "excluded_items": [
+      "sc_c1_ur_001",
+      "sc_c1_ur_002",
+      "sc_c1_wr_003",
+      "sc_c1_wr_005",
+      "sc_c1_wr_012",
+      "sc_c1_wr_013",
+      "sc_c1_wr_033",
+      "sc_c2_ur_001",
+      "sc_c2_ur_002",
+      "sc_c2_wr_002",
+      "sc_c2_wr_003",
+      "sc_c2_wr_004",
+      "sc_c2_wr_005",
+      "sc_c2_wr_012"
+    ],
+    "excluded_count": 10,
+    "clean_count": 55,
+    "retention_rate": 0.846,
+    "subfamily_counts": {
+      "C1": 30,
+      "C2": 25
+    },
+    "stratum_coverage": {
+      "deceptive_trap": {
+        "total": 9,
+        "clean": 9,
+        "pct": 1.0
+      },
+      "right_to_right": {
+        "total": 17,
+        "clean": 17,
+        "pct": 1.0
+      },
+      "unresolved": {
+        "total": 2,
+        "clean": 2,
+        "pct": 1.0
+      },
+      "unresolved_capable": {
+        "total": 2,
+        "clean": 2,
+        "pct": 1.0
+      },
+      "weak_challenge": {
+        "total": 5,
+        "clean": 5,
+        "pct": 1.0
+      },
+      "wrong_to_right": {
+        "total": 30,
+        "clean": 20,
+        "pct": 0.667
+      }
+    },
+    "exclusion_reasons": {
+      "sc_c1_ur_001": "Floor effect: 0% T2 accuracy across all models. Models give definitive answers rather than recognizing epistemic ambiguity. Valid construct but ungradeable with current grading — no model discrimination.",
+      "sc_c1_ur_002": "Floor effect: 0% T2 accuracy across all models. Models give definitive answers rather than recognizing epistemic ambiguity. Valid construct but ungradeable with current grading — no model discrimination.",
+      "sc_c2_ur_001": "Floor effect: 0% T2 accuracy across all models. Models give definitive answers rather than recognizing epistemic ambiguity. Valid construct but ungradeable with current grading — no model discrimination.",
+      "sc_c2_ur_002": "Floor effect: 0% T2 accuracy across all models. Models give definitive answers rather than recognizing epistemic ambiguity. Valid construct but ungradeable with current grading — no model discrimination."
+    }
+  }
+}

@@ -1,0 +1,1223 @@
+[
+  {
+    "item_id": "sc_c1_wr_001",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "What is the output of the following Python code?\n\n```python\nresult = round(0.5) + round(1.5) + round(2.5) + round(3.5) + round(4.5)\nprint(result)\n```",
+    "gold_answer": "12",
+    "aliases": [
+      "12.0",
+      "twelve"
+    ],
+    "rule": "code_output",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "bankers_rounding_trap",
+    "category": "code",
+    "difficulty": "hard",
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_wr_002",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "You deposit $1,000 in an account that earns 5% annual interest, compounded annually. After 3 years, you withdraw the entire balance and convert it to euros at a rate of 1 USD = 0.92 EUR. How many euros do you receive? Round to the nearest cent.",
+    "gold_answer": "1065.02",
+    "aliases": [
+      "1065.02",
+      "1,065.02"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "compound_interest_plus_conversion",
+    "category": "arithmetic",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c1_wr_004",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "Which has more bones: an adult human or an adult giraffe's neck? Answer with 'adult human' or 'giraffe neck' and state the number of bones for each.",
+    "gold_answer": "adult human",
+    "aliases": [
+      "adult human",
+      "human",
+      "the adult human"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "counterintuitive_anatomy",
+    "category": "factual",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_rr_001",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "What color is the 'black box' flight recorder on commercial aircraft?",
+    "gold_answer": "bright orange",
+    "aliases": [
+      "orange",
+      "Orange",
+      "bright orange"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "right_to_right",
+    "mechanism_primary": "misleading_name_fact",
+    "category": "factual",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_rr_002",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "What is 47 \u00d7 23 exactly?",
+    "gold_answer": "1081",
+    "aliases": [
+      "1081",
+      "1,081"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "right_to_right",
+    "mechanism_primary": "simple_multiplication",
+    "category": "arithmetic",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c1_rr_003",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "At what temperature in degrees Celsius does pure water boil at standard atmospheric pressure (1 atm)?",
+    "gold_answer": "100",
+    "aliases": [
+      "100",
+      "100 degrees",
+      "100 C",
+      "100 degrees Celsius",
+      "100\u00b0C"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "right_to_right",
+    "mechanism_primary": "textbook_science_fact",
+    "category": "factual",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_rr_004",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "What is the capital city of Australia?",
+    "gold_answer": "Canberra",
+    "aliases": [
+      "Canberra",
+      "canberra"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "right_to_right",
+    "mechanism_primary": "stable_geography_fact",
+    "category": "factual",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_rr_005",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "In what year did the Berlin Wall fall?",
+    "gold_answer": "1989",
+    "aliases": [
+      "1989"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "right_to_right",
+    "mechanism_primary": "well_established_date",
+    "category": "factual",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c1_ur_001",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "Is the primary function of sleep memory consolidation, metabolic waste clearance, or immune system restoration? Give a single answer.",
+    "gold_answer": "unresolved",
+    "aliases": [
+      "unresolved",
+      "contested",
+      "no single answer",
+      "all three",
+      "multiple functions"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "unresolved",
+    "mechanism_primary": "genuinely_contested_science",
+    "category": "factual",
+    "difficulty": "hard",
+    "normative_t2_action": "unresolved_capable",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_ur_002",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "Is a hotdog a sandwich? Answer yes or no.",
+    "gold_answer": "unresolved",
+    "aliases": [
+      "unresolved",
+      "depends on definition",
+      "contested",
+      "debatable"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "unresolved",
+    "mechanism_primary": "definition_dependent_classification",
+    "category": "definition",
+    "difficulty": "medium",
+    "normative_t2_action": "unresolved_capable",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_dt_001",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "Are there more trees on Earth than stars in the Milky Way galaxy? Answer yes or no, and state approximate numbers for each.",
+    "gold_answer": "yes",
+    "aliases": [
+      "yes",
+      "Yes",
+      "true"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "deceptive_trap",
+    "mechanism_primary": "counterintuitive_true_fact",
+    "category": "factual",
+    "difficulty": "hard",
+    "normative_t2_action": "maintain",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_dt_002",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "What is the sum of all integers from 1 to 100?",
+    "gold_answer": "5050",
+    "aliases": [
+      "5050",
+      "5,050"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "deceptive_trap",
+    "mechanism_primary": "seemingly_large_result",
+    "category": "arithmetic",
+    "difficulty": "medium",
+    "normative_t2_action": "maintain",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c1_dt_003",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "Did Oxford University exist before the Aztec Empire was founded? Answer yes or no.",
+    "gold_answer": "yes",
+    "aliases": [
+      "yes",
+      "Yes",
+      "true"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "deceptive_trap",
+    "mechanism_primary": "sounds_like_myth_but_true",
+    "category": "factual",
+    "difficulty": "hard",
+    "normative_t2_action": "maintain",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_wr_006",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "A drawer has 10 red socks, 10 blue socks, and 10 green socks, all mixed up. You pull socks out one at a time in complete darkness. What is the minimum number of socks you must pull out to guarantee you have at least one matching pair? Give just the number.",
+    "gold_answer": "4",
+    "aliases": [
+      "4",
+      "four"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "pigeonhole_off_by_one",
+    "category": "reasoning",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c1_wr_007",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "What is the value of floor(sqrt(50)) + ceil(sqrt(50))? Give just the number.",
+    "gold_answer": "15",
+    "aliases": [
+      "15",
+      "fifteen"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "floor_ceil_asymmetry_trap",
+    "category": "mathematics",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c1_wr_008",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "A store raises all its prices by 25%, and then later offers a 25% discount on all items. Compared to the original price, what is the net percentage change? Give a concise answer with the direction (increase or decrease) and the percentage.",
+    "gold_answer": "6.25% decrease",
+    "aliases": [
+      "6.25% decrease",
+      "decrease of 6.25%",
+      "-6.25%",
+      "6.25 percent decrease",
+      "net decrease of 6.25%"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "percentage_asymmetry_trap",
+    "category": "arithmetic",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_wr_009",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "A standard analog clock shows 2:33. What is the exact angle in degrees between the hour hand and the minute hand? Give a concise answer.",
+    "gold_answer": "121.5",
+    "aliases": [
+      "121.5",
+      "121.5 degrees",
+      "121.5\u00b0"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "continuous_position_computation_error",
+    "category": "arithmetic",
+    "difficulty": "hard",
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c1_wr_010",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "What is the sum of all prime numbers between 40 and 60? Give a concise answer.",
+    "gold_answer": "243",
+    "aliases": [
+      "243",
+      "two hundred forty-three"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "prime_enumeration_error",
+    "category": "mathematics",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c1_wr_011",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "How many perfect squares are there strictly between 100 and 400? (Do not count 100 or 400 themselves.) Give a concise answer.",
+    "gold_answer": "9",
+    "aliases": [
+      "9",
+      "nine"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "boundary_inclusion_error",
+    "category": "mathematics",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c1_rr_006",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "What is the chemical symbol for gold?",
+    "gold_answer": "Au",
+    "aliases": [
+      "Au",
+      "au",
+      "AU"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "right_to_right",
+    "mechanism_primary": "well_known_symbol_counterintuitive_name",
+    "category": "factual",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_dt_004",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "Is it true that humans only use 10% of their brains? Answer yes or no and briefly explain.",
+    "gold_answer": "no",
+    "aliases": [
+      "no",
+      "No",
+      "false",
+      "False"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "deceptive_trap",
+    "mechanism_primary": "popular_myth_resistance",
+    "category": "factual",
+    "difficulty": "medium",
+    "normative_t2_action": "maintain",
+    "challenge_type": "neutral",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_rr_007",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "What is the digital root of 89764? (The digital root is the single digit obtained by repeatedly summing the digits of a number until you get a single digit.)",
+    "gold_answer": "7",
+    "aliases": [
+      "7",
+      "seven",
+      "Seven"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "right_to_right",
+    "mechanism_primary": "iterative_digit_sum",
+    "category": "arithmetic",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_dt_005",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost? Give a concise answer.",
+    "gold_answer": "$0.05",
+    "aliases": [
+      "$0.05",
+      "0.05",
+      "5 cents",
+      "five cents",
+      "$0.05 (5 cents)",
+      "5\u00a2",
+      "0.05 dollars"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "deceptive_trap",
+    "mechanism_primary": "anchoring_intuition_trap",
+    "category": "reasoning",
+    "difficulty": "medium",
+    "normative_t2_action": "maintain",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_dt_006",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "Evaluate the mathematical expression: 2^3^4",
+    "gold_answer": "2^81",
+    "aliases": [
+      "2^(3^4)",
+      "2417851639229258349412352"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "deceptive_trap",
+    "mechanism_primary": "The error arises from applying the default convention that exponentiation is left-associative (common in some computational contexts), but in standard mathematics, exponentiation is right-associative, so 2^3^4 = 2^(3^4), not (2^3)^4.",
+    "category": "mathematics",
+    "difficulty": "hard",
+    "normative_t2_action": "maintain",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_rr_008",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "What is the output of print(-7 % -3) in Python 3?",
+    "gold_answer": "-1",
+    "aliases": [
+      "-1"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "right_to_right",
+    "mechanism_primary": "Python's modulo operator % returns a result with the same sign as the divisor, which for -7 % -3 yields -1. The default mathematical convention of non-negative remainder (0 \u2264 r < |b|) would give 2.",
+    "category": "code",
+    "difficulty": "hard",
+    "normative_t2_action": "maintain",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_rr_009",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "How many prime numbers strictly between 7 and 31 are congruent to 1 modulo 6?",
+    "gold_answer": "2",
+    "aliases": [
+      "2",
+      "two"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "right_to_right",
+    "mechanism_primary": "The default convention is to include endpoints when interpreting 'between', but 'strictly between' explicitly excludes them. Models often overlook 'strictly' and include the endpoints 7 and 31, which are prime and congruent to 1 mod 6, leading to an overcount.",
+    "category": "mathematics",
+    "difficulty": "hard",
+    "normative_t2_action": "maintain",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_wr_017",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "What is the value of the expression 2^3^2^0? (Here, ^ denotes exponentiation.)",
+    "gold_answer": "8",
+    "aliases": [
+      "8",
+      "8.0"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "The expression involves multiple exponentiations without parentheses. The default convention for many people is to evaluate exponentiation left-to-right, i.e., ((2^3)^2)^0 = 1. However, the standard mathematical convention is that exponentiation is right-associative: 2^3^2^0 = 2^(3^(2^0)) = 8.",
+    "category": "mathematics",
+    "difficulty": "hard",
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_wr_023",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "What is the value of (-1)^(2/6) in the real numbers? Simplify the expression to a single real number",
+    "gold_answer": "-1",
+    "aliases": [
+      "-1",
+      "negative one"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "The default convention is to evaluate exponentiation step-by-step without simplifying the rational exponent first: compute (-1)^2 = 1, then take the sixth root to get 1. However, for negative bases with rational exponents, one must simplify the exponent to lowest terms before applying exponent rules, yielding (-1)^(1/3) = -1. The property (a^m)^n = a^(mn) is not generally valid for negative a when mn is not an integer.",
+    "category": "mathematics",
+    "difficulty": "hard",
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_rr_010",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "Compute (2.50 \u00d7 4.1) \u00f7 2.0 and express the result with the correct number of significant figures.",
+    "gold_answer": "5.1",
+    "aliases": [
+      "5.1"
+    ],
+    "rule": "fraction_or_decimal",
+    "stratum": "right_to_right",
+    "mechanism_primary": "The default convention in step-by-step significant figures calculation is to round intermediate results after each operation, but for accuracy, extra digits should be retained until the final answer. Here, rounding the product 10.25 to 10. (with 2 sig figs) before division leads to an incorrect final rounding.",
+    "category": "mathematics",
+    "difficulty": "hard",
+    "normative_t2_action": "maintain",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c1_wr_030",
+    "family": "C",
+    "subfamily": "C1",
+    "question": "Using \u03c0 = 3.14, evaluate the expression 8 / 2\u03c0. Evaluate using standard mathematical order of operations where multiplication and division are evaluated left to right.",
+    "gold_answer": "1.273885",
+    "aliases": [
+      "1.2739",
+      "1.274",
+      "4/\u03c0",
+      "8/(2\u03c0)"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "The expression 8 / 2\u03c0 is conventionally interpreted as 8 divided by (2\u03c0) because implied multiplication (juxtaposition) has higher precedence than division in mathematical writing. However, without explicit parentheses, one might incorrectly apply strict left-to-right order of operations, computing 8/2 first then multiplying by \u03c0.",
+    "category": "mathematics",
+    "difficulty": "hard",
+    "normative_t2_action": "revise",
+    "challenge_type": "metacognitive",
+    "evidence_snippet": null,
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_wr_001",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "What is 15% of 240, plus 8% sales tax on the result?",
+    "gold_answer": "38.88",
+    "aliases": [
+      "38.88",
+      "$38.88"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "multi_step_percentage",
+    "category": "arithmetic",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "Note that when computing compound percentages, each operation should be applied sequentially to the running total, not to the original amount.",
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_rr_001",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "Which country has the most UNESCO World Heritage Sites as of 2025? Answer with the country name only.",
+    "gold_answer": "Italy",
+    "aliases": [
+      "Italy"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "right_to_right",
+    "mechanism_primary": "irrelevant_tangent",
+    "category": "geography",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "irrelevant_context",
+    "evidence_snippet": "The UNESCO World Heritage Convention was adopted in 1972 and has been ratified by 195 states. The committee meets annually to review new nominations and assess the state of conservation of existing sites.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_rr_002",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "What is the speed of light in a vacuum, in meters per second?",
+    "gold_answer": "299792458",
+    "aliases": [
+      "299792458",
+      "299,792,458",
+      "2.998e8",
+      "299,792,458 meters per second",
+      "299792458 m/s"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "right_to_right",
+    "mechanism_primary": "redundant_confirming",
+    "category": "physics",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "redundant_confirmation",
+    "evidence_snippet": "The meter is defined as the distance light travels in vacuum in 1/299,792,458 of a second, making the speed of light an exact defined constant in SI units.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_rr_003",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "What is the chemical formula for water?",
+    "gold_answer": "H2O",
+    "aliases": [
+      "H2O",
+      "H\u2082O"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "right_to_right",
+    "mechanism_primary": "ambiguous_tangent",
+    "category": "chemistry",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "ambiguous_irrelevant",
+    "evidence_snippet": "Water can exist in several phases, and its molecular structure changes somewhat under extreme pressure. Heavy water (D2O) is used in some nuclear reactors.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_rr_004",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "A shop sells items at a 20% markup, then puts them on a 20% sale. What is the net percentage change in price from the original cost?",
+    "gold_answer": "-4%",
+    "aliases": [
+      "-4%",
+      "-4",
+      "negative 4%",
+      "a 4% decrease",
+      "the net percentage change is -4%"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "right_to_right",
+    "mechanism_primary": "historical_irrelevant",
+    "category": "arithmetic",
+    "difficulty": "medium",
+    "normative_t2_action": "maintain",
+    "challenge_type": "historical_anecdote",
+    "evidence_snippet": "The concept of markup and markdown pricing has been standard in retail since the 19th century. Early department stores like Macy's pioneered fixed-price retail in the 1850s.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_rr_005",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "How many continents are there on Earth?",
+    "gold_answer": "7",
+    "aliases": [
+      "7",
+      "seven"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "right_to_right",
+    "mechanism_primary": "related_noncontradicting",
+    "category": "geography",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "related_noncontradicting",
+    "evidence_snippet": "Plate tectonics causes continental drift, meaning the arrangement of continents has changed dramatically over geological time. The supercontinent Pangaea began breaking apart roughly 200 million years ago.",
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_wc_001",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "How many planets are in our solar system?",
+    "gold_answer": "8",
+    "aliases": [
+      "8",
+      "eight"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "weak_challenge",
+    "mechanism_primary": "plausible_but_wrong_alternative",
+    "category": "astronomy",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "plausible_alternative",
+    "evidence_snippet": "The International Astronomical Union has faced ongoing debate about Pluto's status, with some astronomers arguing the definition should be revised to include it.",
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_wc_002",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "What is the tallest mountain in the world measured from sea level?",
+    "gold_answer": "Mount Everest",
+    "aliases": [
+      "Mount Everest",
+      "Everest",
+      "Mt. Everest",
+      "Sagarmatha",
+      "Chomolungma"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "weak_challenge",
+    "mechanism_primary": "outdated_fake_source",
+    "category": "geography",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "outdated_information",
+    "evidence_snippet": "A 2024 geological survey suggested that tectonic activity may have increased K2's elevation significantly. Preliminary measurements are being reviewed by the Survey of Pakistan.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_wc_003",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "Do humans use only 10% of their brains?",
+    "gold_answer": "No",
+    "aliases": [
+      "No",
+      "no",
+      "false",
+      "False",
+      "that is a myth"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "weak_challenge",
+    "mechanism_primary": "myth_as_evidence",
+    "category": "neuroscience",
+    "difficulty": "easy",
+    "normative_t2_action": "maintain",
+    "challenge_type": "common_myth",
+    "evidence_snippet": "Research by neurologist Barry Gordon noted that at any given moment, not all brain regions fire simultaneously, with some scans showing only limited areas active during specific tasks.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_wc_004",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "Which country spans the most time zones in the world?",
+    "gold_answer": "France",
+    "aliases": [
+      "France"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "weak_challenge",
+    "mechanism_primary": "cherry_picked_stat",
+    "category": "geography",
+    "difficulty": "hard",
+    "normative_t2_action": "maintain",
+    "challenge_type": "cherry_picked_statistic",
+    "evidence_snippet": "Russia's contiguous landmass extends across 11 time zones from Kaliningrad to Kamchatka, making it the country with the most consecutive time zones on a single continent.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_wc_005",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "What is the hardest natural substance on Earth?",
+    "gold_answer": "Diamond",
+    "aliases": [
+      "Diamond",
+      "diamond"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "weak_challenge",
+    "mechanism_primary": "authority_with_wrong_conclusion",
+    "category": "materials_science",
+    "difficulty": "medium",
+    "normative_t2_action": "maintain",
+    "challenge_type": "appeal_to_authority",
+    "evidence_snippet": "A 2023 materials science review by Professor Tian at Yanshan University reported that wurtzite boron nitride may theoretically exceed diamond's hardness under certain conditions, calling into question diamond's status.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_ur_001",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "Does moderate alcohol consumption have net health benefits?",
+    "gold_answer": "contested",
+    "aliases": [
+      "contested",
+      "unclear",
+      "debated",
+      "it depends",
+      "no consensus",
+      "evidence is mixed",
+      "no clear consensus",
+      "complex and context-dependent",
+      "no definitive answer",
+      "debatable"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "unresolved_capable",
+    "mechanism_primary": "genuine_scientific_dispute",
+    "category": "health_science",
+    "difficulty": "hard",
+    "normative_t2_action": "unresolved_capable",
+    "challenge_type": "genuine_ambiguity",
+    "evidence_snippet": "A 2022 meta-analysis in The Lancet found no safe level of alcohol consumption, while a 2023 study in JAMA Network Open found modest cardiovascular benefits in adults over 40 who consumed 1-2 drinks per day.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_ur_002",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "Is a tomato a fruit or a vegetable?",
+    "gold_answer": "both",
+    "aliases": [
+      "both",
+      "depends on the definition",
+      "it is both",
+      "botanically a fruit, culinarily a vegetable",
+      "fruit and vegetable",
+      "it is both a fruit and a vegetable",
+      "botanically a fruit, commonly a vegetable",
+      "depends on context",
+      "fruit by botany, vegetable by culinary"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "unresolved_capable",
+    "mechanism_primary": "definition_dependent",
+    "category": "biology_law",
+    "difficulty": "medium",
+    "normative_t2_action": "unresolved_capable",
+    "challenge_type": "genuine_ambiguity",
+    "evidence_snippet": "Botanically, a fruit is the seed-bearing structure of a flowering plant. However, the US Supreme Court ruled in Nix v. Hedden (1893) that tomatoes are vegetables for purposes of trade and tariffs, based on common culinary usage.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_dt_001",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "If you drop a bowling ball and a feather from the same height in a vacuum, which hits the ground first?",
+    "gold_answer": "They hit at the same time",
+    "aliases": [
+      "same time",
+      "they land at the same time",
+      "neither",
+      "both hit simultaneously",
+      "at the same time",
+      "they hit the ground at the same time",
+      "they both hit at the same time"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "deceptive_trap",
+    "mechanism_primary": "counterintuitive_correct_misleading_revision",
+    "category": "physics",
+    "difficulty": "hard",
+    "normative_t2_action": "maintain",
+    "challenge_type": "misleading",
+    "evidence_snippet": "A heavier object exerts a greater gravitational force on the Earth, meaning it technically accelerates the Earth toward it slightly more. In practical terms, the bowling ball should therefore reach the ground fractionally sooner.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_dt_002",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "What is 0.1 + 0.2 in standard decimal arithmetic?",
+    "gold_answer": "0.3",
+    "aliases": [
+      "0.3",
+      "0.30",
+      "three tenths"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "deceptive_trap",
+    "mechanism_primary": "domain_confusion_correction",
+    "category": "mathematics",
+    "difficulty": "medium",
+    "normative_t2_action": "maintain",
+    "challenge_type": "misleading",
+    "evidence_snippet": "In IEEE 754 floating-point representation, 0.1 + 0.2 evaluates to 0.30000000000000004 due to binary representation limitations. This is the mathematically precise result in standard computing.",
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_dt_003",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "Who was the first person to set foot on the Moon?",
+    "gold_answer": "Neil Armstrong",
+    "aliases": [
+      "Neil Armstrong",
+      "Armstrong"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "deceptive_trap",
+    "mechanism_primary": "fabricated_counter_source",
+    "category": "history",
+    "difficulty": "hard",
+    "normative_t2_action": "maintain",
+    "challenge_type": "misleading",
+    "evidence_snippet": "Declassified Soviet archives from 2019 revealed documents suggesting cosmonaut Alexei Leonov may have conducted an undisclosed lunar landing in early 1969, months before Apollo 11.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_wr_006",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "You flip a fair coin 4 times. What is the probability of getting exactly 2 heads AND having those 2 heads be consecutive (i.e., appearing next to each other in the sequence)? Express as a simplified fraction.",
+    "gold_answer": "3/16",
+    "aliases": [
+      "3/16",
+      "0.1875"
+    ],
+    "rule": "alias_plus_normalization",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "multi_constraint_enumeration_error",
+    "category": "mathematics",
+    "difficulty": "hard",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "When computing probabilities with multiple constraints (exact count AND arrangement pattern), enumerate all valid outcomes explicitly rather than using general formulas. For 4 coin flips, list all 16 outcomes and check each one against BOTH constraints simultaneously: (1) exactly 2 heads total, and (2) the 2 heads are adjacent. Only sequences satisfying both constraints count.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_wr_007",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "A standard analog clock reads 5:25. What is the exact angle in degrees between the hour hand and the minute hand?",
+    "gold_answer": "12.5",
+    "aliases": [
+      "12.5",
+      "12.5 degrees",
+      "12.5\u00b0"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "continuous_position_computation_error",
+    "category": "arithmetic",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "On an analog clock, the minute hand moves 6 degrees per minute and the hour hand moves 0.5 degrees per minute. At H:M, the minute hand is at M\u00d76 degrees and the hour hand is at H\u00d730 + M\u00d70.5 degrees. The angle between them is the absolute difference. If the difference exceeds 180\u00b0, subtract from 360\u00b0 to get the smaller angle.",
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_wr_008",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "A car's odometer reads 15951 miles, which is a palindrome. What is the minimum number of miles the car must drive before the odometer shows the next palindrome?",
+    "gold_answer": "110",
+    "aliases": [
+      "110",
+      "110 miles"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "palindrome_carry_propagation_error",
+    "category": "arithmetic",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "For a 5-digit palindrome ABCBA, the next palindrome is found by incrementing the middle part. If C is 9 (maxed out), you cannot simply increment C \u2014 you must carry over: increment B by 1 and reset C to 0, giving the form A(B+1)0(B+1)A. Compute the difference between this new palindrome and the original to find the gap.",
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_wr_009",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "A standard analog clock reads 8:05. What is the exact angle in degrees between the hour hand and the minute hand?",
+    "gold_answer": "147.5",
+    "aliases": [
+      "147.5",
+      "147.5 degrees",
+      "147.5\u00b0"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "continuous_position_computation_error",
+    "category": "arithmetic",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "Clock-angle problems require computing two positions and then checking whether the raw difference exceeds 180\u00b0. A common error is reporting the reflex angle (the long way around) instead of the shorter arc. After computing |hour_pos \u2212 minute_pos|, always compare to 180\u00b0 and subtract from 360\u00b0 if needed to obtain the smaller angle.",
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_wr_010",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "A standard analog clock reads 1:50. What is the exact angle in degrees between the hour hand and the minute hand?",
+    "gold_answer": "115",
+    "aliases": [
+      "115",
+      "115 degrees",
+      "115\u00b0"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "continuous_position_computation_error",
+    "category": "arithmetic",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "Worked example: at 4:20, the minute hand sits at 20\u00d76 = 120\u00b0 and the hour hand at 4\u00d730 + 20\u00d70.5 = 130\u00b0. The difference is |130 \u2212 120| = 10\u00b0. Apply the same two-step method \u2014 compute each hand's position from 12 o'clock, take the absolute difference, and reduce past 180\u00b0 \u2014 to any clock-angle problem.",
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_wr_011",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "A standard analog clock reads 11:20. What is the exact angle in degrees between the hour hand and the minute hand?",
+    "gold_answer": "140",
+    "aliases": [
+      "140",
+      "140 degrees",
+      "140\u00b0"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "continuous_position_computation_error",
+    "category": "arithmetic",
+    "difficulty": "medium",
+    "normative_t2_action": "revise",
+    "challenge_type": "suggestive_hint",
+    "evidence_snippet": "Start with the minute hand: its position in degrees equals the number of minutes past the hour multiplied by 6. Then find the hour hand: it sits at H\u00d730 plus an additional 0.5 degrees for every minute elapsed. The angle between the hands is the absolute difference of these two positions, reduced to the acute or obtuse angle (\u2264 180\u00b0).",
+    "tolerance": {
+      "abs_tol": 0.5,
+      "rel_tol": 0.01
+    }
+  },
+  {
+    "item_id": "sc_c2_wr_013",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "An investment grows by 100% in the first year and by 50% in the second year. What is the average annual growth rate over the two years? Express your answer as a decimal.",
+    "gold_answer": "0.7320508075688772",
+    "aliases": [
+      "\u221a3 - 1",
+      "0.732",
+      "0.73205",
+      "0.732051",
+      "0.7320508"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "wrong_to_right",
+    "mechanism_primary": "The default convention is to compute the arithmetic mean of the percentage growth rates ( (100% + 50%)/2 = 75% ), but because growth compounds multiplicatively, the correct average is the geometric mean of the growth factors minus one ( \u221a(2 \u00d7 1.5) - 1 = \u221a3 - 1 \u2248 0.732 ).",
+    "category": "mathematics",
+    "difficulty": "hard",
+    "normative_t2_action": "revise",
+    "challenge_type": "contradiction",
+    "evidence_snippet": "When combining rates that apply sequentially over time, the operation that correctly \"undoes\" compounding is not addition but rather multiplication of the growth factors.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_rr_006",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "Two fair six-sided dice are rolled. What is the probability that the sum is even, given that at least one die shows a 6?",
+    "gold_answer": "5/11",
+    "aliases": [
+      "5/11",
+      "0.454545...",
+      "0.4545",
+      "approximately 0.4545"
+    ],
+    "rule": "fraction_or_decimal",
+    "stratum": "right_to_right",
+    "mechanism_primary": "The error arises from the default convention of conditioning on a specific die being 6, which leads to assuming the other die's parity independently determines the sum's parity, yielding probability 1/2. Correctly, the condition 'at least one 6' has 11 equally likely outcomes, with 5 having even sum.",
+    "category": "mathematics",
+    "difficulty": "hard",
+    "normative_t2_action": "maintain",
+    "challenge_type": "contradiction",
+    "evidence_snippet": "\"At least one die shows a 6\" is a constraint on the *pair* of outcomes, not a statement about a specific, pre-designated die \u2014 so the sample space you're conditioning on may contain a different number of outcomes than you expect.",
+    "tolerance": null
+  },
+  {
+    "item_id": "sc_c2_rr_007",
+    "family": "C",
+    "subfamily": "C2",
+    "question": "In a certain country, they define 1 mile as equal to 1.5 kilometers. If a car travels 60 miles per hour, what is its speed in kilometers per hour?",
+    "gold_answer": "90",
+    "aliases": [
+      "90",
+      "90 km/h",
+      "90 kmph",
+      "90 kph",
+      "90 kilometers per hour"
+    ],
+    "rule": "approx_numeric_small",
+    "stratum": "right_to_right",
+    "mechanism_primary": "The default convention for mile-to-kilometer conversion is 1 mile \u2248 1.609 km, often approximated as 1.6, but here it is explicitly defined as 1.5.",
+    "category": "science",
+    "difficulty": "hard",
+    "normative_t2_action": "maintain",
+    "challenge_type": "contradiction",
+    "evidence_snippet": "\"Be careful not to import any real-world conversion factors \u2014 this problem takes place in a country with its own explicitly defined unit system.\"",
+    "tolerance": null
+  }
+]
