@@ -1,19 +1,25 @@
-[{"stream_name":"stdout","time":13.155240858,"data":"Scoring: score_family_b_item_v2 (package), anchor B=[0.6, 1.0]\n"}
-,{"stream_name":"stdout","time":45.825939751,"data":"Abstention: UWAA=0.8201 Act Acc=59.7% Normalized=0.550 [72 items]\n"}
-,{"stream_name":"stdout","time":45.825976709,"data":"  Actions: {'answer': 43, 'clarify': 11, 'verify': 12, 'abstain': 6}\n"}
-,{"stream_name":"stdout","time":45.825981846,"data":"  Stochasticity: Run 1 UWAA=0.8201, Run 2 UWAA=0.8319 (72/72 items matched)\n"}
-,{"stream_name":"stdout","time":45.825985414,"data":"  Action stability: 69/72 items stable (96%)\n"}
-,{"stream_name":"stdout","time":45.825988707,"data":"  → Score ranges from 0.55 to 0.58 across independent runs\n"}
-,{"stream_name":"stdout","time":45.825993167,"data":"Audit report: /kaggle/working/MetaJudge_Abstention_🤖 openai_gpt-5.4-2026-03-05_v6.2.md\n"}
-,{"stream_name":"stdout","time":45.945229628,"data":"Kept: metajudge_abstention_v62-run_id_Run_1_openai_gpt-5.4-2026-03-05.run.json\n"}
-,{"stream_name":"stdout","time":45.945262894,"data":"Kept: metajudge_abstention_v62.task.json\n"}
-,{"stream_name":"stdout","time":45.979133122,"data":"Cost data appended: in=29,738 out=9,067 cost=$0.2104\n"}
-,{"stream_name":"stderr","time":50.470127956,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
-,{"stream_name":"stderr","time":50.470174907,"data":"  warn(\n"}
-,{"stream_name":"stderr","time":50.491390455,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
-,{"stream_name":"stderr","time":50.927559837,"data":"[NbConvertApp] Writing 89057 bytes to __notebook__.ipynb\n"}
-,{"stream_name":"stderr","time":53.831760665,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
-,{"stream_name":"stderr","time":53.831809075,"data":"  warn(\n"}
-,{"stream_name":"stderr","time":53.854800407,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
-,{"stream_name":"stderr","time":55.327007965,"data":"[NbConvertApp] Writing 395098 bytes to __results__.html\n"}
+[{"stream_name":"stdout","time":11.982023518,"data":"Scoring: score_family_b_item_v2 (package), anchor B=[0.6, 1.0]\n"}
+,{"stream_name":"stderr","time":19.565351794,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":19.565422617,"data":"\n"}
+,{"stream_name":"stderr","time":19.565428475,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":19.766356615,"data":"  ITEM FAILED: abs_020: ValidationError: 1 validation error for AbstentionResponse\n"}
+,{"stream_name":"stdout","time":19.766391207,"data":"  Invalid JSON: EOF while parsing a string at line 1 column 837 [type=json_inv\n"}
+,{"stream_name":"stdout","time":91.783469934,"data":"  WARNING: 1/72 items failed in Run 1. Score based on 71 items.\n"}
+,{"stream_name":"stdout","time":752.103069393,"data":"Abstention: UWAA=0.7930 Act Acc=60.6% Normalized=0.482 [71 items]\n"}
+,{"stream_name":"stdout","time":752.103131434,"data":"  Actions: {'answer': 32, 'clarify': 6, 'abstain': 28, 'verify': 5}\n"}
+,{"stream_name":"stdout","time":752.103138544,"data":"  Stochasticity: Run 1 UWAA=0.7930, Run 2 UWAA=0.8021 (71/71 items matched)\n"}
+,{"stream_name":"stdout","time":752.103143872,"data":"  Action stability: 64/71 items stable (90%)\n"}
+,{"stream_name":"stdout","time":752.103150945,"data":"  → Score ranges from 0.48 to 0.51 across independent runs\n"}
+,{"stream_name":"stdout","time":752.103161197,"data":"Audit report: /kaggle/working/MetaJudge_Abstention_🤖 google_gemma-4-26b-a4b_v6.2.md\n"}
+,{"stream_name":"stdout","time":752.184460163,"data":"Kept: metajudge_abstention_v62-run_id_Run_1_google_gemma-4-26b-a4b.run.json\n"}
+,{"stream_name":"stdout","time":752.184495724,"data":"Kept: metajudge_abstention_v62.task.json\n"}
+,{"stream_name":"stdout","time":752.21924048,"data":"Cost data appended: in=18,778 out=10,094 cost=$0.0044\n"}
+,{"stream_name":"stderr","time":756.765026125,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":756.765066072,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":756.784508113,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":757.188794055,"data":"[NbConvertApp] Writing 89701 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":760.073235002,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":760.073307552,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":760.094611649,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":761.57866616,"data":"[NbConvertApp] Writing 395888 bytes to __results__.html\n"}
 ]

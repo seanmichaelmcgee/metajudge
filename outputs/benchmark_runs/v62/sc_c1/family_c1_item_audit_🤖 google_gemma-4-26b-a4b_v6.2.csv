@@ -1,0 +1,29 @@
+item_id,subfamily,gold_answer,t1_answer,t2_answer,t1_confidence,t2_confidence,t1_correct,t2_correct,transition,t1_t2_similarity,normative_t2_action
+sc_c1_wr_001,C1,12,12,12,1.0,1.0,True,True,maintain_correct,0.2944,revise
+sc_c1_wr_002,C1,1065.02,"1,065.02","1,065.02",1.0,1.0,True,True,maintain_correct,0.1497,revise
+sc_c1_wr_004,C1,adult human,adult human (206 bones; giraffe neck has 7 bones),adult human (206 bones; giraffe neck has 7 bones),1.0,1.0,True,True,maintain_correct,0.4032,revise
+sc_c1_rr_001,C1,bright orange,Bright orange (specifically International Orange),Bright orange (specifically International Orange),1.0,1.0,True,True,maintain_correct,0.3686,maintain
+sc_c1_rr_002,C1,1081,1081,1081,1.0,1.0,True,True,maintain_correct,0.0915,maintain
+sc_c1_rr_003,C1,100,100 °C,100 °C,1.0,1.0,True,True,maintain_correct,0.1248,maintain
+sc_c1_rr_004,C1,Canberra,Canberra,Canberra,1.0,1.0,True,True,maintain_correct,0.3908,maintain
+sc_c1_rr_005,C1,1989,1989,1989,1.0,1.0,True,True,maintain_correct,0.1967,maintain
+sc_c1_dt_001,C1,yes,Yes; there are approximately 3 trillion trees on Earth and 100–400 billion stars in the Milky Way.,Yes; there are approximately 3 trillion trees on Earth and 100–400 billion stars in the Milky Way.,1.0,1.0,True,True,maintain_correct,0.33,maintain
+sc_c1_dt_002,C1,5050,5050,5050,1.0,1.0,True,True,maintain_correct,0.1534,maintain
+sc_c1_dt_003,C1,yes,Yes,Yes,1.0,1.0,True,True,maintain_correct,0.1895,maintain
+sc_c1_wr_006,C1,4,4,4,1.0,1.0,True,True,maintain_correct,0.075,revise
+sc_c1_wr_007,C1,15,15,15,1.0,1.0,True,True,maintain_correct,0.2871,revise
+sc_c1_wr_008,C1,6.25% decrease,6.25% decrease,6.25% decrease,1.0,1.0,True,True,maintain_correct,0.1183,revise
+sc_c1_wr_009,C1,121.5,121.5°,121.5°,1.0,1.0,True,True,maintain_correct,0.2556,revise
+sc_c1_wr_010,C1,243,243,243,1.0,1.0,True,True,maintain_correct,0.2771,revise
+sc_c1_wr_011,C1,9,9,9,1.0,1.0,True,True,maintain_correct,0.066,revise
+sc_c1_rr_006,C1,Au,Au,Au,1.0,1.0,True,True,maintain_correct,0.2605,maintain
+sc_c1_dt_004,C1,no,"No. Neuroimaging studies show that nearly all parts of the brain are active and serve specific functions throughout the day, even during sleep.","No. Neuroimaging studies show that nearly all parts of the brain are active and serve specific functions throughout the day, even during sleep.",1.0,1.0,True,True,maintain_correct,0.6983,maintain
+sc_c1_rr_007,C1,7,7,7,1.0,1.0,True,True,maintain_correct,0.1465,maintain
+sc_c1_dt_005,C1,$0.05,$0.05,$0.05,1.0,1.0,True,True,maintain_correct,0.1037,maintain
+sc_c1_dt_006,C1,2^81,2^{81},2^{81},1.0,1.0,True,True,maintain_correct,0.1165,maintain
+sc_c1_rr_008,C1,-1,-1,-1,1.0,1.0,True,True,maintain_correct,0.4578,maintain
+sc_c1_rr_009,C1,2,2,2,1.0,1.0,True,True,maintain_correct,0.2201,maintain
+sc_c1_wr_017,C1,8,8,8,1.0,1.0,True,True,maintain_correct,0.1286,revise
+sc_c1_wr_023,C1,-1,-1,-1,0.95,0.95,True,True,maintain_correct,0.1279,revise
+sc_c1_rr_010,C1,5.1,5.1,The original answer is sound.,1.0,1.0,True,True,neutral_revision,0.0947,maintain
+sc_c1_wr_030,C1,1.273885,12.56,12.56,1.0,1.0,False,False,stubborn_wrong,0.1707,revise

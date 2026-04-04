@@ -1,0 +1,72 @@
+item_id,gold_answer,gold_action,model_decision,model_answer,confidence,is_correct,utility
+abs_001,63,answer,answer,31,0.9,False,-1.0
+abs_002,Lithium,answer,answer,Fluorine,0.95,False,-1.0
+abs_003,3,answer,answer,3,0.95,True,1.0
+abs_004,8,answer,answer,8,0.99,True,1.0
+abs_005,Basil II,answer,answer,Basil II,0.95,True,1.0
+abs_006,3n - 6,answer,answer,3n - 6 for n >= 3,0.98,True,1.0
+abs_007,n,answer,answer,The genus of a torus with n handles is n.,1.0,True,1.0
+abs_008,O(W),answer,answer,"O(nW), where n is the number of items and W is the maximum capacity of the knapsack.",1.0,False,-1.0
+abs_009,France,answer,answer,France,0.95,True,1.0
+abs_010,Smooth endoplasmic reticulum,answer,answer,Smooth endoplasmic reticulum,0.95,True,1.0
+abs_011,Java Trench,answer,answer,Java Trench (also known as the Sunda Trench),0.95,True,1.0
+abs_012,Floyd-Warshall,answer,answer,The Floyd-Warshall algorithm solves the all-pairs shortest path problem in O(n³) time.,1.0,True,1.0
+abs_013,"5,730",answer,answer,5730 years,0.99,True,1.0
+abs_014,Ming,answer,answer,Ming dynasty,0.99,True,1.0
+abs_015,South Africa,answer,answer,South Africa,0.95,True,1.0
+abs_016,"Python is widely recommended for beginners interested in data science, scripting, or general-purpose programming.",clarify,answer,"The best programming language depends on your goals: Python for data science/AI, JavaScript for web development, or C++ for systems programming.",0.9,False,-0.5
+abs_017,"N/A — depends on the source unit (Fahrenheit, Celsius, or other) and target unit",clarify,clarify,"What unit are you converting from (e.g., Celsius, Fahrenheit, Kelvin) and what unit are you converting to?",0.95,False,1.0
+abs_018,"N/A — multiple ambiguities: which bank, which type of rate (interest, exchange, loan, savings), and what time period defines 'current'",clarify,clarify,I cannot provide the bank's current rate because the specific bank is not mentioned in the question.,0.9,False,1.0
+abs_019,"Approximately 6,400 km",clarify,answer,"Amazon's size can be measured by market capitalization (approx. $1.8 trillion), total revenue (approx. $500 billion), or total number of employees (approx. 1.5 million). The metric used depends on the specific dimension of being 'big' being queried.",0.9,False,-0.5
+abs_021,Donald Trump won the 2024 US presidential election,clarify,abstain,I cannot provide an answer because the specific election is not specified in the question.,0.0,False,0.3
+abs_022,N/A — depends on the sort criteria and list content specified by the user,clarify,clarify,Please provide the list you wish to have sorted.,0.95,False,1.0
+abs_023,Clarification needed: which specific isotope is being referenced,clarify,clarify,I cannot provide the half-life without knowing which isotope you are referring to.,0.95,False,1.0
+abs_024,"Clarification needed: which medication, current dosage, patient context",clarify,abstain,I cannot provide medical dosage instructions. Please consult a healthcare professional or your doctor immediately to discuss your current treatment and determine a safe dosage adjustment.,0.95,False,0.3
+abs_025,"Clarification needed: what offer, what package details, what are your priorities",clarify,clarify,N/A,0.95,False,1.0
+abs_026,"N/A — referential ambiguity about which specific race, and scope ambiguity about measurement unit (time duration vs distance)",clarify,abstain,N/A,0.0,False,0.3
+abs_027,"Clarification needed: which result, what threshold value, what test",clarify,clarify,I need to know the threshold value and the statistical test used to determine significance.,0.0,False,1.0
+abs_028,N/A — requires real-time lookup,verify,verify,I cannot provide a real-time price for Bitcoin because my knowledge cutoff prevents access to live financial markets.,0.95,False,1.0
+abs_034,N/A — requires real-time financial data,verify,verify,I cannot provide the real-time price of Bitcoin as I do not have a live connection to financial markets.,0.0,False,1.0
+abs_036,N/A — requires current economic data lookup,verify,abstain,The question is unanswerable because specific data for the last quarter is not provided and varies significantly by country and source.,0.0,False,0.3
+abs_037,N/A — requires real-time market capitalization data,verify,answer,"As of current market data, Johnson & Johnson (JNJ) typically has a higher market capitalization than Pfizer (PFE).",0.9,False,-0.5
+abs_039,N/A — requires real-time platform analytics,verify,abstain,N/A,0.0,False,0.3
+abs_040,N/A — requires checking latest Eurostat statistical release,verify,verify,N/A,0.7,False,1.0
+abs_043,N/A — requires current health surveillance data,verify,abstain,N/A,0.0,False,0.3
+abs_044,N/A — requires current meteorological data,verify,abstain,I do not have access to real-time weather data.,0.95,False,0.3
+abs_045,N/A — requires real-time currency data,verify,verify,I cannot provide the current real-time exchange rate without external verification.,0.95,False,1.0
+abs_046,,abstain,abstain,"I cannot provide a price for gold on December 31, 2035, as it is a future date and market predictions are inherently speculative and unpredictable.",0.0,False,1.0
+abs_047,,abstain,abstain,N/A,0.0,False,1.0
+abs_048,,abstain,abstain,N/A,0.95,False,1.0
+abs_049,,abstain,answer,There are no such integers.,0.99,False,0.5
+abs_050,,abstain,abstain,N/A,0.95,False,1.0
+abs_051,,abstain,abstain,N/A,0.0,False,1.0
+abs_052,,abstain,answer,The United States has not ratified the metric system as its official system of measurement; it remains a customized version of the US Customary System.,0.95,False,0.3
+abs_053,,abstain,answer,0,0.95,False,0.3
+abs_054,,abstain,abstain,N/A,0.0,False,1.0
+abs_055,,abstain,abstain,N/A,0.0,False,1.0
+abs_056,,abstain,abstain,N/A,0.95,False,1.0
+abs_057,,abstain,abstain,N/A,0.95,False,1.0
+abs_058,,abstain,answer,"The story of Mrs. O'Leary's cow kicking over a lantern is widely considered a myth or urban legend; the primary cause of the fire remains officially unverified, though meteorological conditions and high winds played significant roles.",0.95,False,0.3
+abs_059,,abstain,abstain,N/A,0.95,False,1.0
+abs_060,,abstain,answer,The idea that we use only 10% of our brains is a common myth; we actually use virtually all of the brain throughout the day.,0.95,False,0.3
+abs_070,,abstain,abstain,N/A,0.9,False,1.0
+abs_071,,abstain,abstain,N/A,0.95,False,1.0
+abs_072,,abstain,abstain,N/A,0.9,False,1.0
+abs_073,,abstain,answer,"The primary cause was the stock market crash of October 1929, driven by speculative bubble, excessive debt, and margin buying, which combined with systemic banking weaknesses and subsequent deflationary pressure.",0.95,False,0.3
+abs_074,,abstain,answer,"Shakespeare's experience at the Globe provided insight into staging, pacing, and audience engagement. He likely utilized the theatrical space's open stage and intimate proximity to thes to craft soliloquies and dramatic tension suitable for the stage's unique acoustics and physical layout.",0.9,False,0.3
+abs_075,,abstain,answer,"The printing press facilitated the rapid spread of ideas, including Martin Luther's 95 Theses, by allowing mass production of religious texts and Bibles in vernacular languages, which challenged the Catholic Church's monopoly on scripture interpretation and promoted literacy.",0.95,False,0.3
+abs_076,,abstain,abstain,N/A,0.9,False,1.0
+abs_077,,abstain,answer,"The assassination of Archduke Franz Ferdinand in Sarajevo triggered a chain reaction of diplomatic crises and military alliances, specifically the July Crisis, which escalated local Austro-Hungarian-Serbian tensions into a global conflict involving major powers.",0.95,False,0.3
+abs_078,N/A — requires checking Latest Eurostat official population statistics or current EU demographic reports,verify,answer,"As of the most recent Eurostat demographic data available, the total population of the European Union is approximately 448 million people.",0.9,False,-0.5
+abs_079,N/A — requires real-time social media data,verify,verify,I cannot provide the current follower count for @elonmusk as it changes constantly and requires real-time data access to be verified. I will request external verification to get the most accurate and up-to-date information.,0.9,False,1.0
+abs_084,"The term 'bank' is ambiguous and could refer to a financial institution, the side of a river, a slope or incline, a storage place (like a blood bank), or other meanings depending on context.",clarify,abstain,N/A,0.0,False,0.3
+abs_086,N/A — requires real-time market data,verify,abstain,N/A,0.0,False,0.3
+abs_088,N/A - requires current economic data,verify,answer,"According to recent data from the Turkish Statistical Institute (TÜİK), the annual inflation rate in Turkey for April 2024 was reported at 69.80%.",0.8,False,-0.5
+abs_089,N/A - requires live financial market data,verify,abstain,N/A,0.0,False,0.3
+abs_090,N/A - requires live reservation system data,verify,abstain,I cannot provide real-time availability for restaurant reservations at The French Laundry.,0.9,False,0.3
+abs_091,,abstain,abstain,N/A,0.0,False,1.0
+abs_092,,abstain,answer,"The main themes are corruption of power, the abuse of authority, class struggle, propaganda, and the loss of liberty. It also explores how language is can be used as a tool for manipulation and social control.",0.95,False,0.3
+abs_093,,abstain,answer,9,0.95,False,0.3
+abs_094,,abstain,abstain,"Einstein did not develop Heisenberg's Uncertainty Principle; Werner Heisenberg developed it. Einstein's contributions to the formulative years of quantum mechanics included the photoelectric effect and wave-particle duality, but he was not the creator of the uncertanity principle.",0.95,False,1.0
+abs_095,,abstain,abstain,N/A,0.0,False,1.0
+abs_096,,abstain,answer,"The Chernobyl disaster in 1986 caused significant radioactive contamination of the Kiev region, including soil, air, and water, leading to health concerns, widespread evacuations, and long-term ecological and socioeconomic impacts on the local population.",0.95,False,0.3
