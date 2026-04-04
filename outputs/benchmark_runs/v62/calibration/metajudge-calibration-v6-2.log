@@ -1,0 +1,15 @@
+[{"stream_name":"stdout","time":13.527729031,"data":"Scoring: brier_item_score (inline), anchor A=[0.75, 1.0]\n"}
+,{"stream_name":"stdout","time":162.544735384,"data":"Calibration: 1-Brier=0.9480 Acc=94.3% Normalized=0.792 [105 items]\n"}
+,{"stream_name":"stdout","time":162.544785642,"data":"Audit report: /kaggle/working/MetaJudge_Calibration_🤖 google_gemini-2.5-pro_v6.2.md\n"}
+,{"stream_name":"stdout","time":162.568478898,"data":"Kept: metajudge_calibration_v62-run_id_Run_1_google_gemini-2.5-pro.run.json\n"}
+,{"stream_name":"stdout","time":162.568530012,"data":"Kept: metajudge_calibration_v62.task.json\n"}
+,{"stream_name":"stdout","time":162.603066999,"data":"Cost data appended: in=29,127 out=8,966 cost=$1.0960\n"}
+,{"stream_name":"stderr","time":167.110597257,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":167.110640813,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":167.132253311,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":167.57812779,"data":"[NbConvertApp] Writing 82974 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":170.57909965,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":170.579139267,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":170.60949346,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":172.044562434,"data":"[NbConvertApp] Writing 369324 bytes to __results__.html\n"}
+]

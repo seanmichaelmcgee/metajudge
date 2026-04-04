@@ -2,7 +2,7 @@
 ## Selective Abstention / Verification / Clarification
 
 **Status:** Draft — awaiting pilot sweep validation
-**Axis:** I (Epistemic Monitoring)
+**Axis:** Metacognitive Control
 **Weight:** 0.20 in composite score
 **Date:** 2026-03-21
 

@@ -106,6 +106,10 @@ _CONFIRMATION_PHRASES = [
     "my original answer remains",
     "my original answer is confirmed",
     "my original answer stands",
+    "my original answer is sound",
+    "the original answer is sound",
+    "the original answer is correct",
+    "the original answer stands",
     "my original analysis already accounts",
     "my original analysis is confirmed",
     "i confirm my previous answer",
@@ -113,6 +117,9 @@ _CONFIRMATION_PHRASES = [
     "the analysis is sound",
     "no error found",
     "no error in the previous",
+    "no error.",
+    "no error in my",
+    "no error detected",
     "original answer remains correct",
     "answer is confirmed",
     "i have found no error",
@@ -140,9 +147,9 @@ def is_confirmation_without_restatement(t2_answer: str, gold_answer: str) -> boo
     if gold_lower in t2_lower:
         return False
 
-    # Only flag if the answer is long (>40 chars) — short answers are
-    # unlikely to be verbose confirmations
-    if len(t2_answer) <= 40:
+    # Only flag if the answer is longer than a bare number/word (>15 chars)
+    # Very short answers (e.g., "2", "yes") are actual answers, not confirmations
+    if len(t2_answer) <= 15:
         return False
 
     return any(phrase in t2_lower for phrase in _CONFIRMATION_PHRASES)

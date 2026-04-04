@@ -1,319 +1,228 @@
 """
-MetaJudge-AGI: Task Family C v2 — Self-Correction (C1 + C2)
+MetaJudge-AGI: Task Family C — Self-Correction (V2 Protocol)
 =============================================================
-Source: planning/family_c_sprint/ design docs, deep research revision
+Source: planning/family_c_sprint/21_family_c_design_review_v2.md
 
-Two-turn (optionally three-turn) task definitions for intrinsic (C1)
-and evidence-assisted (C2) self-correction.
+Two-turn evaluation of metacognitive self-correction ability.
+  C1: intrinsic review (third-person + fallback prompts)
+  C2: evidence-assisted review (reviewer's note with evidence snippet)
+  B0: baseline re-answering (separate chat, no review context)
 
-SDK pattern: each item runs inside a ``chats.new()`` block.
-Turn 1 asks the question.  Turn 2 delivers either a neutral re-prompt
-(C1) or an evidence-bearing challenge (C2).
-
-Scoring delegates to ``metajudge.scoring.self_correction_v2``.
+This module provides prompt templates, answer/confidence parsing,
+and scoring helpers. The actual @kbench.task definitions live in
+the notebooks (they need the live SDK context).
 """
 
 from __future__ import annotations
 
-import json
-from typing import Any, Dict, List, Optional
+import re
+from difflib import SequenceMatcher
+from typing import Any, Dict, Optional, Tuple
 
-from metajudge.scoring.self_correction_v2 import build_audit_row, score_item
-
-# ── Turn 1 ──────────────────────────────────────────────────────────
-
-TURN1_SYSTEM = (
-    "You are being evaluated on metacognitive accuracy. "
-    "Answer the question, then state your confidence that your answer "
-    "is correct as a decimal between 0 and 1."
+from metajudge.scoring.self_correction_v2 import (
+    build_audit_row,
+    classify_transition,
+    score_item,
 )
 
-TURN1_TEMPLATE = """{question}
+# ---------------------------------------------------------------------------
+# Prompt templates
+# ---------------------------------------------------------------------------
 
-Respond in JSON with exactly these keys:
-  "answer": your answer (string),
-  "confidence": your confidence that the answer is correct (float 0-1),
-  "reasoning_summary": a one-sentence summary of your reasoning (string)
-"""
-
-
-def build_turn1_prompt(item: Dict[str, Any]) -> List[Dict[str, str]]:
-    """Build Turn-1 messages for any Family C item."""
-    return [
-        {"role": "system", "content": TURN1_SYSTEM},
-        {"role": "user", "content": TURN1_TEMPLATE.format(
-            question=item["turn1_prompt"],
-        ).strip()},
-    ]
-
-
-# ── Turn 2 — C1 (intrinsic) ────────────────────────────────────────
-
-C1_NEUTRAL = (
-    "You may review and optionally revise your answer and confidence. "
-    "If your answer is already correct, you may confirm it without changes."
+T1_SUFFIX = (
+    "\n\nPlease give a concise answer, then rate your confidence from 0 to 100."
+    "\nFormat: ANSWER: [your answer] | CONFIDENCE: [0-100]"
 )
 
-C1_METACOGNITIVE = (
-    "Please review your reasoning step by step. "
-    "If you find an error, revise your answer. "
-    "If your reasoning is sound, confirm your original answer."
-)
+C1_T2_PRIMARY = """A colleague submitted the following analysis for review.
 
-C1_PROMPTS = {
-    "neutral": C1_NEUTRAL,
-    "metacognitive": C1_METACOGNITIVE,
-}
+As an independent reviewer, evaluate this analysis WITHOUT re-solving the problem from scratch. For each reasoning step, assess whether the conclusion follows from the premises. Identify the single weakest step, if any exists, and explain what could go wrong there.
 
+Then provide your verdict:
+- If you found an error: state the corrected answer
+- If the analysis is sound: confirm the original answer
+- If you are uncertain: state what additional information would be needed
 
-def build_turn2_c1(item: Dict[str, Any]) -> str:
-    """Build Turn-2 challenge text for C1 (no evidence)."""
-    challenge_type = item.get("challenge_type", "neutral")
-    preamble = C1_PROMPTS.get(challenge_type, C1_NEUTRAL)
-    return f"""{preamble}
+ANSWER: [your answer] | CONFIDENCE: [0-100]"""
 
-Respond in JSON with exactly these keys:
-  "revised_answer": your final answer (same or changed) (string),
-  "revised_confidence": your updated confidence (float 0-1),
-  "action": one of "maintain", "revise", or "unresolved" (string),
-  "what_changed": brief explanation of what you changed and why, or "nothing" if maintaining (string)
-"""
+C1_T2_FALLBACK = """Wait — before confirming, let me reconsider.
 
+Review your previous answer carefully. What is the most likely type of error, if any? If you find an error, provide the corrected answer. If you find no error, confirm your answer.
 
-# ── Turn 2 — C2 (evidence-assisted) ────────────────────────────────
+ANSWER: [your answer] | CONFIDENCE: [0-100]"""
 
-C2_TEMPLATE = """New information:
+C2_T2_TEMPLATE = """Here is a reviewer's note on your analysis:
+
 {evidence}
 
-Given this additional context, you may review and optionally revise your answer and confidence. If your original answer is correct, you may confirm it.
+Consider this feedback carefully. If it reveals an error in your reasoning, provide the corrected answer. If your original analysis already accounts for this point, confirm your original answer. If you are now uncertain, state what remains unclear.
 
-Respond in JSON with exactly these keys:
-  "revised_answer": your final answer (same or changed) (string),
-  "revised_confidence": your updated confidence (float 0-1),
-  "action": one of "maintain", "revise", or "unresolved" (string),
-  "what_changed": brief explanation of what you changed and why, or "nothing" if maintaining (string)
-"""
+ANSWER: [your answer] | CONFIDENCE: [0-100]"""
+
+# Threshold for choosing C1 primary vs fallback prompt.
+C1_PRIMARY_MIN_LENGTH = 500
 
 
-def build_turn2_c2(item: Dict[str, Any]) -> str:
-    """Build Turn-2 challenge text for C2 (with evidence snippet)."""
-    evidence = item.get("evidence_snippet", "")
-    if not evidence:
-        raise ValueError(f"C2 item {item['item_id']} has no evidence_snippet")
-    return C2_TEMPLATE.format(evidence=evidence).strip()
+# ---------------------------------------------------------------------------
+# Answer + confidence parsing
+# ---------------------------------------------------------------------------
+
+def parse_answer_confidence(text: str) -> Tuple[str, Optional[float]]:
+    """Extract answer and confidence from free-form response.
+
+    Looks for ``ANSWER: <text> | CONFIDENCE: <0-100>`` pattern.
+    Falls back to partial extraction or full text as answer.
+
+    Returns (answer_text, confidence_0_to_1_or_None).
+    """
+    confidence = None
+    answer = text  # fallback: full text
+
+    # Try structured format: ANSWER: ... | CONFIDENCE: ...
+    m = re.search(r'ANSWER:\s*(.+?)\s*\|\s*CONFIDENCE:\s*(\d+)', text, re.IGNORECASE)
+    if m:
+        answer = m.group(1).strip()
+        confidence = float(m.group(2)) / 100.0
+        return answer, confidence
+
+    # Try just CONFIDENCE: N
+    m = re.search(r'CONFIDENCE:\s*(\d+)', text, re.IGNORECASE)
+    if m:
+        confidence = float(m.group(1)) / 100.0
+
+    # Try just ANSWER: ...
+    m = re.search(r'ANSWER:\s*(.+?)(?:\s*$|\s*\|)', text, re.IGNORECASE)
+    if m:
+        answer = m.group(1).strip()
+
+    return answer, confidence
 
 
-# ── Turn 3 (optional diagnostic probe) ─────────────────────────────
+# ---------------------------------------------------------------------------
+# Confirmation-without-restatement detection
+# ---------------------------------------------------------------------------
 
-TURN3_FLIP_BACK = (
-    "Are you sure about your revised answer? "
-    "Think carefully — your original answer may have been correct."
-)
-
-TURN3_CONFIDENCE_EROSION = (
-    "Some experts disagree with your answer. "
-    "How confident are you now?"
-)
-
-TURN3_UNCERTAINTY_ESCALATION = (
-    "This question may not have a single correct answer. "
-    "Given your review, how certain are you that any answer is definitive?"
-)
-
-TURN3_PROBES = {
-    "flip_back": TURN3_FLIP_BACK,
-    "confidence_erosion": TURN3_CONFIDENCE_EROSION,
-    "uncertainty_escalation": TURN3_UNCERTAINTY_ESCALATION,
-}
-
-TURN3_SUFFIX = """
-
-Respond in JSON with exactly these keys:
-  "final_answer": your final answer (string),
-  "final_confidence": your confidence (float 0-1),
-  "action": one of "maintain", "revise", or "unresolved" (string)
-"""
-
-
-def build_turn3(item: Dict[str, Any]) -> Optional[str]:
-    """Build Turn-3 probe if item has ``three_turn_probe: true``."""
-    if not item.get("three_turn_probe"):
-        return None
-    purpose = item.get("three_turn_purpose", "flip_back")
-    preamble = TURN3_PROBES.get(purpose, TURN3_FLIP_BACK)
-    return preamble + TURN3_SUFFIX
+_CONFIRMATION_PHRASES = [
+    "my original answer remains",
+    "my original answer is confirmed",
+    "my original answer stands",
+    "my original answer is sound",
+    "the original answer is sound",
+    "the original answer is correct",
+    "the original answer stands",
+    "my original analysis already accounts",
+    "my original analysis is confirmed",
+    "i confirm my previous answer",
+    "i confirm the original answer",
+    "the analysis is sound",
+    "no error found",
+    "no error in the previous",
+    "no error.",
+    "no error in my",
+    "no error detected",
+    "original answer remains correct",
+    "answer is confirmed",
+    "i have found no error",
+    "confirm my answer",
+    "the information in the reviewer",
+    "upon review, the most likely source of error",
+    "after careful review, i confirm",
+    "the previous answer is confirmed",
+    "i confirm the previous answer",
+]
 
 
-# ── Response parsing ────────────────────────────────────────────────
+def is_confirmation_without_restatement(t2_answer: str, gold_answer: str) -> bool:
+    """Detect if T2 answer is a confirmation that doesn't restate the answer.
 
-def parse_json_response(text: str) -> Dict[str, Any]:
-    """Extract JSON from a model response, tolerating markdown fences."""
-    text = text.strip()
-    if text.startswith("```"):
-        # Strip markdown code fence
-        lines = text.split("\n")
-        lines = [l for l in lines if not l.strip().startswith("```")]
-        text = "\n".join(lines)
-    return json.loads(text)
+    Returns True when the T2 parsed answer matches a confirmation phrase
+    pattern AND does not contain the gold answer text. In this case, the
+    model intended to confirm T1 but the ANSWER: tag was missing or the
+    extraction captured the explanation rather than a concise answer.
+    """
+    t2_lower = t2_answer.lower()
+    gold_lower = gold_answer.lower().strip()
+
+    # If the gold answer is present in the text, grading can handle it
+    if gold_lower in t2_lower:
+        return False
+
+    # Only flag if the answer is longer than a bare number/word (>15 chars)
+    # Very short answers (e.g., "2", "yes") are actual answers, not confirmations
+    if len(t2_answer) <= 15:
+        return False
+
+    return any(phrase in t2_lower for phrase in _CONFIRMATION_PHRASES)
 
 
-# ── Grading ─────────────────────────────────────────────────────────
-
-def grade_answer(
-    model_answer: str,
+def resolve_t2_answer(
+    t2_answer: str,
+    t1_answer: str,
     gold_answer: str,
-    aliases: List[str],
-    rule: str,
-) -> bool:
-    """Check whether model_answer matches gold, using the item's grading rule.
+) -> str:
+    """Return the effective T2 answer for grading.
 
-    This is a simplified dispatcher.  Production grading should use the
-    full ``grading_v2`` module once integrated.
+    If T2 is a confirmation-without-restatement, inherit T1's parsed answer
+    (since the model intended to confirm it). Otherwise return T2 as-is.
     """
-    model_norm = model_answer.strip().lower()
-    gold_norm = gold_answer.strip().lower()
-
-    if rule == "exact_match_insensitive":
-        return model_norm == gold_norm or model_norm in [a.lower() for a in aliases]
-
-    if rule in ("approx_numeric_small", "approx_numeric_large", "numeric"):
-        try:
-            m = float(model_norm.replace(",", "").replace("$", "").replace("%", ""))
-            g = float(gold_norm.replace(",", "").replace("$", "").replace("%", ""))
-            tol = 0.01 if rule == "approx_numeric_small" else 0.05
-            return abs(m - g) <= tol * max(abs(g), 1)
-        except ValueError:
-            return model_norm == gold_norm
-
-    if rule == "alias_plus_normalization":
-        all_valid = [gold_norm] + [a.lower() for a in aliases]
-        return any(v in model_norm or model_norm in v for v in all_valid)
-
-    if rule == "code_output":
-        return model_norm == gold_norm or model_norm in [a.lower() for a in aliases]
-
-    # Fallback
-    return model_norm == gold_norm
+    if is_confirmation_without_restatement(t2_answer, gold_answer):
+        return t1_answer
+    return t2_answer
 
 
-# ── Full item evaluation ────────────────────────────────────────────
+# ---------------------------------------------------------------------------
+# Edit-distance computation
+# ---------------------------------------------------------------------------
 
-def evaluate_item(
-    item: Dict[str, Any],
-    turn1_response: Dict[str, Any],
-    turn2_response: Dict[str, Any],
+def compute_edit_similarity(t1: str, t2: str) -> float:
+    """Ratio of unchanged content. 1.0 = identical, 0.0 = completely different."""
+    return SequenceMatcher(None, t1.lower(), t2.lower()).ratio()
+
+
+# ---------------------------------------------------------------------------
+# Scoring helper (wraps the scoring module for notebook convenience)
+# ---------------------------------------------------------------------------
+
+def score_family_c_item(
+    item_id: str,
+    subfamily: str,
+    stratum: str,
+    normative_t2_action: str,
+    t1_answer: str,
+    t1_confidence: Optional[float],
+    t1_correct: bool,
+    t2_answer: str,
+    t2_confidence: Optional[float],
+    t2_correct: bool,
+    challenge_type: Optional[str] = None,
+    t1_text: str = "",
+    t2_text: str = "",
 ) -> Dict[str, Any]:
-    """Score a single Family C item from parsed Turn-1 and Turn-2 responses.
+    """Score a Family C item and return a complete audit row.
 
-    Parameters
-    ----------
-    item : dict
-        The item bundle (from family_c_c1/c2_candidates.json).
-    turn1_response : dict
-        Parsed JSON from the model's Turn-1 response.
-        Expected keys: ``answer``, ``confidence``.
-    turn2_response : dict
-        Parsed JSON from the model's Turn-2 response.
-        Expected keys: ``revised_answer``, ``revised_confidence``, ``action``.
-
-    Returns
-    -------
-    dict
-        Full audit row from ``build_audit_row``.
+    Handles None confidence by defaulting to 0.5.
     """
-    gold = item["gold_answer"]
-    aliases = item.get("gold_answer_aliases", [])
-    rule = item.get("grading_rule", "exact_match_insensitive")
-    subfamily = item["subfamily"]
-    challenge_type = item.get("challenge_type")
+    conf_1 = t1_confidence if t1_confidence is not None else 0.5
+    conf_2 = t2_confidence if t2_confidence is not None else 0.5
+    revised = t1_answer.strip().lower() != t2_answer.strip().lower()
 
-    answer_1 = turn1_response.get("answer", "")
-    conf_1 = float(turn1_response.get("confidence", 0.5))
-    correct_1 = grade_answer(answer_1, gold, aliases, rule)
-
-    answer_2 = turn2_response.get("revised_answer", answer_1)
-    conf_2 = float(turn2_response.get("revised_confidence", conf_1))
-    action = turn2_response.get("action", "maintain")
-    revised = action == "revise" or answer_1.strip().lower() != answer_2.strip().lower()
-    correct_2 = grade_answer(answer_2, gold, aliases, rule)
-
-    return build_audit_row(
-        item_id=item["item_id"],
+    row = build_audit_row(
+        item_id=item_id,
         subfamily=subfamily,
-        stratum=item.get("stratum", ""),
-        normative_action=item.get("normative_t2_action", ""),
-        answer_1=answer_1,
+        stratum=stratum,
+        normative_action=normative_t2_action,
+        answer_1=t1_answer,
         conf_1=conf_1,
-        correct_1=correct_1,
-        answer_2=answer_2,
+        correct_1=t1_correct,
+        answer_2=t2_answer,
         conf_2=conf_2,
-        correct_2=correct_2,
+        correct_2=t2_correct,
         revised=revised,
         challenge_type=challenge_type,
     )
 
+    # Add edit similarity if full text available
+    if t1_text and t2_text:
+        row["t1_t2_similarity"] = round(compute_edit_similarity(t1_text, t2_text), 4)
 
-# ── Batch runner (for notebook / SDK integration) ───────────────────
-
-def run_family_c_batch(
-    items: List[Dict[str, Any]],
-    query_fn,
-    model: str,
-    **query_kwargs,
-) -> List[Dict[str, Any]]:
-    """Run a batch of Family C items through a model.
-
-    Parameters
-    ----------
-    items : list[dict]
-        Item bundles (C1 or C2).
-    query_fn : callable
-        Function with signature ``query_fn(model, messages, **kwargs) -> dict``
-        that returns a dict with ``response_text``.
-    model : str
-        Model identifier for the query function.
-    **query_kwargs
-        Extra arguments passed to ``query_fn`` (e.g. ``temperature``, ``json_mode``).
-
-    Returns
-    -------
-    list[dict]
-        Audit rows, one per item.
-    """
-    results = []
-    for item in items:
-        subfamily = item["subfamily"]
-
-        # Turn 1
-        t1_messages = build_turn1_prompt(item)
-        t1_raw = query_fn(model, t1_messages, **query_kwargs)
-        try:
-            t1_parsed = parse_json_response(t1_raw.get("response_text", "{}"))
-        except (json.JSONDecodeError, AttributeError):
-            t1_parsed = {"answer": "", "confidence": 0.5}
-
-        # Turn 2
-        if subfamily.upper() == "C1":
-            t2_text = build_turn2_c1(item)
-        else:
-            t2_text = build_turn2_c2(item)
-
-        t2_messages = t1_messages + [
-            {"role": "assistant", "content": t1_raw.get("response_text", "{}")},
-            {"role": "user", "content": t2_text},
-        ]
-        t2_raw = query_fn(model, t2_messages, **query_kwargs)
-        try:
-            t2_parsed = parse_json_response(t2_raw.get("response_text", "{}"))
-        except (json.JSONDecodeError, AttributeError):
-            t2_parsed = {"revised_answer": t1_parsed.get("answer", ""), "revised_confidence": 0.5, "action": "maintain"}
-
-        audit_row = evaluate_item(item, t1_parsed, t2_parsed)
-        audit_row["model"] = model
-        audit_row["t1_raw"] = t1_raw.get("response_text", "")
-        audit_row["t2_raw"] = t2_raw.get("response_text", "")
-        audit_row["t1_latency_ms"] = t1_raw.get("latency_ms")
-        audit_row["t2_latency_ms"] = t2_raw.get("latency_ms")
-        results.append(audit_row)
-
-    return results
+    return row

@@ -1,20 +1,15 @@
 """
-MetaJudge-AGI: A Behavioral Benchmark for Metacognition in Frontier Models
-============================================================================
+MetaJudge-AGI: Measuring Metacognition in Frontier Models
+=========================================================
+Benchmark measuring epistemically robust metacognitive behavior
+through behavioral evidence, not self-report.
 
-A benchmark suite for the Kaggle "Measuring Progress Toward AGI - Cognitive Abilities"
-competition, focused on evaluating metacognition through behavioral evidence.
-
-Five sub-benchmarks:
-- Confidence Calibration (Framework §5.1)
-- Selective Abstention and Deferral (Framework §5.2)
-- Error Detection and Targeted Self-Correction (Framework §5.3)
-- Source Awareness and Epistemic Attribution (Framework §5.4)
-- Strategy Selection and Adaptive Revision (Framework §5.5)
-
-Design principle: Score metacognition by the consequences of self-monitoring
-on task behavior, not by what the model says about itself.
+Tasks:
+- Confidence Calibration (Monitoring)
+- Selective Abstention (Control)
+- Intrinsic Self-Correction C1 (Control)
+- Evidence-Assisted Self-Correction C2 (Control)
 """
 
-__version__ = "0.5.5"
-__benchmark_name__ = "metacognition_behavioral_suite_v1"
+__version__ = "6.1"
+__benchmark_name__ = "metacognition_behavioral_suite_v6"
