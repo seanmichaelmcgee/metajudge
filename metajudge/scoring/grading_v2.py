@@ -261,6 +261,15 @@ def _grade_tri_label(answer: str, spec: Dict[str, Any]) -> Dict[str, Any]:
 
     if ans_canonical == gold_canonical:
         return {"correct": True, "method": "tri_label", "match_detail": f"matched: {ans_canonical}"}
+
+    # Check accepted_forms from registry (may include alternative labels)
+    accepted = spec.get("accepted_forms", [])
+    if accepted:
+        accepted_lower = {a.lower().strip() for a in accepted}
+        if norm in accepted_lower or ans_canonical in accepted_lower:
+            return {"correct": True, "method": "tri_label",
+                    "match_detail": f"accepted_form: {ans_canonical} (gold: {gold_canonical})"}
+
     return {"correct": False, "method": "tri_label",
             "match_detail": f"label mismatch: {ans_canonical} vs gold {gold_canonical}"}
 
