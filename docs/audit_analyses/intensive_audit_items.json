@@ -1,0 +1,156 @@
+{
+  "set1": {
+    "calibration": [
+      {
+        "item_id": "gen_b3_014",
+        "type": "consensus",
+        "correct": "5/5"
+      },
+      {
+        "item_id": "gen_b_038",
+        "type": "consensus",
+        "correct": "5/5"
+      },
+      {
+        "item_id": "gen_b3_022",
+        "type": "discriminating",
+        "correct": "3/5"
+      },
+      {
+        "item_id": "gen_a2_001",
+        "type": "discriminating",
+        "correct": "3/5"
+      },
+      {
+        "item_id": "gen_b3_002",
+        "type": "discriminating",
+        "correct": "3/5"
+      }
+    ],
+    "abstention": [
+      {
+        "item_id": "abs_001",
+        "type": "consensus",
+        "correct": "6/6"
+      },
+      {
+        "item_id": "abs_003",
+        "type": "consensus",
+        "correct": "6/6"
+      },
+      {
+        "item_id": "abs_019",
+        "type": "discriminating",
+        "correct": "3/6"
+      },
+      {
+        "item_id": "abs_026",
+        "type": "discriminating",
+        "correct": "3/6"
+      },
+      {
+        "item_id": "abs_028",
+        "type": "discriminating",
+        "correct": "3/6"
+      }
+    ],
+    "sc_c1": [
+      {
+        "item_id": "sc_c1_wr_004",
+        "type": "consensus",
+        "correct": "6/6"
+      },
+      {
+        "item_id": "sc_c1_rr_001",
+        "type": "consensus",
+        "correct": "6/6"
+      },
+      {
+        "item_id": "sc_c1_wr_030",
+        "type": "discriminating",
+        "correct": "3/6"
+      },
+      {
+        "item_id": "sc_c1_wr_023",
+        "type": "discriminating",
+        "correct": "2/6"
+      },
+      {
+        "item_id": "sc_c1_wr_001",
+        "type": "discriminating",
+        "correct": "5/6"
+      }
+    ],
+    "sc_c2": [
+      {
+        "item_id": "sc_c2_wr_001",
+        "type": "consensus",
+        "correct": "6/6"
+      },
+      {
+        "item_id": "sc_c2_rr_001",
+        "type": "consensus",
+        "correct": "6/6"
+      },
+      {
+        "item_id": "sc_c2_dt_001",
+        "type": "discriminating",
+        "correct": "4/6"
+      },
+      {
+        "item_id": "sc_c2_wc_005",
+        "type": "discriminating",
+        "correct": "5/6"
+      },
+      {
+        "item_id": "sc_c2_wr_008",
+        "type": "discriminating",
+        "correct": "5/6"
+      }
+    ]
+  },
+  "set2": [
+    {
+      "item_id": "abs_002",
+      "task": "abstention",
+      "issue": "False positive: Helium graded correct when gold=Lithium (Sonnet 4.6 audit)"
+    },
+    {
+      "item_id": "abs_006",
+      "task": "abstention",
+      "issue": "Unicode minus encoding: 3n\u22126 vs 3n-6"
+    },
+    {
+      "item_id": "gen_a4_022",
+      "task": "calibration",
+      "issue": "tri_label bug: 'false' in accepted_forms but graded wrong"
+    },
+    {
+      "item_id": "gen_a4_024",
+      "task": "calibration",
+      "issue": "tri_label bug: same pattern as gen_a4_022"
+    },
+    {
+      "item_id": "sc_c1_rr_003",
+      "task": "sc_c1",
+      "issue": "Pedantic correction: 100\u00b0C \u2192 99.974\u00b0C (is the damage justified?)"
+    }
+  ],
+  "models": [
+    "anthropic_claude-sonnet-4-6@default",
+    "anthropic_claude-sonnet-4@20250514",
+    "google_gemini-2.5-pro",
+    "google_gemini-3-flash-preview",
+    "google_gemma-4-26b-a4b",
+    "openai_gpt-5.4-2026-03-05"
+  ],
+  "excluded": [
+    "abs_002",
+    "gen_b_040",
+    "abs_006",
+    "gen_a4_024",
+    "gen_a4_022",
+    "gen_a2_007"
+  ],
+  "note": "Calibration uses \u22655 models (Flash/Gemma have 104 not 105 items)"
+}
