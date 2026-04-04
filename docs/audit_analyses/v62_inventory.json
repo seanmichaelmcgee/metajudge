@@ -1,0 +1,443 @@
+{
+  "anthropic_claude-sonnet-4-6@default": {
+    "calibration": {
+      "csv_items": 105,
+      "json_r1": 105,
+      "json_r2": 0,
+      "metadata": {
+        "model": "\ud83e\udd16 anthropic/claude-sonnet-4-6@default",
+        "task": "metajudge_calibration",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T02:58:39.692715",
+        "items_scored": 105,
+        "items_attempted": 105
+      },
+      "in_tokens": 105223,
+      "out_tokens": 15285,
+      "latency_ms": 296375,
+      "cost_usd": 0.544944
+    },
+    "abstention": {
+      "csv_items": 72,
+      "json_r1": 72,
+      "json_r2": 72,
+      "metadata": {
+        "model": "\ud83e\udd16 anthropic/claude-sonnet-4-6@default",
+        "task": "metajudge_abstention",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T02:59:25.135346",
+        "items_scored": 72,
+        "items_attempted": 72,
+        "run_2_complete": true,
+        "run_2_items": 72
+      },
+      "in_tokens": 127262,
+      "out_tokens": 22758,
+      "latency_ms": 477335,
+      "cost_usd": 0.723156
+    },
+    "sc_c1": {
+      "csv_items": 28,
+      "json_r1": 28,
+      "json_r2": 28,
+      "metadata": {
+        "model": "\ud83e\udd16 anthropic/claude-sonnet-4-6@default",
+        "task": "metajudge_sc_c1",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T02:59:39.019858",
+        "items_scored": 28,
+        "items_attempted": 28,
+        "run_2_complete": true,
+        "run_2_items": 28
+      },
+      "in_tokens": 17473,
+      "out_tokens": 14434,
+      "latency_ms": 307751,
+      "cost_usd": 0.268929
+    },
+    "sc_c2": {
+      "csv_items": 23,
+      "json_r1": 23,
+      "json_r2": 23,
+      "metadata": {
+        "model": "\ud83e\udd16 anthropic/claude-sonnet-4-6@default",
+        "task": "metajudge_sc_c2",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T02:59:37.583090",
+        "items_scored": 23,
+        "items_attempted": 23,
+        "run_2_complete": true,
+        "run_2_items": 23
+      },
+      "in_tokens": 16993,
+      "out_tokens": 12819,
+      "latency_ms": 325640,
+      "cost_usd": 0.243264
+    }
+  },
+  "anthropic_claude-sonnet-4@20250514": {
+    "calibration": {
+      "csv_items": 105,
+      "json_r1": 105,
+      "json_r2": 0,
+      "metadata": {
+        "model": "\ud83e\udd16 anthropic/claude-sonnet-4@20250514",
+        "task": "metajudge_calibration",
+        "version": "v6.2",
+        "timestamp": "2026-04-03T15:57:57.871738",
+        "items_scored": 105,
+        "items_attempted": 105
+      },
+      "in_tokens": 76453,
+      "out_tokens": 13313,
+      "latency_ms": 248183,
+      "cost_usd": 0.429054
+    },
+    "sc_c2": {
+      "csv_items": 23,
+      "json_r1": 23,
+      "json_r2": 23,
+      "metadata": {
+        "model": "\ud83e\udd16 anthropic/claude-sonnet-4@20250514",
+        "task": "metajudge_sc_c2",
+        "version": "v6.2",
+        "timestamp": "2026-04-03T15:46:49.400933",
+        "items_scored": 23,
+        "items_attempted": 23,
+        "run_2_complete": true,
+        "run_2_items": 23
+      },
+      "in_tokens": 18528,
+      "out_tokens": 15884,
+      "latency_ms": 313714,
+      "cost_usd": 0.293844
+    }
+  },
+  "google_gemini-2.5-pro": {
+    "calibration": {
+      "csv_items": 105,
+      "json_r1": 105,
+      "json_r2": 0,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemini-2.5-pro",
+        "task": "metajudge_calibration",
+        "version": "v6.2",
+        "timestamp": "2026-04-03T22:26:25.712035",
+        "items_scored": 105,
+        "items_attempted": 105
+      },
+      "in_tokens": 29127,
+      "out_tokens": 8966,
+      "latency_ms": 1065457,
+      "cost_usd": 1.09597875
+    },
+    "abstention": {
+      "csv_items": 72,
+      "json_r1": 72,
+      "json_r2": 72,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemini-2.5-pro",
+        "task": "metajudge_abstention",
+        "version": "v6.2",
+        "timestamp": "2026-04-03T22:44:03.493072",
+        "items_scored": 72,
+        "items_attempted": 72,
+        "run_2_complete": true,
+        "run_2_items": 72
+      },
+      "in_tokens": 23508,
+      "out_tokens": 14154,
+      "latency_ms": 2438027,
+      "cost_usd": 2.510675
+    },
+    "sc_c1": {
+      "csv_items": 28,
+      "json_r1": 28,
+      "json_r2": 28,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemini-2.5-pro",
+        "task": "metajudge_sc_c1",
+        "version": "v6.2",
+        "timestamp": "2026-04-03T22:46:37.884147",
+        "items_scored": 28,
+        "items_attempted": 28,
+        "run_2_complete": true,
+        "run_2_items": 28
+      },
+      "in_tokens": 12377,
+      "out_tokens": 12214,
+      "latency_ms": 1543354,
+      "cost_usd": 1.65062125
+    },
+    "sc_c2": {
+      "csv_items": 23,
+      "json_r1": 23,
+      "json_r2": 23,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemini-2.5-pro",
+        "task": "metajudge_sc_c2",
+        "version": "v6.2",
+        "timestamp": "2026-04-03T22:44:02.463460",
+        "items_scored": 23,
+        "items_attempted": 23,
+        "run_2_complete": true,
+        "run_2_items": 23
+      },
+      "in_tokens": 12497,
+      "out_tokens": 7747,
+      "latency_ms": 1149033,
+      "cost_usd": 1.21753125
+    }
+  },
+  "google_gemma-4-26b-a4b": {
+    "calibration": {
+      "csv_items": 104,
+      "json_r1": 104,
+      "json_r2": 0,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemma-4-26b-a4b",
+        "task": "metajudge_calibration",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T03:32:23.816588",
+        "items_scored": 104,
+        "items_attempted": 105
+      },
+      "in_tokens": 24195,
+      "out_tokens": 10311,
+      "latency_ms": 242543,
+      "cost_usd": 0.004907925
+    },
+    "abstention": {
+      "csv_items": 71,
+      "json_r1": 71,
+      "json_r2": 72,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemma-4-26b-a4b",
+        "task": "metajudge_abstention",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T03:42:09.312383",
+        "items_scored": 71,
+        "items_attempted": 72,
+        "run_2_complete": false,
+        "run_2_items": 72
+      },
+      "in_tokens": 18778,
+      "out_tokens": 10094,
+      "latency_ms": 249483,
+      "cost_usd": 0.00443655
+    },
+    "sc_c1": {
+      "csv_items": 28,
+      "json_r1": 28,
+      "json_r2": 28,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemma-4-26b-a4b",
+        "task": "metajudge_sc_c1",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T03:47:27.363768",
+        "items_scored": 28,
+        "items_attempted": 28,
+        "run_2_complete": true,
+        "run_2_items": 28
+      },
+      "in_tokens": 19004,
+      "out_tokens": 17835,
+      "latency_ms": 3188912,
+      "cost_usd": 0.0484767
+    },
+    "sc_c2": {
+      "csv_items": 23,
+      "json_r1": 23,
+      "json_r2": 23,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemma-4-26b-a4b",
+        "task": "metajudge_sc_c2",
+        "version": "v6.2",
+        "timestamp": "2026-04-03T22:38:25.017423",
+        "items_scored": 23,
+        "items_attempted": 23,
+        "run_2_complete": true,
+        "run_2_items": 23
+      },
+      "in_tokens": 18568,
+      "out_tokens": 14064,
+      "latency_ms": 2450960,
+      "cost_usd": 0.0373572
+    }
+  },
+  "google_gemini-3-flash-preview": {
+    "calibration": {
+      "csv_items": 104,
+      "json_r1": 104,
+      "json_r2": 0,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemini-3-flash-preview",
+        "task": "metajudge_calibration",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T03:15:54.600185",
+        "items_scored": 104,
+        "items_attempted": 105
+      },
+      "in_tokens": 29403,
+      "out_tokens": 7099,
+      "latency_ms": 609283,
+      "cost_usd": 0.3031215
+    },
+    "abstention": {
+      "csv_items": 72,
+      "json_r1": 72,
+      "json_r2": 72,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemini-3-flash-preview",
+        "task": "metajudge_abstention",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T03:13:13.319571",
+        "items_scored": 72,
+        "items_attempted": 72,
+        "run_2_complete": true,
+        "run_2_items": 72
+      },
+      "in_tokens": 24410,
+      "out_tokens": 10745,
+      "latency_ms": 1176252,
+      "cost_usd": 0.581767
+    },
+    "sc_c1": {
+      "csv_items": 28,
+      "json_r1": 28,
+      "json_r2": 28,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemini-3-flash-preview",
+        "task": "metajudge_sc_c1",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T03:19:00.244610",
+        "items_scored": 28,
+        "items_attempted": 28,
+        "run_2_complete": true,
+        "run_2_items": 28
+      },
+      "in_tokens": 15636,
+      "out_tokens": 12553,
+      "latency_ms": 1326499,
+      "cost_usd": 0.674568
+    },
+    "sc_c2": {
+      "csv_items": 23,
+      "json_r1": 23,
+      "json_r2": 23,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemini-3-flash-preview",
+        "task": "metajudge_sc_c2",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T03:15:54.798066",
+        "items_scored": 23,
+        "items_attempted": 23,
+        "run_2_complete": true,
+        "run_2_items": 23
+      },
+      "in_tokens": 16253,
+      "out_tokens": 12292,
+      "latency_ms": 842989,
+      "cost_usd": 0.4308685
+    }
+  },
+  "google_gemma-4-31b": {
+    "abstention": {
+      "csv_items": 68,
+      "json_r1": 68,
+      "json_r2": 69,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemma-4-31b",
+        "task": "metajudge_abstention",
+        "version": "v6.2",
+        "timestamp": "2026-04-03T15:55:51.070251",
+        "items_scored": 68,
+        "items_attempted": 72,
+        "run_2_complete": false,
+        "run_2_items": 69
+      },
+      "in_tokens": 17969,
+      "out_tokens": 9035,
+      "latency_ms": 305839,
+      "cost_usd": 0.004058175
+    },
+    "sc_c1": {
+      "csv_items": 28,
+      "json_r1": 28,
+      "json_r2": 28,
+      "metadata": {
+        "model": "\ud83e\udd16 google/gemma-4-31b",
+        "task": "metajudge_sc_c1",
+        "version": "v6.2",
+        "timestamp": "2026-04-03T15:58:08.419776",
+        "items_scored": 28,
+        "items_attempted": 28,
+        "run_2_complete": true,
+        "run_2_items": 28
+      },
+      "in_tokens": 17224,
+      "out_tokens": 12786,
+      "latency_ms": 2085963,
+      "cost_usd": 0.0235056
+    }
+  },
+  "openai_gpt-5.4-2026-03-05": {
+    "abstention": {
+      "csv_items": 72,
+      "json_r1": 72,
+      "json_r2": 72,
+      "metadata": {
+        "model": "\ud83e\udd16 openai/gpt-5.4-2026-03-05",
+        "task": "metajudge_abstention",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T03:25:44.868755",
+        "items_scored": 72,
+        "items_attempted": 72,
+        "run_2_complete": true,
+        "run_2_items": 72
+      },
+      "in_tokens": 29738,
+      "out_tokens": 9067,
+      "latency_ms": 221325,
+      "cost_usd": 0.21035
+    },
+    "sc_c1": {
+      "csv_items": 28,
+      "json_r1": 28,
+      "json_r2": 28,
+      "metadata": {
+        "model": "\ud83e\udd16 openai/gpt-5.4-2026-03-05",
+        "task": "metajudge_sc_c1",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T03:26:09.239486",
+        "items_scored": 28,
+        "items_attempted": 28,
+        "run_2_complete": true,
+        "run_2_items": 28
+      },
+      "in_tokens": 12712,
+      "out_tokens": 3046,
+      "latency_ms": 85439,
+      "cost_usd": 0.07747
+    },
+    "sc_c2": {
+      "csv_items": 23,
+      "json_r1": 23,
+      "json_r2": 23,
+      "metadata": {
+        "model": "\ud83e\udd16 openai/gpt-5.4-2026-03-05",
+        "task": "metajudge_sc_c2",
+        "version": "v6.2",
+        "timestamp": "2026-04-04T03:25:35.566157",
+        "items_scored": 23,
+        "items_attempted": 23,
+        "run_2_complete": true,
+        "run_2_items": 23
+      },
+      "in_tokens": 12416,
+      "out_tokens": 1869,
+      "latency_ms": 61964,
+      "cost_usd": 0.059075
+    }
+  }
+}
