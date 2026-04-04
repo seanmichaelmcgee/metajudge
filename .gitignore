@@ -2,5 +2,10 @@ __pycache__/
 *.pyc
 .pytest_cache/
 *.egg-info/
-outputs/
 .DS_Store
+
+# Exclude temp/working outputs but keep labeled results
+outputs/*.docx
+outputs/*.csv
+outputs/results-*/
+outputs/family_c/
