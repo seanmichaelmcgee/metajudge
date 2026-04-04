@@ -29,7 +29,8 @@ significant issues that must be addressed before the benchmark can be considered
   (transition weights documented but accuracy delta used in production)
 - Abstention partial credit (+0.3) compresses score range and rewards caution over discrimination
 - C1/C2 item counts (28/23) are too small for reliable individual-model scores
-- Run-to-run stochasticity on C1 produces 0.29 normalized swings
+- Run-to-run stochasticity on C1 produces 0.29 normalized swings (though 68%
+  of observed flips are measurement artifacts — true behavioral flip rate is 3.2%, not 10%)
 - 4 grading bugs found (tri_label, parser, encoding) affecting ~2-4 items per model
 
 ---
@@ -50,6 +51,28 @@ Every model monitors better than it controls (except Gemma-26b where low
 calibration inverts the pattern). The gap ranges from +0.097 (Sonnet 4) to
 +0.525 (Pro). This is MetaJudge's core finding and it is robust — observed
 across all model families, sizes, and providers.
+
+### Stochasticity and Leaderboard Confidence
+
+Dual-run analysis (760 pairs, 76 flips) reveals that the **headline 10% flip
+rate is misleading** — 68% of flips are artifacts of wording/parse or boundary
+classification. The true behavioral flip rate is **3.2%** (24/760).
+
+The leaderboard resolves into **3 confidence tiers**, not 6 distinct positions:
+
+| Tier | Models | MetaScore Range | Confidence |
+|------|--------|-----------------|------------|
+| Top | Flash, Sonnet-4 | 0.530–0.589 | Robust (gap ≥0.028) |
+| Middle | Sonnet-4.6 ≈ GPT-5.4 | 0.399–0.449 | Overlap 0.001 — cannot separate |
+| Bottom | Pro ≈ Gemma-26b | 0.350–0.398 | Weakly separable (gap 0.013) |
+
+Top-2 and bottom-2 rankings are robust to stochastic variation. Ranks 3–4
+(Sonnet-4.6 vs GPT-5.4) swap between runs. Maximum MetaScore shift from
+stochasticity is ~0.032. Gemini-2.5-Pro is disproportionately unstable,
+accounting for 37% of all flips despite being 1 of 6 models.
+
+See `stochasticity_model_item_analysis.md` and `stochasticity_validity_impact.md`
+for full analysis.
 
 ---
 
@@ -100,6 +123,10 @@ Detailed assessments in `synthesis_calibration.md`, `synthesis_abstention.md`,
 - Utility: mixed (deceptive traps discriminate well, but 40% items saturated)
 - The transition-level data IS rich and informative — the problem is that the
   headline score discards this richness
+- **C1 is fundamentally unreliable:** 3 models show identical ±0.286 score swings;
+  43% flip rate for Gemini Pro. Root cause is the maintain_correct / neutral_revision
+  classification boundary — 5 items generate 53% of all C1 flips.
+- **Task reliability hierarchy:** abstention (71% items stable) > C2 (52%) >> C1 (32%)
 
 ---
 
@@ -118,23 +145,28 @@ Detailed assessments in `synthesis_calibration.md`, `synthesis_abstention.md`,
    (0.0, +0.1, +0.2) and compare discrimination across the 6-model panel.
 4. **Require 3+ runs for C1/C2** with median aggregation. Single-run C1 scores
    have 0.29 normalized stochasticity — not meaningfully precise.
-5. **Fix 4 grading bugs:** tri_label accepted_forms, exact_constant parser,
+5. **Tighten C1 rubric boundary:** The maintain_correct vs neutral_revision
+   classification is the dominant source of C1 instability. 5 items
+   (sc_c1_rr_010, dt_001, wr_023, wr_004, wr_011) generate 53% of all C1
+   flips. Either sharpen the classification criteria or merge these categories
+   for scoring purposes.
+6. **Fix 4 grading bugs:** tri_label accepted_forms, exact_constant parser,
    code_output substring match, confirmation detection gaps.
 
 ### Medium (should address)
-6. **Publish anchor derivation data.** Floor/ceiling values and the pilot sweep
+7. **Publish anchor derivation data.** Floor/ceiling values and the pilot sweep
    data that produced them should be auditable.
-7. **Reclassify sc_c1_wr_023** from wrong_to_right to deceptive_trap (4/6 models
+8. **Reclassify sc_c1_wr_023** from wrong_to_right to deceptive_trap (4/6 models
    damaged — it functions as a trap, not a correction opportunity).
-8. **Report component scores alongside MetaScore.** The monitoring-control gap
+9. **Report component scores alongside MetaScore.** The monitoring-control gap
    is more informative than the single number. Normalize presentation to
    show both.
 
 ### For the submission
-9. **Lead the writeup with the monitoring-control gap finding.** This is the
-   benchmark's strongest contribution — universally observed, theoretically
-   grounded, and practically meaningful.
-10. **Be transparent about C1/C2 limitations.** The precision problem is real.
+10. **Lead the writeup with the monitoring-control gap finding.** This is the
+    benchmark's strongest contribution — universally observed, theoretically
+    grounded, and practically meaningful.
+11. **Be transparent about C1/C2 limitations.** The precision problem is real.
     Presenting it honestly strengthens the submission, not weakens it.
 
 ---
@@ -150,6 +182,8 @@ Detailed assessments in `synthesis_calibration.md`, `synthesis_abstention.md`,
 | `intensive_abstention.md` | 5 items × 6 models deep analysis |
 | `intensive_self_correction.md` | 10 items × 6 models deep analysis |
 | `intensive_problematic_items.md` | 5 buggy items cross-model |
+| `stochasticity_model_item_analysis.md` | Per-model/item flip analysis (760 pairs) |
+| `stochasticity_validity_impact.md` | Flip validity, 3-tier leaderboard, confidence |
 | `cross_model_audit.md` | 1,137 items automated grading check |
 | `canonical_dataset.json` | 1,444 records, all scores, costs |
 | Per-model audits (5) | gemini_pro, sonnet46, flash, gpt54, gemma26b |

@@ -8,11 +8,13 @@
 
 ## Executive Summary
 
-MetaJudge v6.2 produces **valid, reproducible scores** across 5 frontier LLMs.
-The grading pipeline is 99.2% accurate (1137/1137 items verified, excluding the
-known tri_label bug which is fixed but not yet re-deployed). The benchmark
-reveals a **universal monitoring-control gap**: all models calibrate better than
-they control, and no model achieves positive intrinsic self-correction.
+MetaJudge v6.2 produces **valid scores** across 5 frontier LLMs, with
+**reproducibility that varies by task** — abstention and C2 are stable, but C1
+scores swing by up to 0.286 between runs. The grading pipeline is 99.2%
+accurate (1137/1137 items verified, excluding the known tri_label bug which is
+fixed but not yet re-deployed). The benchmark reveals a **universal
+monitoring-control gap**: all models calibrate better than they control, and no
+model achieves positive intrinsic self-correction.
 
 ## 1. Final Leaderboard
 
@@ -136,11 +138,31 @@ This is the core signal MetaJudge is designed to detect.
 | Stochasticity handling | ✅ Working | Dual-run data collected for B, C1, C2 |
 | **Overall pipeline accuracy** | **99.2%** | 1123 AGREE + 9 KNOWN-BUG + 5 FLAG / 1137 |
 
-## 8. Recommendations
+## 8. Stochasticity and Rank Confidence
+
+Dual-run analysis of 760 item pairs found 76 flips (10% raw), but **only 3.2%
+represent genuine behavioral variance** — 68% are wording/parse artifacts or
+boundary classification issues.
+
+**Task reliability:** Abstention (71% items perfectly stable) > C2 (52%) >> C1
+(32%). C1 is the weakest link: 3 models show identical ±0.286 score swings, and
+Gemini Pro has a 43% C1 flip rate. The root cause is ambiguity in the
+maintain_correct vs neutral_revision rubric boundary.
+
+**Leaderboard confidence:** The 6-position ranking resolves into 3 tiers:
+{Flash, Sonnet-4} > {Sonnet-4.6 ≈ GPT-5.4} > {Pro ≈ Gemma-26b}. Top-2 and
+bottom-2 are robust; ranks 3–4 swap between runs (overlap 0.001). Gemini Pro
+accounts for 37% of all flips despite being 1 of 6 models.
+
+## 9. Recommendations
 
 1. **Deploy tri_label fix** and re-run all models (affects ~2 items per model)
 2. **Expand model panel** to 8-10 models for robust discrimination statistics
 3. **Add C1/C2 items** — n=28/23 is insufficient for fine-grained separation
 4. **Report C1 with confidence interval** — stochasticity is high
-5. **Consider abstention scoring calibration** — partial credit may over-reward cautious models
-6. **The monitoring-control gap is the benchmark's key finding** — build the writeup around this
+5. **Tighten C1 maintain_correct vs neutral_revision boundary** — this single
+   classification ambiguity drives 53% of C1 flips across 5 items
+6. **Consider abstention scoring calibration** — partial credit may over-reward cautious models
+7. **Report leaderboard as 3 tiers** with confidence intervals rather than 6
+   distinct ranks — pairs within 0.03 MetaScore should be flagged as tied
+8. **The monitoring-control gap is the benchmark's key finding** — build the writeup around this
