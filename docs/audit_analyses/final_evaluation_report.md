@@ -135,7 +135,7 @@ This is the core signal MetaJudge is designed to detect.
 | tri_label grading | ⚠️ Bug found | accepted_forms not checked — fix deployed |
 | Confirmation detection | ⚠️ 1 gap | sc_c2_wc_005 phrasing not caught |
 | Anchor normalization | ✅ Correct | Floor/ceiling values applied correctly |
-| Stochasticity handling | ✅ Working | Dual-run data collected for B, C1, C2 |
+| Stochasticity handling | ⚠️ Mixed | Dual-run collected; 10% raw flips but only 3.2% genuine; C1 unreliable |
 | **Overall pipeline accuracy** | **99.2%** | 1123 AGREE + 9 KNOWN-BUG + 5 FLAG / 1137 |
 
 ## 8. Stochasticity and Rank Confidence
