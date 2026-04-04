@@ -1,0 +1,18 @@
+{
+  "title": "MetaJudge Benchmark Data v3.1 (Families A+B+C, post-audit)",
+  "id": "seanmcgee2025/metajudge-data-v3",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0"
+    }
+  ],
+  "description": "MetaJudge benchmark v3.1 (post-audit): Families A (Calibration, 105 items), B (Selective Abstention, 72 items), C (Self-Correction, 51 clean items). v3.1 fixes: numeric tolerance for 2 items (rel_tol=0.005), 4 unresolved items excluded from clean set (0% T2 accuracy floor effect). Registry: 187 entries with corrected tolerance_params.",
+  "keywords": [
+    "metacognition",
+    "llm-evaluation",
+    "calibration",
+    "self-correction",
+    "benchmark",
+    "families-abc"
+  ]
+}
