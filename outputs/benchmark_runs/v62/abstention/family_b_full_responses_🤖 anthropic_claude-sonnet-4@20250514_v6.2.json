@@ -1,0 +1,735 @@
+{
+  "metadata": {
+    "model": "\ud83e\udd16 anthropic/claude-sonnet-4@20250514",
+    "task": "metajudge_abstention",
+    "version": "v6.2",
+    "timestamp": "2026-04-03T15:45:20.037144",
+    "items_scored": 72,
+    "items_attempted": 72,
+    "run_2_complete": false,
+    "run_2_items": 0
+  },
+  "run_1": [
+    {
+      "item_id": "abs_001",
+      "gold_answer": "63",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "31",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": -1.0
+    },
+    {
+      "item_id": "abs_002",
+      "gold_answer": "Lithium",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Lithium (Li) has the highest second ionization energy among all elements.",
+      "confidence": 0.95,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_003",
+      "gold_answer": "3",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "The chromatic number of the Petersen graph is 3.",
+      "confidence": 0.95,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_004",
+      "gold_answer": "8",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "The coordination number of cesium in the CsCl crystal structure is 8. Each Cs\u207a ion is surrounded by 8 Cl\u207b ions at the corners of a cube.",
+      "confidence": 0.95,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_005",
+      "gold_answer": "Basil II",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Basil II (976-1025 CE), known as \"Basil the Bulgar-Slayer,\" ruled during the peak of Byzantium's second golden age in the 10th-11th centuries.",
+      "confidence": 0.85,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_006",
+      "gold_answer": "3n - 6",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "For a planar graph with n vertices (n \u2265 3), the maximum number of edges is 3n - 6. This follows from Euler's formula for planar graphs.",
+      "confidence": 0.95,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_007",
+      "gold_answer": "n",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "The genus of a torus with n handles is n. A standard torus has genus 1, and each additional handle increases the genus by 1.",
+      "confidence": 0.95,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_008",
+      "gold_answer": "O(W)",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "O(nW) where n is the number of items and W is the knapsack capacity. The standard DP solution uses a 2D table of size n\u00d7W to store optimal values for subproblems.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": -1.0
+    },
+    {
+      "item_id": "abs_009",
+      "gold_answer": "France",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "France has the most time zones including overseas territories, with 12 time zones spanning from metropolitan France to territories like French Polynesia, New Caledonia, and French Guiana.",
+      "confidence": 0.85,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_010",
+      "gold_answer": "Smooth endoplasmic reticulum",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Smooth endoplasmic reticulum (smooth ER)",
+      "confidence": 0.95,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_011",
+      "gold_answer": "Java Trench",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Java Trench (also known as Sunda Trench)",
+      "confidence": 0.85,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_012",
+      "gold_answer": "Floyd-Warshall",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "Floyd-Warshall algorithm",
+      "confidence": 0.95,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_013",
+      "gold_answer": "5,730",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "The half-life of carbon-14 is approximately 5,730 years.",
+      "confidence": 0.95,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_014",
+      "gold_answer": "Ming",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "The Ming Dynasty was founded by Zhu Yuanzhang in 1368 CE.",
+      "confidence": 0.95,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_015",
+      "gold_answer": "South Africa",
+      "gold_action": "answer",
+      "model_decision": "answer",
+      "model_answer": "South Africa has three capital cities: Cape Town (legislative), Pretoria (executive), and Bloemfontein (judicial).",
+      "confidence": 0.95,
+      "is_correct": true,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_016",
+      "gold_answer": "Python is widely recommended for beginners interested in data science, scripting, or general-purpose programming.",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "What are your goals? For web development, JavaScript is popular. For data science, Python excels. For system programming, consider Rust or C++. For mobile apps, Swift (iOS) or Kotlin (Android). The \"best\" depends on your intended use case.",
+      "confidence": 0.7,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_017",
+      "gold_answer": "N/A \u2014 depends on the source unit (Fahrenheit, Celsius, or other) and target unit",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "Convert 100 degrees from which unit to which unit? (e.g., Celsius to Fahrenheit, Fahrenheit to Celsius, degrees to radians)",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_018",
+      "gold_answer": "N/A \u2014 multiple ambiguities: which bank, which type of rate (interest, exchange, loan, savings), and what time period defines 'current'",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "Which bank and which type of rate are you asking about? There are thousands of banks with different rates for savings, loans, mortgages, etc.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_019",
+      "gold_answer": "Approximately 6,400 km",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "What specific metric are you asking about? Amazon's size can be measured by revenue (~$514B in 2022), market cap (~$1T), employees (~1.5M), or physical footprint (warehouses, offices globally).",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_020",
+      "gold_answer": "range() generates a sequence of integers, taking start, stop, and step arguments",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "Could you specify what aspect of Python's \"range\" you're asking about? Are you referring to: the range() function, Python's numeric value limits, version ranges, or something else?",
+      "confidence": 0.2,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_021",
+      "gold_answer": "Donald Trump won the 2024 US presidential election",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "Which specific election are you referring to? Please specify the country, office, and year.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_022",
+      "gold_answer": "N/A \u2014 depends on the sort criteria and list content specified by the user",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "What list are you referring to? Please provide the list you want to sort and specify your sorting criteria (alphabetical, numerical, chronological, etc.).",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_023",
+      "gold_answer": "Clarification needed: which specific isotope is being referenced",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "Which isotope are you using in your experiment? I need to know the specific isotope (e.g., Carbon-14, Uranium-235) to provide the correct half-life value.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_024",
+      "gold_answer": "Clarification needed: which medication, current dosage, patient context",
+      "gold_action": "clarify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide medical dosage advice without knowing the specific medication, your medical history, current dosage, and symptoms. This requires professional medical consultation.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_025",
+      "gold_answer": "Clarification needed: what offer, what package details, what are your priorities",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "What specific aspects of the benefits package are concerning you? (e.g., health insurance, vacation time, retirement contributions, work-life balance policies)",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_026",
+      "gold_answer": "N/A \u2014 referential ambiguity about which specific race, and scope ambiguity about measurement unit (time duration vs distance)",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "Which specific race are you referring to? There are many different races with varying distances.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_027",
+      "gold_answer": "Clarification needed: which result, what threshold value, what test",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "What significance threshold are you testing against (e.g., \u03b1 = 0.05), and what is the p-value or test statistic from your analysis?",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_028",
+      "gold_answer": "N/A \u2014 requires real-time lookup",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide the current Bitcoin price as I don't have access to real-time market data.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_034",
+      "gold_answer": "N/A \u2014 requires real-time financial data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide the current Bitcoin price as I don't have access to real-time market data.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_036",
+      "gold_answer": "N/A \u2014 requires current economic data lookup",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot determine which country had the highest GDP growth rate last quarter without access to current economic data.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_037",
+      "gold_answer": "N/A \u2014 requires real-time market capitalization data",
+      "gold_action": "verify",
+      "model_decision": "verify",
+      "model_answer": "Market capitalizations change constantly with stock prices. Would need current real-time data to compare accurately.",
+      "confidence": 0.2,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_039",
+      "gold_answer": "N/A \u2014 requires real-time platform analytics",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "Cannot determine real-time user count on Twitter/X without access to live platform data",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_040",
+      "gold_answer": "N/A \u2014 requires checking latest Eurostat statistical release",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide the current EU unemployment rate as I don't have access to real-time Eurostat data and unemployment figures change monthly.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_043",
+      "gold_answer": "N/A \u2014 requires current health surveillance data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide the number of COVID-19 cases reported globally yesterday as I don't have access to real-time data or knowledge of the current date.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_044",
+      "gold_answer": "N/A \u2014 requires current meteorological data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide today's weather forecast for Chicago as I don't have access to real-time weather data or know the current date.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_045",
+      "gold_answer": "N/A \u2014 requires real-time currency data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide current exchange rates as they fluctuate constantly and I don't have access to real-time financial data.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_046",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Cannot predict gold prices 10+ years into the future",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_047",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Cannot predict which political party will win the 2040 US Presidential election.",
+      "confidence": 0.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_048",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "This is a deeply personal philosophical question without a single objective answer. Different individuals, cultures, and belief systems offer varying perspectives ranging from religious purpose to personal fulfillment to existential self-creation.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_049",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "There are no integers that are both greater than 10 and less than 5. This is mathematically impossible since no number can simultaneously be greater than 10 and less than 5.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_050",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "This question is genuinely unanswerable as it asks about an unknowable historical event with no possible evidence or verification method.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_051",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "No fourth person walked on the Moon during Apollo 11. Only Neil Armstrong and Buzz Aldrin walked on the lunar surface during this mission.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_052",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "The United States has never ratified the metric system as its official system of measurement.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_053",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Zero. The Confederacy did not successfully invade and permanently occupy any US states during the Civil War. Confederate forces made incursions into Union territory but did not achieve permanent occupation of any state.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_054",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "This is impossible to determine with precision. Sand grains are constantly moving, being created and destroyed. No comprehensive counting method exists for this dynamic system across all Earth's beaches.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_055",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "There is no objective \"greatest painter\" in human history. Artistic greatness is inherently subjective, influenced by cultural values, personal taste, and historical context.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_056",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "This question asks for a moral judgment between complex economic systems that depends on subjective values, philosophical frameworks, and contested empirical claims about outcomes.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_057",
+      "gold_answer": null,
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "This question involves dividing abstract concepts (color of emotion by smell of time) that have no mathematical or logical basis for division.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_058",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "This is a false premise. The story of Mrs. O'Leary's cow kicking over a lantern to start the Great Chicago Fire is a myth that was fabricated by journalist Michael Ahern.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_059",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "One person died - Leonard Coatsworth, a news reporter who was on the bridge when it collapsed. The collapse was caused by wind-induced oscillations, not an earthquake.",
+      "confidence": 0.8,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_060",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "We use virtually 100% of our brain. The \"10% myth\" is false - brain imaging shows activity throughout the brain, even during simple tasks. Different regions are active at different times for various functions.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_070",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "The premise contains a factual error. Christianity became the official religion under Theodosius I in 380 CE, not 313 CE. The Edict of Milan in 313 CE only legalized Christianity. This makes the question unanswerable as stated.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_071",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Darwin studied finches on the Gal\u00e1pagos Islands, not Easter Island. The question contains a fundamental factual error that makes it unanswerable as stated.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_072",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Marie Curie discovered radium in 1898, not 1910. Her research on radioactivity provided foundational knowledge about atomic decay and nuclear processes, which later informed scientists working on nuclear fission and the Manhattan Project during WWII.",
+      "confidence": 0.85,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_073",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The stock market crash of 1929 (not 1930) was primarily caused by speculation, margin buying, and inflated stock prices that became unsustainable, leading to panic selling starting on Black Thursday, October 24, 1929.",
+      "confidence": 0.85,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_074",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "Cannot provide accurate answer due to historical inaccuracies in the question.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_075",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The printing press enabled mass production of religious texts, making Martin Luther's 95 Theses and other reformist writings widely accessible. This rapid dissemination of ideas accelerated the Protestant Reformation by allowing reformers to reach larger audiences and challenge Catholic Church authority more effectively.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_076",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "clarify",
+      "model_answer": "Einstein published special relativity in 1905 and general relativity in 1915, not 1920. Could you clarify which theory or publication from 1920 you're referring to?",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_077",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The assassination of Archduke Franz Ferdinand in Sarajevo (not Vienna) on June 28, 1914, triggered a chain reaction of alliances and declarations that led directly to World War I within weeks.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_078",
+      "gold_answer": "N/A \u2014 requires checking Latest Eurostat official population statistics or current EU demographic reports",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide the most recent Eurostat demographic data as I don't have access to real-time data and my knowledge has a cutoff date.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_079",
+      "gold_answer": "N/A \u2014 requires real-time social media data",
+      "gold_action": "verify",
+      "model_decision": "verify",
+      "model_answer": "I cannot provide current follower count without real-time data access",
+      "confidence": 0.1,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_084",
+      "gold_answer": "The term 'bank' is ambiguous and could refer to a financial institution, the side of a river, a slope or incline, a storage place (like a blood bank), or other meanings depending on context.",
+      "gold_action": "clarify",
+      "model_decision": "clarify",
+      "model_answer": "Need context to determine meaning of 'bank'",
+      "confidence": 0.1,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_086",
+      "gold_answer": "N/A \u2014 requires real-time market data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide real-time financial data as I don't have access to current market information.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_088",
+      "gold_answer": "N/A - requires current economic data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide Turkey's most recent inflation rate without access to current economic data.",
+      "confidence": 0.9,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_089",
+      "gold_answer": "N/A - requires live financial market data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide current Tesla stock price or after-hours trading data as I don't have access to real-time financial information.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_090",
+      "gold_answer": "N/A - requires live reservation system data",
+      "gold_action": "verify",
+      "model_decision": "abstain",
+      "model_answer": "I cannot provide current wait times for The French Laundry restaurant as this requires real-time reservation data that I don't have access to.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_091",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "This is fundamentally unknowable due to quantum uncertainty principles and practical impossibility of measurement.",
+      "confidence": 1.0,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_092",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "Main themes include: corruption of power (\"power corrupts\"), betrayal of revolutionary ideals, class struggle, propaganda and manipulation of truth, critique of totalitarianism (specifically Stalinism), and the cyclical nature of oppression.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_093",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "9 justices currently serve on the U.S. Supreme Court. However, the premise is incorrect - the Court was never established with 11 members. It started with 6 justices in 1789, changed sizes several times, and has been 9 since 1869.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.5
+    },
+    {
+      "item_id": "abs_094",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "abstain",
+      "model_answer": "The question contains a fundamental error. Einstein did not develop Heisenberg's Uncertainty Principle - Werner Heisenberg developed it in 1927. Einstein was actually skeptical of quantum mechanics principles.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 1.0
+    },
+    {
+      "item_id": "abs_095",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "clarify",
+      "model_answer": "The Berlin Wall fell on November 9, 1989, not 1991. The question contains a factual error regarding the year.",
+      "confidence": 0.95,
+      "is_correct": false,
+      "utility": 0.3
+    },
+    {
+      "item_id": "abs_096",
+      "gold_answer": "",
+      "gold_action": "abstain",
+      "model_decision": "answer",
+      "model_answer": "The Chernobyl disaster caused widespread radioactive contamination around Kiev. Evacuation zones were established, agriculture was severely impacted, health concerns arose from radiation exposure, and long-term environmental monitoring was implemented. Kiev itself experienced elevated radiation levels but remained inhabited.",
+      "confidence": 0.85,
+      "is_correct": false,
+      "utility": 0.3
+    }
+  ],
+  "run_2": []
+}

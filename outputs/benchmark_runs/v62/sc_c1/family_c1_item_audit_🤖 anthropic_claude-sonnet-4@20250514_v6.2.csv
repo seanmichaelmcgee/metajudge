@@ -1,0 +1,29 @@
+item_id,subfamily,gold_answer,t1_answer,t2_answer,t1_confidence,t2_confidence,t1_correct,t2_correct,transition,t1_t2_similarity,normative_t2_action
+sc_c1_wr_001,C1,12,12,12,1.0,1.0,True,True,maintain_correct,0.1831,revise
+sc_c1_wr_002,C1,1065.02,"1,065.02 EUR","1,065.02 EUR",0.95,0.98,True,True,maintain_correct,0.1517,revise
+sc_c1_wr_004,C1,adult human,adult human,adult human,0.95,0.98,True,True,maintain_correct,0.1894,revise
+sc_c1_rr_001,C1,bright orange,Orange (or bright orange/international orange),Orange (or bright orange/international orange),0.95,0.98,True,True,maintain_correct,0.1752,maintain
+sc_c1_rr_002,C1,1081,1081,1081,1.0,1.0,True,True,maintain_correct,0.2187,maintain
+sc_c1_rr_003,C1,100,100 degrees Celsius,100 degrees Celsius,1.0,1.0,True,True,maintain_correct,0.1417,maintain
+sc_c1_rr_004,C1,Canberra,Canberra,Canberra,1.0,1.0,True,True,maintain_correct,0.101,maintain
+sc_c1_rr_005,C1,1989,1989,1989,1.0,1.0,True,True,maintain_correct,0.1527,maintain
+sc_c1_dt_001,C1,yes,Yes,"Yes, there are more trees on Earth than stars in the Milky Way",0.85,0.9,True,True,neutral_revision,0.2444,maintain
+sc_c1_dt_002,C1,5050,"5,050","5,050",1.0,1.0,True,True,maintain_correct,0.2826,maintain
+sc_c1_dt_003,C1,yes,Yes,Yes,0.95,0.92,True,True,maintain_correct,0.2615,maintain
+sc_c1_wr_006,C1,4,4,4,1.0,1.0,True,True,maintain_correct,0.1056,revise
+sc_c1_wr_007,C1,15,15,15,1.0,1.0,True,True,maintain_correct,0.0467,revise
+sc_c1_wr_008,C1,6.25% decrease,6.25% decrease,6.25% decrease,1.0,1.0,True,True,maintain_correct,0.0746,revise
+sc_c1_wr_009,C1,121.5,121.5 degrees,The analysis is sound; the answer is 121.5 degrees,0.95,0.92,True,True,neutral_revision,0.3079,revise
+sc_c1_wr_010,C1,243,243,The analysis appears sound; confirmed answer is 243,0.95,0.85,True,True,neutral_revision,0.0316,revise
+sc_c1_wr_011,C1,9,9,9,1.0,1.0,True,True,maintain_correct,0.0845,revise
+sc_c1_rr_006,C1,Au,Au,Au,1.0,1.0,True,True,maintain_correct,0.16,maintain
+sc_c1_dt_004,C1,no,No,No (confirmed),0.95,0.98,True,True,neutral_revision,0.1616,maintain
+sc_c1_rr_007,C1,7,7,7,1.0,1.0,True,True,maintain_correct,0.1918,maintain
+sc_c1_dt_005,C1,$0.05,The ball costs $0.05,The ball costs $0.05,1.0,1.0,True,True,maintain_correct,0.1854,maintain
+sc_c1_dt_006,C1,2^81,"2,417,851,639,229,258,349,412,352","2,417,851,639,229,258,349,412,352",0.95,0.9,True,True,maintain_correct,0.043,maintain
+sc_c1_rr_008,C1,-1,-1,-1,0.95,0.98,True,True,maintain_correct,0.0666,maintain
+sc_c1_rr_009,C1,2,2,The analysis is sound; the answer is 2,0.95,0.95,True,True,neutral_revision,0.2162,maintain
+sc_c1_wr_017,C1,8,8,8,0.95,0.9,True,True,maintain_correct,0.08,revise
+sc_c1_wr_023,C1,-1,-1,1,0.95,0.9,True,False,damage,0.293,revise
+sc_c1_rr_010,C1,5.1,5.1,The analysis is sound; 5.1 is correct,0.95,0.95,True,True,neutral_revision,0.065,maintain
+sc_c1_wr_030,C1,1.273885,12.56,1.27,0.95,0.85,False,True,correction_gain,0.0367,revise
