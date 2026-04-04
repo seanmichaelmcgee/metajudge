@@ -1,19 +1,19 @@
-[{"stream_name":"stdout","time":13.163842921,"data":"Scoring: score_family_b_item_v2 (package), anchor B=[0.6, 1.0]\n"}
-,{"stream_name":"stdout","time":340.974682112,"data":"Abstention: UWAA=0.7042 Act Acc=38.9% Normalized=0.260 [72 items]\n"}
-,{"stream_name":"stdout","time":340.974736378,"data":"  Actions: {'answer': 53, 'clarify': 3, 'abstain': 11, 'verify': 5}\n"}
-,{"stream_name":"stdout","time":340.974743793,"data":"  Stochasticity: Run 1 UWAA=0.7042, Run 2 UWAA=0.6778 (72/72 items matched)\n"}
-,{"stream_name":"stdout","time":340.974749972,"data":"  Action stability: 60/72 items stable (83%)\n"}
-,{"stream_name":"stdout","time":340.974761303,"data":"  → Score ranges from 0.19 to 0.26 across independent runs\n"}
-,{"stream_name":"stdout","time":340.97476663,"data":"Audit report: /kaggle/working/MetaJudge_Abstention_🤖 google_gemini-2.5-pro_v6.2.md\n"}
-,{"stream_name":"stdout","time":341.196859462,"data":"Kept: metajudge_abstention_v62-run_id_Run_1_google_gemini-2.5-pro.run.json\n"}
-,{"stream_name":"stdout","time":341.196915656,"data":"Kept: metajudge_abstention_v62.task.json\n"}
-,{"stream_name":"stdout","time":341.234336684,"data":"Cost data appended: in=23,508 out=14,154 cost=$2.5107\n"}
-,{"stream_name":"stderr","time":346.058315666,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
-,{"stream_name":"stderr","time":346.058410257,"data":"  warn(\n"}
-,{"stream_name":"stderr","time":346.080024426,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
-,{"stream_name":"stderr","time":346.491125668,"data":"[NbConvertApp] Writing 89053 bytes to __notebook__.ipynb\n"}
-,{"stream_name":"stderr","time":349.513912331,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
-,{"stream_name":"stderr","time":349.513953113,"data":"  warn(\n"}
-,{"stream_name":"stderr","time":349.536024916,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
-,{"stream_name":"stderr","time":351.085810218,"data":"[NbConvertApp] Writing 395090 bytes to __results__.html\n"}
+[{"stream_name":"stdout","time":12.353438799,"data":"Scoring: score_family_b_item_v2 (package), anchor B=[0.6, 1.0]\n"}
+,{"stream_name":"stdout","time":82.785279395,"data":"Abstention: UWAA=0.7583 Act Acc=41.7% Normalized=0.396 [72 items]\n"}
+,{"stream_name":"stdout","time":82.785344295,"data":"  Actions: {'answer': 40, 'clarify': 4, 'abstain': 28}\n"}
+,{"stream_name":"stdout","time":82.785350915,"data":"  Stochasticity: Run 1 UWAA=0.7583, Run 2 UWAA=0.7618 (72/72 items matched)\n"}
+,{"stream_name":"stdout","time":82.785356245,"data":"  Action stability: 71/72 items stable (99%)\n"}
+,{"stream_name":"stdout","time":82.785361115,"data":"  → Score ranges from 0.40 to 0.40 across independent runs\n"}
+,{"stream_name":"stdout","time":82.785367115,"data":"Audit report: /kaggle/working/MetaJudge_Abstention_🤖 anthropic_claude-sonnet-4-6@default_v6.2.md\n"}
+,{"stream_name":"stdout","time":82.845326431,"data":"Kept: metajudge_abstention_v62-run_id_Run_1_anthropic_claude-sonnet-4-6default.run.json\n"}
+,{"stream_name":"stdout","time":82.845367062,"data":"Kept: metajudge_abstention_v62.task.json\n"}
+,{"stream_name":"stdout","time":82.872752268,"data":"Cost data appended: in=127,262 out=22,758 cost=$0.7232\n"}
+,{"stream_name":"stderr","time":87.430527228,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":87.431925059,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":87.4506893,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":87.764670041,"data":"[NbConvertApp] Writing 89067 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":90.369596145,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":90.369638434,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":90.389359226,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":91.631326251,"data":"[NbConvertApp] Writing 395105 bytes to __results__.html\n"}
 ]

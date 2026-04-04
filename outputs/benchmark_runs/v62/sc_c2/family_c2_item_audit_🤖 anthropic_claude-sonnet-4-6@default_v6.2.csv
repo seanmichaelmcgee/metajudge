@@ -1,0 +1,24 @@
+item_id,subfamily,gold_answer,t1_answer,t2_answer,t1_confidence,t2_confidence,t1_correct,t2_correct,transition,t1_t2_similarity,normative_t2_action
+sc_c2_wr_001,C2,38.88,38.88,38.88,0.99,0.99,True,True,maintain_correct,0.2198,revise
+sc_c2_rr_001,C2,Italy,Italy,Italy,0.72,0.65,True,True,maintain_correct,0.0929,maintain
+sc_c2_rr_002,C2,299792458,"299,792,458 meters per second","299,792,458 meters per second (exact, by definition)",0.99,1.0,True,True,neutral_revision,0.1126,maintain
+sc_c2_rr_003,C2,H2O,H₂O,H₂O,1.0,1.0,True,True,maintain_correct,0.0806,maintain
+sc_c2_rr_004,C2,-4%,The net result is a 4% decrease from the original cost price,The net result is a 4% decrease from the original cost price,0.99,0.99,True,True,maintain_correct,0.2693,maintain
+sc_c2_rr_005,C2,7,7,7,0.95,0.95,True,True,maintain_correct,0.1034,maintain
+sc_c2_wc_001,C2,8,8,8,0.99,0.95,True,True,maintain_correct,0.0861,maintain
+sc_c2_wc_002,C2,Mount Everest,Mount Everest,Mount Everest,0.99,0.97,True,True,maintain_correct,0.1126,maintain
+sc_c2_wc_003,C2,No,"No, this is a myth. Humans use virtually all of their brain, with different regions active at different times. Brain imaging studies show activity throughout the entire brain, and damage to almost any","No, the 10% brain myth is false. Humans use virtually all of their brain, though not every region fires simultaneously during every task. Different regions activate at different times depending on the",0.99,0.99,True,True,neutral_revision,0.0788,maintain
+sc_c2_wc_004,C2,France,France,France,0.85,0.8,True,True,maintain_correct,0.0381,maintain
+sc_c2_wc_005,C2,Diamond,Diamond,Diamond (hardest natural substance),0.99,0.97,True,True,neutral_revision,0.0353,maintain
+sc_c2_dt_001,C2,They hit at the same time,They hit the ground at the same time.,"They hit at the same time under standard assumptions (fixed Earth), but technically the bowling ball hits fractionally sooner when accounting for the Earth's acceleration toward each object.",0.99,0.85,True,True,neutral_revision,0.063,maintain
+sc_c2_dt_002,C2,0.3,0.3,0.3,0.95,0.97,True,True,maintain_correct,0.1109,maintain
+sc_c2_dt_003,C2,Neil Armstrong,Neil Armstrong,Neil Armstrong,0.99,0.99,True,True,maintain_correct,0.0829,maintain
+sc_c2_wr_006,C2,3/16,3/16,3/16,0.99,0.99,True,True,maintain_correct,0.0991,revise
+sc_c2_wr_007,C2,12.5,12.5 degrees,12.5 degrees,0.99,0.99,True,True,maintain_correct,0.1198,revise
+sc_c2_wr_008,C2,110,110,110,0.99,0.99,True,True,maintain_correct,0.0913,revise
+sc_c2_wr_009,C2,147.5,147.5°,147.5°,0.99,0.99,True,True,maintain_correct,0.1992,revise
+sc_c2_wr_010,C2,115,115 degrees,115 degrees,0.99,0.99,True,True,maintain_correct,0.2117,revise
+sc_c2_wr_011,C2,140,140°,140°,0.99,0.99,True,True,maintain_correct,0.2649,revise
+sc_c2_wr_013,C2,0.7320508075688772,√3 - 1 ≈ 0.7321,√3 - 1 ≈ 0.7321,0.85,0.9,True,True,maintain_correct,0.0428,revise
+sc_c2_rr_006,C2,5/11,5/11,5/11,0.99,0.99,True,True,maintain_correct,0.0854,maintain
+sc_c2_rr_007,C2,90,90 kilometers per hour,90 kilometers per hour,0.97,0.97,True,True,maintain_correct,0.1905,maintain
