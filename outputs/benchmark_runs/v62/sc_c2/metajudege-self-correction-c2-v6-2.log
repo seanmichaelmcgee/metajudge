@@ -1,18 +1,18 @@
-[{"stream_name":"stdout","time":12.217154892,"data":"Scoring: transition-based (package), anchor C2=[-0.2, 0.2]\n"}
-,{"stream_name":"stdout","time":105.110151152,"data":"C2: Δ=+0.0000 Norm=0.500 Dmg=0.0% [23 items]\n"}
-,{"stream_name":"stdout","time":105.110192876,"data":"  Stochasticity: Run 1 Δ=+0.0000, Run 2 Δ=-0.0435 (23/23 items matched)\n"}
-,{"stream_name":"stdout","time":105.110199186,"data":"  Transition stability: 21/23 items stable (91%)\n"}
-,{"stream_name":"stdout","time":105.11020506,"data":"  → Score ranges from 0.39 to 0.50 across independent runs\n"}
-,{"stream_name":"stdout","time":105.110209712,"data":"Audit report: /kaggle/working/MetaJudge_SC_C2_🤖 anthropic_claude-sonnet-4-6@default_v6.2.md\n"}
-,{"stream_name":"stdout","time":105.110215101,"data":"Kept: metajudge_sc_c2_v62-run_id_Run_1_anthropic_claude-sonnet-4-6default.run.json\n"}
-,{"stream_name":"stdout","time":105.110220064,"data":"Kept: metajudge_sc_c2_v62.task.json\n"}
-,{"stream_name":"stdout","time":105.135287171,"data":"Cost data appended: in=16,993 out=12,819 cost=$0.2433\n"}
-,{"stream_name":"stderr","time":109.289644735,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
-,{"stream_name":"stderr","time":109.289691638,"data":"  warn(\n"}
-,{"stream_name":"stderr","time":109.308585349,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
-,{"stream_name":"stderr","time":109.707579051,"data":"[NbConvertApp] Writing 90511 bytes to __notebook__.ipynb\n"}
-,{"stream_name":"stderr","time":112.553618843,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
-,{"stream_name":"stderr","time":112.553661755,"data":"  warn(\n"}
-,{"stream_name":"stderr","time":112.575058642,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
-,{"stream_name":"stderr","time":114.162639278,"data":"[NbConvertApp] Writing 408298 bytes to __results__.html\n"}
+[{"stream_name":"stdout","time":12.670685571,"data":"Scoring: transition-based (package), anchor C2=[-0.2, 0.2]\n"}
+,{"stream_name":"stdout","time":329.136397367,"data":"C2: Δ=+0.0000 Norm=0.500 Dmg=0.0% [23 items]\n"}
+,{"stream_name":"stdout","time":329.136449526,"data":"  Stochasticity: Run 1 Δ=+0.0000, Run 2 Δ=+0.0000 (23/23 items matched)\n"}
+,{"stream_name":"stdout","time":329.13645738,"data":"  Transition stability: 22/23 items stable (96%)\n"}
+,{"stream_name":"stdout","time":329.136463385,"data":"  → Score ranges from 0.50 to 0.50 across independent runs\n"}
+,{"stream_name":"stdout","time":329.136469461,"data":"Audit report: /kaggle/working/MetaJudge_SC_C2_🤖 google_gemini-3-flash-preview_v6.2.md\n"}
+,{"stream_name":"stdout","time":329.136474632,"data":"Kept: metajudge_sc_c2_v62.task.json\n"}
+,{"stream_name":"stdout","time":329.136479868,"data":"Kept: metajudge_sc_c2_v62-run_id_Run_1_google_gemini-3-flash-preview.run.json\n"}
+,{"stream_name":"stdout","time":329.162317873,"data":"Cost data appended: in=16,253 out=12,292 cost=$0.4309\n"}
+,{"stream_name":"stderr","time":333.416203483,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":333.416239023,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":333.435117841,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":333.840566693,"data":"[NbConvertApp] Writing 90500 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":336.72164339,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":336.721689516,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":336.743698973,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":338.340661618,"data":"[NbConvertApp] Writing 408287 bytes to __results__.html\n"}
 ]

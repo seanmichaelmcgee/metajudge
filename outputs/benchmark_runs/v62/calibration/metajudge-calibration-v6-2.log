@@ -1,15 +1,20 @@
-[{"stream_name":"stdout","time":12.919398046,"data":"Scoring: brier_item_score (inline), anchor A=[0.75, 1.0]\n"}
-,{"stream_name":"stdout","time":53.577625357,"data":"Calibration: 1-Brier=0.9110 Acc=91.4% Normalized=0.644 [105 items]\n"}
-,{"stream_name":"stdout","time":53.577679437,"data":"Audit report: /kaggle/working/MetaJudge_Calibration_🤖 anthropic_claude-sonnet-4-6@default_v6.2.md\n"}
-,{"stream_name":"stdout","time":53.585951752,"data":"Kept: metajudge_calibration_v62-run_id_Run_1_anthropic_claude-sonnet-4-6default.run.json\n"}
-,{"stream_name":"stdout","time":53.58598957,"data":"Kept: metajudge_calibration_v62.task.json\n"}
-,{"stream_name":"stdout","time":53.618375692,"data":"Cost data appended: in=105,223 out=15,285 cost=$0.5449\n"}
-,{"stream_name":"stderr","time":59.172532333,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
-,{"stream_name":"stderr","time":59.172583527,"data":"  warn(\n"}
-,{"stream_name":"stderr","time":59.193521495,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
-,{"stream_name":"stderr","time":59.603825585,"data":"[NbConvertApp] Writing 83001 bytes to __notebook__.ipynb\n"}
-,{"stream_name":"stderr","time":62.59892858,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
-,{"stream_name":"stderr","time":62.598971592,"data":"  warn(\n"}
-,{"stream_name":"stderr","time":62.62162636,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
-,{"stream_name":"stderr","time":63.953150061,"data":"[NbConvertApp] Writing 369353 bytes to __results__.html\n"}
+[{"stream_name":"stdout","time":13.174330038,"data":"Scoring: brier_item_score (inline), anchor A=[0.75, 1.0]\n"}
+,{"stream_name":"stderr","time":331.122619874,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stderr","time":331.122661371,"data":"\n"}
+,{"stream_name":"stderr","time":331.122666263,"data":"Wrong return type \u003cclass 'NoneType'\u003e. Expected \u003cclass 'dict'\u003e. This may need to lead to unexpected task behavior.\n"}
+,{"stream_name":"stdout","time":331.338477095,"data":"  ITEM FAILED: gen_a3_037: LengthFinishReasonError: Could not parse response content as the length limit was reached - CompletionUsage(completion_tokens=65113, prompt_token\n"}
+,{"stream_name":"stdout","time":331.338518743,"data":"  WARNING: 1/105 items failed. Score based on 104 items.\n"}
+,{"stream_name":"stdout","time":331.338546618,"data":"Calibration: 1-Brier=0.9631 Acc=96.2% Normalized=0.853 [104 items]\n"}
+,{"stream_name":"stdout","time":331.338656023,"data":"Audit report: /kaggle/working/MetaJudge_Calibration_🤖 google_gemini-3-flash-preview_v6.2.md\n"}
+,{"stream_name":"stdout","time":331.436268938,"data":"Kept: metajudge_calibration_v62-run_id_Run_1_google_gemini-3-flash-preview.run.json\n"}
+,{"stream_name":"stdout","time":331.436321059,"data":"Kept: metajudge_calibration_v62.task.json\n"}
+,{"stream_name":"stdout","time":331.471196955,"data":"Cost data appended: in=29,403 out=7,099 cost=$0.3031\n"}
+,{"stream_name":"stderr","time":336.149043604,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":336.149132105,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":336.170818729,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":336.62587108,"data":"[NbConvertApp] Writing 83455 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":339.743852349,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":339.74391074,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":339.768569816,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":341.216817072,"data":"[NbConvertApp] Writing 369844 bytes to __results__.html\n"}
 ]

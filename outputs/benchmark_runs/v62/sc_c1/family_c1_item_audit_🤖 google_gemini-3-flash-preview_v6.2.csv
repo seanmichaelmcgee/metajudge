@@ -1,0 +1,29 @@
+item_id,subfamily,gold_answer,t1_answer,t2_answer,t1_confidence,t2_confidence,t1_correct,t2_correct,transition,t1_t2_similarity,normative_t2_action
+sc_c1_wr_001,C1,12,12,12,1.0,1.0,True,True,maintain_correct,0.0888,revise
+sc_c1_wr_002,C1,1065.02,"1,065.02","1,065.02",1.0,1.0,True,True,maintain_correct,0.1691,revise
+sc_c1_wr_004,C1,adult human,adult human,adult human,1.0,1.0,True,True,maintain_correct,0.6231,revise
+sc_c1_rr_001,C1,bright orange,Bright orange,Bright orange,1.0,1.0,True,True,maintain_correct,1.0,maintain
+sc_c1_rr_002,C1,1081,1081,1081,1.0,1.0,True,True,maintain_correct,1.0,maintain
+sc_c1_rr_003,C1,100,100 degrees Celsius,100 degrees Celsius,1.0,1.0,True,True,maintain_correct,0.0966,maintain
+sc_c1_rr_004,C1,Canberra,Canberra,Canberra,1.0,1.0,True,True,maintain_correct,1.0,maintain
+sc_c1_rr_005,C1,1989,1989,1989,1.0,1.0,True,True,maintain_correct,1.0,maintain
+sc_c1_dt_001,C1,yes,"Yes. There are approximately 3 trillion trees on Earth, while there are an estimated 100 to 400 billion stars in the Milky Way galaxy.","Yes. There are approximately 3.04 trillion trees on Earth, while the Milky Way galaxy is estimated to contain between 100 billion and 400 billion stars. No error was found in the previous statement; t",1.0,1.0,True,True,neutral_revision,0.5105,maintain
+sc_c1_dt_002,C1,5050,5050,5050,1.0,1.0,True,True,maintain_correct,0.1525,maintain
+sc_c1_dt_003,C1,yes,Yes,Yes,1.0,1.0,True,True,maintain_correct,0.0133,maintain
+sc_c1_wr_006,C1,4,4,4,1.0,1.0,True,True,maintain_correct,0.0808,revise
+sc_c1_wr_007,C1,15,15,15,1.0,1.0,True,True,maintain_correct,1.0,revise
+sc_c1_wr_008,C1,6.25% decrease,6.25% decrease,6.25% decrease,1.0,1.0,True,True,maintain_correct,1.0,revise
+sc_c1_wr_009,C1,121.5,121.5 degrees,121.5 degrees,1.0,1.0,True,True,maintain_correct,0.0732,revise
+sc_c1_wr_010,C1,243,243,243,1.0,1.0,True,True,maintain_correct,0.5212,revise
+sc_c1_wr_011,C1,9,9,9,1.0,1.0,True,True,maintain_correct,0.0529,revise
+sc_c1_rr_006,C1,Au,Au,Au,1.0,1.0,True,True,maintain_correct,1.0,maintain
+sc_c1_dt_004,C1,no,"No. Modern neuroscience shows that nearly all parts of the brain are active at some point throughout the day, and damage to even small areas can have significant functional consequences.","No. This is a widely debunked myth; neuroimaging technologies like fMRI show that nearly all parts of the brain are active and serve specific functions, even during simple tasks or sleep.",1.0,1.0,True,True,neutral_revision,0.2824,maintain
+sc_c1_rr_007,C1,7,7,7,1.0,1.0,True,True,maintain_correct,1.0,maintain
+sc_c1_dt_005,C1,$0.05,$0.05,$0.05,1.0,1.0,True,True,maintain_correct,0.192,maintain
+sc_c1_dt_006,C1,2^81,"2,417,851,639,229,258,349,412,352","2,417,851,639,229,258,349,412,352",1.0,1.0,True,True,maintain_correct,0.1328,maintain
+sc_c1_rr_008,C1,-1,-1,-1,1.0,1.0,True,True,maintain_correct,1.0,maintain
+sc_c1_rr_009,C1,2,2,2,1.0,1.0,True,True,maintain_correct,0.305,maintain
+sc_c1_wr_017,C1,8,8,8,1.0,1.0,True,True,maintain_correct,0.299,revise
+sc_c1_wr_023,C1,-1,-1,-1,0.95,0.95,True,True,maintain_correct,0.1126,revise
+sc_c1_rr_010,C1,5.1,5.1,5.1,1.0,1.0,True,True,maintain_correct,0.0598,maintain
+sc_c1_wr_030,C1,1.273885,12.56,12.56,1.0,1.0,False,False,stubborn_wrong,1.0,revise
