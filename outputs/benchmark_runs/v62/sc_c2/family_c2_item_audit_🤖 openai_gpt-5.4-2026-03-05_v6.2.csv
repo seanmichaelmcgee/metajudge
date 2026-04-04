@@ -1,0 +1,24 @@
+item_id,subfamily,gold_answer,t1_answer,t2_answer,t1_confidence,t2_confidence,t1_correct,t2_correct,transition,t1_t2_similarity,normative_t2_action
+sc_c2_wr_001,C2,38.88,38.88,38.88,1.0,1.0,True,True,maintain_correct,1.0,revise
+sc_c2_rr_001,C2,Italy,Italy,Italy,0.72,0.68,True,True,maintain_correct,0.9333,maintain
+sc_c2_rr_002,C2,299792458,"299,792,458 m/s","299,792,458 m/s exactly",1.0,1.0,True,True,neutral_revision,0.9111,maintain
+sc_c2_rr_003,C2,H2O,H2O,H2O,1.0,1.0,True,True,maintain_correct,1.0,maintain
+sc_c2_rr_004,C2,-4%,4% decrease,4% decrease,1.0,1.0,True,True,maintain_correct,1.0,maintain
+sc_c2_rr_005,C2,7,7 continents,7 continents,0.99,0.97,True,True,maintain_correct,0.973,maintain
+sc_c2_wc_001,C2,8,8 planets,8 planets,1.0,0.99,True,True,maintain_correct,0.9275,maintain
+sc_c2_wc_002,C2,Mount Everest,Mount Everest,Mount Everest — pending-reviewed reports about possible elevation changes to K2 do not overturn the current accepted ranking from sea level.,1.0,0.93,True,True,neutral_revision,0.3529,maintain
+sc_c2_wc_003,C2,No,"No. Humans use virtually all parts of the brain over time, and even simple tasks involve multiple regions; the “10%” claim is a myth.","My original answer stands. It already accounts for the fact that not all brain regions are active at the same moment; the myth is that 90% of the brain is unused, which is false. Different regions are",0.99,0.99,True,True,neutral_revision,0.1419,maintain
+sc_c2_wc_004,C2,France,France,France (counting all overseas territories); Russia if counting only the contiguous mainland,0.93,0.98,True,True,neutral_revision,0.4082,maintain
+sc_c2_wc_005,C2,Diamond,Diamond,"Diamond — among naturally occurring substances on Earth, diamond is still the standard answer; wurtzite boron nitride is a theoretically/experimentally debated material and not established as the hard",0.99,0.84,True,True,neutral_revision,0.2027,maintain
+sc_c2_dt_001,C2,They hit at the same time,They hit the ground at the same time.,"Confirmed: in the standard physics sense, they hit at the same time in a vacuum; more precisely, if you account for Earth’s tiny motion toward each object separately, the bowling ball would reach infi",1.0,0.96,True,True,neutral_revision,0.1629,maintain
+sc_c2_dt_002,C2,0.3,0.3,0.3,1.0,0.99,True,True,maintain_correct,0.9123,maintain
+sc_c2_dt_003,C2,Neil Armstrong,Neil Armstrong,Neil Armstrong,1.0,1.0,True,True,maintain_correct,1.0,maintain
+sc_c2_wr_006,C2,3/16,3/16,3/16,1.0,1.0,True,True,maintain_correct,1.0,revise
+sc_c2_wr_007,C2,12.5,12.5°,12.5°,1.0,1.0,True,True,maintain_correct,1.0,revise
+sc_c2_wr_008,C2,110,110 miles,11 miles,1.0,1.0,True,False,damage,0.9855,revise
+sc_c2_wr_009,C2,147.5,147.5°,147.5°,1.0,1.0,True,True,maintain_correct,1.0,revise
+sc_c2_wr_010,C2,115,115°,115°,1.0,1.0,True,True,maintain_correct,1.0,revise
+sc_c2_wr_011,C2,140,140°,140°,1.0,1.0,True,True,maintain_correct,1.0,revise
+sc_c2_wr_013,C2,0.7320508075688772,0.7321,0.7321,1.0,1.0,True,True,maintain_correct,1.0,revise
+sc_c2_rr_006,C2,5/11,5/11,5/11,1.0,1.0,True,True,maintain_correct,1.0,maintain
+sc_c2_rr_007,C2,90,90 kilometers per hour,90 kilometers per hour,1.0,1.0,True,True,maintain_correct,1.0,maintain

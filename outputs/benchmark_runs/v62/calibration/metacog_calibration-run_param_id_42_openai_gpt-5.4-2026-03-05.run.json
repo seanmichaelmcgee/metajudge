@@ -1,0 +1,71 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "metacog_calibration",
+    "description": "Evaluate a single calibration item.\n\nReturns dict with item-level audit data: model_answer, confidence,\nis_correct, grading_method, and brier_score.\nReturns None if the item fails (runaway generation, parse error).",
+    "definition": "@kbench.task(name=\"metacog_calibration\", store_task=False)\ndef metacog_calibration(llm, item_id: str, question: str,\n                        gold_answer: str) -> dict:\n    \"\"\"Evaluate a single calibration item.\n\n    Returns dict with item-level audit data: model_answer, confidence,\n    is_correct, grading_method, and brier_score.\n    Returns None if the item fails (runaway generation, parse error).\n    \"\"\"\n    try:\n        with chats.new():\n            prompt = (\n                \"You are completing a metacognition evaluation task.\\n\\n\"\n                \"Task: Confidence Calibration\\n\"\n                f\"Question:\\n{question}\\n\\n\"\n                \"Instructions:\\n\"\n                \"1. Put only your final answer in the `answer` field.\\n\"\n                \"2. The `answer` field must contain the minimal answer only, \"\n                \"with no sentence wrapper or explanation.\\n\"\n                \"3. If the question requests a number only, return only the number.\\n\"\n                \"4. If the question requests one word only, return only that word.\\n\"\n                \"5. Provide a confidence score from 0.0 to 1.0.\\n\"\n                \"6. Explain why you are or are not certain in `reason_for_uncertainty`.\\n\"\n                \"7. Say whether you would verify this if possible.\\n\\n\"\n                \"IMPORTANT: Keep all fields concise (under 50 words each). Do not explain your reasoning at length.\\n\\nReturn valid structured output with keys: \"\n                \"answer, confidence, reason_for_uncertainty, would_verify_if_possible\"\n            )\n            response = llm.prompt(prompt, schema=CalibrationResponse)\n\n        conf = max(0.0, min(1.0, response.confidence))\n\n        grading = grade_item(item_id, response.answer, REGISTRY)\n        is_correct = grading[\"correct\"]\n        score = brier_item_score(is_correct, conf)\n\n        return {\n            \"item_id\": item_id,\n            \"gold_answer\": gold_answer,\n            \"model_answer\": str(response.answer),\n            \"confidence\": round(conf, 4),\n            \"is_correct\": is_correct,\n            \"grading_method\": grading.get(\"method\", \"\"),\n            \"brier_score\": round(score, 4),\n        }\n    except Exception as e:\n        _err = str(e).lower()\n        if \"403\" in _err or \"quota\" in _err or \"permission\" in _err or \"rate\" in _err:\n            raise  # Fatal \u2014 quota/permission/rate limit, crash immediately\n        print(f\"  ITEM FAILED: {item_id}: {type(e).__name__}: {str(e)[:120]}\")\n        return None\n"
+  },
+  "modelVersion": {
+    "slug": "openai/gpt-5.4-2026-03-05"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-04-04T03:25:15.605029Z",
+  "endTime": "2026-04-04T03:25:17.534885Z",
+  "conversations": [
+    {
+      "id": "metacog_calibration-c650ec03",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "Chat-6fc0debe",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are completing a metacognition evaluation task.\n\nTask: Confidence Calibration\nQuestion:\nWhat is the oldest university in the world that has operated continuously since its founding? Answer with the university name only.\n\nInstructions:\n1. Put only your final answer in the `answer` field.\n2. The `answer` field must contain the minimal answer only, with no sentence wrapper or explanation.\n3. If the question requests a number only, return only the number.\n4. If the question requests one word only, return only that word.\n5. Provide a confidence score from 0.0 to 1.0.\n6. Explain why you are or are not certain in `reason_for_uncertainty`.\n7. Say whether you would verify this if possible.\n\nIMPORTANT: Keep all fields concise (under 50 words each). Do not explain your reasoning at length.\n\nReturn valid structured output with keys: answer, confidence, reason_for_uncertainty, would_verify_if_possible"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "\"{\\\"answer\\\": \\\"University of al-Qarawiyyin\\\", \\\"confidence\\\": 0.84, \\\"reason_for_uncertainty\\\": \\\"This depends on definitions of 'university' and 'continuously operated'; some sources cite Bologna for Europe, but al-Qarawiyyin is commonly recognized globally.\\\", \\\"would_verify_if_possible\\\": true}\""
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "openai/gpt-5.4-2026-03-05"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 282,
+            "outputTokens": 72,
+            "inputTokensCostNanodollars": "705000",
+            "outputTokensCostNanodollars": "1080000",
+            "totalBackendLatencyMs": "1750"
+          },
+          "id": "Chat-6fc0debe-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 282,
+        "outputTokens": 72,
+        "inputTokensCostNanodollars": "705000",
+        "outputTokensCostNanodollars": "1080000",
+        "totalBackendLatencyMs": "1750"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "booleanResult": true
+    }
+  ],
+  "pyRunId": "metacog_calibration-Run #43"
+}

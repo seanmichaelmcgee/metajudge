@@ -1,0 +1,29 @@
+item_id,subfamily,gold_answer,t1_answer,t2_answer,t1_confidence,t2_confidence,t1_correct,t2_correct,transition,t1_t2_similarity,normative_t2_action
+sc_c1_wr_001,C1,12,12,"No error — Python uses bankers’ rounding, so round(0.5)=0, round(1.5)=2, round(2.5)=2, round(3.5)=4, round(4.5)=4; sum = 12.",1.0,1.0,True,False,damage,0.3146,revise
+sc_c1_wr_002,C1,1065.02,"€1,117.15","No error. \(1000 \times 1.05^3 = 1157.625\) USD, and \(1157.625 \times 0.92 = 1065.015\) EUR, which rounds to €1,065.02.",1.0,1.0,False,False,failed_revision,0.3315,revise
+sc_c1_wr_004,C1,adult human,adult human — adult human: 206 bones; giraffe neck: 7 bones,"No error — adult human has 206 bones; an adult giraffe’s neck has 7 bones, so adult human is correct.",0.99,0.99,True,True,neutral_revision,0.6857,revise
+sc_c1_rr_001,C1,bright orange,"Bright orange (often called “international orange”), not black.",No error — the “black box” flight recorder is typically bright orange (often “international orange”) for visibility and recovery.,0.99,0.99,True,True,neutral_revision,0.6033,maintain
+sc_c1_rr_002,C1,1081,1081,1081 (no error found),1.0,1.0,True,True,neutral_revision,0.7792,maintain
+sc_c1_rr_003,C1,100,100 °C,No error — pure water boils at 100 °C at 1 atm.,1.0,1.0,True,True,neutral_revision,0.6095,maintain
+sc_c1_rr_004,C1,Canberra,Canberra,No error — Canberra is the capital city of Australia.,1.0,1.0,True,True,neutral_revision,0.6018,maintain
+sc_c1_rr_005,C1,1989,1989,No error — 1989,1.0,1.0,True,True,neutral_revision,0.8451,maintain
+sc_c1_dt_001,C1,yes,"Yes — Earth has about 3 trillion trees, while the Milky Way has about 100–400 billion stars.","No error found — the previous answer is most likely correct. Earth has about 3 trillion trees; the Milky Way has about 100–400 billion stars, so there are more trees on Earth than stars in the Milky W",0.98,0.99,True,True,neutral_revision,0.6145,maintain
+sc_c1_dt_002,C1,5050,5050,No error — 5050 is correct.,1.0,1.0,True,True,neutral_revision,0.7229,maintain
+sc_c1_dt_003,C1,yes,Yes,Yes,0.98,0.98,True,True,maintain_correct,1.0,maintain
+sc_c1_wr_006,C1,4,4,4,1.0,1.0,True,True,maintain_correct,1.0,revise
+sc_c1_wr_007,C1,15,15,15,1.0,1.0,True,True,maintain_correct,1.0,revise
+sc_c1_wr_008,C1,6.25% decrease,decrease of 6.25%,No error — the net change is a decrease of 6.25%,1.0,1.0,True,True,neutral_revision,0.735,revise
+sc_c1_wr_009,C1,121.5,91.5°,No error — the exact angle is 91.5°,1.0,1.0,False,False,failed_revision,0.6739,revise
+sc_c1_wr_010,C1,243,220,"No error. The primes between 40 and 60 are 41, 43, 47, 53, and 59; their sum is 243.",1.0,1.0,False,True,correction_gain,0.3885,revise
+sc_c1_wr_011,C1,9,9,"No error; the perfect squares strictly between 100 and 400 are 121, 144, 169, 196, 225, 256, 289, 324, 361, so there are 9.",1.0,1.0,True,True,neutral_revision,0.3068,revise
+sc_c1_rr_006,C1,Au,Au,No error; the chemical symbol for gold is Au.,1.0,1.0,True,True,neutral_revision,0.5657,maintain
+sc_c1_dt_004,C1,no,"No — the “10% of the brain” idea is a myth. Brain imaging and neurological evidence show that most parts of the brain have functions and are active over the course of a day, even if not all at once.",No error found. The correct answer is still: No — humans do not use only 10% of their brains; that claim is a myth unsupported by neuroscience.,0.99,0.99,True,True,neutral_revision,0.3836,maintain
+sc_c1_rr_007,C1,7,7,7,1.0,1.0,True,True,maintain_correct,1.0,maintain
+sc_c1_dt_005,C1,$0.05,$0.05,$0.05 (previous answer was correct; the common error would be answering $0.10),1.0,1.0,True,True,neutral_revision,0.4593,maintain
+sc_c1_dt_006,C1,2^81,2417851639229258349412352,"No error — exponentiation is right-associative, so 2^3^4 = 2^(3^4) = 2^81 = 2417851639229258349412352",1.0,1.0,True,True,neutral_revision,0.573,maintain
+sc_c1_rr_008,C1,-1,-1,No error — `-7 % -3` is `-1` in Python 3.,1.0,1.0,True,False,damage,0.5895,maintain
+sc_c1_rr_009,C1,2,4,"No error — the primes strictly between 7 and 31 are 11, 13, 17, 19, 23, 29. Those congruent to 1 mod 6 are 13, 19, 31? But 31 is not strictly between, so only 13 and 19. Corrected answer: 2",1.0,0.99,False,True,correction_gain,0.1909,maintain
+sc_c1_wr_017,C1,8,8,512,0.99,0.97,True,False,damage,0.8889,revise
+sc_c1_wr_023,C1,-1,-1,No real value,0.92,0.99,True,False,damage,0.7385,revise
+sc_c1_rr_010,C1,5.1,5.1,No error; 5.1 is correct.,0.99,0.99,True,True,neutral_revision,0.7179,maintain
+sc_c1_wr_030,C1,1.273885,12.56,1.27 (previous answer had an order-of-operations error),1.0,1.0,False,True,correction_gain,0.5,revise
