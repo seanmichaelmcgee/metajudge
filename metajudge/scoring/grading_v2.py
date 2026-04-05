@@ -33,7 +33,9 @@ def _normalize(text: Optional[str]) -> Optional[str]:
     """Lowercase, collapse whitespace, strip."""
     if text is None:
         return None
-    return " ".join(str(text).strip().lower().split())
+    s = " ".join(str(text).strip().lower().split())
+    s = s.replace('\u2212', '-')  # Unicode minus → ASCII hyphen-minus
+    return s
 
 
 def _normalize_sci(text: str) -> str:
@@ -43,6 +45,7 @@ def _normalize_sci(text: str) -> str:
     Converts Unicode superscripts to ASCII exponent notation.
     """
     s = text.strip().lower()
+    s = s.replace('\u2212', '-')  # Unicode minus → ASCII hyphen-minus
     # Normalize multiplication signs
     s = s.replace("×", "x").replace("·", "x")
     # Collapse spaces around x (multiplication) and ^
