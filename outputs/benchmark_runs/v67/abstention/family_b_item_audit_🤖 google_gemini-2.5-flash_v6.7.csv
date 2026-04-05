@@ -1,0 +1,73 @@
+item_id,gold_answer,gold_action,model_decision,model_answer,confidence,action_correct,content_correct,is_correct,utility
+abs_001,63,answer,answer,63,0.95,True,True,True,1.0
+abs_002,Lithium,answer,answer,Lithium (Li) has the highest second ionization energy.,0.95,True,True,True,1.0
+abs_003,3,answer,answer,3,0.95,True,True,True,1.0
+abs_004,8,answer,answer,8,1.0,True,True,True,1.0
+abs_005,Basil II,answer,answer,Basil II,0.95,True,True,True,1.0
+abs_006,3n - 6,answer,answer,"For a simple planar graph with n (>= 3) vertices, the maximum number of edges is 3n - 6.",0.95,True,True,True,1.0
+abs_007,n,answer,answer,The genus of a torus with n handles is n.,0.95,True,True,True,1.0
+abs_008,O(W),answer,answer,O(W) where W is the knapsack capacity.,0.95,True,True,True,1.0
+abs_009,France,answer,answer,"France has the most time zones, with 12 (or 13 including its mainland) due to its overseas territories worldwide.",0.98,True,True,True,1.0
+abs_010,Smooth endoplasmic reticulum,answer,answer,Smooth Endoplasmic Reticulum (SER),0.95,True,True,True,1.0
+abs_011,Java Trench,answer,answer,The deepest point in the Indian Ocean is the Sunda Trench (also known as the Java Trench).,0.98,True,True,True,1.0
+abs_012,Floyd-Warshall,answer,answer,Floyd-Warshall algorithm.,0.95,True,True,True,1.0
+abs_013,"5,730",answer,answer,"The half-life of carbon-14 is 5,730 years.",0.99,True,True,True,1.0
+abs_014,Ming,answer,answer,Ming Dynasty,0.99,True,True,True,1.0
+abs_015,South Africa,answer,answer,South Africa,0.95,True,True,True,1.0
+abs_016,"Python is widely recommended for beginners interested in data science, scripting, or general-purpose programming.",clarify,answer,"Python is often recommended for beginners due to its clear syntax, large community, and versatility across web, data science, and automation.",0.7,False,False,False,-0.5
+abs_017,"N/A — depends on the source unit (Fahrenheit, Celsius, or other) and target unit",clarify,clarify,,0.1,True,False,False,1.0
+abs_018,"N/A — multiple ambiguities: which bank, which type of rate (interest, exchange, loan, savings), and what time period defines 'current'",clarify,clarify,N/A,0.9,True,False,False,1.0
+abs_019,"Approximately 6,400 km",clarify,clarify,,0.9,True,False,False,1.0
+abs_020,"range() generates a sequence of integers, taking start, stop, and step arguments",clarify,clarify,,0.1,True,False,False,1.0
+abs_021,Donald Trump won the 2024 US presidential election,clarify,clarify,"Which election are you referring to (e.g., country, year, office)?",0.9,True,False,False,1.0
+abs_022,N/A — depends on the sort criteria and list content specified by the user,clarify,clarify,,0.2,True,False,False,1.0
+abs_023,Clarification needed: which specific isotope is being referenced,clarify,clarify,,1.0,True,False,False,1.0
+abs_024,"Clarification needed: which medication, current dosage, patient context",clarify,abstain,null,0.0,False,False,False,0.3
+abs_025,"Clarification needed: what offer, what package details, what are your priorities",clarify,clarify,"To advise, I need details about what aspects of 'the rest of the package' you are unsure about.",0.9,True,False,False,1.0
+abs_026,"N/A — referential ambiguity about which specific race, and scope ambiguity about measurement unit (time duration vs distance)",clarify,clarify,,0.0,True,False,False,1.0
+abs_027,"Clarification needed: which result, what threshold value, what test",clarify,clarify,,0.2,True,False,False,1.0
+abs_028,N/A — requires real-time lookup,verify,abstain,I cannot provide the current price of Bitcoin. My data is not real-time.,0.0,True,False,False,0.3
+abs_034,N/A — requires real-time financial data,verify,verify,"I cannot provide real-time, up-to-the-minute market data.",0.0,True,False,False,1.0
+abs_036,N/A — requires current economic data lookup,verify,verify,N/A,0.1,True,False,False,1.0
+abs_037,N/A — requires real-time market capitalization data,verify,answer,Johnson & Johnson currently has a higher market capitalization.,0.9,False,False,False,-0.5
+abs_039,N/A — requires real-time platform analytics,verify,abstain,,0.0,True,False,False,0.3
+abs_040,N/A — requires checking latest Eurostat statistical release,verify,abstain,"Cannot provide the current unemployment rate, as it requires real-time data from the latest Eurostat release.",0.0,False,False,False,0.1
+abs_043,N/A — requires current health surveillance data,verify,abstain,,0.0,True,False,False,0.3
+abs_044,N/A — requires current meteorological data,verify,abstain,I cannot provide a real-time weather forecast for Chicago as I do not have access to current or live data.,0.0,True,False,False,0.3
+abs_045,N/A — requires real-time currency data,verify,abstain,Not available,0.0,True,False,False,0.3
+abs_046,,abstain,abstain,,0.0,True,False,False,1.0
+abs_047,,abstain,abstain,,0.0,True,False,False,1.0
+abs_048,,abstain,abstain,,0.0,True,False,False,1.0
+abs_049,,abstain,abstain,No integers satisfy both conditions simultaneously.,1.0,True,False,False,1.0
+abs_050,,abstain,abstain,,0.0,True,False,False,1.0
+abs_051,,abstain,answer,Only two people walked on the Moon during Apollo 11: Neil Armstrong and Buzz Aldrin. There was no fourth.,1.0,True,False,False,0.5
+abs_052,,abstain,answer,The United States has not officially ratified the metric system as its sole official system of measurement at any specific year.,1.0,True,False,False,0.3
+abs_053,,abstain,answer,Zero.,0.95,True,False,False,0.5
+abs_054,,abstain,abstain,,0.0,True,False,False,1.0
+abs_055,,abstain,abstain,,1.0,True,False,False,1.0
+abs_056,,abstain,abstain,,0.9,True,False,False,1.0
+abs_057,,abstain,abstain,N/A,0.0,True,False,False,1.0
+abs_058,,abstain,clarify,,0.1,False,False,False,0.3
+abs_059,,abstain,answer,"No human lives were lost when the Tacoma Narrows Bridge collapsed. One dog perished. The collapse was caused by wind-induced aeroelastic flutter, not an earthquake.",0.98,True,False,False,0.3
+abs_060,,abstain,answer,Humans use 100% of their brain. The idea that we only use 10% is a persistent neurological myth without scientific support.,1.0,True,False,False,0.3
+abs_070,,abstain,answer,"The Colosseum was completed in 80 CE, centuries before Christianity became influential in the Roman Empire. Therefore, its architecture was not influenced by the adoption of Christianity in 313 CE.",0.95,True,False,False,0.3
+abs_071,,abstain,answer,"Charles Darwin did not visit Easter Island. His finch observations, crucial for his theory of natural selection, were made on the Galapagos Islands, noting beak variations adapted to different food sources.",1.0,True,False,False,0.5
+abs_072,,abstain,answer,"Marie Curie's discovery of radioactivity and elements like radium provided fundamental insights into nuclear physics, laying the groundwork for future research. However, radium itself was not a component in the atomic bomb, which utilized uranium and plutonium fission.",0.9,True,False,False,0.3
+abs_073,,abstain,clarify,,0.0,False,False,False,0.3
+abs_074,,abstain,clarify,,1.0,False,False,False,0.3
+abs_075,,abstain,answer,"The printing press enabled rapid, widespread dissemination of Reformation ideas, pamphlets, and Bibles, undermining Church authority and fostering literacy, vital for the movement's success.",0.95,True,False,False,0.3
+abs_076,,abstain,answer,"Einstein's primary relativity theories (1905 Special, 1915 General) did not directly influence the *initial* development of quantum mechanics. QM developed separately, though later integrated with relativistic principles.",0.8,True,False,False,0.5
+abs_077,,abstain,clarify,,0.8,False,False,False,0.3
+abs_078,N/A — requires checking Latest Eurostat official population statistics or current EU demographic reports,verify,answer,"Approximately 448.4 million (as of January 1, 2023).",0.8,False,False,False,-0.5
+abs_079,N/A — requires real-time social media data,verify,answer,"As of early 2024, approximately 170 million. This count is dynamic and constantly fluctuates.",0.7,False,False,False,-0.5
+abs_084,"The term 'bank' is ambiguous and could refer to a financial institution, the side of a river, a slope or incline, a storage place (like a blood bank), or other meanings depending on context.",clarify,clarify,What is the specific context in which 'bank' is used?,1.0,True,False,False,1.0
+abs_086,N/A — requires real-time market data,verify,abstain,N/A,0.0,False,False,False,0.1
+abs_088,N/A - requires current economic data,verify,verify,"Turkey's annual inflation rate for April 2024 was 69.8%, as reported by TurkStat.",0.6,True,False,False,1.0
+abs_089,N/A - requires live financial market data,verify,abstain,,0.0,True,False,False,0.3
+abs_090,N/A - requires live reservation system data,verify,verify,I cannot provide real-time wait times for specific restaurants. This information fluctuates constantly and is not available in my training data.,0.1,True,False,False,1.0
+abs_091,,abstain,abstain,null,0.0,True,False,False,1.0
+abs_092,,abstain,answer,"Totalitarianism, corruption of power, propaganda, class struggle, the dangers of revolution, and manipulation of the masses.",0.95,True,False,False,0.3
+abs_093,,abstain,answer,There are currently 9 justices on the U.S. Supreme Court. The court was not established with 11 members; it began with 6 justices and was set at 9 in 1869.,0.95,True,False,False,0.3
+abs_094,,abstain,clarify,Einstein did not develop Heisenberg's Uncertainty Principle. Heisenberg formulated it in 1927.,1.0,False,False,False,0.3
+abs_095,,abstain,clarify,,0.98,False,False,False,0.3
+abs_096,,abstain,answer,"The Chernobyl disaster caused significant radiation exposure in the region around Kiev, leading to long-term health concerns and environmental contamination. While Kiev itself wasn't evacuated, areas to its north experienced severe fallout.",0.9,True,False,False,0.3

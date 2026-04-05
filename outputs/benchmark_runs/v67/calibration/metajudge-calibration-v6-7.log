@@ -1,0 +1,42 @@
+[{"stream_name":"stdout","time":13.629321065,"data":"Scoring: brier_item_score (inline), anchor A=[0.75, 1.0]\n"}
+,{"stream_name":"stdout","time":13.696813687,"data":"Calibration items after scoring_status filter: 103\n"}
+,{"stream_name":"stderr","time":14.033794625,"data":"[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.\n"}
+,{"stream_name":"stderr","time":14.033920203,"data":"\n"}
+,{"stream_name":"stderr","time":14.033941055,"data":"[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.\n"}
+,{"stream_name":"stderr","time":23.782585983,"data":"[Parallel(n_jobs=8)]: Done  16 tasks      | elapsed:    9.8s\n"}
+,{"stream_name":"stderr","time":23.782636915,"data":"\n"}
+,{"stream_name":"stderr","time":23.782642727,"data":"[Parallel(n_jobs=8)]: Done  16 tasks      | elapsed:    9.8s\n"}
+,{"stream_name":"stderr","time":36.88237997,"data":"[Parallel(n_jobs=8)]: Done  56 tasks      | elapsed:   22.9s\n"}
+,{"stream_name":"stderr","time":36.882524175,"data":"\n"}
+,{"stream_name":"stderr","time":36.882549912,"data":"[Parallel(n_jobs=8)]: Done  56 tasks      | elapsed:   22.9s\n"}
+,{"stream_name":"stderr","time":57.57351459,"data":"[Parallel(n_jobs=8)]: Done 103 out of 103 | elapsed:   43.5s finished\n"}
+,{"stream_name":"stderr","time":57.573566407,"data":"[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.\n"}
+,{"stream_name":"stderr","time":57.573574812,"data":"\n"}
+,{"stream_name":"stderr","time":57.573580089000004,"data":"[Parallel(n_jobs=8)]: Done 103 out of 103 | elapsed:   43.5s finished\n"}
+,{"stream_name":"stderr","time":57.573585796,"data":"[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.\n"}
+,{"stream_name":"stderr","time":66.150949835,"data":"[Parallel(n_jobs=8)]: Done  16 tasks      | elapsed:    8.6s\n"}
+,{"stream_name":"stderr","time":66.151005605,"data":"\n"}
+,{"stream_name":"stderr","time":66.15101415,"data":"[Parallel(n_jobs=8)]: Done  16 tasks      | elapsed:    8.6s\n"}
+,{"stream_name":"stderr","time":79.827682676,"data":"[Parallel(n_jobs=8)]: Done  56 tasks      | elapsed:   22.2s\n"}
+,{"stream_name":"stderr","time":79.827743242,"data":"\n"}
+,{"stream_name":"stderr","time":79.827751399,"data":"[Parallel(n_jobs=8)]: Done  56 tasks      | elapsed:   22.2s\n"}
+,{"stream_name":"stderr","time":96.18926818,"data":"[Parallel(n_jobs=8)]: Done 103 out of 103 | elapsed:   38.5s finished\n"}
+,{"stream_name":"stderr","time":96.189317092,"data":"\n"}
+,{"stream_name":"stderr","time":96.189324487,"data":"[Parallel(n_jobs=8)]: Done 103 out of 103 | elapsed:   38.5s finished\n"}
+,{"stream_name":"stdout","time":96.190918733,"data":"Calibration: 1-Brier=0.9661 Acc=96.1% Normalized=0.864 [103 items]\n"}
+,{"stream_name":"stdout","time":96.190963927,"data":"  Stochasticity: Run 1 1-Brier=0.9661, Run 2 1-Brier=0.9731 (103/103 items matched)\n"}
+,{"stream_name":"stdout","time":96.190972363,"data":"  Item stability: 97/103 items stable (94%)\n"}
+,{"stream_name":"stdout","time":96.190978719,"data":"  → Score ranges from 0.86 to 0.89 across independent runs\n"}
+,{"stream_name":"stdout","time":96.190985422,"data":"  Usage: run.json not found, cost data unavailable\n"}
+,{"stream_name":"stdout","time":96.190991393,"data":"Audit report: /kaggle/working/MetaJudge_Calibration_🤖 google_gemini-2.5-flash_v6.5.md\n"}
+,{"stream_name":"stdout","time":96.354816178,"data":"Kept: metajudge_calibration_v67-run_id_Run_1_google_gemini-2.5-flash.run.json\n"}
+,{"stream_name":"stdout","time":96.354860749,"data":"Kept: metajudge_calibration_v67.task.json\n"}
+,{"stream_name":"stderr","time":101.034360424,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":101.034419128,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":101.056309018,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":101.513306099,"data":"[NbConvertApp] Writing 87893 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":104.67828067,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":104.678338287,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":104.70254395,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":106.220366134,"data":"[NbConvertApp] Writing 384536 bytes to __results__.html\n"}
+]

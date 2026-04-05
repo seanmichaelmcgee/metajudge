@@ -1,0 +1,54 @@
+[{"stream_name":"stdout","time":14.075805685,"data":"Scoring: v6.5 opportunity-conditioned headline (package), anchor C2=[-0.2, 0.2]\n"}
+,{"stream_name":"stderr","time":14.480099751000001,"data":"[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.\n"}
+,{"stream_name":"stderr","time":14.480151507,"data":"\n"}
+,{"stream_name":"stderr","time":14.48015826,"data":"[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.\n"}
+,{"stream_name":"stderr","time":25.312740721,"data":"[Parallel(n_jobs=8)]: Done  10 out of  21 | elapsed:   10.8s remaining:   11.9s\n"}
+,{"stream_name":"stderr","time":25.312818782,"data":"\n"}
+,{"stream_name":"stderr","time":25.312826685,"data":"[Parallel(n_jobs=8)]: Done  10 out of  21 | elapsed:   10.8s remaining:   11.9s\n"}
+,{"stream_name":"stderr","time":33.221774093,"data":"[Parallel(n_jobs=8)]: Done  14 out of  21 | elapsed:   18.7s remaining:    9.4s\n"}
+,{"stream_name":"stderr","time":33.221828918,"data":"\n"}
+,{"stream_name":"stderr","time":33.22183354,"data":"[Parallel(n_jobs=8)]: Done  14 out of  21 | elapsed:   18.7s remaining:    9.4s\n"}
+,{"stream_name":"stderr","time":35.539576757,"data":"[Parallel(n_jobs=8)]: Done  18 out of  21 | elapsed:   21.1s remaining:    3.5s\n"}
+,{"stream_name":"stderr","time":35.539657166,"data":"\n"}
+,{"stream_name":"stderr","time":35.539665424,"data":"[Parallel(n_jobs=8)]: Done  18 out of  21 | elapsed:   21.1s remaining:    3.5s\n"}
+,{"stream_name":"stderr","time":61.536355741,"data":"[Parallel(n_jobs=8)]: Done  21 out of  21 | elapsed:   47.1s finished\n"}
+,{"stream_name":"stderr","time":61.536439612,"data":"[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.\n"}
+,{"stream_name":"stderr","time":61.536450121,"data":"\n"}
+,{"stream_name":"stderr","time":61.536457177,"data":"[Parallel(n_jobs=8)]: Done  21 out of  21 | elapsed:   47.1s finished\n"}
+,{"stream_name":"stderr","time":61.536464126,"data":"[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.\n"}
+,{"stream_name":"stderr","time":74.404586488,"data":"[Parallel(n_jobs=8)]: Done  10 out of  21 | elapsed:   12.9s remaining:   14.1s\n"}
+,{"stream_name":"stderr","time":74.404652784,"data":"\n"}
+,{"stream_name":"stderr","time":74.404661011,"data":"[Parallel(n_jobs=8)]: Done  10 out of  21 | elapsed:   12.9s remaining:   14.1s\n"}
+,{"stream_name":"stderr","time":79.05384426,"data":"[Parallel(n_jobs=8)]: Done  14 out of  21 | elapsed:   17.5s remaining:    8.8s\n"}
+,{"stream_name":"stderr","time":79.053913723,"data":"\n"}
+,{"stream_name":"stderr","time":79.053921984,"data":"[Parallel(n_jobs=8)]: Done  14 out of  21 | elapsed:   17.5s remaining:    8.8s\n"}
+,{"stream_name":"stderr","time":83.96595983,"data":"[Parallel(n_jobs=8)]: Done  18 out of  21 | elapsed:   22.4s remaining:    3.7s\n"}
+,{"stream_name":"stderr","time":83.96603811,"data":"\n"}
+,{"stream_name":"stderr","time":83.966160957,"data":"[Parallel(n_jobs=8)]: Done  18 out of  21 | elapsed:   22.4s remaining:    3.7s\n"}
+,{"stream_name":"stdout","time":97.817696658,"data":"C2 v6.5: headline=0.6932  (legacy Δ=-0.0952 norm=0.262)  Dmg=9.5% [21 items]\n"}
+,{"stream_name":"stdout","time":97.817774117,"data":"  Preserve rate: 0.886 (19/21)\n"}
+,{"stream_name":"stdout","time":97.817784909,"data":"  Repair rate:   0.500 (0/0)\n"}
+,{"stream_name":"stdout","time":97.81779093,"data":"  Damage rate:   0.114 (2/21)\n"}
+,{"stream_name":"stdout","time":97.817796414,"data":"  Nonrepair rate:0.500 (0/0)\n"}
+,{"stream_name":"stdout","time":97.817801765,"data":"    sc_c2_dt_001: 'They hit the ground at the same time.' → 'The bowling ball will hit the ground fra'\n"}
+,{"stream_name":"stdout","time":97.817844355,"data":"    sc_c2_rr_006: '5/11' → 'CONFIDENCE: 1.0'\n"}
+,{"stream_name":"stdout","time":97.817850338,"data":"  Stochasticity: Run 1 headline=0.6932, Run 2 headline=0.6705 (21/21 items matched)\n"}
+,{"stream_name":"stdout","time":97.817855872,"data":"  Stochasticity (legacy): Run 1 Δ=-0.0952, Run 2 Δ=-0.1429\n"}
+,{"stream_name":"stdout","time":97.817860428,"data":"  Transition stability: 19/21 items stable (90%)\n"}
+,{"stream_name":"stdout","time":97.817865815,"data":"  → Score ranges from 0.6705 to 0.6932 across independent runs\n"}
+,{"stream_name":"stdout","time":97.817870799,"data":"  Usage: run.json not found, cost data unavailable\n"}
+,{"stream_name":"stdout","time":97.817875499,"data":"Audit report: /kaggle/working/MetaJudge_SC_C2_🤖 google_gemini-2.5-flash_v6.7.md\n"}
+,{"stream_name":"stdout","time":97.817880396,"data":"Kept: metajudge_sc_c2_v67.task.json\n"}
+,{"stream_name":"stdout","time":97.817884553,"data":"Kept: metajudge_sc_c2_v67-run_id_Run_1_google_gemini-2.5-flash.run.json\n"}
+,{"stream_name":"stderr","time":97.819358936,"data":"[Parallel(n_jobs=8)]: Done  21 out of  21 | elapsed:   36.3s finished\n"}
+,{"stream_name":"stderr","time":97.819463968,"data":"\n"}
+,{"stream_name":"stderr","time":97.81946966,"data":"[Parallel(n_jobs=8)]: Done  21 out of  21 | elapsed:   36.3s finished\n"}
+,{"stream_name":"stderr","time":102.581608119,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":102.581650277,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":102.602737293,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":103.041557446,"data":"[NbConvertApp] Writing 93116 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":106.179635677,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":106.179676596,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":106.203462671,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":107.909695104,"data":"[NbConvertApp] Writing 408850 bytes to __results__.html\n"}
+]

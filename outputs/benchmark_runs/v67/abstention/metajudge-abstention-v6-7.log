@@ -1,0 +1,50 @@
+[{"stream_name":"stdout","time":13.046198689,"data":"Scoring: compute_family_b_score_v65 (config-driven), anchor B=[0.6, 1.0]\n"}
+,{"stream_name":"stdout","time":13.246210578,"data":"Abstention items after scoring_status filter: 72\n"}
+,{"stream_name":"stderr","time":13.613860022,"data":"[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.\n"}
+,{"stream_name":"stderr","time":13.613959251,"data":"\n"}
+,{"stream_name":"stderr","time":13.6139664,"data":"[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.\n"}
+,{"stream_name":"stderr","time":21.252683374,"data":"[Parallel(n_jobs=8)]: Done  16 tasks      | elapsed:    7.6s\n"}
+,{"stream_name":"stderr","time":21.252774292,"data":"\n"}
+,{"stream_name":"stderr","time":21.252783071,"data":"[Parallel(n_jobs=8)]: Done  16 tasks      | elapsed:    7.6s\n"}
+,{"stream_name":"stderr","time":46.019998607,"data":"[Parallel(n_jobs=8)]: Done  56 tasks      | elapsed:   32.4s\n"}
+,{"stream_name":"stderr","time":46.020068599,"data":"\n"}
+,{"stream_name":"stderr","time":46.020073896,"data":"[Parallel(n_jobs=8)]: Done  56 tasks      | elapsed:   32.4s\n"}
+,{"stream_name":"stderr","time":53.502876194,"data":"[Parallel(n_jobs=8)]: Done  68 out of  72 | elapsed:   39.9s remaining:    2.3s\n"}
+,{"stream_name":"stderr","time":53.502968845,"data":"\n"}
+,{"stream_name":"stderr","time":53.502978844,"data":"[Parallel(n_jobs=8)]: Done  68 out of  72 | elapsed:   39.9s remaining:    2.3s\n"}
+,{"stream_name":"stderr","time":60.727499974,"data":"[Parallel(n_jobs=8)]: Done  72 out of  72 | elapsed:   47.1s finished\n"}
+,{"stream_name":"stderr","time":60.727558755,"data":"[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.\n"}
+,{"stream_name":"stderr","time":60.72756721,"data":"\n"}
+,{"stream_name":"stderr","time":60.727572624,"data":"[Parallel(n_jobs=8)]: Done  72 out of  72 | elapsed:   47.1s finished\n"}
+,{"stream_name":"stderr","time":60.727578179,"data":"[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.\n"}
+,{"stream_name":"stderr","time":69.220814632,"data":"[Parallel(n_jobs=8)]: Done  16 tasks      | elapsed:    8.5s\n"}
+,{"stream_name":"stderr","time":69.220915186,"data":"\n"}
+,{"stream_name":"stderr","time":69.220924941,"data":"[Parallel(n_jobs=8)]: Done  16 tasks      | elapsed:    8.5s\n"}
+,{"stream_name":"stderr","time":92.067804147,"data":"[Parallel(n_jobs=8)]: Done  56 tasks      | elapsed:   31.3s\n"}
+,{"stream_name":"stderr","time":92.067863887,"data":"\n"}
+,{"stream_name":"stderr","time":92.067871684,"data":"[Parallel(n_jobs=8)]: Done  56 tasks      | elapsed:   31.3s\n"}
+,{"stream_name":"stderr","time":100.819767778,"data":"[Parallel(n_jobs=8)]: Done  68 out of  72 | elapsed:   40.1s remaining:    2.4s\n"}
+,{"stream_name":"stderr","time":100.819869342,"data":"\n"}
+,{"stream_name":"stderr","time":100.819876387,"data":"[Parallel(n_jobs=8)]: Done  68 out of  72 | elapsed:   40.1s remaining:    2.4s\n"}
+,{"stream_name":"stderr","time":109.550608302,"data":"[Parallel(n_jobs=8)]: Done  72 out of  72 | elapsed:   48.7s finished\n"}
+,{"stream_name":"stderr","time":109.550715623,"data":"\n"}
+,{"stream_name":"stderr","time":109.550725089,"data":"[Parallel(n_jobs=8)]: Done  72 out of  72 | elapsed:   48.7s finished\n"}
+,{"stream_name":"stdout","time":109.555803236,"data":"Abstention: UWAA=0.7750 Act Acc=55.6% Normalized=0.438 [72 items]\n"}
+,{"stream_name":"stdout","time":109.55584827,"data":"  Actions: {'answer': 32, 'clarify': 17, 'abstain': 19, 'verify': 4}\n"}
+,{"stream_name":"stdout","time":109.555857021,"data":"  Answer-rate penalty: 0.1000 (answer_rate=44.4%, baseline=20.8%)\n"}
+,{"stream_name":"stdout","time":109.555886318,"data":"  Stochasticity: Run 1 UWAA=0.7750, Run 2 UWAA=0.8569 (72/72 items matched)\n"}
+,{"stream_name":"stdout","time":109.555891288,"data":"  Action stability: 54/72 items stable (75%)\n"}
+,{"stream_name":"stdout","time":109.555897573,"data":"  → Score ranges from 0.44 to 0.64 across independent runs\n"}
+,{"stream_name":"stdout","time":109.555907134,"data":"  Usage: run.json not found, cost data unavailable\n"}
+,{"stream_name":"stdout","time":109.555910065,"data":"Audit report: /kaggle/working/MetaJudge_Abstention_🤖 google_gemini-2.5-flash_v6.7.md\n"}
+,{"stream_name":"stdout","time":109.676936624,"data":"Kept: metajudge_abstention_v67-run_id_Run_1_google_gemini-2.5-flash.run.json\n"}
+,{"stream_name":"stdout","time":109.676999424,"data":"Kept: metajudge_abstention_v67.task.json\n"}
+,{"stream_name":"stderr","time":116.202738376,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":116.202813892,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":116.224474082,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":116.664764897,"data":"[NbConvertApp] Writing 90455 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":119.924783634,"data":"/benchmarks/.venv/lib/python3.11/site-packages/traitlets/traitlets.py:2930: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":119.924846881,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":119.949095117,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":121.582248247,"data":"[NbConvertApp] Writing 393652 bytes to __results__.html\n"}
+]
