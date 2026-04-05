@@ -1,0 +1,22 @@
+item_id,subfamily,gold_answer,t1_answer,t2_answer,t1_confidence,t2_confidence,t1_correct,t2_correct,transition,coarse_transition,opportunity_type,revised,t1_t2_similarity,normative_t2_action
+sc_c1_wr_002,C1,1065.02,1065.00,1065.00,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.4251,revise
+sc_c1_rr_002,C1,1081,1081,1081,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.0979,maintain
+sc_c1_dt_001,C1,yes,yes,yes,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.1179,maintain
+sc_c1_dt_002,C1,5050,5050,5050,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.3912,maintain
+sc_c1_dt_003,C1,yes,Yes,Yes,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.5806,maintain
+sc_c1_wr_006,C1,4,4,4,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.0455,revise
+sc_c1_wr_007,C1,15,15,15,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.1085,revise
+sc_c1_wr_008,C1,6.25% decrease,A decrease of 6.25%.,A decrease of 6.25%.,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.1078,revise
+sc_c1_wr_009,C1,121.5,121.5,121.5,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.2842,revise
+sc_c1_wr_010,C1,243,243,243,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.1709,revise
+sc_c1_wr_011,C1,9,9,9,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.3112,revise
+sc_c1_rr_006,C1,Au,Au,Au,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.63,maintain
+sc_c1_dt_004,C1,no,No,No,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.1312,maintain
+sc_c1_rr_007,C1,7,7,7,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.1408,maintain
+sc_c1_dt_005,C1,$0.05,$0.05,$0.05,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.1834,maintain
+sc_c1_dt_006,C1,2^81,$2^{81}$,$2^{81}$,1.0,1.0,False,False,stubborn_wrong,nonrepair,repair,False,0.2147,maintain
+sc_c1_rr_008,C1,-1,-1,-1,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.1462,maintain
+sc_c1_rr_009,C1,2,2,2,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.2724,maintain
+sc_c1_wr_017,C1,8,8,8,1.0,1.0,True,True,maintain_correct,preserve_correct,preserve,False,0.476,revise
+sc_c1_rr_010,C1,5.1,**,**,1.0,1.0,False,False,stubborn_wrong,nonrepair,repair,False,0.3111,maintain
+sc_c1_wr_030,C1,1.273885,12.56,12.56,1.0,1.0,False,False,stubborn_wrong,nonrepair,repair,False,0.1713,revise
