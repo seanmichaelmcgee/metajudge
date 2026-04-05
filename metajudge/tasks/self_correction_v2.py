@@ -196,6 +196,82 @@ def grade_answer(
     return model_norm == gold_norm
 
 
+import re as _re
+
+_CONFIRMATION_PATTERNS = [
+    _re.compile(r"(?i)my answer remains"),
+    _re.compile(r"(?i)i confirm"),
+    _re.compile(r"(?i)the answer is still"),
+    _re.compile(r"(?i)yes,?\s+(?:the answer is|it is|that is correct)"),
+    _re.compile(r"(?i)i (?:still )?(?:believe|think|maintain)"),
+    _re.compile(r"(?i)correct[,.]?\s+the answer"),
+]
+
+
+def _is_confirmation(response_text: str, original_answer: str) -> bool:
+    """Check if a T2 response is confirming the T1 answer."""
+    if not response_text:
+        return False
+    text_lower = response_text.lower()
+    # Check for confirmation phrases
+    if any(p.search(text_lower) for p in _CONFIRMATION_PATTERNS):
+        # Also verify the original answer appears somewhere in the response
+        if original_answer and original_answer.strip().lower() in text_lower:
+            return True
+    return False
+
+
+def _extract_core_answer(answer: str, gold: str, aliases: list, rule: str) -> str:
+    """Extract the core factual answer, stripping confirmation phrases.
+
+    Used to determine if an answer genuinely changed between turns,
+    ignoring superficial wording like "Yes, my answer is still X".
+    """
+    if not answer:
+        return ""
+
+    norm = answer.strip().lower()
+
+    # Strip common confirmation prefixes
+    confirmation_prefixes = [
+        "yes, ", "yes. ", "correct, ", "correct. ",
+        "i confirm ", "i maintain ", "my answer remains ",
+        "the answer is still ", "as i said, ", "as before, ",
+        "i stand by my answer of ", "i still believe ",
+        "my answer is still ", "my previous answer of ",
+        "that is correct, ", "indeed, ",
+    ]
+    for prefix in confirmation_prefixes:
+        if norm.startswith(prefix):
+            norm = norm[len(prefix):]
+            break
+
+    # For numeric rules, try to extract the numeric value
+    if rule in ("numeric_tolerance", "approx_numeric", "exact_match_numeric"):
+        import re
+        numbers = re.findall(r'-?\d+\.?\d*', norm)
+        if numbers:
+            return numbers[0]
+
+    # For other rules, normalize whitespace and punctuation
+    norm = norm.strip().rstrip('.')
+
+    # If the answer is very short (likely just the core answer), use it directly
+    if len(norm.split()) <= 3:
+        return norm
+
+    # For longer answers, check if the gold answer or an alias appears
+    gold_lower = gold.lower().strip() if gold else ""
+    if gold_lower and gold_lower in norm:
+        return gold_lower
+    for alias in aliases:
+        if alias.lower() in norm:
+            return alias.lower()
+
+    # Fallback: use the full normalized answer
+    return norm
+
+
 # ── Full item evaluation ────────────────────────────────────────────
 
 def evaluate_item(
@@ -232,9 +308,32 @@ def evaluate_item(
     correct_1 = grade_answer(answer_1, gold, aliases, rule)
 
     answer_2 = turn2_response.get("revised_answer", answer_1)
+
+    # Fallback: if T2 has no explicit answer but confirms T1, inherit T1 answer
+    if not answer_2 or answer_2.strip() == "":
+        t2_text = turn2_response.get("response_text", "")
+        if t2_text and _is_confirmation(t2_text, answer_1):
+            answer_2 = answer_1
+
     conf_2 = float(turn2_response.get("revised_confidence", conf_1))
+
+    # --- Robust revised detection (v6.5) ---
+    # Only flag as revised if the extracted core answer actually changed.
+    # Simple affirmations ("Yes, 243 is correct") should NOT count as revisions.
     action = turn2_response.get("action", "maintain")
-    revised = action == "revise" or answer_1.strip().lower() != answer_2.strip().lower()
+
+    # Extract core answers for comparison
+    core_1 = _extract_core_answer(answer_1, gold, aliases, rule)
+    core_2 = _extract_core_answer(answer_2, gold, aliases, rule)
+
+    # Revised = model explicitly said "revise" AND the core answer changed,
+    # OR the core answers are genuinely different
+    if action == "revise":
+        # Model claims revision — verify the answer actually changed
+        revised = core_1 != core_2
+    else:
+        # Model claims maintain — verify answers match
+        revised = core_1 != core_2
     correct_2 = grade_answer(answer_2, gold, aliases, rule)
 
     return build_audit_row(
