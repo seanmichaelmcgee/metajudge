@@ -55,7 +55,7 @@ MetaJudge evaluates whether LLMs can **track the reliability of their own output
 
 - **No LLM judge.** Deterministic 8-rule grading engine. Every score is reproducible.
 - **Asymmetric damage penalties.** Breaking a correct answer costs more than fixing a wrong one.
-- **Dual-run stochasticity.** Tasks B, C1, C2 run twice to surface response variance.
+- **Dual-run stochasticity.** All four tasks run twice to surface response variance.
 - **Equal-weight composite.** Provably optimal at small n (Davis-Stober 2011).
 - **Behavioral evidence only.** What models do, not what they claim.
 - **Item quarantine system.** 11 items (1 quarantined, 10 shadow-scored) excluded from headline scores to remove structurally ambiguous or non-discriminating items while retaining them for diagnostics.
