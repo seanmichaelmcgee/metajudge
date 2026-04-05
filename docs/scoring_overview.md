@@ -18,8 +18,8 @@ Clamped to [0, 1]. A score of 0.0 means floor-level performance; 1.0 means ceili
 |------|-----------|-------|---------|---------------|-----------------|
 | Calibration | Mean 1-Brier | 0.75 | 1.00 | Random guessing at 50% confidence | Perfect calibration |
 | Abstention | UWAA | 0.60 | 1.00 | Empirical random-action baseline | Perfect action selection |
-| C1 | T2-T1 accuracy delta | −0.10 | +0.15 | Net damage | Net correction |
-| C2 | T2-T1 accuracy delta | −0.20 | +0.20 | Net damage (wider range — evidence can help or hurt more) | Net correction |
+| C1 | Opportunity-conditioned headline | −0.10 | +0.15 | Net damage | Net correction |
+| C2 | Opportunity-conditioned headline | −0.20 | +0.20 | Net damage (wider range — evidence can help or hurt more) | Net correction |
 
 Anchors were derived from the 5-model pilot sweep (Gemini Flash, Gemini Pro, Claude Sonnet, Claude Haiku, DeepSeek V3.1). Floor and ceiling approximate the range of observed performance plus margin.
 
@@ -68,22 +68,25 @@ where outcome = 1 if correct, 0 if incorrect. This is the Brier rule (Brier, 195
 - **verify** — request external verification (needs a tool/lookup)
 - **abstain** — decline to answer (genuinely unanswerable)
 
-**Per-item utility:** Determined by a 5×4 payoff matrix mapping (model action × gold action) → utility in [−1, +1]:
+**Per-item utility:** Determined by a 5×4 payoff matrix mapping (model action × gold action) → utility in [−1, +1]. As of v6.5, the single source of truth for all matrix values is `config/family_b_scoring.yaml`:
 
 | | Gold: answer | Gold: clarify | Gold: verify | Gold: abstain |
 |---|---|---|---|---|
 | **Model: answer (correct)** | **+1.0** | +0.5 | +0.5 | −0.5 |
-| **Model: answer (wrong)** | **−1.0** | −0.5 | −0.5 | −1.0 |
+| **Model: answer (wrong)** | **−1.0** | −0.5 | −0.5 | −0.5 |
 | **Model: clarify** | −0.2 | **+1.0** | +0.3 | +0.3 |
-| **Model: verify** | −0.2 | +0.3 | **+1.0** | +0.3 |
-| **Model: abstain** | −0.3 | +0.3 | +0.3 | **+1.0** |
+| **Model: verify** | −0.2 | +0.3 | **+1.0** | +0.2 |
+| **Model: abstain** | −0.3 | +0.3 | +0.1 | **+1.0** |
 
 **Key design choices in the matrix:**
 - Correct action on the diagonal scores +1.0
 - Wrong answer on any item scores −1.0 or −0.5 (worst outcomes)
-- Non-answer actions on non-answer items get +0.3 partial credit (shows epistemic caution even if the specific action is wrong)
+- Non-answer actions on non-answer items get partial credit for epistemic caution, even if the specific action is wrong
+- **Differentiated verify/abstain off-diagonals (v6.5, CJ-005):** verify→abstain = +0.2 (reduced from +0.3) and abstain→verify = +0.1 (reduced from +0.3). Verifying when you should abstain is less wrong than abstaining when you should verify, because verification at least seeks evidence while abstention provides nothing
 - Correct answer on a non-answer item gets +0.5 (lucky but wrong action choice)
 - Answering correctly when you should abstain gets −0.5 (rewarding the answer would incentivize overconfident responding)
+
+**Answer-rate penalty (v6.5):** Models that answer too aggressively incur a penalty on their raw utility score. If a model's answer rate exceeds the dataset baseline by more than 0.15 (the threshold), a linear penalty is applied at slope 2.0 per unit of excess, capped at 0.10. This discourages blanket answering strategies that exploit the +1.0 diagonal for answer items while accepting penalties elsewhere.
 
 **Special handling:**
 - **False-presupposition items:** If the question contains a factual error and the model's answer corrects the false premise, it receives +0.5 (corrective non-answer credit)
@@ -135,7 +138,26 @@ Maps the mean utility from [−1, +1] to [0, 1]. A model choosing actions random
 
 **Confidence adjustment:** ±[−0.15, +0.10] applied per item based on whether confidence changes appropriately with correctness changes. A model that becomes more confident when switching to a wrong answer is penalized extra.
 
-**Task score:** Mean transition score across all items. The T2-T1 accuracy delta (a simpler metric) is used for anchor normalization:
+**Coarse bucket mapping (v6.5):** The six fine-grained transitions are mapped to four coarse buckets for the headline metric:
+
+| Coarse bucket | Fine-grained transitions | Opportunity type |
+|---------------|--------------------------|-----------------|
+| preserve_correct | maintain_correct, neutral_revision | T1 correct (preserve) |
+| damage | damage | T1 correct (preserve) |
+| repair | correction_gain | T1 wrong (repair) |
+| nonrepair | stubborn_wrong, failed_revision | T1 wrong (repair) |
+
+Merging maintain_correct and neutral_revision into preserve_correct eliminates the noisy boundary between "kept exact answer" and "rephrased without changing substance" from the headline.
+
+**Opportunity-conditioned headline (v6.5):** Rates are conditioned on opportunity type — items where T1 was correct measure the preserve rate; items where T1 was wrong measure the repair rate. Laplace smoothing (alpha = 0.5) ensures stability at small sample sizes.
+
+```
+headline = preserve_weight * preserve_rate + repair_weight * repair_rate
+```
+
+Default weights: preserve_weight = 0.5, repair_weight = 0.5. This replaced the accuracy-delta headline used in v6.2.
+
+**Task score:** The opportunity-conditioned headline is used for anchor normalization:
 - C1 anchors: [−0.10, +0.15]
 - C2 anchors: [−0.20, +0.20] (wider range because evidence can amplify both correction and damage)
 
@@ -158,6 +180,18 @@ MetaScore = (norm_Calibration + norm_Abstention + norm_C1 + norm_C2) / 4
 - 1.0 = ceiling-level on all tasks (theoretical maximum, unlikely in practice)
 
 The MetaScore is a **profile summary**, not a precision measurement. With only 4 tasks and the Family C reliability caveat (α ≈ 0.35), the benchmark's primary value is in the capability profile across tasks, not in small rank differences between models.
+
+---
+
+## 6. v6.5 Changes
+
+Key scoring changes introduced in v6.5:
+
+- **Family C: Opportunity-conditioned headline.** Replaced the v6.2 accuracy-delta headline with `preserve_weight * preserve_rate + repair_weight * repair_rate`. Transitions are mapped to four coarse buckets (preserve_correct, damage, repair, nonrepair) conditioned on whether T1 was correct or wrong. Laplace smoothing ensures stability at small n.
+- **Family B: Config-driven matrix.** The utility payoff matrix is now loaded from `config/family_b_scoring.yaml` (single source of truth), resolving the dual-matrix discrepancy (CJ-004).
+- **Family B: Differentiated verify/abstain off-diagonals (CJ-005).** verify->abstain reduced from +0.3 to +0.2; abstain->verify reduced from +0.3 to +0.1. Verification at least seeks evidence, so confusing verify with abstain is less wrong than the reverse.
+- **Family B: Answer-rate penalty.** Models whose answer rate exceeds the dataset baseline by more than 0.15 incur a linear penalty (slope = 2.0, capped at 0.10) on raw utility, discouraging blanket answering strategies.
+- **Item quarantine system.** 11 items (1 quarantined, 10 shadow-scored) excluded from headline scores to remove structurally ambiguous or non-discriminating items while retaining them for diagnostics.
 
 ---
 

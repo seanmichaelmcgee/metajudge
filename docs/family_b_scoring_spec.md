@@ -124,8 +124,8 @@ For the `answer` row, correctness matters, yielding a 5×4 effective matrix:
 | **answer (correct)** | **+1.0** | +0.5 | +0.5 | −0.5 |
 | **answer (incorrect)** | **−1.0** | −0.5 | −0.5 | −0.5 |
 | **clarify** | −0.2 | **+1.0** | +0.3 | +0.3 |
-| **verify** | −0.2 | +0.3 | **+1.0** | +0.3 |
-| **abstain** | −0.3 | +0.3 | +0.3 | **+1.0** |
+| **verify** | −0.2 | +0.3 | **+1.0** | +0.2 |
+| **abstain** | −0.3 | +0.3 | +0.1 | **+1.0** |
 
 ### 3.2 Cell-by-Cell Justification
 
@@ -154,18 +154,19 @@ For the `answer` row, correctness matters, yielding a 5×4 effective matrix:
 **verify on non-verify items:**
 - `verify × answer = −0.2`: Unnecessary verification request on a clear question. Mild penalty — overly cautious but not harmful.
 - `verify × clarify = +0.3`: Requested verification on an ambiguous item. Not ideal but shows caution. Symmetric with clarify × verify.
-- `verify × abstain = +0.3`: Requested verification on an unanswerable item. Shows caution. Partial credit.
+- `verify × abstain = +0.2`: Requested verification on an unanswerable item. Reduced from +0.3 in v6.5 (CJ-005) — verifying when you should abstain is less wrong than the reverse because verification at least seeks evidence, but it's still not the right action on a genuinely unanswerable item.
 
 **abstain on non-abstain items:**
 - `abstain × answer = −0.3`: Over-abstention — refused to answer an answerable question. Slightly harsher than clarify/verify on answer because abstention provides the user with nothing.
 - `abstain × clarify = +0.3`: Abstained on an ambiguous item. Not ideal (should have asked) but at least didn't give a potentially wrong answer.
-- `abstain × verify = +0.3`: Abstained on a verify item. Not ideal but cautious.
+- `abstain × verify = +0.1`: Abstained on a verify item. Reduced from +0.3 in v6.5 (CJ-005) — abstaining when you should verify is worse than the reverse because the model gives up entirely instead of seeking evidence that could resolve the question.
 
 ### 3.3 Design Principles
-1. **Symmetric penalties**: The off-diagonal penalties for cautious actions (clarify, verify, abstain) on answer items are similar (−0.2 to −0.3), preventing gaming by always picking one cautious action.
+1. **Near-symmetric penalties**: The off-diagonal penalties for cautious actions (clarify, verify, abstain) on answer items are similar (−0.2 to −0.3), preventing gaming by always picking one cautious action.
 2. **Correct answer on wrong gold** gets partial credit (+0.5) not full credit — the action choice matters, not just the answer.
 3. **Wrong answer is always bad** (−0.5 to −1.0) regardless of gold action — discourages guessing.
-4. **Non-answer actions on non-answer items** get partial credit (+0.3) for showing caution, even if the specific non-answer action is wrong.
+4. **Non-answer actions on non-answer items** get partial credit (+0.1 to +0.3) for showing caution. The credit is differentiated by action pair (v6.5, CJ-005): verify and abstain confusions are scored asymmetrically because verification seeks evidence while abstention provides nothing.
+5. **Config-driven matrix (v6.5)**: The single source of truth for all matrix values is `config/family_b_scoring.yaml`, resolving the dual-matrix discrepancy (CJ-004) where hardcoded values in code could diverge from the spec.
 
 ### 3.4 Normalization: UWAA Score
 
