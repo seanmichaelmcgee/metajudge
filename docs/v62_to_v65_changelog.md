@@ -109,56 +109,66 @@ Options:
 
 ---
 
-### CJ-004: Abstention Payoff Matrix Audit
+### CJ-004: Abstention Pipeline Overhaul
 
-**Status:** PLANNING
+**Status:** PLANNED
 **Priority:** P1
 **Category:** 2 (Abstention)
+**Detailed plan:** `docs/plans/family_b_abstention_fixes_v65.md`
 **Files:**
-- `metajudge/scoring/abstention_metrics.py:38-64` — global payoff matrix
-- `metajudge/scoring/abstention_metrics.py:325-346` — v2 embedded matrix (DIFFERENT!)
-- `docs/family_b_scoring_spec.md` — documented rationale
-- `docs/scoring_overview.md:61-99` — public matrix documentation
+- `metajudge/scoring/abstention_metrics.py` — add config loader, new v6.5 scorer,
+  answer-rate penalty; preserve all legacy functions
+- `config/family_b_scoring.yaml` — NEW: single source of truth for matrix + params
+- `metajudge/scoring/grading_v2.py` — Unicode minus fix in `_normalize()`
+- `data/family_b_pilot_v2.json` — add ambiguity metadata to borderline items
+- `data/adjudication_registry.json` — verify abs_002, document abs_006
+- `notebooks/metajudge_abstention.ipynb` — wire up v6.5 scorer + penalty
+- `tests/test_family_b_scoring.py` — NEW: comprehensive test suite
+- `docs/family_b_scoring_spec.md` — update matrix, add penalty docs
 
-**Problem:** TWO undocumented issues found:
+**Problem:** THREE issues found:
 
-**Issue A: Dual matrix discrepancy.** The global matrix and the `score_family_b_item_v2()`
-embedded matrix disagree on cautious-action penalties for answer items:
+**Issue A: Dual matrix discrepancy + transposition.** The global matrix and
+`score_family_b_item_v2()` disagree on values AND use transposed lookup
+conventions. Production uses v2, so published v6.2 scores contradict docs.
+Investigation required before finalizing new matrix values.
 
-| Cell | Global matrix | v2 embedded | Docs |
-|------|--------------|-------------|------|
+| Cell | Global (predicted,gold) | v2 embedded (gold,predicted) | Docs |
+|------|------------------------|------------------------------|------|
 | clarify × answer | -0.2 | **-0.5** | -0.2 |
 | verify × answer | -0.2 | **-0.5** | -0.2 |
 | abstain × answer | -0.3 | **-0.5** | -0.3 |
 
-Which matrix is actually used in production? If v2, then models are penalized
-2.5x more than documented for cautious behavior on answerable items.
+**Issue B: +0.3 off-diagonal inflation.** Uniform +0.3 compresses score range.
 
-**Issue B: +0.3 off-diagonal credit.** The +0.3 partial credit for any non-answer
-action on any non-answer gold compresses score range and rewards "cautious
-disposition" over action discrimination. Models that answer less score better.
-Verify may be structurally disadvantaged vs abstain.
+**Issue C: Missing infrastructure.** No config YAML, no tests, no answer-rate
+control, no action_correct/content_correct split, data bugs (abs_002, abs_006).
 
-**v6.5 action:** Run sensitivity analysis on +0.3 vs smaller values (0.1, 0.15,
-0.2). Check how much model ordering is driven by answer rate vs action accuracy
-vs verify suppression.
+**v6.5 solution:** 7-phase fix package:
+1. Investigate transposition impact (Phase 0)
+2. Data fixes — ambiguity metadata, item verification (Phase 1)
+3. YAML config as single source of truth (Phase 2)
+4. New `compute_family_b_score_v65()` + `apply_answer_rate_penalty()` (Phase 3)
+5. Unicode minus fix in grading engine (Phase 4)
+6. Unit tests (Phase 5)
+7. Notebook migration + documentation (Phases 6-7)
 
 ---
 
-### CJ-005: Abstention Scoring — Verify/Abstain Asymmetry
+### CJ-005: Verify/Abstain Asymmetry — Differentiated Off-Diagonal
 
-**Status:** PLANNING
+**Status:** PLANNED (addressed in CJ-004 Phase 2)
 **Priority:** P2
 **Category:** 2 (Abstention)
-**Files:**
-- `metajudge/scoring/abstention_metrics.py`
-- `notebooks/metajudge_abstention.ipynb`
+**Detailed plan:** `docs/plans/family_b_abstention_fixes_v65.md` (Phase 2)
 
-**Problem:** Verify and abstain are treated nearly identically in scoring (+0.3
-partial credit for each on non-matching non-answer items), but they represent
-different metacognitive strategies. The current matrix may not discriminate
-between a model that knows it needs more info (verify) vs one that gives up
-(abstain). Check whether separating these signals improves discrimination.
+**Problem:** Verify and abstain get identical +0.3 partial credit on
+non-matching non-answer items, but represent different metacognitive strategies.
+
+**v6.5 fix:** Differentiated off-diagonal values in `family_b_scoring.yaml`:
+- verify→abstain: **0.2** (was 0.3) — verifying when should abstain is less wrong
+- abstain→verify: **0.1** (was 0.3) — abstaining when should verify is worse
+- Other non-answer cross-cells remain at 0.3
 
 ---
 
