@@ -14,6 +14,7 @@
 | **2** | Abstention | CJ-004, CJ-005 | P1 |
 | **3** | Audit Bug Fixes | CJ-006, CJ-007 | P1 |
 | **4** | Calibration Dual-Run | CJ-008 | P2 |
+| **5** | Item Quarantine | CJ-009 | P1 |
 
 ---
 
@@ -238,6 +239,45 @@ copying and adapting for Brier-specific metrics.
 
 ---
 
+### CJ-009: Item Quarantine & Shadow-Scoring
+
+**Status:** PLANNED
+**Priority:** P1
+**Category:** 5 (Item Quarantine)
+**Detailed plan:** `docs/plans/item_quarantine_v65.md`
+**Files:**
+- `data/family_c_items.json` — add `scoring_status` field to C1/C2 items
+- `data/family_b_pilot_v2.json` — add `scoring_status` field (all "scored")
+- Calibration item manifest — add `scoring_status` field
+- All scoring notebooks — filter on `scoring_status == "scored"` for headline
+
+**Problem:** After all grading fixes, some items remain structurally ambiguous
+(wrong gold/stratum) or provide zero discriminatory signal (consensus-correct).
+These should not drive the headline score.
+
+**Quarantine (1 item):**
+- `sc_c1_wr_023` ((−1)^(2/6)) — mis-labelled stratum, functions as right_to_wrong
+  trap, penalises mathematically correct answers. Exclude until stratum + gold fixed.
+
+**Shadow-score (10 items):**
+- C1: sc_c1_wr_004, sc_c1_rr_001, sc_c1_wr_001, sc_c1_rr_003,
+  sc_c1_rr_004, sc_c1_rr_005 — consensus or pedantic-damage items
+- C2: sc_c2_wr_001, sc_c2_rr_001 — consensus-correct
+- Cal: gen_b3_014, gen_b_038 — near-ceiling Brier, no discrimination
+
+**Keep with notes (2 items):**
+- `sc_c1_wr_030` — strong discriminator, add transparency note
+- `gen_b3_002` — borderline tolerance, flag for future widening
+
+**Interaction with CJ-003a:** Supersedes "remove consensus items" — shadow
+instead of remove. Items stay in data with metadata flags. CJ-003a items
+(rr_004, rr_005) included in the shadow set.
+
+**Impact:** Headline computed on ~21 C1 items (was 28), N-2 C2, N-2 Cal.
+Shadow items logged for diagnostics. No abstention items affected.
+
+---
+
 ## Decision Notes
 
 ### DN-001: Scoring approach evolution (delta → opportunity-conditioned → transition)
@@ -284,19 +324,21 @@ transparency issue regardless of which matrix is "better."
 1. CJ-006: Deploy tri_label fix (already done, just re-run)
 2. CJ-002: Tighten revised detection
 3. CJ-004: Resolve matrix discrepancy (pick one, document it)
+4. CJ-009: Apply quarantine/shadow flags to item manifests
 
 **Phase B — Re-run all models (generates new scores):**
-4. CJ-008: Add calibration dual-run
-5. Re-run all 6 complete models with fixed code
+5. CJ-008: Add calibration dual-run
+6. Re-run all 6 complete models with fixed code + filtered items
 
 **Phase C — Evaluate and decide (analysis):**
-6. CJ-001: Compare delta vs transition scoring on clean data
-7. CJ-004/005: Run abstention sensitivity analysis
+7. CJ-001: Compare delta vs opportunity-conditioned scoring on clean data
+8. CJ-004/005: Run abstention sensitivity analysis
+9. Compare v6.2 (all items) vs v6.5 (filtered) rankings
 
 **Phase D — Update docs and items:**
-8. CJ-003: C1 item quality fixes
-9. CJ-007: sc_c2_wc_005 fix or document
-10. Update all methodology docs to match production
+10. CJ-003: C1 item quality fixes (subsumed by CJ-009 for shadow items)
+11. CJ-007: sc_c2_wc_005 fix or document
+12. Update all methodology docs to match production
 
 ---
 
@@ -312,6 +354,7 @@ transparency issue regardless of which matrix is "better."
 | 006 | tri_label fix | ☐ | Re-run all models, compare to v6.2 scores |
 | 007 | sc_c2_wc_005 | ☐ | Manual grading check |
 | 008 | Calibration dual-run | ☐ | Run R2, compute stability metrics |
+| 009 | Item quarantine/shadow | ☐ | Confirm headline excludes 11 items; shadow items in diagnostics |
 
 ---
 

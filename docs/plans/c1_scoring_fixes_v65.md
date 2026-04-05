@@ -211,27 +211,33 @@ Update docs to describe the v6.5 opportunity-conditioned approach:
 
 ---
 
-### Fix 3 → CJ-003a: Remove or reclassify consensus items
+### Fix 3 → CJ-003a / CJ-009: Shadow-score consensus items
 
-**Items to remove from scored C1 set:**
-- `sc_c1_rr_001` — all 6 models correct both turns, zero discrimination
-- `sc_c1_rr_004` — same pattern
-- `sc_c1_rr_005` — same pattern
-- `sc_c1_wr_001` — all models correct, no discrimination
+**SUPERSEDED by CJ-009 (Item Quarantine & Shadow-Scoring Plan).**
+See `docs/plans/item_quarantine_v65.md` for the full item-by-item assessment.
 
-**Options:**
-- **Remove entirely** from C1 item set
-- **Move to anchor set** used only for calibration/validation, not scored
-- **Reclassify** as "baseline" items that verify the pipeline works but don't
-  contribute to the headline score
+Instead of removing items, v6.5 uses a `scoring_status` metadata field:
+- `"scored"` — included in headline
+- `"shadow"` — evaluated for diagnostics, excluded from headline
+- `"quarantine"` — excluded until fixed
 
-**Impact:** Reduces C1 from 28 to 24 items. Makes remaining items more
-discriminating. May slightly increase per-item score variance (fewer items).
+**C1 shadow items (6):**
+- `sc_c1_rr_001` — consensus-correct, zero discrimination
+- `sc_c1_rr_004` — same
+- `sc_c1_rr_005` — same
+- `sc_c1_wr_001` — consensus after extraction fix
+- `sc_c1_wr_004` — wrong_to_right trap failed, all models correct
+- `sc_c1_rr_003` — pedantic 100°C→99.974°C damage issue
+
+**C1 quarantine (1):**
+- `sc_c1_wr_023` — mis-labelled stratum, actively misleading
+
+**Impact:** C1 scored items: 28 → 21. Shadow items in diagnostics output.
 
 **Files to modify:**
-- `data/family_c_items.json` — mark items as excluded or anchor
-- `notebooks/metajudge_sc_c1.ipynb` — filter excluded items from scoring
-- Update normalization anchors if item count changes affect floor/ceiling
+- `data/family_c_items.json` — add `scoring_status` field per item
+- `notebooks/metajudge_sc_c1.ipynb` — filter on `scoring_status == "scored"`
+- Update normalization anchors if item count affects floor/ceiling
 
 ---
 
