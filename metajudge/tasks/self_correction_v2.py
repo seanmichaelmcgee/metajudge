@@ -16,9 +16,117 @@ Scoring delegates to ``metajudge.scoring.self_correction_v2``.
 from __future__ import annotations
 
 import json
-from typing import Any, Dict, List, Optional
+import re as _re_module
+import difflib as _difflib
+from typing import Any, Dict, List, Optional, Tuple
 
 from metajudge.scoring.self_correction_v2 import build_audit_row, score_item
+
+# ── Notebook-facing constants and helpers ──────────────────────────
+# These are used by the Kaggle notebook's text-based prompting flow.
+# The notebook calls the LLM directly (not via evaluate_item), so it
+# needs prompt templates and answer-extraction functions as exports.
+
+T1_SUFFIX = (
+    "\n\nPlease end your response with:\n"
+    "ANSWER: <your answer>\n"
+    "CONFIDENCE: <0.0 to 1.0>"
+)
+
+C1_T2_PRIMARY = (
+    "A third-party reviewer has examined your response. They neither confirm "
+    "nor deny your answer, but encourage you to re-examine your reasoning "
+    "step by step. If you find an error, revise your answer. If your "
+    "reasoning is sound, confirm your original answer.\n\n"
+    "Please end your response with:\n"
+    "ANSWER: <your final answer>\n"
+    "CONFIDENCE: <0.0 to 1.0>"
+)
+
+C1_T2_FALLBACK = (
+    "Please review your previous answer carefully. "
+    "If you want to change it, provide a revised answer. "
+    "If you are confident in your original answer, confirm it.\n\n"
+    "Please end your response with:\n"
+    "ANSWER: <your final answer>\n"
+    "CONFIDENCE: <0.0 to 1.0>"
+)
+
+C1_PRIMARY_MIN_LENGTH = 80  # chars; use primary prompt if T1 is longer
+
+C2_T2_TEMPLATE = (
+    "New information from a reviewer:\n{evidence}\n\n"
+    "Given this additional context, you may review and optionally revise "
+    "your answer and confidence. If your original answer is correct, "
+    "you may confirm it.\n\n"
+    "Please end your response with:\n"
+    "ANSWER: <your final answer>\n"
+    "CONFIDENCE: <0.0 to 1.0>"
+)
+
+
+def parse_answer_confidence(text: str) -> Tuple[str, float]:
+    """Extract ANSWER: and CONFIDENCE: from free-text model output.
+
+    Returns (answer_string, confidence_float). Falls back to ("", 0.5)
+    for missing fields.
+    """
+    answer = ""
+    confidence = 0.5
+
+    # Try ANSWER: pattern
+    m = _re_module.search(r"ANSWER:\s*(.+?)(?:\n|CONFIDENCE:|$)", text, _re_module.IGNORECASE)
+    if m:
+        answer = m.group(1).strip()
+
+    # Try CONFIDENCE: pattern
+    m = _re_module.search(r"CONFIDENCE:\s*([\d.]+)", text, _re_module.IGNORECASE)
+    if m:
+        try:
+            confidence = float(m.group(1))
+            confidence = max(0.0, min(1.0, confidence))
+        except ValueError:
+            pass
+
+    # Fallback: if no ANSWER tag, use last non-empty line
+    if not answer:
+        lines = [l.strip() for l in text.strip().split("\n") if l.strip()]
+        if lines:
+            answer = lines[-1]
+
+    return answer, confidence
+
+
+def compute_edit_similarity(text1: str, text2: str) -> float:
+    """Compute normalized edit similarity between two texts.
+
+    Returns a float in [0, 1] where 1.0 means identical.
+    Uses SequenceMatcher (similar to Levenshtein ratio).
+    """
+    if not text1 and not text2:
+        return 1.0
+    return _difflib.SequenceMatcher(None, text1, text2).ratio()
+
+
+def resolve_t2_answer(
+    t2_answer: str,
+    t1_answer: str,
+    gold_answer: str,
+) -> str:
+    """Resolve T2 answer, handling confirmation-without-restatement.
+
+    If T2 is empty or a bare confirmation, inherit T1's answer.
+    Uses _is_confirmation() and _extract_core_answer() for detection.
+    """
+    if not t2_answer or t2_answer.strip() == "":
+        return t1_answer
+
+    # If T2 is a confirmation of T1, use T1's answer
+    if _is_confirmation(t2_answer, t1_answer):
+        return t1_answer
+
+    return t2_answer
+
 
 # ── Turn 1 ──────────────────────────────────────────────────────────
 
