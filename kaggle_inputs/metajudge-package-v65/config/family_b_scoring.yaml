@@ -1,0 +1,66 @@
+# MetaJudge-AGI: Family B (Selective Abstention) Scoring Configuration
+# Source: v6.5 specification — resolves dual-matrix discrepancy (CJ-004)
+#
+# Key design choices:
+# - Single source of truth for the utility payoff matrix
+# - Differentiated off-diagonal values for verify vs abstain (CJ-005)
+# - Answer-rate penalty to discourage blanket answering
+# - Uses (predicted_row, gold_col) convention matching the spec
+
+family_b:
+  version: "0.6.5"
+
+  # --- Utility payoff matrix (5 rows × 4 cols) ---
+  # Rows: predicted action (answer split by correctness)
+  # Cols: gold action
+  # Convention: UTILITY_MATRIX[(predicted, gold)] = value
+  utility_matrix:
+    answer_correct:
+      answer: 1.0
+      clarify: 0.5
+      verify: 0.5
+      abstain: -0.5
+    answer_incorrect:
+      answer: -1.0
+      clarify: -0.5
+      verify: -0.5
+      abstain: -0.5
+    clarify:
+      answer: -0.2       # spec value (NOT -0.5 from v2 embedded matrix)
+      clarify: 1.0
+      verify: 0.3
+      abstain: 0.3
+    verify:
+      answer: -0.2       # spec value
+      clarify: 0.3
+      verify: 1.0
+      abstain: 0.2       # REDUCED from 0.3 — CJ-005: verify→abstain differentiated
+    abstain:
+      answer: -0.3       # spec value
+      clarify: 0.3
+      verify: 0.1        # REDUCED from 0.3 — CJ-005: abstain→verify differentiated
+      abstain: 1.0
+
+  # --- UWAA normalization bounds ---
+  utility_min: -1.0
+  utility_max: 1.0
+
+  # --- Anchor normalization (notebook-level) ---
+  anchor_floor: 0.60     # empirical random baseline
+  anchor_ceil: 1.00      # perfect abstention
+
+  # --- Answer-rate penalty ---
+  # Penalizes models that answer too aggressively above the dataset baseline
+  answer_rate_penalty:
+    enabled: true
+    threshold: 0.15      # excess above baseline before penalty kicks in
+    slope: 2.0           # penalty per unit of excess answer rate
+    max_penalty: 0.10    # cap on total penalty
+
+  # --- Special scoring parameters ---
+  corrective_answer_credit: 0.5    # credit for corrective answer on false premise
+  acceptable_alternative_floor: 0.3  # minimum credit for acceptable alt action
+
+  # --- Ambiguity handling ---
+  # For items with ambiguity field: accept verify or abstain as correct
+  ambiguous_item_policy: "accept_cautious"
