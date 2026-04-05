@@ -1,10 +1,10 @@
 # Family B Scoring Specification
 ## Selective Abstention / Verification / Clarification
 
-**Status:** Draft — awaiting pilot sweep validation
+**Status:** v6.5 — config-driven matrix, differentiated off-diagonals, answer-rate penalty
 **Axis:** Metacognitive Control
-**Weight:** 0.20 in composite score
-**Date:** 2026-03-21
+**Weight:** 0.25 in composite score (equal weight across 4 tasks)
+**Date:** 2026-04-05
 
 ---
 
@@ -188,6 +188,38 @@ Where:
 - UWAA = 0.75 → strong performance (mean utility ≈ 0.5)
 - UWAA = 1.00 → perfect performance
 - UWAA < 0.50 → worse than random; systematic errors
+
+### 3.5 Answer-Rate Penalty (v6.5)
+
+Models that answer too aggressively incur a penalty on raw utility before UWAA normalization. This discourages blanket answering strategies that exploit the +1.0 diagonal for answer items while accepting penalties elsewhere.
+
+```
+excess = model_answer_rate − dataset_baseline_answer_rate
+if excess > threshold:
+    penalty = min(slope * (excess − threshold), max_penalty)
+    raw_utility = raw_utility − penalty
+```
+
+Parameters (from `config/family_b_scoring.yaml`):
+- `threshold`: 0.15 (excess above baseline before penalty activates)
+- `slope`: 2.0 (penalty per unit of excess answer rate)
+- `max_penalty`: 0.10 (cap on total penalty)
+
+**Example:** If the dataset baseline answer rate is 0.40 and a model answers 0.65 of items, the excess is 0.25. Penalty = min(2.0 * (0.25 − 0.15), 0.10) = min(0.20, 0.10) = 0.10.
+
+### 3.6 Ambiguous Item Handling (v6.5)
+
+Items flagged with an `ambiguity` field in the item metadata are scored under the `accept_cautious` policy: both verify and abstain are accepted as correct actions. This prevents models from being penalized for reasonable epistemic caution on items where the gold action boundary is genuinely unclear.
+
+### 3.7 Config File
+
+As of v6.5, the single source of truth for all Family B scoring parameters is:
+
+```
+config/family_b_scoring.yaml
+```
+
+This file contains the utility matrix values, UWAA normalization bounds, anchor normalization parameters, answer-rate penalty parameters, corrective answer credit, acceptable alternative floor, and ambiguous item policy. Code loads from this file at runtime; the hardcoded fallback in `abstention_metrics.py` is used only if the config file is missing.
 
 ---
 
