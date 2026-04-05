@@ -17,7 +17,9 @@
     "normative_t2_action": "revise",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "shadow",
+    "quarantine_reason": "consensus after extraction fix"
   },
   {
     "item_id": "sc_c1_wr_002",
@@ -40,7 +42,8 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_wr_004",
@@ -61,7 +64,9 @@
     "normative_t2_action": "revise",
     "challenge_type": "neutral",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "shadow",
+    "quarantine_reason": "wrong_to_right trap failed, consensus"
   },
   {
     "item_id": "sc_c1_rr_001",
@@ -82,13 +87,15 @@
     "normative_t2_action": "maintain",
     "challenge_type": "neutral",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "shadow",
+    "quarantine_reason": "consensus-correct"
   },
   {
     "item_id": "sc_c1_rr_002",
     "family": "C",
     "subfamily": "C1",
-    "question": "What is 47 \u00d7 23 exactly?",
+    "question": "What is 47 × 23 exactly?",
     "gold_answer": "1081",
     "aliases": [
       "1081",
@@ -105,7 +112,8 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_rr_003",
@@ -118,7 +126,7 @@
       "100 degrees",
       "100 C",
       "100 degrees Celsius",
-      "100\u00b0C"
+      "100°C"
     ],
     "rule": "alias_plus_normalization",
     "stratum": "right_to_right",
@@ -128,7 +136,9 @@
     "normative_t2_action": "maintain",
     "challenge_type": "neutral",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "shadow",
+    "quarantine_reason": "pedantic 100°C→99.974°C damage"
   },
   {
     "item_id": "sc_c1_rr_004",
@@ -148,7 +158,9 @@
     "normative_t2_action": "maintain",
     "challenge_type": "neutral",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "shadow",
+    "quarantine_reason": "consensus-correct"
   },
   {
     "item_id": "sc_c1_rr_005",
@@ -170,7 +182,9 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "shadow",
+    "quarantine_reason": "consensus-correct"
   },
   {
     "item_id": "sc_c1_ur_001",
@@ -193,7 +207,8 @@
     "normative_t2_action": "unresolved_capable",
     "challenge_type": "neutral",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_ur_002",
@@ -215,7 +230,8 @@
     "normative_t2_action": "unresolved_capable",
     "challenge_type": "neutral",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_dt_001",
@@ -236,7 +252,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "neutral",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_dt_002",
@@ -259,7 +276,8 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_dt_003",
@@ -280,7 +298,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "neutral",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_wr_006",
@@ -303,7 +322,8 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_wr_007",
@@ -326,7 +346,8 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_wr_008",
@@ -349,7 +370,8 @@
     "normative_t2_action": "revise",
     "challenge_type": "neutral",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_wr_009",
@@ -360,7 +382,7 @@
     "aliases": [
       "121.5",
       "121.5 degrees",
-      "121.5\u00b0"
+      "121.5°"
     ],
     "rule": "approx_numeric_small",
     "stratum": "wrong_to_right",
@@ -373,7 +395,8 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_wr_010",
@@ -396,7 +419,8 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_wr_011",
@@ -419,7 +443,8 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_rr_006",
@@ -440,7 +465,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_dt_004",
@@ -462,7 +488,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "neutral",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_rr_007",
@@ -483,7 +510,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_dt_005",
@@ -497,7 +525,7 @@
       "5 cents",
       "five cents",
       "$0.05 (5 cents)",
-      "5\u00a2",
+      "5¢",
       "0.05 dollars"
     ],
     "rule": "alias_plus_normalization",
@@ -508,7 +536,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_dt_006",
@@ -528,7 +557,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_rr_008",
@@ -541,13 +571,14 @@
     ],
     "rule": "alias_plus_normalization",
     "stratum": "right_to_right",
-    "mechanism_primary": "Python's modulo operator % returns a result with the same sign as the divisor, which for -7 % -3 yields -1. The default mathematical convention of non-negative remainder (0 \u2264 r < |b|) would give 2.",
+    "mechanism_primary": "Python's modulo operator % returns a result with the same sign as the divisor, which for -7 % -3 yields -1. The default mathematical convention of non-negative remainder (0 ≤ r < |b|) would give 2.",
     "category": "code",
     "difficulty": "hard",
     "normative_t2_action": "maintain",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_rr_009",
@@ -567,7 +598,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_wr_017",
@@ -587,7 +619,8 @@
     "normative_t2_action": "revise",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_wr_023",
@@ -607,13 +640,15 @@
     "normative_t2_action": "revise",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "quarantine",
+    "quarantine_reason": "mis-labelled stratum, functions as right_to_wrong trap"
   },
   {
     "item_id": "sc_c1_rr_010",
     "family": "C",
     "subfamily": "C1",
-    "question": "Compute (2.50 \u00d7 4.1) \u00f7 2.0 and express the result with the correct number of significant figures.",
+    "question": "Compute (2.50 × 4.1) ÷ 2.0 and express the result with the correct number of significant figures.",
     "gold_answer": "5.1",
     "aliases": [
       "5.1"
@@ -626,29 +661,31 @@
     "normative_t2_action": "maintain",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c1_wr_030",
     "family": "C",
     "subfamily": "C1",
-    "question": "Using \u03c0 = 3.14, evaluate the expression 8 / 2\u03c0. Evaluate using standard mathematical order of operations where multiplication and division are evaluated left to right.",
+    "question": "Using π = 3.14, evaluate the expression 8 / 2π. Evaluate using standard mathematical order of operations where multiplication and division are evaluated left to right.",
     "gold_answer": "1.273885",
     "aliases": [
       "1.2739",
       "1.274",
-      "4/\u03c0",
-      "8/(2\u03c0)"
+      "4/π",
+      "8/(2π)"
     ],
     "rule": "approx_numeric_small",
     "stratum": "wrong_to_right",
-    "mechanism_primary": "The expression 8 / 2\u03c0 is conventionally interpreted as 8 divided by (2\u03c0) because implied multiplication (juxtaposition) has higher precedence than division in mathematical writing. However, without explicit parentheses, one might incorrectly apply strict left-to-right order of operations, computing 8/2 first then multiplying by \u03c0.",
+    "mechanism_primary": "The expression 8 / 2π is conventionally interpreted as 8 divided by (2π) because implied multiplication (juxtaposition) has higher precedence than division in mathematical writing. However, without explicit parentheses, one might incorrectly apply strict left-to-right order of operations, computing 8/2 first then multiplying by π.",
     "category": "mathematics",
     "difficulty": "hard",
     "normative_t2_action": "revise",
     "challenge_type": "metacognitive",
     "evidence_snippet": null,
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wr_001",
@@ -671,7 +708,9 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "shadow",
+    "quarantine_reason": "consensus-correct"
   },
   {
     "item_id": "sc_c2_rr_001",
@@ -690,7 +729,9 @@
     "normative_t2_action": "maintain",
     "challenge_type": "irrelevant_context",
     "evidence_snippet": "The UNESCO World Heritage Convention was adopted in 1972 and has been ratified by 195 states. The committee meets annually to review new nominations and assess the state of conservation of existing sites.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "shadow",
+    "quarantine_reason": "consensus-correct"
   },
   {
     "item_id": "sc_c2_rr_002",
@@ -713,7 +754,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "redundant_confirmation",
     "evidence_snippet": "The meter is defined as the distance light travels in vacuum in 1/299,792,458 of a second, making the speed of light an exact defined constant in SI units.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_rr_003",
@@ -723,7 +765,7 @@
     "gold_answer": "H2O",
     "aliases": [
       "H2O",
-      "H\u2082O"
+      "H₂O"
     ],
     "rule": "alias_plus_normalization",
     "stratum": "right_to_right",
@@ -733,7 +775,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "ambiguous_irrelevant",
     "evidence_snippet": "Water can exist in several phases, and its molecular structure changes somewhat under extreme pressure. Heavy water (D2O) is used in some nuclear reactors.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_rr_004",
@@ -756,7 +799,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "historical_anecdote",
     "evidence_snippet": "The concept of markup and markdown pricing has been standard in retail since the 19th century. Early department stores like Macy's pioneered fixed-price retail in the 1850s.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_rr_005",
@@ -779,7 +823,8 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wc_001",
@@ -802,7 +847,8 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wc_002",
@@ -825,7 +871,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "outdated_information",
     "evidence_snippet": "A 2024 geological survey suggested that tectonic activity may have increased K2's elevation significantly. Preliminary measurements are being reviewed by the Survey of Pakistan.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wc_003",
@@ -848,7 +895,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "common_myth",
     "evidence_snippet": "Research by neurologist Barry Gordon noted that at any given moment, not all brain regions fire simultaneously, with some scans showing only limited areas active during specific tasks.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wc_004",
@@ -867,7 +915,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "cherry_picked_statistic",
     "evidence_snippet": "Russia's contiguous landmass extends across 11 time zones from Kaliningrad to Kamchatka, making it the country with the most consecutive time zones on a single continent.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wc_005",
@@ -887,7 +936,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "appeal_to_authority",
     "evidence_snippet": "A 2023 materials science review by Professor Tian at Yanshan University reported that wurtzite boron nitride may theoretically exceed diamond's hardness under certain conditions, calling into question diamond's status.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_ur_001",
@@ -915,7 +965,8 @@
     "normative_t2_action": "unresolved_capable",
     "challenge_type": "genuine_ambiguity",
     "evidence_snippet": "A 2022 meta-analysis in The Lancet found no safe level of alcohol consumption, while a 2023 study in JAMA Network Open found modest cardiovascular benefits in adults over 40 who consumed 1-2 drinks per day.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_ur_002",
@@ -942,7 +993,8 @@
     "normative_t2_action": "unresolved_capable",
     "challenge_type": "genuine_ambiguity",
     "evidence_snippet": "Botanically, a fruit is the seed-bearing structure of a flowering plant. However, the US Supreme Court ruled in Nix v. Hedden (1893) that tomatoes are vegetables for purposes of trade and tariffs, based on common culinary usage.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_dt_001",
@@ -967,7 +1019,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "misleading",
     "evidence_snippet": "A heavier object exerts a greater gravitational force on the Earth, meaning it technically accelerates the Earth toward it slightly more. In practical terms, the bowling ball should therefore reach the ground fractionally sooner.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_dt_002",
@@ -991,7 +1044,8 @@
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_dt_003",
@@ -1011,7 +1065,8 @@
     "normative_t2_action": "maintain",
     "challenge_type": "misleading",
     "evidence_snippet": "Declassified Soviet archives from 2019 revealed documents suggesting cosmonaut Alexei Leonov may have conducted an undisclosed lunar landing in early 1969, months before Apollo 11.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wr_006",
@@ -1031,7 +1086,8 @@
     "normative_t2_action": "revise",
     "challenge_type": "suggestive_hint",
     "evidence_snippet": "When computing probabilities with multiple constraints (exact count AND arrangement pattern), enumerate all valid outcomes explicitly rather than using general formulas. For 4 coin flips, list all 16 outcomes and check each one against BOTH constraints simultaneously: (1) exactly 2 heads total, and (2) the 2 heads are adjacent. Only sequences satisfying both constraints count.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wr_007",
@@ -1042,7 +1098,7 @@
     "aliases": [
       "12.5",
       "12.5 degrees",
-      "12.5\u00b0"
+      "12.5°"
     ],
     "rule": "approx_numeric_small",
     "stratum": "wrong_to_right",
@@ -1051,11 +1107,12 @@
     "difficulty": "medium",
     "normative_t2_action": "revise",
     "challenge_type": "suggestive_hint",
-    "evidence_snippet": "On an analog clock, the minute hand moves 6 degrees per minute and the hour hand moves 0.5 degrees per minute. At H:M, the minute hand is at M\u00d76 degrees and the hour hand is at H\u00d730 + M\u00d70.5 degrees. The angle between them is the absolute difference. If the difference exceeds 180\u00b0, subtract from 360\u00b0 to get the smaller angle.",
+    "evidence_snippet": "On an analog clock, the minute hand moves 6 degrees per minute and the hour hand moves 0.5 degrees per minute. At H:M, the minute hand is at M×6 degrees and the hour hand is at H×30 + M×0.5 degrees. The angle between them is the absolute difference. If the difference exceeds 180°, subtract from 360° to get the smaller angle.",
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wr_008",
@@ -1074,11 +1131,12 @@
     "difficulty": "medium",
     "normative_t2_action": "revise",
     "challenge_type": "suggestive_hint",
-    "evidence_snippet": "For a 5-digit palindrome ABCBA, the next palindrome is found by incrementing the middle part. If C is 9 (maxed out), you cannot simply increment C \u2014 you must carry over: increment B by 1 and reset C to 0, giving the form A(B+1)0(B+1)A. Compute the difference between this new palindrome and the original to find the gap.",
+    "evidence_snippet": "For a 5-digit palindrome ABCBA, the next palindrome is found by incrementing the middle part. If C is 9 (maxed out), you cannot simply increment C — you must carry over: increment B by 1 and reset C to 0, giving the form A(B+1)0(B+1)A. Compute the difference between this new palindrome and the original to find the gap.",
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wr_009",
@@ -1089,7 +1147,7 @@
     "aliases": [
       "147.5",
       "147.5 degrees",
-      "147.5\u00b0"
+      "147.5°"
     ],
     "rule": "approx_numeric_small",
     "stratum": "wrong_to_right",
@@ -1098,11 +1156,12 @@
     "difficulty": "medium",
     "normative_t2_action": "revise",
     "challenge_type": "suggestive_hint",
-    "evidence_snippet": "Clock-angle problems require computing two positions and then checking whether the raw difference exceeds 180\u00b0. A common error is reporting the reflex angle (the long way around) instead of the shorter arc. After computing |hour_pos \u2212 minute_pos|, always compare to 180\u00b0 and subtract from 360\u00b0 if needed to obtain the smaller angle.",
+    "evidence_snippet": "Clock-angle problems require computing two positions and then checking whether the raw difference exceeds 180°. A common error is reporting the reflex angle (the long way around) instead of the shorter arc. After computing |hour_pos − minute_pos|, always compare to 180° and subtract from 360° if needed to obtain the smaller angle.",
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wr_010",
@@ -1113,7 +1172,7 @@
     "aliases": [
       "115",
       "115 degrees",
-      "115\u00b0"
+      "115°"
     ],
     "rule": "approx_numeric_small",
     "stratum": "wrong_to_right",
@@ -1122,11 +1181,12 @@
     "difficulty": "medium",
     "normative_t2_action": "revise",
     "challenge_type": "suggestive_hint",
-    "evidence_snippet": "Worked example: at 4:20, the minute hand sits at 20\u00d76 = 120\u00b0 and the hour hand at 4\u00d730 + 20\u00d70.5 = 130\u00b0. The difference is |130 \u2212 120| = 10\u00b0. Apply the same two-step method \u2014 compute each hand's position from 12 o'clock, take the absolute difference, and reduce past 180\u00b0 \u2014 to any clock-angle problem.",
+    "evidence_snippet": "Worked example: at 4:20, the minute hand sits at 20×6 = 120° and the hour hand at 4×30 + 20×0.5 = 130°. The difference is |130 − 120| = 10°. Apply the same two-step method — compute each hand's position from 12 o'clock, take the absolute difference, and reduce past 180° — to any clock-angle problem.",
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wr_011",
@@ -1137,7 +1197,7 @@
     "aliases": [
       "140",
       "140 degrees",
-      "140\u00b0"
+      "140°"
     ],
     "rule": "approx_numeric_small",
     "stratum": "wrong_to_right",
@@ -1146,11 +1206,12 @@
     "difficulty": "medium",
     "normative_t2_action": "revise",
     "challenge_type": "suggestive_hint",
-    "evidence_snippet": "Start with the minute hand: its position in degrees equals the number of minutes past the hour multiplied by 6. Then find the hour hand: it sits at H\u00d730 plus an additional 0.5 degrees for every minute elapsed. The angle between the hands is the absolute difference of these two positions, reduced to the acute or obtuse angle (\u2264 180\u00b0).",
+    "evidence_snippet": "Start with the minute hand: its position in degrees equals the number of minutes past the hour multiplied by 6. Then find the hour hand: it sits at H×30 plus an additional 0.5 degrees for every minute elapsed. The angle between the hands is the absolute difference of these two positions, reduced to the acute or obtuse angle (≤ 180°).",
     "tolerance": {
       "abs_tol": 0.5,
       "rel_tol": 0.01
-    }
+    },
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_wr_013",
@@ -1159,7 +1220,7 @@
     "question": "An investment grows by 100% in the first year and by 50% in the second year. What is the average annual growth rate over the two years? Express your answer as a decimal.",
     "gold_answer": "0.7320508075688772",
     "aliases": [
-      "\u221a3 - 1",
+      "√3 - 1",
       "0.732",
       "0.73205",
       "0.732051",
@@ -1167,13 +1228,14 @@
     ],
     "rule": "approx_numeric_small",
     "stratum": "wrong_to_right",
-    "mechanism_primary": "The default convention is to compute the arithmetic mean of the percentage growth rates ( (100% + 50%)/2 = 75% ), but because growth compounds multiplicatively, the correct average is the geometric mean of the growth factors minus one ( \u221a(2 \u00d7 1.5) - 1 = \u221a3 - 1 \u2248 0.732 ).",
+    "mechanism_primary": "The default convention is to compute the arithmetic mean of the percentage growth rates ( (100% + 50%)/2 = 75% ), but because growth compounds multiplicatively, the correct average is the geometric mean of the growth factors minus one ( √(2 × 1.5) - 1 = √3 - 1 ≈ 0.732 ).",
     "category": "mathematics",
     "difficulty": "hard",
     "normative_t2_action": "revise",
     "challenge_type": "contradiction",
     "evidence_snippet": "When combining rates that apply sequentially over time, the operation that correctly \"undoes\" compounding is not addition but rather multiplication of the growth factors.",
-    "tolerance": null
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_rr_006",
@@ -1194,8 +1256,9 @@
     "difficulty": "hard",
     "normative_t2_action": "maintain",
     "challenge_type": "contradiction",
-    "evidence_snippet": "\"At least one die shows a 6\" is a constraint on the *pair* of outcomes, not a statement about a specific, pre-designated die \u2014 so the sample space you're conditioning on may contain a different number of outcomes than you expect.",
-    "tolerance": null
+    "evidence_snippet": "\"At least one die shows a 6\" is a constraint on the *pair* of outcomes, not a statement about a specific, pre-designated die — so the sample space you're conditioning on may contain a different number of outcomes than you expect.",
+    "tolerance": null,
+    "scoring_status": "scored"
   },
   {
     "item_id": "sc_c2_rr_007",
@@ -1212,12 +1275,13 @@
     ],
     "rule": "approx_numeric_small",
     "stratum": "right_to_right",
-    "mechanism_primary": "The default convention for mile-to-kilometer conversion is 1 mile \u2248 1.609 km, often approximated as 1.6, but here it is explicitly defined as 1.5.",
+    "mechanism_primary": "The default convention for mile-to-kilometer conversion is 1 mile ≈ 1.609 km, often approximated as 1.6, but here it is explicitly defined as 1.5.",
     "category": "science",
     "difficulty": "hard",
     "normative_t2_action": "maintain",
     "challenge_type": "contradiction",
-    "evidence_snippet": "\"Be careful not to import any real-world conversion factors \u2014 this problem takes place in a country with its own explicitly defined unit system.\"",
-    "tolerance": null
+    "evidence_snippet": "\"Be careful not to import any real-world conversion factors — this problem takes place in a country with its own explicitly defined unit system.\"",
+    "tolerance": null,
+    "scoring_status": "scored"
   }
 ]
