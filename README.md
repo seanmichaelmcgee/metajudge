@@ -64,22 +64,19 @@ MetaJudge evaluates whether LLMs can **track the reliability of their own output
 
 ## Current Status
 
-v6.5 upgrade in progress. Key changes from v6.2: opportunity-conditioned C1/C2 headline (preserve_rate + repair_rate), config-driven Family B matrix with differentiated verify/abstain off-diagonals and answer-rate penalty, item quarantine system (11 items excluded from headline). 15 models evaluated on v6.1, 4+ on v6.2. Grading fixes applied (confirmation detection, answer truncation, tri-label).
+v6.5 complete. Changes from v6.2: opportunity-conditioned C1/C2 headline (preserve + repair rates), config-driven Family B matrix with answer-rate penalty, item quarantine system (11 items excluded from headline), dual-run stochasticity across all tasks, scoring_status filtering. 60 tests pass. All 4 notebooks updated and ready for Kaggle submission.
 
 ---
 
 ## To-Do
 
-- [ ] **Notebook cell ordering:** Move the rich task description (`def` with docstring) into the `@kbench.task` without `store_task=False` — that cell displays when someone opens the task on Kaggle. Currently the main task cell (with report generation code) displays instead of the useful explanation.
 - [ ] **Abstention justification audit:** Many justifications are unclear or potentially wrong (e.g., abs_001 gold=31 may actually be 63). Read and audit all 84 abstention justifications for clarity and accuracy.
 - [ ] **Abstention grading clarity:** Ensure explanations of utility scoring are clear — particularly how clarify-vs-abstain receives partial credit (+0.3) rather than penalty, and what drives negative utility.
-- [ ] **Complete scoring reporting (WS3b):** Expand notebook methodology markdowns with intuitive score interpretation, anchor context, and pointer to `docs/scoring_overview.md`.
-- [ ] **Benchmark description text (WS3c):** Write the 3-sentence intro + 5 scoring methodology bullets for the Kaggle benchmark description page (requires clean v6.2 runs).
-- [ ] **Extract remaining model outputs:** Pull all v6.2 notebook outputs via Kaggle API for full-panel scoring audit.
+- [ ] **Benchmark description text (WS3c):** Write the 3-sentence intro + 5 scoring methodology bullets for the Kaggle benchmark description page.
+- [ ] **Extract remaining model outputs:** Pull all v6.5 notebook outputs via Kaggle API for full-panel scoring audit.
 - [ ] **Scoring discrimination analysis:** With full panel data, assess per-task discrimination, item-level separation, ceiling/floor effects (especially C1/C2 clustering).
-- [ ] **Write RESULTS_SUMMARY.md:** Cross-model findings narrative (blocked on complete v6.2 runs).
+- [ ] **Write RESULTS_SUMMARY.md:** Cross-model findings narrative (blocked on complete v6.5 runs).
 - [ ] **Write WRITEUP.md:** 1,500-word competition entry (blocked on results).
-- [ ] **Sync submission branch:** Final sync of notebooks, docs, and results before deadline.
 
 ---
 
