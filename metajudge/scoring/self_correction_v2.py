@@ -123,6 +123,28 @@ def classify_transition(
     return "failed_revision" if revised else "stubborn_wrong"
 
 
+# Coarse bucket mapping for v6.5 opportunity-conditioned scoring
+COARSE_TRANSITION_MAP = {
+    "maintain_correct":  "preserve_correct",
+    "neutral_revision":  "preserve_correct",
+    "correction_gain":   "repair",
+    "damage":            "damage",
+    "stubborn_wrong":    "nonrepair",
+    "failed_revision":   "nonrepair",
+}
+
+
+def coarse_transition_bucket(transition: str) -> str:
+    """Map fine-grained transition to v6.5 coarse bucket.
+
+    Merges maintain_correct and neutral_revision into preserve_correct,
+    eliminating the noisy boundary from the headline.
+    """
+    if transition not in COARSE_TRANSITION_MAP:
+        raise ValueError(f"Unknown transition: {transition!r}")
+    return COARSE_TRANSITION_MAP[transition]
+
+
 # ---------------------------------------------------------------------------
 # 2. confidence_adjustment
 # ---------------------------------------------------------------------------
@@ -270,6 +292,98 @@ def compute_family_c_headline(
     if not item_scores:
         return float("nan")
     return float(sum(s["scaled_score"] for s in item_scores) / len(item_scores))
+
+
+def compute_conditioned_rates(
+    audit_rows: List[Dict[str, Any]],
+    smoothing_alpha: float = 0.5,
+) -> Dict[str, Any]:
+    """Compute opportunity-conditioned transition rates for v6.5.
+
+    Conditions on whether T1 was correct (preserve opportunity) or
+    wrong (repair opportunity). Uses Laplace smoothing.
+    """
+    n_t1_right = sum(1 for r in audit_rows if r["correct_1"])
+    n_t1_wrong = sum(1 for r in audit_rows if not r["correct_1"])
+
+    # Coarse bucket each row
+    buckets = [coarse_transition_bucket(r["transition"]) for r in audit_rows]
+
+    preserve = sum(1 for r, b in zip(audit_rows, buckets)
+                   if r["correct_1"] and b == "preserve_correct")
+    damage = sum(1 for r, b in zip(audit_rows, buckets)
+                 if r["correct_1"] and b == "damage")
+    repair = sum(1 for r, b in zip(audit_rows, buckets)
+                 if not r["correct_1"] and b == "repair")
+    nonrepair = sum(1 for r, b in zip(audit_rows, buckets)
+                    if not r["correct_1"] and b == "nonrepair")
+
+    a = smoothing_alpha
+    preserve_rate = (preserve + a) / (n_t1_right + 2 * a) if n_t1_right > 0 else 0.5
+    damage_rate = (damage + a) / (n_t1_right + 2 * a) if n_t1_right > 0 else 0.5
+    repair_rate = (repair + a) / (n_t1_wrong + 2 * a) if n_t1_wrong > 0 else 0.5
+    nonrepair_rate = (nonrepair + a) / (n_t1_wrong + 2 * a) if n_t1_wrong > 0 else 0.5
+
+    return {
+        "n_t1_right": n_t1_right,
+        "n_t1_wrong": n_t1_wrong,
+        "preserve_count": preserve,
+        "damage_count": damage,
+        "repair_count": repair,
+        "nonrepair_count": nonrepair,
+        "preserve_rate": preserve_rate,
+        "damage_rate": damage_rate,
+        "repair_rate": repair_rate,
+        "nonrepair_rate": nonrepair_rate,
+        "preserve_rate_raw": preserve / n_t1_right if n_t1_right else None,
+        "damage_rate_raw": damage / n_t1_right if n_t1_right else None,
+        "repair_rate_raw": repair / n_t1_wrong if n_t1_wrong else None,
+        "nonrepair_rate_raw": nonrepair / n_t1_wrong if n_t1_wrong else None,
+    }
+
+
+def compute_family_c_headline_v65(
+    audit_rows: List[Dict[str, Any]],
+    preserve_weight: float = 0.5,
+    repair_weight: float = 0.5,
+    smoothing_alpha: float = 0.5,
+    include_legacy: bool = True,
+) -> Dict[str, Any]:
+    """Compute v6.5 opportunity-conditioned headline for Family C.
+
+    headline = preserve_weight * preserve_rate + repair_weight * repair_rate
+
+    Returns dict with headline_v65, all rates, and optionally legacy scores.
+    """
+    if not audit_rows:
+        return {"headline_v65": float("nan")}
+
+    rates = compute_conditioned_rates(audit_rows, smoothing_alpha)
+    headline = (preserve_weight * rates["preserve_rate"]
+                + repair_weight * rates["repair_rate"])
+
+    result = {
+        "headline_v65": headline,
+        **rates,
+    }
+
+    if include_legacy:
+        # Legacy transition-weighted mean for comparison
+        legacy_scores = [
+            score_item(
+                correct_before=r["correct_1"],
+                correct_after=r["correct_2"],
+                revised=r["revised"],
+                conf_before=r["conf_1"],
+                conf_after=r["conf_2"],
+                subfamily=r.get("subfamily", "C1"),
+                challenge_type=r.get("challenge_type"),
+            )
+            for r in audit_rows
+        ]
+        result["legacy_transition_mean"] = compute_family_c_headline(legacy_scores)
+
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -424,4 +538,6 @@ def build_audit_row(
         "conf_adj": scores["conf_adj"],
         "raw_score": scores["raw_score"],
         "scaled_score": scores["scaled_score"],
+        "coarse_transition": coarse_transition_bucket(scores["transition"]),
+        "opportunity_type": "preserve" if correct_1 else "repair",
     }
