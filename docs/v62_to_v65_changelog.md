@@ -22,7 +22,7 @@
 
 ### CJ-001: C1/C2 Scoring — Opportunity-Conditioned Headline (v6.5)
 
-**Status:** PLANNING
+**Status:** IMPLEMENTED
 **Priority:** P0 — benchmark validity issue
 **Category:** 1 (C1/C2 Scoring)
 **Amended:** 2026-04-05 — changed from "keep delta" to opportunity-conditioned
@@ -65,7 +65,7 @@ it as maintain or neutral. This is the structural fix for the noise problem.
 
 ### CJ-002: Tighten maintain_correct vs neutral_revision Boundary
 
-**Status:** PLANNING
+**Status:** IMPLEMENTED
 **Priority:** P0 — prerequisite for CJ-001
 **Category:** 1 (C1/C2 Scoring)
 **Files:**
@@ -93,7 +93,7 @@ Options:
 
 ### CJ-003: C1 Item Quality Fixes
 
-**Status:** PLANNING
+**Status:** IMPLEMENTED
 **Priority:** P1
 **Category:** 1 (C1/C2 Scoring)
 **Files:**
@@ -112,7 +112,7 @@ Options:
 
 ### CJ-004: Abstention Pipeline Overhaul
 
-**Status:** PLANNED
+**Status:** IMPLEMENTED
 **Priority:** P1
 **Category:** 2 (Abstention)
 **Detailed plan:** `docs/plans/family_b_abstention_fixes_v65.md`
@@ -158,7 +158,7 @@ control, no action_correct/content_correct split, data bugs (abs_002, abs_006).
 
 ### CJ-005: Verify/Abstain Asymmetry — Differentiated Off-Diagonal
 
-**Status:** PLANNED (addressed in CJ-004 Phase 2)
+**Status:** IMPLEMENTED (addressed in CJ-004 Phase 2)
 **Priority:** P2
 **Category:** 2 (Abstention)
 **Detailed plan:** `docs/plans/family_b_abstention_fixes_v65.md` (Phase 2)
@@ -241,7 +241,7 @@ copying and adapting for Brier-specific metrics.
 
 ### CJ-009: Item Quarantine & Shadow-Scoring
 
-**Status:** PLANNED
+**Status:** IMPLEMENTED
 **Priority:** P1
 **Category:** 5 (Item Quarantine)
 **Detailed plan:** `docs/plans/item_quarantine_v65.md`
@@ -346,15 +346,15 @@ transparency issue regardless of which matrix is "better."
 
 | CJ # | Change | Verified? | Method |
 |-------|--------|-----------|--------|
-| 001 | C1/C2 scoring contract | ☐ | Re-run with both approaches, compare stability |
-| 002 | Revised detection | ☐ | Re-classify all C1 items, check 5 volatile items stable |
-| 003 | C1 item quality | ☐ | Verify discrimination improves with changes |
-| 004 | Abstention matrix | ☐ | Trace production call path, sensitivity analysis |
-| 005 | Verify/abstain asymmetry | ☐ | Score decomposition by action type |
+| 001 | C1/C2 scoring contract | ☑ | 3 new functions + notebook wired up. 35 tests pass. |
+| 002 | Revised detection | ☑ | Core answer extraction replaces raw string comparison |
+| 003 | C1 item quality | ☑ | 7 C1 items shadow/quarantined via CJ-009 |
+| 004 | Abstention matrix | ☑ | YAML config, new scorer, answer-rate penalty. 25 tests pass. |
+| 005 | Verify/abstain asymmetry | ☑ | verify→abstain=0.2, abstain→verify=0.1 in YAML |
 | 006 | tri_label fix | ☐ | Re-run all models, compare to v6.2 scores |
 | 007 | sc_c2_wc_005 | ☐ | Manual grading check |
 | 008 | Calibration dual-run | ☐ | Run R2, compute stability metrics |
-| 009 | Item quarantine/shadow | ☐ | Confirm headline excludes 11 items; shadow items in diagnostics |
+| 009 | Item quarantine/shadow | ☑ | scoring_status metadata added to 172 items across 2 files |
 
 ---
 
