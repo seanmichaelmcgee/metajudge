@@ -13,9 +13,9 @@ MetaJudge evaluates whether LLMs can **track the reliability of their own output
 | Task | Process | Items | Metric |
 |------|---------|-------|--------|
 | Confidence Calibration | Monitoring | 105 | Brier rule (strictly proper) |
-| Selective Abstention | Control | 72 | UWAA (utility-weighted action accuracy) |
-| Self-Correction C1 | Control | 28 | Transition-based (intrinsic, no evidence) |
-| Self-Correction C2 | Control | 23 | Transition-based (evidence-assisted) |
+| Selective Abstention | Control | 72 | UWAA (config-driven matrix + answer-rate penalty) |
+| Self-Correction C1 | Control | 28 | Opportunity-conditioned (intrinsic, no evidence) |
+| Self-Correction C2 | Control | 23 | Opportunity-conditioned (evidence-assisted) |
 
 **MetaScore** = platform average of 4 anchor-normalized task scores. Equal weights (Dawes 1979).
 
@@ -25,10 +25,10 @@ MetaJudge evaluates whether LLMs can **track the reliability of their own output
 
 | Path | What |
 |------|------|
-| `notebooks/` | 4 Kaggle Benchmark task notebooks (v6.2) |
-| `metajudge/` | Scoring package: grading engine, UWAA, transition scoring (7 modules) |
+| `notebooks/` | 4 Kaggle Benchmark task notebooks (v6.5) |
+| `metajudge/` | Scoring package: grading engine, UWAA, opportunity-conditioned scoring (7 modules) |
 | `data/` | Benchmark items, registry, manifest, gold answer justifications |
-| `config/` | Family C scoring parameters |
+| `config/` | Scoring parameters: Family B (`family_b_scoring.yaml`) and Family C (`family_c_scoring.yaml`) |
 | `docs/` | Scientific foundation: literature reports, scoring specs, statistical methods |
 | `docs/scoring_overview.md` | End-to-end scoring explainer |
 | `docs/theoretical_backgrounder.md` | Two-process framework and task mapping |
@@ -58,12 +58,13 @@ MetaJudge evaluates whether LLMs can **track the reliability of their own output
 - **Dual-run stochasticity.** Tasks B, C1, C2 run twice to surface response variance.
 - **Equal-weight composite.** Provably optimal at small n (Davis-Stober 2011).
 - **Behavioral evidence only.** What models do, not what they claim.
+- **Item quarantine system.** 11 items (1 quarantined, 10 shadow-scored) excluded from headline scores to remove structurally ambiguous or non-discriminating items while retaining them for diagnostics.
 
 ---
 
 ## Current Status
 
-v6.2 notebooks deployed on Kaggle Benchmark "MetaJudge 6". 15 models evaluated on v6.1, 4+ on v6.2. Grading fixes applied (confirmation detection, answer truncation). Scoring audit in progress.
+v6.5 upgrade in progress. Key changes from v6.2: opportunity-conditioned C1/C2 headline (preserve_rate + repair_rate), config-driven Family B matrix with differentiated verify/abstain off-diagonals and answer-rate penalty, item quarantine system (11 items excluded from headline). 15 models evaluated on v6.1, 4+ on v6.2. Grading fixes applied (confirmation detection, answer truncation, tri-label).
 
 ---
 

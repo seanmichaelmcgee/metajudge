@@ -3437,7 +3437,8 @@
     "gold_answer": "Diamond",
     "accepted_forms": [
       "Diamond",
-      "diamond"
+      "diamond",
+      "diamonds"
     ],
     "tolerance_class": null,
     "tolerance_params": null,
@@ -3445,8 +3446,8 @@
     "source_anchor": null,
     "normalization_notes": null,
     "tri_label_space": null,
-    "edge_case_notes": "Pilot triage v0.6.1: Passed all checks (2-model Tier A pilot)",
-    "match_mode": null
+    "edge_case_notes": "Pilot triage v0.6.1: Passed all checks (2-model Tier A pilot). CJ-007: match_mode set to contains_any for verbose T2 extraction.",
+    "match_mode": "contains_any"
   },
   {
     "item_id": "sc_c2_ur_001",
