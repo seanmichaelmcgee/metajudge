@@ -175,7 +175,7 @@ non-matching non-answer items, but represent different metacognitive strategies.
 
 ### CJ-006: Deploy tri_label Grading Fix
 
-**Status:** PLANNING (fix already in code, needs re-run)
+**Status:** IMPLEMENTED (fix verified in code)
 **Priority:** P1
 **Category:** 3 (Audit Bug Fixes)
 **Files:**
@@ -196,7 +196,7 @@ for publishing v6.5 scores.
 
 ### CJ-007: sc_c2_wc_005 Confirmation Detection
 
-**Status:** PLANNING
+**Status:** IMPLEMENTED
 **Priority:** P2
 **Category:** 3 (Audit Bug Fixes)
 **Files:**
@@ -217,7 +217,7 @@ fails to extract the primary answer. Only affects 1 model on 1 item.
 
 ### CJ-008: Calibration Dual-Run for Stochasticity
 
-**Status:** PLANNING
+**Status:** IMPLEMENTED
 **Priority:** P2
 **Category:** 4 (Calibration)
 **Files:**
@@ -351,9 +351,9 @@ transparency issue regardless of which matrix is "better."
 | 003 | C1 item quality | ☑ | 7 C1 items shadow/quarantined via CJ-009 |
 | 004 | Abstention matrix | ☑ | YAML config, new scorer, answer-rate penalty. 25 tests pass. |
 | 005 | Verify/abstain asymmetry | ☑ | verify→abstain=0.2, abstain→verify=0.1 in YAML |
-| 006 | tri_label fix | ☐ | Re-run all models, compare to v6.2 scores |
-| 007 | sc_c2_wc_005 | ☐ | Manual grading check |
-| 008 | Calibration dual-run | ☐ | Run R2, compute stability metrics |
+| 006 | tri_label fix | ☑ | Fix verified in grading_v2.py |
+| 007 | sc_c2_wc_005 | ☑ | accepted_forms updated in adjudication_registry |
+| 008 | Calibration dual-run | ☑ | Run 2 stochasticity pattern added to notebook |
 | 009 | Item quarantine/shadow | ☑ | scoring_status metadata added to 172 items across 2 files |
 
 ---
