@@ -19,36 +19,46 @@
 
 ## Change Log
 
-### CJ-001: C1/C2 Scoring Contract — Delta vs Transition-Based
+### CJ-001: C1/C2 Scoring — Opportunity-Conditioned Headline (v6.5)
 
 **Status:** PLANNING
 **Priority:** P0 — benchmark validity issue
 **Category:** 1 (C1/C2 Scoring)
+**Amended:** 2026-04-05 — changed from "keep delta" to opportunity-conditioned
+**Detailed plan:** `docs/plans/c1_scoring_fixes_v65.md` (Fix 2)
 **Files:**
-- `notebooks/metajudge_sc_c1.ipynb` — production scoring, uses delta
-- `notebooks/metajudge_sc_c2.ipynb` — same delta-only issue
-- `metajudge/scoring/self_correction_v2.py` — transition scoring exists but unused
-- `config/family_c_scoring.yaml` — asymmetric weights defined but unused
-- `METHODOLOGY.md`, `docs/scoring_overview.md`, `README.md` — claim transition-based
+- `metajudge/scoring/self_correction_v2.py` — add 3 new functions + extend audit row
+- `notebooks/metajudge_sc_c1.ipynb` — wire up v6.5 headline, remove delta
+- `notebooks/metajudge_sc_c2.ipynb` — same changes
+- `METHODOLOGY.md`, `docs/scoring_overview.md`, `README.md` — update docs
+- `tests/test_self_correction_v65.py` — NEW: unit tests
 
-**Problem:** Public docs describe transition-based scoring with asymmetric damage
-penalties and confidence adjustments. Both C1 AND C2 production notebooks compute
-simple accuracy delta `(t2_correct - t1_correct) / n`. Example discrepancy:
-Sonnet C1 scores 0.400 (delta) vs 0.890 (transition-weighted).
+**Problem:** Production notebook uses accuracy delta; docs promise
+transition-weighted scoring. Neither is the right answer for v6.5.
 
-The code for transition scoring exists (`score_item()`, `compute_family_c_headline()`
-in `self_correction_v2.py`) but is never called. The YAML config exists but is
-never loaded (hardcoded defaults in the .py module take precedence).
+**v6.5 solution: Opportunity-conditioned scoring.**
+- Map 6 fine-grained transitions → 4 coarse buckets (preserve_correct,
+  repair, damage, nonrepair)
+- maintain_correct + neutral_revision MERGE into preserve_correct
+  (eliminates the noisy boundary from the headline)
+- Condition rates on opportunity: T1-right → preserve rate; T1-wrong → repair rate
+- Headline = weighted combination of preserve and repair rates
+- Laplace smoothing for small sample stability
 
-**Decision needed:** Wire up existing transition code, or update docs to match
-delta approach? See DN-001.
+New functions (additive, backward-compatible):
+1. `coarse_transition_bucket(transition) -> str`
+2. `compute_conditioned_rates(audit_rows, smoothing_alpha) -> dict`
+3. `compute_family_c_headline_v65(audit_rows, weights, ...) -> dict`
+4. Extended `build_audit_row()` with `coarse_transition` and `opportunity_type`
 
-**CJ-001-NOTE: Interaction with C1 stochasticity**
-The 53% C1 flip concentration (maintain_correct ↔ neutral_revision boundary)
-currently has ZERO score impact under delta scoring because both transitions
-have t2_correct=true. Switching to transition-based scoring would make these
-flips score-relevant (0.60 vs 0.40 per item), potentially INCREASING instability.
-Must fix CJ-002 BEFORE wiring up transition scoring.
+Legacy functions (`classify_transition`, `score_item`, `compute_family_c_headline`)
+remain unchanged for backward compatibility.
+
+**CJ-001-NOTE: Why this approach works**
+The maintain/neutral boundary that drives 53% of C1 flips is eliminated from
+the headline by merging both into preserve_correct. Under opportunity-conditioned
+scoring, "model kept correct answer" scores the same whether the parser classifies
+it as maintain or neutral. This is the structural fix for the noise problem.
 
 ---
 
@@ -220,41 +230,35 @@ copying and adapting for Brier-specific metrics.
 
 ## Decision Notes
 
-### DN-001: Will transition-based scoring fix the C1 53% flip problem?
+### DN-001: Scoring approach evolution (delta → opportunity-conditioned → transition)
 
-**Short answer: No. It would likely make it worse.**
+**v6.2 (current):** Accuracy delta `(t2c - t1c) / n`. Simple, accidentally
+robust to maintain/neutral noise (53% of flips have zero score impact). But
+doesn't penalize damage or reward repair asymmetrically. Docs are wrong.
 
-The 53% figure refers to 19 of 36 C1 flips concentrated in 5 items, primarily
-driven by maintain_correct ↔ neutral_revision classification ambiguity.
+**v6.5 (planned):** Opportunity-conditioned headline. Merges maintain_correct +
+neutral_revision into "preserve_correct" bucket → boundary noise eliminated
+from headline by design. Conditions on opportunity type (T1-right vs T1-wrong).
+Headline = w_preserve * preserve_rate + w_repair * repair_rate.
 
-Under CURRENT delta scoring:
-- maintain_correct: t2_correct=true → delta contribution = 0
-- neutral_revision: t2_correct=true → delta contribution = 0
-- A flip between them has **zero score impact**
-- The 0.286 score swings come from the OTHER 47% of flips (damage-related,
-  where t2_correct actually changes)
+**v7 (future):** Full transition-weighted scoring from `score_item()`. Only
+viable after the maintain/neutral classification boundary is proven stable.
+The existing code remains available for this future adoption.
 
-Under TRANSITION-BASED scoring:
-- maintain_correct: weight = 0.60
-- neutral_revision: weight = 0.40
-- A flip between them changes the item score by ±0.20
-- At n=28 items, each such flip moves the headline by ~0.007
-- With 5+ items flipping simultaneously, this adds ~0.035 of NEW noise
-
-**Conclusion:** Transition scoring adds a new source of instability for the
-exact boundary that's already the most volatile. The delta approach is
-accidentally more robust to this specific failure mode.
-
-**Implication for v6.5:** Before switching to transition scoring, FIRST fix the
-classification boundary (CJ-002). Otherwise you're amplifying noise.
+**Why opportunity-conditioned is the right middle ground:**
+- Like delta: immune to maintain/neutral noise (they merge)
+- Unlike delta: separately measures preserve and repair quality
+- Unlike transition-weighted: doesn't amplify the noisy boundary
+- Produces richer diagnostics (preserve rate, repair rate, damage rate)
 
 ### DN-002: Recommended sequencing for C1 fixes
 
-1. Tighten maintain_correct vs neutral_revision boundary (CJ-002)
-2. Verify the 5 volatile items are stable under new boundary
-3. THEN decide delta vs transition scoring (CJ-001) with clean data
-4. Fix item quality issues (CJ-003) in parallel
-5. Update docs to match whichever approach is chosen
+1. Tighten maintain/neutral boundary (CJ-002) — still needed for diagnostics
+2. Implement opportunity-conditioned scoring functions (CJ-001)
+3. Unit tests (Fix 8)
+4. Fix item quality issues (CJ-003a-e) in parallel with steps 1-3
+5. Wire up notebook, update docs
+6. Re-run all models, verify rankings and stochasticity improvement
 
 ### DN-003: Abstention matrix — which is actually used?
 
